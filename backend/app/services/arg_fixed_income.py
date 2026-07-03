@@ -8,30 +8,30 @@ from app.config import CACHE_DIR
 
 # Lista base de Letras (LECAPs/LECERs) en caso de que falle el scraping
 FALLBACK_LETRAS = [
-    {"ticker": "S28F5", "name": "Letra de Tesoro S28F5 (Pesos)", "price": 1.02, "tna": 0.442, "maturity": "2025-02-28"},
-    {"ticker": "S31A5", "name": "Letra de Tesoro S31A5 (Pesos)", "price": 0.98, "tna": 0.458, "maturity": "2025-04-30"},
-    {"ticker": "S30J5", "name": "Letra de Tesoro S30J5 (Pesos)", "price": 0.95, "tna": 0.465, "maturity": "2025-06-30"},
-    {"ticker": "S30S5", "name": "Letra de Tesoro S30S5 (Pesos)", "price": 0.90, "tna": 0.480, "maturity": "2025-09-30"},
-    {"ticker": "S15D5", "name": "Letra de Tesoro S15D5 (Pesos)", "price": 0.86, "tna": 0.495, "maturity": "2025-12-15"},
-    {"ticker": "S31M5", "name": "Letra de Tesoro S31M5 (Pesos)", "price": 1.01, "tna": 0.450, "maturity": "2025-03-31"},
-    {"ticker": "S31Y5", "name": "Letra de Tesoro S31Y5 (Pesos)", "price": 0.97, "tna": 0.461, "maturity": "2025-05-31"},
-    {"ticker": "S29G5", "name": "Letra de Tesoro S29G5 (Pesos)", "price": 0.93, "tna": 0.472, "maturity": "2025-07-29"},
-    {"ticker": "S29Ag5", "name": "Letra de Tesoro S29Ag5 (Pesos)", "price": 0.91, "tna": 0.477, "maturity": "2025-08-29"},
-    {"ticker": "S31O5", "name": "Letra de Tesoro S31O5 (Pesos)", "price": 0.88, "tna": 0.485, "maturity": "2025-10-31"}
+    {"ticker": "S31L6", "name": "LECAP S31L6 (Pesos)", "price": 1.00, "tna": 0.22, "maturity": "2026-07-31"},
+    {"ticker": "S14G6", "name": "LECAP S14G6 (Pesos)", "price": 0.99, "tna": 0.24, "maturity": "2026-08-14"},
+    {"ticker": "S31G6", "name": "LECAP S31G6 (Pesos)", "price": 0.98, "tna": 0.245, "maturity": "2026-08-31"},
+    {"ticker": "S30S6", "name": "LECAP S30S6 (Pesos)", "price": 0.96, "tna": 0.25, "maturity": "2026-09-30"},
+    {"ticker": "S30O6", "name": "LECAP S30O6 (Pesos)", "price": 0.94, "tna": 0.255, "maturity": "2026-10-30"},
+    {"ticker": "S13N6", "name": "LECAP S13N6 (Pesos)", "price": 0.93, "tna": 0.26, "maturity": "2026-11-13"},
+    {"ticker": "S30N6", "name": "LECAP S30N6 (Pesos)", "price": 0.92, "tna": 0.265, "maturity": "2026-11-30"},
+    {"ticker": "T15E7", "name": "BONCAP T15E7 (Pesos)", "price": 0.89, "tna": 0.27, "maturity": "2027-01-15"},
+    {"ticker": "T31Y7", "name": "BONCAP T31Y7 (Pesos)", "price": 0.86, "tna": 0.275, "maturity": "2027-05-31"},
+    {"ticker": "T30J7", "name": "BONCAP T30J7 (Pesos)", "price": 0.84, "tna": 0.28, "maturity": "2027-06-30"}
 ]
 
 # Lista base de Bonos Soberanos en pesos y dólares
 FALLBACK_BONOS = [
-    {"ticker": "AL30", "name": "Bono Soberano AL30 (Pesos)", "price": 61200.0, "tna": 0.58, "maturity": "2030-07-09", "currency": "ARS"},
-    {"ticker": "GD30", "name": "Bono Soberano GD30 (Pesos)", "price": 64500.0, "tna": 0.55, "maturity": "2030-07-09", "currency": "ARS"},
-    {"ticker": "AL29", "name": "Bono Soberano AL29 (Pesos)", "price": 62100.0, "tna": 0.60, "maturity": "2029-07-09", "currency": "ARS"},
-    {"ticker": "GD29", "name": "Bono Soberano GD29 (Pesos)", "price": 65000.0, "tna": 0.57, "maturity": "2029-07-09", "currency": "ARS"},
-    {"ticker": "AL35", "name": "Bono Soberano AL35 (Pesos)", "price": 49800.0, "tna": 0.62, "maturity": "2035-07-09", "currency": "ARS"},
-    {"ticker": "GD35", "name": "Bono Soberano GD35 (Pesos)", "price": 51200.0, "tna": 0.59, "maturity": "2035-07-09", "currency": "ARS"},
-    {"ticker": "AE38", "name": "Bono Soberano AE38 (Pesos)", "price": 54200.0, "tna": 0.56, "maturity": "2038-01-09", "currency": "ARS"},
-    {"ticker": "GD38", "name": "Bono Soberano GD38 (Pesos)", "price": 59300.0, "tna": 0.53, "maturity": "2038-01-09", "currency": "ARS"},
-    {"ticker": "AL30D", "name": "Bono Soberano AL30D (Dólares)", "price": 61.20, "tna": 0.22, "maturity": "2030-07-09", "currency": "USD"},
-    {"ticker": "GD30D", "name": "Bono Soberano GD30D (Dólares)", "price": 64.50, "tna": 0.20, "maturity": "2030-07-09", "currency": "USD"}
+    {"ticker": "AL30", "name": "Bono Soberano AL30 (Pesos)", "price": 97900.0, "tna": 0.12, "maturity": "2030-07-09", "currency": "ARS"},
+    {"ticker": "GD30", "name": "Bono Soberano GD30 (Pesos)", "price": 100600.0, "tna": 0.11, "maturity": "2030-07-09", "currency": "ARS"},
+    {"ticker": "AL29", "name": "Bono Soberano AL29 (Pesos)", "price": 99100.0, "tna": 0.13, "maturity": "2029-07-09", "currency": "ARS"},
+    {"ticker": "GD29", "name": "Bono Soberano GD29 (Pesos)", "price": 100850.0, "tna": 0.12, "maturity": "2029-07-09", "currency": "ARS"},
+    {"ticker": "AL35", "name": "Bono Soberano AL35 (Pesos)", "price": 124000.0, "tna": 0.14, "maturity": "2035-07-09", "currency": "ARS"},
+    {"ticker": "GD35", "name": "Bono Soberano GD35 (Pesos)", "price": 126500.0, "tna": 0.13, "maturity": "2035-07-09", "currency": "ARS"},
+    {"ticker": "AE38", "name": "Bono Soberano AE38 (Pesos)", "price": 128500.0, "tna": 0.12, "maturity": "2038-01-09", "currency": "ARS"},
+    {"ticker": "GD38", "name": "Bono Soberano GD38 (Pesos)", "price": 130200.0, "tna": 0.11, "maturity": "2038-01-09", "currency": "ARS"},
+    {"ticker": "AL30D", "name": "Bono Soberano AL30D (Dólares)", "price": 64.22, "tna": 0.08, "maturity": "2030-07-09", "currency": "USD"},
+    {"ticker": "GD30D", "name": "Bono Soberano GD30D (Dólares)", "price": 66.00, "tna": 0.07, "maturity": "2030-07-09", "currency": "USD"}
 ]
 
 async def scrape_rava_table(url, valid_ticker_regex, fallbacks, category_name):
