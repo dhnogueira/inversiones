@@ -266,6 +266,18 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
             "trend": "Alcista" if bono.get("var_pct", 0) > 0 else "Estable"
         })
         
+    # Filtrar instrumentos vencidos dinámicamente
+    from datetime import datetime
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    valid_results = []
+    for item in results:
+        mat_date = item.get("maturity")
+        if mat_date and mat_date < today_str:
+            print(f"WARNING: El instrumento de renta fija '{item['ticker']}' ha vencido ({mat_date} < {today_str}) y ha sido excluido.")
+        else:
+            valid_results.append(item)
+    results = valid_results
+
     cache_data = {
         "timestamp": time.time(),
         "data": results

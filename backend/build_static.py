@@ -35,6 +35,14 @@ async def main():
     fi_assets = await fetch_arg_fixed_income_data(force_refresh=True)
     all_assets = yf_assets + fi_assets
     
+    # Validar que ningún instrumento de renta fija esté vencido (Seguridad en compilación)
+    from datetime import datetime
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    for asset in fi_assets:
+        mat = asset.get("maturity")
+        if mat and mat < today_str:
+            raise ValueError(f"CRITICAL ERROR: El instrumento de renta fija '{asset['ticker']}' está vencido ({mat} < {today_str})! Se aborta la compilación estática.")
+    
     # 3. Generar Yield Curve
     print("Generando datos de curva de rendimientos (Renta Fija)...")
     letras = [a for a in fi_assets if a["category"] == "letras"]
