@@ -3,24 +3,8 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "T15E7",
-        "name": "BONCAP T15E7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.3,
-        "weight_pct": 30.0
-      },
-      {
-        "ticker": "T31Y7",
-        "name": "BONCAP T31Y7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.3,
-        "weight_pct": 30.0
-      },
-      {
-        "ticker": "T30J7",
-        "name": "BONCAP T30J7 (Pesos)",
+        "ticker": "S13N6",
+        "name": "LECAP S13N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
         "weight": 0.3,
@@ -31,13 +15,29 @@
         "name": "LECAP S30N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0
+      },
+      {
+        "ticker": "T15E7",
+        "name": "BONCAP T15E7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0
+      },
+      {
+        "ticker": "S30O6",
+        "name": "LECAP S30O6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0
       }
     ],
-    "expected_return": 27.4,
+    "expected_return": 24.93,
     "expected_volatility": 4.43,
-    "sharpe_ratio": -2.85,
+    "sharpe_ratio": -3.4,
     "profile": "moderado",
     "risk_free_rate": 40.0
   }
