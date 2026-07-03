@@ -4,7 +4,7 @@
     "ticker": "LINK-USD",
     "name": "LINK-USD",
     "category": "crypto",
-    "price": 7.814000129699707,
+    "price": 7.763000011444092,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -12,29 +12,29 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 50.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "50.1",
-        "status": "success"
+        "content": "El RSI de 14 períodos se encuentra en 49.0, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "49.0",
+        "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (8.20) se encuentra por debajo de la EMA de 200 días (10.16), y el precio (7.81) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (8.20) se encuentra por debajo de la EMA de 200 días (10.16), y el precio (7.76) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **muy alta** (64.1%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
-        "value": "64.1%",
+        "content": "La volatilidad anualizada es **muy alta** (64.0%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "64.0%",
         "status": "danger"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-0.5%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-0.5% (1M)",
+        "content": "El rendimiento mensual es de **-1.2%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.2% (1M)",
         "status": "neutral"
       }
     ],
@@ -42,15 +42,15 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "El Ratio de Sharpe es **negativo** (-0.94), lo que significa que el retorno del activo no compensa ni siquiera la tasa libre de riesgo. Técnicamente, el inversor destruye valor ajustado por riesgo.",
-        "value": "-0.94",
+        "content": "El Ratio de Sharpe es **negativo** (-0.95), lo que significa que el retorno del activo no compensa ni siquiera la tasa libre de riesgo. Técnicamente, el inversor destruye valor ajustado por riesgo.",
+        "value": "-0.95",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-10.3%** y a 12 meses es **-56.3%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-10.3% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-10.9%** y a 12 meses es **-56.6%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-10.9% (6M)",
         "status": "danger"
       }
     ],

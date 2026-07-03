@@ -3,41 +3,33 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "S15D5",
-        "name": "Letra de Tesoro S15D5 (Pesos)",
+        "ticker": "T31Y7",
+        "name": "BONCAP T31Y7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
         "weight": 0.4,
         "weight_pct": 40.0
       },
       {
-        "ticker": "S31O5",
-        "name": "Letra de Tesoro S31O5 (Pesos)",
+        "ticker": "T30J7",
+        "name": "BONCAP T30J7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.3311,
-        "weight_pct": 33.1
+        "weight": 0.4,
+        "weight_pct": 40.0
       },
       {
-        "ticker": "S30S5",
-        "name": "Letra de Tesoro S30S5 (Pesos)",
+        "ticker": "T15E7",
+        "name": "BONCAP T15E7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.1798,
-        "weight_pct": 18.0
-      },
-      {
-        "ticker": "S29Ag5",
-        "name": "Letra de Tesoro S29Ag5 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.0891,
-        "weight_pct": 8.9
+        "weight": 0.2,
+        "weight_pct": 20.0
       }
     ],
-    "expected_return": 48.74,
-    "expected_volatility": 4.45,
-    "sharpe_ratio": 1.96,
+    "expected_return": 27.6,
+    "expected_volatility": 4.49,
+    "sharpe_ratio": -2.76,
     "profile": "conservador",
     "risk_free_rate": 40.0
   }

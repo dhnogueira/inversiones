@@ -55,13 +55,21 @@
         "name": "Bono Soberano GD30 (Pesos)",
         "category": "bonos",
         "currency": "ARS",
-        "weight": 0.1,
-        "weight_pct": 10.0
+        "weight": 0.05,
+        "weight_pct": 5.0
+      },
+      {
+        "ticker": "GD38",
+        "name": "Bono Soberano GD38 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0
       }
     ],
-    "expected_return": 58.3,
-    "expected_volatility": 18.97,
-    "sharpe_ratio": 0.96,
+    "expected_return": 12.5,
+    "expected_volatility": 18.95,
+    "sharpe_ratio": -1.45,
     "profile": "agresivo",
     "risk_free_rate": 40.0
   }

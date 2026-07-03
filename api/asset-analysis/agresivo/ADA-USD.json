@@ -4,17 +4,17 @@
     "ticker": "ADA-USD",
     "name": "ADA-USD",
     "category": "crypto",
-    "price": 0.16519999504089355,
+    "price": 0.1662999987602234,
     "currency": "USD",
-    "score": 95.4,
+    "score": 100.0,
     "profile": "agresivo",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 49.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "49.3",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 50.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "50.1",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
@@ -26,15 +26,15 @@
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **muy alta** (64.9%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
-        "value": "64.9%",
+        "content": "La volatilidad anualizada es **muy alta** (65.0%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "65.0%",
         "status": "danger"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-2.7%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-2.7% (1M)",
+        "content": "El rendimiento mensual es de **-2.1%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-2.1% (1M)",
         "status": "neutral"
       }
     ],
@@ -49,8 +49,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-40.5%** y a 12 meses es **-74.8%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-40.5% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-40.1%** y a 12 meses es **-74.6%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-40.1% (6M)",
         "status": "danger"
       }
     ],
@@ -66,7 +66,7 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **95.4/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad."
+      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad."
     }
   }
 }
