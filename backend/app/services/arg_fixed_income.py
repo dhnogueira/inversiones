@@ -4,20 +4,63 @@ import os
 import json
 import time
 import re
+from datetime import datetime
 from app.config import CACHE_DIR
 
-# Lista base de Letras (LECAPs/LECERs) en caso de que falle el scraping
+
+def calculate_tna_from_price(price: float, maturity_str: str, face_value: float = 100.0) -> dict:
+    """
+    Calcula TEM, TNA y TEA reales a partir del precio de mercado y la fecha de vencimiento.
+
+    Fórmula para instrumentos de cupón cero (LECAPs, BONCAPs):
+        TEM = (VN / Precio) ^ (30 / días) - 1
+        TNA = TEM * 12  (convención argentina: nominal anual)
+        TEA = (1 + TEM) ^ 12 - 1
+
+    Args:
+        price: Precio de mercado. Si > 2.0 se asume en pesos y se normaliza a % del VN.
+        maturity_str: Fecha de vencimiento en formato 'YYYY-MM-DD'.
+        face_value: Valor nominal de rescate (default 100.0).
+
+    Returns:
+        dict con tna, tem, tea (todos como decimales, ej: 0.30 = 30%).
+    """
+    try:
+        mat = datetime.strptime(maturity_str, "%Y-%m-%d")
+        days = (mat - datetime.now()).days
+        if days <= 0:
+            return {"tna": 0.0, "tem": 0.0, "tea": 0.0}
+
+        # Normalizar precio: si viene en pesos (ej: 98.50) convertir a % del VN (ej: 0.985)
+        p = price / face_value if price > 2.0 else price
+        if p <= 0 or p >= 2.0:
+            return {"tna": 0.0, "tem": 0.0, "tea": 0.0}
+
+        tem = (1.0 / p) ** (30.0 / days) - 1.0
+        tna = tem * 12.0
+        tea = (1.0 + tem) ** 12.0 - 1.0
+        return {
+            "tna": round(tna, 4),
+            "tem": round(tem, 4),
+            "tea": round(tea, 4),
+        }
+    except Exception:
+        return {"tna": 0.0, "tem": 0.0, "tea": 0.0}
+
+# Lista base de Letras (LECAPs/BONCAPs) en caso de que falle el scraping.
+# Precios expresados como porcentaje del VN (ej: 0.985 = 98.5% del nominal).
+# TNA se recalcula dinámicamente con calculate_tna_from_price al iniciar.
 FALLBACK_LETRAS = [
-    {"ticker": "S31L6", "name": "LECAP S31L6 (Pesos)", "price": 1.00, "tna": 0.22, "maturity": "2026-07-31"},
-    {"ticker": "S14G6", "name": "LECAP S14G6 (Pesos)", "price": 0.99, "tna": 0.24, "maturity": "2026-08-14"},
-    {"ticker": "S31G6", "name": "LECAP S31G6 (Pesos)", "price": 0.98, "tna": 0.245, "maturity": "2026-08-31"},
-    {"ticker": "S30S6", "name": "LECAP S30S6 (Pesos)", "price": 0.96, "tna": 0.25, "maturity": "2026-09-30"},
-    {"ticker": "S30O6", "name": "LECAP S30O6 (Pesos)", "price": 0.94, "tna": 0.255, "maturity": "2026-10-30"},
-    {"ticker": "S13N6", "name": "LECAP S13N6 (Pesos)", "price": 0.93, "tna": 0.26, "maturity": "2026-11-13"},
-    {"ticker": "S30N6", "name": "LECAP S30N6 (Pesos)", "price": 0.92, "tna": 0.265, "maturity": "2026-11-30"},
-    {"ticker": "T15E7", "name": "BONCAP T15E7 (Pesos)", "price": 0.89, "tna": 0.27, "maturity": "2027-01-15"},
-    {"ticker": "T31Y7", "name": "BONCAP T31Y7 (Pesos)", "price": 0.86, "tna": 0.275, "maturity": "2027-05-31"},
-    {"ticker": "T30J7", "name": "BONCAP T30J7 (Pesos)", "price": 0.84, "tna": 0.28, "maturity": "2027-06-30"}
+    {"ticker": "S31L6", "name": "LECAP S31L6 (Pesos)", "price": 0.985, "maturity": "2026-07-31"},
+    {"ticker": "S14G6", "name": "LECAP S14G6 (Pesos)", "price": 0.975, "maturity": "2026-08-14"},
+    {"ticker": "S31G6", "name": "LECAP S31G6 (Pesos)", "price": 0.965, "maturity": "2026-08-31"},
+    {"ticker": "S30S6", "name": "LECAP S30S6 (Pesos)", "price": 0.945, "maturity": "2026-09-30"},
+    {"ticker": "S30O6", "name": "LECAP S30O6 (Pesos)", "price": 0.925, "maturity": "2026-10-30"},
+    {"ticker": "S13N6", "name": "LECAP S13N6 (Pesos)", "price": 0.915, "maturity": "2026-11-13"},
+    {"ticker": "S30N6", "name": "LECAP S30N6 (Pesos)", "price": 0.900, "maturity": "2026-11-30"},
+    {"ticker": "T15E7", "name": "BONCAP T15E7 (Pesos)", "price": 0.875, "maturity": "2027-01-15"},
+    {"ticker": "T31Y7", "name": "BONCAP T31Y7 (Pesos)", "price": 0.845, "maturity": "2027-05-31"},
+    {"ticker": "T30J7", "name": "BONCAP T30J7 (Pesos)", "price": 0.825, "maturity": "2027-06-30"}
 ]
 
 # Lista base de Bonos Soberanos en pesos y dólares
@@ -67,25 +110,28 @@ async def scrape_rava_table(url, valid_ticker_regex, fallbacks, category_name):
                             var = float(var_str) if var_str else 0.0
                             
                             currency = "USD" if ticker.endswith('D') else "ARS"
-                            
-                            # Cargar valores específicos basado en ticker
-                            # Si es bono, estimar TNA acorde al tipo de bono
-                            tna = 0.55 if currency == "ARS" else 0.20
-                            if ticker.startswith('S'): # letras
-                                tna = 0.44 + (0.01 * (len(ticker) % 6))
+
+                            # Determinar vencimiento
+                            if ticker.startswith('S') or ticker.startswith('T'): # letras/boncaps
                                 maturity = estimate_maturity_from_ticker(ticker)
-                            else: # bonos
+                            else: # bonos soberanos
                                 maturity = "2030-07-09"
                                 if "35" in ticker: maturity = "2035-07-09"
                                 elif "38" in ticker: maturity = "2038-01-09"
                                 elif "29" in ticker: maturity = "2029-07-09"
                                 elif "41" in ticker: maturity = "2041-07-09"
+
+                            # Calcular TNA real desde el precio de mercado y el vencimiento
+                            rates = calculate_tna_from_price(price, maturity)
+                            tna = rates["tna"]
                             
                             results.append({
                                 "ticker": ticker,
                                 "name": f"{category_name.capitalize()} {ticker} ({'Dólares' if currency == 'USD' else 'Pesos'})",
                                 "price": price,
                                 "tna": tna,
+                                "tem": rates.get("tem", 0.0),
+                                "tea": rates.get("tea", 0.0),
                                 "var_pct": var,
                                 "maturity": maturity,
                                 "currency": currency
@@ -227,26 +273,39 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
     results = []
     
     for letra in letras:
+        # Calcular TNA real si no viene del scraping (fallback no tiene campo 'tna')
+        if "tna" not in letra or letra["tna"] == 0.0:
+            rates = calculate_tna_from_price(letra["price"], letra["maturity"])
+        else:
+            rates = {"tna": letra["tna"], "tem": letra.get("tem", letra["tna"] / 12), "tea": letra.get("tea", 0.0)}
+        tna = rates["tna"]
         results.append({
             "ticker": letra["ticker"],
             "name": letra["name"],
             "category": "letras",
             "price": letra["price"],
             "currency": letra.get("currency", "ARS"),
-            "ret_1m": letra["tna"] / 12,
-            "ret_3m": (letra["tna"] / 12) * 3,
-            "ret_6m": (letra["tna"] / 12) * 6,
-            "ret_12m": letra["tna"],
+            "ret_1m": tna / 12,
+            "ret_3m": (tna / 12) * 3,
+            "ret_6m": (tna / 12) * 6,
+            "ret_12m": tna,
             "volatility": 0.05,
             "sharpe": 1.5,
             "rsi": 50.0,
-            "tna": letra["tna"],
+            "tna": tna,
+            "tem": rates["tem"],
+            "tea": rates["tea"],
             "maturity": letra["maturity"],
             "trend": "Estable"
         })
         
     for bono in bonos:
-        # Los bonos soberanos argentinos tienen una volatilidad media del 18%-28% anual en pesos
+        # Para bonos: usar TNA scrapeada si existe, si no calcular desde precio y vencimiento
+        if "tna" not in bono or bono["tna"] == 0.0:
+            rates = calculate_tna_from_price(bono["price"], bono["maturity"])
+        else:
+            rates = {"tna": bono["tna"], "tem": bono.get("tem", bono["tna"] / 12), "tea": bono.get("tea", 0.0)}
+        bono_tna = rates["tna"]
         vol = 0.22 if bono.get("currency") == "ARS" else 0.16
         results.append({
             "ticker": bono["ticker"],
@@ -254,20 +313,21 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
             "category": "bonos",
             "price": bono["price"],
             "currency": bono.get("currency", "ARS"),
-            "ret_1m": bono["tna"] / 12,
-            "ret_3m": (bono["tna"] / 12) * 3,
-            "ret_6m": (bono["tna"] / 12) * 6,
-            "ret_12m": bono["tna"],
+            "ret_1m": bono_tna / 12,
+            "ret_3m": (bono_tna / 12) * 3,
+            "ret_6m": (bono_tna / 12) * 6,
+            "ret_12m": bono_tna,
             "volatility": vol,
             "sharpe": 0.6 if bono.get("currency") == "ARS" else 0.8,
             "rsi": 52.0,
-            "tna": bono["tna"],
+            "tna": bono_tna,
+            "tem": rates["tem"],
+            "tea": rates["tea"],
             "maturity": bono["maturity"],
             "trend": "Alcista" if bono.get("var_pct", 0) > 0 else "Estable"
         })
         
     # Filtrar instrumentos vencidos dinámicamente
-    from datetime import datetime
     today_str = datetime.now().strftime("%Y-%m-%d")
     valid_results = []
     for item in results:
