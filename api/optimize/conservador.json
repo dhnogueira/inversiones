@@ -1,0 +1,44 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "S15D5",
+        "name": "Letra de Tesoro S15D5 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.4,
+        "weight_pct": 40.0
+      },
+      {
+        "ticker": "S31O5",
+        "name": "Letra de Tesoro S31O5 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.3311,
+        "weight_pct": 33.1
+      },
+      {
+        "ticker": "S30S5",
+        "name": "Letra de Tesoro S30S5 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1798,
+        "weight_pct": 18.0
+      },
+      {
+        "ticker": "S29Ag5",
+        "name": "Letra de Tesoro S29Ag5 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.0891,
+        "weight_pct": 8.9
+      }
+    ],
+    "expected_return": 48.74,
+    "expected_volatility": 4.45,
+    "sharpe_ratio": 1.96,
+    "profile": "conservador",
+    "risk_free_rate": 40.0
+  }
+}

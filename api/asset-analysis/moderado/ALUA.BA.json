@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "ALUA.BA",
+    "name": "ALUA",
+    "category": "merval",
+    "price": 991.0,
+    "currency": "ARS",
+    "score": 48.3,
+    "profile": "moderado",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos se encuentra en 49.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "49.6",
+        "status": "neutral"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "La EMA de 50 días (978.74) se encuentra por encima de la EMA de 200 días (917.95), y el precio actual (991.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "value": "Fuerte Alcista",
+        "status": "success"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es **alta** (49.7%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "49.7%",
+        "status": "warning"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **-1.8%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.8% (1M)",
+        "status": "neutral"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "El Ratio de Sharpe es **negativo** (-0.08), lo que significa que el retorno del activo no compensa ni siquiera la tasa libre de riesgo. Técnicamente, el inversor destruye valor ajustado por riesgo.",
+        "value": "-0.08",
+        "status": "danger"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **+0.0%** y a 12 meses es **+0.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+0.0% (6M)",
+        "status": "neutral"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno Macroeconómico Argentino",
+        "icon": "fa-flag",
+        "content": "**Contexto Argentina (Jul 2026):** La economía argentina transita un proceso de estabilización macroeconómica. La reducción gradual de la brecha cambiaria (dólar oficial vs. CCL) ha generado mayor previsibilidad en el mercado de capitales local. Sin embargo, la inflación acumulada sigue siendo un factor determinante para evaluar rendimientos reales en pesos. Los instrumentos en ARS deben superar la inflación esperada para generar retorno real positivo. El riesgo país sigue siendo un indicador clave para bonos soberanos.",
+        "status": "neutral"
+      }
+    ],
+    "verdict": {
+      "action": "CAUTELA",
+      "icon": "fa-triangle-exclamation",
+      "color": "warning",
+      "summary": "El score de **48.3/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad."
+    }
+  }
+}

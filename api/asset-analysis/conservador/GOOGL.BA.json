@@ -1,0 +1,78 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "GOOGL.BA",
+    "name": "GOOGL",
+    "category": "cedears",
+    "price": 9805.0,
+    "currency": "ARS",
+    "score": 28.0,
+    "profile": "conservador",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos está en 57.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "57.8",
+        "status": "success"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "La EMA de 50 días (9366.77) se encuentra por encima de la EMA de 200 días (8051.22), y el precio actual (9805.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "value": "Fuerte Alcista",
+        "status": "success"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es **alta** (34.9%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "34.9%",
+        "status": "warning"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **+0.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (25.5%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+0.9% (1M)",
+        "status": "neutral"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "El Ratio de Sharpe es de **0.98**, un valor **aceptable** que sugiere que el rendimiento compensa razonablemente el riesgo asumido. Es una relación equilibrada para horizontes de 6-12 meses.",
+        "value": "0.98",
+        "status": "neutral"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **+19.1%** y a 12 meses es **+0.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+19.1% (6M)",
+        "status": "success"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno Macroeconómico Argentino",
+        "icon": "fa-flag",
+        "content": "**Contexto Argentina (Jul 2026):** La economía argentina transita un proceso de estabilización macroeconómica. La reducción gradual de la brecha cambiaria (dólar oficial vs. CCL) ha generado mayor previsibilidad en el mercado de capitales local. Sin embargo, la inflación acumulada sigue siendo un factor determinante para evaluar rendimientos reales en pesos. Los instrumentos en ARS deben superar la inflación esperada para generar retorno real positivo. El riesgo país sigue siendo un indicador clave para bonos soberanos.",
+        "status": "neutral"
+      },
+      {
+        "title": "Entorno de Mercados Internacionales (EE.UU.)",
+        "icon": "fa-globe",
+        "content": "**Contexto EE.UU. (Jul 2026):** La Reserva Federal mantiene una postura de política monetaria que equilibra el control inflacionario con el sostenimiento del empleo. Los mercados de renta variable estadounidenses han mostrado resiliencia, impulsados por el sector tecnológico y la inteligencia artificial. Los CEDEARs permiten al inversor argentino acceder a estas dinámicas con cobertura implícita en dólares (tipo de cambio CCL). El ratio P/E del S&P 500 se encuentra por encima de su promedio histórico, lo que sugiere valuaciones exigentes que podrían limitar el upside de corto plazo.",
+        "status": "neutral"
+      }
+    ],
+    "verdict": {
+      "action": "EVITAR",
+      "icon": "fa-circle-xmark",
+      "color": "danger",
+      "summary": "Con un score de solo **28.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital."
+    }
+  }
+}

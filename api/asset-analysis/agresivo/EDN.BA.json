@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "EDN.BA",
+    "name": "EDN",
+    "category": "merval",
+    "price": 1928.0,
+    "currency": "ARS",
+    "score": 95.9,
+    "profile": "agresivo",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos se encuentra en 46.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "46.6",
+        "status": "neutral"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "El precio (1928.00) cotiza por debajo de la EMA de 200 días (1960.25), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "value": "Bajista",
+        "status": "warning"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es **muy alta** (67.6%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "67.6%",
+        "status": "danger"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **-4.8%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-4.8% (1M)",
+        "status": "danger"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "El Ratio de Sharpe es **negativo** (-0.58), lo que significa que el retorno del activo no compensa ni siquiera la tasa libre de riesgo. Técnicamente, el inversor destruye valor ajustado por riesgo.",
+        "value": "-0.58",
+        "status": "danger"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **-17.5%** y a 12 meses es **+0.0%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-17.5% (6M)",
+        "status": "danger"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno Macroeconómico Argentino",
+        "icon": "fa-flag",
+        "content": "**Contexto Argentina (Jul 2026):** La economía argentina transita un proceso de estabilización macroeconómica. La reducción gradual de la brecha cambiaria (dólar oficial vs. CCL) ha generado mayor previsibilidad en el mercado de capitales local. Sin embargo, la inflación acumulada sigue siendo un factor determinante para evaluar rendimientos reales en pesos. Los instrumentos en ARS deben superar la inflación esperada para generar retorno real positivo. El riesgo país sigue siendo un indicador clave para bonos soberanos.",
+        "status": "neutral"
+      }
+    ],
+    "verdict": {
+      "action": "COMPRAR",
+      "icon": "fa-circle-check",
+      "color": "success",
+      "summary": "Este activo obtiene un score de **95.9/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad."
+    }
+  }
+}

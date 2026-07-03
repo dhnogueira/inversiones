@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "COST",
+    "name": "COST",
+    "category": "sp500",
+    "price": 951.6699829101562,
+    "currency": "USD",
+    "score": 71.2,
+    "profile": "conservador",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos se encuentra en 44.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "44.8",
+        "status": "neutral"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "El precio (951.67) cotiza por debajo de la EMA de 200 días (971.30), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "value": "Bajista",
+        "status": "warning"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es de **19.2%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
+        "value": "19.2%",
+        "status": "neutral"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **-1.1%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.1% (1M)",
+        "status": "neutral"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "El Ratio de Sharpe es de **0.90**, un valor **aceptable** que sugiere que el rendimiento compensa razonablemente el riesgo asumido. Es una relación equilibrada para horizontes de 6-12 meses.",
+        "value": "0.90",
+        "status": "neutral"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **+10.7%** y a 12 meses es **+0.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+10.7% (6M)",
+        "status": "success"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno de Mercados Internacionales (EE.UU.)",
+        "icon": "fa-globe",
+        "content": "**Contexto EE.UU. (Jul 2026):** La Reserva Federal mantiene una postura de política monetaria que equilibra el control inflacionario con el sostenimiento del empleo. Los mercados de renta variable estadounidenses han mostrado resiliencia, impulsados por el sector tecnológico y la inteligencia artificial. Los CEDEARs permiten al inversor argentino acceder a estas dinámicas con cobertura implícita en dólares (tipo de cambio CCL). El ratio P/E del S&P 500 se encuentra por encima de su promedio histórico, lo que sugiere valuaciones exigentes que podrían limitar el upside de corto plazo.",
+        "status": "neutral"
+      }
+    ],
+    "verdict": {
+      "action": "CONSIDERAR",
+      "icon": "fa-circle-info",
+      "color": "neutral",
+      "summary": "Con un score de **71.2/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo."
+    }
+  }
+}

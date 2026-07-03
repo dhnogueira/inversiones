@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "SUPV.BA",
+    "name": "SUPV",
+    "category": "merval",
+    "price": 3027.5,
+    "currency": "ARS",
+    "score": 29.5,
+    "profile": "moderado",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos está en 52.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "52.2",
+        "status": "success"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "La EMA de 50 días (2895.03) se encuentra por encima de la EMA de 200 días (2833.66), y el precio actual (3027.50) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "value": "Fuerte Alcista",
+        "status": "success"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es **muy alta** (79.8%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "79.8%",
+        "status": "danger"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **+4.3%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (10.7%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+4.3% (1M)",
+        "status": "success"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "El Ratio de Sharpe es **negativo** (-0.43), lo que significa que el retorno del activo no compensa ni siquiera la tasa libre de riesgo. Técnicamente, el inversor destruye valor ajustado por riesgo.",
+        "value": "-0.43",
+        "status": "danger"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **-15.2%** y a 12 meses es **+0.0%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-15.2% (6M)",
+        "status": "danger"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno Macroeconómico Argentino",
+        "icon": "fa-flag",
+        "content": "**Contexto Argentina (Jul 2026):** La economía argentina transita un proceso de estabilización macroeconómica. La reducción gradual de la brecha cambiaria (dólar oficial vs. CCL) ha generado mayor previsibilidad en el mercado de capitales local. Sin embargo, la inflación acumulada sigue siendo un factor determinante para evaluar rendimientos reales en pesos. Los instrumentos en ARS deben superar la inflación esperada para generar retorno real positivo. El riesgo país sigue siendo un indicador clave para bonos soberanos.",
+        "status": "neutral"
+      }
+    ],
+    "verdict": {
+      "action": "EVITAR",
+      "icon": "fa-circle-xmark",
+      "color": "danger",
+      "summary": "Con un score de solo **29.5/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad."
+    }
+  }
+}

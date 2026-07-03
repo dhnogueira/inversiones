@@ -1,0 +1,79 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "GD35",
+    "name": "Bono Soberano GD35 (Pesos)",
+    "category": "bonos",
+    "price": 51200.0,
+    "currency": "ARS",
+    "score": 100.0,
+    "profile": "agresivo",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos está en 52.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "52.0",
+        "status": "success"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "Este instrumento no dispone de suficientes datos históricos para calcular las medias móviles exponenciales de 50 y 200 días.",
+        "value": "Estable",
+        "status": "neutral"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es de **22.0%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
+        "value": "22.0%",
+        "status": "neutral"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **+4.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (14.8%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+4.9% (1M)",
+        "status": "success"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "El Ratio de Sharpe es de **0.60**, un valor **aceptable** que sugiere que el rendimiento compensa razonablemente el riesgo asumido. Es una relación equilibrada para horizontes de 6-12 meses.",
+        "value": "0.60",
+        "status": "neutral"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **+29.5%** y a 12 meses es **+59.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+29.5% (6M)",
+        "status": "success"
+      },
+      {
+        "title": "Análisis de Renta Fija",
+        "icon": "fa-landmark",
+        "content": "Este instrumento de renta fija ofrece una **TNA del 59.0%** con vencimiento estimado en **2035-07-09**. Los bonos soberanos argentinos ofrecen rendimientos potencialmente elevados pero incorporan **riesgo país**. La cotización puede verse afectada por la percepción del mercado sobre la capacidad de repago del Estado argentino y las condiciones financieras globales.",
+        "value": "TNA: 59.0%",
+        "status": "success"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno Macroeconómico Argentino",
+        "icon": "fa-flag",
+        "content": "**Contexto Argentina (Jul 2026):** La economía argentina transita un proceso de estabilización macroeconómica. La reducción gradual de la brecha cambiaria (dólar oficial vs. CCL) ha generado mayor previsibilidad en el mercado de capitales local. Sin embargo, la inflación acumulada sigue siendo un factor determinante para evaluar rendimientos reales en pesos. Los instrumentos en ARS deben superar la inflación esperada para generar retorno real positivo. El riesgo país sigue siendo un indicador clave para bonos soberanos.",
+        "status": "neutral"
+      }
+    ],
+    "verdict": {
+      "action": "COMPRAR",
+      "icon": "fa-circle-check",
+      "color": "success",
+      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. "
+    }
+  }
+}
