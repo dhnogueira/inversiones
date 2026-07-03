@@ -4,22 +4,22 @@
     "ticker": "BTC-USD",
     "name": "BTC-USD",
     "category": "crypto",
-    "price": 61620.03125,
+    "price": 61559.0,
     "currency": "USD",
-    "score": 92.9,
+    "score": 92.8,
     "profile": "agresivo",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 44.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "44.2",
+        "content": "El RSI de 14 períodos se encuentra en 44.0, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "44.0",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (66145.80) se encuentra por debajo de la EMA de 200 días (76413.81), y el precio (61620.03) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (66143.41) se encuentra por debajo de la EMA de 200 días (76413.21), y el precio (61559.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -33,8 +33,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-3.0%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-3.0% (1M)",
+        "content": "El rendimiento mensual es de **-3.1%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-3.1% (1M)",
         "status": "danger"
       }
     ],
@@ -49,8 +49,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-6.5%** y a 12 meses es **-44.5%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-6.5% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-6.6%** y a 12 meses es **-44.6%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-6.6% (6M)",
         "status": "neutral"
       }
     ],
@@ -66,7 +66,7 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **92.9/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad."
+      "summary": "Este activo obtiene un score de **92.8/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad."
     }
   }
 }
