@@ -1,6 +1,9 @@
 name: Build and Deploy Static Site
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Ejecucción diaria a las 11:00 AM ART (14:00 UTC)
     - cron: '0 14 * * *'
@@ -19,7 +22,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-node-version: '3.11'
+          python-version: '3.11'
           cache: 'pip'
 
       - name: Install Dependencies
