@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "LLY",
+    "name": "LLY",
+    "category": "sp500",
+    "price": 1213.9100341796875,
+    "currency": "USD",
+    "score": 100.0,
+    "profile": "agresivo",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos se encuentra en 67.5, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "67.5",
+        "status": "neutral"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "La EMA de 50 días (1082.54) se encuentra por encima de la EMA de 200 días (980.55), y el precio actual (1213.91) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "value": "Fuerte Alcista",
+        "status": "success"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es **alta** (38.7%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "38.7%",
+        "status": "warning"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El activo registró un rendimiento del **+12.5%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (30.0%) refuerzan esta tendencia positiva.",
+        "value": "+12.5% (1M)",
+        "status": "success"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "El Ratio de Sharpe es de **0.59**, un valor **aceptable** que sugiere que el rendimiento compensa razonablemente el riesgo asumido. Es una relación equilibrada para horizontes de 6-12 meses.",
+        "value": "0.59",
+        "status": "neutral"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **+13.3%** y a 12 meses es **+0.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+13.3% (6M)",
+        "status": "success"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno de Mercados Internacionales (EE.UU.)",
+        "icon": "fa-globe",
+        "content": "**Contexto EE.UU. (Jul 2026):** La Reserva Federal mantiene una postura de política monetaria que equilibra el control inflacionario con el sostenimiento del empleo. Los mercados de renta variable estadounidenses han mostrado resiliencia, impulsados por el sector tecnológico y la inteligencia artificial. Los CEDEARs permiten al inversor argentino acceder a estas dinámicas con cobertura implícita en dólares (tipo de cambio CCL). El ratio P/E del S&P 500 se encuentra por encima de su promedio histórico, lo que sugiere valuaciones exigentes que podrían limitar el upside de corto plazo.",
+        "status": "neutral"
+      }
+    ],
+    "verdict": {
+      "action": "COMPRAR",
+      "icon": "fa-circle-check",
+      "color": "success",
+      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación."
+    }
+  }
+}

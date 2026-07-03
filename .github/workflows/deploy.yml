@@ -1,0 +1,39 @@
+name: Build and Deploy Static Site
+
+on:
+  schedule:
+    # Ejecucción diaria a las 11:00 AM ART (14:00 UTC)
+    - cron: '0 14 * * *'
+  workflow_dispatch: # Permite ejecución manual desde la interfaz de GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-node-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
+
+      - name: Run Static Build Compiler
+        run: |
+          python backend/build_static.py
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: frontend # La carpeta que contiene index.html y la api compilada
+          branch: gh-pages # Rama de GitHub Pages
+          clean: true      # Borra archivos obsoletos en la rama de despliegue

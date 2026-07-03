@@ -1,0 +1,72 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "LINK-USD",
+    "name": "LINK-USD",
+    "category": "crypto",
+    "price": 7.821000099182129,
+    "currency": "USD",
+    "score": 100.0,
+    "profile": "agresivo",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos está en 50.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "50.2",
+        "status": "success"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "La EMA de 50 días (8.20) se encuentra por debajo de la EMA de 200 días (10.16), y el precio (7.82) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "value": "Fuerte Bajista",
+        "status": "danger"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es **muy alta** (64.1%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "64.1%",
+        "status": "danger"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **-0.4%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-0.4% (1M)",
+        "status": "neutral"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "El Ratio de Sharpe es **negativo** (-0.94), lo que significa que el retorno del activo no compensa ni siquiera la tasa libre de riesgo. Técnicamente, el inversor destruye valor ajustado por riesgo.",
+        "value": "-0.94",
+        "status": "danger"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **-10.2%** y a 12 meses es **-56.3%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-10.2% (6M)",
+        "status": "danger"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno del Mercado Cripto",
+        "icon": "fa-bitcoin-sign",
+        "content": "**Contexto Criptomonedas (Jul 2026):** El mercado cripto continúa su desarrollo como clase de activo, con creciente adopción institucional. La regulación global avanza gradualmente, lo que introduce tanto oportunidades como riesgos regulatorios. Bitcoin mantiene su rol como reserva de valor digital y referencia del sector. La correlación de las criptomonedas con los mercados tradicionales varía según el ciclo: en momentos de risk-off tienden a caer junto con la renta variable, mientras que en ciclos expansivos pueden ofrecer rendimientos superiores. La alta volatilidad inherente las hace adecuadas únicamente para la porción especulativa del portafolio.",
+        "status": "neutral"
+      }
+    ],
+    "verdict": {
+      "action": "COMPRAR",
+      "icon": "fa-circle-check",
+      "color": "success",
+      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad."
+    }
+  }
+}

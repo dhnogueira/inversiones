@@ -1,0 +1,79 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "S31A5",
+    "name": "Letra de Tesoro S31A5 (Pesos)",
+    "category": "letras",
+    "price": 0.98,
+    "currency": "ARS",
+    "score": 71.5,
+    "profile": "agresivo",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos está en 50.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "50.0",
+        "status": "success"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "Este instrumento no dispone de suficientes datos históricos para calcular las medias móviles exponenciales de 50 y 200 días.",
+        "value": "Estable",
+        "status": "neutral"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es de **5.0%**, considerada **baja**. Esto indica un activo predecible y estable, ideal para perfiles conservadores. El riesgo de movimientos bruscos es bajo.",
+        "value": "5.0%",
+        "status": "success"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **+3.8%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (11.5%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+3.8% (1M)",
+        "status": "success"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "El Ratio de Sharpe es de **1.50**, lo que indica un **excelente** rendimiento ajustado por riesgo. Por cada unidad de volatilidad asumida, el inversor obtiene un retorno superior significativo por encima de la tasa libre de riesgo.",
+        "value": "1.50",
+        "status": "success"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **+22.9%** y a 12 meses es **+45.8%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+22.9% (6M)",
+        "status": "success"
+      },
+      {
+        "title": "Análisis de Renta Fija",
+        "icon": "fa-landmark",
+        "content": "Este instrumento de renta fija ofrece una **TNA del 45.8%** con vencimiento estimado en **2025-04-30**. Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad. El riesgo principal es el de inflación si la tasa ofrecida no compensa la suba de precios.",
+        "value": "TNA: 45.8%",
+        "status": "success"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno Macroeconómico Argentino",
+        "icon": "fa-flag",
+        "content": "**Contexto Argentina (Jul 2026):** La economía argentina transita un proceso de estabilización macroeconómica. La reducción gradual de la brecha cambiaria (dólar oficial vs. CCL) ha generado mayor previsibilidad en el mercado de capitales local. Sin embargo, la inflación acumulada sigue siendo un factor determinante para evaluar rendimientos reales en pesos. Los instrumentos en ARS deben superar la inflación esperada para generar retorno real positivo. El riesgo país sigue siendo un indicador clave para bonos soberanos.",
+        "status": "neutral"
+      }
+    ],
+    "verdict": {
+      "action": "CONSIDERAR",
+      "icon": "fa-circle-info",
+      "color": "neutral",
+      "summary": "Con un score de **71.5/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La baja volatilidad limita el potencial de rendimiento para un perfil agresivo."
+    }
+  }
+}
