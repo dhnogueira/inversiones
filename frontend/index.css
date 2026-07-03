@@ -970,3 +970,345 @@ body {
 .allocation-item:hover {
     background: rgba(255, 255, 255, 0.04) !important;
 }
+
+/* ============================================================
+   RESPONSIVE — TABLET  (max 900px)
+   ============================================================ */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 220px;
+        padding: 20px 16px;
+    }
+
+    .main-content {
+        padding: 24px 20px;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ranking-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .category-filters {
+        flex-wrap: wrap;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE  (max 640px)
+   ============================================================ */
+@media (max-width: 640px) {
+
+    /* ---- Layout: stack vertical, nav en la parte inferior ---- */
+    .app-container {
+        flex-direction: column;
+        min-height: 100dvh;
+    }
+
+    /* Sidebar becomes a bottom navigation bar */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 8px 4px;
+        border-right: none;
+        border-top: 1px solid var(--border-glow);
+        order: 2;
+        /* Below main content */
+        position: sticky;
+        bottom: 0;
+        z-index: 100;
+        background-color: rgba(11, 13, 19, 0.98);
+        backdrop-filter: blur(16px);
+    }
+
+    .logo,
+    .sidebar-footer {
+        display: none;
+        /* Hidden on mobile bottom nav */
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        flex-grow: unset;
+        width: 100%;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .nav-item {
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px 4px;
+        font-size: 10px;
+        border-radius: 8px;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        border-left: none !important;
+        border-bottom: 2px solid transparent;
+        text-align: center;
+        min-height: 56px;
+        /* Touch-friendly */
+    }
+
+    .nav-item i {
+        font-size: 18px;
+    }
+
+    .nav-item.active {
+        border-bottom-color: var(--color-moderado);
+        background-color: rgba(59, 130, 246, 0.06);
+    }
+
+    .nav-badge {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        font-size: 9px;
+        padding: 1px 5px;
+    }
+
+    .nav-item {
+        position: relative;
+        /* for badge positioning */
+    }
+
+    /* ---- Main content ---- */
+    .main-content {
+        flex-grow: 1;
+        padding: 16px 12px;
+        max-height: unset;
+        order: 1;
+        overflow-y: auto;
+        /* Reserve space for bottom nav */
+        padding-bottom: 8px;
+    }
+
+    /* ---- Header ---- */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .last-update {
+        font-size: 11px;
+    }
+
+    /* ---- Profile tabs ---- */
+    .profile-tabs {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .profile-tab {
+        padding: 10px 8px;
+        font-size: 13px;
+        gap: 6px;
+    }
+
+    /* ---- Metrics grid: 1 column ---- */
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .metric-card {
+        padding: 14px 16px;
+    }
+
+    .metric-value {
+        font-size: 22px;
+    }
+
+    /* ---- Dashboard grid: 1 column ---- */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+
+    .chart-container,
+    .allocation-list {
+        padding: 16px;
+    }
+
+    /* ---- Category filters: wrap ---- */
+    .ranking-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .category-filters {
+        flex-wrap: wrap;
+        gap: 6px;
+        width: 100%;
+    }
+
+    .category-filter {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    /* ---- Ranking / table panel ---- */
+    .ranking-panel {
+        padding: 16px 12px;
+    }
+
+    .panel-title {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    /* ---- Tables: horizontal scroll + smaller text ---- */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 8px;
+    }
+
+    .asset-table {
+        font-size: 12px;
+        min-width: 520px;
+        /* Forces horizontal scroll instead of wrapping */
+    }
+
+    .asset-table th,
+    .asset-table td {
+        padding: 10px 10px;
+        white-space: nowrap;
+    }
+
+    /* ---- Search bar ---- */
+    #asset-search {
+        font-size: 13px;
+        padding: 10px 10px 10px 38px;
+    }
+
+    /* ---- Portfolio header row ---- */
+    .portfolio-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .portfolio-header-row .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ---- Buttons ---- */
+    .btn {
+        min-height: 44px;
+        /* Touch-friendly */
+        font-size: 13px;
+    }
+
+    /* ---- Modals: near full-screen on mobile ---- */
+    .modal-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .modal-container {
+        max-width: 100%;
+        max-height: 92dvh;
+        border-radius: 20px 20px 0 0;
+        padding: 20px 16px;
+        /* Drag handle hint */
+        padding-top: 24px;
+    }
+
+    /* Drag handle visual */
+    .modal-container::before {
+        content: '';
+        display: block;
+        width: 36px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 2px;
+        margin: -12px auto 16px;
+    }
+
+    .modal-header {
+        margin-bottom: 14px;
+    }
+
+    .modal-title-group h2 {
+        font-size: 20px;
+    }
+
+    .modal-close-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    /* ---- Form grid: 1 column ---- */
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    /* ---- Alert cards ---- */
+    .alert-card {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .alert-card-action {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ---- Yield curve view ---- */
+    #yield-curve-chart {
+        min-height: 260px !important;
+    }
+
+    /* ---- Allocation items ---- */
+    .allocation-item {
+        padding: 10px 12px;
+    }
+
+    .alloc-weight {
+        font-size: 14px;
+    }
+
+    /* ---- Typography adjustments ---- */
+    h2 {
+        font-size: 18px;
+    }
+}
