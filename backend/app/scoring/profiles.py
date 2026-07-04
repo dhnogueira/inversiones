@@ -401,9 +401,28 @@ def get_recommendations_by_profile(market_data, profile, horizon=HORIZON_MEDIUM)
     top_10 = valid[:10]
 
     grouped = {}
+    CATEGORY_MIN = 5
+    CATEGORY_MAX = 10
     for cat in ["merval", "cedears", "sp500", "letras", "bonos", "crypto"]:
-        cat_assets = [a for a in scored_assets if a["category"] == cat and a["score"] > 0]
-        grouped[cat] = cat_assets[:5]
+        # Activos que pasaron los filtros de calidad (score > 0)
+        cat_valid = [a for a in scored_assets if a["category"] == cat and a["score"] > 0]
+        # Si no alcanza el mínimo, rellenar con los "menos malos" (score = 0 pero ordenados por retorno)
+        if len(cat_valid) < CATEGORY_MIN:
+            cat_fallback = [
+                a for a in scored_assets
+                if a["category"] == cat and a["score"] == 0.0
+            ]
+            # Ordenar fallback por retorno ARS estimado (mejor primero)
+            cat_fallback.sort(
+                key=lambda a: estimate_expected_return_ars(a, profile, horizon),
+                reverse=True
+            )
+            needed = CATEGORY_MIN - len(cat_valid)
+            # Marcar con flag para que la UI pueda mostrar una advertencia visual
+            for fb in cat_fallback[:needed]:
+                fb = {**fb, "fallback": True}
+                cat_valid.append(fb)
+        grouped[cat] = cat_valid[:CATEGORY_MAX]
 
     return {
         "profile": profile,

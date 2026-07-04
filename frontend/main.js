@@ -436,12 +436,18 @@ function renderTable() {
 
     assets.forEach(asset => {
         const row = document.createElement('tr');
+        const isFallback = asset.fallback === true;
+
+        if (isFallback) {
+            row.style.opacity = '0.72';
+        }
+
         let trendClass = 'trend-stable';
         let trendIcon = 'fa-minus';
-        if (asset.trend.includes('Alcista')) {
+        if (asset.trend && asset.trend.includes('Alcista')) {
             trendClass = 'trend-up';
             trendIcon = 'fa-arrow-trend-up';
-        } else if (asset.trend.includes('Bajista')) {
+        } else if (asset.trend && asset.trend.includes('Bajista')) {
             trendClass = 'trend-down';
             trendIcon = 'fa-arrow-trend-down';
         }
@@ -455,11 +461,18 @@ function renderTable() {
             ? `TNA: ${(asset.tna * 100).toFixed(1)}%`
             : `Rend 6M: ${(asset.ret_6m * 100).toFixed(1)}%`;
 
+        const scoreCell = isFallback
+            ? `<span class="font-bold" style="color: #f59e0b; font-size:12px;">
+                 <i class="fa-solid fa-triangle-exclamation" title="Alternativa disponible — condicional al mercado"></i>
+                 ${asset.score} / 100
+               </span>`
+            : `<span class="font-bold" style="color: var(--color-${state.activeProfile});">${asset.score} / 100</span>`;
+
         row.innerHTML = `
             <td><span class="asset-tag">${asset.ticker.replace('.BA', '')}</span></td>
             <td>
                 <div>
-                    <div>${asset.name}</div>
+                    <div>${asset.name}${isFallback ? ' <span style="font-size:10px;color:#f59e0b;font-weight:600;">· alternativa</span>' : ''}</div>
                     <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">${asset.category} • ${rateLabel}</span>
                 </div>
             </td>
@@ -467,8 +480,8 @@ function renderTable() {
             <td class="font-bold">${isBonoOrLetra ? asset.price.toLocaleString('es-AR', { minimumFractionDigits: 2 }) : asset.price.toFixed(2)}</td>
             <td>${(asset.volatility * 100).toFixed(1)}%</td>
             <td>${asset.sharpe ? asset.sharpe.toFixed(2) : 'N/A'}</td>
-            <td><span class="font-bold" style="color: var(--color-${state.activeProfile});">${asset.score} / 100</span></td>
-            <td><span class="trend-badge ${trendClass}"><i class="fa-solid ${trendIcon}"></i> ${asset.trend}</span></td>
+            <td>${scoreCell}</td>
+            <td><span class="trend-badge ${trendClass}"><i class="fa-solid ${trendIcon}"></i> ${asset.trend || 'N/A'}</span></td>
         `;
         row.addEventListener('click', () => openAssetModal(asset.ticker));
         tableBody.appendChild(row);
