@@ -1328,3 +1328,113 @@ body {
         gap: 12px;
     }
 }
+
+/* User Dropdown Styles */
+.user-dropdown {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: rgba(15, 20, 32, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glow);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    z-index: 100;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-dropdown.open {
+    display: flex;
+}
+
+.dropdown-item {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.dropdown-item:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-item.text-danger {
+    color: rgba(239, 68, 68, 0.85);
+}
+
+.dropdown-item.text-danger:hover {
+    color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.08);
+}
+
+.dropdown-divider {
+    border: 0;
+    border-top: 1px solid var(--border-glow);
+    margin: 6px 0;
+}
+
+.dropdown-arrow {
+    transition: transform 0.2s ease;
+}
+
+.user-menu-container.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* ===== PORTFOLIO REPORT STYLES ===== */
+.text-green {
+    color: #10b981 !important;
+}
+
+.text-red {
+    color: #ef4444 !important;
+}
+
+.flag-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 9999px;
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    white-space: nowrap;
+}
+
+.report-item-card {
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.report-item-card:hover {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    transform: translateY(-2px);
+}
+
+/* Layout responsivo para el panel del informe */
+@media (max-width: 900px) {
+    .portfolio-report-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Ajustes para distribución de categoría en móvil */
+@media (max-width: 768px) {
+    #portfolio-distribution-section {
+        grid-template-columns: 1fr !important;
+    }
+}
