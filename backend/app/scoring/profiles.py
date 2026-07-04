@@ -46,11 +46,44 @@ def estimate_expected_return_ars(asset, profile="moderado", horizon=HORIZON_MEDI
     factor = _PROFILE_RETURN_FACTOR.get(profile, 1.0)
 
     if category in ("letras", "bonos"):
-        ann_return = tna
+        # Calcular T (plazo al vencimiento en años)
+        maturity = asset.get("maturity")
+        maturity_years = 1.0  # default si no tiene fecha
+        if maturity:
+            try:
+                days = (datetime.strptime(maturity, "%Y-%m-%d") - datetime.now()).days
+                maturity_years = max(0.01, days / 365.25)
+            except:
+                pass
+
+        # Estimar Duración Modificada D*
+        if category == "letras":
+            modified_duration = maturity_years / (1.0 + tna) if tna > -1.0 else maturity_years
+        else:
+            modified_duration = max(0.5, min(6.0, maturity_years * 0.6))
+
+        # Estimar cambio de tasa/spread anual (dy) según perfil
+        # dy: Conservador (+1.5%), Moderado (-2.0%), Agresivo (-5.0%)
+        dy_map = {
+            "conservador": 0.015,
+            "moderado": -0.020,
+            "agresivo": -0.050
+        }
+        dy = dy_map.get(profile, -0.020)
+
+        # Ganancia/pérdida de capital anual aproximada: -D* * dy
+        capital_gain_annual = -modified_duration * dy
+
+        # Retorno anual consolidado: TNA + ganancia de capital anual
+        tna_total_annual = tna + capital_gain_annual
+
+        # Escalar conforme al horizonte
         if horizon == HORIZON_SHORT:
-            ann_return = tna * 0.5
+            ann_return = tna_total_annual * 0.5
         elif horizon == HORIZON_LONG:
-            ann_return = (1.0 + tna) ** 2 - 1.0
+            ann_return = (1.0 + tna_total_annual) ** 2 - 1.0
+        else:
+            ann_return = tna_total_annual
     else:
         if horizon == HORIZON_SHORT:
             base_ret = ret_6m if ret_6m != 0.0 else ret_12m * 0.5
