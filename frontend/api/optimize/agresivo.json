@@ -3,59 +3,68 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "MRK",
-        "name": "MRK",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
-        "ars_return_est": 126.8
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 201.4
       },
       {
-        "ticker": "COST",
-        "name": "COST",
+        "ticker": "GOOGL",
+        "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2242,
-        "weight_pct": 22.4,
-        "ars_return_est": 78.4
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 215.9
       },
       {
-        "ticker": "XOM",
-        "name": "XOM",
+        "ticker": "AAPL",
+        "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.151,
-        "weight_pct": 15.1,
-        "ars_return_est": 94.7
+        "weight": 0.1289,
+        "weight_pct": 12.9,
+        "ars_return_est": 120.1
       },
       {
-        "ticker": "UNH",
-        "name": "UNH",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1419,
-        "weight_pct": 14.2,
-        "ars_return_est": 146.3
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.0711,
+        "weight_pct": 7.1,
+        "ars_return_est": 138.4
       },
       {
-        "ticker": "ABBV",
-        "name": "ABBV",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.0829,
-        "weight_pct": 8.3,
-        "ars_return_est": 97.0
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 111.7
+      },
+      {
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 119.2
       }
     ],
-    "expected_return": 111.39,
-    "expected_volatility": 23.76,
-    "sharpe_ratio": 3.76,
+    "expected_return": 182.93,
+    "expected_volatility": 26.69,
+    "sharpe_ratio": 6.03,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 89.4
+    "spread_vs_inflation": 160.9
   }
 }

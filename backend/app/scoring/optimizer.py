@@ -87,8 +87,8 @@ def optimize_portfolio(assets, profile, horizon=HORIZON_MEDIUM, risk_free_rate=N
     # ---- Matriz de covarianza ----
     cov_matrix = build_covariance_matrix(assets, vols)
 
-    # ---- Restricciones de peso según perfil ----
-    bounds = get_weight_bounds(assets, profile)
+    # ---- Restricciones de peso según perfil y horizonte ----
+    bounds = get_weight_bounds(assets, profile, horizon)
 
     # Restricción suma de pesos = 1
     constraints = [{'type': 'eq', 'fun': lambda w: np.sum(w) - 1.0}]
@@ -229,58 +229,101 @@ def build_covariance_matrix(assets, vols):
     return cov
 
 
-def get_weight_bounds(assets, profile):
+def get_weight_bounds(assets, profile, horizon="medium"):
     """
-    Define los límites de peso por activo según el perfil de riesgo.
-    Ajustado para que los activos dolarizados (cedears, sp500) puedan tener
-    mayor participación en perfiles conservador y moderado, ya que son los que
-    mejor capturan la devaluación y suelen superar la inflación en ARS.
+    Define los límites de peso por activo según perfil Y horizonte temporal.
+    Basado en la SKILL de Optimización de Cartera con ajustes por horizonte.
     """
+
+    # Tabla de bounds: _BOUNDS[profile][horizon][category] = (min, max)
+    _BOUNDS = {
+        "conservador": {
+            "short": {
+                "letras":  (0.10, 0.50),  # Letras: core en corto plazo conservador
+                "bonos":   (0.05, 0.40),
+                "cedears": (0.0, 0.20),
+                "sp500":   (0.0, 0.15),
+                "merval":  (0.0, 0.0),
+                "crypto":  (0.0, 0.0),
+            },
+            "medium": {
+                "letras":  (0.0, 0.35),
+                "bonos":   (0.05, 0.40),
+                "cedears": (0.0, 0.30),
+                "sp500":   (0.0, 0.30),
+                "merval":  (0.0, 0.05),
+                "crypto":  (0.0, 0.0),
+            },
+            "long": {
+                "letras":  (0.0, 0.0),    # Sin letras en largo plazo
+                "bonos":   (0.0, 0.25),
+                "cedears": (0.05, 0.40),  # Cobertura cambiaria
+                "sp500":   (0.05, 0.45),  # Crecimiento defensivo dolarizado
+                "merval":  (0.0, 0.10),
+                "crypto":  (0.0, 0.0),
+            },
+        },
+        "moderado": {
+            "short": {
+                "letras":  (0.05, 0.35),
+                "bonos":   (0.0, 0.30),
+                "cedears": (0.0, 0.30),
+                "sp500":   (0.0, 0.25),
+                "merval":  (0.0, 0.15),
+                "crypto":  (0.0, 0.10),
+            },
+            "medium": {
+                "letras":  (0.0, 0.20),
+                "bonos":   (0.0, 0.25),
+                "cedears": (0.05, 0.35),
+                "sp500":   (0.05, 0.35),
+                "merval":  (0.0, 0.15),
+                "crypto":  (0.0, 0.10),
+            },
+            "long": {
+                "letras":  (0.0, 0.0),
+                "bonos":   (0.0, 0.20),
+                "cedears": (0.05, 0.35),
+                "sp500":   (0.10, 0.40),
+                "merval":  (0.0, 0.20),
+                "crypto":  (0.0, 0.15),
+            },
+        },
+        "agresivo": {
+            "short": {
+                "letras":  (0.0, 0.10),
+                "bonos":   (0.0, 0.10),
+                "cedears": (0.0, 0.30),
+                "sp500":   (0.0, 0.25),
+                "merval":  (0.05, 0.35),  # Merval momentum corto agresivo
+                "crypto":  (0.05, 0.35),  # Crypto momentum corto agresivo
+            },
+            "medium": {
+                "letras":  (0.0, 0.05),
+                "bonos":   (0.0, 0.15),
+                "cedears": (0.05, 0.35),
+                "sp500":   (0.05, 0.35),
+                "merval":  (0.0, 0.25),
+                "crypto":  (0.0, 0.20),
+            },
+            "long": {
+                "letras":  (0.0, 0.0),
+                "bonos":   (0.0, 0.10),
+                "cedears": (0.05, 0.30),
+                "sp500":   (0.10, 0.40),
+                "merval":  (0.0, 0.25),
+                "crypto":  (0.05, 0.30),
+            },
+        },
+    }
+
+    bounds_table = _BOUNDS.get(profile, _BOUNDS["moderado"]).get(horizon, _BOUNDS["moderado"]["medium"])
+
     bounds = []
     for asset in assets:
         cat = asset.get("category", "")
-
-        if profile == "conservador":
-            if cat == "letras":
-                bounds.append((0.0, 0.50))   # Letras: hasta 50% en conservador
-            elif cat == "bonos":
-                bounds.append((0.0, 0.35))
-            elif cat in ("cedears", "sp500"):
-                bounds.append((0.0, 0.30))   # Dolarizados: hasta 30%
-            elif cat == "merval":
-                bounds.append((0.0, 0.10))
-            elif cat == "crypto":
-                bounds.append((0.0, 0.0))   # Sin cripto en conservador
-            else:
-                bounds.append((0.0, 0.15))
-
-        elif profile == "moderado":
-            if cat == "letras":
-                bounds.append((0.0, 0.30))
-            elif cat == "bonos":
-                bounds.append((0.0, 0.30))
-            elif cat in ("cedears", "sp500"):
-                bounds.append((0.0, 0.35))   # Mayor exposición dolarizada
-            elif cat == "merval":
-                bounds.append((0.0, 0.20))
-            elif cat == "crypto":
-                bounds.append((0.0, 0.10))
-            else:
-                bounds.append((0.0, 0.20))
-
-        elif profile == "agresivo":
-            if cat == "letras":
-                bounds.append((0.0, 0.05))
-            elif cat == "bonos":
-                bounds.append((0.0, 0.15))
-            elif cat in ("cedears", "sp500", "merval"):
-                bounds.append((0.0, 0.40))
-            elif cat == "crypto":
-                bounds.append((0.0, 0.35))
-            else:
-                bounds.append((0.0, 0.30))
-        else:
-            bounds.append((0.0, 0.30))
+        lo, hi = bounds_table.get(cat, (0.0, 0.25))
+        bounds.append((lo, hi))
 
     return bounds
 

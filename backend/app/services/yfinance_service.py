@@ -68,10 +68,10 @@ def compute_asset_metrics(df, ticker, category):
     current_price = float(close.iloc[-1])
     
     # Calculate returns
-    ret_1m = float((close.iloc[-1] / close.iloc[-21] - 1) if len(close) >= 21 else 0)
-    ret_3m = float((close.iloc[-1] / close.iloc[-63] - 1) if len(close) >= 63 else 0)
-    ret_6m = float((close.iloc[-1] / close.iloc[-126] - 1) if len(close) >= 126 else 0)
-    ret_12m = float((close.iloc[-1] / close.iloc[-252] - 1) if len(close) >= 252 else 0)
+    ret_1m = float((close.iloc[-1] / close.iloc[-min(21, len(close))] - 1) if len(close) >= 21 else 0)
+    ret_3m = float((close.iloc[-1] / close.iloc[-min(63, len(close))] - 1) if len(close) >= 63 else 0)
+    ret_6m = float((close.iloc[-1] / close.iloc[-min(126, len(close))] - 1) if len(close) >= 126 else 0)
+    ret_12m = float((close.iloc[-1] / close.iloc[-min(252, len(close))] - 1) if len(close) >= 250 else 0)
     
     # Calculate Volatility (annualized, 252 trading days)
     daily_returns = close.pct_change().dropna()
@@ -106,7 +106,29 @@ def compute_asset_metrics(df, ticker, category):
     prices_vol = close.iloc[-lookback_vol:]
     volumes_vol = df['Volume'].iloc[-lookback_vol:] if 'Volume' in df.columns else np.ones(lookback_vol)
     volume_cluster = compute_volume_profile(prices_vol, volumes_vol)
-        
+
+    # ---- MÉTRICAS MULTI-HORIZONTE DE TIMING ----
+
+    # Aceleración de momentum: ret_1m - ret_3m
+    # Positivo = acelerando (bueno para corto plazo); Negativo = desacelerando
+    momentum_accel = float(ret_1m - ret_3m)
+
+    # Señal de cruce EMA50/EMA200 (normalizada)
+    # Positivo = Golden Cross zone (bullish medium-term); Negativo = Death Cross
+    ema_cross_signal = float((ema_50 - ema_200) / ema_200 if ema_200 != 0 else 0)
+
+    # Distancia porcentual al soporte (cercanía = oportunidad de compra en corto plazo)
+    dist_to_support_pct = float((current_price - support) / current_price if current_price > 0 else 0)
+
+    # Distancia porcentual a la resistencia (espacio de upside hasta próxima resistencia)
+    dist_to_resistance_pct = float((resistance - current_price) / current_price if current_price > 0 else 0)
+
+    # Ratio volatilidad corta (20d) vs larga (252d)
+    # < 1.0 = volatilidad bajando (estabilización, bueno para corto plazo)
+    # > 1.0 = volatilidad subiendo (riesgo creciente)
+    vol_20d = float(daily_returns.iloc[-20:].std() * np.sqrt(252) if len(daily_returns) >= 20 else volatility)
+    vol_short_vs_long = float(vol_20d / volatility if volatility > 0.001 else 1.0)
+
     return {
         "ticker": ticker,
         "name": ticker.replace(".BA", ""),
@@ -126,6 +148,11 @@ def compute_asset_metrics(df, ticker, category):
         "support": round(support, 2),
         "resistance": round(resistance, 2),
         "volume_cluster": round(volume_cluster, 2),
+        "momentum_accel": round(momentum_accel, 4),
+        "ema_cross_signal": round(ema_cross_signal, 4),
+        "dist_to_support_pct": round(dist_to_support_pct, 4),
+        "dist_to_resistance_pct": round(dist_to_resistance_pct, 4),
+        "vol_short_vs_long": round(vol_short_vs_long, 4),
         "timestamp": time.time()
     }
 
@@ -176,9 +203,9 @@ async def fetch_yfinance_market_data(force_refresh=False):
     # If expired or force_refresh, fetch new data
     all_tickers = SP500_TICKERS + CEDEAR_TICKERS + MERVAL_TICKERS + CRYPTO_TICKERS + BONO_TICKERS
     
-    # Download 1 year of historical daily data
+    # Download 2 years of historical daily data to guarantee enough trading days for 12m metrics (>252)
     print(f"Downloading data for {len(all_tickers)} tickers...")
-    data = yf.download(all_tickers, period="1y", interval="1d", group_by="ticker", progress=False)
+    data = yf.download(all_tickers, period="2y", interval="1d", group_by="ticker", progress=False)
     
     results = []
     

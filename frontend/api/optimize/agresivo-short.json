@@ -3,41 +3,95 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "UNH",
-        "name": "UNH",
+        "ticker": "PG",
+        "name": "PG",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
-        "ars_return_est": 65.4
+        "weight": 0.2533,
+        "weight_pct": 25.3,
+        "ars_return_est": 31.5
       },
       {
-        "ticker": "MRK",
-        "name": "MRK",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
-        "ars_return_est": 57.1
+        "ticker": "S30N6",
+        "name": "LECAP S30N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1013,
+        "weight_pct": 10.1,
+        "ars_return_est": 13.0
       },
       {
-        "ticker": "GOOGL",
-        "name": "GOOGL",
-        "category": "sp500",
+        "ticker": "T15E7",
+        "name": "BONCAP T15E7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1013,
+        "weight_pct": 10.1,
+        "ars_return_est": 12.5
+      },
+      {
+        "ticker": "S13N6",
+        "name": "LECAP S13N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1013,
+        "weight_pct": 10.1,
+        "ars_return_est": 12.3
+      },
+      {
+        "ticker": "S30O6",
+        "name": "LECAP S30O6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1013,
+        "weight_pct": 10.1,
+        "ars_return_est": 12.1
+      },
+      {
+        "ticker": "S30S6",
+        "name": "LECAP S30S6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1013,
+        "weight_pct": 10.1,
+        "ars_return_est": 11.8
+      },
+      {
+        "ticker": "S14G6",
+        "name": "LECAP S14G6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1013,
+        "weight_pct": 10.1,
+        "ars_return_est": 11.5
+      },
+      {
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.088,
+        "weight_pct": 8.8,
+        "ars_return_est": 24.5
+      },
+      {
+        "ticker": "SOL-USD",
+        "name": "SOL-USD",
+        "category": "crypto",
         "currency": "USD",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 43.0
+        "weight": 0.0507,
+        "weight_pct": 5.1,
+        "ars_return_est": 18.5
       }
     ],
-    "expected_return": 57.62,
-    "expected_volatility": 29.76,
-    "sharpe_ratio": 1.57,
+    "expected_return": 18.48,
+    "expected_volatility": 8.87,
+    "sharpe_ratio": 0.84,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 46.6
+    "spread_vs_inflation": 7.5
   }
 }

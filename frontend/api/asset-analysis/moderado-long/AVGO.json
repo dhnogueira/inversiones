@@ -6,7 +6,7 @@
     "category": "sp500",
     "price": 360.45001220703125,
     "currency": "USD",
-    "score": 100.0,
+    "score": 52.1,
     "profile": "moderado",
     "horizon": "long",
     "technical": [
@@ -20,16 +20,16 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (360.45) se mantiene por encima de la EMA de 200 días (359.78), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (391.84) aún no confirma un cruce definitivo.",
+        "content": "El precio (360.45) se mantiene por encima de la EMA de 200 días (354.23), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (391.83) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (46.5%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "46.5%",
-        "status": "warning"
+        "content": "La volatilidad anualizada es **muy alta** (54.5%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "54.5%",
+        "status": "danger"
       },
       {
         "title": "Momentum de Corto Plazo",
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.11** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
-        "value": "0.11",
-        "status": "warning"
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.56** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
+        "value": "0.56",
+        "status": "neutral"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+4.5%** y a 12 meses es **+0.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "content": "El rendimiento acumulado a 6 meses es **+4.5%** y a 12 meses es **+34.5%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
         "value": "+4.5% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **139.8%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+92.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 139.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **264.9%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+217.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 264.9%",
         "status": "success"
       }
     ],
@@ -78,21 +78,21 @@
       }
     ],
     "verdict": {
-      "action": "COMPRAR",
-      "icon": "fa-circle-check",
-      "color": "success",
-      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación.",
-      "take_profit": 722.71,
-      "stop_loss": 199.44,
-      "tp_pct": 100.5,
-      "sl_pct": 44.7
+      "action": "CAUTELA",
+      "icon": "fa-triangle-exclamation",
+      "color": "warning",
+      "summary": "El score de **52.1/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "take_profit": 785.08,
+      "stop_loss": 171.73,
+      "tp_pct": 117.8,
+      "sl_pct": 52.4
     },
     "support": 314.7,
     "resistance": 424.88,
     "volume_cluster": 321.13,
-    "take_profit": 722.71,
-    "stop_loss": 199.44,
-    "tp_pct": 100.5,
-    "sl_pct": 44.7
+    "take_profit": 785.08,
+    "stop_loss": 171.73,
+    "tp_pct": 117.8,
+    "sl_pct": 52.4
   }
 }
