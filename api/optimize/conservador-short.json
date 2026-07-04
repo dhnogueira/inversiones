@@ -3,6 +3,24 @@
   "optimization": {
     "weights": [
       {
+        "ticker": "S30N6",
+        "name": "LECAP S30N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 13.0
+      },
+      {
+        "ticker": "PG",
+        "name": "PG",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 28.0
+      },
+      {
         "ticker": "S14G6",
         "name": "LECAP S14G6 (Pesos)",
         "category": "letras",
@@ -48,15 +66,6 @@
         "ars_return_est": 12.3
       },
       {
-        "ticker": "S30N6",
-        "name": "LECAP S30N6 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 13.0
-      },
-      {
         "ticker": "T15E7",
         "name": "BONCAP T15E7 (Pesos)",
         "category": "letras",
@@ -73,34 +82,16 @@
         "weight": 0.1,
         "weight_pct": 10.0,
         "ars_return_est": 10.6
-      },
-      {
-        "ticker": "T31Y7",
-        "name": "BONCAP T31Y7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 9.3
-      },
-      {
-        "ticker": "T30J7",
-        "name": "BONCAP T30J7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 9.7
       }
     ],
-    "expected_return": 11.41,
-    "expected_volatility": 4.27,
-    "sharpe_ratio": 0.1,
+    "expected_return": 14.36,
+    "expected_volatility": 4.39,
+    "sharpe_ratio": 0.77,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 0.4
+    "spread_vs_inflation": 3.4
   }
 }

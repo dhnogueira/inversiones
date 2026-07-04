@@ -3,59 +3,104 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "AL30D",
-        "name": "Bono Soberano AL30D (Dólares)",
-        "category": "bonos",
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "category": "sp500",
         "currency": "USD",
-        "weight": 0.2013,
-        "weight_pct": 20.1,
-        "ars_return_est": 135.2
+        "weight": 0.3558,
+        "weight_pct": 35.6,
+        "ars_return_est": 500.0
       },
       {
-        "ticker": "GD30D",
-        "name": "Bono Soberano GD30D (Dólares)",
-        "category": "bonos",
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
         "currency": "USD",
-        "weight": 0.2013,
-        "weight_pct": 20.1,
-        "ars_return_est": 130.9
+        "weight": 0.1442,
+        "weight_pct": 14.4,
+        "ars_return_est": 432.5
       },
       {
-        "ticker": "AL35",
-        "name": "Bono Soberano AL35 (Pesos)",
-        "category": "bonos",
-        "currency": "ARS",
-        "weight": 0.2013,
-        "weight_pct": 20.1,
-        "ars_return_est": 30.0
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 329.0
       },
       {
-        "ticker": "AL29",
-        "name": "Bono Soberano AL29 (Pesos)",
-        "category": "bonos",
-        "currency": "ARS",
-        "weight": 0.198,
-        "weight_pct": 19.8,
-        "ars_return_est": 27.7
+        "ticker": "ABBV",
+        "name": "ABBV",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 302.7
       },
       {
-        "ticker": "GD35",
-        "name": "Bono Soberano GD35 (Pesos)",
-        "category": "bonos",
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "category": "cedears",
         "currency": "ARS",
-        "weight": 0.198,
-        "weight_pct": 19.8,
-        "ars_return_est": 27.7
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 250.0
+      },
+      {
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 250.0
+      },
+      {
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 250.0
+      },
+      {
+        "ticker": "KO.BA",
+        "name": "KO",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 140.6
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 171.4
+      },
+      {
+        "ticker": "AMZN.BA",
+        "name": "AMZN",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 111.5
       }
     ],
-    "expected_return": 70.56,
-    "expected_volatility": 17.09,
-    "sharpe_ratio": 1.38,
+    "expected_return": 362.11,
+    "expected_volatility": 24.54,
+    "sharpe_ratio": 12.84,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 23.6
+    "spread_vs_inflation": 315.1
   }
 }

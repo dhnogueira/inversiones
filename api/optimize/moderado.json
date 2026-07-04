@@ -3,59 +3,68 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "AL30D",
-        "name": "Bono Soberano AL30D (Dólares)",
-        "category": "bonos",
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "category": "sp500",
         "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0,
-        "ars_return_est": 53.4
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 186.9
       },
       {
-        "ticker": "GD30D",
-        "name": "Bono Soberano GD30D (Dólares)",
-        "category": "bonos",
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.2939,
+        "weight_pct": 29.4,
+        "ars_return_est": 167.8
+      },
+      {
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
         "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0,
-        "ars_return_est": 51.9
+        "weight": 0.2061,
+        "weight_pct": 20.6,
+        "ars_return_est": 130.8
       },
       {
-        "ticker": "S30N6",
-        "name": "LECAP S30N6 (Pesos)",
-        "category": "letras",
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "category": "cedears",
         "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 25.9
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 93.1
       },
       {
-        "ticker": "T15E7",
-        "name": "BONCAP T15E7 (Pesos)",
-        "category": "letras",
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "category": "cedears",
         "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 25.0
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 99.3
       },
       {
-        "ticker": "S13N6",
-        "name": "LECAP S13N6 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 24.7
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 107.1
       }
     ],
-    "expected_return": 38.98,
-    "expected_volatility": 9.02,
-    "sharpe_ratio": 1.88,
+    "expected_return": 156.67,
+    "expected_volatility": 26.0,
+    "sharpe_ratio": 5.18,
     "profile": "moderado",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 17.0
+    "spread_vs_inflation": 134.7
   }
 }

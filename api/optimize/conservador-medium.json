@@ -3,12 +3,21 @@
   "optimization": {
     "weights": [
       {
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 157.9
+      },
+      {
         "ticker": "AL30D",
         "name": "Bono Soberano AL30D (Dólares)",
         "category": "bonos",
         "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
+        "weight": 0.2562,
+        "weight_pct": 25.6,
         "ars_return_est": 42.7
       },
       {
@@ -16,55 +25,37 @@
         "name": "Bono Soberano GD30D (Dólares)",
         "category": "bonos",
         "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
+        "weight": 0.2104,
+        "weight_pct": 21.0,
         "ars_return_est": 41.6
       },
       {
-        "ticker": "AL29",
-        "name": "Bono Soberano AL29 (Pesos)",
-        "category": "bonos",
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "category": "cedears",
         "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 13.0
+        "weight": 0.1519,
+        "weight_pct": 15.2,
+        "ars_return_est": 134.3
       },
       {
-        "ticker": "AL35",
-        "name": "Bono Soberano AL35 (Pesos)",
-        "category": "bonos",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 14.0
-      },
-      {
-        "ticker": "GD35",
-        "name": "Bono Soberano GD35 (Pesos)",
-        "category": "bonos",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 13.0
-      },
-      {
-        "ticker": "AL30",
-        "name": "Bono Soberano AL30 (Pesos)",
-        "category": "bonos",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 12.0
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0815,
+        "weight_pct": 8.2,
+        "ars_return_est": 113.0
       }
     ],
-    "expected_return": 36.3,
-    "expected_volatility": 15.27,
-    "sharpe_ratio": 0.94,
+    "expected_return": 96.66,
+    "expected_volatility": 15.19,
+    "sharpe_ratio": 4.91,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 14.3
+    "spread_vs_inflation": 74.7
   }
 }
