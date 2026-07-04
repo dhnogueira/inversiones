@@ -252,7 +252,33 @@ async function fetchRecommendationsAndOptimize(profile) {
 
 // Render dynamic optimization metrics & donut
 function renderOptimalDashboard(optimization) {
-    document.getElementById('metric-return').innerText = `${optimization.expected_return.toFixed(1)}%`;
+    const expectedReturn = optimization.expected_return;
+    const inflationRef = optimization.inflation_reference || 22.0;
+    const beatsInflation = optimization.beats_inflation !== undefined ? optimization.beats_inflation : expectedReturn > inflationRef;
+    const spread = optimization.spread_vs_inflation !== undefined ? optimization.spread_vs_inflation : (expectedReturn - inflationRef);
+
+    // Retorno óptimo con contexto inflacionario
+    const returnEl = document.getElementById('metric-return');
+    returnEl.innerText = `${expectedReturn.toFixed(1)}%`;
+    returnEl.style.color = beatsInflation ? 'var(--color-conservador)' : '#ef4444';
+
+    // Agregar indicador de inflación debajo de la métrica de retorno
+    const metricReturnCard = returnEl.closest('.metric-card') || returnEl.parentElement.parentElement;
+    let infBadge = metricReturnCard.querySelector('.inflation-badge');
+    if (!infBadge) {
+        infBadge = document.createElement('div');
+        infBadge.className = 'inflation-badge';
+        infBadge.style.cssText = 'font-size: 11px; margin-top: 4px; font-weight: 600;';
+        returnEl.parentElement.appendChild(infBadge);
+    }
+    if (beatsInflation) {
+        infBadge.style.color = 'var(--color-conservador)';
+        infBadge.innerHTML = `<i class="fa-solid fa-arrow-up"></i> +${spread.toFixed(1)}% sobre inflación (${inflationRef.toFixed(0)}%)`;
+    } else {
+        infBadge.style.color = '#ef4444';
+        infBadge.innerHTML = `<i class="fa-solid fa-arrow-down"></i> ${spread.toFixed(1)}% bajo inflación (${inflationRef.toFixed(0)}%)`;
+    }
+
     document.getElementById('metric-volatility').innerText = `${optimization.expected_volatility.toFixed(1)}%`;
 
     const sharpe = optimization.sharpe_ratio;
@@ -272,7 +298,7 @@ function renderOptimalDashboard(optimization) {
             labelText = '△ Bajo · el premio por volatilidad es marginal';
             labelColor = '#f59e0b';
         } else {
-            labelText = '✕ Negativo · no cubre la tasa libre de riesgo';
+            labelText = '✕ Negativo · no supera la inflación de referencia';
             labelColor = '#ef4444';
         }
         sharpeLabel.innerText = labelText;
@@ -280,7 +306,7 @@ function renderOptimalDashboard(optimization) {
     }
 
     const valueEl = document.getElementById('metric-return');
-    valueEl.style.color = `var(--color-${optimization.profile})`;
+    if (optimization.profile) valueEl.style.color = beatsInflation ? 'var(--color-conservador)' : '#ef4444';
 
     const listContainer = document.getElementById('allocation-items');
     listContainer.innerHTML = '';

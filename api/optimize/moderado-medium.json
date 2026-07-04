@@ -8,7 +8,8 @@
         "category": "letras",
         "currency": "ARS",
         "weight": 0.3,
-        "weight_pct": 30.0
+        "weight_pct": 30.0,
+        "ars_return_est": 25.9
       },
       {
         "ticker": "AL30D",
@@ -16,7 +17,8 @@
         "category": "bonos",
         "currency": "USD",
         "weight": 0.3,
-        "weight_pct": 30.0
+        "weight_pct": 30.0,
+        "ars_return_est": 53.4
       },
       {
         "ticker": "GD30D",
@@ -24,7 +26,8 @@
         "category": "bonos",
         "currency": "USD",
         "weight": 0.3,
-        "weight_pct": 30.0
+        "weight_pct": 30.0,
+        "ars_return_est": 51.9
       },
       {
         "ticker": "T15E7",
@@ -32,13 +35,18 @@
         "category": "letras",
         "currency": "ARS",
         "weight": 0.1,
-        "weight_pct": 10.0
+        "weight_pct": 10.0,
+        "ars_return_est": 25.0
       }
     ],
-    "expected_return": 14.77,
+    "expected_return": 41.86,
     "expected_volatility": 10.15,
-    "sharpe_ratio": -2.49,
+    "sharpe_ratio": 1.96,
     "profile": "moderado",
-    "risk_free_rate": 40.0
+    "horizon": "medium",
+    "risk_free_rate": 22.0,
+    "inflation_reference": 22.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 19.9
   }
 }
