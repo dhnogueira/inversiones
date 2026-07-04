@@ -7,8 +7,8 @@
         "name": "Bono Soberano AL30D (Dólares)",
         "category": "bonos",
         "currency": "USD",
-        "weight": 0.2069,
-        "weight_pct": 20.7,
+        "weight": 0.15,
+        "weight_pct": 15.0,
         "ars_return_est": 64.0
       },
       {
@@ -16,17 +16,44 @@
         "name": "Bono Soberano GD30D (Dólares)",
         "category": "bonos",
         "currency": "USD",
-        "weight": 0.2014,
-        "weight_pct": 20.1,
+        "weight": 0.15,
+        "weight_pct": 15.0,
         "ars_return_est": 62.3
+      },
+      {
+        "ticker": "AL29",
+        "name": "Bono Soberano AL29 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 13.0
+      },
+      {
+        "ticker": "AL35",
+        "name": "Bono Soberano AL35 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 14.0
+      },
+      {
+        "ticker": "GD35",
+        "name": "Bono Soberano GD35 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 13.0
       },
       {
         "ticker": "S30N6",
         "name": "LECAP S30N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0837,
-        "weight_pct": 8.4,
+        "weight": 0.05,
+        "weight_pct": 5.0,
         "ars_return_est": 25.9
       },
       {
@@ -34,8 +61,8 @@
         "name": "BONCAP T15E7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0809,
-        "weight_pct": 8.1,
+        "weight": 0.05,
+        "weight_pct": 5.0,
         "ars_return_est": 25.0
       },
       {
@@ -43,8 +70,8 @@
         "name": "LECAP S13N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0797,
-        "weight_pct": 8.0,
+        "weight": 0.05,
+        "weight_pct": 5.0,
         "ars_return_est": 24.7
       },
       {
@@ -52,55 +79,28 @@
         "name": "LECAP S30O6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0783,
-        "weight_pct": 7.8,
+        "weight": 0.05,
+        "weight_pct": 5.0,
         "ars_return_est": 24.2
       },
       {
-        "ticker": "S30S6",
-        "name": "LECAP S30S6 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.0764,
-        "weight_pct": 7.6,
-        "ars_return_est": 23.6
-      },
-      {
-        "ticker": "S14G6",
-        "name": "LECAP S14G6 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.0743,
-        "weight_pct": 7.4,
-        "ars_return_est": 23.0
-      },
-      {
-        "ticker": "S31G6",
-        "name": "LECAP S31G6 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.0734,
-        "weight_pct": 7.3,
-        "ars_return_est": 22.7
-      },
-      {
-        "ticker": "AL35",
-        "name": "Bono Soberano AL35 (Pesos)",
+        "ticker": "AL30",
+        "name": "Bono Soberano AL30 (Pesos)",
         "category": "bonos",
         "currency": "ARS",
-        "weight": 0.0452,
-        "weight_pct": 4.5,
-        "ars_return_est": 14.0
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 12.0
       }
     ],
-    "expected_return": 39.66,
-    "expected_volatility": 8.63,
-    "sharpe_ratio": 2.05,
+    "expected_return": 30.55,
+    "expected_volatility": 14.37,
+    "sharpe_ratio": 0.59,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 17.7
+    "spread_vs_inflation": 8.5
   }
 }

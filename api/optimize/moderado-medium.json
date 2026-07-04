@@ -7,8 +7,8 @@
         "name": "Bono Soberano AL30D (Dólares)",
         "category": "bonos",
         "currency": "USD",
-        "weight": 0.3,
-        "weight_pct": 30.0,
+        "weight": 0.25,
+        "weight_pct": 25.0,
         "ars_return_est": 53.4
       },
       {
@@ -16,8 +16,8 @@
         "name": "Bono Soberano GD30D (Dólares)",
         "category": "bonos",
         "currency": "USD",
-        "weight": 0.3,
-        "weight_pct": 30.0,
+        "weight": 0.25,
+        "weight_pct": 25.0,
         "ars_return_est": 51.9
       },
       {
@@ -25,8 +25,8 @@
         "name": "LECAP S30N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.3,
-        "weight_pct": 30.0,
+        "weight": 0.2,
+        "weight_pct": 20.0,
         "ars_return_est": 25.9
       },
       {
@@ -34,19 +34,28 @@
         "name": "BONCAP T15E7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": 25.0
+      },
+      {
+        "ticker": "S13N6",
+        "name": "LECAP S13N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 25.0
+        "ars_return_est": 24.7
       }
     ],
-    "expected_return": 41.86,
-    "expected_volatility": 10.15,
-    "sharpe_ratio": 1.96,
+    "expected_return": 38.98,
+    "expected_volatility": 9.02,
+    "sharpe_ratio": 1.88,
     "profile": "moderado",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 19.9
+    "spread_vs_inflation": 17.0
   }
 }

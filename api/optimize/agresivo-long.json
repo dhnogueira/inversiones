@@ -7,8 +7,8 @@
         "name": "Bono Soberano AL30D (Dólares)",
         "category": "bonos",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
+        "weight": 0.1,
+        "weight_pct": 10.0,
         "ars_return_est": 162.2
       },
       {
@@ -16,73 +16,91 @@
         "name": "Bono Soberano GD30D (Dólares)",
         "category": "bonos",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
+        "weight": 0.1,
+        "weight_pct": 10.0,
         "ars_return_est": 157.0
-      },
-      {
-        "ticker": "AL29",
-        "name": "Bono Soberano AL29 (Pesos)",
-        "category": "bonos",
-        "currency": "ARS",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 27.7
       },
       {
         "ticker": "AL35",
         "name": "Bono Soberano AL35 (Pesos)",
         "category": "bonos",
         "currency": "ARS",
-        "weight": 0.15,
-        "weight_pct": 15.0,
+        "weight": 0.1,
+        "weight_pct": 10.0,
         "ars_return_est": 30.0
-      },
-      {
-        "ticker": "GD35",
-        "name": "Bono Soberano GD35 (Pesos)",
-        "category": "bonos",
-        "currency": "ARS",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 27.7
       },
       {
         "ticker": "AL30",
         "name": "Bono Soberano AL30 (Pesos)",
         "category": "bonos",
         "currency": "ARS",
-        "weight": 0.0833,
-        "weight_pct": 8.3,
+        "weight": 0.1,
+        "weight_pct": 10.0,
         "ars_return_est": 25.4
+      },
+      {
+        "ticker": "AL29",
+        "name": "Bono Soberano AL29 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 27.7
       },
       {
         "ticker": "GD29",
         "name": "Bono Soberano GD29 (Pesos)",
         "category": "bonos",
         "currency": "ARS",
-        "weight": 0.0833,
-        "weight_pct": 8.3,
+        "weight": 0.1,
+        "weight_pct": 10.0,
         "ars_return_est": 25.4
+      },
+      {
+        "ticker": "GD35",
+        "name": "Bono Soberano GD35 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 27.7
       },
       {
         "ticker": "AE38",
         "name": "Bono Soberano AE38 (Pesos)",
         "category": "bonos",
         "currency": "ARS",
-        "weight": 0.0833,
-        "weight_pct": 8.3,
+        "weight": 0.1,
+        "weight_pct": 10.0,
         "ars_return_est": 25.4
+      },
+      {
+        "ticker": "GD30",
+        "name": "Bono Soberano GD30 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 23.2
+      },
+      {
+        "ticker": "GD38",
+        "name": "Bono Soberano GD38 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 23.2
       }
     ],
-    "expected_return": 67.05,
-    "expected_volatility": 17.38,
-    "sharpe_ratio": 1.15,
+    "expected_return": 52.73,
+    "expected_volatility": 17.78,
+    "sharpe_ratio": 0.32,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 20.1
+    "spread_vs_inflation": 5.7
   }
 }
