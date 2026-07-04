@@ -99,19 +99,23 @@ async def _get_all_assets():
 
 # ===== RECOMMENDATIONS =====
 @app.get("/api/recommendations")
-async def get_recommendations(profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$")):
+async def get_recommendations(
+    profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$"),
+    horizon: str = Query("medium", regex="^(short|medium|long)$")
+):
     all_assets = await _get_all_assets()
-    results = get_recommendations_by_profile(all_assets, profile)
+    results = get_recommendations_by_profile(all_assets, profile, horizon)
     return {"status": "success", "updating": is_updating, "results": results}
 
 # ===== ASSET ANALYSIS (Modal) =====
 @app.get("/api/asset-analysis")
 async def get_asset_analysis(
     ticker: str = Query(...),
-    profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$")
+    profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$"),
+    horizon: str = Query("medium", regex="^(short|medium|long)$")
 ):
     all_assets = await _get_all_assets()
-    scored = get_recommendations_by_profile(all_assets, profile)
+    scored = get_recommendations_by_profile(all_assets, profile, horizon)
     target = None
     
     for a in scored.get("top_10", []):
@@ -127,7 +131,7 @@ async def get_asset_analysis(
         from app.scoring.profiles import score_asset_for_profile
         for a in all_assets:
             if a["ticker"] == ticker:
-                s = score_asset_for_profile(a, profile)
+                s = score_asset_for_profile(a, profile, horizon)
                 target = {**a, "score": round(s, 1)}; break
     
     if not target:
@@ -138,11 +142,14 @@ async def get_asset_analysis(
 
 # ===== PORTFOLIO OPTIMIZER (Markowitz) =====
 @app.get("/api/optimize")
-async def get_optimal_portfolio(profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$")):
+async def get_optimal_portfolio(
+    profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$"),
+    horizon: str = Query("medium", regex="^(short|medium|long)$")
+):
     all_assets = await _get_all_assets()
-    scored = get_recommendations_by_profile(all_assets, profile)
+    scored = get_recommendations_by_profile(all_assets, profile, horizon)
     top_assets = scored["top_10"]
-    result = optimize_portfolio(top_assets, profile)
+    result = optimize_portfolio(top_assets, profile, horizon)
     return {"status": "success", "optimization": result}
 
 # ===== YIELD CURVE (Renta Fija) =====
