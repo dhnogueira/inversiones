@@ -2,7 +2,8 @@ import asyncio
 import os
 import threading
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, BackgroundTasks, Query, Body
+from typing import Optional, Dict
+from fastapi import FastAPI, BackgroundTasks, Query, Body, Depends
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -17,6 +18,7 @@ from app.services.portfolio_service import (
 from app.services.watchlist_service import (
     get_watchlist, add_to_watchlist, remove_from_watchlist, check_alerts
 )
+from app.services.auth_service import get_current_user
 
 # Estado de carga de datos iniciales
 is_updating = False
@@ -184,45 +186,47 @@ async def get_yield_curve():
 
 # ===== PORTFOLIO (Mi Cartera) =====
 @app.get("/api/portfolio")
-async def get_portfolio():
-    positions = get_all_positions()
+async def get_portfolio(user: Optional[Dict] = Depends(get_current_user)):
+    positions = await get_all_positions(user)
     all_assets = await _get_all_assets()
     price_map = {a["ticker"]: a["price"] for a in all_assets}
     result = calculate_portfolio_pnl(positions, price_map)
     return {"status": "success", **result}
 
 @app.post("/api/portfolio")
-async def post_portfolio(data: dict = Body(...)):
-    pos = add_position(
+async def post_portfolio(data: dict = Body(...), user: Optional[Dict] = Depends(get_current_user)):
+    pos = await add_position(
         data["ticker"], data["name"], data["category"],
-        data["currency"], data["entry_price"], data["quantity"]
+        data["currency"], data["entry_price"], data["quantity"],
+        user=user
     )
     return {"status": "success", "position": pos}
 
 @app.delete("/api/portfolio/{position_id}")
-async def delete_portfolio(position_id: str):
-    remove_position(position_id)
+async def delete_portfolio(position_id: str, user: Optional[Dict] = Depends(get_current_user)):
+    await remove_position(position_id, user=user)
     return {"status": "success"}
 
 # ===== WATCHLIST & ALERTS =====
 @app.get("/api/watchlist")
-async def get_watchlist_endpoint():
-    items = get_watchlist()
+async def get_watchlist_endpoint(user: Optional[Dict] = Depends(get_current_user)):
+    items = await get_watchlist(user)
     all_assets = await _get_all_assets()
     alerts = check_alerts(items, all_assets)
     return {"status": "success", "watchlist": items, "alerts": alerts}
 
 @app.post("/api/watchlist")
-async def post_watchlist(data: dict = Body(...)):
-    item = add_to_watchlist(
+async def post_watchlist(data: dict = Body(...), user: Optional[Dict] = Depends(get_current_user)):
+    item = await add_to_watchlist(
         data["ticker"], data["name"], data["category"],
-        data.get("alert_rules", {})
+        data.get("alert_rules", {}),
+        user=user
     )
     return {"status": "success", "item": item}
 
 @app.delete("/api/watchlist/{ticker}")
-async def delete_watchlist(ticker: str):
-    remove_from_watchlist(ticker)
+async def delete_watchlist(ticker: str, user: Optional[Dict] = Depends(get_current_user)):
+    await remove_from_watchlist(ticker, user=user)
     return {"status": "success"}
 
 # ===== REFRESH =====

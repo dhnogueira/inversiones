@@ -7,7 +7,8 @@ import os
 import json
 import time
 import uuid
-from app.config import CACHE_DIR
+import httpx
+from app.config import CACHE_DIR, SUPABASE_URL, SUPABASE_ANON_KEY
 
 PORTFOLIO_FILE = os.path.join(CACHE_DIR, "portfolio.json")
 
@@ -27,13 +28,86 @@ def _save_portfolio(data):
         json.dump(data, f, indent=2)
 
 
-def get_all_positions():
-    """Retorna todas las posiciones de la cartera simulada."""
+async def get_all_positions(user: dict = None):
+    """Retorna todas las posiciones de la cartera simulada, o de Supabase si el usuario está autenticado."""
+    if user and SUPABASE_URL and SUPABASE_ANON_KEY:
+        # Cargar desde Supabase
+        base_url = SUPABASE_URL.rstrip("/").replace("/rest/v1", "")
+        url = f"{base_url}/rest/v1/portfolios?select=*"
+        headers = {
+            "apikey": SUPABASE_ANON_KEY,
+            "Authorization": f"Bearer {user['token']}",
+            "Content-Type": "application/json"
+        }
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.get(url, headers=headers)
+                if response.status_code == 200:
+                    positions = response.json()
+                    mapped = []
+                    for p in positions:
+                        mapped.append({
+                            "id": p["id"],
+                            "ticker": p["ticker"],
+                            "name": p["name"],
+                            "category": p["category"],
+                            "currency": p["currency"],
+                            "entry_price": float(p["entry_price"]),
+                            "quantity": float(p["quantity"]),
+                            "entry_date": p["entry_date"]
+                        })
+                    return mapped
+                else:
+                    print(f"Error querying Supabase portfolios: {response.text}")
+        except Exception as e:
+            print(f"Exception querying Supabase: {e}")
+
+    # Fallback local
     return _load_portfolio().get("positions", [])
 
 
-def add_position(ticker, name, category, currency, entry_price, quantity):
-    """Agrega una nueva posición simulada a la cartera."""
+async def add_position(ticker, name, category, currency, entry_price, quantity, user: dict = None):
+    """Agrega una nueva posición simulada a la cartera (Local o Supabase)."""
+    if user and SUPABASE_URL and SUPABASE_ANON_KEY:
+        base_url = SUPABASE_URL.rstrip("/").replace("/rest/v1", "")
+        url = f"{base_url}/rest/v1/portfolios"
+        headers = {
+            "apikey": SUPABASE_ANON_KEY,
+            "Authorization": f"Bearer {user['token']}",
+            "Content-Type": "application/json",
+            "Prefer": "return=representation"
+        }
+        payload = {
+            "user_id": user["id"],
+            "ticker": ticker,
+            "name": name,
+            "category": category,
+            "currency": currency,
+            "entry_price": float(entry_price),
+            "quantity": float(quantity)
+        }
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.post(url, headers=headers, json=payload)
+                if response.status_code == 201:
+                    data = response.json()
+                    if data:
+                        p = data[0]
+                        return {
+                            "id": p["id"],
+                            "ticker": p["ticker"],
+                            "name": p["name"],
+                            "category": p["category"],
+                            "currency": p["currency"],
+                            "entry_price": float(p["entry_price"]),
+                            "quantity": float(p["quantity"]),
+                            "entry_date": p["entry_date"]
+                        }
+                print(f"Error saving to Supabase: {response.text}")
+        except Exception as e:
+            print(f"Exception saving to Supabase: {e}")
+
+    # Fallback local
     portfolio = _load_portfolio()
     position = {
         "id": str(uuid.uuid4())[:8],
@@ -51,8 +125,26 @@ def add_position(ticker, name, category, currency, entry_price, quantity):
     return position
 
 
-def remove_position(position_id):
-    """Elimina una posición por su ID."""
+async def remove_position(position_id, user: dict = None):
+    """Elimina una posición por su ID (Local o Supabase)."""
+    if user and SUPABASE_URL and SUPABASE_ANON_KEY:
+        base_url = SUPABASE_URL.rstrip("/").replace("/rest/v1", "")
+        url = f"{base_url}/rest/v1/portfolios?id=eq.{position_id}"
+        headers = {
+            "apikey": SUPABASE_ANON_KEY,
+            "Authorization": f"Bearer {user['token']}",
+            "Content-Type": "application/json"
+        }
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.delete(url, headers=headers)
+                if response.status_code in (200, 204):
+                    return True
+                print(f"Error deleting from Supabase: {response.text}")
+        except Exception as e:
+            print(f"Exception deleting from Supabase: {e}")
+
+    # Fallback local
     portfolio = _load_portfolio()
     portfolio["positions"] = [p for p in portfolio["positions"] if p["id"] != position_id]
     _save_portfolio(portfolio)

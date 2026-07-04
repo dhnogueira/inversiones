@@ -1,3 +1,10 @@
+import CONFIG from './config.js';
+
+// Init Supabase Client
+const supabase = window.supabase ? window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY) : null;
+let session = null;
+let user = null;
+
 // State Management
 let state = {
     activeProfile: 'moderado',
@@ -10,6 +17,7 @@ let state = {
     staticMode: false,         // Si es true, usa JSONs estáticos y localStorage
     apiBase: 'http://localhost:8000'
 };
+
 
 // ApexCharts Instances
 let allocationChart = null;
@@ -34,12 +42,14 @@ const sidebarOverlay = document.getElementById('sidebar-overlay');
 // Initialize Application
 document.addEventListener('DOMContentLoaded', async () => {
     setupEventListeners();
+    setupAuthListeners();
     await checkHostMode();
     updateSubtitle();
     loadActiveView();
     // Iniciar ticker de chequeo de alertas cada 30 segundos
     setInterval(updateWatchlistAndAlerts, 30000);
 });
+
 
 // Función para actualizar dinámicamente el subtítulo de perfil y horizonte seleccionados
 function updateSubtitle() {
@@ -125,24 +135,30 @@ function setupEventListeners() {
 
     // Horizon selector tabs
     horizonTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
+        tab.addEventListener('click', async () => {
             horizonTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
 
             state.activeHorizon = tab.getAttribute('data-horizon');
             updateSubtitle();
+            if (user) {
+                await saveUserPreferences(state.activeProfile, state.activeHorizon);
+            }
             loadActiveView();
         });
     });
 
     // Profile selector tabs
     profileTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
+        tab.addEventListener('click', async () => {
             profileTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
 
             state.activeProfile = tab.getAttribute('data-profile');
             updateSubtitle();
+            if (user) {
+                await saveUserPreferences(state.activeProfile, state.activeHorizon);
+            }
             loadActiveView();
         });
     });
@@ -181,6 +197,26 @@ function setupEventListeners() {
         watchForm.addEventListener('submit', handleAddWatchlistSubmit);
     }
 
+    // Auth account button binding
+    const navAuthBtn = document.getElementById('nav-auth-btn');
+    if (navAuthBtn) {
+        navAuthBtn.addEventListener('click', async () => {
+            if (user) {
+                if (confirm(`¿Desea cerrar la sesión de su cuenta (${user.email})?`)) {
+                    await supabase.auth.signOut();
+                }
+            } else {
+                document.getElementById('auth-modal').style.display = 'flex';
+                document.getElementById('login-form').reset();
+                document.getElementById('signup-form').reset();
+                document.getElementById('login-error').style.display = 'none';
+                document.getElementById('signup-error').style.display = 'none';
+                document.getElementById('signup-success').style.display = 'none';
+                showLoginForm();
+            }
+        });
+    }
+
     // Open Modal button bindings
     const addPosBtn = document.getElementById('btn-add-position');
     if (addPosBtn) {
@@ -194,6 +230,167 @@ function setupEventListeners() {
             document.getElementById('add-watch-modal').style.display = 'flex';
         });
     }
+
+}
+
+// ===== SUPABASE AUTH HELPERS =====
+
+function showLoginForm() {
+    document.getElementById('auth-modal-title').textContent = 'Iniciar Sesión';
+    document.getElementById('login-form').style.display = '';
+    document.getElementById('signup-form').style.display = 'none';
+}
+
+function showSignupForm() {
+    document.getElementById('auth-modal-title').textContent = 'Crear Cuenta';
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('signup-form').style.display = '';
+}
+
+function updateAuthUI() {
+    const btnText = document.getElementById('auth-btn-text');
+    if (!btnText) return;
+    if (user) {
+        btnText.textContent = user.email ? user.email.split('@')[0] : 'Mi Cuenta';
+    } else {
+        btnText.textContent = 'Iniciar Sesión';
+    }
+}
+
+function getAuthHeaders() {
+    const headers = { 'Content-Type': 'application/json' };
+    if (session && session.access_token) {
+        headers['Authorization'] = `Bearer ${session.access_token}`;
+    }
+    return headers;
+}
+
+async function saveUserPreferences(profile, horizon) {
+    if (!supabase || !user) return;
+    try {
+        const base = CONFIG.SUPABASE_URL.replace(/\/$/, '');
+        const url = `${base}/rest/v1/profiles?user_id=eq.${user.id}`;
+        const headers = {
+            'apikey': CONFIG.SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'resolution=merge-duplicates'
+        };
+        await fetch(url, {
+            method: 'PATCH',
+            headers,
+            body: JSON.stringify({ active_profile: profile, active_horizon: horizon })
+        });
+    } catch (e) {
+        console.warn('saveUserPreferences error:', e);
+    }
+}
+
+async function loadAndApplyUserPreferences() {
+    if (!supabase || !user) return;
+    try {
+        const base = CONFIG.SUPABASE_URL.replace(/\/$/, '');
+        const url = `${base}/rest/v1/profiles?user_id=eq.${user.id}&select=active_profile,active_horizon`;
+        const headers = {
+            'apikey': CONFIG.SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${session.access_token}`
+        };
+        const res = await fetch(url, { headers });
+        if (res.ok) {
+            const data = await res.json();
+            if (data && data.length > 0) {
+                const prefs = data[0];
+                if (prefs.active_profile) {
+                    state.activeProfile = prefs.active_profile;
+                    profileTabs.forEach(t => {
+                        t.classList.toggle('active', t.getAttribute('data-profile') === prefs.active_profile);
+                    });
+                }
+                if (prefs.active_horizon) {
+                    state.activeHorizon = prefs.active_horizon;
+                    horizonTabs.forEach(t => {
+                        t.classList.toggle('active', t.getAttribute('data-horizon') === prefs.active_horizon);
+                    });
+                }
+                updateSubtitle();
+            }
+        }
+    } catch (e) {
+        console.warn('loadAndApplyUserPreferences error:', e);
+    }
+}
+
+function setupAuthListeners() {
+    if (!supabase) return;
+
+    // Auth state change (login / logout)
+    supabase.auth.onAuthStateChange(async (_event, newSession) => {
+        session = newSession;
+        user = newSession?.user ?? null;
+        updateAuthUI();
+
+        if (user) {
+            document.getElementById('auth-modal').style.display = 'none';
+            await loadAndApplyUserPreferences();
+            loadActiveView();
+        } else {
+            loadActiveView();
+        }
+    });
+
+    // Modal close button
+    const closeBtn = document.getElementById('auth-modal-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            document.getElementById('auth-modal').style.display = 'none';
+        });
+    }
+
+    // Toggle between login/signup
+    document.getElementById('go-to-signup')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSignupForm();
+    });
+    document.getElementById('go-to-login')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        showLoginForm();
+    });
+
+    // Login form submit
+    document.getElementById('login-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value.trim();
+        const password = document.getElementById('login-password').value;
+        const errEl = document.getElementById('login-error');
+        errEl.style.display = 'none';
+
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        if (error) {
+            errEl.textContent = error.message;
+            errEl.style.display = 'block';
+        }
+        // Success handled by onAuthStateChange
+    });
+
+    // Signup form submit
+    document.getElementById('signup-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('signup-email').value.trim();
+        const password = document.getElementById('signup-password').value;
+        const errEl = document.getElementById('signup-error');
+        const sucEl = document.getElementById('signup-success');
+        errEl.style.display = 'none';
+        sucEl.style.display = 'none';
+
+        const { error } = await supabase.auth.signUp({ email, password });
+        if (error) {
+            errEl.textContent = error.message;
+            errEl.style.display = 'block';
+        } else {
+            sucEl.textContent = '¡Cuenta creada! Por favor revisá tu email para confirmar tu registro.';
+            sucEl.style.display = 'block';
+        }
+    });
 }
 
 // Controller routing depending on view
@@ -573,7 +770,9 @@ async function fetchPortfolio() {
     }
 
     try {
-        const response = await fetch(`${state.apiBase}/api/portfolio`);
+        const response = await fetch(`${state.apiBase}/api/portfolio`, {
+            headers: getAuthHeaders()
+        });
         const data = await response.json();
 
         if (data.status === 'success') {
@@ -659,7 +858,7 @@ async function handleAddPositionSubmit(e) {
     try {
         const res = await fetch(`${state.apiBase}/api/portfolio`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: getAuthHeaders(),
             body: JSON.stringify(payload)
         });
         const data = await res.json();
@@ -685,7 +884,10 @@ async function handleDeletePosition(id) {
     }
 
     try {
-        const res = await fetch(`${state.apiBase}/api/portfolio/${id}`, { method: 'DELETE' });
+        const res = await fetch(`${state.apiBase}/api/portfolio/${id}`, {
+            method: 'DELETE',
+            headers: getAuthHeaders()
+        });
         const data = await res.json();
         if (data.status === 'success') {
             fetchPortfolio();
@@ -919,7 +1121,9 @@ async function updateWatchlistAndAlerts() {
     }
 
     try {
-        const response = await fetch(`${state.apiBase}/api/watchlist`);
+        const response = await fetch(`${state.apiBase}/api/watchlist`, {
+            headers: getAuthHeaders()
+        });
         const data = await response.json();
 
         if (data.status === 'success') {
@@ -1053,7 +1257,7 @@ async function handleAddWatchlistSubmit(e) {
     try {
         const res = await fetch(`${state.apiBase}/api/watchlist`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: getAuthHeaders(),
             body: JSON.stringify(payload)
         });
         const data = await res.json();
@@ -1079,7 +1283,10 @@ async function handleDeleteWatchlist(ticker) {
     }
 
     try {
-        const res = await fetch(`${state.apiBase}/api/watchlist/${ticker}`, { method: 'DELETE' });
+        const res = await fetch(`${state.apiBase}/api/watchlist/${ticker}`, {
+            method: 'DELETE',
+            headers: getAuthHeaders()
+        });
         const data = await res.json();
         if (data.status === 'success') {
             updateWatchlistAndAlerts();
