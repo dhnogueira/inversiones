@@ -7,46 +7,55 @@
         "name": "LECAP S30N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.4713,
-        "weight_pct": 47.1,
+        "weight": 0.5,
+        "weight_pct": 50.0,
         "ars_return_est": 25.9
       },
       {
-        "ticker": "COST",
-        "name": "COST",
+        "ticker": "MRK",
+        "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2911,
-        "weight_pct": 29.1,
-        "ars_return_est": 66.2
+        "weight": 0.2413,
+        "weight_pct": 24.1,
+        "ars_return_est": 98.5
       },
       {
-        "ticker": "T15E7",
-        "name": "BONCAP T15E7 (Pesos)",
+        "ticker": "S13N6",
+        "name": "LECAP S13N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.1502,
-        "weight_pct": 15.0,
-        "ars_return_est": 25.0
+        "weight": 0.1622,
+        "weight_pct": 16.2,
+        "ars_return_est": 24.7
       },
       {
-        "ticker": "PG",
-        "name": "PG",
+        "ticker": "XOM",
+        "name": "XOM",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.0875,
-        "weight_pct": 8.7,
-        "ars_return_est": 58.4
+        "weight": 0.0733,
+        "weight_pct": 7.3,
+        "ars_return_est": 77.1
+      },
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0231,
+        "weight_pct": 2.3,
+        "ars_return_est": 73.2
       }
     ],
-    "expected_return": 40.35,
-    "expected_volatility": 7.16,
-    "sharpe_ratio": 2.56,
+    "expected_return": 48.08,
+    "expected_volatility": 8.71,
+    "sharpe_ratio": 2.99,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 18.4
+    "spread_vs_inflation": 26.1
   }
 }

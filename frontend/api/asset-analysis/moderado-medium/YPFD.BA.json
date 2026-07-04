@@ -6,7 +6,7 @@
     "category": "merval",
     "price": 71575.0,
     "currency": "ARS",
-    "score": 64.8,
+    "score": 56.6,
     "profile": "moderado",
     "horizon": "medium",
     "technical": [
@@ -78,10 +78,10 @@
       }
     ],
     "verdict": {
-      "action": "CONSIDERAR",
-      "icon": "fa-circle-info",
-      "color": "neutral",
-      "summary": "Con un score de **64.8/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "action": "CAUTELA",
+      "icon": "fa-triangle-exclamation",
+      "color": "warning",
+      "summary": "El score de **56.6/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "take_profit": 109017.38,
       "stop_loss": 52853.81,
       "tp_pct": 52.3,

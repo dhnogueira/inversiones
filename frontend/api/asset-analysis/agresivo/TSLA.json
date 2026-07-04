@@ -6,7 +6,7 @@
     "category": "sp500",
     "price": 393.45001220703125,
     "currency": "USD",
-    "score": 35.0,
+    "score": 17.2,
     "profile": "agresivo",
     "horizon": "medium",
     "technical": [
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **-2.4%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-24.4%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -2.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **-0.6%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-22.6%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -0.6%",
         "status": "danger"
       }
     ],
@@ -78,10 +78,10 @@
       }
     ],
     "verdict": {
-      "action": "CAUTELA",
-      "icon": "fa-triangle-exclamation",
-      "color": "warning",
-      "summary": "El score de **35.0/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "action": "EVITAR",
+      "icon": "fa-circle-xmark",
+      "color": "danger",
+      "summary": "Con un score de solo **17.2/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "take_profit": 710.44,
       "stop_loss": 234.96,
       "tp_pct": 80.6,

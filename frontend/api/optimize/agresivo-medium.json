@@ -3,41 +3,59 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "XOM",
-        "name": "XOM",
+        "ticker": "MRK",
+        "name": "MRK",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.4,
         "weight_pct": 40.0,
-        "ars_return_est": 96.9
+        "ars_return_est": 126.8
+      },
+      {
+        "ticker": "COST",
+        "name": "COST",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.2242,
+        "weight_pct": 22.4,
+        "ars_return_est": 78.4
+      },
+      {
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.151,
+        "weight_pct": 15.1,
+        "ars_return_est": 94.7
       },
       {
         "ticker": "UNH",
         "name": "UNH",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3889,
-        "weight_pct": 38.9,
-        "ars_return_est": 150.6
+        "weight": 0.1419,
+        "weight_pct": 14.2,
+        "ars_return_est": 146.3
       },
       {
-        "ticker": "AAPL",
-        "name": "AAPL",
+        "ticker": "ABBV",
+        "name": "ABBV",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2111,
-        "weight_pct": 21.1,
-        "ars_return_est": 90.8
+        "weight": 0.0829,
+        "weight_pct": 8.3,
+        "ars_return_est": 97.0
       }
     ],
-    "expected_return": 116.48,
-    "expected_volatility": 27.45,
-    "sharpe_ratio": 3.44,
+    "expected_return": 111.39,
+    "expected_volatility": 23.76,
+    "sharpe_ratio": 3.76,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 94.5
+    "spread_vs_inflation": 89.4
   }
 }

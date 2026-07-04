@@ -6,7 +6,7 @@
     "category": "sp500",
     "price": 129.55999755859375,
     "currency": "USD",
-    "score": 33.0,
+    "score": 48.1,
     "profile": "conservador",
     "horizon": "short",
     "technical": [
@@ -78,10 +78,10 @@
       }
     ],
     "verdict": {
-      "action": "EVITAR",
-      "icon": "fa-circle-xmark",
-      "color": "danger",
-      "summary": "Con un score de solo **33.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "action": "CAUTELA",
+      "icon": "fa-triangle-exclamation",
+      "color": "warning",
+      "summary": "El score de **48.1/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "take_profit": 146.85,
       "stop_loss": 120.92,
       "tp_pct": 13.3,

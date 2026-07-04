@@ -3,21 +3,21 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "AL30D",
-        "name": "Bono Soberano AL30D (Dólares)",
-        "category": "bonos",
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
         "currency": "USD",
-        "weight": 0.35,
-        "weight_pct": 35.0,
-        "ars_return_est": 108.2
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 302.2
       },
       {
         "ticker": "COST",
         "name": "COST",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2922,
-        "weight_pct": 29.2,
+        "weight": 0.2948,
+        "weight_pct": 29.5,
         "ars_return_est": 177.8
       },
       {
@@ -25,28 +25,37 @@
         "name": "XOM",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2282,
-        "weight_pct": 22.8,
+        "weight": 0.2092,
+        "weight_pct": 20.9,
         "ars_return_est": 216.8
+      },
+      {
+        "ticker": "ABBV",
+        "name": "ABBV",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1458,
+        "weight_pct": 14.6,
+        "ars_return_est": 222.5
       },
       {
         "ticker": "AAPL",
         "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1297,
-        "weight_pct": 13.0,
+        "weight": 0.0502,
+        "weight_pct": 5.0,
         "ars_return_est": 202.4
       }
     ],
-    "expected_return": 165.53,
-    "expected_volatility": 13.46,
-    "sharpe_ratio": 8.81,
+    "expected_return": 231.05,
+    "expected_volatility": 21.22,
+    "sharpe_ratio": 8.67,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 118.5
+    "spread_vs_inflation": 184.0
   }
 }
