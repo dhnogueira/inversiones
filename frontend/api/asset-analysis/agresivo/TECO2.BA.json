@@ -6,7 +6,7 @@
     "category": "merval",
     "price": 3990.0,
     "currency": "ARS",
-    "score": 35.0,
+    "score": 100.0,
     "profile": "agresivo",
     "technical": [
       {
@@ -63,9 +63,9 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno esperado en pesos es del **22.0%**, quedando por debajo de la inflación argentina proyectada del **22.0%** (rendimiento real negativo de **-0.0%**). No califica como sugerencia recomendada.",
-        "value": "Retorno Est.: 22.0%",
-        "status": "danger"
+        "content": "El retorno anual esperado en pesos es del **27.5%**, superando la inflación argentina proyectada del **22.0%** con un spread real positivo de **+5.5%**. Cumple con el objetivo del portafolio de ganarle a la inflación.",
+        "value": "Retorno Est.: 27.5%",
+        "status": "success"
       }
     ],
     "macro": [
@@ -77,10 +77,10 @@
       }
     ],
     "verdict": {
-      "action": "CAUTELA",
-      "icon": "fa-triangle-exclamation",
-      "color": "warning",
-      "summary": "El score de **35.0/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "action": "COMPRAR",
+      "icon": "fa-circle-check",
+      "color": "success",
+      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación.",
       "take_profit": 8080.73,
       "stop_loss": 1944.63,
       "tp_pct": 102.5,

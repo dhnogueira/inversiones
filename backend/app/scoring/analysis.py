@@ -94,7 +94,7 @@ def generate_asset_analysis(asset, profile):
     technical.append(build_volume_level_analysis(price, support, resistance, volume_cluster, currency))
 
     # ------- Sección 2: Análisis Fundamental / Rendimiento -------
-    fundamental = build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency)
+    fundamental = build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile)
 
     # ------- Sección 3: Contexto Macroeconómico -------
     macro = build_macro_context(category, currency, profile)
@@ -227,7 +227,7 @@ def build_technical_analysis(price, rsi, ema_50, ema_200, volatility, trend, ret
 
 
 
-def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency):
+def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile="moderado"):
     sections = []
 
     # Sharpe Ratio
@@ -271,14 +271,14 @@ def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity,
         "status": "success" if ret_6m > 0.10 else "danger" if ret_6m < -0.10 else "neutral"
     })
 
-    # Analisis vs Inflación Argentina Proyectada
+    # Analisis vs Inflación Argentina Proyectada (ajustado al perfil de riesgo)
     expected_ret_ars = estimate_expected_return_ars({
         "category": category,
         "currency": currency,
         "tna": tna or 0.0,
         "ret_12m": ret_12m,
         "ret_6m": ret_6m
-    })
+    }, profile)
     beats_inflation = expected_ret_ars > PROJECTED_ARG_INFLATION
     spread = expected_ret_ars - PROJECTED_ARG_INFLATION
     

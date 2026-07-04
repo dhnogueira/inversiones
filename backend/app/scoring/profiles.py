@@ -3,11 +3,26 @@ import numpy as np
 PROJECTED_ARG_INFLATION = 0.22  # 22% de Inflación Anual Proyectada de Argentina
 PROJECTED_DEVAL = 0.42          # 42% de Devaluación del Peso proyectada para activos dolarizados
 
-def estimate_expected_return_ars(asset):
+# Factores de confianza en la proyección de retorno por perfil.
+# Conservador aplica un recorte = proyecta el escenario pesimista.
+# Moderado usa el retorno histórico puro.
+# Agresivo aplica un ajuste optimista = proyecta el escenario favorable.
+_PROFILE_RETURN_FACTOR = {
+    "conservador": 0.80,
+    "moderado":    1.00,
+    "agresivo":    1.25,
+}
+
+def estimate_expected_return_ars(asset, profile="moderado"):
     """
     Estima el retorno anualizado esperado para el activo expresado en Pesos Argentinos (ARS),
     empleando TNA para renta fija, retornos históricos ajustados para renta variable/cripto,
     e incorporando la devaluación proyectada del tipo de cambio para activos denominados en USD.
+    
+    El argumento `profile` ajusta la proyección según el nivel de optimismo razonable para cada perfil:
+    - conservador: escenario pesimista (factor 0.80)
+    - moderado: retorno puro (factor 1.00)
+    - agresivo: escenario optimista (factor 1.25)
     """
     category = asset.get("category")
     currency = asset.get("currency", "ARS")
@@ -15,18 +30,29 @@ def estimate_expected_return_ars(asset):
     ret_12m = asset.get("ret_12m", 0.0)
     ret_6m = asset.get("ret_6m", 0.0)
     
+    # Factor de confianza según perfil
+    factor = _PROFILE_RETURN_FACTOR.get(profile, 1.0)
+
     # Estimación base anualizada (en su moneda origen)
     base_ret = ret_12m if ret_12m != 0.0 else ret_6m * 2.0
     
     if category in ("letras", "bonos"):
+        # Renta fija: la TNA es el retorno contractual. Conservador la acepta tal cual (sin palanca).
+        # Moderado y agresivo no añaden alpha a renta fija, solo se refleja la comparativa real.
         ann_return = tna
     else:
-        # Acotamos retornos para evitar proyecciones especulativas extremas
-        ann_return = max(-0.30, min(1.20, base_ret))
+        # Renta variable / cripto: acotamos retornos para evitar proyecciones especulativas extremas
+        # y luego aplicamos el factor de perfil para escalar la expectativa.
+        base_clamped = max(-0.40, min(1.50, base_ret))
+        ann_return = base_clamped * factor
         
     if currency == "USD":
-        # Activos dolarizados (S&P 500, Crypto, etc): se benefician de la devaluación local
-        ann_return_ars = (1.0 + ann_return) * (1.0 + PROJECTED_DEVAL) - 1.0
+        # Activos dolarizados (S&P 500, CEDEARs, Cripto): capturan la devaluación del peso.
+        # Para renta fija en USD, el factor de perfil también aplica sobre el diferencial total.
+        if category in ("letras", "bonos"):
+            ann_return_ars = ((1.0 + ann_return) * (1.0 + PROJECTED_DEVAL) - 1.0) * factor
+        else:
+            ann_return_ars = (1.0 + ann_return) * (1.0 + PROJECTED_DEVAL) - 1.0
     else:
         ann_return_ars = ann_return
         
@@ -78,8 +104,8 @@ def score_asset_for_profile(asset, profile):
     if score > 15.0:
         score = score + rsi_bonus
         
-    # Validar meta de ganarle a la inflación proyectada en pesos
-    expected_ret_ars = estimate_expected_return_ars(asset)
+    # Validar meta de ganarle a la inflación proyectada en pesos (con factor de perfil)
+    expected_ret_ars = estimate_expected_return_ars(asset, profile)
     if expected_ret_ars <= PROJECTED_ARG_INFLATION:
         # Penalización drástica: no califica como sugerencia recomendada (queda por debajo de 40 puntos)
         score = min(35.0, score - 30.0)
