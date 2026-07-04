@@ -6,7 +6,7 @@
     "category": "sp500",
     "price": 393.45001220703125,
     "currency": "USD",
-    "score": 100.0,
+    "score": 35.0,
     "profile": "agresivo",
     "technical": [
       {
@@ -36,6 +36,13 @@
         "content": "El activo cayó un **-7.1%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
         "value": "-7.1% (1M)",
         "status": "danger"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 363.96 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 426.24 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 399.36. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 399.36",
+        "status": "neutral"
       }
     ],
     "fundamental": [
@@ -52,6 +59,13 @@
         "content": "El rendimiento acumulado a 6 meses es **-12.5%** y a 12 meses es **+0.0%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
         "value": "-12.5% (6M)",
         "status": "danger"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno esperado en pesos es del **6.5%**, quedando por debajo de la inflación argentina proyectada del **22.0%** (rendimiento real negativo de **-15.5%**). No califica como sugerencia recomendada.",
+        "value": "Retorno Est.: 6.5%",
+        "status": "danger"
       }
     ],
     "macro": [
@@ -63,10 +77,21 @@
       }
     ],
     "verdict": {
-      "action": "COMPRAR",
-      "icon": "fa-circle-check",
-      "color": "success",
-      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad."
-    }
+      "action": "CAUTELA",
+      "icon": "fa-triangle-exclamation",
+      "color": "warning",
+      "summary": "El score de **35.0/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "take_profit": 710.44,
+      "stop_loss": 234.96,
+      "tp_pct": 80.6,
+      "sl_pct": 40.3
+    },
+    "support": 363.96,
+    "resistance": 426.24,
+    "volume_cluster": 399.36,
+    "take_profit": 710.44,
+    "stop_loss": 234.96,
+    "tp_pct": 80.6,
+    "sl_pct": 40.3
   }
 }

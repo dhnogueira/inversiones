@@ -1090,7 +1090,39 @@ function renderModalContent(analysis) {
     document.getElementById('modal-verdict-summary').innerHTML = formatMarkdownBold(verdict.summary);
 
     const body = document.getElementById('modal-body');
-    body.innerHTML = '';
+
+    // Inyectar Grid de Límites (TP/SL) y Niveles Clave (Soporte/Resistencia/POC)
+    const currencySymbol = analysis.currency === 'ARS' ? '$' : 'u$s';
+    body.innerHTML = `
+        <div class="modal-stats-grid">
+            <div class="modal-stat-card">
+                <div class="modal-stat-title"><i class="fa-solid fa-crosshairs"></i> Límites Sugeridos</div>
+                <div class="modal-stat-row">
+                    <span class="modal-stat-label">Take Profit (TP):</span>
+                    <span class="modal-stat-value" style="color: var(--color-conservador);">${currencySymbol} ${analysis.take_profit.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (+${analysis.tp_pct}%)</span>
+                </div>
+                <div class="modal-stat-row">
+                    <span class="modal-stat-label">Stop Loss (SL):</span>
+                    <span class="modal-stat-value" style="color: #ef4444;">${currencySymbol} ${analysis.stop_loss.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (-${analysis.sl_pct}%)</span>
+                </div>
+            </div>
+            <div class="modal-stat-card">
+                <div class="modal-stat-title"><i class="fa-solid fa-layer-group"></i> Estructura de Precios</div>
+                <div class="modal-stat-row">
+                    <span class="modal-stat-label">Resistencia:</span>
+                    <span class="modal-stat-value" style="color: #ef4444;">${currencySymbol} ${analysis.resistance.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                </div>
+                <div class="modal-stat-row">
+                    <span class="modal-stat-label">Punto de Control (POC):</span>
+                    <span class="modal-stat-value" style="color: var(--color-moderado);">${currencySymbol} ${analysis.volume_cluster.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                </div>
+                <div class="modal-stat-row">
+                    <span class="modal-stat-label">Soporte:</span>
+                    <span class="modal-stat-value" style="color: var(--color-conservador);">${currencySymbol} ${analysis.support.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                </div>
+            </div>
+        </div>
+    `;
 
     if (analysis.technical && analysis.technical.length > 0) {
         body.innerHTML += `<div class="analysis-section-title"><i class="fa-solid fa-chart-line"></i> Análisis Técnico</div>`;

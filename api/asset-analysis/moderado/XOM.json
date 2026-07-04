@@ -6,7 +6,7 @@
     "category": "sp500",
     "price": 137.08999633789062,
     "currency": "USD",
-    "score": 95.0,
+    "score": 98.0,
     "profile": "moderado",
     "technical": [
       {
@@ -36,6 +36,13 @@
         "content": "El activo cayó un **-10.1%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
         "value": "-10.1% (1M)",
         "status": "danger"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 139.60 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 160.66 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 148.05. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 148.05",
+        "status": "neutral"
       }
     ],
     "fundamental": [
@@ -52,6 +59,13 @@
         "content": "El rendimiento acumulado a 6 meses es **+15.5%** y a 12 meses es **+0.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
         "value": "+15.5% (6M)",
         "status": "success"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno anual esperado en pesos es del **85.9%**, superando la inflación argentina proyectada del **22.0%** con un spread real positivo de **+63.9%**. Cumple con el objetivo del portafolio de ganarle a la inflación.",
+        "value": "Retorno Est.: 85.9%",
+        "status": "success"
       }
     ],
     "macro": [
@@ -66,7 +80,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **95.0/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe indica una excelente compensación por el riesgo asumido."
-    }
+      "summary": "Este activo obtiene un score de **98.0/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "take_profit": 177.45,
+      "stop_loss": 116.91,
+      "tp_pct": 29.4,
+      "sl_pct": 14.7
+    },
+    "support": 139.6,
+    "resistance": 160.66,
+    "volume_cluster": 148.05,
+    "take_profit": 177.45,
+    "stop_loss": 116.91,
+    "tp_pct": 29.4,
+    "sl_pct": 14.7
   }
 }

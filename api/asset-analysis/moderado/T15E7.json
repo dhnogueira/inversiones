@@ -33,8 +33,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (6.2%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "content": "El rendimiento mensual es de **+2.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (6.3%) ofrece una perspectiva más amplia de la dirección reciente.",
         "value": "+2.1% (1M)",
+        "status": "success"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 0.86 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 0.89 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 0.87. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 0.87",
         "status": "success"
       }
     ],
@@ -49,16 +56,23 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+12.5%** y a 12 meses es **+24.9%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "content": "El rendimiento acumulado a 6 meses es **+12.5%** y a 12 meses es **+25.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
         "value": "+12.5% (6M)",
+        "status": "success"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno anual esperado en pesos es del **25.0%**, superando la inflación argentina proyectada del **22.0%** con un spread real positivo de **+3.0%**. Cumple con el objetivo del portafolio de ganarle a la inflación.",
+        "value": "Retorno Est.: 25.0%",
         "status": "success"
       },
       {
         "title": "Análisis de Renta Fija",
         "icon": "fa-landmark",
-        "content": "Este instrumento de renta fija ofrece una **TNA del 24.9%** con vencimiento estimado en **2027-01-15**. Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad. El riesgo principal es el de inflación si la tasa ofrecida no compensa la suba de precios.",
-        "value": "TNA: 24.9%",
-        "status": "neutral"
+        "content": "Este instrumento de renta fija ofrece una **TNA del 25.0%** con vencimiento estimado en **2027-01-15**. Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad.",
+        "value": "TNA: 25.0%",
+        "status": "success"
       }
     ],
     "macro": [
@@ -73,7 +87,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. El ratio de Sharpe indica una excelente compensación por el riesgo asumido."
-    }
+      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "take_profit": 0.95,
+      "stop_loss": 0.84,
+      "tp_pct": 8.0,
+      "sl_pct": 4.0
+    },
+    "support": 0.86,
+    "resistance": 0.89,
+    "volume_cluster": 0.87,
+    "take_profit": 0.95,
+    "stop_loss": 0.84,
+    "tp_pct": 8.0,
+    "sl_pct": 4.0
   }
 }
