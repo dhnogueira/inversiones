@@ -10,6 +10,86 @@ const supabase = (window.supabase && CONFIG.SUPABASE_URL) ? window.supabase.crea
 let session = null;
 let user = null;
 
+// ===== ASSET METADATA =====
+// Nombre completo de la empresa, rubro/sector y año de inicio de cotización
+const ASSET_METADATA = {
+    // S&P 500
+    'AAPL': { company: 'Apple Inc.', sector: 'Tecnología', ipo: 1980 },
+    'MSFT': { company: 'Microsoft Corporation', sector: 'Software & Nube', ipo: 1986 },
+    'NVDA': { company: 'NVIDIA Corporation', sector: 'Semiconductores', ipo: 1999 },
+    'AMZN': { company: 'Amazon.com Inc.', sector: 'E-Commerce & Nube', ipo: 1997 },
+    'META': { company: 'Meta Platforms Inc.', sector: 'Redes Sociales', ipo: 2012 },
+    'GOOGL': { company: 'Alphabet Inc. (Google)', sector: 'Tecnología & Publicidad', ipo: 2004 },
+    'BRK-B': { company: 'Berkshire Hathaway Inc.', sector: 'Holding Financiero', ipo: 1996 },
+    'LLY': { company: 'Eli Lilly and Company', sector: 'Farmacéutica', ipo: 1952 },
+    'AVGO': { company: 'Broadcom Inc.', sector: 'Semiconductores', ipo: 2009 },
+    'JPM': { company: 'JPMorgan Chase & Co.', sector: 'Banca & Servicios Financieros', ipo: 1969 },
+    'TSLA': { company: 'Tesla Inc.', sector: 'Automotriz & Energía', ipo: 2010 },
+    'XOM': { company: 'ExxonMobil Corporation', sector: 'Petróleo & Gas', ipo: 1920 },
+    'UNH': { company: 'UnitedHealth Group Inc.', sector: 'Seguros & Salud', ipo: 1984 },
+    'PG': { company: 'Procter & Gamble Co.', sector: 'Consumo Masivo', ipo: 1890 },
+    'V': { company: 'Visa Inc.', sector: 'Pagos Digitales', ipo: 2008 },
+    'MA': { company: 'Mastercard Incorporated', sector: 'Pagos Digitales', ipo: 2006 },
+    'HD': { company: 'The Home Depot Inc.', sector: 'Retail & Construcción', ipo: 1981 },
+    'COST': { company: 'Costco Wholesale Corporation', sector: 'Retail Mayorista', ipo: 1985 },
+    'MRK': { company: 'Merck & Co. Inc.', sector: 'Farmacéutica', ipo: 1946 },
+    'ABBV': { company: 'AbbVie Inc.', sector: 'Biofarmacéutica', ipo: 2013 },
+    // CEDEARs (igual ticker sin .BA)
+    'AAPL.BA': { company: 'Apple Inc.', sector: 'Tecnología', ipo: 1980 },
+    'MSFT.BA': { company: 'Microsoft Corporation', sector: 'Software & Nube', ipo: 1986 },
+    'TSLA.BA': { company: 'Tesla Inc.', sector: 'Automotriz & Energía', ipo: 2010 },
+    'MELI.BA': { company: 'MercadoLibre Inc.', sector: 'E-Commerce Latinoamérica', ipo: 2007 },
+    'KO.BA': { company: 'The Coca-Cola Company', sector: 'Bebidas & Consumo', ipo: 1919 },
+    'NVDA.BA': { company: 'NVIDIA Corporation', sector: 'Semiconductores', ipo: 1999 },
+    'AMZN.BA': { company: 'Amazon.com Inc.', sector: 'E-Commerce & Nube', ipo: 1997 },
+    'META.BA': { company: 'Meta Platforms Inc.', sector: 'Redes Sociales', ipo: 2012 },
+    'GOOGL.BA': { company: 'Alphabet Inc. (Google)', sector: 'Tecnología & Publicidad', ipo: 2004 },
+    'XOM.BA': { company: 'ExxonMobil Corporation', sector: 'Petróleo & Gas', ipo: 1920 },
+    'BABA.BA': { company: 'Alibaba Group Holding Ltd.', sector: 'E-Commerce & Nube China', ipo: 2014 },
+    'VALE.BA': { company: 'Vale S.A.', sector: 'Minería & Metales', ipo: 2002 },
+    'PBR.BA': { company: 'Petróleo Brasileiro S.A.', sector: 'Petróleo & Gas', ipo: 2001 },
+    'GGLD.BA': { company: 'Barrick Gold Corporation', sector: 'Minería de Oro', ipo: 1983 },
+    'DESP.BA': { company: 'Despegar.com Corp.', sector: 'Turismo Online', ipo: 2017 },
+    // Merval
+    'YPFD.BA': { company: 'YPF S.A.', sector: 'Petróleo & Gas', ipo: 1993 },
+    'GGAL.BA': { company: 'Grupo Financiero Galicia S.A.', sector: 'Banca', ipo: 2000 },
+    'PAMP.BA': { company: 'Pampa Energía S.A.', sector: 'Energía Eléctrica', ipo: 1993 },
+    'ALUA.BA': { company: 'Aluar Aluminio Argentino S.A.', sector: 'Aluminio & Metales', ipo: 1993 },
+    'TXAR.BA': { company: 'Ternium Argentina S.A.', sector: 'Siderurgia', ipo: 1993 },
+    'BMA.BA': { company: 'Banco Macro S.A.', sector: 'Banca', ipo: 1994 },
+    'CEPU.BA': { company: 'Central Puerto S.A.', sector: 'Generación Eléctrica', ipo: 1993 },
+    'TGSU2.BA': { company: 'Transportadora de Gas del Sur S.A.', sector: 'Gas & Energía', ipo: 1994 },
+    'EDN.BA': { company: 'Edenor S.A.', sector: 'Distribución Eléctrica', ipo: 1993 },
+    'LOMA.BA': { company: 'Loma Negra Compañía Industrial Argentina S.A.', sector: 'Cemento', ipo: 2017 },
+    'CRES.BA': { company: 'Cresud S.A.C.I.F. y A.', sector: 'Agropecuario', ipo: 1997 },
+    'TECO2.BA': { company: 'Telecom Argentina S.A.', sector: 'Telecomunicaciones', ipo: 1992 },
+    'SUPV.BA': { company: 'Grupo Supervielle S.A.', sector: 'Banca & Finanzas', ipo: 2016 },
+    'VALO.BA': { company: 'Grupo Financiero Valores S.A.', sector: 'Finanzas & Inversiones', ipo: 2018 },
+    'BYMA.BA': { company: 'Bolsas y Mercados Argentinos S.A.', sector: 'Mercado de Capitales', ipo: 2017 },
+    // Crypto
+    'BTC-USD': { company: 'Bitcoin', sector: 'Criptomoneda — Reserva de Valor', ipo: 2009 },
+    'ETH-USD': { company: 'Ethereum', sector: 'Plataforma de Smart Contracts', ipo: 2015 },
+    'BNB-USD': { company: 'BNB (Binance Coin)', sector: 'Token de Exchange', ipo: 2017 },
+    'SOL-USD': { company: 'Solana', sector: 'Blockchain L1', ipo: 2020 },
+    'XRP-USD': { company: 'Ripple (XRP)', sector: 'Pagos Transfronterizos', ipo: 2013 },
+    'ADA-USD': { company: 'Cardano (ADA)', sector: 'Blockchain L1', ipo: 2017 },
+    'DOGE-USD': { company: 'Dogecoin', sector: 'Criptomoneda Meme', ipo: 2013 },
+    'AVAX-USD': { company: 'Avalanche (AVAX)', sector: 'Blockchain L1', ipo: 2020 },
+    'LINK-USD': { company: 'Chainlink (LINK)', sector: 'Oráculos Blockchain', ipo: 2017 },
+    'DOT-USD': { company: 'Polkadot (DOT)', sector: 'Interoperabilidad Blockchain', ipo: 2020 },
+    // Bonos soberanos argentinos
+    'AL30.BA': { company: 'Bono Soberano Argentina AL30', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+    'GD30.BA': { company: 'Bono Soberano Argentina GD30', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+    'AL29.BA': { company: 'Bono Soberano Argentina AL29', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+    'GD29.BA': { company: 'Bono Soberano Argentina GD29', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+    'AL35.BA': { company: 'Bono Soberano Argentina AL35', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+    'GD35.BA': { company: 'Bono Soberano Argentina GD35', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+    'AE38.BA': { company: 'Bono Soberano Argentina AE38', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+    'GD38.BA': { company: 'Bono Soberano Argentina GD38', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+    'AL41.BA': { company: 'Bono Soberano Argentina AL41', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+    'GD41.BA': { company: 'Bono Soberano Argentina GD41', sector: 'Renta Fija Soberana USD', ipo: 2020 },
+};
+
 // State Management
 let state = {
     activeProfile: 'moderado',
@@ -1979,12 +2059,25 @@ async function openAssetModal(ticker) {
 window.openAssetModal = openAssetModal;
 
 function renderModalContent(analysis) {
-    document.getElementById('modal-ticker').innerText = analysis.ticker.replace('.BA', '');
+    document.getElementById('modal-ticker').innerText = analysis.ticker.replace('.BA', '').replace('-USD', '');
     document.getElementById('modal-name').innerText = analysis.name;
 
     const catBadge = document.getElementById('modal-category-badge');
     catBadge.innerText = analysis.category.toUpperCase();
     catBadge.className = `badge ${analysis.currency === 'USD' ? 'badge-usd' : 'badge-ars'}`;
+
+    // Poblar metadatos: sector y año de cotización
+    const meta = ASSET_METADATA[analysis.ticker] || ASSET_METADATA[analysis.ticker.replace('.BA', '')] || null;
+    const sectorEl = document.getElementById('modal-sector-text');
+    const ipoEl = document.getElementById('modal-ipo-text');
+    const metaRow = document.getElementById('modal-sector')?.parentElement;
+    if (meta) {
+        if (sectorEl) sectorEl.innerText = meta.sector;
+        if (ipoEl) ipoEl.innerText = meta.ipo;
+        if (metaRow) metaRow.style.display = 'flex';
+    } else {
+        if (metaRow) metaRow.style.display = 'none';
+    }
 
     document.getElementById('modal-profile-name').innerText = analysis.profile;
     document.getElementById('modal-score-value').innerText = `${analysis.score} / 100`;
