@@ -320,7 +320,8 @@ def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity,
         "currency": currency,
         "tna": tna or 0.0,
         "ret_12m": ret_12m,
-        "ret_6m": ret_6m
+        "ret_6m": ret_6m,
+        "maturity": maturity
     }, profile, horizon)
     
     horizon_inflation = get_horizon_inflation(horizon)
