@@ -3,77 +3,17 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "T30J7",
-        "name": "BONCAP T30J7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.3966,
-        "weight_pct": 39.7,
-        "ars_return_est": 13.9
-      },
-      {
-        "ticker": "T31Y7",
-        "name": "BONCAP T31Y7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1006,
-        "weight_pct": 10.1,
-        "ars_return_est": 11.5
-      },
-      {
-        "ticker": "T31M7",
-        "name": "BONCAP T31M7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1006,
-        "weight_pct": 10.1,
-        "ars_return_est": 12.6
-      },
-      {
-        "ticker": "T30A7",
-        "name": "BONCAP T30A7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1006,
-        "weight_pct": 10.1,
-        "ars_return_est": 13.3
-      },
-      {
-        "ticker": "T28F7",
-        "name": "BONCAP T28F7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1006,
-        "weight_pct": 10.1,
-        "ars_return_est": 10.6
-      },
-      {
-        "ticker": "S28F7",
-        "name": "LECAP S28F7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1006,
-        "weight_pct": 10.1,
-        "ars_return_est": 9.3
-      },
-      {
-        "ticker": "S31M7",
-        "name": "LECAP S31M7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1006,
-        "weight_pct": 10.1,
-        "ars_return_est": 10.3
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "category": "cedears",
+        "weight": 1.0,
+        "weight_pct": 100.0
       }
     ],
-    "expected_return": 12.31,
-    "expected_volatility": 4.37,
-    "sharpe_ratio": 0.3,
-    "profile": "conservador",
-    "horizon": "short",
-    "risk_free_rate": 11.0,
+    "expected_return": 11.76,
+    "expected_volatility": 36.22,
+    "sharpe_ratio": 0.02,
     "inflation_reference": 11.0,
-    "beats_inflation": true,
-    "spread_vs_inflation": 1.3
+    "beats_inflation": true
   }
 }

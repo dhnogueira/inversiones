@@ -4,7 +4,7 @@
     "ticker": "BNB-USD",
     "name": "BNB-USD",
     "category": "crypto",
-    "price": 575.5399780273438,
+    "price": 575.0499877929688,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 47.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "47.6",
+        "content": "El RSI de 14 períodos se encuentra en 47.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "47.4",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (598.15) se encuentra por debajo de la EMA de 200 días (675.51), y el precio (575.54) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (598.13) se encuentra por debajo de la EMA de 200 días (675.51), y el precio (575.05) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-6.6%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-6.6% (1M)",
+        "content": "El activo cayó un **-6.7%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-6.7% (1M)",
         "status": "danger"
       },
       {
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-6.9%** y a 12 meses es **-49.4%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-6.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-7.0%** y a 12 meses es **-49.5%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-7.0% (6M)",
         "status": "neutral"
       },
       {
@@ -82,16 +82,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 872.96,
-      "stop_loss": 426.83,
+      "take_profit": 872.21,
+      "stop_loss": 426.47,
       "tp_pct": 51.7,
       "sl_pct": 25.8
     },
     "support": 571.58,
     "resistance": 662.44,
     "volume_cluster": 623.2,
-    "take_profit": 872.96,
-    "stop_loss": 426.83,
+    "take_profit": 872.21,
+    "stop_loss": 426.47,
     "tp_pct": 51.7,
     "sl_pct": 25.8
   }
