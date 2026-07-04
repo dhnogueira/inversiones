@@ -584,21 +584,23 @@ function renderOptimalDashboard(optimization) {
         series.push(pct);
         labels.push(item.name.replace(' Letra', '').replace(' Bono', '').replace(' Accion', ''));
 
-        const itemHTML = `
-            <div class="allocation-item" onclick="openAssetModal('${item.ticker}')" style="cursor: pointer; transition: background 0.2s; padding: 4px 8px; border-radius: 6px;">
-                <div style="flex-grow: 1;">
-                    <span class="alloc-name">${item.ticker.replace('.BA', '')} <i class="fa-solid fa-circle-info" style="font-size: 10px; opacity: 0.5; margin-left: 2px;"></i></span>
-                    <div class="alloc-category">${item.category} • ${item.currency}</div>
-                </div>
-                <div class="alloc-weight-container" style="flex-shrink: 0; min-width: 100px;">
-                    <span class="alloc-weight" style="color: var(--color-${optimization.profile});">${pct}%</span>
-                    <div class="alloc-progress-bar">
-                        <span class="alloc-progress" style="width: ${pct}%; background: var(--color-${optimization.profile});"></span>
-                    </div>
+        const div = document.createElement('div');
+        div.className = 'allocation-item';
+        div.style.cssText = 'cursor: pointer; transition: background 0.2s; padding: 4px 8px; border-radius: 6px;';
+        div.innerHTML = `
+            <div style="flex-grow: 1;">
+                <span class="alloc-name">${item.ticker.replace('.BA', '')} <i class="fa-solid fa-circle-info" style="font-size: 10px; opacity: 0.5; margin-left: 2px;"></i></span>
+                <div class="alloc-category">${item.category} • ${item.currency}</div>
+            </div>
+            <div class="alloc-weight-container" style="flex-shrink: 0; min-width: 100px;">
+                <span class="alloc-weight" style="color: var(--color-${optimization.profile});">${pct}%</span>
+                <div class="alloc-progress-bar">
+                    <span class="alloc-progress" style="width: ${pct}%; background: var(--color-${optimization.profile});"></span>
                 </div>
             </div>
         `;
-        listContainer.insertAdjacentHTML('beforeend', itemHTML);
+        div.addEventListener('click', () => openAssetModal(item.ticker));
+        listContainer.appendChild(div);
     });
 
     renderAllocationPizza(series, labels, optimization.profile);
@@ -1974,6 +1976,7 @@ async function openAssetModal(ticker) {
         document.getElementById('modal-body').innerHTML = `<p style="color:#ef4444; text-align:center; padding:30px;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar el análisis estático.</p>`;
     }
 }
+window.openAssetModal = openAssetModal;
 
 function renderModalContent(analysis) {
     document.getElementById('modal-ticker').innerText = analysis.ticker.replace('.BA', '');
