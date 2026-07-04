@@ -4,7 +4,7 @@
     "ticker": "BTC-USD",
     "name": "BTC-USD",
     "category": "crypto",
-    "price": 62619.26171875,
+    "price": 62610.8203125,
     "currency": "USD",
     "score": 35.0,
     "profile": "agresivo",
@@ -19,7 +19,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (65866.93) se encuentra por debajo de la EMA de 200 días (76097.09), y el precio (62619.26) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (65866.60) se encuentra por debajo de la EMA de 200 días (76097.00), y el precio (62610.82) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -49,15 +49,15 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "El Ratio de Sharpe es **negativo** (-1.38), lo que significa que el retorno del activo no compensa ni siquiera la tasa libre de riesgo. Técnicamente, el inversor destruye valor ajustado por riesgo.",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-1.38** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
         "value": "-1.38",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-4.7%** y a 12 meses es **-45.3%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-4.7% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-4.8%** y a 12 meses es **-45.3%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-4.8% (6M)",
         "status": "neutral"
       },
       {
@@ -81,16 +81,16 @@
       "icon": "fa-triangle-exclamation",
       "color": "warning",
       "summary": "El score de **35.0/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 102976.88,
-      "stop_loss": 42440.45,
+      "take_profit": 102962.93,
+      "stop_loss": 42434.77,
       "tp_pct": 64.4,
       "sl_pct": 32.2
     },
     "support": 60987.89,
     "resistance": 79846.11,
     "volume_cluster": 76243.91,
-    "take_profit": 102976.88,
-    "stop_loss": 42440.45,
+    "take_profit": 102962.93,
+    "stop_loss": 42434.77,
     "tp_pct": 64.4,
     "sl_pct": 32.2
   }

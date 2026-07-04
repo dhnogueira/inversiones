@@ -231,18 +231,42 @@ def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity,
     sections = []
 
     # Sharpe Ratio
+    sharpe_intro = (
+        f"**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: "
+        f"_¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ "
+        f"Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). "
+        f"Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo "
+        f"indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro."
+    )
     if sharpe > 1.0:
-        sh_text = f"El Ratio de Sharpe es de **{sharpe:.2f}**, lo que indica un **excelente** rendimiento ajustado por riesgo. Por cada unidad de volatilidad asumida, el inversor obtiene un retorno superior significativo por encima de la tasa libre de riesgo."
+        sh_detail = (
+            f"El Ratio de Sharpe de este activo es **{sharpe:.2f}** (excelente, > 1.0): por cada punto de volatilidad "
+            f"asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. "
+            f"Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado."
+        )
         sh_status = "success"
     elif sharpe > 0.5:
-        sh_text = f"El Ratio de Sharpe es de **{sharpe:.2f}**, un valor **aceptable** que sugiere que el rendimiento compensa razonablemente el riesgo asumido. Es una relación equilibrada para horizontes de 6-12 meses."
+        sh_detail = (
+            f"El Ratio de Sharpe de este activo es **{sharpe:.2f}** (aceptable, entre 0.5 y 1.0): el rendimiento "
+            f"compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses."
+        )
         sh_status = "neutral"
     elif sharpe > 0:
-        sh_text = f"El Ratio de Sharpe es de **{sharpe:.2f}**, un valor **bajo positivo**. El activo genera retorno por encima de la tasa libre de riesgo, pero el premio por la volatilidad asumida es marginal."
+        sh_detail = (
+            f"El Ratio de Sharpe de este activo es **{sharpe:.2f}** (bajo positivo, entre 0 y 0.5): el activo genera "
+            f"retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. "
+            f"Hay alternativas más eficientes disponibles."
+        )
         sh_status = "warning"
     else:
-        sh_text = f"El Ratio de Sharpe es **negativo** ({sharpe:.2f}), lo que significa que el retorno del activo no compensa ni siquiera la tasa libre de riesgo. Técnicamente, el inversor destruye valor ajustado por riesgo."
+        sh_detail = (
+            f"El Ratio de Sharpe de este activo es **{sharpe:.2f}** (negativo): el retorno del activo **no alcanza "
+            f"ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: "
+            f"asumir esta volatilidad no está siendo recompensado."
+        )
         sh_status = "danger"
+
+    sh_text = sharpe_intro + "\n\n" + sh_detail
 
     sections.append({
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
