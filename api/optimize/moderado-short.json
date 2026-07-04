@@ -1,0 +1,44 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "S13N6",
+        "name": "LECAP S13N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0
+      },
+      {
+        "ticker": "S30N6",
+        "name": "LECAP S30N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0
+      },
+      {
+        "ticker": "T15E7",
+        "name": "BONCAP T15E7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0
+      },
+      {
+        "ticker": "S30O6",
+        "name": "LECAP S30O6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      }
+    ],
+    "expected_return": 25.1,
+    "expected_volatility": 4.43,
+    "sharpe_ratio": -3.36,
+    "profile": "moderado",
+    "risk_free_rate": 40.0
+  }
+}

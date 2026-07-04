@@ -1,0 +1,44 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "S30N6",
+        "name": "LECAP S30N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0
+      },
+      {
+        "ticker": "AL30D",
+        "name": "Bono Soberano AL30D (Dólares)",
+        "category": "bonos",
+        "currency": "USD",
+        "weight": 0.3,
+        "weight_pct": 30.0
+      },
+      {
+        "ticker": "GD30D",
+        "name": "Bono Soberano GD30D (Dólares)",
+        "category": "bonos",
+        "currency": "USD",
+        "weight": 0.3,
+        "weight_pct": 30.0
+      },
+      {
+        "ticker": "T15E7",
+        "name": "BONCAP T15E7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      }
+    ],
+    "expected_return": 14.77,
+    "expected_volatility": 10.15,
+    "sharpe_ratio": -2.49,
+    "profile": "moderado",
+    "risk_free_rate": 40.0
+  }
+}

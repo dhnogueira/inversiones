@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "AL30D",
+        "name": "Bono Soberano AL30D (Dólares)",
+        "category": "bonos",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      },
+      {
+        "ticker": "GD30D",
+        "name": "Bono Soberano GD30D (Dólares)",
+        "category": "bonos",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      },
+      {
+        "ticker": "S30N6",
+        "name": "LECAP S30N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      },
+      {
+        "ticker": "T15E7",
+        "name": "BONCAP T15E7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      },
+      {
+        "ticker": "S13N6",
+        "name": "LECAP S13N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      },
+      {
+        "ticker": "S30O6",
+        "name": "LECAP S30O6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      },
+      {
+        "ticker": "S30S6",
+        "name": "LECAP S30S6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      },
+      {
+        "ticker": "S14G6",
+        "name": "LECAP S14G6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      },
+      {
+        "ticker": "S31G6",
+        "name": "LECAP S31G6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      },
+      {
+        "ticker": "AL30",
+        "name": "Bono Soberano AL30 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0
+      }
+    ],
+    "expected_return": 19.62,
+    "expected_volatility": 7.3,
+    "sharpe_ratio": -2.79,
+    "profile": "agresivo",
+    "risk_free_rate": 40.0
+  }
+}
