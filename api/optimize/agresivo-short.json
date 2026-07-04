@@ -7,8 +7,8 @@
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1651,
-        "weight_pct": 16.5,
+        "weight": 0.1519,
+        "weight_pct": 15.2,
         "ars_return_est": 24.5
       },
       {
@@ -18,7 +18,7 @@
         "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 13.0
+        "ars_return_est": 13.8
       },
       {
         "ticker": "T15E7",
@@ -27,7 +27,7 @@
         "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 12.5
+        "ars_return_est": 13.6
       },
       {
         "ticker": "S13N6",
@@ -36,7 +36,7 @@
         "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 12.3
+        "ars_return_est": 13.0
       },
       {
         "ticker": "S30O6",
@@ -45,7 +45,7 @@
         "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 12.1
+        "ars_return_est": 12.8
       },
       {
         "ticker": "S30S6",
@@ -54,7 +54,7 @@
         "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 11.8
+        "ars_return_est": 12.3
       },
       {
         "ticker": "S14G6",
@@ -63,7 +63,7 @@
         "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 11.5
+        "ars_return_est": 11.7
       },
       {
         "ticker": "S31G6",
@@ -72,35 +72,35 @@
         "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 11.4
+        "ars_return_est": 11.7
       },
       {
-        "ticker": "S31L6",
-        "name": "LECAP S31L6 (Pesos)",
+        "ticker": "T30J7",
+        "name": "BONCAP T30J7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 10.6
+        "ars_return_est": 11.8
       },
       {
         "ticker": "VALE.BA",
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.0349,
-        "weight_pct": 3.5,
+        "weight": 0.0481,
+        "weight_pct": 4.8,
         "ars_return_est": 17.6
       }
     ],
-    "expected_return": 14.17,
-    "expected_volatility": 7.46,
-    "sharpe_ratio": 0.42,
+    "expected_return": 14.63,
+    "expected_volatility": 7.27,
+    "sharpe_ratio": 0.5,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 3.2
+    "spread_vs_inflation": 3.6
   }
 }
