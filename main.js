@@ -1,7 +1,12 @@
-import CONFIG from './config.js';
+// Lee la configuración de Supabase desde window.CONFIG (inyectado por config.js como script clásico)
+// Si no está disponible, usa valores de fallback para que la app funcione sin Supabase
+const CONFIG = window.CONFIG || {
+    SUPABASE_URL: '',
+    SUPABASE_ANON_KEY: ''
+};
 
-// Init Supabase Client
-const supabase = window.supabase ? window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY) : null;
+// Init Supabase Client (solo si hay credenciales válidas)
+const supabase = (window.supabase && CONFIG.SUPABASE_URL) ? window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY) : null;
 let session = null;
 let user = null;
 
