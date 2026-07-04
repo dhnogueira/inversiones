@@ -196,7 +196,30 @@ async function fetchRecommendationsAndOptimize(profile) {
 function renderOptimalDashboard(optimization) {
     document.getElementById('metric-return').innerText = `${optimization.expected_return.toFixed(1)}%`;
     document.getElementById('metric-volatility').innerText = `${optimization.expected_volatility.toFixed(1)}%`;
-    document.getElementById('metric-sharpe').innerText = optimization.sharpe_ratio.toFixed(2);
+
+    const sharpe = optimization.sharpe_ratio;
+    document.getElementById('metric-sharpe').innerText = sharpe.toFixed(2);
+
+    // Label explicativo del Sharpe según rango
+    const sharpeLabel = document.getElementById('metric-sharpe-label');
+    if (sharpeLabel) {
+        let labelText, labelColor;
+        if (sharpe > 1.0) {
+            labelText = '✦ Excelente · riesgo muy bien recompensado';
+            labelColor = 'var(--color-conservador)';
+        } else if (sharpe > 0.5) {
+            labelText = '◎ Aceptable · riesgo razonablemente recompensado';
+            labelColor = 'var(--color-moderado)';
+        } else if (sharpe > 0) {
+            labelText = '△ Bajo · el premio por volatilidad es marginal';
+            labelColor = '#f59e0b';
+        } else {
+            labelText = '✕ Negativo · no cubre la tasa libre de riesgo';
+            labelColor = '#ef4444';
+        }
+        sharpeLabel.innerText = labelText;
+        sharpeLabel.style.color = labelColor;
+    }
 
     const valueEl = document.getElementById('metric-return');
     valueEl.style.color = `var(--color-${optimization.profile})`;
