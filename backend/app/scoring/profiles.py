@@ -1,9 +1,42 @@
 import numpy as np
 
+PROJECTED_ARG_INFLATION = 0.22  # 22% de Inflación Anual Proyectada de Argentina
+PROJECTED_DEVAL = 0.42          # 42% de Devaluación del Peso proyectada para activos dolarizados
+
+def estimate_expected_return_ars(asset):
+    """
+    Estima el retorno anualizado esperado para el activo expresado en Pesos Argentinos (ARS),
+    empleando TNA para renta fija, retornos históricos ajustados para renta variable/cripto,
+    e incorporando la devaluación proyectada del tipo de cambio para activos denominados en USD.
+    """
+    category = asset.get("category")
+    currency = asset.get("currency", "ARS")
+    tna = asset.get("tna", 0.0)
+    ret_12m = asset.get("ret_12m", 0.0)
+    ret_6m = asset.get("ret_6m", 0.0)
+    
+    # Estimación base anualizada (en su moneda origen)
+    base_ret = ret_12m if ret_12m != 0.0 else ret_6m * 2.0
+    
+    if category in ("letras", "bonos"):
+        ann_return = tna
+    else:
+        # Acotamos retornos para evitar proyecciones especulativas extremas
+        ann_return = max(-0.30, min(1.20, base_ret))
+        
+    if currency == "USD":
+        # Activos dolarizados (S&P 500, Crypto, etc): se benefician de la devaluación local
+        ann_return_ars = (1.0 + ann_return) * (1.0 + PROJECTED_DEVAL) - 1.0
+    else:
+        ann_return_ars = ann_return
+        
+    return ann_return_ars
+
 def score_asset_for_profile(asset, profile):
     """
     Calcula un puntaje de idoneidad (0 a 100) para un activo según el perfil de riesgo seleccionado.
     Optimizado para un horizonte de mediano plazo (6-12 meses).
+    Incorpora penalizaciones severas si el activo no supera la inflación anual proyectada en Argentina.
     """
     category = asset.get("category")
     volatility = asset.get("volatility", 0.30)
@@ -35,15 +68,27 @@ def score_asset_for_profile(asset, profile):
 
     if profile == "conservador":
         score = calculate_conservative_score(category, volatility, sharpe_score, rsi_score, ret_score, asset)
-        return max(0.0, min(100.0, score + rsi_bonus)) if score > 15.0 else score
     elif profile == "moderado":
         score = calculate_moderate_score(category, volatility, sharpe_score, rsi_score, ret_score)
-        return max(0.0, min(100.0, score + rsi_bonus))
     elif profile == "agresivo":
         score = calculate_aggressive_score(category, volatility, sharpe_score, rsi_score, ret_score)
-        return max(0.0, min(100.0, score + rsi_bonus))
-    
-    return 0.0
+    else:
+        score = 0.0
+
+    if score > 15.0:
+        score = score + rsi_bonus
+        
+    # Validar meta de ganarle a la inflación proyectada en pesos
+    expected_ret_ars = estimate_expected_return_ars(asset)
+    if expected_ret_ars <= PROJECTED_ARG_INFLATION:
+        # Penalización drástica: no califica como sugerencia recomendada (queda por debajo de 40 puntos)
+        score = min(35.0, score - 30.0)
+    else:
+        # Bonificación ligera si supera con margen (ej: > 25% de retorno anual)
+        if expected_ret_ars > (PROJECTED_ARG_INFLATION + 0.05):
+            score = min(100.0, score + 3.0)
+
+    return max(0.0, min(100.0, score))
 
 def calculate_conservative_score(category, volatility, sharpe_score, rsi_score, ret_score, asset):
     # Conservador: Renta Fija (letras, bonos) es lo óptimo. Penaliza fuertemente la volatilidad.

@@ -4,7 +4,7 @@
     "ticker": "GOOGL.BA",
     "name": "GOOGL",
     "category": "cedears",
-    "price": 9805.0,
+    "price": 9870.0,
     "currency": "ARS",
     "score": 100.0,
     "profile": "agresivo",
@@ -12,14 +12,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 57.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "57.8",
+        "content": "El RSI de 14 períodos está en 59.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "59.2",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (9366.77) se encuentra por encima de la EMA de 200 días (8051.22), y el precio actual (9805.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (9386.51) se encuentra por encima de la EMA de 200 días (8070.98), y el precio actual (9870.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -33,24 +33,38 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+0.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (25.5%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+0.9% (1M)",
-        "status": "neutral"
+        "content": "El rendimiento mensual es de **+3.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (22.0%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+3.1% (1M)",
+        "status": "success"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 7,629.00 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 9,960.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 9,785.75. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 9,785.75",
+        "status": "success"
       }
     ],
     "fundamental": [
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "El Ratio de Sharpe es de **0.98**, un valor **aceptable** que sugiere que el rendimiento compensa razonablemente el riesgo asumido. Es una relación equilibrada para horizontes de 6-12 meses.",
-        "value": "0.98",
+        "content": "El Ratio de Sharpe es de **0.91**, un valor **aceptable** que sugiere que el rendimiento compensa razonablemente el riesgo asumido. Es una relación equilibrada para horizontes de 6-12 meses.",
+        "value": "0.91",
         "status": "neutral"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+19.1%** y a 12 meses es **+0.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+19.1% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+17.9%** y a 12 meses es **+0.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+17.9% (6M)",
+        "status": "success"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno anual esperado en pesos es del **35.8%**, superando la inflación argentina proyectada del **22.0%** con un spread real positivo de **+13.8%**. Cumple con el objetivo del portafolio de ganarle a la inflación.",
+        "value": "Retorno Est.: 35.8%",
         "status": "success"
       }
     ],
@@ -72,7 +86,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación."
-    }
+      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación.",
+      "take_profit": 16073.71,
+      "stop_loss": 6768.15,
+      "tp_pct": 62.9,
+      "sl_pct": 31.4
+    },
+    "support": 7629.0,
+    "resistance": 9960.0,
+    "volume_cluster": 9785.75,
+    "take_profit": 16073.71,
+    "stop_loss": 6768.15,
+    "tp_pct": 62.9,
+    "sl_pct": 31.4
   }
 }

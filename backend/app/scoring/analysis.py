@@ -1,17 +1,62 @@
-"""
-Motor de Análisis Detallado por Activo.
-Genera un reporte técnico, fundamental y macroeconómico para cada instrumento financiero.
-"""
 import numpy as np
+from app.scoring.profiles import estimate_expected_return_ars, PROJECTED_ARG_INFLATION
+
+
+def calculate_tp_sl(price, volatility, profile, category):
+    """
+    Calcula dinámicamente el Take Profit y Stop Loss sugeridos
+    según la volatilidad del activo y el perfil de riesgo seleccionado.
+    """
+    vol = max(0.04, min(0.60, volatility))
+    if category in ("letras", "bonos"):
+        # Renta Fija
+        if profile == "conservador":
+            tp_pct, sl_pct = 0.04, 0.02
+        elif profile == "moderado":
+            tp_pct, sl_pct = 0.08, 0.04
+        else: # agresivo
+            tp_pct, sl_pct = 0.15, 0.07
+    else:
+        # Renta Variable / Cripto
+        if profile == "conservador":
+            tp_pct, sl_pct = max(0.06, vol * 0.8), max(0.03, vol * 0.4)
+        elif profile == "moderado":
+            tp_pct, sl_pct = max(0.12, vol * 1.2), max(0.06, vol * 0.6)
+        else: # agresivo
+            tp_pct, sl_pct = max(0.25, vol * 1.8), max(0.12, vol * 0.9)
+            
+    tp = price * (1.0 + tp_pct)
+    sl = price * (1.0 - sl_pct)
+    return round(tp, 2), round(sl, 2), round(tp_pct * 100, 1), round(sl_pct * 100, 1)
+
+
+def build_volume_level_analysis(price, support, resistance, volume_cluster, currency):
+    """
+    Construye la narrativa técnica de soporte, resistencia y cluster de volumen (POC).
+    """
+    content = (
+        f"El análisis de la estructura de precios ubica los niveles clave del activo:\n"
+        f"- **Soporte de mediano plazo:** {currency} {support:,.2f} (zona histórica de compra).\n"
+        f"- **Resistencia de largo plazo:** {currency} {resistance:,.2f} (zona histórica de toma de ganancias).\n"
+        f"- **Precio Clave del Volumen (POC):** {currency} {volume_cluster:,.2f}. Este nivel representa "
+        f"el precio más operado del trimestre, operando como un pivote de estabilidad de volumen."
+    )
+    return {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": content,
+        "value": f"POC: {volume_cluster:,.2f}",
+        "status": "success" if price >= volume_cluster else "neutral"
+    }
 
 
 def generate_asset_analysis(asset, profile):
     """
     Genera un análisis detallado para un activo, incluyendo:
-    - Análisis Técnico (RSI, EMAs, Tendencia, Volatilidad)
-    - Análisis Fundamental / de Rendimiento
+    - Análisis Técnico (RSI, EMAs, Tendencia, Volatilidad, Soportes, Resistencias, POC)
+    - Análisis Fundamental / de Rendimiento (Sharpe, Inflación esperada)
     - Contexto Macroeconómico
-    - Veredicto final (Comprar / Mantener / Evitar)
+    - Veredicto final (Comprar / Mantener / Evitar con TP, SL e inflación)
     """
     category = asset.get("category", "")
     ticker = asset.get("ticker", "")
@@ -31,6 +76,11 @@ def generate_asset_analysis(asset, profile):
     ema_200 = asset.get("ema_200", 0)
     tna = asset.get("tna", None)
     maturity = asset.get("maturity", None)
+    
+    # Soporte, resistencia, POC
+    support = asset.get("support", round(price * 0.90, 2))
+    resistance = asset.get("resistance", round(price * 1.10, 2))
+    volume_cluster = asset.get("volume_cluster", round(price * 0.98, 2))
 
     # Sanitizar NaN / Inf
     for var_name in ['volatility', 'sharpe', 'rsi', 'ret_1m', 'ret_3m', 'ret_6m', 'ret_12m']:
@@ -40,6 +90,8 @@ def generate_asset_analysis(asset, profile):
 
     # ------- Sección 1: Análisis Técnico -------
     technical = build_technical_analysis(price, rsi, ema_50, ema_200, volatility, trend, ret_1m, ret_3m, category)
+    # Agregar análisis de soporte, resistencia y POC
+    technical.append(build_volume_level_analysis(price, support, resistance, volume_cluster, currency))
 
     # ------- Sección 2: Análisis Fundamental / Rendimiento -------
     fundamental = build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency)
@@ -48,7 +100,12 @@ def generate_asset_analysis(asset, profile):
     macro = build_macro_context(category, currency, profile)
 
     # ------- Sección 4: Veredicto Final -------
+    tp, sl, tp_pct, sl_pct = calculate_tp_sl(price, volatility, profile, category)
     verdict = build_verdict(score, profile, category, trend, sharpe, rsi, volatility)
+    verdict["take_profit"] = tp
+    verdict["stop_loss"] = sl
+    verdict["tp_pct"] = tp_pct
+    verdict["sl_pct"] = sl_pct
 
     return {
         "ticker": ticker,
@@ -61,7 +118,14 @@ def generate_asset_analysis(asset, profile):
         "technical": technical,
         "fundamental": fundamental,
         "macro": macro,
-        "verdict": verdict
+        "verdict": verdict,
+        "support": support,
+        "resistance": resistance,
+        "volume_cluster": volume_cluster,
+        "take_profit": tp,
+        "stop_loss": sl,
+        "tp_pct": tp_pct,
+        "sl_pct": sl_pct
     }
 
 
@@ -160,6 +224,9 @@ def build_technical_analysis(price, rsi, ema_50, ema_200, volatility, trend, ret
     return sections
 
 
+
+
+
 def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency):
     sections = []
 
@@ -204,6 +271,40 @@ def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity,
         "status": "success" if ret_6m > 0.10 else "danger" if ret_6m < -0.10 else "neutral"
     })
 
+    # Analisis vs Inflación Argentina Proyectada
+    expected_ret_ars = estimate_expected_return_ars({
+        "category": category,
+        "currency": currency,
+        "tna": tna or 0.0,
+        "ret_12m": ret_12m,
+        "ret_6m": ret_6m
+    })
+    beats_inflation = expected_ret_ars > PROJECTED_ARG_INFLATION
+    spread = expected_ret_ars - PROJECTED_ARG_INFLATION
+    
+    if beats_inflation:
+        inf_text = (
+            f"El retorno anual esperado en pesos es del **{expected_ret_ars*100:.1f}%**, superando la "
+            f"inflación argentina proyectada del **{PROJECTED_ARG_INFLATION*100:.1f}%** con un spread real positivo de "
+            f"**+{spread*100:.1f}%**. Cumple con el objetivo del portafolio de ganarle a la inflación."
+        )
+        inf_status = "success"
+    else:
+        inf_text = (
+            f"El retorno esperado en pesos es del **{expected_ret_ars*100:.1f}%**, quedando por debajo "
+            f"de la inflación argentina proyectada del **{PROJECTED_ARG_INFLATION*100:.1f}%** (rendimiento real negativo de "
+            f"**{spread*100:.1f}%**). No califica como sugerencia recomendada."
+        )
+        inf_status = "danger"
+
+    sections.append({
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": inf_text,
+        "value": f"Retorno Est.: {expected_ret_ars*100:.1f}%",
+        "status": inf_status
+    })
+
     # Fixed Income Specific
     if category in ("letras", "bonos") and tna is not None:
         tna_pct = tna * 100
@@ -214,16 +315,16 @@ def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity,
             fi_text += ". "
 
         if category == "letras":
-            fi_text += "Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad. El riesgo principal es el de inflación si la tasa ofrecida no compensa la suba de precios."
+            fi_text += "Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad."
         else:
-            fi_text += "Los bonos soberanos argentinos ofrecen rendimientos potencialmente elevados pero incorporan **riesgo país**. La cotización puede verse afectada por la percepción del mercado sobre la capacidad de repago del Estado argentino y las condiciones financieras globales."
+            fi_text += "Los bonos soberanos soberanos argentinos en dólares/pesos incorporan **riesgo país** pero otorgan alto rendimiento potencial."
 
         sections.append({
             "title": "Análisis de Renta Fija",
             "icon": "fa-landmark",
             "content": fi_text,
             "value": f"TNA: {tna_pct:.1f}%",
-            "status": "success" if tna > 0.40 else "neutral"
+            "status": "success" if tna > 0.22 else "neutral"
         })
 
     return sections

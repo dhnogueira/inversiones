@@ -6,7 +6,7 @@
     "category": "bonos",
     "price": 66.0,
     "currency": "USD",
-    "score": 58.2,
+    "score": 61.2,
     "profile": "conservador",
     "technical": [
       {
@@ -36,6 +36,13 @@
         "content": "El rendimiento mensual es de **+0.6%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (1.8%) ofrece una perspectiva más amplia de la dirección reciente.",
         "value": "+0.6% (1M)",
         "status": "neutral"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 58.08 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 73.92 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 62.70. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 62.70",
+        "status": "success"
       }
     ],
     "fundamental": [
@@ -54,9 +61,16 @@
         "status": "neutral"
       },
       {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno anual esperado en pesos es del **51.9%**, superando la inflación argentina proyectada del **22.0%** con un spread real positivo de **+29.9%**. Cumple con el objetivo del portafolio de ganarle a la inflación.",
+        "value": "Retorno Est.: 51.9%",
+        "status": "success"
+      },
+      {
         "title": "Análisis de Renta Fija",
         "icon": "fa-landmark",
-        "content": "Este instrumento de renta fija ofrece una **TNA del 7.0%** con vencimiento estimado en **2030-07-09**. Los bonos soberanos argentinos ofrecen rendimientos potencialmente elevados pero incorporan **riesgo país**. La cotización puede verse afectada por la percepción del mercado sobre la capacidad de repago del Estado argentino y las condiciones financieras globales.",
+        "content": "Este instrumento de renta fija ofrece una **TNA del 7.0%** con vencimiento estimado en **2030-07-09**. Los bonos soberanos soberanos argentinos en dólares/pesos incorporan **riesgo país** pero otorgan alto rendimiento potencial.",
         "value": "TNA: 7.0%",
         "status": "neutral"
       }
@@ -70,10 +84,21 @@
       }
     ],
     "verdict": {
-      "action": "CAUTELA",
-      "icon": "fa-triangle-exclamation",
-      "color": "warning",
-      "summary": "El score de **58.2/100** indica que este activo no es ideal para el perfil **conservador**. "
-    }
+      "action": "CONSIDERAR",
+      "icon": "fa-circle-info",
+      "color": "neutral",
+      "summary": "Con un score de **61.2/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. ",
+      "take_profit": 68.64,
+      "stop_loss": 64.68,
+      "tp_pct": 4.0,
+      "sl_pct": 2.0
+    },
+    "support": 58.08,
+    "resistance": 73.92,
+    "volume_cluster": 62.7,
+    "take_profit": 68.64,
+    "stop_loss": 64.68,
+    "tp_pct": 4.0,
+    "sl_pct": 2.0
   }
 }

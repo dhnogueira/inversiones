@@ -3,14 +3,6 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "LLY",
-        "name": "LLY",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.35,
-        "weight_pct": 35.0
-      },
-      {
         "ticker": "AVGO",
         "name": "AVGO",
         "category": "sp500",
@@ -19,8 +11,16 @@
         "weight_pct": 35.0
       },
       {
-        "ticker": "META",
-        "name": "META",
+        "ticker": "UNH",
+        "name": "UNH",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.35,
+        "weight_pct": 35.0
+      },
+      {
+        "ticker": "LLY",
+        "name": "LLY",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.3,
@@ -28,8 +28,8 @@
       }
     ],
     "expected_return": 0.0,
-    "expected_volatility": 36.8,
-    "sharpe_ratio": -0.14,
+    "expected_volatility": 37.42,
+    "sharpe_ratio": -0.13,
     "profile": "agresivo",
     "risk_free_rate": 5.0
   }

@@ -36,6 +36,13 @@
         "content": "El activo registró un rendimiento del **+13.5%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (54.3%) refuerzan esta tendencia positiva.",
         "value": "+13.5% (1M)",
         "status": "success"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 273.86 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 407.81 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 283.10. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 283.10",
+        "status": "success"
       }
     ],
     "fundamental": [
@@ -52,6 +59,13 @@
         "content": "El rendimiento acumulado a 6 meses es **+30.6%** y a 12 meses es **+0.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
         "value": "+30.6% (6M)",
         "status": "success"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno anual esperado en pesos es del **128.9%**, superando la inflación argentina proyectada del **22.0%** con un spread real positivo de **+106.9%**. Cumple con el objetivo del portafolio de ganarle a la inflación.",
+        "value": "Retorno Est.: 128.9%",
+        "status": "success"
       }
     ],
     "macro": [
@@ -66,7 +80,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido."
-    }
+      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "take_profit": 729.47,
+      "stop_loss": 273.31,
+      "tp_pct": 71.5,
+      "sl_pct": 35.7
+    },
+    "support": 273.86,
+    "resistance": 407.81,
+    "volume_cluster": 283.1,
+    "take_profit": 729.47,
+    "stop_loss": 273.31,
+    "tp_pct": 71.5,
+    "sl_pct": 35.7
   }
 }

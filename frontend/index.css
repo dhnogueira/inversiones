@@ -971,6 +971,53 @@ body {
     background: rgba(255, 255, 255, 0.04) !important;
 }
 
+/* Modal Stats Grid */
+.modal-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.modal-stat-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 12px 14px;
+    backdrop-filter: blur(10px);
+}
+
+.modal-stat-title {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.modal-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.modal-stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.modal-stat-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.modal-stat-value {
+    font-size: 12px;
+    font-weight: bold;
+}
+
 /* ============================================================
    RESPONSIVE — TABLET  (max 900px)
    ============================================================ */

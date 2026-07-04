@@ -279,11 +279,12 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
         else:
             rates = {"tna": letra["tna"], "tem": letra.get("tem", letra["tna"] / 12), "tea": letra.get("tea", 0.0)}
         tna = rates["tna"]
+        price = letra["price"]
         results.append({
             "ticker": letra["ticker"],
             "name": letra["name"],
             "category": "letras",
-            "price": letra["price"],
+            "price": price,
             "currency": letra.get("currency", "ARS"),
             "ret_1m": tna / 12,
             "ret_3m": (tna / 12) * 3,
@@ -295,6 +296,9 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
             "tna": tna,
             "tem": rates["tem"],
             "tea": rates["tea"],
+            "support": round(price * 0.985, 2),
+            "resistance": round(price * 1.015, 2),
+            "volume_cluster": round(price * 0.995, 2),
             "maturity": letra["maturity"],
             "trend": "Estable"
         })
@@ -307,11 +311,12 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
             rates = {"tna": bono["tna"], "tem": bono.get("tem", bono["tna"] / 12), "tea": bono.get("tea", 0.0)}
         bono_tna = rates["tna"]
         vol = 0.22 if bono.get("currency") == "ARS" else 0.16
+        price = bono["price"]
         results.append({
             "ticker": bono["ticker"],
             "name": bono["name"],
             "category": "bonos",
-            "price": bono["price"],
+            "price": price,
             "currency": bono.get("currency", "ARS"),
             "ret_1m": bono_tna / 12,
             "ret_3m": (bono_tna / 12) * 3,
@@ -323,6 +328,9 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
             "tna": bono_tna,
             "tem": rates["tem"],
             "tea": rates["tea"],
+            "support": round(price * 0.88, 2),
+            "resistance": round(price * 1.12, 2),
+            "volume_cluster": round(price * 0.95, 2),
             "maturity": bono["maturity"],
             "trend": "Alcista" if bono.get("var_pct", 0) > 0 else "Estable"
         })

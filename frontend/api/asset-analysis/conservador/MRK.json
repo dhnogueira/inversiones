@@ -6,7 +6,7 @@
     "category": "sp500",
     "price": 129.55999755859375,
     "currency": "USD",
-    "score": 30.0,
+    "score": 33.0,
     "profile": "conservador",
     "technical": [
       {
@@ -36,6 +36,13 @@
         "content": "El activo registró un rendimiento del **+13.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (8.0%) refuerzan esta tendencia positiva.",
         "value": "+13.8% (1M)",
         "status": "success"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 111.48 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 121.83 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 120.04. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 120.04",
+        "status": "success"
       }
     ],
     "fundamental": [
@@ -52,6 +59,13 @@
         "content": "El rendimiento acumulado a 6 meses es **+24.9%** y a 12 meses es **+0.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
         "value": "+24.9% (6M)",
         "status": "success"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno anual esperado en pesos es del **112.7%**, superando la inflación argentina proyectada del **22.0%** con un spread real positivo de **+90.7%**. Cumple con el objetivo del portafolio de ganarle a la inflación.",
+        "value": "Retorno Est.: 112.7%",
+        "status": "success"
       }
     ],
     "macro": [
@@ -66,7 +80,18 @@
       "action": "EVITAR",
       "icon": "fa-circle-xmark",
       "color": "danger",
-      "summary": "Con un score de solo **30.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido."
-    }
+      "summary": "Con un score de solo **33.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "take_profit": 158.37,
+      "stop_loss": 115.15,
+      "tp_pct": 22.2,
+      "sl_pct": 11.1
+    },
+    "support": 111.48,
+    "resistance": 121.83,
+    "volume_cluster": 120.04,
+    "take_profit": 158.37,
+    "stop_loss": 115.15,
+    "tp_pct": 22.2,
+    "sl_pct": 11.1
   }
 }

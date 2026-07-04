@@ -36,6 +36,30 @@ def calculate_rsi(prices, period=14):
         rsi[i] = 100. - 100. / (1. + rs)
     return rsi
 
+def compute_volume_profile(prices, volumes, bins=10):
+    """
+    Calcula el Point of Control (POC), es decir, el precio del cluster con mayor volumen.
+    """
+    try:
+        p_min, p_max = float(prices.min()), float(prices.max())
+        if p_min == p_max:
+            return p_min
+        
+        bin_edges = np.linspace(p_min, p_max, bins + 1)
+        bin_volumes = np.zeros(bins)
+        
+        for p, v in zip(prices, volumes):
+            # Encontrar el bin correspondiente
+            idx = np.searchsorted(bin_edges, p) - 1
+            idx = max(0, min(idx, bins - 1))
+            bin_volumes[idx] += v
+            
+        max_idx = np.argmax(bin_volumes)
+        # Retornar el punto medio del bin con mayor volumen
+        return float((bin_edges[max_idx] + bin_edges[max_idx + 1]) / 2.0)
+    except Exception:
+        return float(prices.iloc[-1])
+
 def compute_asset_metrics(df, ticker, category):
     if df.empty or len(df) < 50:
         return None
@@ -72,6 +96,17 @@ def compute_asset_metrics(df, ticker, category):
     elif ema_50 < ema_200 and close.iloc[-1] < ema_50:
         trend = "Fuerte Bajista"
         
+    # Soportes, resistencias y clusters de volumen
+    lookback_days = min(90, len(close))
+    close_recent = close.iloc[-lookback_days:]
+    support = float(np.percentile(close_recent, 10))
+    resistance = float(np.percentile(close_recent, 90))
+    
+    lookback_vol = min(100, len(close))
+    prices_vol = close.iloc[-lookback_vol:]
+    volumes_vol = df['Volume'].iloc[-lookback_vol:] if 'Volume' in df.columns else np.ones(lookback_vol)
+    volume_cluster = compute_volume_profile(prices_vol, volumes_vol)
+        
     return {
         "ticker": ticker,
         "name": ticker.replace(".BA", ""),
@@ -88,6 +123,9 @@ def compute_asset_metrics(df, ticker, category):
         "ema_50": ema_50,
         "ema_200": ema_200,
         "trend": trend,
+        "support": round(support, 2),
+        "resistance": round(resistance, 2),
+        "volume_cluster": round(volume_cluster, 2),
         "timestamp": time.time()
     }
 
