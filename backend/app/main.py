@@ -211,6 +211,20 @@ async def delete_portfolio(position_id: str, user: Optional[Dict] = Depends(get_
     await remove_position(position_id, user=user)
     return {"status": "success"}
 
+@app.get("/api/portfolio/report")
+async def get_portfolio_report_endpoint(
+    profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$"),
+    horizon: str = Query("medium", regex="^(short|medium|long)$"),
+    user: Optional[Dict] = Depends(get_current_user)
+):
+    from app.services.portfolio_report_service import generate_portfolio_report
+    positions = await get_all_positions(user)
+    all_assets = await _get_all_assets()
+    price_map = {a["ticker"]: a["price"] for a in all_assets}
+    pnl_data = calculate_portfolio_pnl(positions, price_map)
+    report = generate_portfolio_report(pnl_data["positions"], all_assets, profile, horizon)
+    return {"status": "success", "report": report}
+
 # ===== WATCHLIST & ALERTS =====
 @app.get("/api/watchlist")
 async def get_watchlist_endpoint(user: Optional[Dict] = Depends(get_current_user)):

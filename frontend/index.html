@@ -25,20 +25,33 @@
                 <button class="nav-item active" data-view="dashboard">
                     <i class="fa-solid fa-house"></i> Dashboard
                 </button>
-                <button class="nav-item" data-view="portfolio">
-                    <i class="fa-solid fa-briefcase"></i> Mi Cartera
-                </button>
                 <button class="nav-item" data-view="analysis">
                     <i class="fa-solid fa-magnifying-glass-chart"></i> Renta Fija
                 </button>
-                <button class="nav-item" data-view="alerts">
-                    <i class="fa-solid fa-bell"></i> Alertas
-                    <span id="alert-count-badge" class="nav-badge" style="display:none;">0</span>
-                </button>
-                <button class="nav-item" id="nav-auth-btn"
-                    style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 15px;">
-                    <i class="fa-solid fa-user-circle"></i> <span id="auth-btn-text">Iniciar Sesión</span>
-                </button>
+                <!-- Menú de Usuario con Dropdown (activado si está logeado) -->
+                <div class="user-menu-container"
+                    style="position: relative; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px;">
+                    <button class="nav-item" id="nav-auth-btn"
+                        style="width: 100%; display: flex; align-items: center; justify-content: flex-start;">
+                        <i class="fa-solid fa-user-circle"></i> <span id="auth-btn-text">Iniciar Sesión</span>
+                        <i class="fa-solid fa-chevron-down dropdown-arrow"
+                            style="margin-left: auto; display: none; font-size: 11px;"></i>
+                    </button>
+                    <div id="user-dropdown" class="user-dropdown">
+                        <button class="dropdown-item" data-view="portfolio">
+                            <i class="fa-solid fa-briefcase"></i> Mi Cartera
+                        </button>
+                        <button class="dropdown-item" data-view="alerts" style="display: flex; align-items: center;">
+                            <i class="fa-solid fa-bell"></i> <span style="margin-right: 8px;">Alertas</span>
+                            <span id="alert-count-badge" class="nav-badge"
+                                style="display:none; margin-left: auto;">0</span>
+                        </button>
+                        <hr class="dropdown-divider">
+                        <button class="dropdown-item text-danger" id="btn-logout">
+                            <i class="fa-solid fa-sign-out-alt"></i> Cerrar Sesión
+                        </button>
+                    </div>
+                </div>
             </nav>
             <div class="sidebar-footer">
                 <div class="update-status">
@@ -199,7 +212,20 @@
                     </div>
                 </div>
 
-                <div class="ranking-panel glass-panel">
+                <!-- Distribución por Categoría (Gráfico y Lista de Rendimiento por Categoría) -->
+                <div class="dashboard-grid" id="portfolio-distribution-section"
+                    style="display: none; margin-bottom: 24px;">
+                    <div class="chart-container glass-panel">
+                        <h3 class="panel-title">Distribución por Categoría</h3>
+                        <div id="portfolio-category-chart"></div>
+                    </div>
+                    <div class="allocation-list glass-panel">
+                        <h3 class="panel-title">Rendimiento por Categoría</h3>
+                        <div id="portfolio-category-list" class="allocation-items"></div>
+                    </div>
+                </div>
+
+                <div class="ranking-panel glass-panel" style="margin-bottom: 20px;">
                     <div class="table-wrapper">
                         <table class="asset-table">
                             <thead>
@@ -217,6 +243,45 @@
                             </thead>
                             <tbody id="portfolio-tbody"></tbody>
                         </table>
+                    </div>
+                </div>
+
+                <!-- Informe Diario de Asesoría Financiera generado dinámicamente -->
+                <div id="portfolio-report-section" class="glass-panel"
+                    style="padding: 24px; display: none; margin-top: 24px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--border-glow); padding-bottom: 15px;">
+                        <h3
+                            style="font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 10px; margin: 0;">
+                            <i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i>
+                            Informe Diario de Asesoría Financiera
+                        </h3>
+                        <span id="report-timestamp" style="font-size: 12px; color: var(--text-muted);"></span>
+                    </div>
+
+                    <div id="portfolio-report-overall" style="margin-bottom: 24px;">
+                        <!-- Acción recomendada general -->
+                    </div>
+
+                    <div id="portfolio-report-content" class="portfolio-report-grid"
+                        style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px;">
+                        <!-- Columna izquierda: Análisis detallado activo por activo -->
+                        <div class="report-analysis-col">
+                            <h4
+                                style="font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 14px; letter-spacing: 0.5px;">
+                                Recomendaciones por Activo</h4>
+                            <div id="report-active-list" style="display: flex; flex-direction: column; gap: 14px;">
+                            </div>
+                        </div>
+
+                        <!-- Columna derecha: Factores de riesgo del mercado y Cisnes Negros -->
+                        <div class="report-risks-col">
+                            <h4
+                                style="font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 14px; letter-spacing: 0.5px;">
+                                Riesgos del Contexto y Cisnes Negros</h4>
+                            <div id="report-market-context" style="display: flex; flex-direction: column; gap: 14px;">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

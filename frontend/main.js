@@ -20,7 +20,8 @@ let state = {
     updating: false,
     currentView: 'dashboard',
     staticMode: false,         // Si es true, usa JSONs estáticos y localStorage
-    apiBase: 'http://localhost:8000'
+    apiBase: 'http://localhost:8000',
+    portfolioPollingInterval: null  // Referencia para polling en tiempo real de cartera
 };
 
 
@@ -116,25 +117,44 @@ function setupEventListeners() {
         });
     }
 
-    // Nav menu switching
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            navItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
+    // Nav menu switching (helper function)
+    window.switchView = (viewId) => {
+        if (!viewId) return;
+        state.currentView = viewId;
 
-            // Close mobile menu on view switch
-            if (sidebar && sidebarOverlay) {
-                sidebar.classList.remove('open');
-                sidebarOverlay.classList.remove('active');
-            }
+        // Quitar 'active' de todos los botones de navegación y dropdown
+        document.querySelectorAll('.nav-item, .dropdown-item').forEach(i => i.classList.remove('active'));
 
+        // Poner 'active' en el botón correspondiente si existe
+        const targetBtn = document.querySelector(`[data-view="${viewId}"]`);
+        if (targetBtn) {
+            targetBtn.classList.add('active');
+        }
+
+        // Close mobile menu & user dropdown on view switch
+        if (sidebar && sidebarOverlay) {
+            sidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('active');
+        }
+        const userDropdown = document.getElementById('user-dropdown');
+        if (userDropdown) {
+            userDropdown.classList.remove('open');
+            document.querySelector('.user-menu-container')?.classList.remove('open');
+        }
+
+        // Cambiar vista activa
+        contentViews.forEach(view => view.classList.remove('active'));
+        const targetView = document.getElementById(`view-${viewId}`);
+        if (targetView) targetView.classList.add('active');
+
+        loadActiveView();
+    };
+
+    // Registrar clicks para botones con data-view
+    document.querySelectorAll('[data-view]').forEach(item => {
+        item.addEventListener('click', (e) => {
             const viewId = item.getAttribute('data-view');
-            state.currentView = viewId;
-
-            contentViews.forEach(view => view.classList.remove('active'));
-            document.getElementById(`view-${viewId}`).classList.add('active');
-
-            loadActiveView();
+            switchView(viewId);
         });
     });
 
@@ -202,14 +222,17 @@ function setupEventListeners() {
         watchForm.addEventListener('submit', handleAddWatchlistSubmit);
     }
 
-    // Auth account button binding
+    // Auth account button binding - toggles dropdown or opens modal
     const navAuthBtn = document.getElementById('nav-auth-btn');
+    const userDropdown = document.getElementById('user-dropdown');
+    const userMenuContainer = document.querySelector('.user-menu-container');
+
     if (navAuthBtn) {
-        navAuthBtn.addEventListener('click', async () => {
+        navAuthBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             if (user) {
-                if (confirm(`¿Desea cerrar la sesión de su cuenta (${user.email})?`)) {
-                    await supabase.auth.signOut();
-                }
+                userDropdown.classList.toggle('open');
+                userMenuContainer.classList.toggle('open');
             } else {
                 document.getElementById('auth-modal').style.display = 'flex';
                 document.getElementById('login-form').reset();
@@ -221,6 +244,27 @@ function setupEventListeners() {
             }
         });
     }
+
+    // Cerrar sesión desde el botón del dropdown
+    const btnLogout = document.getElementById('btn-logout');
+    if (btnLogout) {
+        btnLogout.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            if (confirm(`¿Desea cerrar la sesión de su cuenta (${user ? user.email : ''})?`)) {
+                userDropdown.classList.remove('open');
+                userMenuContainer?.classList.remove('open');
+                await supabase.auth.signOut();
+            }
+        });
+    }
+
+    // Cerrar dropdown al hacer click afuera
+    window.addEventListener('click', () => {
+        if (userDropdown && userDropdown.classList.contains('open')) {
+            userDropdown.classList.remove('open');
+            userMenuContainer?.classList.remove('open');
+        }
+    });
 
     // Open Modal button bindings
     const addPosBtn = document.getElementById('btn-add-position');
@@ -254,11 +298,26 @@ function showSignupForm() {
 
 function updateAuthUI() {
     const btnText = document.getElementById('auth-btn-text');
+    const arrow = document.querySelector('.user-menu-container .dropdown-arrow');
+    const container = document.querySelector('.user-menu-container');
+    const dropdown = document.getElementById('user-dropdown');
+
     if (!btnText) return;
     if (user) {
         btnText.textContent = user.email ? user.email.split('@')[0] : 'Mi Cuenta';
+        if (arrow) arrow.style.display = 'block';
     } else {
         btnText.textContent = 'Iniciar Sesión';
+        if (arrow) arrow.style.display = 'none';
+        if (dropdown) dropdown.classList.remove('open');
+        if (container) container.classList.remove('open');
+
+        // Redirigir al dashboard si está en una pestaña privada tras desloguearse
+        if (state.currentView === 'portfolio' || state.currentView === 'alerts') {
+            if (window.switchView) {
+                window.switchView('dashboard');
+            }
+        }
     }
 }
 
@@ -402,14 +461,18 @@ function setupAuthListeners() {
 function loadActiveView() {
     updateWatchlistAndAlerts(); // mantener alertas actualizadas
 
-    if (state.currentView === 'dashboard') {
-        fetchRecommendationsAndOptimize(state.activeProfile);
-    } else if (state.currentView === 'portfolio') {
+    if (state.currentView === 'portfolio') {
+        startPortfolioPolling();
         fetchPortfolio();
-    } else if (state.currentView === 'analysis') {
-        fetchYieldCurve();
-    } else if (state.currentView === 'alerts') {
-        fetchWatchlistOnly();
+    } else {
+        stopPortfolioPolling();
+        if (state.currentView === 'dashboard') {
+            fetchRecommendationsAndOptimize(state.activeProfile);
+        } else if (state.currentView === 'analysis') {
+            fetchYieldCurve();
+        } else if (state.currentView === 'alerts') {
+            fetchWatchlistOnly();
+        }
     }
 }
 
@@ -714,27 +777,483 @@ function getPriceMapFromMarketData() {
 }
 
 // ===== SIMULATED PORTFOLIO METHODS =====
-async function fetchPortfolio() {
-    const tbody = document.getElementById('portfolio-tbody');
-    tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="padding: 40px;"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Cargando posiciones...</td></tr>`;
+// ===== REAL-TIME POLLING HELPERS =====
+function startPortfolioPolling() {
+    if (state.portfolioPollingInterval) return;
+    state.portfolioPollingInterval = setInterval(() => {
+        if (state.currentView === 'portfolio') {
+            fetchPortfolio(true); // Polling silencioso
+        }
+    }, 60000);
+}
 
-    // Si estamos en modo estático, usar LocalStorage
+function stopPortfolioPolling() {
+    if (state.portfolioPollingInterval) {
+        clearInterval(state.portfolioPollingInterval);
+        state.portfolioPollingInterval = null;
+    }
+}
+
+// ===== LOCAL PORTFOLIO REPORT GENERATOR (Fallback) =====
+function generateLocalPortfolioReport(positions, profile, horizon) {
+    const totalInvested = positions.reduce((acc, p) => acc + p.invested, 0);
+    const totalCurrent = positions.reduce((acc, p) => acc + p.current_value, 0);
+    const totalPnl = totalCurrent - totalInvested;
+    const totalPnlPct = totalInvested > 0 ? (totalPnl / totalInvested * 100) : 0;
+
+    const categoriesInPortfolio = new Set(positions.map(p => p.category));
+
+    const systemicRiskFactors = [
+        {
+            id: "arg_macro",
+            title: "Transición Macroeconómica Argentina",
+            icon: "fa-flag",
+            severity: "medium",
+            categories: ["merval", "cedears", "bonos", "letras"],
+            description: "Argentina transita un proceso de estabilización con reducción gradual de la brecha cambiaria y ancla inflacionaria. Cuidado con activos en pesos (ARS) que rindan por debajo de la inflación anual proyectada (~22%). Enfoque selectivo.",
+            impact: "Exposición en general en ARS. Los bonos en USD (soberanos hard-dollar) brindan mayor resguardo cambiario."
+        },
+        {
+            id: "fed_policy",
+            title: "Política Monetaria de la Reserva Federal (EE.UU.)",
+            icon: "fa-university",
+            severity: "medium",
+            categories: ["sp500", "cedears", "crypto"],
+            description: "La Fed sostiene tasas restrictivas prolongadas. Un pivot hacia tasas bajas desataría rallyes en renta variable global y cripto, mientras una demora seguiría presionando valuaciones tecnológicas.",
+            impact: "Sensibilidad directa en CEDEARs de empresas de crecimiento y cryptos."
+        },
+        {
+            id: "crypto_regulation",
+            title: "Avance Regulatorio Global en Criptomonedas",
+            icon: "fa-bitcoin-sign",
+            severity: "high",
+            categories: ["crypto"],
+            description: "Esquemas normativos globales en debate. Los flujos institucionales vía ETFs spot afirman soportes de mediano plazo, pero la volatilidad residual del halving exige estricta gestión del tamaño de posición.",
+            impact: "Volatilidad cíclica aguda. Adecuado solo en porción controlada del portafolio agresivo."
+        },
+        {
+            id: "black_swan_concentration",
+            title: "Elevada Concentración de Activos",
+            icon: "fa-triangle-exclamation",
+            severity: "high",
+            categories: ["all"],
+            description: "Una o más posiciones representan más del 35% del capital total. Exceso de dependencia en el desempeño de poco instrumental corporativo.",
+            impact: "Recomendación de reequilibrio de ponderaciones para amortiguar riesgo no sistémico."
+        }
+    ];
+
+    const priceMap = getPriceMapFromMarketData();
+    const positionsAnalysis = positions.map(pos => {
+        const weightPct = totalInvested > 0 ? (pos.invested / totalInvested * 100) : 0;
+
+        let assetData = null;
+        if (state.marketData) {
+            for (let cat of Object.keys(state.marketData.categories)) {
+                const found = state.marketData.categories[cat].find(a => a.ticker === pos.ticker);
+                if (found) { assetData = found; break; }
+            }
+        }
+
+        const rsi = assetData ? (assetData.rsi || 50) : 50;
+        const sharpe = assetData ? (assetData.sharpe || 0) : 0.5;
+        const score = assetData ? (assetData.score || 50) : 50;
+        const volatility = assetData ? (assetData.volatility || 0.25) : 0.25;
+        const trend = assetData ? (assetData.trend || "Estable") : "Estable";
+        const ret1m = assetData ? (assetData.ret_1m || 0) : 0;
+
+        let recommendation = "MANTENER";
+        let recommendation_color = "neutral";
+        let rationale = "";
+
+        if (score < 25) {
+            recommendation = "VENDER TOTAL";
+            recommendation_color = "danger";
+            rationale = `Score crítico de ${score.toFixed(0)}/100. Fundamentos macro/técnicos deteriorados para tu perfil.`;
+        } else if (rsi > 78 && pos.pnl_pct > 20 && sharpe < 0.2) {
+            recommendation = "VENDER TOTAL";
+            recommendation_color = "danger";
+            rationale = `Sobrecompra extrema detectada (RSI: ${rsi.toFixed(0)}) con ganancia de +${pos.pnl_pct.toFixed(1)}%. Conveniente liquidar posición y concretar retornos.`;
+        } else if (rsi > 70 && pos.pnl_pct > 12) {
+            recommendation = "VENDER PARCIAL";
+            recommendation_color = "warning";
+            rationale = `RSI de ${rsi.toFixed(0)} en zona de sobrecompra. Recomendable vender una parte para asegurar ganancias y rebalancear.`;
+        } else if (rsi < 42 && sharpe > 0.7 && score > 72) {
+            recommendation = "INCREMENTAR";
+            recommendation_color = "success";
+            rationale = `Valuación técnica en sobreventa táctica con sólido Sharpe de ${sharpe.toFixed(2)}. Oportunidad idónea de acumulación.`;
+        } else {
+            rationale = `Posición con dinamismo balanceado. Score de ${score.toFixed(0)}/100. Perfil del inversor alineado con el activo.`;
+        }
+
+        const riskFlags = [];
+        if (rsi > 72) riskFlags.push(`⚠ RSI sobrecompra (${rsi.toFixed(0)})`);
+        if (rsi < 28) riskFlags.push(`⚠ RSI sobreventa (${rsi.toFixed(0)})`);
+        if (volatility > 0.5) riskFlags.push(`🔥 Volatilidad extrema (${(volatility * 100).toFixed(0)}%)`);
+        if (sharpe < 0) riskFlags.push("📉 Sharpe negativo");
+        if (weightPct > 35) riskFlags.push(`⚡ Alta concentración (${weightPct.toFixed(0)}%)`);
+
+        return {
+            ticker: pos.ticker,
+            name: pos.name,
+            category: pos.category,
+            currency: pos.currency,
+            entry_price: pos.entry_price,
+            current_price: pos.current_price,
+            quantity: pos.quantity,
+            invested: pos.invested,
+            current_value: pos.current_value,
+            pnl: pos.pnl,
+            pnl_pct: pos.pnl_pct,
+            weight_pct: weightPct,
+            recommendation,
+            recommendation_color,
+            rationale,
+            risk_flags: riskFlags,
+            technical_snapshot: {
+                rsi: rsi,
+                sharpe: sharpe,
+                volatility_pct: volatility * 100,
+                trend: trend,
+                score: score,
+                ret_1m_pct: ret1m * 100
+            }
+        };
+    });
+
+    const activeRisks = systemicRiskFactors.filter(factor => {
+        if (factor.id === "black_swan_concentration") {
+            return positionsAnalysis.some(p => p.weight_pct > 35);
+        }
+        return factor.categories.some(c => categoriesInPortfolio.has(c));
+    });
+
+    let overall_action = "MANTENER";
+    let overall_rationale = `La cartera se encuentra balanceada y acumula rendimiento total neutro/positivo (+${totalPnlPct.toFixed(2)}%).`;
+
+    const sellTotal = positionsAnalysis.filter(p => p.recommendation === "VENDER TOTAL").length;
+    const sellPartial = positionsAnalysis.filter(p => p.recommendation === "VENDER PARCIAL").length;
+    const increaseCount = positionsAnalysis.filter(p => p.recommendation === "INCREMENTAR").length;
+
+    if (sellTotal >= 2 || (sellTotal + sellPartial) / positions.length > 0.6) {
+        overall_action = "REBALANCEAR";
+        overall_rationale = "Elevada proporción de activos con alertas de liquidación. Rotar asignaciones hacia activos conservadores o de mayor score.";
+    } else if (totalPnlPct > 15 && sellPartial > 0) {
+        overall_action = "PROTEGER GANANCIAS";
+        overall_rationale = "Retornos globales atractivos. Realizar tomas de ganancias parciales recomendadas y retener liquidez.";
+    } else if (increaseCount >= 2) {
+        overall_action = "OPORTUNIDAD DE ACUMULACIÓN";
+        overall_rationale = "Múltiples activos sólidos y subvaluados presentan señales claras para incrementar ponderación.";
+    }
+
+    // Calcular desglose de categorías
+    const categoryBreakdown = [];
+    const catMapObj = {};
+    positions.forEach(pos => {
+        if (!catMapObj[pos.category]) catMapObj[pos.category] = { invested: 0, current: 0, count: 0 };
+        catMapObj[pos.category].invested += pos.invested;
+        catMapObj[pos.category].current += pos.current_value;
+        catMapObj[pos.category].count++;
+    });
+
+    Object.keys(catMapObj).forEach(cat => {
+        const invested = catMapObj[cat].invested;
+        const current = catMapObj[cat].current;
+        const pnl = current - invested;
+        const pnlPct = invested > 0 ? (pnl / invested * 100) : 0;
+        categoryBreakdown.push({
+            category: cat,
+            invested,
+            current_value: current,
+            pnl,
+            pnl_pct: pnlPct,
+            count: catMapObj[cat].count
+        });
+    });
+
+    return {
+        generated_at: new Date().toISOString(),
+        profile,
+        horizon,
+        summary: {
+            total_invested: totalInvested,
+            total_current: totalCurrent,
+            total_pnl: totalPnl,
+            total_pnl_pct: totalPnlPct,
+            positions_count: positions.length
+        },
+        overall_action,
+        overall_rationale,
+        positions_analysis: positionsAnalysis,
+        category_breakdown: categoryBreakdown,
+        market_context: activeRisks
+    };
+}
+
+// ===== RENDERIZADO VISUAL EXCLUSIVO DE LA CARTERA =====
+function renderCategoryBreakdown(positions, categoryBreakdown) {
+    const chartContainer = document.getElementById('portfolio-distribution-section');
+    if (!positions || positions.length === 0) {
+        chartContainer.style.display = 'none';
+        return;
+    }
+    chartContainer.style.display = 'grid';
+
+    // 1. Renderizar Listado de Categorías y P&L
+    const listEl = document.getElementById('portfolio-category-list');
+    listEl.innerHTML = '';
+
+    categoryBreakdown.forEach(cat => {
+        const pnlClass = cat.pnl >= 0 ? 'text-green' : 'text-red';
+        const pnlPctClass = cat.pnl >= 0 ? 'trend-up' : 'trend-down';
+        const pnlSign = cat.pnl >= 0 ? '+' : '';
+
+        const itemHtml = `
+            <div class="allocation-item" style="display: flex; flex-direction: column; gap: 4px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-weight: 500; text-transform: capitalize;">${cat.category} <span style="font-size:11px; color:var(--text-muted);">(${cat.count} act)</span></span>
+                    <strong class="${pnlClass}">$ ${cat.current_value.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-muted);">
+                    <span>Invertido: $ ${cat.invested.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</span>
+                    <span class="trend-badge ${pnlPctClass}" style="font-size: 11px;">PnL: ${pnlSign}${cat.pnl_pct.toFixed(2)}%</span>
+                </div>
+            </div>
+        `;
+        listEl.insertAdjacentHTML('beforeend', itemHtml);
+    });
+
+    // 2. Renderizar Donut Chart
+    const pieSeries = categoryBreakdown.map(cat => cat.current_value);
+    const pieLabels = categoryBreakdown.map(cat => cat.category.toUpperCase());
+
+    if (window.portfolioCategoryChart) {
+        window.portfolioCategoryChart.destroy();
+    }
+
+    const options = {
+        series: pieSeries,
+        labels: pieLabels,
+        chart: {
+            type: 'donut',
+            height: 250,
+            background: 'transparent',
+            foreColor: '#9ca3af'
+        },
+        dataLabels: { enabled: false },
+        stroke: { show: false },
+        plotOptions: {
+            pie: {
+                donut: {
+                    size: '72%',
+                    background: 'transparent',
+                    labels: {
+                        show: true,
+                        name: { show: true, fontSize: '14px', fontFamily: 'Outfit', color: '#9ca3af' },
+                        value: {
+                            show: true,
+                            fontSize: '18px',
+                            fontFamily: 'Outfit',
+                            fontWeight: '600',
+                            color: '#ffffff',
+                            formatter: function (val) {
+                                return "$ " + parseFloat(val).toLocaleString('es-AR', { maximumFractionDigits: 0 });
+                            }
+                        },
+                        total: {
+                            show: true,
+                            label: 'Total Cartera',
+                            color: '#9ca3af',
+                            formatter: function (w) {
+                                const total = w.globals.seriesTotals.reduce((a, b) => a + b, 0);
+                                return "$ " + total.toLocaleString('es-AR', { maximumFractionDigits: 0 });
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        theme: {
+            monochrome: {
+                enabled: true,
+                color: '#3b82f6',
+                shadeTo: 'dark',
+                shadeIntensity: 0.65
+            }
+        },
+        legend: {
+            position: 'bottom',
+            fontFamily: 'Outfit',
+            labels: { colors: '#f3f4f6' }
+        },
+        tooltip: {
+            y: {
+                formatter: function (val) {
+                    return "$ " + val.toLocaleString('es-AR', { maximumFractionDigits: 2 });
+                }
+            }
+        }
+    };
+
+    window.portfolioCategoryChart = new ApexCharts(document.querySelector("#portfolio-category-chart"), options);
+    window.portfolioCategoryChart.render();
+}
+
+function renderAdvisoryReport(report) {
+    const reportSection = document.getElementById('portfolio-report-section');
+    if (!report || !report.positions_analysis || report.positions_analysis.length === 0) {
+        reportSection.style.display = 'none';
+        return;
+    }
+    reportSection.style.display = 'block';
+
+    // Timestamp
+    const dateStr = new Date(report.generated_at).toLocaleDateString('es-AR', {
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+    });
+    document.getElementById('report-timestamp').innerText = `Actualizado: ${dateStr}`;
+
+    // Overall banner color & icon
+    const overallPanel = document.getElementById('portfolio-report-overall');
+    let bannerColor = 'rgba(255,255,255,0.06)';
+    let borderAccent = 'rgba(255,255,255,0.15)';
+    let overallIcon = 'fa-scale-balanced';
+    let textAccent = 'var(--text-primary)';
+
+    if (report.overall_action === 'REBALANCEAR' || report.overall_action === 'VENDER TOTAL') {
+        bannerColor = 'rgba(239, 68, 68, 0.08)';
+        borderAccent = 'rgba(239, 68, 68, 0.25)';
+        overallIcon = 'fa-triangle-exclamation';
+        textAccent = '#ef4444';
+    } else if (report.overall_action === 'PROTEGER GANANCIAS') {
+        bannerColor = 'rgba(245, 158, 11, 0.08)';
+        borderAccent = 'rgba(245, 158, 11, 0.25)';
+        overallIcon = 'fa-shield-halved';
+        textAccent = '#f59e0b';
+    } else if (report.overall_action === 'OPORTUNIDAD DE ACUMULACIÓN') {
+        bannerColor = 'rgba(16, 185, 129, 0.08)';
+        borderAccent = 'rgba(16, 185, 129, 0.25)';
+        overallIcon = 'fa-circle-arrow-up';
+        textAccent = '#10b981';
+    }
+
+    overallPanel.innerHTML = `
+        <div style="background: ${bannerColor}; border: 1px solid ${borderAccent}; border-radius: 12px; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start;">
+            <div style="background: rgba(255,255,255,0.03); border-radius: 10px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: ${textAccent}; flex-shrink: 0;">
+                <i class="fa-solid ${overallIcon}"></i>
+            </div>
+            <div>
+                <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px;">Veredicto de Cartera</span>
+                <h4 style="font-size: 16px; font-weight: 700; margin: 2px 0 6px 0; color: ${textAccent};">${report.overall_action}</h4>
+                <p style="font-size:13px; color: var(--text-secondary); margin: 0; line-height: 1.5;">${report.overall_rationale}</p>
+            </div>
+        </div>
+    `;
+
+    // Recommendations list
+    const activeList = document.getElementById('report-active-list');
+    activeList.innerHTML = '';
+
+    report.positions_analysis.forEach(pos => {
+        let badgeColor = 'rgba(255,255,255,0.06)';
+        let badgeText = '#9ca3af';
+
+        if (pos.recommendation.includes('VENDER TOTAL')) {
+            badgeColor = 'rgba(239, 68, 68, 0.12)';
+            badgeText = '#ef4444';
+        } else if (pos.recommendation.includes('VENDER PARCIAL')) {
+            badgeColor = 'rgba(245, 158, 11, 0.12)';
+            badgeText = '#f59e0b';
+        } else if (pos.recommendation.includes('INCREMENTAR')) {
+            badgeColor = 'rgba(16, 185, 129, 0.12)';
+            badgeText = '#10b981';
+        }
+
+        const riskFlagsHtml = pos.risk_flags.map(f => `<span class="flag-pill">${f}</span>`).join(' ');
+
+        const cardHtml = `
+            <div class="report-item-card glass-panel" style="padding: 16px; border: 1px solid rgba(255,255,255,0.03); border-radius: 12px; background: rgba(30, 41, 59, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                    <div>
+                        <span class="asset-tag" style="font-size: 11px;">${pos.ticker.replace('.BA', '')}</span>
+                        <span style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; margin-left: 8px;">${pos.category}</span>
+                    </div>
+                    <span style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; background: ${badgeColor}; color: ${badgeText};">${pos.recommendation}</span>
+                </div>
+                
+                <h5 style="margin: 0 0 6px 0; font-size: 14px; font-weight: 600;">${pos.name}</h5>
+                <p style="font-size: 13px; color: var(--text-secondary); margin: 0 0 12px 0; line-height: 1.4;">${pos.rationale}</p>
+                
+                ${pos.risk_flags.length > 0 ? `<div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">${riskFlagsHtml}</div>` : ''}
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); padding: 8px 10px; background: rgba(0,0,0,0.15); border-radius: 8px; font-size: 11px; color: var(--text-muted); text-align: center; gap: 6px;">
+                    <div>RSI: <strong style="color:var(--text-primary); display:block;">${pos.technical_snapshot.rsi.toFixed(1)}</strong></div>
+                    <div>Sharpe: <strong style="color:var(--text-primary); display:block;">${pos.technical_snapshot.sharpe.toFixed(2)}</strong></div>
+                    <div>Vol: <strong style="color:var(--text-primary); display:block;">${pos.technical_snapshot.volatility_pct.toFixed(0)}%</strong></div>
+                    <div>Score: <strong style="color:var(--text-primary); display:block;">${pos.technical_snapshot.score.toFixed(0)}</strong></div>
+                </div>
+            </div>
+        `;
+        activeList.insertAdjacentHTML('beforeend', cardHtml);
+    });
+
+    // Systemic Risks
+    const marketList = document.getElementById('report-market-context');
+    marketList.innerHTML = '';
+
+    if (!report.market_context || report.market_context.length === 0) {
+        marketList.innerHTML = `<div style="text-align: center; color: var(--text-muted); font-size: 13px; padding: 20px;">Sin riesgos severos ponderados para la cartera actual.</div>`;
+        return;
+    }
+
+    report.market_context.forEach(risk => {
+        let riskColor = '#f59e0b';
+        let riskBg = 'rgba(245, 158, 11, 0.06)';
+        let riskBorder = 'rgba(245, 158, 11, 0.15)';
+
+        if (risk.severity === 'high') {
+            riskColor = '#ef4444';
+            riskBg = 'rgba(239, 68, 68, 0.06)';
+            riskBorder = 'rgba(239, 68, 68, 0.15)';
+        }
+
+        const riskHtml = `
+            <div style="background: ${riskBg}; border: 1px solid ${riskBorder}; border-radius: 12px; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; gap: 8px; color: ${riskColor}; font-weight: 600; font-size: 13px; margin-bottom: 6px;">
+                    <i class="fa-solid ${risk.icon || 'fa-triangle-exclamation'}"></i>
+                    <span>${risk.title}</span>
+                </div>
+                <p style="font-size: 12px; color: var(--text-secondary); margin: 0; line-height: 1.4;">${risk.description}</p>
+                <div style="font-size: 11px; color: var(--text-muted); margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.05);">
+                    <strong>Impacto: </strong>${risk.impact}
+                </div>
+            </div>
+        `;
+        marketList.insertAdjacentHTML('beforeend', riskHtml);
+    });
+}
+
+// ===== SIMULATED PORTFOLIO METHODS =====
+async function fetchPortfolio(isSilent = false) {
+    if (!isSilent) {
+        const tbody = document.getElementById('portfolio-tbody');
+        tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="padding: 40px;"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Cargando posiciones...</td></tr>`;
+    }
+
     if (state.staticMode) {
-        // Cargar precios de mercado primero si no están en state
         if (!state.marketData) {
             try {
                 const recRes = await fetch(`api/recommendations/${state.activeProfile}.json`);
                 const recD = await recRes.json();
                 state.marketData = recD.results;
             } catch (e) {
-                console.error("No se pudo precargar tabla de precios para cartera estática.");
+                console.error("No se pudo precargar tabla de precios para la cartera.");
             }
         }
 
         const localPos = getLocalPortfolio();
         const priceMap = getPriceMapFromMarketData();
 
-        // Simular cálculo de P&L exactamente como el backend
         let totalInvested = 0;
         let totalCurrent = 0;
         const enriched = [];
@@ -762,7 +1281,7 @@ async function fetchPortfolio() {
         const totalPnl = totalCurrent - totalInvested;
         const totalPnlPct = totalInvested > 0 ? (totalPnl / totalInvested * 100) : 0;
 
-        renderPortfolioHTML({
+        const mockResponse = {
             positions: enriched,
             summary: {
                 total_invested: totalInvested,
@@ -770,7 +1289,17 @@ async function fetchPortfolio() {
                 total_pnl: totalPnl,
                 total_pnl_pct: totalPnlPct
             }
-        });
+        };
+
+        renderPortfolioHTML(mockResponse);
+
+        // Generar informe de cartera local client-side
+        if (enriched.length > 0) {
+            const localReport = generateLocalPortfolioReport(enriched, state.activeProfile, state.activeHorizon);
+            renderAdvisoryReport(localReport);
+        } else {
+            renderAdvisoryReport(null);
+        }
         return;
     }
 
@@ -782,9 +1311,30 @@ async function fetchPortfolio() {
 
         if (data.status === 'success') {
             renderPortfolioHTML(data);
+
+            // Consultar endpoint de informe del Backend
+            if (data.positions && data.positions.length > 0) {
+                try {
+                    const repRes = await fetch(`${state.apiBase}/api/portfolio/report?profile=${state.activeProfile}&horizon=${state.activeHorizon}`, {
+                        headers: getAuthHeaders()
+                    });
+                    const repData = await repRes.json();
+                    if (repData.status === 'success') {
+                        renderAdvisoryReport(repData.report);
+                    }
+                } catch (errReport) {
+                    console.error("Error al cargar informe del backend:", errReport);
+                    renderAdvisoryReport(null);
+                }
+            } else {
+                renderAdvisoryReport(null);
+            }
         }
     } catch (e) {
-        tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar datos de cartera.</td></tr>`;
+        if (!isSilent) {
+            const tbody = document.getElementById('portfolio-tbody');
+            tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar datos de cartera.</td></tr>`;
+        }
     }
 }
 
@@ -796,11 +1346,12 @@ function renderPortfolioHTML(data) {
     const pnl = data.summary.total_pnl;
     const pnlLabel = document.getElementById('pf-pnl');
     pnlLabel.innerText = `${pnl >= 0 ? '+' : ''}$ ${pnl.toLocaleString('es-AR', { maximumFractionDigits: 2 })} (${data.summary.total_pnl_pct.toFixed(2)}%)`;
-    pnlLabel.style.color = pnl >= 0 ? 'var(--color-conservador)' : '#ef4444';
+    pnlLabel.style.color = pnl >= 0 ? '#10b981' : '#ef4444';
 
     tbody.innerHTML = '';
     if (data.positions.length === 0) {
         tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="padding:30px; color:var(--text-secondary);">La cartera está vacía. Agregue posiciones para comenzar a trackear.</td></tr>`;
+        renderCategoryBreakdown([], []);
         return;
     }
 
@@ -827,9 +1378,35 @@ function renderPortfolioHTML(data) {
             openAssetModal(pos.ticker);
         });
 
-        tr.querySelector('.delete-btn').addEventListener('click', () => handleDeletePosition(pos.id));
+        tr.querySelector('.delete-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            handleDeletePosition(pos.id);
+        });
         tbody.appendChild(tr);
     });
+
+    // Generar breakdown de categorías
+    const catMap = {};
+    data.positions.forEach(pos => {
+        if (!catMap[pos.category]) {
+            catMap[pos.category] = { category: pos.category, count: 0, invested: 0, current_value: 0 };
+        }
+        catMap[pos.category].count++;
+        catMap[pos.category].invested += pos.invested;
+        catMap[pos.category].current_value += pos.current_value;
+    });
+
+    const categoryBreakdown = Object.values(catMap).map(c => {
+        const pnl = c.current_value - c.invested;
+        const pnl_pct = c.invested > 0 ? (pnl / c.invested * 100) : 0;
+        return {
+            ...c,
+            pnl,
+            pnl_pct
+        };
+    }).sort((a, b) => b.pnl_pct - a.pnl_pct);
+
+    renderCategoryBreakdown(data.positions, categoryBreakdown);
 }
 
 async function handleAddPositionSubmit(e) {
