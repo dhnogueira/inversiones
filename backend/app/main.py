@@ -88,6 +88,10 @@ def read_css():
 def read_js():
     return FileResponse(os.path.join(FRONTEND_DIR, "main.js"))
 
+@app.get("/config.js")
+def read_config_js():
+    return FileResponse(os.path.join(FRONTEND_DIR, "config.js"))
+
 # ===== HEALTH =====
 @app.get("/api/health")
 def read_health():
