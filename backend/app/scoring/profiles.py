@@ -257,6 +257,17 @@ def score_asset_for_profile(asset, profile, horizon=HORIZON_MEDIUM):
         if tna < MIN_TNA_LETRAS_ARS:
             return 0.0
 
+    # BARRERA #0.1: Exclusión durísima de vencimiento para perfil Conservador (Estrategia A)
+    # Si vence post-horizonte elegido, se descarta el instrumento para proteger contra riesgo de tasa y de liquidez
+    if profile == "conservador" and category in ("letras", "bonos") and maturity:
+        try:
+            days = (datetime.strptime(maturity, "%Y-%m-%d") - datetime.now()).days
+            horizon_days = {HORIZON_SHORT: 180, HORIZON_MEDIUM: 365, HORIZON_LONG: 730}.get(horizon, 365)
+            if days > horizon_days:
+                return 0.0
+        except:
+            pass
+
     if horizon == HORIZON_SHORT:
         if category == "crypto" and profile != "agresivo":
             return 0.0
@@ -301,6 +312,19 @@ def score_asset_for_profile(asset, profile, horizon=HORIZON_MEDIUM):
         if tna > 0.0:
             # Recompensar la tasa
             base_score += min(20.0, tna * 35.0)
+
+        # Estrategia B: Penalizar descalce de plazos para Moderado/Agresivo si el activo vence después del horizonte
+        if profile != "conservador" and maturity:
+            try:
+                days = (datetime.strptime(maturity, "%Y-%m-%d") - datetime.now()).days
+                horizon_days = {HORIZON_SHORT: 180, HORIZON_MEDIUM: 365, HORIZON_LONG: 730}.get(horizon, 365)
+                if days > horizon_days:
+                    # Descuento de ~1.5 puntos por cada 30 días de descalce
+                    excess_months = (days - horizon_days) / 30.0
+                    mismatch_penalty = min(20.0, excess_months * 1.5)
+                    base_score = max(0.0, base_score - mismatch_penalty)
+            except:
+                pass
 
         expected_ret_ars = estimate_expected_return_ars(asset, profile, horizon)
         h_inf = get_horizon_inflation(horizon)
