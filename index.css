@@ -46,6 +46,11 @@ body {
     min-height: 100vh;
 }
 
+/* Ocultar elementos exclusivos de mobile en escritorio */
+.mobile-top-bar {
+    display: none;
+}
+
 /* Sidebar Styling */
 .sidebar {
     width: 260px;
