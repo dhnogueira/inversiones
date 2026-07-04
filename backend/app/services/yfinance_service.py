@@ -228,13 +228,24 @@ async def fetch_yfinance_market_data(force_refresh=False):
         except Exception as e:
             print(f"Error processing {ticker}: {e}")
             
-    # Save cache
-    cache_data = {
-        "timestamp": time.time(),
-        "data": results
-    }
-    with open(cache_path, "w") as f:
-        json.dump(cache_data, f)
+    # Save cache if we got decent results (at least 50% of expected tickers)
+    if len(results) >= len(all_tickers) * 0.5:
+        cache_data = {
+            "timestamp": time.time(),
+            "data": results
+        }
+        with open(cache_path, "w") as f:
+            json.dump(cache_data, f)
+    else:
+        print(f"WARNING: Descarga de yfinance incompleta o fallida (sintetizados solo {len(results)}/{len(all_tickers)}).")
+        if os.path.exists(cache_path):
+            print("Cargando caché previo completo de yfinance como resguardo...")
+            try:
+                with open(cache_path, "r") as f:
+                    cached = json.load(f)
+                results = cached.get("data", [])
+            except Exception as e:
+                print(f"Error cargando caché previo de resguardo: {e}")
         
     return results
 
