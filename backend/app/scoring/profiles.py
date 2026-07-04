@@ -19,6 +19,10 @@ HORIZON_SHORT  = "short"   # hasta 6 meses
 HORIZON_MEDIUM = "medium"  # 6 meses – 1 año
 HORIZON_LONG   = "long"    # más de 1 año
 
+# TNA mínima para que una letra en ARS sea considerada por el sistema.
+# LECAPs capitalizadas con TNA real < 18% no compensan la inflación proyectada (~22% anual).
+MIN_TNA_LETRAS_ARS = 0.18
+
 _HORIZON_INFLATION = {
     HORIZON_SHORT:  0.11,
     HORIZON_MEDIUM: 0.22,
@@ -49,41 +53,56 @@ def estimate_expected_return_ars(asset, profile="moderado", horizon=HORIZON_MEDI
         # Calcular T (plazo al vencimiento en años)
         maturity = asset.get("maturity")
         maturity_years = 1.0  # default si no tiene fecha
+        days_to_maturity = 365
         if maturity:
             try:
-                days = (datetime.strptime(maturity, "%Y-%m-%d") - datetime.now()).days
-                maturity_years = max(0.01, days / 365.25)
+                days_to_maturity = (datetime.strptime(maturity, "%Y-%m-%d") - datetime.now()).days
+                maturity_years = max(0.01, days_to_maturity / 365.25)
             except:
                 pass
 
-        # Estimar Duración Modificada D*
+        # -------------------------------------------------------------------
+        # RETORNO EFECTIVO AL VENCIMIENTO (Yield to Maturity real)
+        # Para LECAPs capitalizadas que cotizan sobre par, el retorno real es
+        # (VN_tecnico - precio_mercado) / precio_mercado, proporcional al plazo.
+        # Usamos ret_12m como proxy del retorno efectivo total hasta vencimiento
+        # (calculado correctamente en arg_fixed_income.py como tna * maturity_fraction).
+        # Si ret_12m refleja el retorno efectivo real, lo usamos directamente.
+        # Si sólo disponemos de tna, calculamos el retorno efectivo proporcional.
+        # -------------------------------------------------------------------
+        effective_return = asset.get("effective_return", None)
+        if effective_return is None:
+            # Fallback: usar TNA * fracción del año hasta vencimiento
+            effective_return = tna * maturity_fraction if (tna > 0 and (maturity_fraction := maturity_years) > 0) else tna * maturity_years
+
+        # Ajustar según el horizonte solicitado
+        # Si el instrumento vence ANTES del horizonte completo, el retorno es el efectivo al vencimiento.
+        # Si el horizonte es más corto que el vencimiento, proporcional.
+        horizon_years = {HORIZON_SHORT: 0.5, HORIZON_MEDIUM: 1.0, HORIZON_LONG: 2.0}.get(horizon, 1.0)
+
+        if maturity_years <= horizon_years:
+            # El instrumento vence dentro del horizonte → retorno es el efectivo al vencimiento
+            ann_return = effective_return
+        else:
+            # El instrumento dura más que el horizonte → proyectar proporcionalmente
+            ann_return = tna * horizon_years
+
+        # Ajuste de Duración Modificada para capturar ganancia/pérdida de capital esperada
+        # (spread compression/expansion según perfil de riesgo)
         if category == "letras":
-            modified_duration = maturity_years / (1.0 + tna) if tna > -1.0 else maturity_years
+            modified_duration = min(maturity_years, 1.0) / (1.0 + tna) if tna > -1.0 else min(maturity_years, 1.0)
         else:
             modified_duration = max(0.5, min(6.0, maturity_years * 0.6))
 
-        # Estimar cambio de tasa/spread anual (dy) según perfil
-        # dy: Conservador (+1.5%), Moderado (-2.0%), Agresivo (-5.0%)
         dy_map = {
             "conservador": 0.015,
             "moderado": -0.020,
             "agresivo": -0.050
         }
         dy = dy_map.get(profile, -0.020)
+        capital_gain = -modified_duration * dy * min(horizon_years, maturity_years)
+        ann_return = ann_return + capital_gain
 
-        # Ganancia/pérdida de capital anual aproximada: -D* * dy
-        capital_gain_annual = -modified_duration * dy
-
-        # Retorno anual consolidado: TNA + ganancia de capital anual
-        tna_total_annual = tna + capital_gain_annual
-
-        # Escalar conforme al horizonte
-        if horizon == HORIZON_SHORT:
-            ann_return = tna_total_annual * 0.5
-        elif horizon == HORIZON_LONG:
-            ann_return = (1.0 + tna_total_annual) ** 2 - 1.0
-        else:
-            ann_return = tna_total_annual
     else:
         if horizon == HORIZON_SHORT:
             base_ret = ret_6m if ret_6m != 0.0 else ret_12m * 0.5
@@ -230,6 +249,14 @@ def score_asset_for_profile(asset, profile, horizon=HORIZON_MEDIUM):
     # ========================================================================
     # BARRERAS DURAS DE EXCLUSIÓN
     # ========================================================================
+
+    # BARRERA #0: TNA mínima para letras en ARS
+    # LECAPs capitalizadas con TNA real < MIN_TNA_LETRAS_ARS son descartadas siempre.
+    # Una TNA del 4-5% en un contexto de inflación ~22% genera rendimiento real negativo.
+    if category == "letras" and asset.get("currency", "ARS") == "ARS":
+        if tna < MIN_TNA_LETRAS_ARS:
+            return 0.0
+
     if horizon == HORIZON_SHORT:
         if category == "crypto" and profile != "agresivo":
             return 0.0

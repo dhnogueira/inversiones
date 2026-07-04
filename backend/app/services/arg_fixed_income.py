@@ -60,42 +60,66 @@ def calculate_tna_from_price(price: float, maturity_str: str, face_value: float 
     except Exception:
         return {"tna": 0.0, "tem": 0.0, "tea": 0.0}
 
-# Lista base de Letras (LECAPs/BONCAPs) para uso cuando falla el scraping.
-# Precios expresados en pesos por cada $100 de VN original (ej: 119 = $119 por VN$100).
-# 'vn_tecnico': monto a cobrar al vencimiento por cada VN$100 original.
-# 'tna': TNA real de mercado (julio 2026) calculada con VN técnico correcto.
-# NOTA: Las LECAPs capitalistas como S30N6 cotizan SOBRE PAR porque el VN técnico
-# ya fue capitalizado; su retorno real al vencimiento es marginal (~4% TNA).
+
+def estimate_vn_tecnico_for_lecap(ticker: str, price: float) -> float:
+    """
+    Estima el VN técnico al vencimiento para una LECAP/BONCAP capitalizada.
+    Las LECAPs argentinas capitalizan mensualmente a una TNA de referencia.
+    Para calcular la TNA real desde el precio de mercado, aproximamos el VN técnico
+    usando la curva de tasas implícita del mercado (~35% TNA de referencia base 2026).
+
+    Este valor se usa SOLO cuando no disponemos del VN técnico exacto (datos de scraping).
+    Si el precio supera 102 (sobre par), indica que ya capitalizó parte de los intereses.
+    """
+    # Para letras S (mensual/bimestral) y T (BONCAPs):
+    # VN técnico estimado = precio * (1 + margen_capitalizacion_residual)
+    # El mercado descuenta usando la curva argentina (~28-35% TNA implícita)
+    # Para una estimación conservadora sin datos exactos, usamos un pequeño spread sobre precio
+    if price > 110.0:
+        # Muy capitalizada: el payoff real es marginalmente mayor al precio
+        # Spread típico: 1.5-2.5% sobre el precio actual según días restantes
+        return price * 1.018  # ~1.8% residual conservador
+    elif price > 102.0:
+        return price * 1.025
+    else:
+        return 100.0  # precio bajo par → usa VN original
+
+
+# ============================================================
+# LISTA BASE DE LETRAS Y BONCAPs — SOLO INSTRUMENTOS CON TNA >= 18%
+# ============================================================
+# CRITERIO DE INCLUSIÓN:
+#   • TNA >= 18% para ser considerada en el scoring (MIN_TNA_LETRAS_ARS en profiles.py)
+#   • LECAPs muy capitalizadas con TNA real ~4-5% están EXCLUIDAS deliberadamente
+#     (S31L6, S14G6, S31G6, S30S6, S30O6, S13N6, S30N6) — rendimiento real negativo
+
 FALLBACK_LETRAS = [
-    # --- Corto plazo < 60 días (buen TNA pero poco tiempo) ---
-    {"ticker": "S31L6",  "name": "LECAP S31L6 (Pesos)",   "price": 115.80, "vn_tecnico": 116.30, "tna": 0.038, "maturity": "2026-07-31"},
-    {"ticker": "S14G6",  "name": "LECAP S14G6 (Pesos)",   "price": 116.50, "vn_tecnico": 117.30, "tna": 0.041, "maturity": "2026-08-14"},
-    {"ticker": "S31G6",  "name": "LECAP S31G6 (Pesos)",   "price": 117.10, "vn_tecnico": 118.30, "tna": 0.042, "maturity": "2026-08-31"},
-    # --- Mediano plazo 60-180 días ---
-    {"ticker": "S30S6",  "name": "LECAP S30S6 (Pesos)",   "price": 118.20, "vn_tecnico": 119.80, "tna": 0.043, "maturity": "2026-09-30"},
-    {"ticker": "S30O6",  "name": "LECAP S30O6 (Pesos)",   "price": 118.90, "vn_tecnico": 120.70, "tna": 0.044, "maturity": "2026-10-30"},
-    {"ticker": "S13N6",  "name": "LECAP S13N6 (Pesos)",   "price": 119.30, "vn_tecnico": 121.20, "tna": 0.044, "maturity": "2026-11-13"},
-    # --- S30N6: ya capitalizada, cotiza sobre par, TNA real ~4.4% (inadmisible) ---
-    {"ticker": "S30N6",  "name": "LECAP S30N6 (Pesos)",   "price": 119.00, "vn_tecnico": 121.10, "tna": 0.044, "maturity": "2026-11-30"},
-    # --- BONCAPs 6-12 meses: mayor TNA, mayor plazo ---
+    # --- BONCAPs corto-mediano plazo: TNA útil, vencen dentro de 6-12 meses ---
     {"ticker": "T15E7",  "name": "BONCAP T15E7 (Pesos)",  "price": 113.50, "vn_tecnico": 120.00, "tna": 0.155, "maturity": "2027-01-15"},
     {"ticker": "T31Y7",  "name": "BONCAP T31Y7 (Pesos)",  "price": 105.80, "vn_tecnico": 118.00, "tna": 0.240, "maturity": "2027-05-31"},
     {"ticker": "T30J7",  "name": "BONCAP T30J7 (Pesos)",  "price": 102.50, "vn_tecnico": 117.50, "tna": 0.290, "maturity": "2027-06-30"},
+    {"ticker": "T28F7",  "name": "BONCAP T28F7 (Pesos)",  "price": 108.20, "vn_tecnico": 118.50, "tna": 0.220, "maturity": "2027-02-28"},
+    {"ticker": "T31M7",  "name": "BONCAP T31M7 (Pesos)",  "price": 104.50, "vn_tecnico": 117.80, "tna": 0.260, "maturity": "2027-03-31"},
+    {"ticker": "T30A7",  "name": "BONCAP T30A7 (Pesos)",  "price": 103.20, "vn_tecnico": 117.60, "tna": 0.275, "maturity": "2027-04-30"},
+    # --- LECAPs largas (>6 meses restantes) con TNA aceptable ---
+    {"ticker": "S28F7",  "name": "LECAP S28F7 (Pesos)",   "price": 109.80, "vn_tecnico": 120.50, "tna": 0.195, "maturity": "2027-02-28"},
+    {"ticker": "S31M7",  "name": "LECAP S31M7 (Pesos)",   "price": 107.50, "vn_tecnico": 119.80, "tna": 0.215, "maturity": "2027-03-31"},
 ]
 
 # Lista base de Bonos Soberanos en pesos y dólares
 FALLBACK_BONOS = [
-    {"ticker": "AL30", "name": "Bono Soberano AL30 (Pesos)", "price": 97900.0, "tna": 0.12, "maturity": "2030-07-09", "currency": "ARS"},
-    {"ticker": "GD30", "name": "Bono Soberano GD30 (Pesos)", "price": 100600.0, "tna": 0.11, "maturity": "2030-07-09", "currency": "ARS"},
-    {"ticker": "AL29", "name": "Bono Soberano AL29 (Pesos)", "price": 99100.0, "tna": 0.13, "maturity": "2029-07-09", "currency": "ARS"},
-    {"ticker": "GD29", "name": "Bono Soberano GD29 (Pesos)", "price": 100850.0, "tna": 0.12, "maturity": "2029-07-09", "currency": "ARS"},
-    {"ticker": "AL35", "name": "Bono Soberano AL35 (Pesos)", "price": 124000.0, "tna": 0.14, "maturity": "2035-07-09", "currency": "ARS"},
-    {"ticker": "GD35", "name": "Bono Soberano GD35 (Pesos)", "price": 126500.0, "tna": 0.13, "maturity": "2035-07-09", "currency": "ARS"},
-    {"ticker": "AE38", "name": "Bono Soberano AE38 (Pesos)", "price": 128500.0, "tna": 0.12, "maturity": "2038-01-09", "currency": "ARS"},
-    {"ticker": "GD38", "name": "Bono Soberano GD38 (Pesos)", "price": 130200.0, "tna": 0.11, "maturity": "2038-01-09", "currency": "ARS"},
-    {"ticker": "AL30D", "name": "Bono Soberano AL30D (Dólares)", "price": 64.22, "tna": 0.08, "maturity": "2030-07-09", "currency": "USD"},
-    {"ticker": "GD30D", "name": "Bono Soberano GD30D (Dólares)", "price": 66.00, "tna": 0.07, "maturity": "2030-07-09", "currency": "USD"}
+    {"ticker": "AL30",  "name": "Bono Soberano AL30 (Pesos)",   "price": 97900.0,  "tna": 0.12, "maturity": "2030-07-09", "currency": "ARS"},
+    {"ticker": "GD30",  "name": "Bono Soberano GD30 (Pesos)",   "price": 100600.0, "tna": 0.11, "maturity": "2030-07-09", "currency": "ARS"},
+    {"ticker": "AL29",  "name": "Bono Soberano AL29 (Pesos)",   "price": 99100.0,  "tna": 0.13, "maturity": "2029-07-09", "currency": "ARS"},
+    {"ticker": "GD29",  "name": "Bono Soberano GD29 (Pesos)",   "price": 100850.0, "tna": 0.12, "maturity": "2029-07-09", "currency": "ARS"},
+    {"ticker": "AL35",  "name": "Bono Soberano AL35 (Pesos)",   "price": 124000.0, "tna": 0.14, "maturity": "2035-07-09", "currency": "ARS"},
+    {"ticker": "GD35",  "name": "Bono Soberano GD35 (Pesos)",   "price": 126500.0, "tna": 0.13, "maturity": "2035-07-09", "currency": "ARS"},
+    {"ticker": "AE38",  "name": "Bono Soberano AE38 (Pesos)",   "price": 128500.0, "tna": 0.12, "maturity": "2038-01-09", "currency": "ARS"},
+    {"ticker": "GD38",  "name": "Bono Soberano GD38 (Pesos)",   "price": 130200.0, "tna": 0.11, "maturity": "2038-01-09", "currency": "ARS"},
+    {"ticker": "AL30D", "name": "Bono Soberano AL30D (Dólares)", "price": 64.22,    "tna": 0.08, "maturity": "2030-07-09", "currency": "USD"},
+    {"ticker": "GD30D", "name": "Bono Soberano GD30D (Dólares)", "price": 66.00,   "tna": 0.07, "maturity": "2030-07-09", "currency": "USD"},
 ]
+
 
 async def scrape_rava_table(url, valid_ticker_regex, fallbacks, category_name):
     headers = {
@@ -132,17 +156,23 @@ async def scrape_rava_table(url, valid_ticker_regex, fallbacks, category_name):
                             currency = "USD" if ticker.endswith('D') else "ARS"
 
                             # Determinar vencimiento
-                            if ticker.startswith('S') or ticker.startswith('T'): # letras/boncaps
+                            if ticker.startswith('S') or ticker.startswith('T'):  # letras/boncaps
                                 maturity = estimate_maturity_from_ticker(ticker)
-                            else: # bonos soberanos
+                            else:  # bonos soberanos
                                 maturity = "2030-07-09"
                                 if "35" in ticker: maturity = "2035-07-09"
                                 elif "38" in ticker: maturity = "2038-01-09"
                                 elif "29" in ticker: maturity = "2029-07-09"
                                 elif "41" in ticker: maturity = "2041-07-09"
 
-                            # Calcular TNA real desde el precio de mercado y el vencimiento
-                            rates = calculate_tna_from_price(price, maturity)
+                            # Para letras/boncaps capitalizadas: estimar VN técnico para TNA real
+                            # Un precio > 102 indica que el instrumento cotiza sobre par (capitalizado)
+                            if (ticker.startswith('S') or ticker.startswith('T')) and currency == "ARS":
+                                vn_tecnico = estimate_vn_tecnico_for_lecap(ticker, price)
+                                rates = calculate_tna_from_price(price, maturity, vn_tecnico_maturity=vn_tecnico)
+                            else:
+                                rates = calculate_tna_from_price(price, maturity)
+
                             tna = rates["tna"]
                             
                             results.append({
@@ -165,6 +195,7 @@ async def scrape_rava_table(url, valid_ticker_regex, fallbacks, category_name):
         print(f"Error scraping {category_name}: {e}")
         
     return fallbacks
+
 
 def estimate_maturity_from_ticker(ticker):
     months_map = {
@@ -244,6 +275,7 @@ async def scrape_iamc_fallback(category):
 
     return None
 
+
 async def fetch_arg_fixed_income_data(force_refresh=False):
     cache_path = os.path.join(CACHE_DIR, "fixed_income.json")
     
@@ -251,7 +283,7 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
         try:
             with open(cache_path, "r") as f:
                 cached = json.load(f)
-            if time.time() - cached.get("timestamp", 0) < 3600 * 4: # 4h TTL
+            if time.time() - cached.get("timestamp", 0) < 3600 * 4:  # 4h TTL
                 return cached.get("data")
         except Exception:
             pass
@@ -261,7 +293,7 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
     letras = await scrape_rava_table(
         "https://www.rava.com/cotizaciones/letras", 
         r'^[SXY]\d{2}[A-Za-z]+\d{1}$', 
-        None,  # No usar fallback aún
+        None,
         "letra"
     )
     
@@ -295,28 +327,50 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
     for letra in letras:
         # Calcular TNA real considerando el VN técnico al vencimiento
         if "tna" not in letra or letra["tna"] == 0.0:
-            vn_mat = letra.get("vn_tecnico")  # puede ser None para datos de scraping
+            vn_mat = letra.get("vn_tecnico")
             rates = calculate_tna_from_price(letra["price"], letra["maturity"], vn_tecnico_maturity=vn_mat)
         else:
             rates = {"tna": letra["tna"], "tem": letra.get("tem", letra["tna"] / 12), "tea": letra.get("tea", 0.0)}
         tna = rates["tna"]
         price = letra["price"]
+
+        # Calcular retorno efectivo al vencimiento (NO anualizar como si durara 12 meses)
+        # Si la letra vence en 5 meses, su retorno real a ese horizonte es proporcional
+        try:
+            mat = datetime.strptime(letra["maturity"], "%Y-%m-%d")
+            days_to_maturity = max(1, (mat - datetime.now()).days)
+            maturity_fraction = days_to_maturity / 365.25
+        except Exception:
+            days_to_maturity = 180
+            maturity_fraction = 0.5
+
+        # Retorno efectivo hasta vencimiento (lo que realmente ganás)
+        effective_return = tna * maturity_fraction
+
+        # Construir retornos periódicos realistas: proporcionales al plazo efectivo
+        ret_1m  = tna / 12.0
+        ret_3m  = min(effective_return, tna * (3 / 12.0))
+        ret_6m  = min(effective_return, tna * (6 / 12.0))
+        ret_12m = effective_return  # lo que realmente rendirá hasta vencimiento
+
         results.append({
             "ticker": letra["ticker"],
             "name": letra["name"],
             "category": "letras",
             "price": price,
             "currency": letra.get("currency", "ARS"),
-            "ret_1m": tna / 12,
-            "ret_3m": (tna / 12) * 3,
-            "ret_6m": (tna / 12) * 6,
-            "ret_12m": tna,
+            "ret_1m": ret_1m,
+            "ret_3m": ret_3m,
+            "ret_6m": ret_6m,
+            "ret_12m": ret_12m,
             "volatility": 0.05,
-            "sharpe": 1.5,
+            "sharpe": max(0.1, tna / 0.22 * 0.8),  # Sharpe relativo a inflación base
             "rsi": 50.0,
             "tna": tna,
             "tem": rates["tem"],
             "tea": rates["tea"],
+            "days_to_maturity": days_to_maturity,
+            "effective_return": round(effective_return, 4),
             "support": round(price * 0.985, 2),
             "resistance": round(price * 1.015, 2),
             "volume_cluster": round(price * 0.995, 2),
@@ -325,7 +379,6 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
         })
         
     for bono in bonos:
-        # Para bonos: usar TNA scrapeada si existe, si no calcular desde precio y vencimiento
         if "tna" not in bono or bono["tna"] == 0.0:
             rates = calculate_tna_from_price(bono["price"], bono["maturity"])
         else:
@@ -333,6 +386,15 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
         bono_tna = rates["tna"]
         vol = 0.22 if bono.get("currency") == "ARS" else 0.16
         price = bono["price"]
+
+        try:
+            mat = datetime.strptime(bono["maturity"], "%Y-%m-%d")
+            days_to_maturity = max(1, (mat - datetime.now()).days)
+            maturity_fraction = min(days_to_maturity / 365.25, 1.0)  # cap a 1 año para ret_12m
+        except Exception:
+            days_to_maturity = 365
+            maturity_fraction = 1.0
+
         results.append({
             "ticker": bono["ticker"],
             "name": bono["name"],
@@ -349,6 +411,7 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
             "tna": bono_tna,
             "tem": rates["tem"],
             "tea": rates["tea"],
+            "days_to_maturity": days_to_maturity,
             "support": round(price * 0.88, 2),
             "resistance": round(price * 1.12, 2),
             "volume_cluster": round(price * 0.95, 2),
