@@ -4,7 +4,7 @@
     "ticker": "S31L6",
     "name": "LECAP S31L6 (Pesos)",
     "category": "letras",
-    "price": 0.985,
+    "price": 115.8,
     "currency": "ARS",
     "score": 0.0,
     "profile": "agresivo",
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+1.8%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (5.3%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+1.8% (1M)",
+        "content": "El rendimiento mensual es de **+0.3%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (0.9%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+0.3% (1M)",
         "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 0.97 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 1.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 0.98. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 0.98",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 114.06 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 117.54 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 115.22. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 115.22",
         "status": "success"
       }
     ],
@@ -57,22 +57,22 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+10.6%** y a 12 meses es **+21.1%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+10.6% (6M)",
-        "status": "success"
+        "content": "El rendimiento acumulado a 6 meses es **+1.9%** y a 12 meses es **+3.8%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+1.9% (6M)",
+        "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **21.4%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-0.6%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 21.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **4.1%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-17.9%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 4.1%",
         "status": "danger"
       },
       {
         "title": "Análisis de Renta Fija",
         "icon": "fa-landmark",
-        "content": "Este instrumento de renta fija ofrece una **TNA del 21.1%** con vencimiento estimado en **2026-07-31**. Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad.",
-        "value": "TNA: 21.1%",
+        "content": "Este instrumento de renta fija ofrece una **TNA del 3.8%** con vencimiento estimado en **2026-07-31**. Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad.",
+        "value": "TNA: 3.8%",
         "status": "neutral"
       }
     ],
@@ -89,16 +89,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La baja volatilidad limita el potencial de rendimiento para un perfil agresivo.",
-      "take_profit": 1.13,
-      "stop_loss": 0.92,
+      "take_profit": 133.17,
+      "stop_loss": 107.69,
       "tp_pct": 15.0,
       "sl_pct": 7.0
     },
-    "support": 0.97,
-    "resistance": 1.0,
-    "volume_cluster": 0.98,
-    "take_profit": 1.13,
-    "stop_loss": 0.92,
+    "support": 114.06,
+    "resistance": 117.54,
+    "volume_cluster": 115.22,
+    "take_profit": 133.17,
+    "stop_loss": 107.69,
     "tp_pct": 15.0,
     "sl_pct": 7.0
   }

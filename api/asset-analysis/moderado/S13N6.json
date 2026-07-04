@@ -4,9 +4,9 @@
     "ticker": "S13N6",
     "name": "LECAP S13N6 (Pesos)",
     "category": "letras",
-    "price": 0.915,
+    "price": 119.3,
     "currency": "ARS",
-    "score": 18.6,
+    "score": 1.7,
     "profile": "moderado",
     "horizon": "medium",
     "technical": [
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (6.2%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.1% (1M)",
-        "status": "success"
+        "content": "El rendimiento mensual es de **+0.4%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (1.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+0.4% (1M)",
+        "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 0.90 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 0.93 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 0.91. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 0.91",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 117.51 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 121.09 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 118.70. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 118.70",
         "status": "success"
       }
     ],
@@ -57,23 +57,23 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+12.3%** y a 12 meses es **+24.7%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+12.3% (6M)",
-        "status": "success"
+        "content": "El rendimiento acumulado a 6 meses es **+2.2%** y a 12 meses es **+4.4%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+2.2% (6M)",
+        "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **25.2%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+3.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 25.2%",
-        "status": "success"
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **5.1%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-16.9%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 5.1%",
+        "status": "danger"
       },
       {
         "title": "Análisis de Renta Fija",
         "icon": "fa-landmark",
-        "content": "Este instrumento de renta fija ofrece una **TNA del 24.7%** con vencimiento estimado en **2026-11-13**. Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad.",
-        "value": "TNA: 24.7%",
-        "status": "success"
+        "content": "Este instrumento de renta fija ofrece una **TNA del 4.4%** con vencimiento estimado en **2026-11-13**. Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad.",
+        "value": "TNA: 4.4%",
+        "status": "neutral"
       }
     ],
     "macro": [
@@ -88,17 +88,17 @@
       "action": "EVITAR",
       "icon": "fa-circle-xmark",
       "color": "danger",
-      "summary": "Con un score de solo **18.6/100**, este activo no es recomendable para el perfil **moderado**. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 0.99,
-      "stop_loss": 0.88,
+      "summary": "Con un score de solo **1.7/100**, este activo no es recomendable para el perfil **moderado**. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "take_profit": 128.84,
+      "stop_loss": 114.53,
       "tp_pct": 8.0,
       "sl_pct": 4.0
     },
-    "support": 0.9,
-    "resistance": 0.93,
-    "volume_cluster": 0.91,
-    "take_profit": 0.99,
-    "stop_loss": 0.88,
+    "support": 117.51,
+    "resistance": 121.09,
+    "volume_cluster": 118.7,
+    "take_profit": 128.84,
+    "stop_loss": 114.53,
     "tp_pct": 8.0,
     "sl_pct": 4.0
   }
