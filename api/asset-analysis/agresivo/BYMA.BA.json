@@ -6,7 +6,7 @@
     "category": "merval",
     "price": 309.25,
     "currency": "ARS",
-    "score": 35.0,
+    "score": 21.8,
     "profile": "agresivo",
     "horizon": "medium",
     "technical": [
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **6.7%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-15.3%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 6.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **6.4%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-15.6%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 6.4%",
         "status": "danger"
       }
     ],
@@ -78,10 +78,10 @@
       }
     ],
     "verdict": {
-      "action": "CAUTELA",
-      "icon": "fa-triangle-exclamation",
-      "color": "warning",
-      "summary": "El score de **35.0/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "action": "EVITAR",
+      "icon": "fa-circle-xmark",
+      "color": "danger",
+      "summary": "Con un score de solo **21.8/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación.",
       "take_profit": 581.12,
       "stop_loss": 173.31,
       "tp_pct": 87.9,

@@ -6,7 +6,7 @@
     "category": "letras",
     "price": 0.985,
     "currency": "ARS",
-    "score": 35.0,
+    "score": 10.0,
     "profile": "agresivo",
     "horizon": "short",
     "technical": [
@@ -85,10 +85,10 @@
       }
     ],
     "verdict": {
-      "action": "CAUTELA",
-      "icon": "fa-triangle-exclamation",
-      "color": "warning",
-      "summary": "El score de **35.0/100** indica que este activo no es ideal para el perfil **agresivo**. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La baja volatilidad limita el potencial de rendimiento para un perfil agresivo.",
+      "action": "EVITAR",
+      "icon": "fa-circle-xmark",
+      "color": "danger",
+      "summary": "Con un score de solo **10.0/100**, este activo no es recomendable para el perfil **agresivo**. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La baja volatilidad limita el potencial de rendimiento para un perfil agresivo.",
       "take_profit": 1.07,
       "stop_loss": 0.94,
       "tp_pct": 9.0,

@@ -6,7 +6,7 @@
     "category": "merval",
     "price": 71575.0,
     "currency": "ARS",
-    "score": 68.1,
+    "score": 20.0,
     "profile": "moderado",
     "horizon": "short",
     "technical": [
@@ -78,10 +78,10 @@
       }
     ],
     "verdict": {
-      "action": "CONSIDERAR",
-      "icon": "fa-circle-info",
-      "color": "neutral",
-      "summary": "Con un score de **68.1/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "action": "EVITAR",
+      "icon": "fa-circle-xmark",
+      "color": "danger",
+      "summary": "Con un score de solo **20.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "take_profit": 94040.43,
       "stop_loss": 60342.29,
       "tp_pct": 31.4,

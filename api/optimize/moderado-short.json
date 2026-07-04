@@ -3,15 +3,6 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "S13N6",
-        "name": "LECAP S13N6 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.3,
-        "weight_pct": 30.0,
-        "ars_return_est": 12.3
-      },
-      {
         "ticker": "S30N6",
         "name": "LECAP S30N6 (Pesos)",
         "category": "letras",
@@ -19,6 +10,15 @@
         "weight": 0.3,
         "weight_pct": 30.0,
         "ars_return_est": 13.0
+      },
+      {
+        "ticker": "S13N6",
+        "name": "LECAP S13N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 12.3
       },
       {
         "ticker": "T15E7",

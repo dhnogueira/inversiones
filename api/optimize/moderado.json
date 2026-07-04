@@ -3,15 +3,6 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "S30N6",
-        "name": "LECAP S30N6 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.3,
-        "weight_pct": 30.0,
-        "ars_return_est": 25.9
-      },
-      {
         "ticker": "AL30D",
         "name": "Bono Soberano AL30D (Dólares)",
         "category": "bonos",
@@ -28,6 +19,15 @@
         "weight": 0.3,
         "weight_pct": 30.0,
         "ars_return_est": 51.9
+      },
+      {
+        "ticker": "S30N6",
+        "name": "LECAP S30N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 25.9
       },
       {
         "ticker": "T15E7",

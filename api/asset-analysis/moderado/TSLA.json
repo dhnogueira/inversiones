@@ -6,7 +6,7 @@
     "category": "sp500",
     "price": 393.45001220703125,
     "currency": "USD",
-    "score": 35.0,
+    "score": 13.4,
     "profile": "moderado",
     "horizon": "medium",
     "technical": [
@@ -78,10 +78,10 @@
       }
     ],
     "verdict": {
-      "action": "CAUTELA",
-      "icon": "fa-triangle-exclamation",
-      "color": "warning",
-      "summary": "El score de **35.0/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "action": "EVITAR",
+      "icon": "fa-circle-xmark",
+      "color": "danger",
+      "summary": "Con un score de solo **13.4/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "take_profit": 604.77,
       "stop_loss": 287.79,
       "tp_pct": 53.7,
