@@ -7,46 +7,46 @@
         "name": "Bono Soberano AL30D (Dólares)",
         "category": "bonos",
         "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 108.2
       },
       {
-        "ticker": "AAPL",
-        "name": "AAPL",
+        "ticker": "COST",
+        "name": "COST",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0
+        "weight": 0.2922,
+        "weight_pct": 29.2,
+        "ars_return_est": 177.8
       },
       {
         "ticker": "XOM",
         "name": "XOM",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0
+        "weight": 0.2282,
+        "weight_pct": 22.8,
+        "ars_return_est": 216.8
       },
       {
-        "ticker": "JPM",
-        "name": "JPM",
+        "ticker": "AAPL",
+        "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0
-      },
-      {
-        "ticker": "HD",
-        "name": "HD",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0
+        "weight": 0.1297,
+        "weight_pct": 13.0,
+        "ars_return_est": 202.4
       }
     ],
-    "expected_return": 3.2,
-    "expected_volatility": 13.49,
-    "sharpe_ratio": -0.13,
+    "expected_return": 165.53,
+    "expected_volatility": 13.46,
+    "sharpe_ratio": 8.81,
     "profile": "conservador",
-    "risk_free_rate": 5.0
+    "horizon": "long",
+    "risk_free_rate": 47.0,
+    "inflation_reference": 47.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 118.5
   }
 }

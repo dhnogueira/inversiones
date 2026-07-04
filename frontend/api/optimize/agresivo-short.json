@@ -3,34 +3,41 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "LLY",
-        "name": "LLY",
+        "ticker": "XOM",
+        "name": "XOM",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.35,
-        "weight_pct": 35.0
+        "weight": 0.4,
+        "weight_pct": 40.0,
+        "ars_return_est": 44.4
       },
       {
         "ticker": "UNH",
         "name": "UNH",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.35,
-        "weight_pct": 35.0
+        "weight": 0.3567,
+        "weight_pct": 35.7,
+        "ars_return_est": 67.3
       },
       {
-        "ticker": "NVDA",
-        "name": "NVDA",
+        "ticker": "AAPL",
+        "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3,
-        "weight_pct": 30.0
+        "weight": 0.2433,
+        "weight_pct": 24.3,
+        "ars_return_est": 41.8
       }
     ],
-    "expected_return": 0.0,
-    "expected_volatility": 34.03,
-    "sharpe_ratio": -0.15,
+    "expected_return": 51.91,
+    "expected_volatility": 26.9,
+    "sharpe_ratio": 1.52,
     "profile": "agresivo",
-    "risk_free_rate": 5.0
+    "horizon": "short",
+    "risk_free_rate": 11.0,
+    "inflation_reference": 11.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 40.9
   }
 }

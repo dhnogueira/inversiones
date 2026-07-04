@@ -3,42 +3,41 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "AMZN",
-        "name": "AMZN",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0
-      },
-      {
-        "ticker": "GOOGL",
-        "name": "GOOGL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0
-      },
-      {
-        "ticker": "LLY",
-        "name": "LLY",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0
-      },
-      {
         "ticker": "UNH",
         "name": "UNH",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 423.9
+      },
+      {
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 352.3
+      },
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 227.6
       }
     ],
-    "expected_return": 0.0,
-    "expected_volatility": 30.7,
-    "sharpe_ratio": -0.16,
+    "expected_return": 339.99,
+    "expected_volatility": 27.75,
+    "sharpe_ratio": 10.56,
     "profile": "moderado",
-    "risk_free_rate": 5.0
+    "horizon": "long",
+    "risk_free_rate": 47.0,
+    "inflation_reference": 47.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 293.0
   }
 }

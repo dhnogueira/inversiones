@@ -7,46 +7,46 @@
         "name": "LECAP S30N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.4,
-        "weight_pct": 40.0
-      },
-      {
-        "ticker": "T15E7",
-        "name": "BONCAP T15E7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.15,
-        "weight_pct": 15.0
+        "weight": 0.4843,
+        "weight_pct": 48.4,
+        "ars_return_est": 13.0
       },
       {
         "ticker": "COST",
         "name": "COST",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0
+        "weight": 0.2724,
+        "weight_pct": 27.2,
+        "ars_return_est": 31.3
+      },
+      {
+        "ticker": "T15E7",
+        "name": "BONCAP T15E7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1513,
+        "weight_pct": 15.1,
+        "ars_return_est": 12.5
       },
       {
         "ticker": "PG",
         "name": "PG",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0
-      },
-      {
-        "ticker": "BRK-B",
-        "name": "BRK-B",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0
+        "weight": 0.092,
+        "weight_pct": 9.2,
+        "ars_return_est": 28.0
       }
     ],
-    "expected_return": 14.12,
-    "expected_volatility": 7.27,
-    "sharpe_ratio": -3.56,
+    "expected_return": 19.27,
+    "expected_volatility": 6.93,
+    "sharpe_ratio": 1.19,
     "profile": "conservador",
-    "risk_free_rate": 40.0
+    "horizon": "short",
+    "risk_free_rate": 11.0,
+    "inflation_reference": 11.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 8.3
   }
 }

@@ -94,7 +94,7 @@ async def main():
                 
             # Markowitz efficient allocation optimization
             top_assets = scored["top_10"]
-            optimal = optimize_portfolio(top_assets, profile)  # Note: optimizer uses top assets which are already scored per horizon
+            optimal = optimize_portfolio(top_assets, profile, horizon)
             opt_data = {"status": "success", "optimization": optimal}
             with open(os.path.join(API_DIR, "optimize", f"{profile}-{horizon}.json"), "w", encoding="utf-8") as f:
                 json.dump(opt_data, f, indent=2, ensure_ascii=False)
