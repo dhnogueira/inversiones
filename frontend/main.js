@@ -1,6 +1,7 @@
 // State Management
 let state = {
     activeProfile: 'moderado',
+    activeHorizon: 'medium', // 'short', 'medium', 'long'
     activeCategory: 'all',
     searchQuery: '',
     marketData: null,
@@ -16,6 +17,7 @@ let yieldCurveChart = null;
 
 // DOM Elements
 const profileTabs = document.querySelectorAll('.profile-tab');
+const horizonTabs = document.querySelectorAll('.horizon-tab');
 const categoryFilters = document.querySelectorAll('.category-filter');
 const searchInput = document.getElementById('asset-search');
 const btnRefresh = document.getElementById('btn-refresh');
@@ -24,14 +26,35 @@ const contentViews = document.querySelectorAll('.content-view');
 const updateTimeSpan = document.getElementById('update-time');
 const tableBody = document.getElementById('assets-tbody');
 
+// Sidebar and layout toggles
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.querySelector('.sidebar');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+
 // Initialize Application
 document.addEventListener('DOMContentLoaded', async () => {
     setupEventListeners();
     await checkHostMode();
+    updateSubtitle();
     loadActiveView();
     // Iniciar ticker de chequeo de alertas cada 30 segundos
     setInterval(updateWatchlistAndAlerts, 30000);
 });
+
+// Función para actualizar dinámicamente el subtítulo de perfil y horizonte seleccionados
+function updateSubtitle() {
+    const subtitleEl = document.querySelector('.subtitle');
+    if (subtitleEl) {
+        const horizonNames = {
+            'short': 'Corto plazo (hasta 6 meses)',
+            'medium': 'Mediano plazo (6 a 12 meses)',
+            'long': 'Largo plazo (más de 1 año)'
+        };
+        const hName = horizonNames[state.activeHorizon] || 'Mediano plazo';
+        const pName = state.activeProfile.charAt(0).toUpperCase() + state.activeProfile.slice(1);
+        subtitleEl.innerHTML = `Perfil: <strong style="color: var(--color-${state.activeProfile});">${pName}</strong> · Horizonte: <strong>${hName}</strong>`;
+    }
+}
 
 // Detectar si el backend FastAPI corre localmente o si estamos en hosting estático
 async function checkHostMode() {
@@ -63,11 +86,32 @@ async function checkHostMode() {
 }
 
 function setupEventListeners() {
+    // Mobile navigation side-drawer toggle
+    if (menuToggle && sidebar && sidebarOverlay) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.toggle('open');
+            sidebarOverlay.classList.toggle('active');
+        });
+
+        // Close sidebar on overlay click
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('active');
+        });
+    }
+
     // Nav menu switching
     navItems.forEach(item => {
         item.addEventListener('click', () => {
             navItems.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
+
+            // Close mobile menu on view switch
+            if (sidebar && sidebarOverlay) {
+                sidebar.classList.remove('open');
+                sidebarOverlay.classList.remove('active');
+            }
 
             const viewId = item.getAttribute('data-view');
             state.currentView = viewId;
@@ -79,6 +123,18 @@ function setupEventListeners() {
         });
     });
 
+    // Horizon selector tabs
+    horizonTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            horizonTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            state.activeHorizon = tab.getAttribute('data-horizon');
+            updateSubtitle();
+            loadActiveView();
+        });
+    });
+
     // Profile selector tabs
     profileTabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -86,6 +142,7 @@ function setupEventListeners() {
             tab.classList.add('active');
 
             state.activeProfile = tab.getAttribute('data-profile');
+            updateSubtitle();
             loadActiveView();
         });
     });
@@ -156,12 +213,13 @@ function loadActiveView() {
 
 // Fetch recommendation payload AND dynamic Markowitz allocation weights
 async function fetchRecommendationsAndOptimize(profile) {
+    const horizon = state.activeHorizon || 'medium';
     showTableLoader();
     try {
         // Cargar recomendaciones
         const recUrl = state.staticMode
-            ? `api/recommendations/${profile}.json`
-            : `${state.apiBase}/api/recommendations?profile=${profile}`;
+            ? `api/recommendations/${profile}-${horizon}.json`
+            : `${state.apiBase}/api/recommendations?profile=${profile}&horizon=${horizon}`;
 
         const recResponse = await fetch(recUrl);
         if (!recResponse.ok) throw new Error('Error al cargar recomendaciones.');
@@ -176,8 +234,8 @@ async function fetchRecommendationsAndOptimize(profile) {
 
         // Cargar optimizaciones
         const optUrl = state.staticMode
-            ? `api/optimize/${profile}.json`
-            : `${state.apiBase}/api/optimize?profile=${profile}`;
+            ? `api/optimize/${profile}-${horizon}.json`
+            : `${state.apiBase}/api/optimize?profile=${profile}&horizon=${horizon}`;
 
         const optResponse = await fetch(optUrl);
         if (optResponse.ok) {
@@ -1073,8 +1131,8 @@ async function openAssetModal(ticker) {
     try {
         const safeTicker = ticker.replace("/", "_");
         const analysisUrl = state.staticMode
-            ? `api/asset-analysis/${state.activeProfile}/${safeTicker}.json`
-            : `${state.apiBase}/api/asset-analysis?ticker=${encodeURIComponent(ticker)}&profile=${state.activeProfile}`;
+            ? `api/asset-analysis/${state.activeProfile}-${state.activeHorizon}/${safeTicker}.json`
+            : `${state.apiBase}/api/asset-analysis?ticker=${encodeURIComponent(ticker)}&profile=${state.activeProfile}&horizon=${state.activeHorizon}`;
 
         const res = await fetch(analysisUrl);
         const data = await res.json();

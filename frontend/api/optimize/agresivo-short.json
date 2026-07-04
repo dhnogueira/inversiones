@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "LLY",
+        "name": "LLY",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.35,
+        "weight_pct": 35.0
+      },
+      {
+        "ticker": "UNH",
+        "name": "UNH",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.35,
+        "weight_pct": 35.0
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVDA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.3,
+        "weight_pct": 30.0
+      }
+    ],
+    "expected_return": 0.0,
+    "expected_volatility": 34.03,
+    "sharpe_ratio": -0.15,
+    "profile": "agresivo",
+    "risk_free_rate": 5.0
+  }
+}

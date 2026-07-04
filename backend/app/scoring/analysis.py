@@ -1,11 +1,19 @@
+from app.scoring.profiles import (
+    estimate_expected_return_ars,
+    PROJECTED_ARG_INFLATION,
+    get_horizon_inflation,
+    HORIZON_SHORT,
+    HORIZON_MEDIUM,
+    HORIZON_LONG
+)
+
+
 import numpy as np
-from app.scoring.profiles import estimate_expected_return_ars, PROJECTED_ARG_INFLATION
 
-
-def calculate_tp_sl(price, volatility, profile, category):
+def calculate_tp_sl(price, volatility, profile, category, horizon="medium"):
     """
     Calcula dinámicamente el Take Profit y Stop Loss sugeridos
-    según la volatilidad del activo y el perfil de riesgo seleccionado.
+    según la volatilidad del activo, el perfil de riesgo seleccionado y el horizonte temporal.
     """
     vol = max(0.04, min(0.60, volatility))
     if category in ("letras", "bonos"):
@@ -25,6 +33,16 @@ def calculate_tp_sl(price, volatility, profile, category):
         else: # agresivo
             tp_pct, sl_pct = max(0.25, vol * 1.8), max(0.12, vol * 0.9)
             
+    # Ajuste por horizonte de inversión
+    if horizon == "short":
+        # Corto plazo (hasta 6 meses): asegurar ganancias rápido con TP/SL más ajustados
+        tp_pct *= 0.60
+        sl_pct *= 0.60
+    elif horizon == "long":
+        # Largo plazo (>1 año): dar más margen para absorber oscilaciones normales
+        tp_pct *= 1.80
+        sl_pct *= 1.60
+
     tp = price * (1.0 + tp_pct)
     sl = price * (1.0 - sl_pct)
     return round(tp, 2), round(sl, 2), round(tp_pct * 100, 1), round(sl_pct * 100, 1)
@@ -50,7 +68,7 @@ def build_volume_level_analysis(price, support, resistance, volume_cluster, curr
     }
 
 
-def generate_asset_analysis(asset, profile):
+def generate_asset_analysis(asset, profile, horizon="medium"):
     """
     Genera un análisis detallado para un activo, incluyendo:
     - Análisis Técnico (RSI, EMAs, Tendencia, Volatilidad, Soportes, Resistencias, POC)
@@ -94,13 +112,13 @@ def generate_asset_analysis(asset, profile):
     technical.append(build_volume_level_analysis(price, support, resistance, volume_cluster, currency))
 
     # ------- Sección 2: Análisis Fundamental / Rendimiento -------
-    fundamental = build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile)
+    fundamental = build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile, horizon)
 
     # ------- Sección 3: Contexto Macroeconómico -------
     macro = build_macro_context(category, currency, profile)
 
     # ------- Sección 4: Veredicto Final -------
-    tp, sl, tp_pct, sl_pct = calculate_tp_sl(price, volatility, profile, category)
+    tp, sl, tp_pct, sl_pct = calculate_tp_sl(price, volatility, profile, category, horizon)
     verdict = build_verdict(score, profile, category, trend, sharpe, rsi, volatility)
     verdict["take_profit"] = tp
     verdict["stop_loss"] = sl
@@ -115,6 +133,7 @@ def generate_asset_analysis(asset, profile):
         "currency": currency,
         "score": score,
         "profile": profile,
+        "horizon": horizon,
         "technical": technical,
         "fundamental": fundamental,
         "macro": macro,
@@ -227,7 +246,7 @@ def build_technical_analysis(price, rsi, ema_50, ema_200, volatility, trend, ret
 
 
 
-def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile="moderado"):
+def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile="moderado", horizon="medium"):
     sections = []
 
     # Sharpe Ratio
@@ -295,29 +314,38 @@ def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity,
         "status": "success" if ret_6m > 0.10 else "danger" if ret_6m < -0.10 else "neutral"
     })
 
-    # Analisis vs Inflación Argentina Proyectada (ajustado al perfil de riesgo)
+    # Analisis vs Inflación Argentina Proyectada (ajustado al perfil de riesgo y horizonte)
     expected_ret_ars = estimate_expected_return_ars({
         "category": category,
         "currency": currency,
         "tna": tna or 0.0,
         "ret_12m": ret_12m,
         "ret_6m": ret_6m
-    }, profile)
-    beats_inflation = expected_ret_ars > PROJECTED_ARG_INFLATION
-    spread = expected_ret_ars - PROJECTED_ARG_INFLATION
+    }, profile, horizon)
+    
+    horizon_inflation = get_horizon_inflation(horizon)
+    beats_inflation = expected_ret_ars > horizon_inflation
+    spread = expected_ret_ars - horizon_inflation
+    
+    horizon_names = {
+        HORIZON_SHORT: "corto plazo (hasta 6 meses)",
+        HORIZON_MEDIUM: "mediano plazo (6 a 12 meses)",
+        HORIZON_LONG: "largo plazo (más de 1 año)"
+    }
+    h_name = horizon_names.get(horizon, "mediano plazo")
     
     if beats_inflation:
         inf_text = (
-            f"El retorno anual esperado en pesos es del **{expected_ret_ars*100:.1f}%**, superando la "
-            f"inflación argentina proyectada del **{PROJECTED_ARG_INFLATION*100:.1f}%** con un spread real positivo de "
-            f"**+{spread*100:.1f}%**. Cumple con el objetivo del portafolio de ganarle a la inflación."
+            f"El retorno estimado en pesos para este activo en un horizonte de **{h_name}** es del **{expected_ret_ars*100:.1f}%**, "
+            f"superando la inflación proyectada del período del **{horizon_inflation*100:.1f}%** con un spread real positivo de "
+            f"**+{spread*100:.1f}%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo."
         )
         inf_status = "success"
     else:
         inf_text = (
-            f"El retorno esperado en pesos es del **{expected_ret_ars*100:.1f}%**, quedando por debajo "
-            f"de la inflación argentina proyectada del **{PROJECTED_ARG_INFLATION*100:.1f}%** (rendimiento real negativo de "
-            f"**{spread*100:.1f}%**). No califica como sugerencia recomendada."
+            f"El retorno estimado en pesos para este activo en un horizonte de **{h_name}** es del **{expected_ret_ars*100:.1f}%**, "
+            f"quedando por debajo de la inflación proyectada del período de **{horizon_inflation*100:.1f}%** (rendimiento real negativo de "
+            f"**{spread*100:.1f}%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal."
         )
         inf_status = "danger"
 

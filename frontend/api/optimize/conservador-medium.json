@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "S30N6",
+        "name": "LECAP S30N6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.4,
+        "weight_pct": 40.0
+      },
+      {
+        "ticker": "T15E7",
+        "name": "BONCAP T15E7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.15,
+        "weight_pct": 15.0
+      },
+      {
+        "ticker": "PG",
+        "name": "PG",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.15,
+        "weight_pct": 15.0
+      },
+      {
+        "ticker": "COST",
+        "name": "COST",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.15,
+        "weight_pct": 15.0
+      },
+      {
+        "ticker": "BRK-B",
+        "name": "BRK-B",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.15,
+        "weight_pct": 15.0
+      }
+    ],
+    "expected_return": 14.12,
+    "expected_volatility": 7.27,
+    "sharpe_ratio": -3.56,
+    "profile": "conservador",
+    "risk_free_rate": 40.0
+  }
+}

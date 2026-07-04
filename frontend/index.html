@@ -43,8 +43,21 @@
             </div>
         </aside>
 
+        <!-- Sidebar Overlay for mobile -->
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
         <!-- Main -->
         <main class="main-content">
+            <!-- Mobile Top Bar -->
+            <div class="mobile-top-bar">
+                <button id="menu-toggle" class="menu-toggle-btn" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="mobile-logo">
+                    <i class="fa-solid fa-chart-line logo-icon"></i>
+                    <span class="logo-text">Inversiones</span>
+                </div>
+            </div>
             <!-- Header -->
             <header class="header">
                 <div class="header-left">
@@ -63,6 +76,15 @@
 
             <!-- ===== DASHBOARD VIEW ===== -->
             <div id="view-dashboard" class="content-view active">
+                <div class="horizon-tabs">
+                    <button class="horizon-tab" data-horizon="short"><i class="fa-solid fa-bolt-lightning"></i> Hasta 6
+                        meses</button>
+                    <button class="horizon-tab active" data-horizon="medium"><i class="fa-solid fa-calendar-days"></i> 6
+                        meses a 1 año</button>
+                    <button class="horizon-tab" data-horizon="long"><i class="fa-solid fa-gem"></i> Más de 1
+                        año</button>
+                </div>
+
                 <div class="profile-tabs">
                     <button class="profile-tab" data-profile="conservador"><i class="fa-solid fa-shield"></i>
                         Conservador</button>

@@ -1,0 +1,44 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.25,
+        "weight_pct": 25.0
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.25,
+        "weight_pct": 25.0
+      },
+      {
+        "ticker": "PG",
+        "name": "PG",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.25,
+        "weight_pct": 25.0
+      },
+      {
+        "ticker": "COST",
+        "name": "COST",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.25,
+        "weight_pct": 25.0
+      }
+    ],
+    "expected_return": 0.0,
+    "expected_volatility": 20.41,
+    "sharpe_ratio": -1.96,
+    "profile": "moderado",
+    "risk_free_rate": 40.0
+  }
+}

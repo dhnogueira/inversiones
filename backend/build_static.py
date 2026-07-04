@@ -73,46 +73,63 @@ async def main():
     with open(os.path.join(API_DIR, "yield-curve.json"), "w", encoding="utf-8") as f:
         json.dump(yield_curve_data, f, indent=2, ensure_ascii=False)
 
-    # 4. Generar reportes por cada perfil de riesgo
+    # 4. Generar reportes por cada perfil de riesgo y horizonte temporal
     profiles = ["conservador", "moderado", "agresivo"]
+    horizons = ["short", "medium", "long"]
     
     for profile in profiles:
-        print(f"Generando recomendaciones y optimizaciones para perfil '{profile}'...")
-        
-        # Recommendations
-        scored = get_recommendations_by_profile(all_assets, profile)
-        rec_data = {"status": "success", "updating": False, "results": scored}
-        with open(os.path.join(API_DIR, "recommendations", f"{profile}.json"), "w", encoding="utf-8") as f:
-            json.dump(rec_data, f, indent=2, ensure_ascii=False)
+        for horizon in horizons:
+            print(f"Generando recomendaciones y optimizaciones para perfil '{profile}' ({horizon})...")
             
-        # Markowitz efficient allocation optimization
-        top_assets = scored["top_10"]
-        optimal = optimize_portfolio(top_assets, profile)
-        opt_data = {"status": "success", "optimization": optimal}
-        with open(os.path.join(API_DIR, "optimize", f"{profile}.json"), "w", encoding="utf-8") as f:
-            json.dump(opt_data, f, indent=2, ensure_ascii=False)
+            # Recommendations
+            scored = get_recommendations_by_profile(all_assets, profile, horizon)
+            rec_data = {"status": "success", "updating": False, "results": scored}
+            with open(os.path.join(API_DIR, "recommendations", f"{profile}-{horizon}.json"), "w", encoding="utf-8") as f:
+                json.dump(rec_data, f, indent=2, ensure_ascii=False)
+                
+            # Compatibility fallback: write to profile.json (medium)
+            if horizon == "medium":
+                with open(os.path.join(API_DIR, "recommendations", f"{profile}.json"), "w", encoding="utf-8") as f:
+                    json.dump(rec_data, f, indent=2, ensure_ascii=False)
+                
+            # Markowitz efficient allocation optimization
+            top_assets = scored["top_10"]
+            optimal = optimize_portfolio(top_assets, profile)  # Note: optimizer uses top assets which are already scored per horizon
+            opt_data = {"status": "success", "optimization": optimal}
+            with open(os.path.join(API_DIR, "optimize", f"{profile}-{horizon}.json"), "w", encoding="utf-8") as f:
+                json.dump(opt_data, f, indent=2, ensure_ascii=False)
+                
+            if horizon == "medium":
+                with open(os.path.join(API_DIR, "optimize", f"{profile}.json"), "w", encoding="utf-8") as f:
+                    json.dump(opt_data, f, indent=2, ensure_ascii=False)
+                
+            # Asset Modals Analysis
+            print(f"Precalculando reportes narrativos detallados para perfil '{profile}' ({horizon})...")
+            ensure_directory(os.path.join(API_DIR, "asset-analysis", f"{profile}-{horizon}"))
+            if horizon == "medium":
+                ensure_directory(os.path.join(API_DIR, "asset-analysis", profile))
             
-        # Asset Modals Analysis
-        print(f"Precalculando reportes narrativos detallados para perfil '{profile}'...")
-        ensure_directory(os.path.join(API_DIR, "asset-analysis", profile))
-        
-        # Generar análisis para todos los activos
-        for asset in all_assets:
-            # Calcular score específico para este activo en este perfil
-            s = score_asset_for_profile(asset, profile)
-            target = {**asset, "score": round(s, 1)}
-            
-            # Generar el reporte estructurado
-            analysis = generate_asset_analysis(target, profile)
-            analysis_data = {"status": "success", "analysis": analysis}
-            
-            # Prevenir problemas con caracteres especiales o encoding en nombres de archivo
-            # URL encode ticker o usar nombre de archivo limpio
-            safe_ticker = asset["ticker"].replace("/", "_")
-            filepath = os.path.join(API_DIR, "asset-analysis", profile, f"{safe_ticker}.json")
-            
-            with open(filepath, "w", encoding="utf-8") as f:
-                json.dump(analysis_data, f, indent=2, ensure_ascii=False)
+            # Generar análisis para todos los activos
+            for asset in all_assets:
+                # Calcular score específico para este activo en este perfil e higiene de horizonte
+                s = score_asset_for_profile(asset, profile, horizon)
+                target = {**asset, "score": round(s, 1)}
+                
+                # Generar el reporte estructurado
+                analysis = generate_asset_analysis(target, profile, horizon)
+                analysis_data = {"status": "success", "analysis": analysis}
+                
+                # Prevenir problemas con caracteres especiales o encoding en nombres de archivo
+                safe_ticker = asset["ticker"].replace("/", "_")
+                
+                filepath = os.path.join(API_DIR, "asset-analysis", f"{profile}-{horizon}", f"{safe_ticker}.json")
+                with open(filepath, "w", encoding="utf-8") as f:
+                    json.dump(analysis_data, f, indent=2, ensure_ascii=False)
+                    
+                if horizon == "medium":
+                    filepath_fallback = os.path.join(API_DIR, "asset-analysis", profile, f"{safe_ticker}.json")
+                    with open(filepath_fallback, "w", encoding="utf-8") as f:
+                        json.dump(analysis_data, f, indent=2, ensure_ascii=False)
 
     print("Compilación estática completada con éxito. Todos los archivos JSON generados en frontend/api/")
 
