@@ -7,34 +7,34 @@
         "name": "LECAP S30N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.35,
-        "weight_pct": 35.0,
+        "weight": 0.3519,
+        "weight_pct": 35.2,
         "ars_return_est": 13.0
-      },
-      {
-        "ticker": "PG",
-        "name": "PG",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0,
-        "ars_return_est": 29.7
       },
       {
         "ticker": "T15E7",
         "name": "BONCAP T15E7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.15,
-        "weight_pct": 15.0,
+        "weight": 0.2658,
+        "weight_pct": 26.6,
         "ars_return_est": 12.5
+      },
+      {
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.0806,
+        "weight_pct": 8.1,
+        "ars_return_est": 20.4
       },
       {
         "ticker": "S13N6",
         "name": "LECAP S13N6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.05,
+        "weight": 0.0503,
         "weight_pct": 5.0,
         "ars_return_est": 12.3
       },
@@ -43,7 +43,7 @@
         "name": "LECAP S30O6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.05,
+        "weight": 0.0503,
         "weight_pct": 5.0,
         "ars_return_est": 12.1
       },
@@ -52,7 +52,7 @@
         "name": "LECAP S30S6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.05,
+        "weight": 0.0503,
         "weight_pct": 5.0,
         "ars_return_est": 11.8
       },
@@ -61,7 +61,7 @@
         "name": "LECAP S14G6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.05,
+        "weight": 0.0503,
         "weight_pct": 5.0,
         "ars_return_est": 11.5
       },
@@ -70,19 +70,28 @@
         "name": "LECAP S31G6 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.05,
+        "weight": 0.0503,
         "weight_pct": 5.0,
         "ars_return_est": 11.4
+      },
+      {
+        "ticker": "S31L6",
+        "name": "LECAP S31L6 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.0503,
+        "weight_pct": 5.0,
+        "ars_return_est": 10.6
       }
     ],
-    "expected_return": 16.8,
-    "expected_volatility": 5.53,
-    "sharpe_ratio": 1.05,
+    "expected_return": 13.03,
+    "expected_volatility": 4.83,
+    "sharpe_ratio": 0.42,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 5.8
+    "spread_vs_inflation": 2.0
   }
 }

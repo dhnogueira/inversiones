@@ -378,8 +378,11 @@ def score_asset_for_profile(asset, profile, horizon=HORIZON_MEDIUM):
         spread_bonus = min(12.0, (expected_ret_ars - h_inf) * 20.0)
         score = min(100.0, score + spread_bonus)
 
-    # Umbral de calidad mínimo para evitar relleno en carteras temporales
-    if category not in ("letras", "bonos") and score < 35.0:
+    # Umbral de calidad mínimo por perfil para evitar activos de débil encaje
+    # Conservador exige el umbral más alto (busca certeza), Agresivo acepta más riesgo
+    profile_thresholds = {"conservador": 45.0, "moderado": 42.0, "agresivo": 38.0}
+    min_score = profile_thresholds.get(profile, 42.0)
+    if category not in ("letras", "bonos") and score < min_score:
         return 0.0
 
     return max(0.0, min(100.0, round(score, 1)))
