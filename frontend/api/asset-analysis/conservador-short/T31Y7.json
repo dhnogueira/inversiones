@@ -4,9 +4,9 @@
     "ticker": "T31Y7",
     "name": "BONCAP T31Y7 (Pesos)",
     "category": "letras",
-    "price": 0.845,
+    "price": 105.8,
     "currency": "ARS",
-    "score": 15.0,
+    "score": 100.0,
     "profile": "conservador",
     "horizon": "short",
     "technical": [
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+1.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (4.6%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+1.5% (1M)",
+        "content": "El rendimiento mensual es de **+2.0%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (6.0%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.0% (1M)",
         "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 0.83 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 0.86 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 0.84. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 0.84",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 104.21 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 107.39 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 105.27. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 105.27",
         "status": "success"
       }
     ],
@@ -57,23 +57,23 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+9.3%** y a 12 meses es **+18.5%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+9.3% (6M)",
-        "status": "neutral"
+        "content": "El rendimiento acumulado a 6 meses es **+12.0%** y a 12 meses es **+24.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+12.0% (6M)",
+        "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **8.7%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-2.3%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 8.7%",
-        "status": "danger"
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **11.5%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+0.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 11.5%",
+        "status": "success"
       },
       {
         "title": "Análisis de Renta Fija",
         "icon": "fa-landmark",
-        "content": "Este instrumento de renta fija ofrece una **TNA del 18.5%** con vencimiento estimado en **2027-05-31**. Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad.",
-        "value": "TNA: 18.5%",
-        "status": "neutral"
+        "content": "Este instrumento de renta fija ofrece una **TNA del 24.0%** con vencimiento estimado en **2027-05-31**. Las Letras del Tesoro (LECAPs) son instrumentos de **corto plazo** emitidos por el Estado Nacional. Su principal ventaja es la previsibilidad del retorno y la baja volatilidad.",
+        "value": "TNA: 24.0%",
+        "status": "success"
       }
     ],
     "macro": [
@@ -85,20 +85,20 @@
       }
     ],
     "verdict": {
-      "action": "EVITAR",
-      "icon": "fa-circle-xmark",
-      "color": "danger",
-      "summary": "Con un score de solo **15.0/100**, este activo no es recomendable para el perfil **conservador**. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 0.87,
-      "stop_loss": 0.83,
+      "action": "COMPRAR",
+      "icon": "fa-circle-check",
+      "color": "success",
+      "summary": "Este activo obtiene un score de **100.0/100** para el perfil **conservador**, posicionándose entre las mejores alternativas disponibles. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "take_profit": 108.34,
+      "stop_loss": 104.53,
       "tp_pct": 2.4,
       "sl_pct": 1.2
     },
-    "support": 0.83,
-    "resistance": 0.86,
-    "volume_cluster": 0.84,
-    "take_profit": 0.87,
-    "stop_loss": 0.83,
+    "support": 104.21,
+    "resistance": 107.39,
+    "volume_cluster": 105.27,
+    "take_profit": 108.34,
+    "stop_loss": 104.53,
     "tp_pct": 2.4,
     "sl_pct": 1.2
   }

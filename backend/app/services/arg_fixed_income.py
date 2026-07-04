@@ -8,19 +8,24 @@ from datetime import datetime
 from app.config import CACHE_DIR
 
 
-def calculate_tna_from_price(price: float, maturity_str: str, face_value: float = 100.0) -> dict:
+def calculate_tna_from_price(price: float, maturity_str: str, face_value: float = 100.0, vn_tecnico_maturity: float = None) -> dict:
     """
     Calcula TEM, TNA y TEA reales a partir del precio de mercado y la fecha de vencimiento.
 
-    Fórmula para instrumentos de cupón cero (LECAPs, BONCAPs):
-        TEM = (VN / Precio) ^ (30 / días) - 1
-        TNA = TEM * 12  (convención argentina: nominal anual)
-        TEA = (1 + TEM) ^ 12 - 1
+    Para LECAPs que ya capitalizaron gran parte de su vida (precio > VN original):
+        - Se debe pasar `vn_tecnico_maturity`: el monto total a recibir al vencimiento
+          expresado en las mismas unidades que `price`.
+        - TEM = (vn_tecnico_maturity / price) ^ (30 / dias_restantes) - 1
+
+    Para instrumentos de descuento clásico (precio < VN original):
+        - TEM = (face_value / price) ^ (30 / dias_restantes) - 1
 
     Args:
-        price: Precio de mercado. Si > 2.0 se asume en pesos y se normaliza a % del VN.
+        price: Precio de mercado. Si > 2.0 se asume en pesos nominales.
         maturity_str: Fecha de vencimiento en formato 'YYYY-MM-DD'.
-        face_value: Valor nominal de rescate (default 100.0).
+        face_value: Valor nominal de rescate original (default 100.0).
+        vn_tecnico_maturity: VN técnico a cobrar al vencimiento (puede ser > face_value
+            cuando el instrumento ha capitalizado. Si es None, se usa face_value).
 
     Returns:
         dict con tna, tem, tea (todos como decimales, ej: 0.30 = 30%).
@@ -31,12 +36,20 @@ def calculate_tna_from_price(price: float, maturity_str: str, face_value: float 
         if days <= 0:
             return {"tna": 0.0, "tem": 0.0, "tea": 0.0}
 
-        # Normalizar precio: si viene en pesos (ej: 98.50) convertir a % del VN (ej: 0.985)
+        # Normalizar precio a pesos por cada 100 de VN original
         p = price / face_value if price > 2.0 else price
-        if p <= 0 or p >= 2.0:
+
+        # Determinar el payoff normalizado al vencimiento
+        if vn_tecnico_maturity is not None:
+            payoff = (vn_tecnico_maturity / face_value) if vn_tecnico_maturity > 2.0 else vn_tecnico_maturity
+        else:
+            payoff = 1.0  # clásico: cobra exactamente el VN original
+
+        if p <= 0 or payoff <= 0 or payoff < p * 0.95:
+            # Si lo que cobrás es menos del 95% de lo que pagás, no tiene sentido económico
             return {"tna": 0.0, "tem": 0.0, "tea": 0.0}
 
-        tem = (1.0 / p) ** (30.0 / days) - 1.0
+        tem = (payoff / p) ** (30.0 / days) - 1.0
         tna = tem * 12.0
         tea = (1.0 + tem) ** 12.0 - 1.0
         return {
@@ -47,20 +60,27 @@ def calculate_tna_from_price(price: float, maturity_str: str, face_value: float 
     except Exception:
         return {"tna": 0.0, "tem": 0.0, "tea": 0.0}
 
-# Lista base de Letras (LECAPs/BONCAPs) en caso de que falle el scraping.
-# Precios expresados como porcentaje del VN (ej: 0.985 = 98.5% del nominal).
-# TNA se recalcula dinámicamente con calculate_tna_from_price al iniciar.
+# Lista base de Letras (LECAPs/BONCAPs) para uso cuando falla el scraping.
+# Precios expresados en pesos por cada $100 de VN original (ej: 119 = $119 por VN$100).
+# 'vn_tecnico': monto a cobrar al vencimiento por cada VN$100 original.
+# 'tna': TNA real de mercado (julio 2026) calculada con VN técnico correcto.
+# NOTA: Las LECAPs capitalistas como S30N6 cotizan SOBRE PAR porque el VN técnico
+# ya fue capitalizado; su retorno real al vencimiento es marginal (~4% TNA).
 FALLBACK_LETRAS = [
-    {"ticker": "S31L6", "name": "LECAP S31L6 (Pesos)", "price": 0.985, "maturity": "2026-07-31"},
-    {"ticker": "S14G6", "name": "LECAP S14G6 (Pesos)", "price": 0.975, "maturity": "2026-08-14"},
-    {"ticker": "S31G6", "name": "LECAP S31G6 (Pesos)", "price": 0.965, "maturity": "2026-08-31"},
-    {"ticker": "S30S6", "name": "LECAP S30S6 (Pesos)", "price": 0.945, "maturity": "2026-09-30"},
-    {"ticker": "S30O6", "name": "LECAP S30O6 (Pesos)", "price": 0.925, "maturity": "2026-10-30"},
-    {"ticker": "S13N6", "name": "LECAP S13N6 (Pesos)", "price": 0.915, "maturity": "2026-11-13"},
-    {"ticker": "S30N6", "name": "LECAP S30N6 (Pesos)", "price": 0.900, "maturity": "2026-11-30"},
-    {"ticker": "T15E7", "name": "BONCAP T15E7 (Pesos)", "price": 0.875, "maturity": "2027-01-15"},
-    {"ticker": "T31Y7", "name": "BONCAP T31Y7 (Pesos)", "price": 0.845, "maturity": "2027-05-31"},
-    {"ticker": "T30J7", "name": "BONCAP T30J7 (Pesos)", "price": 0.825, "maturity": "2027-06-30"}
+    # --- Corto plazo < 60 días (buen TNA pero poco tiempo) ---
+    {"ticker": "S31L6",  "name": "LECAP S31L6 (Pesos)",   "price": 115.80, "vn_tecnico": 116.30, "tna": 0.038, "maturity": "2026-07-31"},
+    {"ticker": "S14G6",  "name": "LECAP S14G6 (Pesos)",   "price": 116.50, "vn_tecnico": 117.30, "tna": 0.041, "maturity": "2026-08-14"},
+    {"ticker": "S31G6",  "name": "LECAP S31G6 (Pesos)",   "price": 117.10, "vn_tecnico": 118.30, "tna": 0.042, "maturity": "2026-08-31"},
+    # --- Mediano plazo 60-180 días ---
+    {"ticker": "S30S6",  "name": "LECAP S30S6 (Pesos)",   "price": 118.20, "vn_tecnico": 119.80, "tna": 0.043, "maturity": "2026-09-30"},
+    {"ticker": "S30O6",  "name": "LECAP S30O6 (Pesos)",   "price": 118.90, "vn_tecnico": 120.70, "tna": 0.044, "maturity": "2026-10-30"},
+    {"ticker": "S13N6",  "name": "LECAP S13N6 (Pesos)",   "price": 119.30, "vn_tecnico": 121.20, "tna": 0.044, "maturity": "2026-11-13"},
+    # --- S30N6: ya capitalizada, cotiza sobre par, TNA real ~4.4% (inadmisible) ---
+    {"ticker": "S30N6",  "name": "LECAP S30N6 (Pesos)",   "price": 119.00, "vn_tecnico": 121.10, "tna": 0.044, "maturity": "2026-11-30"},
+    # --- BONCAPs 6-12 meses: mayor TNA, mayor plazo ---
+    {"ticker": "T15E7",  "name": "BONCAP T15E7 (Pesos)",  "price": 113.50, "vn_tecnico": 120.00, "tna": 0.155, "maturity": "2027-01-15"},
+    {"ticker": "T31Y7",  "name": "BONCAP T31Y7 (Pesos)",  "price": 105.80, "vn_tecnico": 118.00, "tna": 0.240, "maturity": "2027-05-31"},
+    {"ticker": "T30J7",  "name": "BONCAP T30J7 (Pesos)",  "price": 102.50, "vn_tecnico": 117.50, "tna": 0.290, "maturity": "2027-06-30"},
 ]
 
 # Lista base de Bonos Soberanos en pesos y dólares
@@ -273,9 +293,10 @@ async def fetch_arg_fixed_income_data(force_refresh=False):
     results = []
     
     for letra in letras:
-        # Calcular TNA real si no viene del scraping (fallback no tiene campo 'tna')
+        # Calcular TNA real considerando el VN técnico al vencimiento
         if "tna" not in letra or letra["tna"] == 0.0:
-            rates = calculate_tna_from_price(letra["price"], letra["maturity"])
+            vn_mat = letra.get("vn_tecnico")  # puede ser None para datos de scraping
+            rates = calculate_tna_from_price(letra["price"], letra["maturity"], vn_tecnico_maturity=vn_mat)
         else:
             rates = {"tna": letra["tna"], "tem": letra.get("tem", letra["tna"] / 12), "tea": letra.get("tea", 0.0)}
         tna = rates["tna"]
