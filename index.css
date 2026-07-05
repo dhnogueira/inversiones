@@ -647,7 +647,7 @@ body {
     max-width: 720px;
     max-height: 90vh;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: visible;
     padding: 32px;
     animation: slideUp 0.3s ease;
 }
@@ -655,6 +655,7 @@ body {
 /* Small modals (e.g. add position, add watchlist) */
 .modal-container.modal-small {
     max-width: min(480px, calc(100vw - 32px));
+    overflow: visible;
 }
 
 .modal-header {
@@ -1039,11 +1040,8 @@ body {
 
 /* ====== TICKER AUTOCOMPLETE DROPDOWN ====== */
 .ticker-suggestions-dropdown {
-    position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    right: 0;
-    z-index: 2000;
+    position: fixed;
+    z-index: 99999;
     background: rgba(13, 17, 26, 0.97);
     border: 1px solid rgba(59, 130, 246, 0.3);
     border-radius: 10px;
