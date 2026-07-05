@@ -81,34 +81,15 @@ body {
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #ef4444;
-    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     flex-shrink: 0;
-    transition: transform 0.3s ease;
-    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
-    animation: pulseSalami 3s ease-in-out infinite alternate;
 }
 
 .logo-salami-img.mobile {
     width: 36px;
     height: 36px;
     border-width: 2px;
-    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
-}
-
-.logo-salami-img:hover {
-    transform: scale(1.1) rotate(15deg);
-}
-
-@keyframes pulseSalami {
-    from {
-        box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
-        transform: scale(1);
-    }
-
-    to {
-        box-shadow: 0 0 20px rgba(239, 68, 68, 0.82);
-        transform: scale(1.04);
-    }
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .logo-text {
