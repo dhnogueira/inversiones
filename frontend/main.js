@@ -2079,71 +2079,77 @@ async function executeSubscription() {
     msgEl.innerText = 'Procesando...';
     if (confirmBtn) confirmBtn.disabled = true;
 
-    if (state.staticMode) {
-        // En modo estático intentamos igual conectar al backend local
-        // (el usuario puede estar accediendo desde GitHub Pages con el backend corriendo)
-        const localCandidates = ['http://localhost:8000', `http://${window.location.hostname}:8000`];
-        for (const base of localCandidates) {
-            try {
-                const controller = new AbortController();
-                setTimeout(() => controller.abort(), 3000);
-                const response = await fetch(`${base}/api/subscribe`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email }),
-                    signal: controller.signal
-                });
-                const res = await response.json();
-                if (res.status === 'subscribed') {
-                    msgEl.style.color = '#10b981';
-                    msgEl.innerText = '¡Suscripción confirmada! Recibirás alertas de Lunes a Viernes a las 11:30 AM.';
-                    if (confirmBtn) { confirmBtn.disabled = true; confirmBtn.innerText = '✓ Suscripto'; }
-                    setTimeout(() => { document.getElementById('subscribe-confirm-modal').style.display = 'none'; if (confirmBtn) { confirmBtn.disabled = false; confirmBtn.innerHTML = '<i class="fa-solid fa-check"></i> Confirmar Suscripción'; } }, 3000);
-                    return;
-                } else if (res.status === 'already_subscribed') {
-                    msgEl.style.color = '#ff9800';
-                    msgEl.innerText = 'Este correo ya se encontraba suscripto.';
-                    if (confirmBtn) confirmBtn.disabled = false;
-                    return;
-                }
-            } catch (e) {
-                // Probar siguiente candidato
+    // ── Intento 1: Supabase directo (funciona desde GitHub Pages, celular, etc.) ──
+    if (supabase) {
+        try {
+            // Verificar si ya existe
+            const { data: existing } = await supabase
+                .from('subscribers')
+                .select('email')
+                .eq('email', email.toLowerCase())
+                .maybeSingle();
+
+            if (existing) {
+                msgEl.style.color = '#ff9800';
+                msgEl.innerText = 'Este correo ya se encontraba suscripto.';
+                if (confirmBtn) confirmBtn.disabled = false;
+                return;
             }
+
+            // Insertar nuevo suscriptor
+            const { error } = await supabase
+                .from('subscribers')
+                .insert({ email: email.toLowerCase(), active: true });
+
+            if (!error) {
+                msgEl.style.color = '#10b981';
+                msgEl.innerText = '¡Suscripción confirmada! Recibirás alertas de Lunes a Viernes a las 11:30 AM.';
+                if (confirmBtn) { confirmBtn.disabled = true; confirmBtn.innerText = '✓ Suscripto'; }
+                setTimeout(() => {
+                    document.getElementById('subscribe-confirm-modal').style.display = 'none';
+                    if (confirmBtn) { confirmBtn.disabled = false; confirmBtn.innerHTML = '<i class="fa-solid fa-check"></i> Confirmar Suscripción'; }
+                }, 3000);
+                return;
+            }
+            console.warn('[subscribe] Error en Supabase, intentando backend...', error.message);
+        } catch (e) {
+            console.warn('[subscribe] Supabase falló, intentando backend...', e);
         }
-        // Ningún backend respondió — modo estático sin backend disponible
-        msgEl.style.color = '#ff9800';
-        msgEl.innerHTML = '⚠️ El backend no está disponible desde este navegador.<br><small style="color:#9ca3af">Para suscribirte, accedé desde la red local:<br><b>http://192.168.0.8:3000</b></small>';
-        if (confirmBtn) confirmBtn.disabled = false;
-        return;
     }
 
-    try {
-        const response = await fetch(`${state.apiBase}/api/subscribe`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email })
-        });
-        const res = await response.json();
-        if (res.status === 'subscribed') {
-            msgEl.style.color = '#10b981';
-            msgEl.innerText = '¡Suscripción confirmada! Recibirás alertas de Lunes a Viernes a las 11:30 AM.';
-            if (confirmBtn) { confirmBtn.disabled = true; confirmBtn.innerText = '✓ Suscripto'; }
-            setTimeout(() => { document.getElementById('subscribe-confirm-modal').style.display = 'none'; if (confirmBtn) { confirmBtn.disabled = false; confirmBtn.innerHTML = '<i class="fa-solid fa-check"></i> Confirmar Suscripción'; } }, 3000);
-        } else if (res.status === 'already_subscribed') {
-            msgEl.style.color = '#ff9800';
-            msgEl.innerText = 'Este correo ya se encontraba suscripto.';
-            if (confirmBtn) confirmBtn.disabled = false;
-        } else {
-            msgEl.style.color = '#ef4444';
-            msgEl.innerText = res.message || 'Error al suscribirse. Intentá de nuevo.';
-            if (confirmBtn) confirmBtn.disabled = false;
+    // ── Intento 2: Backend local vía fetch (cuando está corriendo localmente) ──
+    if (!state.staticMode) {
+        try {
+            const response = await fetch(`${state.apiBase}/api/subscribe`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            const res = await response.json();
+            if (res.status === 'subscribed') {
+                msgEl.style.color = '#10b981';
+                msgEl.innerText = '¡Suscripción confirmada! Recibirás alertas de Lunes a Viernes a las 11:30 AM.';
+                if (confirmBtn) { confirmBtn.disabled = true; confirmBtn.innerText = '✓ Suscripto'; }
+                setTimeout(() => {
+                    document.getElementById('subscribe-confirm-modal').style.display = 'none';
+                    if (confirmBtn) { confirmBtn.disabled = false; confirmBtn.innerHTML = '<i class="fa-solid fa-check"></i> Confirmar Suscripción'; }
+                }, 3000);
+                return;
+            } else if (res.status === 'already_subscribed') {
+                msgEl.style.color = '#ff9800';
+                msgEl.innerText = 'Este correo ya se encontraba suscripto.';
+                if (confirmBtn) confirmBtn.disabled = false;
+                return;
+            }
+        } catch (err) {
+            console.error('[subscribe] Backend local también falló:', err);
         }
-    } catch (err) {
-        msgEl.style.color = '#ef4444';
-        msgEl.innerText = 'Error de conexión. Verificá que el backend esté activo.';
-        if (confirmBtn) confirmBtn.disabled = false;
-        console.error(err);
     }
+
+    // ── Fallback: ambos métodos fallaron ──
+    msgEl.style.color = '#ef4444';
+    msgEl.innerText = 'Error al suscribirse. Verificá tu conexión e intentá de nuevo.';
+    if (confirmBtn) confirmBtn.disabled = false;
 }
 
 

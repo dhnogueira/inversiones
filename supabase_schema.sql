@@ -118,3 +118,27 @@ $$ LANGUAGE plpgsql SECURITY DEFINER;
 CREATE OR REPLACE TRIGGER on_auth_user_created
     AFTER INSERT ON auth.users
     FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
+
+-- ==========================================
+-- 5. TABLA DE SUSCRIPTORES (Alertas por Email)
+-- ==========================================
+CREATE TABLE IF NOT EXISTS public.subscribers (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email TEXT NOT NULL UNIQUE,
+    subscribed_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()),
+    active BOOLEAN DEFAULT true
+);
+
+-- Habilitar RLS
+ALTER TABLE public.subscribers ENABLE ROW LEVEL SECURITY;
+
+-- Cualquier visitante (anónimo o autenticado) puede suscribirse
+CREATE POLICY "Allow public insert"
+    ON public.subscribers FOR INSERT
+    WITH CHECK (true);
+
+-- Cualquiera puede leer (necesario para el backend con anon key)
+CREATE POLICY "Allow public select"
+    ON public.subscribers FOR SELECT
+    USING (true);
+

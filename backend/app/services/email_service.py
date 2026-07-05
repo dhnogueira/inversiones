@@ -22,39 +22,82 @@ from app.config import (
 SUBSCRIBERS_FILE = os.path.join(CACHE_DIR, "subscribers.json")
 ALERT_HISTORY_FILE = os.path.join(CACHE_DIR, "alert_history.json")
 
+# Configuración de Supabase para leer suscriptores cloud
+SUPABASE_URL = os.getenv("SUPABASE_URL", "")
+SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY", "")
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Gestión de suscriptores
 # ──────────────────────────────────────────────────────────────────────────────
 
 def get_subscribers() -> list[str]:
-    """Retorna la lista de emails suscriptos."""
+    """
+    Retorna la lista de emails suscriptos.
+    Prioridad: Supabase (cloud) → archivo local (fallback).
+    """
+    # Intentar Supabase primero
+    if SUPABASE_URL and SUPABASE_ANON_KEY:
+        try:
+            import httpx
+            url = f"{SUPABASE_URL}/rest/v1/subscribers?select=email&active=eq.true"
+            headers = {
+                "apikey": SUPABASE_ANON_KEY,
+                "Authorization": f"Bearer {SUPABASE_ANON_KEY}",
+            }
+            r = httpx.get(url, headers=headers, timeout=10)
+            if r.status_code == 200:
+                rows = r.json()
+                emails = [row["email"] for row in rows if row.get("email")]
+                print(f"[email_service] {len(emails)} suscriptores cargados desde Supabase.")
+                return emails
+            else:
+                print(f"[email_service] Error Supabase {r.status_code}, usando fallback local.")
+        except Exception as e:
+            print(f"[email_service] Error conectando a Supabase: {e}. Usando fallback local.")
+
+    # Fallback: archivo local
     if not os.path.exists(SUBSCRIBERS_FILE):
         return []
     try:
         with open(SUBSCRIBERS_FILE, "r") as f:
             return json.load(f).get("emails", [])
     except Exception as e:
-        print(f"[email_service] Error leyendo suscriptores: {e}")
+        print(f"[email_service] Error leyendo suscriptores locales: {e}")
         return []
 
 
 def add_subscriber(email: str) -> dict:
-    """Agrega un email a la lista. Ignora duplicados."""
+    """Agrega un email al archivo local. La suscripción principal es vía Supabase desde el frontend."""
     email = email.strip().lower()
     subscribers = get_subscribers()
     if email in subscribers:
         return {"status": "already_subscribed", "email": email}
-    subscribers.append(email)
-    with open(SUBSCRIBERS_FILE, "w") as f:
-        json.dump({"emails": subscribers}, f, indent=2)
+    # Guardar en archivo local como respaldo
+    local_subs = []
+    if os.path.exists(SUBSCRIBERS_FILE):
+        try:
+            with open(SUBSCRIBERS_FILE, "r") as f:
+                local_subs = json.load(f).get("emails", [])
+        except Exception:
+            pass
+    if email not in local_subs:
+        local_subs.append(email)
+        with open(SUBSCRIBERS_FILE, "w") as f:
+            json.dump({"emails": local_subs}, f, indent=2)
     return {"status": "subscribed", "email": email}
 
 
 def remove_subscriber(email: str) -> dict:
-    """Elimina un email de la lista."""
+    """Elimina un email de la lista local."""
     email = email.strip().lower()
-    subscribers = get_subscribers()
+    if not os.path.exists(SUBSCRIBERS_FILE):
+        return {"status": "not_found", "email": email}
+    try:
+        with open(SUBSCRIBERS_FILE, "r") as f:
+            subscribers = json.load(f).get("emails", [])
+    except Exception:
+        return {"status": "not_found", "email": email}
     if email not in subscribers:
         return {"status": "not_found", "email": email}
     subscribers.remove(email)
@@ -131,9 +174,7 @@ def _build_asset_summary(asset: dict) -> str:
     return " · ".join(parts) if parts else "Análisis técnico disponible en el sitio."
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Template HTML del email
-# ──────────────────────────────────────────────────────────────────────────────
+CATEGORY_ORDER = ["merval", "cedears", "sp500", "letras", "bonos", "crypto"]
 
 CATEGORY_LABELS = {
     "sp500": "S&P 500",
@@ -153,41 +194,122 @@ CATEGORY_COLORS = {
     "crypto": "#f97316",
 }
 
+CATEGORY_ICONS = {
+    "sp500": "🇺🇸",
+    "cedears": "💼",
+    "merval": "📈",
+    "bonos": "💵",
+    "letras": "📄",
+    "crypto": "🪙",
+}
 
-def _build_email_html(top5: list, date_str: str) -> str:
-    assets_html = ""
-    for i, asset in enumerate(top5, 1):
-        ticker = asset.get("ticker", "")
-        name = asset.get("name", ticker)
-        score = asset.get("score", 0)
-        category = asset.get("category", "")
-        price = asset.get("price", 0)
-        summary = _build_asset_summary(asset)
+
+def log_alert_dispatch(categorized_assets: dict, recipient_count: int) -> dict:
+    """Guarda un registro del envío en alert_history.json."""
+    now = datetime.now()
+    flat_assets = []
+    for cat in CATEGORY_ORDER:
+        if cat in categorized_assets:
+            for a in categorized_assets[cat]:
+                flat_assets.append({
+                    "ticker": a.get("ticker", ""),
+                    "name": a.get("name", ""),
+                    "score": a.get("score", 0),
+                    "category": a.get("category", ""),
+                    "price": a.get("price", 0),
+                    "summary": _build_asset_summary(a),
+                })
+
+    entry = {
+        "sent_at": now.isoformat(timespec="seconds"),
+        "sent_at_human": now.strftime("%d/%m/%Y %H:%M"),
+        "subject": f"📈 Resumen del Mercado — {now.strftime('%d %b %Y')}",
+        "recipient_count": recipient_count,
+        "assets": flat_assets,
+    }
+    history = load_alert_history()
+    history.insert(0, entry)  # más reciente primero
+    history = history[:30]    # conservar últimas 30 entradas
+    with open(ALERT_HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+    return entry
+
+
+def _build_asset_summary(asset: dict) -> str:
+    """Genera un resumen breve de texto para el activo."""
+    parts = []
+    score = asset.get("score", 0)
+    rsi = asset.get("rsi", None)
+    trend = asset.get("trend", "")
+    support = asset.get("support", None)
+    resistance = asset.get("resistance", None)
+
+    if score:
+        parts.append(f"Score: {score:.1f}")
+    if rsi:
+        tag = "sobrevendido 📉" if rsi < 35 else ("sobrecomprado 📈" if rsi > 65 else "neutro")
+        parts.append(f"RSI {rsi:.0f} ({tag})")
+    if trend:
+        parts.append(f"Tendencia: {trend}")
+    if support:
+        parts.append(f"Soporte: ${support:.2f}")
+    if resistance:
+        parts.append(f"Resist.: ${resistance:.2f}")
+
+    return " · ".join(parts) if parts else "Análisis técnico disponible en el sitio."
+
+
+def _build_email_html(categorized_assets: dict, date_str: str) -> str:
+    categories_html = ""
+    for category in CATEGORY_ORDER:
+        if category not in categorized_assets or not categorized_assets[category]:
+            continue
+
         cat_label = CATEGORY_LABELS.get(category, category.upper())
         cat_color = CATEGORY_COLORS.get(category, "#64748b")
-        modal_url = f"{SITE_URL}#modal={ticker}"
+        cat_icon = CATEGORY_ICONS.get(category, "⭐")
 
-        assets_html += f"""
-        <tr>
-          <td style="padding: 18px 24px; border-bottom: 1px solid #1e2d3e;">
-            <table width="100%" cellpadding="0" cellspacing="0">
-              <tr>
-                <td>
-                  <span style="font-size:13px; font-weight:700; color:#fff; background:{cat_color}; padding:3px 9px; border-radius:20px; display:inline-block; margin-bottom:6px;">{cat_label}</span>
-                  <div style="font-size:22px; font-weight:800; color:#fff; letter-spacing:-0.5px;">
-                    #{i} {ticker} <span style="font-size:14px; color:#94a3b8; font-weight:400;">{name}</span>
-                  </div>
-                  <div style="font-size:13px; color:#94a3b8; margin-top:4px;">{summary}</div>
-                </td>
-                <td style="text-align:right; vertical-align:top; white-space:nowrap; padding-left:12px;">
-                  <div style="font-size:18px; font-weight:700; color:#10b981;">${price:,.2f}</div>
-                  <div style="font-size:12px; color:#64748b;">Score: {score:.1f}</div>
-                  <a href="{modal_url}" style="display:inline-block; margin-top:8px; background:#3b82f6; color:#fff; text-decoration:none; font-size:12px; font-weight:600; padding:6px 14px; border-radius:8px;">Ver análisis →</a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
+        rows_html = ""
+        for a in categorized_assets[category]:
+            ticker = a.get("ticker", "")
+            name = a.get("name", ticker)
+            score = a.get("score", 0)
+            price = a.get("price", 0)
+            summary = _build_asset_summary(a)
+            modal_url = f"{SITE_URL}#modal={ticker}"
+
+            rows_html += f"""
+            <tr style="border-bottom: 1px solid #1f2937;">
+              <td style="padding: 10px 14px; vertical-align: middle;">
+                <div style="font-size: 15px; font-weight: bold; color: #fff;">
+                  {ticker} <span style="font-size: 12px; color: #94a3b8; font-weight: normal;">{name}</span>
+                </div>
+                <div style="font-size: 11px; color: #94a3b8; margin-top: 2px; line-height: 1.4;">{summary}</div>
+              </td>
+              <td style="padding: 10px 14px; vertical-align: middle; text-align: right; white-space: nowrap;">
+                <div style="font-size: 14px; font-weight: 700; color: #10b981;">${price:,.2f}</div>
+                <div style="font-size: 11px; color: #64748b; margin-top: 1px;">Score: {score:.1f}</div>
+              </td>
+              <td style="padding: 10px 14px; vertical-align: middle; text-align: right; width: 45px;">
+                 <a href="{modal_url}" style="display: inline-block; background: #2563eb; color: #fff; text-decoration: none; font-size: 11px; font-weight: bold; padding: 4px 10px; border-radius: 6px;">Ver</a>
+              </td>
+            </tr>
+            """
+
+        categories_html += f"""
+        <!-- Category: {cat_label} -->
+        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-bottom: 24px; border: 1px solid #1e2d3e; border-radius: 10px; overflow: hidden; background: #111827;">
+          <thead>
+            <tr style="background: #1f2937; border-bottom: 2px solid {cat_color};">
+              <th colspan="3" style="padding: 12px 14px; text-align: left;">
+                <span style="font-size: 14px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 1px;">{cat_icon} {cat_label} (Top 5)</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows_html}
+          </tbody>
+        </table>
         """
 
     return f"""<!DOCTYPE html>
@@ -195,10 +317,10 @@ def _build_email_html(top5: list, date_str: str) -> str:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>📈 Top 5 del día — Inversiones Picado Fino</title>
+<title>📈 Resumen de Mercado — Inversiones Picado Fino</title>
 </head>
 <body style="margin:0; padding:0; background:#0d111a; font-family:'Segoe UI', Arial, sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="padding:32px 16px;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="padding:32px 16px; background-color:#0d111a;">
     <tr>
       <td align="center">
         <!-- Header -->
@@ -206,25 +328,23 @@ def _build_email_html(top5: list, date_str: str) -> str:
           <tr>
             <td style="background: linear-gradient(135deg, #1e2d3e 0%, #0d111a 100%); border-radius:16px 16px 0 0; padding:28px 32px; text-align:center; border:1px solid #1e3a5f; border-bottom:none;">
               <div style="font-size:13px; color:#64748b; margin-bottom:6px; text-transform:uppercase; letter-spacing:2px;">Inversiones Picado Fino 🥩</div>
-              <div style="font-size:26px; font-weight:800; color:#fff;">📈 Top 5 del día</div>
+              <div style="font-size:26px; font-weight:800; color:#fff;">📈 Resumen Diario por Categorías</div>
               <div style="font-size:14px; color:#94a3b8; margin-top:6px;">{date_str}</div>
             </td>
           </tr>
-          <!-- Asset cards -->
+          <!-- Body Categories -->
           <tr>
-            <td style="background:#111827; border:1px solid #1e3a5f; border-top:none; border-bottom:none;">
-              <table width="100%" cellpadding="0" cellspacing="0">
-                {assets_html}
-              </table>
+            <td style="background:#0d111a; border-left:1px solid #1e3a5f; border-right:1px solid #1e3a5f; padding: 24px 24px 8px 24px;">
+              {categories_html}
             </td>
           </tr>
           <!-- Footer -->
           <tr>
             <td style="background:#0d111a; border-radius:0 0 16px 16px; padding:20px 32px; text-align:center; border:1px solid #1e3a5f; border-top:none;">
               <p style="color:#64748b; font-size:12px; margin:0 0 8px;">
-                Recibís este email porque estás suscripto a <strong>Inversiones Picado Fino</strong>.
+                Recibís este email porque estás suscripto a las alertas de <strong>Inversiones Picado Fino</strong>.
               </p>
-              <a href="{SITE_URL}" style="color:#3b82f6; font-size:12px;">Ver dashboard completo →</a>
+              <a href="{SITE_URL}" style="color:#3b82f6; font-size:12px; text-decoration:none; font-weight:600;">Ver dashboard completo →</a>
             </td>
           </tr>
         </table>
@@ -235,13 +355,9 @@ def _build_email_html(top5: list, date_str: str) -> str:
 </html>"""
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Envío de email SMTP
-# ──────────────────────────────────────────────────────────────────────────────
-
-def send_daily_alert_email(top5: list) -> dict:
+def send_daily_alert_email(categorized_assets: dict) -> dict:
     """
-    Envía el email de Top 5 a todos los suscriptores via SMTP.
+    Envía el email del Resumen por Categorías a todos los suscriptores via SMTP.
     Retorna un dict con status, recipient_count y errores.
     """
     subscribers = get_subscribers()
@@ -255,8 +371,8 @@ def send_daily_alert_email(top5: list) -> dict:
 
     now = datetime.now()
     date_str = now.strftime("%d de %B de %Y")
-    subject = f"📈 Top 5 del día — {now.strftime('%d %b %Y')} | Inversiones Picado Fino"
-    html_body = _build_email_html(top5, date_str)
+    subject = f"📈 Resumen de Mercado — {now.strftime('%d %b %Y')} | Inversiones Picado Fino"
+    html_body = _build_email_html(categorized_assets, date_str)
 
     success_count = 0
     errors = []
@@ -287,10 +403,11 @@ def send_daily_alert_email(top5: list) -> dict:
         return {"status": "smtp_error", "error": str(e), "recipient_count": 0}
 
     # Registrar en historial
-    log_alert_dispatch(top5, success_count)
+    log_alert_dispatch(categorized_assets, success_count)
 
     return {
         "status": "sent",
         "recipient_count": success_count,
         "errors": errors,
     }
+
