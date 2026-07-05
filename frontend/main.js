@@ -2357,13 +2357,18 @@ function formatMarkdownBold(text) {
     return text.replace(/\*\*(.*?)\*\"/g, '<strong>$1</strong>');
 }
 
-// ===== TICKER AUTOCOMPLETE (portal approach — immune to overflow clipping) =====
 function setupTickerAutocomplete() {
     const tickerInput = document.getElementById('pos-ticker');
     const nameInput = document.getElementById('pos-name');
     const categorySelect = document.getElementById('pos-category');
+    const telemetry = document.getElementById('ticker-autocomplete-telemetry');
 
-    if (!tickerInput) return;
+    if (telemetry) telemetry.innerText = "Inicializando autocomplete...";
+
+    if (!tickerInput) {
+        if (telemetry) telemetry.innerText = "Error: pos-ticker no encontrado";
+        return;
+    }
 
     // Create the dropdown as a child of <body> for portal positioning
     let suggestionsBox = document.getElementById('ticker-suggestions-portal');
@@ -2373,6 +2378,8 @@ function setupTickerAutocomplete() {
         suggestionsBox.className = 'ticker-suggestions-dropdown';
         document.body.appendChild(suggestionsBox);
     }
+
+    if (telemetry) telemetry.innerText = "Autocomplete activo (Esperando entrada)";
 
     function positionDropdown() {
         const rect = tickerInput.getBoundingClientRect();
@@ -2397,13 +2404,20 @@ function setupTickerAutocomplete() {
     function hideSuggestions() {
         suggestionsBox.style.display = 'none';
         suggestionsBox.innerHTML = '';
+        if (telemetry) telemetry.innerText = "Dropdown oculto";
     }
 
     function showSuggestions(query) {
         suggestionsBox.innerHTML = '';
-        if (!query || query.length < 1) { hideSuggestions(); return; }
+        if (!query || query.length < 1) {
+            hideSuggestions();
+            if (telemetry) telemetry.innerText = "Autocomplete activo (Esperando entrada)";
+            return;
+        }
 
         const q = query.toUpperCase();
+        if (telemetry) telemetry.innerText = `Buscando "${q}"...`;
+
         const matches = Object.entries(ASSET_METADATA)
             .filter(([ticker, meta]) =>
                 ticker.toUpperCase().startsWith(q) ||
@@ -2411,7 +2425,15 @@ function setupTickerAutocomplete() {
             )
             .slice(0, 8);
 
-        if (matches.length === 0) { hideSuggestions(); return; }
+        if (telemetry) {
+            telemetry.innerText = `Buscando "${q}" - Encontrados: ${matches.length}`;
+        }
+
+        if (matches.length === 0) {
+            hideSuggestions();
+            if (telemetry) telemetry.innerText = `Buscando "${q}" - 0 coincidencias`;
+            return;
+        }
 
         matches.forEach(([ticker, meta]) => {
             const item = document.createElement('div');
@@ -2427,6 +2449,7 @@ function setupTickerAutocomplete() {
                 if (nameInput) nameInput.value = meta.company;
                 if (categorySelect) categorySelect.value = guessCategory(ticker);
                 hideSuggestions();
+                if (telemetry) telemetry.innerText = `Seleccionado: ${ticker}`;
                 if (nameInput) nameInput.focus();
             });
             suggestionsBox.appendChild(item);
