@@ -645,8 +645,9 @@ body {
 .modal-container {
     width: 100%;
     max-width: 720px;
-    max-height: 85vh;
+    max-height: 90vh;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 32px;
     animation: slideUp 0.3s ease;
 }
@@ -1013,6 +1014,8 @@ body {
 
 .form-group input,
 .form-group select {
+    width: 100%;
+    min-width: 0;
     background: var(--bg-card);
     border: 1px solid var(--border-glow);
     padding: 10px 12px;
