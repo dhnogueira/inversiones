@@ -4,7 +4,7 @@
     "ticker": "AVAX-USD",
     "name": "AVAX-USD",
     "category": "crypto",
-    "price": 6.949999809265137,
+    "price": 6.920000076293945,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 52.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "52.4",
+        "content": "El RSI de 14 períodos está en 51.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "51.7",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (7.34) se encuentra por debajo de la EMA de 200 días (10.35), y el precio (6.95) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (7.33) se encuentra por debajo de la EMA de 200 días (10.35), y el precio (6.92) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+1.6%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-24.2%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+1.6% (1M)",
+        "content": "El rendimiento mensual es de **+1.2%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-24.5%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+1.2% (1M)",
         "status": "neutral"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-24.3%** y a 12 meses es **-65.8%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-24.3% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-24.6%** y a 12 meses es **-66.0%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-24.6% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-14.2%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-25.2%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -14.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-14.7%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-25.7%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -14.7%",
         "status": "danger"
       }
     ],
@@ -83,16 +83,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 11.45,
-      "stop_loss": 4.7,
+      "take_profit": 11.4,
+      "stop_loss": 4.68,
       "tp_pct": 64.8,
       "sl_pct": 32.4
     },
     "support": 6.44,
     "resistance": 9.67,
     "volume_cluster": 9.15,
-    "take_profit": 11.45,
-    "stop_loss": 4.7,
+    "take_profit": 11.4,
+    "stop_loss": 4.68,
     "tp_pct": 64.8,
     "sl_pct": 32.4
   }
