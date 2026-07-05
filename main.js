@@ -2357,7 +2357,6 @@ function formatMarkdownBold(text) {
     return text.replace(/\*\*(.*?)\*\"/g, '<strong>$1</strong>');
 }
 
-// ===== TICKER AUTOCOMPLETE (portal approach — immune to overflow clipping) =====
 function setupTickerAutocomplete() {
     const tickerInput = document.getElementById('pos-ticker');
     const nameInput = document.getElementById('pos-name');
@@ -2401,9 +2400,13 @@ function setupTickerAutocomplete() {
 
     function showSuggestions(query) {
         suggestionsBox.innerHTML = '';
-        if (!query || query.length < 1) { hideSuggestions(); return; }
+        if (!query || query.length < 1) {
+            hideSuggestions();
+            return;
+        }
 
         const q = query.toUpperCase();
+
         const matches = Object.entries(ASSET_METADATA)
             .filter(([ticker, meta]) =>
                 ticker.toUpperCase().startsWith(q) ||
@@ -2411,7 +2414,10 @@ function setupTickerAutocomplete() {
             )
             .slice(0, 8);
 
-        if (matches.length === 0) { hideSuggestions(); return; }
+        if (matches.length === 0) {
+            hideSuggestions();
+            return;
+        }
 
         matches.forEach(([ticker, meta]) => {
             const item = document.createElement('div');
