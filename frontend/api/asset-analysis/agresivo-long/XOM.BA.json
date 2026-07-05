@@ -83,6 +83,93 @@
         "status": "neutral"
       }
     ],
+    "balances": {
+      "snapshots": [
+        {
+          "period": "Mar 2026",
+          "revenue_b": 83.16,
+          "net_income_b": 4.18,
+          "net_margin_pct": 5.0,
+          "eps": null,
+          "fcf_b": 2.24,
+          "debt_equity": 0.19,
+          "favorable": [
+            "FCF positivo: $2.2B",
+            "Deuda/Equity baja: 0.19"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Dec 2025",
+          "revenue_b": 80.04,
+          "net_income_b": 6.5,
+          "net_margin_pct": 8.1,
+          "eps": null,
+          "fcf_b": 5.23,
+          "debt_equity": 0.17,
+          "favorable": [
+            "FCF positivo: $5.2B",
+            "Deuda/Equity baja: 0.17"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Sep 2025",
+          "revenue_b": 83.33,
+          "net_income_b": 7.55,
+          "net_margin_pct": 9.1,
+          "eps": null,
+          "fcf_b": 6.06,
+          "debt_equity": 0.16,
+          "favorable": [
+            "FCF positivo: $6.1B",
+            "Deuda/Equity baja: 0.16"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Jun 2025",
+          "revenue_b": 79.48,
+          "net_income_b": 7.08,
+          "net_margin_pct": 8.9,
+          "eps": null,
+          "fcf_b": 5.27,
+          "debt_equity": 0.15,
+          "favorable": [
+            "FCF positivo: $5.3B",
+            "Deuda/Equity baja: 0.15"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Mar 2025",
+          "revenue_b": 81.06,
+          "net_income_b": 7.71,
+          "net_margin_pct": 9.5,
+          "eps": null,
+          "fcf_b": 7.06,
+          "debt_equity": 0.14,
+          "favorable": [
+            "FCF positivo: $7.1B",
+            "Deuda/Equity baja: 0.14"
+          ],
+          "critical": []
+        }
+      ],
+      "summary": {
+        "periods_analyzed": 5,
+        "avg_revenue_b": 81.41,
+        "avg_net_margin_pct": 8.1,
+        "avg_eps": null,
+        "revenue_trend": "creciente",
+        "margin_trend": "en contracción",
+        "total_favorable_signals": 10,
+        "total_critical_signals": 0,
+        "conclusion": "ESTABLE",
+        "conclusion_color": "neutral",
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 8.1%. Hay 0 señales de atención y 10 puntos positivos. Perfil de riesgo moderado."
+      }
+    },
     "verdict": {
       "action": "COMPRAR",
       "icon": "fa-circle-check",

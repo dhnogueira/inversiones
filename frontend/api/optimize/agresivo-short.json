@@ -7,8 +7,8 @@
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.2168,
-        "weight_pct": 21.7,
+        "weight": 0.2005,
+        "weight_pct": 20.1,
         "ars_return_est": 24.5
       },
       {
@@ -75,23 +75,32 @@
         "ars_return_est": 13.8
       },
       {
+        "ticker": "SOL-USD",
+        "name": "SOL-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 15.0
+      },
+      {
         "ticker": "VALE.BA",
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.0832,
-        "weight_pct": 8.3,
+        "weight": 0.0495,
+        "weight_pct": 4.9,
         "ars_return_est": 17.6
       }
     ],
-    "expected_return": 16.35,
-    "expected_volatility": 10.2,
-    "sharpe_ratio": 0.52,
+    "expected_return": 16.11,
+    "expected_volatility": 10.35,
+    "sharpe_ratio": 0.49,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 5.4
+    "spread_vs_inflation": 5.1
   }
 }

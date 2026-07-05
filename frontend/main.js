@@ -2190,7 +2190,144 @@ function renderModalContent(analysis) {
         body.innerHTML += `<div class="analysis-section-title"><i class="fa-solid fa-globe"></i> Contexto Macroeconómico</div>`;
         analysis.macro.forEach(section => { body.innerHTML += renderAnalysisCard(section); });
     }
+
+    if (analysis.balances) {
+        body.innerHTML += renderBalanceSection(analysis.balances);
+    }
 }
+
+function renderBalanceSection(balances) {
+    if (!balances || !balances.snapshots || balances.snapshots.length === 0) return '';
+
+    const snapshots = balances.snapshots;
+    const summary = balances.summary;
+
+    // Color de la conclusión del resumen
+    const conclusionColorMap = {
+        'success': { border: 'var(--color-conservador)', bg: 'rgba(16, 185, 129, 0.08)', icon: 'fa-circle-check', textColor: 'var(--color-conservador)' },
+        'neutral': { border: 'var(--color-moderado)', bg: 'rgba(59, 130, 246, 0.08)', icon: 'fa-circle-info', textColor: 'var(--color-moderado)' },
+        'warning': { border: '#f59e0b', bg: 'rgba(245, 158, 11, 0.08)', icon: 'fa-triangle-exclamation', textColor: '#f59e0b' }
+    };
+    const conclusionStyle = conclusionColorMap[summary.conclusion_color] || conclusionColorMap['neutral'];
+
+    // Métricas del resumen
+    const avgRevStr = summary.avg_revenue_b !== null ? `$${summary.avg_revenue_b.toFixed(1)}B` : '—';
+    const avgMarginStr = summary.avg_net_margin_pct !== null ? `${summary.avg_net_margin_pct.toFixed(1)}%` : '—';
+    const avgEpsStr = summary.avg_eps !== null ? `$${summary.avg_eps.toFixed(2)}` : '—';
+
+    const trendArrow = (trend) => {
+        if (trend === 'creciente' || trend === 'en expansión') return '<span style="color: var(--color-conservador);">↑</span>';
+        if (trend === 'decreciente' || trend === 'en contracción') return '<span style="color: #ef4444;">↓</span>';
+        return '<span style="color: var(--text-muted);">→</span>';
+    };
+
+    // Renderizar snapshots trimestrales
+    let snapshotCards = '';
+    snapshots.forEach((snap, idx) => {
+        const revStr = snap.revenue_b !== null ? `$${snap.revenue_b.toFixed(1)}B` : '—';
+        const niStr = snap.net_income_b !== null ? `$${snap.net_income_b.toFixed(1)}B` : '—';
+        const marginStr = snap.net_margin_pct !== null ? `${snap.net_margin_pct.toFixed(1)}%` : '—';
+        const epsStr = snap.eps !== null ? `$${snap.eps.toFixed(2)}` : '—';
+        const fcfStr = snap.fcf_b !== null ? `$${snap.fcf_b.toFixed(1)}B` : '—';
+        const deStr = snap.debt_equity !== null ? snap.debt_equity.toFixed(2) : '—';
+
+        const marginColor = snap.net_margin_pct !== null
+            ? (snap.net_margin_pct >= 15 ? 'var(--color-conservador)' : snap.net_margin_pct < 5 ? '#ef4444' : '#f59e0b')
+            : 'var(--text-muted)';
+
+        const fcfColor = snap.fcf_b !== null
+            ? (snap.fcf_b >= 0 ? 'var(--color-conservador)' : '#ef4444')
+            : 'var(--text-muted)';
+
+        const favorableBadges = snap.favorable.map(f =>
+            `<span class="balance-badge balance-badge-positive"><i class="fa-solid fa-check"></i> ${f}</span>`
+        ).join('');
+        const criticalBadges = snap.critical.map(c =>
+            `<span class="balance-badge balance-badge-critical"><i class="fa-solid fa-triangle-exclamation"></i> ${c}</span>`
+        ).join('');
+
+        const hasBadges = snap.favorable.length > 0 || snap.critical.length > 0;
+
+        snapshotCards += `
+        <div class="balance-snapshot-card">
+            <div class="balance-snapshot-header">
+                <span class="balance-period-label">${snap.period}</span>
+                <span class="balance-idx-badge">#${idx + 1}</span>
+            </div>
+            <div class="balance-metrics-grid">
+                <div class="balance-metric-item">
+                    <span class="balance-metric-label">Ingresos</span>
+                    <span class="balance-metric-value">${revStr}</span>
+                </div>
+                <div class="balance-metric-item">
+                    <span class="balance-metric-label">Utilidad Neta</span>
+                    <span class="balance-metric-value">${niStr}</span>
+                </div>
+                <div class="balance-metric-item">
+                    <span class="balance-metric-label">Margen Neto</span>
+                    <span class="balance-metric-value" style="color: ${marginColor};">${marginStr}</span>
+                </div>
+                <div class="balance-metric-item">
+                    <span class="balance-metric-label">EPS</span>
+                    <span class="balance-metric-value">${epsStr}</span>
+                </div>
+                <div class="balance-metric-item">
+                    <span class="balance-metric-label">FCF</span>
+                    <span class="balance-metric-value" style="color: ${fcfColor};">${fcfStr}</span>
+                </div>
+                <div class="balance-metric-item">
+                    <span class="balance-metric-label">Deuda/Equity</span>
+                    <span class="balance-metric-value">${deStr}</span>
+                </div>
+            </div>
+            ${hasBadges ? `<div class="balance-badges-row">${favorableBadges}${criticalBadges}</div>` : ''}
+        </div>`;
+    });
+
+    // Card del resumen final
+    const summaryCard = `
+    <div class="balance-summary-card" style="border-color: ${conclusionStyle.border}; background: ${conclusionStyle.bg};">
+        <div class="balance-summary-header">
+            <i class="fa-solid ${conclusionStyle.icon}" style="color: ${conclusionStyle.textColor}; font-size: 18px;"></i>
+            <span class="balance-summary-title">Promedio de ${summary.periods_analyzed} Balances:
+                <strong style="color: ${conclusionStyle.textColor};">${summary.conclusion}</strong>
+            </span>
+        </div>
+        <div class="balance-summary-metrics">
+            <div class="balance-summary-metric">
+                <span class="balance-metric-label">Ingresos Promedio</span>
+                <span class="balance-metric-value">${avgRevStr} ${trendArrow(summary.revenue_trend)}</span>
+                <span class="balance-trend-label">${summary.revenue_trend}</span>
+            </div>
+            <div class="balance-summary-metric">
+                <span class="balance-metric-label">Margen Promedio</span>
+                <span class="balance-metric-value">${avgMarginStr} ${trendArrow(summary.margin_trend)}</span>
+                <span class="balance-trend-label">${summary.margin_trend}</span>
+            </div>
+            <div class="balance-summary-metric">
+                <span class="balance-metric-label">EPS Promedio</span>
+                <span class="balance-metric-value">${avgEpsStr}</span>
+            </div>
+            <div class="balance-summary-metric">
+                <span class="balance-metric-label">Señales ✅ / ⚠️</span>
+                <span class="balance-metric-value">
+                    <span style="color: var(--color-conservador);">${summary.total_favorable_signals} fav.</span>
+                    /
+                    <span style="color: #f59e0b;">${summary.total_critical_signals} crít.</span>
+                </span>
+            </div>
+        </div>
+        <p class="balance-summary-detail">${summary.conclusion_detail}</p>
+    </div>`;
+
+    return `
+    <div class="analysis-section-title"><i class="fa-solid fa-file-invoice-dollar"></i> Análisis de Balances (Últimos ${snapshots.length} Trimestres)</div>
+    <div class="balance-snapshots-container">
+        ${snapshotCards}
+    </div>
+    ${summaryCard}`;
+}
+
 
 function renderAnalysisCard(section) {
     const statusClass = `analysis-status-${section.status || 'neutral'}`;

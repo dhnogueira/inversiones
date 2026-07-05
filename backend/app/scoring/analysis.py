@@ -7,8 +7,270 @@ from app.scoring.profiles import (
     HORIZON_LONG
 )
 
-
 import numpy as np
+
+
+def build_balance_analysis(ticker, category):
+    """
+    Obtiene los últimos 5 balances trimestrales de un activo de renta variable
+    mediante yfinance y genera un análisis narrativo con puntos favorables, críticos
+    y un resumen promedio.
+
+    Retorna None para renta fija (letras/bonos) y crypto.
+    Retorna None si no hay datos disponibles.
+    """
+    # Solo tiene sentido para acciones
+    if category in ("letras", "bonos", "crypto"):
+        return None
+
+    try:
+        import yfinance as yf
+        stock = yf.Ticker(ticker)
+
+        # Quarterly financials: ingresos y utilidad neta
+        qf = stock.quarterly_financials
+        # Balance sheet trimestral: deuda y equity
+        qbs = stock.quarterly_balance_sheet
+        # Cashflow trimestral: FCF = Operating CF - CapEx
+        qcf = stock.quarterly_cashflow
+
+        if qf is None or qf.empty:
+            return None
+
+        # Tomar las últimas 5 columnas (trimestres, más reciente primero)
+        periods = list(qf.columns[:5])
+        if len(periods) == 0:
+            return None
+
+        # Intentar obtener EPS trimestral
+        try:
+            earnings_hist = stock.quarterly_earnings
+        except Exception:
+            earnings_hist = None
+
+        snapshots = []
+
+        def safe_get_row(df, possible_keys):
+            """Busca la primera clave existente en las filas del DataFrame."""
+            if df is None or df.empty:
+                return None
+            for key in possible_keys:
+                for idx in df.index:
+                    if isinstance(idx, str) and key.lower() in idx.lower():
+                        return df.loc[idx]
+            return None
+
+        revenue_series = safe_get_row(qf, ["Total Revenue", "Revenue"])
+        net_income_series = safe_get_row(qf, ["Net Income", "Net Income Common Stockholders"])
+        op_cf_series = safe_get_row(qcf, ["Operating Cash Flow", "Total Cash From Operating Activities"])
+        capex_series = safe_get_row(qcf, ["Capital Expenditure", "Capital Expenditures"])
+        total_debt_series = safe_get_row(qbs, ["Total Debt", "Long Term Debt"])
+        equity_series = safe_get_row(qbs, ["Stockholders Equity", "Total Stockholders Equity", "Common Stock Equity"])
+
+        revenues = []
+        margins = []
+        epss = []
+
+        for col in periods:
+            period_label = col.strftime("%b %Y") if hasattr(col, "strftime") else str(col)
+
+            # Ingresos en miles de millones
+            revenue = None
+            if revenue_series is not None and col in revenue_series.index:
+                v = revenue_series[col]
+                if v is not None and not (isinstance(v, float) and np.isnan(v)):
+                    revenue = round(v / 1e9, 2)
+
+            # Utilidad neta
+            net_income = None
+            if net_income_series is not None and col in net_income_series.index:
+                v = net_income_series[col]
+                if v is not None and not (isinstance(v, float) and np.isnan(v)):
+                    net_income = round(v / 1e9, 2)
+
+            # Margen neto
+            net_margin = None
+            if revenue and net_income is not None and revenue != 0:
+                net_margin = round((net_income / revenue) * 100, 1)
+
+            # FCF = Operating CF - CapEx
+            fcf = None
+            if op_cf_series is not None and col in op_cf_series.index:
+                ocf_v = op_cf_series[col]
+                capex_v = 0.0
+                if capex_series is not None and col in capex_series.index:
+                    cv = capex_series[col]
+                    if cv is not None and not (isinstance(cv, float) and np.isnan(cv)):
+                        capex_v = cv
+                if ocf_v is not None and not (isinstance(ocf_v, float) and np.isnan(ocf_v)):
+                    fcf = round((ocf_v - abs(capex_v)) / 1e9, 2)
+
+            # Deuda / Equity
+            debt_equity = None
+            if (total_debt_series is not None and col in total_debt_series.index and
+                    equity_series is not None and col in equity_series.index):
+                dv = total_debt_series[col]
+                ev = equity_series[col]
+                if (dv is not None and ev is not None and
+                        not (isinstance(dv, float) and np.isnan(dv)) and
+                        not (isinstance(ev, float) and np.isnan(ev)) and ev != 0):
+                    debt_equity = round(dv / ev, 2)
+
+            # EPS de la historia de earnings si está disponible
+            eps = None
+            if earnings_hist is not None and not earnings_hist.empty:
+                if hasattr(col, "quarter") and hasattr(col, "year"):
+                    # Buscar por año/trimestre aproximado
+                    for eidx in earnings_hist.index:
+                        try:
+                            if hasattr(eidx, "year") and eidx.year == col.year and eidx.quarter == col.quarter:
+                                row_e = earnings_hist.loc[eidx]
+                                if "EPS Actual" in row_e.index:
+                                    eps = round(float(row_e["EPS Actual"]), 2)
+                                elif "Earnings" in row_e.index:
+                                    eps = round(float(row_e["Earnings"]), 2)
+                        except Exception:
+                            pass
+
+            # Generar puntos favorables y críticos
+            favorable = []
+            critical = []
+
+            if net_margin is not None:
+                if net_margin >= 20:
+                    favorable.append(f"Margen neto sólido del {net_margin}%")
+                elif net_margin >= 10:
+                    pass  # neutral
+                elif net_margin < 5:
+                    critical.append(f"Margen neto muy bajo: {net_margin}%")
+                elif net_margin < 0:
+                    critical.append(f"Margen neto negativo: {net_margin}%")
+
+            if fcf is not None:
+                if fcf > 0:
+                    favorable.append(f"FCF positivo: ${fcf:.1f}B")
+                else:
+                    critical.append(f"FCF negativo: ${fcf:.1f}B (quema de caja)")
+
+            if debt_equity is not None:
+                if debt_equity < 0.5:
+                    favorable.append(f"Deuda/Equity baja: {debt_equity:.2f}")
+                elif debt_equity > 2:
+                    critical.append(f"Deuda/Equity elevada: {debt_equity:.2f}")
+
+            if revenue is not None and revenue > 0:
+                if len(revenues) > 0 and revenues[-1] is not None:
+                    chg = ((revenue - revenues[-1]) / revenues[-1]) * 100
+                    if chg >= 5:
+                        favorable.append(f"Ingresos en alza vs trimestre anterior: +{chg:.1f}%")
+                    elif chg <= -5:
+                        critical.append(f"Ingresos en baja vs trimestre anterior: {chg:.1f}%")
+
+            revenues.append(revenue)
+            if net_margin is not None:
+                margins.append(net_margin)
+            if eps is not None:
+                epss.append(eps)
+
+            snapshots.append({
+                "period": period_label,
+                "revenue_b": revenue,
+                "net_income_b": net_income,
+                "net_margin_pct": net_margin,
+                "eps": eps,
+                "fcf_b": fcf,
+                "debt_equity": debt_equity,
+                "favorable": favorable,
+                "critical": critical
+            })
+
+        if not snapshots:
+            return None
+
+        # --- Resumen promedio de los 5 balances ---
+        valid_revenues = [r for r in revenues if r is not None]
+        valid_margins = [m for m in margins if m is not None]
+        valid_epss = [e for e in epss if e is not None]
+
+        avg_revenue = round(sum(valid_revenues) / len(valid_revenues), 2) if valid_revenues else None
+        avg_margin = round(sum(valid_margins) / len(valid_margins), 1) if valid_margins else None
+        avg_eps = round(sum(valid_epss) / len(valid_epss), 2) if valid_epss else None
+
+        # Tendencia de ingresos (entre el primero y el último válido)
+        revenue_trend = "sin datos"
+        if len(valid_revenues) >= 2:
+            # Recordar: la lista está ordenada de más reciente a más antiguo
+            delta = valid_revenues[0] - valid_revenues[-1]
+            if delta > 0:
+                revenue_trend = "creciente"
+            elif delta < 0:
+                revenue_trend = "decreciente"
+            else:
+                revenue_trend = "estable"
+
+        margin_trend = "sin datos"
+        if len(valid_margins) >= 2:
+            delta_m = valid_margins[0] - valid_margins[-1]
+            if delta_m > 1:
+                margin_trend = "en expansión"
+            elif delta_m < -1:
+                margin_trend = "en contracción"
+            else:
+                margin_trend = "estable"
+
+        # Conclusión basada en margen, FCF y tendencia
+        all_favorable = sum(len(s["favorable"]) for s in snapshots)
+        all_critical = sum(len(s["critical"]) for s in snapshots)
+
+        if avg_margin is not None and avg_margin >= 15 and revenue_trend == "creciente" and all_critical == 0:
+            conclusion = "SÓLIDO"
+            conclusion_color = "success"
+            conclusion_detail = (
+                f"Los últimos {len(snapshots)} balances muestran una empresa con ingresos {revenue_trend}s, "
+                f"márgenes de {avg_margin:.1f}% promedio y sin señales de alerta. "
+                f"Los fundamentos respaldan la tesis de inversión."
+            )
+        elif avg_margin is not None and avg_margin >= 5 and all_critical <= all_favorable:
+            conclusion = "ESTABLE"
+            conclusion_color = "neutral"
+            conclusion_detail = (
+                f"Los últimos {len(snapshots)} balances presentan estabilidad general con ingresos {revenue_trend}s "
+                f"y margen promedio del {avg_margin:.1f}%. "
+                f"Hay {all_critical} señales de atención y {all_favorable} puntos positivos. Perfil de riesgo moderado."
+            )
+        else:
+            conclusion = "CON SEÑALES DE ALERTA"
+            conclusion_color = "warning"
+            conclusion_detail = (
+                f"Los últimos {len(snapshots)} balances detectan {all_critical} señales críticas frente a {all_favorable} favorables. "
+                f"Se observan presiones en la rentabilidad "
+                + (f"(margen {avg_margin:.1f}%, {margin_trend})" if avg_margin is not None else "")
+                + f" con ingresos {revenue_trend}s. Se recomienda precaución."
+            )
+
+        balance_summary = {
+            "periods_analyzed": len(snapshots),
+            "avg_revenue_b": avg_revenue,
+            "avg_net_margin_pct": avg_margin,
+            "avg_eps": avg_eps,
+            "revenue_trend": revenue_trend,
+            "margin_trend": margin_trend,
+            "total_favorable_signals": all_favorable,
+            "total_critical_signals": all_critical,
+            "conclusion": conclusion,
+            "conclusion_color": conclusion_color,
+            "conclusion_detail": conclusion_detail
+        }
+
+        return {
+            "snapshots": snapshots,
+            "summary": balance_summary
+        }
+
+    except Exception as e:
+        # Si yfinance falla (activo sin datos, timeout, etc.) retornar None silenciosamente
+        print(f"[balance_analysis] No se pudieron obtener balances para {ticker}: {e}")
+        return None
 
 def calculate_tp_sl(price, volatility, profile, category, horizon="medium"):
     """
@@ -125,6 +387,9 @@ def generate_asset_analysis(asset, profile, horizon="medium"):
     verdict["tp_pct"] = tp_pct
     verdict["sl_pct"] = sl_pct
 
+    # ------- Sección 5: Análisis de Balances (últimos 5 trimestres) -------
+    balances = build_balance_analysis(ticker, category)
+
     return {
         "ticker": ticker,
         "name": name,
@@ -137,6 +402,7 @@ def generate_asset_analysis(asset, profile, horizon="medium"):
         "technical": technical,
         "fundamental": fundamental,
         "macro": macro,
+        "balances": balances,
         "verdict": verdict,
         "support": support,
         "resistance": resistance,
@@ -146,6 +412,7 @@ def generate_asset_analysis(asset, profile, horizon="medium"):
         "tp_pct": tp_pct,
         "sl_pct": sl_pct
     }
+
 
 
 def build_technical_analysis(price, rsi, ema_50, ema_200, volatility, trend, ret_1m, ret_3m, category):

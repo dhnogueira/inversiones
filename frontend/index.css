@@ -65,14 +65,50 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 40px;
+    gap: 16px;
+    margin-bottom: 30px;
 }
 
 .logo-icon {
     font-size: 24px;
     color: var(--color-moderado);
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.logo-salami-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ef4444;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+    animation: pulseSalami 3s ease-in-out infinite alternate;
+}
+
+.logo-salami-img.mobile {
+    width: 36px;
+    height: 36px;
+    border-width: 2px;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+.logo-salami-img:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+@keyframes pulseSalami {
+    from {
+        box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+        transform: scale(1);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.82);
+        transform: scale(1.04);
+    }
 }
 
 .logo-text {
@@ -1550,5 +1586,183 @@ body {
 @media (max-width: 768px) {
     #portfolio-distribution-section {
         grid-template-columns: 1fr !important;
+    }
+}
+
+/* ===================================================
+   BALANCE ANALYSIS SECTION — Modal
+   =================================================== */
+
+.balance-snapshots-container {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+    margin-bottom: 16px;
+}
+
+.balance-snapshots-container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.balance-snapshots-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+}
+
+.balance-snapshot-card {
+    flex: 0 0 200px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 14px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.balance-snapshot-card:hover {
+    border-color: rgba(255, 255, 255, 0.13);
+    transform: translateY(-2px);
+}
+
+.balance-snapshot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.balance-period-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.3px;
+}
+
+.balance-idx-badge {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.balance-metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 10px;
+    margin-bottom: 10px;
+}
+
+.balance-metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.balance-metric-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+}
+
+.balance-metric-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.balance-badges-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 8px;
+}
+
+.balance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 6px;
+    line-height: 1.4;
+}
+
+.balance-badge-positive {
+    background: rgba(16, 185, 129, 0.10);
+    color: var(--color-conservador);
+    border: 1px solid rgba(16, 185, 129, 0.20);
+}
+
+.balance-badge-critical {
+    background: rgba(245, 158, 11, 0.10);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.20);
+}
+
+/* Summary card */
+.balance-summary-card {
+    border: 1px solid;
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-top: 4px;
+    transition: var(--transition);
+}
+
+.balance-summary-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.balance-summary-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.balance-summary-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.balance-summary-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.balance-trend-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.balance-summary-detail {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .balance-summary-metrics {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .balance-snapshot-card {
+        flex: 0 0 170px;
     }
 }
