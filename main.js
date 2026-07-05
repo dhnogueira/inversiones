@@ -664,12 +664,38 @@ function renderOptimalDashboard(optimization) {
         series.push(pct);
         labels.push(item.name.replace(' Letra', '').replace(' Bono', '').replace(' Accion', ''));
 
+        let priceStr = '';
+        if (state.marketData) {
+            let foundAsset = null;
+            for (const cat of Object.keys(state.marketData.categories)) {
+                foundAsset = state.marketData.categories[cat].find(a => a.ticker === item.ticker);
+                if (foundAsset) break;
+            }
+            if (foundAsset) {
+                const priceVal = foundAsset.price;
+                const supportVal = foundAsset.support;
+                const resistanceVal = foundAsset.resistance;
+                const symb = item.currency === 'ARS' ? '$' : 'u$s';
+                priceStr = `${symb} ${priceVal.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`;
+
+                const parts = [];
+                if (resistanceVal) parts.push(`R: ${symb} ${resistanceVal.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`);
+                if (supportVal) parts.push(`S: ${symb} ${supportVal.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`);
+                if (parts.length > 0) {
+                    priceStr += ` (${parts.join(', ')})`;
+                }
+            }
+        }
+
         const div = document.createElement('div');
         div.className = 'allocation-item';
         div.style.cssText = 'cursor: pointer; transition: background 0.2s; padding: 4px 8px; border-radius: 6px;';
         div.innerHTML = `
             <div style="flex-grow: 1;">
-                <span class="alloc-name">${item.ticker.replace('.BA', '')} <i class="fa-solid fa-circle-info" style="font-size: 10px; opacity: 0.5; margin-left: 2px;"></i></span>
+                <div style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;">
+                    <span class="alloc-name">${item.ticker.replace('.BA', '')} <i class="fa-solid fa-circle-info" style="font-size: 10px; opacity: 0.5; margin-left: 2px;"></i></span>
+                    ${priceStr ? `<span style="font-size: 11.5px; color: var(--text-secondary); font-weight: 500;">${priceStr}</span>` : ''}
+                </div>
                 <div class="alloc-category">${item.category} • ${item.currency}</div>
             </div>
             <div class="alloc-weight-container" style="flex-shrink: 0; min-width: 100px;">
