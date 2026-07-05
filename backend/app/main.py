@@ -247,6 +247,49 @@ async def delete_watchlist(ticker: str, user: Optional[Dict] = Depends(get_curre
     await remove_from_watchlist(ticker, user=user)
     return {"status": "success"}
 
+# ===== EMAIL ALERTS & SUBSCRIPTIONS =====
+@app.get("/api/alert-history")
+async def get_alert_history_endpoint():
+    from app.services.email_service import load_alert_history
+    return load_alert_history()
+
+@app.post("/api/subscribe")
+async def post_subscribe(data: dict = Body(...)):
+    email = data.get("email")
+    if not email:
+        return {"status": "error", "message": "Email es requerido."}
+    from app.services.email_service import add_subscriber
+    res = add_subscriber(email)
+    return res
+
+async def dispatch_daily_alert_email():
+    """Genera las recomendaciones y despacha el correo del Top 5 de activos."""
+    all_assets = await _get_all_assets()
+    scored = get_recommendations_by_profile(all_assets, "moderado", "medium")
+    top_assets = scored.get("top_10", [])
+    # Ordenar por score desc y tomar los 5 mejores
+    top5 = sorted(top_assets, key=lambda x: x.get("score", 0), reverse=True)[:5]
+    if top5:
+        from app.services.email_service import send_daily_alert_email
+        send_daily_alert_email(top5)
+        print("[scheduler] Alerta diaria enviada por email con éxito.")
+    else:
+        print("[scheduler] No se obtuvieron activos válidos para enviar alerta por email.")
+
+def run_scheduler_email_alert():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(dispatch_daily_alert_email())
+    loop.close()
+
+# Registrar el job en el planificador (a las 11:30 todos los días, después del refresh de 11:00)
+scheduler.add_job(run_scheduler_email_alert, 'cron', hour=11, minute=30, id='daily_email_alert')
+
+@app.post("/api/send-test-alert")
+async def post_send_test_alert(background_tasks: BackgroundTasks):
+    background_tasks.add_task(dispatch_daily_alert_email)
+    return {"status": "started", "message": "Proceso de envío de emails de prueba iniciado en segundo plano."}
+
 # ===== REFRESH =====
 @app.post("/api/refresh")
 async def trigger_refresh(background_tasks: BackgroundTasks):

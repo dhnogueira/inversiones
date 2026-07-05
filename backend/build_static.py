@@ -131,8 +131,22 @@ async def main():
                     with open(filepath_fallback, "w", encoding="utf-8") as f:
                         json.dump(analysis_data, f, indent=2, ensure_ascii=False)
 
+    # 5. Generar historial de alertas estático (copiando desde el cache)
+    print("Compilando historial de alertas enviado...")
+    import shutil
+    cache_history = os.path.join(os.path.dirname(__file__), "cache", "alert_history.json")
+    api_history = os.path.join(API_DIR, "alert-history.json")
+    if os.path.exists(cache_history):
+        shutil.copy(cache_history, api_history)
+        print("✓ Historial de alertas compilado correctamente.")
+    else:
+        with open(api_history, "w", encoding="utf-8") as f:
+            json.dump([], f)
+        print("✓ Historial de alertas vacío creado.")
+
     print("Compilación estática completada con éxito. Todos los archivos JSON generados en frontend/api/")
 
 
 if __name__ == "__main__":
     asyncio.run(main())
+

@@ -18,7 +18,13 @@ SUPABASE_URL = os.getenv("SUPABASE_URL", "")
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY", "")
 SUPABASE_JWT_SECRET = os.getenv("SUPABASE_JWT_SECRET", "")
 
+# ===== SMTP / Email Config =====
+ALERT_EMAIL_FROM = os.getenv("ALERT_EMAIL_FROM", "")
+ALERT_EMAIL_PASSWORD = os.getenv("ALERT_EMAIL_PASSWORD", "")
+ALERT_EMAIL_SMTP_HOST = os.getenv("ALERT_EMAIL_SMTP_HOST", "smtp.gmail.com")
+ALERT_EMAIL_SMTP_PORT = os.getenv("ALERT_EMAIL_SMTP_PORT", "587")
+SITE_URL = os.getenv("SITE_URL", "https://dhnogueira.github.io/inversiones")
+
 # Directorio de caché local para evitar llamadas excesivas a APIs externas
 CACHE_DIR = os.path.abspath(os.path.join(BASE_DIR, "../cache"))
 os.makedirs(CACHE_DIR, exist_ok=True)
-

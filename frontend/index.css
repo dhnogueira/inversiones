@@ -1822,3 +1822,10 @@ body {
         flex: 0 0 170px;
     }
 }
+
+/* Email Alerts Subscription & History */
+@media (max-width: 768px) {
+    .alerts-double-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
