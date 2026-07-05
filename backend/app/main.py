@@ -283,7 +283,7 @@ def run_scheduler_email_alert():
     loop.close()
 
 # Registrar el job en el planificador (a las 11:30 todos los días, después del refresh de 11:00)
-scheduler.add_job(run_scheduler_email_alert, 'cron', hour=11, minute=30, id='daily_email_alert')
+scheduler.add_job(run_scheduler_email_alert, 'cron', day_of_week='mon-fri', hour=11, minute=30, id='daily_email_alert')
 
 @app.post("/api/send-test-alert")
 async def post_send_test_alert(background_tasks: BackgroundTasks):

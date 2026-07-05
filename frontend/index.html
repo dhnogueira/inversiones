@@ -337,12 +337,8 @@
                             junto con una síntesis técnica y enlaces de acceso.
                         </p>
                         <form id="subscribe-form" style="display: flex; flex-direction: column; gap: 12px;">
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <input type="email" id="subscribe-email" placeholder="tu-correo@ejemplo.com" required
-                                    style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff;">
-                            </div>
                             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;"><i
-                                    class="fa-solid fa-paper-plane"></i> Suscribirme</button>
+                                    class="fa-solid fa-envelope-circle-check"></i> Suscribirme a Alertas</button>
                         </form>
                         <div id="subscribe-msg"
                             style="margin-top: 12px; font-size: 13px; font-weight: 500; display: none;"></div>
@@ -359,13 +355,14 @@
                                         <th>Fecha / Hora</th>
                                         <th>Resumen de Alerta de Correo</th>
                                         <th>Enviado a</th>
+                                        <th style="width:50px;"></th>
                                     </tr>
                                 </thead>
                                 <tbody id="email-history-tbody">
                                     <tr>
-                                        <td colspan="3" class="text-center"
-                                            style="padding: 16px; color: var(--text-secondary);">Cargando historial de
-                                            envíos de correo...</td>
+                                        <td colspan="4" class="text-center"
+                                            style="padding: 16px; color: var(--text-secondary);">Cargando historial...
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -394,8 +391,70 @@
         </main>
     </div>
 
+    <!-- Subscribe Confirmation Modal -->
+    <div id="subscribe-confirm-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-container modal-small glass-panel" style="max-width: 440px; text-align: center;">
+            <div class="modal-header"
+                style="border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px; padding-bottom: 16px;">
+                <h3 style="margin:0; font-size:18px; color:#fff;"><i class="fa-solid fa-envelope-circle-check"
+                        style="color:#3b82f6; margin-right:8px;"></i>Suscribirse a Alertas Diarias</h3>
+                <button class="modal-close"
+                    onclick="document.getElementById('subscribe-confirm-modal').style.display='none'"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <!-- State: NOT LOGGED IN -->
+            <div id="sub-modal-nologin" style="display:none; padding: 0 8px 16px;">
+                <div
+                    style="background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:10px; padding:16px; margin-bottom:18px;">
+                    <i class="fa-solid fa-circle-exclamation"
+                        style="color:#ef4444; font-size:22px; margin-bottom:8px; display:block;"></i>
+                    <p style="margin:0; color:#fca5a5; font-size:14px;">Debés iniciar sesión para suscribirte a las
+                        alertas diarias de correo.</p>
+                </div>
+                <button class="btn btn-primary"
+                    onclick="document.getElementById('subscribe-confirm-modal').style.display='none'; document.getElementById('auth-modal').style.display='flex';"
+                    style="width:100%;">
+                    <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+                </button>
+            </div>
+            <!-- State: LOGGED IN — Confirm -->
+            <div id="sub-modal-confirm" style="display:none; padding: 0 8px 16px;">
+                <div
+                    style="background:rgba(59,130,246,0.08); border:1px solid rgba(59,130,246,0.2); border-radius:10px; padding:18px; margin-bottom:20px; text-align:left;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+                        <i class="fa-solid fa-at" style="color:#3b82f6; font-size:15px;"></i>
+                        <span style="font-size:13px; color:#94a3b8;">Email de suscripción:</span>
+                    </div>
+                    <div id="sub-modal-email"
+                        style="font-size:15px; font-weight:700; color:#fff; margin-bottom:16px; padding-left:25px;">
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                        <i class="fa-solid fa-clock" style="color:#3b82f6; font-size:15px;"></i>
+                        <span style="font-size:13px; color:#94a3b8;">Horario de envío:</span>
+                    </div>
+                    <div style="font-size:14px; color:#fff; padding-left:25px; font-weight:600;">
+                        <span style="color:#10b981;">11:30 AM</span> &nbsp;·&nbsp; <span style="color:#f59e0b;">Lunes a
+                            Viernes</span>
+                    </div>
+                </div>
+                <p style="font-size:12px; color:#64748b; margin-bottom:18px;">Recibirás un resumen con el <strong>Top 5
+                        de activos recomendados</strong> del día con análisis técnico y enlaces directos al dashboard.
+                </p>
+                <div style="display:flex; gap:12px;">
+                    <button class="btn"
+                        onclick="document.getElementById('subscribe-confirm-modal').style.display='none'"
+                        style="flex:1; background:rgba(255,255,255,0.05); color:#94a3b8;">Cancelar</button>
+                    <button id="sub-modal-confirm-btn" class="btn btn-primary" style="flex:2;"><i
+                            class="fa-solid fa-check"></i> Confirmar Suscripción</button>
+                </div>
+                <div id="sub-modal-msg" style="margin-top:12px; font-size:13px; font-weight:500; display:none;"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Asset Analysis Modal -->
     <div id="asset-modal" class="modal-overlay" style="display:none;">
+
         <div class="modal-container glass-panel">
             <div class="modal-header">
                 <div class="modal-title-group">
@@ -599,7 +658,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Config (carga antes que main.js para que window.CONFIG esté disponible) -->
     <script src="config.js"></script>
-    <script type="module" src="main.js?v=20"></script>
+    <script type="module" src="main.js?v=21"></script>
 </body>
 
 </html>

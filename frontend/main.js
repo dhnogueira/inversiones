@@ -322,54 +322,25 @@ function setupEventListeners() {
     // ===== TICKER AUTOCOMPLETE =====
     setupTickerAutocomplete();
 
-    // ===== EMAIL SUBSCRIBE FORM =====
-    const subscribeForm = document.getElementById('subscribe-form');
-    if (subscribeForm) {
-        subscribeForm.addEventListener('submit', async (e) => {
+    // ===== EMAIL SUBSCRIBE — Open confirmation modal =====
+    const subscribeBtn = document.querySelector('#subscribe-form button[type="submit"]');
+    if (subscribeBtn) {
+        // Prevent default form submit; open confirmation modal instead
+        const subscribeForm = document.getElementById('subscribe-form');
+        if (subscribeForm) subscribeForm.addEventListener('submit', (e) => e.preventDefault());
+
+        subscribeBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            const emailInput = document.getElementById('subscribe-email');
-            const msgDiv = document.getElementById('subscribe-msg');
-            if (!emailInput || !msgDiv) return;
-
-            const email = emailInput.value.trim();
-            msgDiv.style.display = 'block';
-            msgDiv.style.color = '#3b82f6';
-            msgDiv.innerText = 'Procesando...';
-
-            if (state.staticMode) {
-                // En modo estático no hay backend activo guardando emails en disco
-                setTimeout(() => {
-                    msgDiv.style.color = '#ff9800';
-                    msgDiv.innerText = 'Modo Demo Activo (El email no será persistido en el servidor).';
-                }, 800);
-                return;
-            }
-
-            try {
-                const response = await fetch(`${state.apiBase}/api/subscribe`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email })
-                });
-                const res = await response.json();
-                if (res.status === 'subscribed') {
-                    msgDiv.style.color = '#10b981';
-                    msgDiv.innerText = '¡Te has suscripto correctamente!';
-                    emailInput.value = '';
-                } else if (res.status === 'already_subscribed') {
-                    msgDiv.style.color = '#ff9800';
-                    msgDiv.innerText = 'Este correo ya se encuentra suscripto.';
-                } else {
-                    msgDiv.style.color = '#ef4444';
-                    msgDiv.innerText = res.message || 'Error al suscribirse. Reintente.';
-                }
-            } catch (err) {
-                msgDiv.style.color = '#ef4444';
-                msgDiv.innerText = 'Error de conexión con el backend de suscripción.';
-                console.error(err);
-            }
+            openSubscribeModal();
         });
     }
+
+    // Wire the confirm button inside the modal
+    const subConfirmBtn = document.getElementById('sub-modal-confirm-btn');
+    if (subConfirmBtn) {
+        subConfirmBtn.addEventListener('click', () => executeSubscription());
+    }
+
 
     // Auth account button binding - toggles dropdown or opens modal
     const navAuthBtn = document.getElementById('nav-auth-btn');
@@ -1995,7 +1966,7 @@ async function fetchAndRenderEmailHistory() {
 
         tbody.innerHTML = '';
         if (!history || history.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="3" class="text-center" style="padding: 16px; color: var(--text-secondary);">No se han enviado alertas de correo aún.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="4" class="text-center" style="padding: 16px; color: var(--text-secondary);">No se han enviado alertas de correo aún.</td></tr>`;
             return;
         }
 
@@ -2017,14 +1988,124 @@ async function fetchAndRenderEmailHistory() {
                     <div style="display: flex; flex-wrap: wrap; gap: 4px; align-items: center;">${assetsBadges}</div>
                 </td>
                 <td><span class="badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981; font-weight: normal; font-size:11px; padding: 2px 6px;">${item.recipient_count} suscriptores</span></td>
+                <td>
+                    <button class="resend-alert-btn" title="Reenviar esta alerta ahora" style="background:none; border:1px solid rgba(59,130,246,0.3); border-radius:7px; padding:5px 9px; cursor:pointer; color:#3b82f6; font-size:13px; transition: background 0.2s;"
+                        onmouseenter="this.style.background='rgba(59,130,246,0.15)'" onmouseleave="this.style.background='none'">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </td>
             `;
+
+            // Resend button handler
+            const resendBtn = tr.querySelector('.resend-alert-btn');
+            resendBtn.addEventListener('click', async () => {
+                if (state.staticMode) {
+                    alert('Reenvío no disponible en modo estático. Iniciá el backend local para usar esta función.');
+                    return;
+                }
+                resendBtn.disabled = true;
+                resendBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+                try {
+                    const r = await fetch(`${state.apiBase}/api/send-test-alert`, { method: 'POST', headers: getAuthHeaders() });
+                    const data = await r.json();
+                    if (data.status === 'started') {
+                        resendBtn.innerHTML = '<i class="fa-solid fa-check" style="color:#10b981;"></i>';
+                        setTimeout(() => { resendBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>'; resendBtn.disabled = false; }, 2500);
+                    } else {
+                        resendBtn.innerHTML = '<i class="fa-solid fa-xmark" style="color:#ef4444;"></i>';
+                        setTimeout(() => { resendBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>'; resendBtn.disabled = false; }, 2500);
+                    }
+                } catch (err) {
+                    resendBtn.innerHTML = '<i class="fa-solid fa-xmark" style="color:#ef4444;"></i>';
+                    setTimeout(() => { resendBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>'; resendBtn.disabled = false; }, 2500);
+                }
+            });
+
             tbody.appendChild(tr);
         });
     } catch (e) {
         console.error('Error fetching email history:', e);
-        tbody.innerHTML = `<tr><td colspan="3" class="text-center" style="padding: 16px; color: #ef4444;">Error al cargar el historial del servidor.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="4" class="text-center" style="padding: 16px; color: #ef4444;">Error al cargar el historial del servidor.</td></tr>`;
     }
 }
+
+// ===== SUBSCRIBE MODAL HELPERS =====
+function openSubscribeModal() {
+    const modal = document.getElementById('subscribe-confirm-modal');
+    const nologinDiv = document.getElementById('sub-modal-nologin');
+    const confirmDiv = document.getElementById('sub-modal-confirm');
+    const emailEl = document.getElementById('sub-modal-email');
+    const msgEl = document.getElementById('sub-modal-msg');
+    if (!modal) return;
+
+    // Reset message state
+    if (msgEl) { msgEl.style.display = 'none'; msgEl.innerText = ''; }
+
+    if (!user) {
+        // User not logged in — show login prompt
+        if (nologinDiv) nologinDiv.style.display = 'block';
+        if (confirmDiv) confirmDiv.style.display = 'none';
+    } else {
+        // Logged in — auto-fill user email and show confirm box
+        if (emailEl) emailEl.innerText = user.email;
+        if (nologinDiv) nologinDiv.style.display = 'none';
+        if (confirmDiv) confirmDiv.style.display = 'block';
+    }
+
+    modal.style.display = 'flex';
+}
+
+async function executeSubscription() {
+    if (!user) return;
+    const email = user.email;
+    const msgEl = document.getElementById('sub-modal-msg');
+    const confirmBtn = document.getElementById('sub-modal-confirm-btn');
+    if (!msgEl) return;
+
+    msgEl.style.display = 'block';
+    msgEl.style.color = '#3b82f6';
+    msgEl.innerText = 'Procesando...';
+    if (confirmBtn) confirmBtn.disabled = true;
+
+    if (state.staticMode) {
+        setTimeout(() => {
+            msgEl.style.color = '#ff9800';
+            msgEl.innerText = 'Modo Demo Activo (no disponible sin backend).';
+            if (confirmBtn) confirmBtn.disabled = false;
+        }, 800);
+        return;
+    }
+
+    try {
+        const response = await fetch(`${state.apiBase}/api/subscribe`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+        });
+        const res = await response.json();
+        if (res.status === 'subscribed') {
+            msgEl.style.color = '#10b981';
+            msgEl.innerText = '¡Suscripción confirmada! Recibirás alertas de Lunes a Viernes a las 11:30 AM.';
+            if (confirmBtn) { confirmBtn.disabled = true; confirmBtn.innerText = '✓ Suscripto'; }
+            setTimeout(() => { document.getElementById('subscribe-confirm-modal').style.display = 'none'; if (confirmBtn) { confirmBtn.disabled = false; confirmBtn.innerHTML = '<i class="fa-solid fa-check"></i> Confirmar Suscripción'; } }, 3000);
+        } else if (res.status === 'already_subscribed') {
+            msgEl.style.color = '#ff9800';
+            msgEl.innerText = 'Este correo ya se encontraba suscripto.';
+            if (confirmBtn) confirmBtn.disabled = false;
+        } else {
+            msgEl.style.color = '#ef4444';
+            msgEl.innerText = res.message || 'Error al suscribirse. Intentá de nuevo.';
+            if (confirmBtn) confirmBtn.disabled = false;
+        }
+    } catch (err) {
+        msgEl.style.color = '#ef4444';
+        msgEl.innerText = 'Error de conexión. Verificá que el backend esté activo.';
+        if (confirmBtn) confirmBtn.disabled = false;
+        console.error(err);
+    }
+}
+
+
 
 async function handleAddWatchlistSubmit(e) {
     e.preventDefault();
