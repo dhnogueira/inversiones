@@ -677,6 +677,50 @@ body {
     opacity: 0.8;
 }
 
+/* Price badge shown in modal header next to ticker */
+.modal-price-badge {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-conservador);
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 8px;
+    padding: 2px 10px;
+    font-family: var(--font-sans);
+    letter-spacing: -0.3px;
+    vertical-align: baseline;
+}
+
+/* Price cell in the main recommendations table */
+.price-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.price-amount {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--text-primary);
+}
+
+.price-levels {
+    font-size: 10.5px;
+    font-family: var(--font-sans);
+    display: flex;
+    gap: 6px;
+}
+
+.price-r {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.price-s {
+    color: var(--color-conservador);
+    font-weight: 600;
+}
+
 .modal-close-btn {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border-glow);

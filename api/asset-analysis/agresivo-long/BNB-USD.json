@@ -4,7 +4,7 @@
     "ticker": "BNB-USD",
     "name": "BNB-USD",
     "category": "crypto",
-    "price": 571.719970703125,
+    "price": 570.3800048828125,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 46.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "46.1",
+        "content": "El RSI de 14 períodos se encuentra en 45.7, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "45.7",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (598.00) se encuentra por debajo de la EMA de 200 días (675.47), y el precio (571.72) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (597.95) se encuentra por debajo de la EMA de 200 días (675.45), y el precio (570.38) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,14 +34,14 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-7.2%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-7.2% (1M)",
+        "content": "El activo cayó un **-7.4%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-7.4% (1M)",
         "status": "danger"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 571.23 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 662.44 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 623.20. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 570.03 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 662.44 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 623.20. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 623.20",
         "status": "neutral"
       }
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-7.5%** y a 12 meses es **-49.7%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-7.5% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-7.7%** y a 12 meses es **-49.9%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-7.7% (6M)",
         "status": "neutral"
       },
       {
@@ -82,16 +82,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 1369.22,
-      "stop_loss": 217.28,
+      "take_profit": 1366.02,
+      "stop_loss": 216.76,
       "tp_pct": 139.5,
       "sl_pct": 62.0
     },
-    "support": 571.23,
+    "support": 570.03,
     "resistance": 662.44,
     "volume_cluster": 623.2,
-    "take_profit": 1369.22,
-    "stop_loss": 217.28,
+    "take_profit": 1366.02,
+    "stop_loss": 216.76,
     "tp_pct": 139.5,
     "sl_pct": 62.0
   }
