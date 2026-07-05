@@ -302,6 +302,9 @@ function setupEventListeners() {
         watchForm.addEventListener('submit', handleAddWatchlistSubmit);
     }
 
+    // ===== TICKER AUTOCOMPLETE =====
+    setupTickerAutocomplete();
+
     // Auth account button binding - toggles dropdown or opens modal
     const navAuthBtn = document.getElementById('nav-auth-btn');
     const userDropdown = document.getElementById('user-dropdown');
@@ -2352,4 +2355,99 @@ function renderAnalysisCard(section) {
 function formatMarkdownBold(text) {
     if (!text) return '';
     return text.replace(/\*\*(.*?)\*\"/g, '<strong>$1</strong>');
+}
+
+// ===== TICKER AUTOCOMPLETE =====
+function setupTickerAutocomplete() {
+    const tickerInput = document.getElementById('pos-ticker');
+    const suggestionsBox = document.getElementById('ticker-suggestions');
+    const nameInput = document.getElementById('pos-name');
+    const categorySelect = document.getElementById('pos-category');
+
+    if (!tickerInput || !suggestionsBox) return;
+
+    // Map category from metadata sector heuristics
+    function guessCategory(ticker) {
+        if (ticker.endsWith('-USD')) return 'crypto';
+        const lower = ticker.toLowerCase();
+        // Letras (Argentine treasury bills)
+        if (/^[sStT]\d{2}[a-zA-Z]\d/.test(ticker)) return 'letras';
+        // Sovereign bonds
+        if (/^(AL|GD|AE)\d{2}/.test(ticker) && ticker.endsWith('.BA')) return 'bonos';
+        // Merval / CEDEAR heuristic
+        if (ticker.endsWith('.BA')) {
+            const merval = ['YPFD', 'GGAL', 'PAMP', 'ALUA', 'TXAR', 'BMA', 'CEPU', 'TGSU2', 'EDN', 'LOMA', 'CRES', 'TECO2', 'SUPV', 'VALO', 'BYMA'];
+            const base = ticker.replace('.BA', '');
+            return merval.includes(base) ? 'merval' : 'cedears';
+        }
+        return 'sp500';
+    }
+
+    function showSuggestions(query) {
+        suggestionsBox.innerHTML = '';
+        if (!query || query.length < 1) {
+            suggestionsBox.style.display = 'none';
+            return;
+        }
+        const q = query.toUpperCase();
+
+        const matches = Object.entries(ASSET_METADATA)
+            .filter(([ticker, meta]) =>
+                ticker.toUpperCase().startsWith(q) ||
+                meta.company.toUpperCase().includes(q)
+            )
+            .slice(0, 8); // max 8 suggestions
+
+        if (matches.length === 0) {
+            suggestionsBox.style.display = 'none';
+            return;
+        }
+
+        matches.forEach(([ticker, meta]) => {
+            const item = document.createElement('div');
+            item.className = 'ticker-suggestion-item';
+            item.innerHTML = `
+                <span class="ticker-suggestion-symbol">${ticker}</span>
+                <span class="ticker-suggestion-name">${meta.company}</span>
+                <span class="ticker-suggestion-sector">${meta.sector}</span>
+            `;
+            item.addEventListener('mousedown', (e) => {
+                // Use mousedown (before blur) to still commit selection
+                e.preventDefault();
+                tickerInput.value = ticker;
+                nameInput.value = meta.company;
+                if (categorySelect) categorySelect.value = guessCategory(ticker);
+                suggestionsBox.style.display = 'none';
+                suggestionsBox.innerHTML = '';
+                nameInput.focus();
+            });
+            suggestionsBox.appendChild(item);
+        });
+
+        suggestionsBox.style.display = 'block';
+    }
+
+    tickerInput.addEventListener('input', () => {
+        showSuggestions(tickerInput.value.trim());
+    });
+
+    tickerInput.addEventListener('blur', () => {
+        // Delay hiding so mousedown on suggestion can fire first
+        setTimeout(() => {
+            suggestionsBox.style.display = 'none';
+        }, 150);
+    });
+
+    tickerInput.addEventListener('focus', () => {
+        if (tickerInput.value.trim().length > 0) {
+            showSuggestions(tickerInput.value.trim());
+        }
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!tickerInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+            suggestionsBox.style.display = 'none';
+        }
+    });
 }
