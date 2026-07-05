@@ -2357,51 +2357,61 @@ function formatMarkdownBold(text) {
     return text.replace(/\*\*(.*?)\*\"/g, '<strong>$1</strong>');
 }
 
-// ===== TICKER AUTOCOMPLETE =====
+// ===== TICKER AUTOCOMPLETE (portal approach — immune to overflow clipping) =====
 function setupTickerAutocomplete() {
     const tickerInput = document.getElementById('pos-ticker');
-    const suggestionsBox = document.getElementById('ticker-suggestions');
     const nameInput = document.getElementById('pos-name');
     const categorySelect = document.getElementById('pos-category');
 
-    if (!tickerInput || !suggestionsBox) return;
+    if (!tickerInput) return;
 
-    // Map category from metadata sector heuristics
+    // Create the dropdown as a child of <body> for portal positioning
+    let suggestionsBox = document.getElementById('ticker-suggestions-portal');
+    if (!suggestionsBox) {
+        suggestionsBox = document.createElement('div');
+        suggestionsBox.id = 'ticker-suggestions-portal';
+        suggestionsBox.className = 'ticker-suggestions-dropdown';
+        document.body.appendChild(suggestionsBox);
+    }
+
+    function positionDropdown() {
+        const rect = tickerInput.getBoundingClientRect();
+        suggestionsBox.style.position = 'fixed';
+        suggestionsBox.style.top = (rect.bottom + 4) + 'px';
+        suggestionsBox.style.left = rect.left + 'px';
+        suggestionsBox.style.width = rect.width + 'px';
+        suggestionsBox.style.zIndex = '99999';
+    }
+
     function guessCategory(ticker) {
         if (ticker.endsWith('-USD')) return 'crypto';
-        const lower = ticker.toLowerCase();
-        // Letras (Argentine treasury bills)
-        if (/^[sStT]\d{2}[a-zA-Z]\d/.test(ticker)) return 'letras';
-        // Sovereign bonds
         if (/^(AL|GD|AE)\d{2}/.test(ticker) && ticker.endsWith('.BA')) return 'bonos';
-        // Merval / CEDEAR heuristic
+        if (/^[sStT]\d{2}[a-zA-Z]\d/.test(ticker)) return 'letras';
         if (ticker.endsWith('.BA')) {
             const merval = ['YPFD', 'GGAL', 'PAMP', 'ALUA', 'TXAR', 'BMA', 'CEPU', 'TGSU2', 'EDN', 'LOMA', 'CRES', 'TECO2', 'SUPV', 'VALO', 'BYMA'];
-            const base = ticker.replace('.BA', '');
-            return merval.includes(base) ? 'merval' : 'cedears';
+            return merval.includes(ticker.replace('.BA', '')) ? 'merval' : 'cedears';
         }
         return 'sp500';
     }
 
+    function hideSuggestions() {
+        suggestionsBox.style.display = 'none';
+        suggestionsBox.innerHTML = '';
+    }
+
     function showSuggestions(query) {
         suggestionsBox.innerHTML = '';
-        if (!query || query.length < 1) {
-            suggestionsBox.style.display = 'none';
-            return;
-        }
-        const q = query.toUpperCase();
+        if (!query || query.length < 1) { hideSuggestions(); return; }
 
+        const q = query.toUpperCase();
         const matches = Object.entries(ASSET_METADATA)
             .filter(([ticker, meta]) =>
                 ticker.toUpperCase().startsWith(q) ||
                 meta.company.toUpperCase().includes(q)
             )
-            .slice(0, 8); // max 8 suggestions
+            .slice(0, 8);
 
-        if (matches.length === 0) {
-            suggestionsBox.style.display = 'none';
-            return;
-        }
+        if (matches.length === 0) { hideSuggestions(); return; }
 
         matches.forEach(([ticker, meta]) => {
             const item = document.createElement('div');
@@ -2412,42 +2422,36 @@ function setupTickerAutocomplete() {
                 <span class="ticker-suggestion-sector">${meta.sector}</span>
             `;
             item.addEventListener('mousedown', (e) => {
-                // Use mousedown (before blur) to still commit selection
                 e.preventDefault();
                 tickerInput.value = ticker;
-                nameInput.value = meta.company;
+                if (nameInput) nameInput.value = meta.company;
                 if (categorySelect) categorySelect.value = guessCategory(ticker);
-                suggestionsBox.style.display = 'none';
-                suggestionsBox.innerHTML = '';
-                nameInput.focus();
+                hideSuggestions();
+                if (nameInput) nameInput.focus();
             });
             suggestionsBox.appendChild(item);
         });
 
+        positionDropdown();
         suggestionsBox.style.display = 'block';
     }
 
-    tickerInput.addEventListener('input', () => {
-        showSuggestions(tickerInput.value.trim());
-    });
-
-    tickerInput.addEventListener('blur', () => {
-        // Delay hiding so mousedown on suggestion can fire first
-        setTimeout(() => {
-            suggestionsBox.style.display = 'none';
-        }, 150);
-    });
-
+    tickerInput.addEventListener('input', () => showSuggestions(tickerInput.value.trim()));
     tickerInput.addEventListener('focus', () => {
-        if (tickerInput.value.trim().length > 0) {
-            showSuggestions(tickerInput.value.trim());
-        }
+        if (tickerInput.value.trim().length > 0) showSuggestions(tickerInput.value.trim());
+    });
+    tickerInput.addEventListener('blur', () => setTimeout(hideSuggestions, 150));
+
+    // Reposition on scroll/resize
+    window.addEventListener('scroll', positionDropdown, true);
+    window.addEventListener('resize', () => {
+        if (suggestionsBox.style.display === 'block') positionDropdown();
     });
 
     // Close on outside click
-    document.addEventListener('click', (e) => {
+    document.addEventListener('mousedown', (e) => {
         if (!tickerInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-            suggestionsBox.style.display = 'none';
+            hideSuggestions();
         }
     });
 }
