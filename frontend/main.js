@@ -667,22 +667,23 @@ function renderOptimalDashboard(optimization) {
         let priceStr = '';
         if (state.marketData) {
             let foundAsset = null;
+            // Look in categories first
             for (const cat of Object.keys(state.marketData.categories)) {
                 foundAsset = state.marketData.categories[cat].find(a => a.ticker === item.ticker);
                 if (foundAsset) break;
             }
-            if (foundAsset) {
-                const priceVal = foundAsset.price;
-                const supportVal = foundAsset.support;
-                const resistanceVal = foundAsset.resistance;
+            // Fallback: look in top_10
+            if (!foundAsset && state.marketData.top_10) {
+                foundAsset = state.marketData.top_10.find(a => a.ticker === item.ticker);
+            }
+            if (foundAsset && foundAsset.price) {
                 const symb = item.currency === 'ARS' ? '$' : 'u$s';
-                priceStr = `${symb} ${priceVal.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`;
-
-                const parts = [];
-                if (resistanceVal) parts.push(`R: ${symb} ${resistanceVal.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`);
-                if (supportVal) parts.push(`S: ${symb} ${supportVal.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`);
-                if (parts.length > 0) {
-                    priceStr += ` (${parts.join(', ')})`;
+                priceStr = `${symb} ${foundAsset.price.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+                if (foundAsset.resistance || foundAsset.support) {
+                    const parts = [];
+                    if (foundAsset.resistance) parts.push(`R: ${symb} ${foundAsset.resistance.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`);
+                    if (foundAsset.support) parts.push(`S: ${symb} ${foundAsset.support.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`);
+                    priceStr += ` (${parts.join(' · ')})`;
                 }
             }
         }
@@ -694,7 +695,7 @@ function renderOptimalDashboard(optimization) {
             <div style="flex-grow: 1;">
                 <div style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;">
                     <span class="alloc-name">${item.ticker.replace('.BA', '')} <i class="fa-solid fa-circle-info" style="font-size: 10px; opacity: 0.5; margin-left: 2px;"></i></span>
-                    ${priceStr ? `<span style="font-size: 11.5px; color: var(--text-secondary); font-weight: 500;">${priceStr}</span>` : ''}
+                    ${priceStr ? `<span class="alloc-price-inline">${priceStr}</span>` : ''}
                 </div>
                 <div class="alloc-category">${item.category} • ${item.currency}</div>
             </div>
@@ -2065,9 +2066,12 @@ async function openAssetModal(ticker) {
         </div>
     `;
 
-    document.getElementById('modal-ticker').innerText = ticker.replace('.BA', '');
+    document.getElementById('modal-ticker').innerText = ticker.replace('.BA', '').replace('-USD', '');
     document.getElementById('modal-name').innerText = '';
     document.getElementById('modal-verdict').style.display = 'none';
+    // Reset price badge so it doesn't show stale data or empty box
+    const priceBadge = document.getElementById('modal-current-price');
+    if (priceBadge) { priceBadge.innerText = ''; priceBadge.style.display = 'none'; }
 
     try {
         const safeTicker = ticker.replace("/", "_");
