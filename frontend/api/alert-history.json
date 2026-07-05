@@ -1,5 +1,333 @@
 [
   {
+    "sent_at": "2026-07-05T11:15:00",
+    "sent_at_human": "05/07/2026 11:15",
+    "subject": "📈 Resumen del Mercado — 05 Jul 2026",
+    "recipient_count": 2,
+    "assets": [
+      {
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "score": 99.0,
+        "category": "merval",
+        "price": 654.5,
+        "summary": "Score: 99.0 · RSI 56 (neutro) · Tendencia: Fuerte Alcista · Soporte: $513.38 · Resist.: $686.22"
+      },
+      {
+        "ticker": "BMA.BA",
+        "name": "BMA",
+        "score": 85.6,
+        "category": "merval",
+        "price": 14520.0,
+        "summary": "Score: 85.6 · RSI 59 (neutro) · Tendencia: Fuerte Alcista · Soporte: $10181.67 · Resist.: $14502.00"
+      },
+      {
+        "ticker": "TECO2.BA",
+        "name": "TECO2",
+        "score": 84.3,
+        "category": "merval",
+        "price": 3990.0,
+        "summary": "Score: 84.3 · RSI 47 (neutro) · Tendencia: Fuerte Alcista · Soporte: $3307.00 · Resist.: $4205.75"
+      },
+      {
+        "ticker": "YPFD.BA",
+        "name": "YPFD",
+        "score": 83.8,
+        "category": "merval",
+        "price": 71575.0,
+        "summary": "Score: 83.8 · RSI 42 (neutro) · Tendencia: Alcista · Soporte: $54965.00 · Resist.: $81347.50"
+      },
+      {
+        "ticker": "BYMA.BA",
+        "name": "BYMA",
+        "score": 77.3,
+        "category": "merval",
+        "price": 309.25,
+        "summary": "Score: 77.3 · RSI 54 (neutro) · Tendencia: Fuerte Alcista · Soporte: $285.25 · Resist.: $324.65"
+      },
+      {
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "score": 100.0,
+        "category": "cedears",
+        "price": 9870.0,
+        "summary": "Score: 100.0 · RSI 59 (neutro) · Tendencia: Fuerte Alcista · Soporte: $7629.00 · Resist.: $9960.00"
+      },
+      {
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "score": 92.4,
+        "category": "cedears",
+        "price": 24180.0,
+        "summary": "Score: 92.4 · RSI 65 (sobrecomprado 📈) · Tendencia: Fuerte Alcista · Soporte: $18544.99 · Resist.: $23022.00"
+      },
+      {
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "score": 90.2,
+        "category": "cedears",
+        "price": 11700.0,
+        "summary": "Score: 90.2 · RSI 48 (neutro) · Tendencia: Alcista · Soporte: $11078.00 · Resist.: $12763.00"
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "score": 80.6,
+        "category": "cedears",
+        "price": 21580.0,
+        "summary": "Score: 80.6 · RSI 48 (neutro) · Tendencia: Alcista · Soporte: $21266.00 · Resist.: $23690.90"
+      },
+      {
+        "ticker": "NVDA.BA",
+        "name": "NVDA",
+        "score": 79.0,
+        "category": "cedears",
+        "price": 12950.0,
+        "summary": "Score: 79.0 · RSI 50 (neutro) · Tendencia: Fuerte Alcista · Soporte: $10955.99 · Resist.: $13670.99"
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "score": 99.1,
+        "category": "sp500",
+        "price": 359.9100036621094,
+        "summary": "Score: 99.1 · RSI 50 (neutro) · Tendencia: Fuerte Alcista · Soporte: $299.64 · Resist.: $388.65"
+      },
+      {
+        "ticker": "MRK",
+        "name": "MRK",
+        "score": 86.0,
+        "category": "sp500",
+        "price": 129.55999755859375,
+        "summary": "Score: 86.0 · RSI 67 (sobrecomprado 📈) · Tendencia: Fuerte Alcista · Soporte: $111.48 · Resist.: $121.83"
+      },
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "score": 83.4,
+        "category": "sp500",
+        "price": 308.6300048828125,
+        "summary": "Score: 83.4 · RSI 60 (neutro) · Tendencia: Fuerte Alcista · Soporte: $252.57 · Resist.: $307.44"
+      },
+      {
+        "ticker": "LLY",
+        "name": "LLY",
+        "score": 80.7,
+        "category": "sp500",
+        "price": 1213.9100341796875,
+        "summary": "Score: 80.7 · RSI 67 (sobrecomprado 📈) · Tendencia: Fuerte Alcista · Soporte: $902.34 · Resist.: $1133.34"
+      },
+      {
+        "ticker": "UNH",
+        "name": "UNH",
+        "score": 74.2,
+        "category": "sp500",
+        "price": 425.3599853515625,
+        "summary": "Score: 74.2 · RSI 65 (sobrecomprado 📈) · Tendencia: Fuerte Alcista · Soporte: $273.86 · Resist.: $407.81"
+      },
+      {
+        "ticker": "T30J7",
+        "name": "BONCAP T30J7 (Pesos)",
+        "score": 30.1,
+        "category": "letras",
+        "price": 102.5,
+        "summary": "Score: 30.1 · RSI 50 (neutro) · Tendencia: Estable · Soporte: $100.96 · Resist.: $104.04"
+      },
+      {
+        "ticker": "T30A7",
+        "name": "BONCAP T30A7 (Pesos)",
+        "score": 19.6,
+        "category": "letras",
+        "price": 103.2,
+        "summary": "Score: 19.6 · RSI 50 (neutro) · Tendencia: Estable · Soporte: $101.65 · Resist.: $104.75"
+      },
+      {
+        "ticker": "T31Y7",
+        "name": "BONCAP T31Y7 (Pesos)",
+        "score": 18.4,
+        "category": "letras",
+        "price": 105.8,
+        "summary": "Score: 18.4 · RSI 50 (neutro) · Tendencia: Estable · Soporte: $104.21 · Resist.: $107.39"
+      },
+      {
+        "ticker": "T31M7",
+        "name": "BONCAP T31M7 (Pesos)",
+        "score": 2.9,
+        "category": "letras",
+        "price": 104.5,
+        "summary": "Score: 2.9 · RSI 50 (neutro) · Tendencia: Estable · Soporte: $102.93 · Resist.: $106.07"
+      },
+      {
+        "ticker": "T28F7",
+        "name": "BONCAP T28F7 (Pesos)",
+        "score": 2.7,
+        "category": "letras",
+        "price": 108.2,
+        "summary": "Score: 2.7 · RSI 50 (neutro) · Tendencia: Estable · Soporte: $106.58 · Resist.: $109.82"
+      },
+      {
+        "ticker": "AL30D",
+        "name": "Bono Soberano AL30D (Dólares)",
+        "score": 52.8,
+        "category": "bonos",
+        "price": 64.22,
+        "summary": "Score: 52.8 · RSI 52 (neutro) · Tendencia: Estable · Soporte: $56.51 · Resist.: $71.93"
+      },
+      {
+        "ticker": "GD30D",
+        "name": "Bono Soberano GD30D (Dólares)",
+        "score": 52.5,
+        "category": "bonos",
+        "price": 66.0,
+        "summary": "Score: 52.5 · RSI 52 (neutro) · Tendencia: Estable · Soporte: $58.08 · Resist.: $73.92"
+      },
+      {
+        "ticker": "AL35",
+        "name": "Bono Soberano AL35 (Pesos)",
+        "score": 44.9,
+        "category": "bonos",
+        "price": 124000.0,
+        "summary": "Score: 44.9 · RSI 52 (neutro) · Tendencia: Estable · Soporte: $109120.00 · Resist.: $138880.00"
+      },
+      {
+        "ticker": "GD35",
+        "name": "Bono Soberano GD35 (Pesos)",
+        "score": 44.5,
+        "category": "bonos",
+        "price": 126500.0,
+        "summary": "Score: 44.5 · RSI 52 (neutro) · Tendencia: Estable · Soporte: $111320.00 · Resist.: $141680.00"
+      },
+      {
+        "ticker": "AE38",
+        "name": "Bono Soberano AE38 (Pesos)",
+        "score": 44.2,
+        "category": "bonos",
+        "price": 128500.0,
+        "summary": "Score: 44.2 · RSI 52 (neutro) · Tendencia: Estable · Soporte: $113080.00 · Resist.: $143920.00"
+      },
+      {
+        "ticker": "BTC-USD",
+        "name": "BTC-USD",
+        "score": 0.0,
+        "category": "crypto",
+        "price": 62678.01171875,
+        "summary": "RSI 48 (neutro) · Tendencia: Fuerte Bajista · Soporte: $60987.89 · Resist.: $79846.11"
+      },
+      {
+        "ticker": "BNB-USD",
+        "name": "BNB-USD",
+        "score": 0.0,
+        "category": "crypto",
+        "price": 588.4199829101562,
+        "summary": "RSI 52 (neutro) · Tendencia: Fuerte Bajista · Soporte: $571.58 · Resist.: $662.44"
+      },
+      {
+        "ticker": "XRP-USD",
+        "name": "XRP-USD",
+        "score": 0.0,
+        "category": "crypto",
+        "price": 1.1341999769210815,
+        "summary": "RSI 51 (neutro) · Tendencia: Fuerte Bajista · Soporte: $1.09 · Resist.: $1.43"
+      },
+      {
+        "ticker": "LINK-USD",
+        "name": "LINK-USD",
+        "score": 0.0,
+        "category": "crypto",
+        "price": 7.934000015258789,
+        "summary": "RSI 53 (neutro) · Tendencia: Fuerte Bajista · Soporte: $7.41 · Resist.: $9.87"
+      },
+      {
+        "ticker": "ETH-USD",
+        "name": "ETH-USD",
+        "score": 0.0,
+        "category": "crypto",
+        "price": 1765.31005859375,
+        "summary": "RSI 56 (neutro) · Tendencia: Fuerte Bajista · Soporte: $1618.95 · Resist.: $2348.86"
+      }
+    ]
+  },
+  {
+    "sent_at": "2026-07-05T11:04:48",
+    "sent_at_human": "05/07/2026 11:04",
+    "subject": "📈 Resumen del Mercado — 05 Jul 2026",
+    "recipient_count": 2,
+    "assets": [
+      {
+        "ticker": "YPFD.BA",
+        "name": "YPF S.A.",
+        "score": 95.0,
+        "category": "merval",
+        "price": 12500.0,
+        "summary": "Score: 95.0 · RSI 45 (neutro) · Tendencia: Fuerte Alcista · Soporte: $11800.00 · Resist.: $13000.00"
+      },
+      {
+        "ticker": "AAPL.BA",
+        "name": "Apple Inc.",
+        "score": 92.4,
+        "category": "cedears",
+        "price": 24180.0,
+        "summary": "Score: 92.4 · RSI 65 (neutro) · Tendencia: Fuerte Alcista · Soporte: $18544.00 · Resist.: $23022.00"
+      },
+      {
+        "ticker": "MSFT",
+        "name": "Microsoft Corp.",
+        "score": 91.0,
+        "category": "sp500",
+        "price": 420.5,
+        "summary": "Score: 91.0 · RSI 50 (neutro) · Tendencia: Alcista · Soporte: $405.00 · Resist.: $435.00"
+      }
+    ]
+  },
+  {
+    "sent_at": "2026-07-05T11:02:18",
+    "sent_at_human": "05/07/2026 11:02",
+    "subject": "📈 Top 5 del día — 05 Jul 2026",
+    "recipient_count": 2,
+    "assets": [
+      {
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "score": 100.0,
+        "category": "cedears",
+        "price": 9870.0,
+        "summary": "Score cuantitativo: 100.0/100 · RSI 59 (neutro) · Tendencia: Fuerte Alcista · Soporte: $7629.00 · Resistencia: $9960.00"
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "score": 99.1,
+        "category": "sp500",
+        "price": 359.9100036621094,
+        "summary": "Score cuantitativo: 99.1/100 · RSI 50 (neutro) · Tendencia: Fuerte Alcista · Soporte: $299.64 · Resistencia: $388.65"
+      },
+      {
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "score": 99.0,
+        "category": "merval",
+        "price": 654.5,
+        "summary": "Score cuantitativo: 99.0/100 · RSI 56 (neutro) · Tendencia: Fuerte Alcista · Soporte: $513.38 · Resistencia: $686.22"
+      },
+      {
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "score": 92.4,
+        "category": "cedears",
+        "price": 24180.0,
+        "summary": "Score cuantitativo: 92.4/100 · RSI 65 (sobrecomprado 📈) · Tendencia: Fuerte Alcista · Soporte: $18544.99 · Resistencia: $23022.00"
+      },
+      {
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "score": 90.2,
+        "category": "cedears",
+        "price": 11700.0,
+        "summary": "Score cuantitativo: 90.2/100 · RSI 48 (neutro) · Tendencia: Alcista · Soporte: $11078.00 · Resistencia: $12763.00"
+      }
+    ]
+  },
+  {
     "sent_at": "2026-07-05T10:31:35",
     "sent_at_human": "05/07/2026 10:31",
     "subject": "📈 Top 5 del día — 05 Jul 2026",
