@@ -117,7 +117,7 @@ let state = {
     updating: false,
     currentView: 'dashboard',
     staticMode: false,         // Si es true, usa JSONs estáticos y localStorage
-    apiBase: 'http://localhost:8000',
+    apiBase: 'http://localhost:8000',   // Se sobreescribe dinámicamente en checkHostMode
     portfolioPollingInterval: null  // Referencia para polling en tiempo real de cartera
 };
 
@@ -171,30 +171,42 @@ function updateSubtitle() {
 
 // Detectar si el backend FastAPI corre localmente o si estamos en hosting estático
 async function checkHostMode() {
-    console.log("Detectando disponibilidad de backend FastAPI local...");
-    try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 2000);
+    console.log("Detectando disponibilidad de backend FastAPI...");
 
-        const response = await fetch(`${state.apiBase}/api/health`, { signal: controller.signal });
-        clearTimeout(timeoutId);
+    // Lista de candidatos a probar en orden:
+    // 1. El mismo host en puerto 8000 (para acceso LAN desde celular vía IP)
+    // 2. localhost:8000 (para acceso desde GitHub Pages en la misma PC)
+    const currentHostBase = `http://${window.location.hostname}:8000`;
+    const candidates = [currentHostBase];
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        candidates.push('http://localhost:8000');
+    }
 
-        if (response.ok) {
-            state.staticMode = false;
-            console.log("Backend local conectado. Operando en modo dinámico.");
-            document.querySelector('.update-status').innerHTML = '<i class="fa-solid fa-circle-check text-green"></i> Local API Connected';
-        } else {
-            throw new Error();
+    for (const candidate of candidates) {
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 2000);
+            const response = await fetch(`${candidate}/api/health`, { signal: controller.signal });
+            clearTimeout(timeoutId);
+
+            if (response.ok) {
+                state.apiBase = candidate;
+                state.staticMode = false;
+                console.log(`Backend conectado en ${candidate}. Modo dinámico activo.`);
+                document.querySelector('.update-status').innerHTML = '<i class="fa-solid fa-circle-check text-green"></i> Local API Connected';
+                return;  // Éxito — salir
+            }
+        } catch (e) {
+            console.warn(`Backend no disponible en ${candidate}.`);
         }
-    } catch (e) {
-        state.staticMode = true;
-        console.warn("Backend local offline o inaccesible. Cambiando a Modo Estático (Cloud / LocalStorage).");
-        document.querySelector('.update-status').innerHTML = '<i class="fa-solid fa-cloud text-blue"></i> Cloud Static Offline Mode';
+    }
 
-        // Ocultar botón de actualizar manual en modo estático en la nube
-        if (btnRefresh) {
-            btnRefresh.style.display = 'none';
-        }
+    // Ningún candidato respondió — modo estático
+    state.staticMode = true;
+    console.warn("Backend offline. Cambiando a Modo Estático.");
+    document.querySelector('.update-status').innerHTML = '<i class="fa-solid fa-cloud text-blue"></i> Cloud Static Offline Mode';
+    if (btnRefresh) {
+        btnRefresh.style.display = 'none';
     }
 }
 
@@ -2068,11 +2080,40 @@ async function executeSubscription() {
     if (confirmBtn) confirmBtn.disabled = true;
 
     if (state.staticMode) {
-        setTimeout(() => {
-            msgEl.style.color = '#ff9800';
-            msgEl.innerText = 'Modo Demo Activo (no disponible sin backend).';
-            if (confirmBtn) confirmBtn.disabled = false;
-        }, 800);
+        // En modo estático intentamos igual conectar al backend local
+        // (el usuario puede estar accediendo desde GitHub Pages con el backend corriendo)
+        const localCandidates = ['http://localhost:8000', `http://${window.location.hostname}:8000`];
+        for (const base of localCandidates) {
+            try {
+                const controller = new AbortController();
+                setTimeout(() => controller.abort(), 3000);
+                const response = await fetch(`${base}/api/subscribe`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email }),
+                    signal: controller.signal
+                });
+                const res = await response.json();
+                if (res.status === 'subscribed') {
+                    msgEl.style.color = '#10b981';
+                    msgEl.innerText = '¡Suscripción confirmada! Recibirás alertas de Lunes a Viernes a las 11:30 AM.';
+                    if (confirmBtn) { confirmBtn.disabled = true; confirmBtn.innerText = '✓ Suscripto'; }
+                    setTimeout(() => { document.getElementById('subscribe-confirm-modal').style.display = 'none'; if (confirmBtn) { confirmBtn.disabled = false; confirmBtn.innerHTML = '<i class="fa-solid fa-check"></i> Confirmar Suscripción'; } }, 3000);
+                    return;
+                } else if (res.status === 'already_subscribed') {
+                    msgEl.style.color = '#ff9800';
+                    msgEl.innerText = 'Este correo ya se encontraba suscripto.';
+                    if (confirmBtn) confirmBtn.disabled = false;
+                    return;
+                }
+            } catch (e) {
+                // Probar siguiente candidato
+            }
+        }
+        // Ningún backend respondió — modo estático sin backend disponible
+        msgEl.style.color = '#ff9800';
+        msgEl.innerHTML = '⚠️ El backend no está disponible desde este navegador.<br><small style="color:#9ca3af">Para suscribirte, accedé desde la red local:<br><b>http://192.168.0.8:3000</b></small>';
+        if (confirmBtn) confirmBtn.disabled = false;
         return;
     }
 
