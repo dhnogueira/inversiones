@@ -850,7 +850,12 @@ function renderTable() {
                 </div>
             </td>
             <td>${currencyBadge}</td>
-            <td class="font-bold">${isBonoOrLetra ? asset.price.toLocaleString('es-AR', { minimumFractionDigits: 2 }) : asset.price.toFixed(2)}</td>
+            <td>
+                <div class="price-cell">
+                    <span class="price-amount">${asset.currency === 'ARS' ? '$' : 'u$s'} ${isBonoOrLetra ? asset.price.toLocaleString('es-AR', { minimumFractionDigits: 2 }) : asset.price.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    ${(asset.support || asset.resistance) ? `<span class="price-levels">${asset.resistance ? '<span class="price-r">R: ' + (asset.currency === 'ARS' ? '$' : 'u$s') + ' ' + asset.resistance.toLocaleString('es-AR', { maximumFractionDigits: 2 }) + '</span>' : ''}${asset.support ? ' <span class="price-s">S: ' + (asset.currency === 'ARS' ? '$' : 'u$s') + ' ' + asset.support.toLocaleString('es-AR', { maximumFractionDigits: 2 }) + '</span>' : ''}</span>` : ''}
+                </div>
+            </td>
             <td>${(asset.volatility * 100).toFixed(1)}%</td>
             <td>${asset.sharpe ? asset.sharpe.toFixed(2) : 'N/A'}</td>
             <td>${scoreCell}</td>
@@ -2103,6 +2108,18 @@ function renderModalContent(analysis) {
         if (metaRow) metaRow.style.display = 'flex';
     } else {
         if (metaRow) metaRow.style.display = 'none';
+    }
+
+    // Mostrar precio actual en el header del modal
+    const priceEl = document.getElementById('modal-current-price');
+    if (priceEl) {
+        if (analysis.price) {
+            const sym = analysis.currency === 'ARS' ? '$' : 'u$s';
+            priceEl.innerText = `${sym} ${analysis.price.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            priceEl.style.display = 'inline-block';
+        } else {
+            priceEl.style.display = 'none';
+        }
     }
 
     document.getElementById('modal-profile-name').innerText = analysis.profile;

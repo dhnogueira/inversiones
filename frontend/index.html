@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inversiones Inteligentes 📈</title>
-    <link rel="stylesheet" href="index.css?v=4">
+    <link rel="stylesheet" href="index.css?v=5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -349,7 +349,10 @@
         <div class="modal-container glass-panel">
             <div class="modal-header">
                 <div class="modal-title-group">
-                    <h2 id="modal-ticker">AAPL</h2>
+                    <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+                        <h2 id="modal-ticker">AAPL</h2>
+                        <span id="modal-current-price" class="modal-price-badge"></span>
+                    </div>
                     <span id="modal-name" class="modal-subtitle">Apple Inc.</span>
                     <span id="modal-category-badge" class="badge badge-usd">SP500</span>
                     <div class="modal-meta-row">
