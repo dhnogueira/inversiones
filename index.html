@@ -325,6 +325,54 @@
 
                 <div id="active-alerts" class="alerts-container"></div>
 
+                <!-- row of subscription and history -->
+                <div class="alerts-double-grid"
+                    style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px; margin-top: 24px;">
+                    <!-- subscribe widget -->
+                    <div class="ranking-panel glass-panel" style="margin-top: 0;">
+                        <h3 class="panel-title"><i class="fa-solid fa-envelope"></i> Suscribirse a Alertas</h3>
+                        <p
+                            style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">
+                            Recibí diariamente en tu email el Top 5 de los mejores activos recomendados para comprar,
+                            junto con una síntesis técnica y enlaces de acceso.
+                        </p>
+                        <form id="subscribe-form" style="display: flex; flex-direction: column; gap: 12px;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="email" id="subscribe-email" placeholder="tu-correo@ejemplo.com" required
+                                    style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff;">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;"><i
+                                    class="fa-solid fa-paper-plane"></i> Suscribirme</button>
+                        </form>
+                        <div id="subscribe-msg"
+                            style="margin-top: 12px; font-size: 13px; font-weight: 500; display: none;"></div>
+                    </div>
+
+                    <!-- history panel -->
+                    <div class="ranking-panel glass-panel" style="margin-top: 0;">
+                        <h3 class="panel-title"><i class="fa-solid fa-clock-rotate-left"></i> Historial de Alertas
+                            Enviadas</h3>
+                        <div class="table-wrapper" style="max-height: 250px; overflow-y: auto;">
+                            <table class="asset-table">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha / Hora</th>
+                                        <th>Resumen de Alerta de Correo</th>
+                                        <th>Enviado a</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="email-history-tbody">
+                                    <tr>
+                                        <td colspan="3" class="text-center"
+                                            style="padding: 16px; color: var(--text-secondary);">Cargando historial de
+                                            envíos de correo...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="ranking-panel glass-panel" style="margin-top: 24px;">
                     <h3 class="panel-title">Mi Watchlist</h3>
                     <div class="table-wrapper">

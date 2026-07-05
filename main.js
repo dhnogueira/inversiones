@@ -322,6 +322,55 @@ function setupEventListeners() {
     // ===== TICKER AUTOCOMPLETE =====
     setupTickerAutocomplete();
 
+    // ===== EMAIL SUBSCRIBE FORM =====
+    const subscribeForm = document.getElementById('subscribe-form');
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('subscribe-email');
+            const msgDiv = document.getElementById('subscribe-msg');
+            if (!emailInput || !msgDiv) return;
+
+            const email = emailInput.value.trim();
+            msgDiv.style.display = 'block';
+            msgDiv.style.color = '#3b82f6';
+            msgDiv.innerText = 'Procesando...';
+
+            if (state.staticMode) {
+                // En modo estático no hay backend activo guardando emails en disco
+                setTimeout(() => {
+                    msgDiv.style.color = '#ff9800';
+                    msgDiv.innerText = 'Modo Demo Activo (El email no será persistido en el servidor).';
+                }, 800);
+                return;
+            }
+
+            try {
+                const response = await fetch(`${state.apiBase}/api/subscribe`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const res = await response.json();
+                if (res.status === 'subscribed') {
+                    msgDiv.style.color = '#10b981';
+                    msgDiv.innerText = '¡Te has suscripto correctamente!';
+                    emailInput.value = '';
+                } else if (res.status === 'already_subscribed') {
+                    msgDiv.style.color = '#ff9800';
+                    msgDiv.innerText = 'Este correo ya se encuentra suscripto.';
+                } else {
+                    msgDiv.style.color = '#ef4444';
+                    msgDiv.innerText = res.message || 'Error al suscribirse. Reintente.';
+                }
+            } catch (err) {
+                msgDiv.style.color = '#ef4444';
+                msgDiv.innerText = 'Error de conexión con el backend de suscripción.';
+                console.error(err);
+            }
+        });
+    }
+
     // Auth account button binding - toggles dropdown or opens modal
     const navAuthBtn = document.getElementById('nav-auth-btn');
     const userDropdown = document.getElementById('user-dropdown');
@@ -1832,6 +1881,7 @@ async function updateWatchlistAndAlerts() {
 
         if (state.currentView === 'alerts') {
             renderAlertsView(watchlist, activeAlerts);
+            fetchAndRenderEmailHistory();
         }
         return;
     }
@@ -1856,6 +1906,7 @@ async function updateWatchlistAndAlerts() {
 
             if (state.currentView === 'alerts') {
                 renderAlertsView(data.watchlist, data.alerts);
+                fetchAndRenderEmailHistory();
             }
         }
     } catch (e) {
@@ -1931,6 +1982,48 @@ function renderAlertsView(watchlist, alerts) {
         tr.querySelector('.delete-btn').addEventListener('click', () => handleDeleteWatchlist(item.ticker));
         tbody.appendChild(tr);
     });
+}
+
+async function fetchAndRenderEmailHistory() {
+    const tbody = document.getElementById('email-history-tbody');
+    if (!tbody) return;
+
+    try {
+        const url = state.staticMode ? 'api/alert-history.json' : `${state.apiBase}/api/alert-history`;
+        const res = await fetch(url, { headers: getAuthHeaders() });
+        const history = await res.json();
+
+        tbody.innerHTML = '';
+        if (!history || history.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="3" class="text-center" style="padding: 16px; color: var(--text-secondary);">No se han enviado alertas de correo aún.</td></tr>`;
+            return;
+        }
+
+        history.forEach(item => {
+            const tr = document.createElement('tr');
+
+            // Build mini asset badges for the "assets" row
+            const assetsBadges = item.assets.map(a => {
+                return `<span class="asset-tag" style="cursor: pointer; font-size: 11px; margin-right: 4px;" onclick="openAssetModal('${a.ticker}')">${a.ticker}</span>`;
+            }).join('');
+
+            // Format date readable
+            const dateStr = item.sent_at_human || item.sent_at;
+
+            tr.innerHTML = `
+                <td><span style="font-size:12px; color: var(--text-secondary); white-space:nowrap;">${dateStr}</span></td>
+                <td>
+                    <div style="font-weight:600; font-size:13px; color:#fff; margin-bottom: 4px;">${item.subject}</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 4px; align-items: center;">${assetsBadges}</div>
+                </td>
+                <td><span class="badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981; font-weight: normal; font-size:11px; padding: 2px 6px;">${item.recipient_count} suscriptores</span></td>
+            `;
+            tbody.appendChild(tr);
+        });
+    } catch (e) {
+        console.error('Error fetching email history:', e);
+        tbody.innerHTML = `<tr><td colspan="3" class="text-center" style="padding: 16px; color: #ef4444;">Error al cargar el historial del servidor.</td></tr>`;
+    }
 }
 
 async function handleAddWatchlistSubmit(e) {
