@@ -20,15 +20,15 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1732.99) se encuentra por encima de la EMA de 200 días (1663.52), y el precio actual (1765.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (1732.99) se encuentra por encima de la EMA de 200 días (1663.58), y el precio actual (1765.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (42.5%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "42.5%",
+        "content": "La volatilidad anualizada es **alta** (42.7%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "42.7%",
         "status": "warning"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.94** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "0.94",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.93** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
+        "value": "0.93",
         "status": "neutral"
       },
       {
@@ -172,17 +172,17 @@
       "icon": "fa-circle-info",
       "color": "neutral",
       "summary": "Con un score de **76.6/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
-      "take_profit": 4198.01,
-      "stop_loss": 683.66,
-      "tp_pct": 137.8,
-      "sl_pct": 61.3
+      "take_profit": 4205.17,
+      "stop_loss": 680.48,
+      "tp_pct": 138.3,
+      "sl_pct": 61.4
     },
     "support": 1618.9,
     "resistance": 1820.0,
     "volume_cluster": 1754.85,
-    "take_profit": 4198.01,
-    "stop_loss": 683.66,
-    "tp_pct": 137.8,
-    "sl_pct": 61.3
+    "take_profit": 4205.17,
+    "stop_loss": 680.48,
+    "tp_pct": 138.3,
+    "sl_pct": 61.4
   }
 }

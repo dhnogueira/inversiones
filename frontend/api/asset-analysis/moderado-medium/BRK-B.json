@@ -4,23 +4,23 @@
     "ticker": "BRK-B",
     "name": "BRK-B",
     "category": "sp500",
-    "price": 505.6199951171875,
+    "price": 505.4750061035156,
     "currency": "USD",
-    "score": 50.0,
+    "score": 50.1,
     "profile": "moderado",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 64.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "64.4",
+        "content": "El RSI de 14 períodos está en 64.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "64.2",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (487.63) se encuentra por encima de la EMA de 200 días (487.11), y el precio actual (505.62) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (487.63) se encuentra por encima de la EMA de 200 días (487.11), y el precio actual (505.48) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+1.8%** y a 12 meses es **+4.3%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+1.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+1.7%** y a 12 meses es **+4.2%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+1.7% (6M)",
         "status": "neutral"
       },
       {
@@ -168,17 +168,17 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **50.0/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
-      "take_profit": 611.48,
-      "stop_loss": 452.69,
+      "summary": "El score de **50.1/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "take_profit": 611.31,
+      "stop_loss": 452.56,
       "tp_pct": 20.9,
       "sl_pct": 10.5
     },
     "support": 471.41,
     "resistance": 497.35,
     "volume_cluster": 480.23,
-    "take_profit": 611.48,
-    "stop_loss": 452.69,
+    "take_profit": 611.31,
+    "stop_loss": 452.56,
     "tp_pct": 20.9,
     "sl_pct": 10.5
   }
