@@ -4,7 +4,7 @@
     "ticker": "YPFD.BA",
     "name": "YPFD",
     "category": "merval",
-    "price": 72900.0,
+    "price": 72800.0,
     "currency": "ARS",
     "score": 67.3,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 47.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "47.1",
+        "content": "El RSI de 14 períodos se encuentra en 46.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "46.8",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (72212.26) se encuentra por encima de la EMA de 200 días (60639.31), y el precio actual (72900.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (72208.34) se encuentra por encima de la EMA de 200 días (60638.32), y el precio actual (72800.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-11.0%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-11.0% (1M)",
+        "content": "El activo cayó un **-11.2%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-11.2% (1M)",
         "status": "danger"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+31.9%** y a 12 meses es **+87.2%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+31.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+31.7%** y a 12 meses es **+86.9%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+31.7% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **200.0%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+153.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 200.0%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **199.5%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+152.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 199.5%",
         "status": "success"
       }
     ],
@@ -171,16 +171,16 @@
       "icon": "fa-circle-info",
       "color": "neutral",
       "summary": "Con un score de **67.3/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "take_profit": 120809.4,
-      "stop_loss": 51606.93,
+      "take_profit": 120641.13,
+      "stop_loss": 51537.28,
       "tp_pct": 65.7,
       "sl_pct": 29.2
     },
     "support": 55090.0,
     "resistance": 81347.5,
     "volume_cluster": 65576.25,
-    "take_profit": 120809.4,
-    "stop_loss": 51606.93,
+    "take_profit": 120641.13,
+    "stop_loss": 51537.28,
     "tp_pct": 65.7,
     "sl_pct": 29.2
   }

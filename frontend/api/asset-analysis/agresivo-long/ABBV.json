@@ -4,23 +4,23 @@
     "ticker": "ABBV",
     "name": "ABBV",
     "category": "sp500",
-    "price": 255.88999938964844,
+    "price": 255.81500244140625,
     "currency": "USD",
-    "score": 75.2,
+    "score": 75.1,
     "profile": "agresivo",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 70.3, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
-        "value": "70.3",
+        "content": "El RSI de 14 períodos se encuentra en 70.2, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
+        "value": "70.2",
         "status": "warning"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (226.32) se encuentra por encima de la EMA de 200 días (215.41), y el precio actual (255.89) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (226.31) se encuentra por encima de la EMA de 200 días (215.41), y el precio actual (255.82) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+13.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (24.8%) refuerzan esta tendencia positiva.",
-        "value": "+13.8% (1M)",
+        "content": "El activo registró un rendimiento del **+13.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (24.8%) refuerzan esta tendencia positiva.",
+        "value": "+13.7% (1M)",
         "status": "success"
       },
       {
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **331.2%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+284.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 331.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **330.9%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+283.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 330.9%",
         "status": "success"
       }
     ],
@@ -176,17 +176,17 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **75.2/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. El RSI en zona de sobrecompra aconseja esperar una corrección antes de entrar.",
-      "take_profit": 479.76,
-      "stop_loss": 156.39,
+      "summary": "Con un score de **75.1/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. El RSI en zona de sobrecompra aconseja esperar una corrección antes de entrar.",
+      "take_profit": 479.63,
+      "stop_loss": 156.34,
       "tp_pct": 87.5,
       "sl_pct": 38.9
     },
     "support": 203.37,
     "resistance": 234.3,
     "volume_cluster": 206.93,
-    "take_profit": 479.76,
-    "stop_loss": 156.39,
+    "take_profit": 479.63,
+    "stop_loss": 156.34,
     "tp_pct": 87.5,
     "sl_pct": 38.9
   }

@@ -4,7 +4,7 @@
     "ticker": "ETH-USD",
     "name": "ETH-USD",
     "category": "crypto",
-    "price": 1792.1700439453125,
+    "price": 1796.010009765625,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 58.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "58.2",
+        "content": "El RSI de 14 períodos está en 58.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "58.6",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1805.15) se encuentra por debajo de la EMA de 200 días (2255.69), y el precio (1792.17) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (1805.30) se encuentra por debajo de la EMA de 200 días (2255.73), y el precio (1796.01) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+0.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-24.1%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+0.1% (1M)",
+        "content": "El rendimiento mensual es de **+0.3%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-23.9%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+0.3% (1M)",
         "status": "neutral"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-9.6%** y a 12 meses es **-55.0%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-9.6% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-9.4%** y a 12 meses es **-54.9%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-9.4% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **9.4%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-1.6%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 9.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **9.6%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-1.4%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 9.6%",
         "status": "danger"
       }
     ],
@@ -83,16 +83,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 2551.01,
-      "stop_loss": 1412.75,
+      "take_profit": 2556.49,
+      "stop_loss": 1415.77,
       "tp_pct": 42.3,
       "sl_pct": 21.2
     },
     "support": 1618.95,
     "resistance": 2348.86,
     "volume_cluster": 2292.63,
-    "take_profit": 2551.01,
-    "stop_loss": 1412.75,
+    "take_profit": 2556.49,
+    "stop_loss": 1415.77,
     "tp_pct": 42.3,
     "sl_pct": 21.2
   }

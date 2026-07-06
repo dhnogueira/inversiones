@@ -4,7 +4,7 @@
     "ticker": "ABBV",
     "name": "ABBV",
     "category": "sp500",
-    "price": 255.88999938964844,
+    "price": 255.81500244140625,
     "currency": "USD",
     "score": 70.9,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 70.3, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
-        "value": "70.3",
+        "content": "El RSI de 14 períodos se encuentra en 70.2, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
+        "value": "70.2",
         "status": "warning"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (226.32) se encuentra por encima de la EMA de 200 días (215.41), y el precio actual (255.89) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (226.31) se encuentra por encima de la EMA de 200 días (215.41), y el precio actual (255.82) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+13.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (24.8%) refuerzan esta tendencia positiva.",
-        "value": "+13.8% (1M)",
+        "content": "El activo registró un rendimiento del **+13.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (24.8%) refuerzan esta tendencia positiva.",
+        "value": "+13.7% (1M)",
         "status": "success"
       },
       {
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **87.0%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+65.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 87.0%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **86.9%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+64.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 86.9%",
         "status": "success"
       }
     ],
@@ -177,16 +177,16 @@
       "icon": "fa-circle-info",
       "color": "neutral",
       "summary": "Con un score de **70.9/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. El RSI en zona de sobrecompra aconseja esperar una corrección antes de entrar.",
-      "take_profit": 311.17,
-      "stop_loss": 228.25,
+      "take_profit": 311.08,
+      "stop_loss": 228.18,
       "tp_pct": 21.6,
       "sl_pct": 10.8
     },
     "support": 203.37,
     "resistance": 234.3,
     "volume_cluster": 206.93,
-    "take_profit": 311.17,
-    "stop_loss": 228.25,
+    "take_profit": 311.08,
+    "stop_loss": 228.18,
     "tp_pct": 21.6,
     "sl_pct": 10.8
   }

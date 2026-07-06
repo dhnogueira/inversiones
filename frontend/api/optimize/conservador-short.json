@@ -1,11 +1,19 @@
 {
   "status": "success",
   "optimization": {
-    "weights": [],
-    "expected_return": 0,
-    "expected_volatility": 0,
-    "sharpe_ratio": 0,
+    "weights": [
+      {
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "category": "cedears",
+        "weight": 1.0,
+        "weight_pct": 100.0
+      }
+    ],
+    "expected_return": 11.14,
+    "expected_volatility": 36.25,
+    "sharpe_ratio": 0.0,
     "inflation_reference": 11.0,
-    "beats_inflation": false
+    "beats_inflation": true
   }
 }
