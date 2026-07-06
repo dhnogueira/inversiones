@@ -4,7 +4,7 @@
     "ticker": "COST",
     "name": "COST",
     "category": "sp500",
-    "price": 944.3275146484375,
+    "price": 945.6500244140625,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 42.7, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "42.7",
+        "content": "El RSI de 14 períodos se encuentra en 43.0, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "43.0",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (944.33) cotiza por debajo de la EMA de 200 días (969.07), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (945.65) cotiza por debajo de la EMA de 200 días (969.09), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-2.9%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-2.9% (1M)",
+        "content": "El rendimiento mensual es de **-2.7%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-2.7% (1M)",
         "status": "neutral"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+10.8%** y a 12 meses es **-3.8%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+10.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+11.0%** y a 12 meses es **-3.7%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+11.0% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **35.5%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+13.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 35.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **35.8%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+13.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 35.8%",
         "status": "success"
       }
     ],
@@ -181,16 +181,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 1299.09,
-      "stop_loss": 766.95,
+      "take_profit": 1300.86,
+      "stop_loss": 768.04,
       "tp_pct": 37.6,
       "sl_pct": 18.8
     },
     "support": 952.45,
     "resistance": 1028.29,
     "volume_cluster": 1001.01,
-    "take_profit": 1299.09,
-    "stop_loss": 766.95,
+    "take_profit": 1300.86,
+    "stop_loss": 768.04,
     "tp_pct": 37.6,
     "sl_pct": 18.8
   }
