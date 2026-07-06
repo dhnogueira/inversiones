@@ -4,7 +4,7 @@
     "ticker": "EDN.BA",
     "name": "EDN",
     "category": "merval",
-    "price": 1956.0,
+    "price": 1982.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "moderado",
@@ -13,29 +13,29 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 49.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "49.1",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 51.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "51.4",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1967.45) se encuentra por debajo de la EMA de 200 días (1978.66), y el precio (1956.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
-        "value": "Fuerte Bajista",
-        "status": "danger"
+        "content": "El precio (1982.00) se mantiene por encima de la EMA de 200 días (1978.70), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (1968.02) aún no confirma un cruce definitivo.",
+        "value": "Alcista",
+        "status": "neutral"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **muy alta** (63.4%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
-        "value": "63.4%",
+        "content": "La volatilidad anualizada es **muy alta** (63.3%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "63.3%",
         "status": "danger"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-1.0%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-1.0% (1M)",
+        "content": "El rendimiento mensual es de **+0.4%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-9.5%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+0.4% (1M)",
         "status": "neutral"
       },
       {
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.29** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
-        "value": "0.29",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.30** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
+        "value": "0.30",
         "status": "warning"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-15.7%** y a 12 meses es **+22.2%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-15.7% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-14.0%** y a 12 meses es **+22.7%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-14.0% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-15.7%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-26.7%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -15.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-14.0%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-25.0%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -14.0%",
         "status": "danger"
       }
     ],
@@ -172,17 +172,17 @@
       "action": "EVITAR",
       "icon": "fa-circle-xmark",
       "color": "danger",
-      "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo.",
-      "take_profit": 2800.99,
-      "stop_loss": 1533.5,
+      "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "take_profit": 2838.22,
+      "stop_loss": 1553.89,
       "tp_pct": 43.2,
       "sl_pct": 21.6
     },
     "support": 1804.7,
     "resistance": 2119.7,
     "volume_cluster": 2029.45,
-    "take_profit": 2800.99,
-    "stop_loss": 1533.5,
+    "take_profit": 2838.22,
+    "stop_loss": 1553.89,
     "tp_pct": 43.2,
     "sl_pct": 21.6
   }

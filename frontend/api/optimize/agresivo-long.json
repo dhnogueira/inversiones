@@ -12,21 +12,21 @@
         "ars_return_est": 500.0
       },
       {
-        "ticker": "MRK",
-        "name": "MRK",
+        "ticker": "LLY",
+        "name": "LLY",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
-        "ars_return_est": 494.5
+        "weight": 0.2801,
+        "weight_pct": 28.0,
+        "ars_return_est": 445.4
       },
       {
         "ticker": "AAPL.BA",
         "name": "AAPL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
+        "weight": 0.1323,
+        "weight_pct": 13.2,
         "ars_return_est": 300.0
       },
       {
@@ -54,17 +54,26 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 196.0
+        "ars_return_est": 199.2
+      },
+      {
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.0375,
+        "weight_pct": 3.8,
+        "ars_return_est": 300.0
       }
     ],
-    "expected_return": 452.6,
-    "expected_volatility": 26.17,
-    "sharpe_ratio": 15.5,
+    "expected_return": 415.69,
+    "expected_volatility": 28.51,
+    "sharpe_ratio": 12.93,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 405.6
+    "spread_vs_inflation": 368.7
   }
 }

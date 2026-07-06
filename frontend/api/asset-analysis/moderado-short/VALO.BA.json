@@ -4,44 +4,44 @@
     "ticker": "VALO.BA",
     "name": "VALO",
     "category": "merval",
-    "price": 654.5,
+    "price": 654.0,
     "currency": "ARS",
-    "score": 62.0,
+    "score": 66.2,
     "profile": "moderado",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 56.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "56.5",
+        "content": "El RSI de 14 períodos está en 56.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.1",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (642.79) se encuentra por encima de la EMA de 200 días (556.48), y el precio actual (654.50) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (643.23) se encuentra por encima de la EMA de 200 días (557.45), y el precio actual (654.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (39.0%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "39.0%",
+        "content": "La volatilidad anualizada es **alta** (38.9%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "38.9%",
         "status": "warning"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+4.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-4.1%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+4.5% (1M)",
+        "content": "El activo registró un rendimiento del **+5.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-6.3%) refuerzan esta tendencia positiva.",
+        "value": "+5.6% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 513.38 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 686.22 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 623.75. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 557.11 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 686.22 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 623.75. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 623.75",
         "status": "success"
       }
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.86** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
-        "value": "2.86",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.59** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "2.59",
         "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+20.4%** y a 12 meses es **+115.4%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+20.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+20.7%** y a 12 meses es **+104.7%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+20.7% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **20.4%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+9.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 20.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **20.7%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+9.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 20.7%",
         "status": "success"
       }
     ],
@@ -176,18 +176,18 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **62.0/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 838.17,
-      "stop_loss": 562.67,
-      "tp_pct": 28.1,
+      "summary": "Con un score de **66.2/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "take_profit": 837.34,
+      "stop_loss": 562.33,
+      "tp_pct": 28.0,
       "sl_pct": 14.0
     },
-    "support": 513.38,
+    "support": 557.11,
     "resistance": 686.22,
     "volume_cluster": 623.75,
-    "take_profit": 838.17,
-    "stop_loss": 562.67,
-    "tp_pct": 28.1,
+    "take_profit": 837.34,
+    "stop_loss": 562.33,
+    "tp_pct": 28.0,
     "sl_pct": 14.0
   }
 }
