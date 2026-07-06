@@ -4,7 +4,7 @@
     "ticker": "SUPV.BA",
     "name": "SUPV",
     "category": "merval",
-    "price": 3135.0,
+    "price": 3130.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 56.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "56.9",
+        "content": "El RSI de 14 períodos está en 56.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.7",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (2910.30) se encuentra por encima de la EMA de 200 días (2865.53), y el precio actual (3135.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (2910.10) se encuentra por encima de la EMA de 200 días (2865.48), y el precio actual (3130.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,14 +34,14 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+10.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (9.4%) refuerzan esta tendencia positiva.",
-        "value": "+10.0% (1M)",
+        "content": "El activo registró un rendimiento del **+9.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (9.2%) refuerzan esta tendencia positiva.",
+        "value": "+9.8% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 2,369.50 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 3,135.75 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 2,822.55. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 2,369.50 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 3,131.25 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 2,822.55. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 2,822.55",
         "status": "success"
       }
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-14.8%** y a 12 meses es **+19.7%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-14.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-14.9%** y a 12 meses es **+19.5%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-14.9% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **34.5%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-12.5%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 34.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **34.2%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-12.8%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 34.2%",
         "status": "danger"
       }
     ],
@@ -164,16 +164,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "take_profit": 5843.64,
-      "stop_loss": 1931.16,
+      "take_profit": 5834.32,
+      "stop_loss": 1928.08,
       "tp_pct": 86.4,
       "sl_pct": 38.4
     },
     "support": 2369.5,
-    "resistance": 3135.75,
+    "resistance": 3131.25,
     "volume_cluster": 2822.55,
-    "take_profit": 5843.64,
-    "stop_loss": 1931.16,
+    "take_profit": 5834.32,
+    "stop_loss": 1928.08,
     "tp_pct": 86.4,
     "sl_pct": 38.4
   }

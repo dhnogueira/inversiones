@@ -7,8 +7,8 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3749,
-        "weight_pct": 37.5,
+        "weight": 0.374,
+        "weight_pct": 37.4,
         "ars_return_est": 500.0
       },
       {
@@ -16,9 +16,9 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1251,
-        "weight_pct": 12.5,
-        "ars_return_est": 429.3
+        "weight": 0.126,
+        "weight_pct": 12.6,
+        "ars_return_est": 429.5
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 336.4
+        "ars_return_est": 334.8
       },
       {
         "ticker": "ABBV",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 293.0
+        "ars_return_est": 295.4
       },
       {
         "ticker": "AAPL.BA",
@@ -66,22 +66,22 @@
         "ars_return_est": 250.0
       },
       {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 150.4
-      },
-      {
         "ticker": "KO.BA",
         "name": "KO",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 112.3
+        "ars_return_est": 113.3
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 149.9
       },
       {
         "ticker": "AMZN.BA",
@@ -93,14 +93,14 @@
         "ars_return_est": 97.8
       }
     ],
-    "expected_return": 359.63,
-    "expected_volatility": 24.66,
+    "expected_return": 359.68,
+    "expected_volatility": 24.65,
     "sharpe_ratio": 12.68,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 312.6
+    "spread_vs_inflation": 312.7
   }
 }

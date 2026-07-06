@@ -9,34 +9,25 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 188.8
+        "ars_return_est": 189.3
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.278,
-        "weight_pct": 27.8,
-        "ars_return_est": 163.2
+        "weight": 0.2799,
+        "weight_pct": 28.0,
+        "ars_return_est": 163.8
       },
       {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.222,
-        "weight_pct": 22.2,
+        "weight": 0.2201,
+        "weight_pct": 22.0,
         "ars_return_est": 130.1
-      },
-      {
-        "ticker": "VALE.BA",
-        "name": "VALE",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 95.1
       },
       {
         "ticker": "AAPL.BA",
@@ -45,7 +36,16 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 90.7
+        "ars_return_est": 91.1
+      },
+      {
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 94.6
       },
       {
         "ticker": "AAPL",
@@ -54,17 +54,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 108.9
+        "ars_return_est": 108.5
       }
     ],
-    "expected_return": 155.08,
-    "expected_volatility": 25.91,
-    "sharpe_ratio": 5.14,
+    "expected_return": 155.45,
+    "expected_volatility": 25.92,
+    "sharpe_ratio": 5.15,
     "profile": "moderado",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 133.1
+    "spread_vs_inflation": 133.5
   }
 }
