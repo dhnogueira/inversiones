@@ -4,7 +4,7 @@
     "ticker": "ADA-USD",
     "name": "ADA-USD",
     "category": "crypto",
-    "price": 0.18610000610351562,
+    "price": 0.1860000044107437,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -13,16 +13,16 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 60.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "60.0",
+        "content": "El RSI de 14 períodos está en 59.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "59.9",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (0.19) cotiza por debajo de la EMA de 200 días (0.29), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
-        "value": "Bajista",
-        "status": "warning"
+        "content": "La EMA de 50 días (0.19) se encuentra por debajo de la EMA de 200 días (0.29), y el precio (0.19) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "value": "Fuerte Bajista",
+        "status": "danger"
       },
       {
         "title": "Volatilidad Anualizada",
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+4.2%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-25.5%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "content": "El rendimiento mensual es de **+4.2%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-25.6%) ofrece una perspectiva más amplia de la dirección reciente.",
         "value": "+4.2% (1M)",
         "status": "success"
       },
