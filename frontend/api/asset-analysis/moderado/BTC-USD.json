@@ -4,7 +4,7 @@
     "ticker": "BTC-USD",
     "name": "BTC-USD",
     "category": "crypto",
-    "price": 63595.828125,
+    "price": 63550.0,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 51.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "51.8",
+        "content": "El RSI de 14 períodos está en 51.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "51.6",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (65795.54) se encuentra por debajo de la EMA de 200 días (75644.04), y el precio (63595.83) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (65793.74) se encuentra por debajo de la EMA de 200 días (75643.59), y el precio (63550.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-7.5%** y a 12 meses es **-44.3%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-7.5% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-7.6%** y a 12 meses es **-44.3%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-7.6% (6M)",
         "status": "neutral"
       },
       {
@@ -83,16 +83,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 93057.27,
-      "stop_loss": 48865.11,
+      "take_profit": 92989.86,
+      "stop_loss": 48830.07,
       "tp_pct": 46.3,
       "sl_pct": 23.2
     },
     "support": 60987.89,
     "resistance": 79846.11,
     "volume_cluster": 76243.91,
-    "take_profit": 93057.27,
-    "stop_loss": 48865.11,
+    "take_profit": 92989.86,
+    "stop_loss": 48830.07,
     "tp_pct": 46.3,
     "sl_pct": 23.2
   }
