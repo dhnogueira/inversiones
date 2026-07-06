@@ -7,17 +7,26 @@
         "name": "BONCAP T30J7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.3525,
-        "weight_pct": 35.2,
+        "weight": 0.35,
+        "weight_pct": 35.0,
         "ars_return_est": 15.3
+      },
+      {
+        "ticker": "PG",
+        "name": "PG",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.2224,
+        "weight_pct": 22.2,
+        "ars_return_est": 29.1
       },
       {
         "ticker": "T30A7",
         "name": "BONCAP T30A7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.3512,
-        "weight_pct": 35.1,
+        "weight": 0.1776,
+        "weight_pct": 17.8,
         "ars_return_est": 14.4
       },
       {
@@ -25,7 +34,7 @@
         "name": "BONCAP T28F7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0504,
+        "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 11.5
       },
@@ -34,7 +43,7 @@
         "name": "BONCAP T31M7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0504,
+        "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 13.6
       },
@@ -43,7 +52,7 @@
         "name": "LECAP S31M7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0504,
+        "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 11.4
       },
@@ -52,7 +61,7 @@
         "name": "BONCAP T31Y7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0504,
+        "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 12.7
       },
@@ -61,28 +70,19 @@
         "name": "LECAP S28F7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0504,
+        "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 10.3
-      },
-      {
-        "ticker": "VALO.BA",
-        "name": "VALO",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.0445,
-        "weight_pct": 4.5,
-        "ars_return_est": 20.4
       }
     ],
-    "expected_return": 14.34,
-    "expected_volatility": 4.39,
-    "sharpe_ratio": 0.76,
+    "expected_return": 17.35,
+    "expected_volatility": 5.19,
+    "sharpe_ratio": 1.22,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 3.3
+    "spread_vs_inflation": 6.4
   }
 }

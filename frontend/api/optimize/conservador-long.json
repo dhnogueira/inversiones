@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 366.3
+        "ars_return_est": 363.9
       },
       {
         "ticker": "AAPL.BA",
@@ -66,32 +66,32 @@
         "ars_return_est": 137.1
       },
       {
-        "ticker": "ABBV",
-        "name": "ABBV",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 262.5
-      },
-      {
         "ticker": "AAPL",
         "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 283.5
+        "ars_return_est": 281.5
+      },
+      {
+        "ticker": "ABBV",
+        "name": "ABBV",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 254.0
       }
     ],
-    "expected_return": 368.05,
+    "expected_return": 367.04,
     "expected_volatility": 25.08,
-    "sharpe_ratio": 12.8,
+    "sharpe_ratio": 12.76,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 321.0
+    "spread_vs_inflation": 320.0
   }
 }
