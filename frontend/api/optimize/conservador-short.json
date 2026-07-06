@@ -7,28 +7,28 @@
         "name": "PG",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.7105,
-        "weight_pct": 71.1,
-        "ars_return_est": 27.4
+        "weight": 0.7102,
+        "weight_pct": 71.0,
+        "ars_return_est": 27.5
       },
       {
         "ticker": "VALE.BA",
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.2895,
-        "weight_pct": 28.9,
-        "ars_return_est": 11.1
+        "weight": 0.2898,
+        "weight_pct": 29.0,
+        "ars_return_est": 11.2
       }
     ],
-    "expected_return": 22.66,
+    "expected_return": 22.78,
     "expected_volatility": 20.68,
-    "sharpe_ratio": 0.56,
+    "sharpe_ratio": 0.57,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 11.7
+    "spread_vs_inflation": 11.8
   }
 }

@@ -4,23 +4,23 @@
     "ticker": "YPFD.BA",
     "name": "YPFD",
     "category": "merval",
-    "price": 72850.0,
+    "price": 72825.0,
     "currency": "ARS",
-    "score": 68.7,
+    "score": 68.6,
     "profile": "moderado",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 46.9, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "46.9",
+        "content": "El RSI de 14 períodos se encuentra en 46.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "46.8",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (72210.30) se encuentra por encima de la EMA de 200 días (60638.81), y el precio actual (72850.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (72209.32) se encuentra por encima de la EMA de 200 días (60638.56), y el precio actual (72825.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **249.8%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+202.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 249.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **249.6%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+202.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 249.6%",
         "status": "success"
       }
     ],
@@ -170,17 +170,17 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **68.7/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 144662.85,
-      "stop_loss": 40933.18,
+      "summary": "Con un score de **68.6/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "take_profit": 144612.26,
+      "stop_loss": 40919.55,
       "tp_pct": 98.6,
       "sl_pct": 43.8
     },
     "support": 55090.0,
     "resistance": 81347.5,
     "volume_cluster": 65576.25,
-    "take_profit": 144662.85,
-    "stop_loss": 40933.18,
+    "take_profit": 144612.26,
+    "stop_loss": 40919.55,
     "tp_pct": 98.6,
     "sl_pct": 43.8
   }

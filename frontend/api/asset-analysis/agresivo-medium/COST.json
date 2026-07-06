@@ -4,7 +4,7 @@
     "ticker": "COST",
     "name": "COST",
     "category": "sp500",
-    "price": 946.385009765625,
+    "price": 946.52001953125,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 43.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "43.2",
+        "content": "El RSI de 14 períodos se encuentra en 43.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "43.3",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (946.39) cotiza por debajo de la EMA de 200 días (969.09), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (946.52) cotiza por debajo de la EMA de 200 días (969.10), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -181,16 +181,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 1301.86,
-      "stop_loss": 768.65,
+      "take_profit": 1302.04,
+      "stop_loss": 768.76,
       "tp_pct": 37.6,
       "sl_pct": 18.8
     },
     "support": 952.45,
     "resistance": 1028.29,
     "volume_cluster": 1001.01,
-    "take_profit": 1301.86,
-    "stop_loss": 768.65,
+    "take_profit": 1302.04,
+    "stop_loss": 768.76,
     "tp_pct": 37.6,
     "sl_pct": 18.8
   }
