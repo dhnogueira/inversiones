@@ -4,7 +4,7 @@
     "ticker": "COST",
     "name": "COST",
     "category": "sp500",
-    "price": 943.1500244140625,
+    "price": 943.6649780273438,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 42.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "42.3",
+        "content": "El RSI de 14 períodos se encuentra en 42.5, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "42.5",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (943.15) cotiza por debajo de la EMA de 200 días (969.06), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (943.66) cotiza por debajo de la EMA de 200 días (969.07), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -36,7 +36,7 @@
         "icon": "fa-bolt",
         "content": "El rendimiento mensual es de **-3.0%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
         "value": "-3.0% (1M)",
-        "status": "danger"
+        "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **89.3%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+42.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 89.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **89.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+42.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 89.4%",
         "status": "success"
       }
     ],
@@ -181,16 +181,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 1226.64,
-      "stop_loss": 817.16,
+      "take_profit": 1227.29,
+      "stop_loss": 817.61,
       "tp_pct": 30.1,
       "sl_pct": 13.4
     },
     "support": 952.45,
     "resistance": 1028.29,
     "volume_cluster": 1001.01,
-    "take_profit": 1226.64,
-    "stop_loss": 817.16,
+    "take_profit": 1227.29,
+    "stop_loss": 817.61,
     "tp_pct": 30.1,
     "sl_pct": 13.4
   }

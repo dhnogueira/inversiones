@@ -3,15 +3,6 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "T30A7",
-        "name": "BONCAP T30A7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.35,
-        "weight_pct": 35.0,
-        "ars_return_est": 14.4
-      },
-      {
         "ticker": "T30J7",
         "name": "BONCAP T30J7 (Pesos)",
         "category": "letras",
@@ -21,13 +12,22 @@
         "ars_return_est": 15.3
       },
       {
-        "ticker": "T31M7",
-        "name": "BONCAP T31M7 (Pesos)",
+        "ticker": "PG",
+        "name": "PG",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.2094,
+        "weight_pct": 20.9,
+        "ars_return_est": 27.6
+      },
+      {
+        "ticker": "T30A7",
+        "name": "BONCAP T30A7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0504,
-        "weight_pct": 5.0,
-        "ars_return_est": 13.6
+        "weight": 0.1906,
+        "weight_pct": 19.1,
+        "ars_return_est": 14.4
       },
       {
         "ticker": "T28F7",
@@ -37,6 +37,15 @@
         "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 11.5
+      },
+      {
+        "ticker": "T31M7",
+        "name": "BONCAP T31M7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 13.6
       },
       {
         "ticker": "S31M7",
@@ -64,25 +73,16 @@
         "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 10.3
-      },
-      {
-        "ticker": "VALO.BA",
-        "name": "VALO",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.0496,
-        "weight_pct": 5.0,
-        "ars_return_est": 20.6
       }
     ],
-    "expected_return": 14.38,
-    "expected_volatility": 4.43,
-    "sharpe_ratio": 0.76,
+    "expected_return": 16.83,
+    "expected_volatility": 5.05,
+    "sharpe_ratio": 1.16,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 3.4
+    "spread_vs_inflation": 5.8
   }
 }

@@ -9,34 +9,25 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 187.6
+        "ars_return_est": 188.4
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.2804,
-        "weight_pct": 28.0,
-        "ars_return_est": 162.0
+        "weight": 0.2813,
+        "weight_pct": 28.1,
+        "ars_return_est": 162.6
       },
       {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2196,
-        "weight_pct": 22.0,
-        "ars_return_est": 128.7
-      },
-      {
-        "ticker": "AAPL.BA",
-        "name": "AAPL",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 90.8
+        "weight": 0.2187,
+        "weight_pct": 21.9,
+        "ars_return_est": 128.9
       },
       {
         "ticker": "VALE.BA",
@@ -45,7 +36,16 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 94.1
+        "ars_return_est": 95.1
+      },
+      {
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 91.2
       },
       {
         "ticker": "AAPL",
@@ -54,17 +54,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 109.2
+        "ars_return_est": 109.4
       }
     ],
-    "expected_return": 154.08,
-    "expected_volatility": 25.93,
-    "sharpe_ratio": 5.09,
+    "expected_return": 154.65,
+    "expected_volatility": 25.94,
+    "sharpe_ratio": 5.11,
     "profile": "moderado",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 132.1
+    "spread_vs_inflation": 132.7
   }
 }
