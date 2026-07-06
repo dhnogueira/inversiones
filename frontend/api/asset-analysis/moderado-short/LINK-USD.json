@@ -4,7 +4,7 @@
     "ticker": "LINK-USD",
     "name": "LINK-USD",
     "category": "crypto",
-    "price": 8.029999732971191,
+    "price": 8.01200008392334,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 54.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "54.8",
+        "content": "El RSI de 14 períodos está en 54.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.4",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (8.18) se encuentra por debajo de la EMA de 200 días (10.13), y el precio (8.03) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (8.18) se encuentra por debajo de la EMA de 200 días (10.13), y el precio (8.01) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-3.2%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-3.2% (1M)",
+        "content": "El rendimiento mensual es de **-3.4%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-3.4% (1M)",
         "status": "danger"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-10.3%** y a 12 meses es **-55.9%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-10.3% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-10.5%** y a 12 meses es **-56.0%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-10.5% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **8.6%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-2.4%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 8.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **8.3%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-2.7%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 8.3%",
         "status": "danger"
       }
     ],
@@ -83,16 +83,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 11.5,
-      "stop_loss": 6.3,
+      "take_profit": 11.47,
+      "stop_loss": 6.28,
       "tp_pct": 43.2,
       "sl_pct": 21.6
     },
     "support": 7.41,
     "resistance": 9.87,
     "volume_cluster": 9.48,
-    "take_profit": 11.5,
-    "stop_loss": 6.3,
+    "take_profit": 11.47,
+    "stop_loss": 6.28,
     "tp_pct": 43.2,
     "sl_pct": 21.6
   }
