@@ -4,7 +4,7 @@
     "ticker": "JPM",
     "name": "JPM",
     "category": "sp500",
-    "price": 337.3599853515625,
+    "price": 337.42498779296875,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -20,7 +20,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (316.44) se encuentra por encima de la EMA de 200 días (302.17), y el precio actual (337.36) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (316.44) se encuentra por encima de la EMA de 200 días (302.17), y el precio actual (337.42) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -41,8 +41,8 @@
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 286.48 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 329.57 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 312.18. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 312.18",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 286.48 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 329.57 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 301.01. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 301.01",
         "status": "success"
       }
     ],
@@ -57,7 +57,7 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+4.7%** y a 12 meses es **+15.6%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "content": "El rendimiento acumulado a 6 meses es **+4.7%** y a 12 meses es **+15.7%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
         "value": "+4.7% (6M)",
         "status": "neutral"
       },
@@ -174,16 +174,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación.",
-      "take_profit": 378.46,
-      "stop_loss": 316.81,
+      "take_profit": 378.53,
+      "stop_loss": 316.87,
       "tp_pct": 12.2,
       "sl_pct": 6.1
     },
     "support": 286.48,
     "resistance": 329.57,
-    "volume_cluster": 312.18,
-    "take_profit": 378.46,
-    "stop_loss": 316.81,
+    "volume_cluster": 301.01,
+    "take_profit": 378.53,
+    "stop_loss": 316.87,
     "tp_pct": 12.2,
     "sl_pct": 6.1
   }

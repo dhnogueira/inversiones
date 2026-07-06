@@ -4,7 +4,7 @@
     "ticker": "CRES.BA",
     "name": "CRES",
     "category": "merval",
-    "price": 1734.0,
+    "price": 1753.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 49.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "49.1",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 51.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "51.3",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1733.03) se encuentra por encima de la EMA de 200 días (1664.28), y el precio actual (1734.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (1733.78) se encuentra por encima de la EMA de 200 días (1664.46), y el precio actual (1753.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,38 +34,38 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+1.8%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-2.9%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+1.8% (1M)",
-        "status": "neutral"
+        "content": "El rendimiento mensual es de **+2.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.8%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.9% (1M)",
+        "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 1,618.90 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 1,820.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 1,720.15. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 1,720.15",
-        "status": "success"
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 1,618.90 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 1,820.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 1,754.85. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 1,754.85",
+        "status": "neutral"
       }
     ],
     "fundamental": [
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.78** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "0.78",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.81** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
+        "value": "0.81",
         "status": "neutral"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-8.4%** y a 12 meses es **+37.1%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-8.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-7.4%** y a 12 meses es **+38.6%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-7.4% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **70.3%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+23.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 70.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **73.7%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+26.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 73.7%",
         "status": "success"
       }
     ],
@@ -172,16 +172,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "take_profit": 2798.93,
-      "stop_loss": 1260.7,
+      "take_profit": 2829.15,
+      "stop_loss": 1274.71,
       "tp_pct": 61.4,
       "sl_pct": 27.3
     },
     "support": 1618.9,
     "resistance": 1820.0,
-    "volume_cluster": 1720.15,
-    "take_profit": 2798.93,
-    "stop_loss": 1260.7,
+    "volume_cluster": 1754.85,
+    "take_profit": 2829.15,
+    "stop_loss": 1274.71,
     "tp_pct": 61.4,
     "sl_pct": 27.3
   }

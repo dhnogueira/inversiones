@@ -7,8 +7,8 @@
         "name": "PG",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.7102,
-        "weight_pct": 71.0,
+        "weight": 0.7084,
+        "weight_pct": 70.8,
         "ars_return_est": 27.5
       },
       {
@@ -16,19 +16,19 @@
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.2898,
-        "weight_pct": 29.0,
-        "ars_return_est": 11.2
+        "weight": 0.2916,
+        "weight_pct": 29.2,
+        "ars_return_est": 11.3
       }
     ],
-    "expected_return": 22.78,
-    "expected_volatility": 20.68,
+    "expected_return": 22.74,
+    "expected_volatility": 20.71,
     "sharpe_ratio": 0.57,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 11.8
+    "spread_vs_inflation": 11.7
   }
 }
