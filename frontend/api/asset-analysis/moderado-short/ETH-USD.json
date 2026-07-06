@@ -4,7 +4,7 @@
     "ticker": "ETH-USD",
     "name": "ETH-USD",
     "category": "crypto",
-    "price": 1748.3399658203125,
+    "price": 1737.0999755859375,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 53.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "53.4",
+        "content": "El RSI de 14 períodos está en 52.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "52.2",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1803.43) se encuentra por debajo de la EMA de 200 días (2255.26), y el precio (1748.34) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (1802.99) se encuentra por debajo de la EMA de 200 días (2255.15), y el precio (1737.10) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-2.3%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-2.3% (1M)",
+        "content": "El rendimiento mensual es de **-3.0%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-3.0% (1M)",
         "status": "neutral"
       },
       {
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-1.02** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
-        "value": "-1.02",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-1.03** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
+        "value": "-1.03",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-11.8%** y a 12 meses es **-56.1%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-11.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-12.4%** y a 12 meses es **-56.4%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-12.4% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **6.7%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-4.3%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 6.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **6.0%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-5.0%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 6.0%",
         "status": "danger"
       }
     ],
@@ -83,17 +83,17 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 2488.75,
-      "stop_loss": 1378.13,
-      "tp_pct": 42.3,
+      "take_profit": 2472.85,
+      "stop_loss": 1369.22,
+      "tp_pct": 42.4,
       "sl_pct": 21.2
     },
     "support": 1618.95,
     "resistance": 2348.86,
     "volume_cluster": 2292.63,
-    "take_profit": 2488.75,
-    "stop_loss": 1378.13,
-    "tp_pct": 42.3,
+    "take_profit": 2472.85,
+    "stop_loss": 1369.22,
+    "tp_pct": 42.4,
     "sl_pct": 21.2
   }
 }
