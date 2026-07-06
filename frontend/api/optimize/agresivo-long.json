@@ -3,21 +3,12 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "MRK",
-        "name": "MRK",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
-        "ars_return_est": 490.3
-      },
-      {
         "ticker": "GOOGL",
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.35,
-        "weight_pct": 35.0,
+        "weight": 0.4,
+        "weight_pct": 40.0,
         "ars_return_est": 500.0
       },
       {
@@ -25,17 +16,17 @@
         "name": "LLY",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 445.8
+        "weight": 0.2763,
+        "weight_pct": 27.6,
+        "ars_return_est": 443.2
       },
       {
         "ticker": "AAPL.BA",
         "name": "AAPL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
+        "weight": 0.1343,
+        "weight_pct": 13.4,
         "ars_return_est": 300.0
       },
       {
@@ -55,16 +46,34 @@
         "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 300.0
+      },
+      {
+        "ticker": "NVDA.BA",
+        "name": "NVDA",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 198.7
+      },
+      {
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.0394,
+        "weight_pct": 3.9,
+        "ars_return_est": 300.0
       }
     ],
-    "expected_return": 460.72,
-    "expected_volatility": 26.34,
-    "sharpe_ratio": 15.71,
+    "expected_return": 414.5,
+    "expected_volatility": 28.48,
+    "sharpe_ratio": 12.9,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 413.7
+    "spread_vs_inflation": 367.5
   }
 }
