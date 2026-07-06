@@ -18,11 +18,11 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 358.5
+        "ars_return_est": 360.5
       },
       {
-        "ticker": "AAPL.BA",
-        "name": "AAPL",
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.05,
@@ -30,8 +30,8 @@
         "ars_return_est": 200.0
       },
       {
-        "ticker": "GOOGL.BA",
-        "name": "GOOGL",
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.05,
@@ -54,7 +54,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 119.4
+        "ars_return_est": 119.9
       },
       {
         "ticker": "KO.BA",
@@ -63,7 +63,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 90.1
+        "ars_return_est": 89.0
       },
       {
         "ticker": "AAPL",
@@ -72,7 +72,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 289.8
+        "ars_return_est": 288.2
       },
       {
         "ticker": "ABBV",
@@ -81,17 +81,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 253.5
+        "ars_return_est": 255.1
       }
     ],
-    "expected_return": 364.33,
+    "expected_return": 364.72,
     "expected_volatility": 25.1,
-    "sharpe_ratio": 12.64,
+    "sharpe_ratio": 12.66,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 317.3
+    "spread_vs_inflation": 317.7
   }
 }

@@ -3,22 +3,22 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "GOOGL",
-        "name": "GOOGL",
+        "ticker": "MRK",
+        "name": "MRK",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.4,
         "weight_pct": 40.0,
-        "ars_return_est": 500.0
+        "ars_return_est": 489.9
       },
       {
-        "ticker": "AAPL",
-        "name": "AAPL",
+        "ticker": "GOOGL",
+        "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 383.9
+        "ars_return_est": 500.0
       },
       {
         "ticker": "LLY",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 435.4
+        "ars_return_est": 441.2
       },
       {
         "ticker": "AAPL.BA",
@@ -57,14 +57,14 @@
         "ars_return_est": 300.0
       }
     ],
-    "expected_return": 422.9,
-    "expected_volatility": 26.64,
-    "sharpe_ratio": 14.11,
+    "expected_return": 460.1,
+    "expected_volatility": 26.33,
+    "sharpe_ratio": 15.69,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 375.9
+    "spread_vs_inflation": 413.1
   }
 }

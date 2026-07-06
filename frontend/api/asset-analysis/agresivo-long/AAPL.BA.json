@@ -4,7 +4,7 @@
     "ticker": "AAPL.BA",
     "name": "AAPL",
     "category": "cedears",
-    "price": 24560.0,
+    "price": 24510.0,
     "currency": "ARS",
     "score": 100.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 67.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "67.4",
+        "content": "El RSI de 14 períodos se encuentra en 67.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "67.1",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (22194.65) se encuentra por encima de la EMA de 200 días (19942.98), y el precio actual (24560.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (22192.68) se encuentra por encima de la EMA de 200 días (19942.48), y el precio actual (24510.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+7.1%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (27.4%) refuerzan esta tendencia positiva.",
-        "value": "+7.1% (1M)",
+        "content": "El activo registró un rendimiento del **+6.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (27.1%) refuerzan esta tendencia positiva.",
+        "value": "+6.9% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 18,544.99 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,131.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 19,153.99. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 19,153.99",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 18,544.99 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,131.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 19,146.49. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 19,146.49",
         "status": "success"
       }
     ],
@@ -50,15 +50,15 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.65** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
-        "value": "2.65",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.64** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "2.64",
         "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+19.9%** y a 12 meses es **+91.1%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+19.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+19.7%** y a 12 meses es **+90.7%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+19.7% (6M)",
         "status": "success"
       },
       {
@@ -180,16 +180,16 @@
       "icon": "fa-circle-check",
       "color": "success",
       "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 50678.83,
-      "stop_loss": 12951.63,
+      "take_profit": 50572.17,
+      "stop_loss": 12926.81,
       "tp_pct": 106.3,
       "sl_pct": 47.3
     },
     "support": 18544.99,
     "resistance": 23131.0,
-    "volume_cluster": 19153.99,
-    "take_profit": 50678.83,
-    "stop_loss": 12951.63,
+    "volume_cluster": 19146.49,
+    "take_profit": 50572.17,
+    "stop_loss": 12926.81,
     "tp_pct": 106.3,
     "sl_pct": 47.3
   }

@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 159.4
+        "ars_return_est": 159.2
       },
       {
         "ticker": "MRK",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 111.3
+        "ars_return_est": 111.7
       },
       {
         "ticker": "VALO.BA",
@@ -36,7 +36,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 83.3
+        "ars_return_est": 83.6
       },
       {
         "ticker": "AAPL.BA",
@@ -45,17 +45,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 72.9
+        "ars_return_est": 72.6
       }
     ],
-    "expected_return": 128.23,
+    "expected_return": 128.31,
     "expected_volatility": 25.83,
-    "sharpe_ratio": 4.11,
+    "sharpe_ratio": 4.12,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 106.2
+    "spread_vs_inflation": 106.3
   }
 }
