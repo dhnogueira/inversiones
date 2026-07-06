@@ -4,7 +4,7 @@
     "ticker": "AAPL.BA",
     "name": "AAPL",
     "category": "cedears",
-    "price": 24510.0,
+    "price": 24500.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 67.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "67.1",
+        "content": "El RSI de 14 períodos se encuentra en 67.0, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "67.0",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (22192.68) se encuentra por encima de la EMA de 200 días (19942.48), y el precio actual (24510.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (22192.29) se encuentra por encima de la EMA de 200 días (19942.38), y el precio actual (24500.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+6.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (27.1%) refuerzan esta tendencia positiva.",
-        "value": "+6.9% (1M)",
+        "content": "El activo registró un rendimiento del **+6.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (27.1%) refuerzan esta tendencia positiva.",
+        "value": "+6.8% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 18,544.99 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,131.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 19,146.49. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 19,146.49",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 18,544.99 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,131.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 19,144.99. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 19,144.99",
         "status": "success"
       }
     ],
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+19.7%** y a 12 meses es **+90.7%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+19.7% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+19.6%** y a 12 meses es **+90.7%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+19.6% (6M)",
         "status": "success"
       },
       {
@@ -180,16 +180,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "take_profit": 28371.06,
-      "stop_loss": 22579.47,
+      "take_profit": 28359.39,
+      "stop_loss": 22570.3,
       "tp_pct": 15.8,
       "sl_pct": 7.9
     },
     "support": 18544.99,
     "resistance": 23131.0,
-    "volume_cluster": 19146.49,
-    "take_profit": 28371.06,
-    "stop_loss": 22579.47,
+    "volume_cluster": 19144.99,
+    "take_profit": 28359.39,
+    "stop_loss": 22570.3,
     "tp_pct": 15.8,
     "sl_pct": 7.9
   }
