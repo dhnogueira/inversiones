@@ -4,7 +4,7 @@
     "ticker": "TGSU2.BA",
     "name": "TGSU2",
     "category": "merval",
-    "price": 9240.0,
+    "price": 9215.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "conservador",
@@ -13,16 +13,16 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 49.5, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "49.5",
+        "content": "El RSI de 14 períodos se encuentra en 48.9, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "48.9",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (9236.35) se encuentra por encima de la EMA de 200 días (8722.78), y el precio actual (9240.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
-        "value": "Fuerte Alcista",
-        "status": "success"
+        "content": "El precio (9215.00) se mantiene por encima de la EMA de 200 días (8722.53), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (9235.37) aún no confirma un cruce definitivo.",
+        "value": "Alcista",
+        "status": "neutral"
       },
       {
         "title": "Volatilidad Anualizada",
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.6%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-3.8%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.6% (1M)",
+        "content": "El rendimiento mensual es de **+2.3%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-4.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.3% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-1.8%** y a 12 meses es **+44.4%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-1.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-2.0%** y a 12 meses es **+44.0%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-2.0% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-1.4%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-12.4%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -1.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-1.6%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-12.6%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -1.6%",
         "status": "danger"
       }
     ],
@@ -178,16 +178,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "take_profit": 11612.27,
-      "stop_loss": 8053.87,
+      "take_profit": 11580.83,
+      "stop_loss": 8032.08,
       "tp_pct": 25.7,
       "sl_pct": 12.8
     },
     "support": 8685.0,
     "resistance": 9890.0,
     "volume_cluster": 9198.0,
-    "take_profit": 11612.27,
-    "stop_loss": 8053.87,
+    "take_profit": 11580.83,
+    "stop_loss": 8032.08,
     "tp_pct": 25.7,
     "sl_pct": 12.8
   }
