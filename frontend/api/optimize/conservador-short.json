@@ -1,19 +1,11 @@
 {
   "status": "success",
   "optimization": {
-    "weights": [
-      {
-        "ticker": "PG",
-        "name": "PG",
-        "category": "sp500",
-        "weight": 1.0,
-        "weight_pct": 100.0
-      }
-    ],
-    "expected_return": 26.22,
-    "expected_volatility": 19.37,
-    "sharpe_ratio": 0.79,
+    "weights": [],
+    "expected_return": 0,
+    "expected_volatility": 0,
+    "sharpe_ratio": 0,
     "inflation_reference": 11.0,
-    "beats_inflation": true
+    "beats_inflation": false
   }
 }
