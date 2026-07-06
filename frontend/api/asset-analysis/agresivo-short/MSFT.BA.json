@@ -4,7 +4,7 @@
     "ticker": "MSFT.BA",
     "name": "MSFT",
     "category": "cedears",
-    "price": 20230.0,
+    "price": 20220.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 52.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "52.5",
+        "content": "El RSI de 14 períodos está en 52.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "52.4",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (20230.00) cotiza por debajo de la EMA de 200 días (20937.86), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (20220.00) cotiza por debajo de la EMA de 200 días (20937.76), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-20.2%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-31.2%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -20.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-20.3%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-31.3%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -20.3%",
         "status": "danger"
       }
     ],
@@ -182,16 +182,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 27942.57,
-      "stop_loss": 16373.71,
+      "take_profit": 27929.18,
+      "stop_loss": 16365.41,
       "tp_pct": 38.1,
       "sl_pct": 19.1
     },
     "support": 18426.97,
     "resistance": 21080.97,
     "volume_cluster": 20526.99,
-    "take_profit": 27942.57,
-    "stop_loss": 16373.71,
+    "take_profit": 27929.18,
+    "stop_loss": 16365.41,
     "tp_pct": 38.1,
     "sl_pct": 19.1
   }
