@@ -16,16 +16,16 @@
         "name": "LLY",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2781,
-        "weight_pct": 27.8,
-        "ars_return_est": 444.1
+        "weight": 0.279,
+        "weight_pct": 27.9,
+        "ars_return_est": 444.5
       },
       {
         "ticker": "AAPL.BA",
         "name": "AAPL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.1333,
+        "weight": 0.1327,
         "weight_pct": 13.3,
         "ars_return_est": 300.0
       },
@@ -61,19 +61,19 @@
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0386,
-        "weight_pct": 3.9,
+        "weight": 0.0383,
+        "weight_pct": 3.8,
         "ars_return_est": 300.0
       }
     ],
-    "expected_return": 415.0,
-    "expected_volatility": 28.5,
-    "sharpe_ratio": 12.91,
+    "expected_return": 415.26,
+    "expected_volatility": 28.51,
+    "sharpe_ratio": 12.92,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 368.0
+    "spread_vs_inflation": 368.3
   }
 }

@@ -9,7 +9,16 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 51.3
+        "ars_return_est": 51.1
+      },
+      {
+        "ticker": "PG",
+        "name": "PG",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 31.0
       },
       {
         "ticker": "T30J7",
@@ -66,32 +75,23 @@
         "ars_return_est": 12.3
       },
       {
-        "ticker": "T31Y7",
-        "name": "BONCAP T31Y7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 13.8
-      },
-      {
         "ticker": "VALO.BA",
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 24.8
+        "ars_return_est": 24.7
       }
     ],
-    "expected_return": 23.64,
-    "expected_volatility": 8.23,
-    "sharpe_ratio": 1.54,
+    "expected_return": 25.3,
+    "expected_volatility": 9.55,
+    "sharpe_ratio": 1.5,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 12.6
+    "spread_vs_inflation": 14.3
   }
 }

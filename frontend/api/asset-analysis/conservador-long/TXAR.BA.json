@@ -4,7 +4,7 @@
     "ticker": "TXAR.BA",
     "name": "TXAR",
     "category": "merval",
-    "price": 673.0,
+    "price": 675.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "conservador",
@@ -13,16 +13,16 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 50.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "50.1",
+        "content": "El RSI de 14 períodos está en 51.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "51.0",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (673.00) cotiza por debajo de la EMA de 200 días (673.23), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
-        "value": "Bajista",
-        "status": "warning"
+        "content": "El precio (675.00) se mantiene por encima de la EMA de 200 días (673.25), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (671.49) aún no confirma un cruce definitivo.",
+        "value": "Alcista",
+        "status": "neutral"
       },
       {
         "title": "Volatilidad Anualizada",
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-2.2%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-2.2% (1M)",
+        "content": "El rendimiento mensual es de **-1.9%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.9% (1M)",
         "status": "neutral"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-3.5%** y a 12 meses es **+14.4%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-3.5% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-3.2%** y a 12 meses es **+14.7%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-3.2% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **24.6%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-22.4%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 24.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **25.2%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-21.8%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 25.2%",
         "status": "danger"
       }
     ],
@@ -179,17 +179,17 @@
       "action": "EVITAR",
       "icon": "fa-circle-xmark",
       "color": "danger",
-      "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "take_profit": 1135.78,
-      "stop_loss": 467.32,
+      "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "take_profit": 1139.2,
+      "stop_loss": 468.69,
       "tp_pct": 68.8,
       "sl_pct": 30.6
     },
     "support": 603.4,
     "resistance": 705.8,
     "volume_cluster": 672.67,
-    "take_profit": 1135.78,
-    "stop_loss": 467.32,
+    "take_profit": 1139.2,
+    "stop_loss": 468.69,
     "tp_pct": 68.8,
     "sl_pct": 30.6
   }

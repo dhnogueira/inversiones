@@ -4,7 +4,7 @@
     "ticker": "AAPL",
     "name": "AAPL",
     "category": "sp500",
-    "price": 313.3599853515625,
+    "price": 313.1600036621094,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 62.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "62.8",
+        "content": "El RSI de 14 períodos está en 62.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "62.7",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (291.42) se encuentra por encima de la EMA de 200 días (269.33), y el precio actual (313.36) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (291.41) se encuentra por encima de la EMA de 200 días (269.33), y el precio actual (313.16) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+0.7%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (21.2%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+0.7% (1M)",
+        "content": "El rendimiento mensual es de **+0.6%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (21.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+0.6% (1M)",
         "status": "neutral"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+15.8%** y a 12 meses es **+47.3%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "content": "El rendimiento acumulado a 6 meses es **+15.8%** y a 12 meses es **+47.2%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
         "value": "+15.8% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **40.2%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+29.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 40.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **40.1%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+29.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 40.1%",
         "status": "success"
       }
     ],
@@ -174,16 +174,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 377.54,
-      "stop_loss": 281.27,
+      "take_profit": 377.29,
+      "stop_loss": 281.09,
       "tp_pct": 20.5,
       "sl_pct": 10.2
     },
     "support": 252.57,
     "resistance": 308.36,
     "volume_cluster": 263.6,
-    "take_profit": 377.54,
-    "stop_loss": 281.27,
+    "take_profit": 377.29,
+    "stop_loss": 281.09,
     "tp_pct": 20.5,
     "sl_pct": 10.2
   }
