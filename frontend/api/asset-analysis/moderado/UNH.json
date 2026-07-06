@@ -4,7 +4,7 @@
     "ticker": "UNH",
     "name": "UNH",
     "category": "sp500",
-    "price": 417.8349914550781,
+    "price": 417.69000244140625,
     "currency": "USD",
     "score": 77.1,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 59.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "59.2",
+        "content": "El RSI de 14 períodos está en 59.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "59.1",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (386.36) se encuentra por encima de la EMA de 200 días (350.07), y el precio actual (417.83) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (386.36) se encuentra por encima de la EMA de 200 días (350.07), y el precio actual (417.69) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+6.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (49.4%) refuerzan esta tendencia positiva.",
+        "content": "El activo registró un rendimiento del **+6.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (49.3%) refuerzan esta tendencia positiva.",
         "value": "+6.0% (1M)",
         "status": "success"
       },
@@ -50,15 +50,15 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.83** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "0.83",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.82** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
+        "value": "0.82",
         "status": "neutral"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+25.9%** y a 12 meses es **+39.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+25.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+25.8%** y a 12 meses es **+39.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+25.8% (6M)",
         "status": "success"
       },
       {
@@ -170,16 +170,16 @@
       "icon": "fa-circle-info",
       "color": "neutral",
       "summary": "Con un score de **77.1/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
-      "take_profit": 630.63,
-      "stop_loss": 311.44,
+      "take_profit": 630.42,
+      "stop_loss": 311.33,
       "tp_pct": 50.9,
       "sl_pct": 25.5
     },
     "support": 275.33,
     "resistance": 409.39,
     "volume_cluster": 283.1,
-    "take_profit": 630.63,
-    "stop_loss": 311.44,
+    "take_profit": 630.42,
+    "stop_loss": 311.33,
     "tp_pct": 50.9,
     "sl_pct": 25.5
   }
