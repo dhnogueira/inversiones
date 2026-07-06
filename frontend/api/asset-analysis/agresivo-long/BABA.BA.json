@@ -4,7 +4,7 @@
     "ticker": "BABA.BA",
     "name": "BABA",
     "category": "cedears",
-    "price": 16870.0,
+    "price": 16830.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 32.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "32.6",
+        "content": "El RSI de 14 períodos se encuentra en 32.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "32.3",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (19519.10) se encuentra por debajo de la EMA de 200 días (21701.06), y el precio (16870.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (19517.53) se encuentra por debajo de la EMA de 200 días (21700.67), y el precio (16830.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-16.9%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-16.9% (1M)",
+        "content": "El activo cayó un **-17.1%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-17.1% (1M)",
         "status": "danger"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-37.0%** y a 12 meses es **+7.6%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-37.0% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-37.1%** y a 12 meses es **+7.4%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-37.1% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **19.0%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-28.0%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 19.0%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **18.3%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-28.7%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 18.3%",
         "status": "danger"
       }
     ],
@@ -178,16 +178,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El RSI en zona de sobreventa podría representar una oportunidad contrarian si los fundamentos sostienen el precio.",
-      "take_profit": 43601.37,
-      "stop_loss": 4989.39,
+      "take_profit": 43500.42,
+      "stop_loss": 4976.48,
       "tp_pct": 158.5,
       "sl_pct": 70.4
     },
     "support": 17693.0,
     "resistance": 22854.86,
     "volume_cluster": 21354.43,
-    "take_profit": 43601.37,
-    "stop_loss": 4989.39,
+    "take_profit": 43500.42,
+    "stop_loss": 4976.48,
     "tp_pct": 158.5,
     "sl_pct": 70.4
   }

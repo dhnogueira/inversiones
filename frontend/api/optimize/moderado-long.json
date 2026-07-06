@@ -7,8 +7,8 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
+        "weight": 0.3865,
+        "weight_pct": 38.6,
         "ars_return_est": 500.0
       },
       {
@@ -16,9 +16,9 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 420.7
+        "weight": 0.1135,
+        "weight_pct": 11.4,
+        "ars_return_est": 426.7
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 334.3
+        "ars_return_est": 335.7
       },
       {
         "ticker": "ABBV",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 293.2
+        "ars_return_est": 294.2
       },
       {
         "ticker": "AAPL.BA",
@@ -72,7 +72,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 151.3
+        "ars_return_est": 149.7
       },
       {
         "ticker": "KO.BA",
@@ -81,7 +81,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 113.3
+        "ars_return_est": 112.9
       },
       {
         "ticker": "AMZN.BA",
@@ -93,14 +93,14 @@
         "ars_return_est": 94.5
       }
     ],
-    "expected_return": 360.28,
-    "expected_volatility": 24.81,
-    "sharpe_ratio": 12.63,
+    "expected_return": 360.02,
+    "expected_volatility": 24.72,
+    "sharpe_ratio": 12.66,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 313.3
+    "spread_vs_inflation": 313.0
   }
 }

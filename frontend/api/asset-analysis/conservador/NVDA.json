@@ -4,23 +4,23 @@
     "ticker": "NVDA",
     "name": "NVDA",
     "category": "sp500",
-    "price": 196.16000366210938,
+    "price": 195.85000610351562,
     "currency": "USD",
-    "score": 56.2,
+    "score": 55.9,
     "profile": "conservador",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 42.7, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "42.7",
+        "content": "El RSI de 14 períodos se encuentra en 42.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "42.3",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (196.16) se mantiene por encima de la EMA de 200 días (189.16), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (203.77) aún no confirma un cruce definitivo.",
+        "content": "El precio (195.85) se mantiene por encima de la EMA de 200 días (189.15), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (203.76) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-10.3%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-10.3% (1M)",
+        "content": "El activo cayó un **-10.4%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-10.4% (1M)",
         "status": "danger"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+4.0%** y a 12 meses es **+23.3%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+4.0% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+3.8%** y a 12 meses es **+23.1%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+3.8% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **68.4%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+46.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 68.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **68.2%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+46.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 68.2%",
         "status": "success"
       }
     ],
@@ -181,17 +181,17 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **56.2/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "take_profit": 271.01,
-      "stop_loss": 158.74,
+      "summary": "El score de **55.9/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "take_profit": 270.58,
+      "stop_loss": 158.49,
       "tp_pct": 38.2,
       "sl_pct": 19.1
     },
     "support": 177.16,
     "resistance": 219.36,
     "volume_cluster": 182.6,
-    "take_profit": 271.01,
-    "stop_loss": 158.74,
+    "take_profit": 270.58,
+    "stop_loss": 158.49,
     "tp_pct": 38.2,
     "sl_pct": 19.1
   }
