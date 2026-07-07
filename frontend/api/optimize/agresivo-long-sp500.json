@@ -1,0 +1,106 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 500.0
+      },
+      {
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 500.0
+      },
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 393.7
+      },
+      {
+        "ticker": "AVGO",
+        "name": "AVGO",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 308.7
+      },
+      {
+        "ticker": "LLY",
+        "name": "LLY",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 486.9
+      },
+      {
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 278.6
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVDA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 234.6
+      },
+      {
+        "ticker": "ABBV",
+        "name": "ABBV",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 334.9
+      },
+      {
+        "ticker": "TSLA",
+        "name": "TSLA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 314.3
+      },
+      {
+        "ticker": "UNH",
+        "name": "UNH",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 366.7
+      }
+    ],
+    "expected_return": 371.83,
+    "expected_volatility": 32.85,
+    "sharpe_ratio": 9.89,
+    "profile": "agresivo",
+    "horizon": "long",
+    "risk_free_rate": 47.0,
+    "inflation_reference": 47.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 324.8
+  }
+}

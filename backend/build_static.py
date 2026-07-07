@@ -93,15 +93,31 @@ async def main():
                     json.dump(rec_data, f, indent=2, ensure_ascii=False)
                 
             # Markowitz efficient allocation optimization
-            top_assets = scored["top_10"]
-            optimal = optimize_portfolio(top_assets, profile, horizon)
-            opt_data = {"status": "success", "optimization": optimal}
-            with open(os.path.join(API_DIR, "optimize", f"{profile}-{horizon}.json"), "w", encoding="utf-8") as f:
-                json.dump(opt_data, f, indent=2, ensure_ascii=False)
+            categories = ["all", "letras", "bonos", "merval", "cedears", "sp500", "crypto"]
+            for cat in categories:
+                if cat == "all":
+                    top_assets = scored["top_10"]
+                else:
+                    top_assets = scored["categories"].get(cat, [])
                 
-            if horizon == "medium":
-                with open(os.path.join(API_DIR, "optimize", f"{profile}.json"), "w", encoding="utf-8") as f:
+                optimal = optimize_portfolio(top_assets, profile, horizon)
+                opt_data = {"status": "success", "optimization": optimal}
+                
+                # Guardar el específico por categoría: {profile}-{horizon}-{category}.json
+                with open(os.path.join(API_DIR, "optimize", f"{profile}-{horizon}-{cat}.json"), "w", encoding="utf-8") as f:
                     json.dump(opt_data, f, indent=2, ensure_ascii=False)
+                
+                if cat == "all":
+                    with open(os.path.join(API_DIR, "optimize", f"{profile}-{horizon}.json"), "w", encoding="utf-8") as f:
+                        json.dump(opt_data, f, indent=2, ensure_ascii=False)
+                    
+                    if horizon == "medium":
+                        with open(os.path.join(API_DIR, "optimize", f"{profile}.json"), "w", encoding="utf-8") as f:
+                            json.dump(opt_data, f, indent=2, ensure_ascii=False)
+                
+                if horizon == "medium":
+                    with open(os.path.join(API_DIR, "optimize", f"{profile}-{cat}.json"), "w", encoding="utf-8") as f:
+                        json.dump(opt_data, f, indent=2, ensure_ascii=False)
                 
             # Asset Modals Analysis
             print(f"Precalculando reportes narrativos detallados para perfil '{profile}' ({horizon})...")

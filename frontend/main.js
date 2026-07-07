@@ -129,6 +129,7 @@ let yieldCurveChart = null;
 // DOM Elements
 const profileTabs = document.querySelectorAll('.profile-tab');
 const horizonTabs = document.querySelectorAll('.horizon-tab');
+const portfolioCategoryTabs = document.querySelectorAll('.portfolio-category-tab');
 const categoryFilters = document.querySelectorAll('.category-filter');
 const searchInput = document.getElementById('asset-search');
 const btnRefresh = document.getElementById('btn-refresh');
@@ -298,13 +299,39 @@ function setupEventListeners() {
     });
 
     // Category filter buttons
+    // Portfolio Category selector tabs (Third Row)
+    portfolioCategoryTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const cat = tab.getAttribute('data-portfolio-category');
+            state.activeCategory = cat;
+
+            // Sincronizar clases activas en ambas filas
+            portfolioCategoryTabs.forEach(t => {
+                t.classList.toggle('active', t.getAttribute('data-portfolio-category') === cat);
+            });
+            categoryFilters.forEach(f => {
+                f.classList.toggle('active', f.getAttribute('data-category') === cat);
+            });
+
+            loadActiveView();
+        });
+    });
+
+    // Category filter buttons (Table filters)
     categoryFilters.forEach(filter => {
         filter.addEventListener('click', () => {
-            categoryFilters.forEach(f => f.classList.remove('active'));
-            filter.classList.add('active');
+            const cat = filter.getAttribute('data-category');
+            state.activeCategory = cat;
 
-            state.activeCategory = filter.getAttribute('data-category');
-            renderTable();
+            // Sincronizar clases activas en ambas filas
+            portfolioCategoryTabs.forEach(t => {
+                t.classList.toggle('active', t.getAttribute('data-portfolio-category') === cat);
+            });
+            categoryFilters.forEach(f => {
+                f.classList.toggle('active', f.getAttribute('data-category') === cat);
+            });
+
+            loadActiveView();
         });
     });
 
@@ -630,9 +657,10 @@ async function fetchRecommendationsAndOptimize(profile) {
         }
 
         // Cargar optimizaciones
+        const cat = state.activeCategory || 'all';
         const optUrl = state.staticMode
-            ? `api/optimize/${profile}-${horizon}.json`
-            : `${state.apiBase}/api/optimize?profile=${profile}&horizon=${horizon}`;
+            ? `api/optimize/${profile}-${horizon}-${cat}.json`
+            : `${state.apiBase}/api/optimize?profile=${profile}&horizon=${horizon}&category=${cat}`;
 
         const optResponse = await fetch(optUrl);
         if (optResponse.ok) {
@@ -649,6 +677,41 @@ async function fetchRecommendationsAndOptimize(profile) {
 
 // Render dynamic optimization metrics & donut
 function renderOptimalDashboard(optimization) {
+    if (optimization.message) {
+        document.getElementById('metric-return').innerText = '--';
+        document.getElementById('metric-volatility').innerText = '--';
+        document.getElementById('metric-sharpe').innerText = '--';
+        const sharpeLabel = document.getElementById('metric-sharpe-label');
+        if (sharpeLabel) sharpeLabel.innerText = '';
+
+        const returnEl = document.getElementById('metric-return');
+        const metricReturnCard = returnEl.closest('.metric-card') || returnEl.parentElement.parentElement;
+        let infBadge = metricReturnCard.querySelector('.inflation-badge');
+        if (infBadge) infBadge.innerHTML = '';
+
+        const listContainer = document.getElementById('allocation-items');
+        listContainer.innerHTML = `
+            <div class="glass-panel" style="padding: 20px; border-left: 4px solid var(--color-agresivo); display: flex; align-items: center; gap: 12px; grid-column: 1/-1; width: 100%;">
+                <i class="fa-solid fa-triangle-exclamation" style="font-size: 24px; color: var(--color-agresivo);"></i>
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: var(--text-primary); font-weight:600;">Sin asignación recomendada</h4>
+                    <p style="margin: 0; font-size: 13px; color: var(--text-secondary);">${optimization.message}</p>
+                </div>
+            </div>
+        `;
+
+        if (allocationChart) {
+            allocationChart.destroy();
+            allocationChart = null;
+        }
+        document.getElementById('allocation-chart').innerHTML = `
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:var(--text-muted); font-size:13px; text-align:center; padding: 20px;">
+                <i class="fa-solid fa-ban" style="font-size: 24px; margin-bottom:8px; opacity:0.5;"></i>
+                Ningún activo seleccionado
+            </div>`;
+        return;
+    }
+
     const expectedReturn = optimization.expected_return;
     const inflationRef = optimization.inflation_reference || 22.0;
     const beatsInflation = optimization.beats_inflation !== undefined ? optimization.beats_inflation : expectedReturn > inflationRef;

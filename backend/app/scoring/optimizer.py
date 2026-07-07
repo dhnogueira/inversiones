@@ -90,6 +90,24 @@ def optimize_portfolio(assets, profile, horizon=HORIZON_MEDIUM, risk_free_rate=N
     # ---- Restricciones de peso según perfil y horizonte ----
     bounds = get_weight_bounds(assets, profile, horizon)
 
+    # Validar si se permite asignar fondos a esta categoría (evitar que SLSQP falle por cotas cero)
+    max_allocatable = sum(hi for lo, hi in bounds)
+    if max_allocatable < 0.01:
+        return {
+            "weights": [],
+            "expected_return": 0.0,
+            "expected_volatility": 0.0,
+            "sharpe_ratio": 0.0,
+            "profile": profile,
+            "horizon": horizon,
+            "risk_free_rate": round(risk_free_rate * 100, 2),
+            "inflation_reference": round(horizon_inflation * 100, 1),
+            "beats_inflation": False,
+            "spread_vs_inflation": 0.0,
+            "message": "Ningún activo de esta categoría está permitido para tu perfil de riesgo y horizonte seleccionado."
+        }
+
+
     # Restricción suma de pesos = 1
     constraints = [{'type': 'eq', 'fun': lambda w: np.sum(w) - 1.0}]
 

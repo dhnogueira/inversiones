@@ -42,13 +42,56 @@ async def refresh_all_data(force=False):
         is_updating = False
 
 def run_scheduler_refresh():
+    import sys
+    import subprocess
+    
+    # 1. Actualizar caché y base de datos locales
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    loop.run_until_complete(refresh_all_data(force=True))
-    loop.close()
+    try:
+        loop.run_until_complete(refresh_all_data(force=True))
+    finally:
+        loop.close()
+
+    # Rutas base
+    backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # Inversiones/backend
+    root_dir = os.path.dirname(backend_dir) # Inversiones/
+
+    # 2. Compilar los archivos estáticos en frontend/api
+    try:
+        python_executable = sys.executable or "python"
+        build_script = os.path.join(backend_dir, "build_static.py")
+        print(f"[scheduler] Ejecutando compilación estática: {python_executable} {build_script}")
+        res_build = subprocess.run([python_executable, build_script], capture_output=True, text=True, cwd=backend_dir)
+        if res_build.returncode == 0:
+            print("[scheduler] Compilación estática finalizada con éxito.")
+        else:
+            print(f"[scheduler] Error compilando estáticos (código {res_build.returncode}): {res_build.stderr}")
+    except Exception as e:
+        print(f"[scheduler] Excepción al compilar estáticos: {e}")
+
+    # 3. Autopush a GitHub Pages si se generaron cambios en frontend/api
+    try:
+        print(f"[scheduler] Ejecutando git add y verificación en {root_dir}")
+        subprocess.run(["git", "add", "frontend/api/"], capture_output=True, text=True, cwd=root_dir)
+        
+        # Verificar cambios staged
+        status_res = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, cwd=root_dir)
+        staged_changes = [line for line in status_res.stdout.splitlines() if line.startswith(('M ', 'A ', 'D ', 'MM', 'AM'))]
+        
+        if staged_changes:
+            print(f"[scheduler] Detectados {len(staged_changes)} cambios. Ejecutando git commit...")
+            git_commit = subprocess.run(["git", "commit", "-m", "data: 10-minute automated market update"], capture_output=True, text=True, cwd=root_dir)
+            print(f"[scheduler] Git commit ejecutado: {git_commit.stdout.strip()}")
+        else:
+            print("[scheduler] Sin cambios nuevos para commitear.")
+    except Exception as e:
+        print(f"[scheduler] Error en autopush: {e}")
+
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(run_scheduler_refresh, 'cron', hour=11, minute=0, id='daily_market_update')
+# Ejecutar cada 10 minutos (interval)
+scheduler.add_job(run_scheduler_refresh, 'interval', minutes=10, id='market_data_10_min')
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -150,11 +193,21 @@ async def get_asset_analysis(
 @app.get("/api/optimize")
 async def get_optimal_portfolio(
     profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$"),
-    horizon: str = Query("medium", regex="^(short|medium|long)$")
+    horizon: str = Query("medium", regex="^(short|medium|long)$"),
+    category: str = Query("all")
 ):
     all_assets = await _get_all_assets()
     scored = get_recommendations_by_profile(all_assets, profile, horizon)
-    top_assets = scored["top_10"]
+    
+    if category == "all":
+        top_assets = scored["top_10"]
+    else:
+        top_assets = scored["categories"].get(category, [])
+        # Si la lista de la categoría está vacía en 'categories', intentar filtrar scored_assets completos
+        if not top_assets:
+            # Por si acaso la categoría está vacía por falta de activos calificados en el top
+            pass
+
     result = optimize_portfolio(top_assets, profile, horizon)
     return {"status": "success", "optimization": result}
 
@@ -263,18 +316,26 @@ async def post_subscribe(data: dict = Body(...)):
     return res
 
 async def dispatch_daily_alert_email():
-    """Genera las recomendaciones y despacha el correo del Top 5 de activos."""
+    """Genera las recomendaciones y despacha el correo con el Top 5 de cada categoría."""
     all_assets = await _get_all_assets()
     scored = get_recommendations_by_profile(all_assets, "moderado", "medium")
-    top_assets = scored.get("top_10", [])
-    # Ordenar por score desc y tomar los 5 mejores
-    top5 = sorted(top_assets, key=lambda x: x.get("score", 0), reverse=True)[:5]
-    if top5:
+    
+    categories_data = scored.get("categories", {})
+    categorized_top5 = {}
+    
+    # Para cada categoría, ordenar por score descendente y tomar los top 5
+    for cat_name, asset_list in categories_data.items():
+        sorted_assets = sorted(asset_list, key=lambda x: x.get("score", 0), reverse=True)[:5]
+        if sorted_assets:
+            categorized_top5[cat_name] = sorted_assets
+
+    if categorized_top5:
         from app.services.email_service import send_daily_alert_email
-        send_daily_alert_email(top5)
-        print("[scheduler] Alerta diaria enviada por email con éxito.")
+        send_daily_alert_email(categorized_top5)
+        print("[scheduler] Alerta diaria enviada por email por categorías con éxito.")
     else:
         print("[scheduler] No se obtuvieron activos válidos para enviar alerta por email.")
+
 
 def run_scheduler_email_alert():
     loop = asyncio.new_event_loop()

@@ -221,6 +221,40 @@ def _normalize(value, low, high):
     return max(0.0, min(100.0, normed))
 
 
+def determine_horizon_trend(asset, horizon):
+    price = asset.get("price", 0.0)
+    ema_50 = asset.get("ema_50", 0.0)
+    ema_200 = asset.get("ema_200", 0.0)
+    ema_200_slope = asset.get("ema_200_slope", 0.0)
+    ret_12m = asset.get("ret_12m", 0.0)
+    momentum_accel = asset.get("momentum_accel", 0.0)
+    category = asset.get("category", "")
+    
+    if category in ("letras", "bonos"):
+        return "Alcista"
+        
+    if horizon == HORIZON_SHORT:
+        # short-term trend based on EMA 50
+        if price > ema_50:
+            return "Fuerte Alcista" if momentum_accel >= 0 else "Alcista"
+        else:
+            return "Fuerte Bajista" if momentum_accel < 0 else "Bajista"
+            
+    elif horizon == HORIZON_LONG:
+        # long-term trend based on EMA 200 slope and 12m performance
+        if ema_200_slope >= 0.0:
+            return "Fuerte Alcista" if ret_12m > 0.15 else "Alcista"
+        else:
+            return "Fuerte Bajista" if ret_12m < -0.15 else "Bajista"
+            
+    else: # HORIZON_MEDIUM
+        # standard EMA crossover
+        if price > ema_200:
+            return "Fuerte Alcista" if (ema_50 > ema_200 and price > ema_50) else "Alcista"
+        else:
+            return "Fuerte Bajista" if (ema_50 < ema_200 and price < ema_50) else "Bajista"
+
+
 def score_asset_for_profile(asset, profile, horizon=HORIZON_MEDIUM):
     """
     Scoring cuantitativo multi-horizonte. Clasifica y aplica reglas tácticas
@@ -228,7 +262,7 @@ def score_asset_for_profile(asset, profile, horizon=HORIZON_MEDIUM):
     """
     ticker = asset.get("ticker")
     category = asset.get("category")
-    trend = asset.get("trend", "Alcista")
+    trend = determine_horizon_trend(asset, horizon)
     maturity = asset.get("maturity", None)
 
     ret_1m = _safe(asset.get("ret_1m"))
@@ -451,6 +485,21 @@ def score_asset_for_profile(asset, profile, horizon=HORIZON_MEDIUM):
             score -= 20.0
         if ret_12m < 0.0:
             score -= 25.0
+            
+        # Estrategia de Acumulación por Drawdown (Refuerzo Experto)
+        drawdown_pct = asset.get("drawdown_pct", 0.0)
+        
+        # Si el activo tiene tendencia de largo plazo alcista y buen Sharpe, se incentiva comprar con descuento
+        if trend in ("Alcista", "Fuerte Alcista") and sharpe >= 0.0:
+            # Límites de descuento ideales por clase de activo
+            if category == "crypto" and 0.20 <= drawdown_pct <= 0.65:
+                score += 12.0
+            elif category in ("sp500", "cedears", "merval") and 0.12 <= drawdown_pct <= 0.40:
+                score += 10.0
+                
+        # Si cotiza en máximos (drawdown casi nulo) con alta volatilidad, penalizamos levemente el FOMO
+        if drawdown_pct < 0.02 and volatility > 0.30:
+            score -= 8.0
 
     # Ajuste por inflación
     expected_ret_ars = estimate_expected_return_ars(asset, profile, horizon)
@@ -479,8 +528,10 @@ def get_recommendations_by_profile(market_data, profile, horizon=HORIZON_MEDIUM)
     """
     scored_assets = []
     for asset in market_data:
-        score = score_asset_for_profile(asset, profile, horizon)
-        scored_assets.append({**asset, "score": round(score, 1)})
+        h_trend = determine_horizon_trend(asset, horizon)
+        asset_updated = {**asset, "trend": h_trend}
+        score = score_asset_for_profile(asset_updated, profile, horizon)
+        scored_assets.append({**asset_updated, "score": round(score, 1)})
 
     scored_assets.sort(key=lambda x: x["score"], reverse=True)
     valid = [a for a in scored_assets if a["score"] > 0]

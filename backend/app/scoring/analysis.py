@@ -374,7 +374,9 @@ def generate_asset_analysis(asset, profile, horizon="medium"):
     technical.append(build_volume_level_analysis(price, support, resistance, volume_cluster, currency))
 
     # ------- Sección 2: Análisis Fundamental / Rendimiento -------
-    fundamental = build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile, horizon)
+    high_52w = asset.get("high_52w", None)
+    drawdown_pct = asset.get("drawdown_pct", None)
+    fundamental = build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile, horizon, high_52w, drawdown_pct)
 
     # ------- Sección 3: Contexto Macroeconómico -------
     macro = build_macro_context(category, currency, profile)
@@ -387,10 +389,29 @@ def generate_asset_analysis(asset, profile, horizon="medium"):
     verdict["tp_pct"] = tp_pct
     verdict["sl_pct"] = sl_pct
 
-    # ------- Sección 5: Análisis de Balances (últimos 5 trimestres) -------
+    # ------- Sección 5: Análisis de Balances (+ltimos 5 trimestres) -------
     balances = build_balance_analysis(ticker, category)
 
-    return {
+    # ------- Sección 6-8: Estrategias de Largo Plazo (solo cuando horizon=long) -------
+    long_term_strategies = None
+    if horizon == HORIZON_LONG and category not in ("letras", "bonos", "crypto"):
+        long_term_strategies = {
+            "value": build_value_investing_analysis(asset, currency),
+            "quality": build_quality_investing_analysis(asset, currency),
+            "dividend": build_dividend_growth_analysis(asset, currency),
+        }
+
+    # ------- Sección 9-12: Estrategias de Mediano Plazo (solo cuando horizon=medium) -------
+    medium_term_strategies = None
+    if horizon == HORIZON_MEDIUM and category not in ("letras", "bonos"):
+        medium_term_strategies = {
+            "earnings_revision": build_earnings_revision_analysis(asset, currency),
+            "can_slim": build_can_slim_analysis(asset, currency),
+            "relative_strength": build_relative_strength_analysis(asset, currency),
+            "garp": build_garp_analysis(asset, currency),
+        }
+
+    result = {
         "ticker": ticker,
         "name": name,
         "category": category,
@@ -412,6 +433,11 @@ def generate_asset_analysis(asset, profile, horizon="medium"):
         "tp_pct": tp_pct,
         "sl_pct": sl_pct
     }
+    if long_term_strategies:
+        result["long_term_strategies"] = long_term_strategies
+    if medium_term_strategies:
+        result["medium_term_strategies"] = medium_term_strategies
+    return result
 
 
 
@@ -513,8 +539,55 @@ def build_technical_analysis(price, rsi, ema_50, ema_200, volatility, trend, ret
 
 
 
-def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile="moderado", horizon="medium"):
+def build_fundamental_analysis(category, sharpe, ret_6m, ret_12m, tna, maturity, volatility, currency, profile="moderado", horizon="medium", high_52w=None, drawdown_pct=None):
     sections = []
+
+    # Drawdown-from-Peak Value Accumulation Analysis (Largo Plazo)
+    if horizon == "long" and category not in ("letras", "bonos") and drawdown_pct is not None and high_52w is not None:
+        dd_val = drawdown_pct * 100
+        
+        if category == "crypto":
+            is_acc = 20.0 <= dd_val <= 65.0
+        else: # equities (sp500, cedears, merval)
+            is_acc = 12.0 <= dd_val <= 40.0
+            
+        is_peak = dd_val < 2.0  # menos de 2% de caída desde el máximo es considerado pico
+        
+        title = "Zona de Acumulación (Drawdown)"
+        icon = "fa-layer-group"
+        value = f"-{dd_val:.1f}%"
+        
+        if is_acc:
+            content = (
+                f"**¿Qué significa?** Este activo cotiza un **{dd_val:.1f}%** por debajo "
+                f"de su máximo anual de **{currency} {high_52w:,.2f}**. "
+                f"Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. "
+                f"La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento."
+            )
+            status = "success"
+        elif is_peak:
+            content = (
+                f"**¿Qué significa?** El activo cotiza cerca de su máximo anual de **{currency} {high_52w:,.2f}** "
+                f"(descuento mínimo del **{dd_val:.1f}%**), lo que indica una zona de **máximos (Peak-FOMO)**. "
+                f"Para un inversor de largo plazo, comprar en esta zona representa un riesgo de entrar en la parte alta del mercado. "
+                f"Se recomienda cautela o compras escalonadas (DCA) para mitigar el riesgo de reversión rápida."
+            )
+            status = "warning"
+        else:
+            content = (
+                f"**¿Qué significa?** El activo presenta un descuento del **{dd_val:.1f}%** respecto a su máximo anual de "
+                f"**{currency} {high_52w:,.2f}**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, "
+                f"por lo que su conveniencia depende de los fundamentos generales."
+            )
+            status = "neutral"
+            
+        sections.append({
+            "title": title,
+            "icon": icon,
+            "content": content,
+            "value": value,
+            "status": status
+        })
 
     # Sharpe Ratio
     sharpe_intro = (
@@ -752,3 +825,845 @@ def build_verdict(score, profile, category, trend, sharpe, rsi, volatility):
         "color": color,
         "summary": summary
     }
+
+
+# ============================================================
+#   ESTRATEGIAS DE LARGO PLAZO
+# ============================================================
+
+def build_value_investing_analysis(asset, currency):
+    """
+    Value Investing (Graham / Buffett).
+    Evalúa PER, P/B, FCF yield, ROE, márgenes y deuda.
+    """
+    sections = []
+
+    pe = asset.get("pe_ratio")
+    pb = asset.get("pb_ratio")
+    fcf_yield = asset.get("fcf_yield")
+    roe = asset.get("roe")
+    profit_margin = asset.get("profit_margin")
+    debt_to_equity = asset.get("debt_to_equity")
+
+    # --- PER (Price / Earnings) ---
+    if pe is not None:
+        if pe < 15:
+            pe_text = f"El **PER de {pe:.1f}x** es bajo (< 15x), indicando que el mercado valúa la empresa a un precio razonable o incluso barato respecto a sus ganancias. Benjamin Graham consideraba este rango como zona de valor."
+            pe_status = "success"
+        elif pe < 25:
+            pe_text = f"El **PER de {pe:.1f}x** se encuentra en un rango moderado (15-25x). No es barato ni caro según el criterio clásico de Graham; el precio ya descuenta cierto crecimiento futuro."
+            pe_status = "neutral"
+        else:
+            pe_text = f"El **PER de {pe:.1f}x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación."
+            pe_status = "warning"
+    else:
+        pe_text = "No hay datos de PER disponibles para este activo (puede ser una empresa sin ganancias positivas o un CEDEAR sin cobertura directa)."
+        pe_status = "neutral"
+
+    sections.append({
+        "title": "PER — Price / Earnings",
+        "icon": "fa-tag",
+        "content": pe_text,
+        "value": f"{pe:.1f}x" if pe else "N/D",
+        "status": pe_status
+    })
+
+    # --- P/B (Precio / Valor Libros) ---
+    if pb is not None:
+        if pb < 1.5:
+            pb_text = f"El **P/B de {pb:.2f}x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado."
+            pb_status = "success"
+        elif pb < 3.0:
+            pb_text = f"El **P/B de {pb:.2f}x** es razonable. El mercado paga una moderada prima sobre el valor contable, coherente con empresas de calidad que generan retorbos superiores al promedio."
+            pb_status = "neutral"
+        else:
+            pb_text = f"El **P/B de {pb:.2f}x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad."
+            pb_status = "warning"
+    else:
+        pb_text = "El Precio/Valor Libro no está disponible para este activo."
+        pb_status = "neutral"
+
+    sections.append({
+        "title": "Precio / Valor Libro (P/B)",
+        "icon": "fa-book-open",
+        "content": pb_text,
+        "value": f"{pb:.2f}x" if pb else "N/D",
+        "status": pb_status
+    })
+
+    # --- FCF Yield ---
+    if fcf_yield is not None:
+        fcf_pct = fcf_yield * 100
+        if fcf_yield > 0.04:
+            fcf_text = f"El **FCF Yield del {fcf_pct:.1f}%** es robusto. La empresa genera abundante flujo de caja libre en relación a su capitalización bursátil, lo que le permite reinvertir, pagar dividendos y recomprar acciones sin depender de deuda."
+            fcf_status = "success"
+        elif fcf_yield > 0:
+            fcf_text = f"El **FCF Yield del {fcf_pct:.1f}%** es positivo pero moderado. La empresa genera caja libre, aunque el margen no es especialmente generoso a este nivel de precio."
+            fcf_status = "neutral"
+        else:
+            fcf_text = f"El **FCF Yield es negativo ({fcf_pct:.1f}%)**. La empresa está en etapa de inversión intensa (quema de caja). Puede ser estratégico, pero requiere vigilar que la reinversión genere retornos futuros superiores al costo del capital."
+            fcf_status = "danger"
+    else:
+        fcf_text = "No se dispone de datos de flujo de caja libre para este activo."
+        fcf_status = "neutral"
+
+    sections.append({
+        "title": "Flujo de Caja Libre (FCF Yield)",
+        "icon": "fa-money-bill-wave",
+        "content": fcf_text,
+        "value": f"{fcf_yield*100:.1f}%" if fcf_yield is not None else "N/D",
+        "status": fcf_status
+    })
+
+    # --- ROE ---
+    if roe is not None:
+        roe_pct = roe * 100
+        if roe > 0.15:
+            roe_text = f"El **ROE del {roe_pct:.1f}%** es excelente (> 15%). La empresa genera una alta rentabilidad sobre el capital de los accionistas, señal de ventaja competitiva sostenible. Buffett considera el ROE alto consistente como uno de los indicadores más confiables de una gran empresa."
+            roe_status = "success"
+        elif roe > 0.08:
+            roe_text = f"El **ROE del {roe_pct:.1f}%** es aceptable (8-15%). La gestión del capital es razonable sin ser excepcional."
+            roe_status = "neutral"
+        else:
+            roe_text = f"El **ROE del {roe_pct:.1f}%** es bajo (< 8%). La empresa no genera una rentabilidad suficiente sobre el capital invertido, lo que reduce el atractivo como inversión de valor a largo plazo."
+            roe_status = "warning"
+    else:
+        roe_text = "No hay datos de ROE disponibles para este activo."
+        roe_status = "neutral"
+
+    sections.append({
+        "title": "ROE — Rentabilidad sobre Patrimonio",
+        "icon": "fa-percent",
+        "content": roe_text,
+        "value": f"{roe*100:.1f}%" if roe is not None else "N/D",
+        "status": roe_status
+    })
+
+    # --- Deuda (D/E) ---
+    if debt_to_equity is not None:
+        if debt_to_equity < 0.5:
+            de_text = f"La relación **Deuda/Patrimonio de {debt_to_equity:.2f}x** es baja. La empresa opera con financiamiento propio predominante, lo que le otorga solidez y flexibilidad financiera ante ciclos adversos."
+            de_status = "success"
+        elif debt_to_equity < 1.5:
+            de_text = f"La relación **Deuda/Patrimonio de {debt_to_equity:.2f}x** es moderada y manejable, habitual en empresas maduras que usan apalancamiento de forma controlada."
+            de_status = "neutral"
+        else:
+            de_text = f"La relación **Deuda/Patrimonio de {debt_to_equity:.2f}x** es alta. Un apalancamiento elevado amplifica los riesgos en períodos de suba de tasas o menores ingresos."
+            de_status = "warning"
+    else:
+        de_text = "Datos de deuda no disponibles para este activo."
+        de_status = "neutral"
+
+    sections.append({
+        "title": "Bajo Endeudamiento (D/E)",
+        "icon": "fa-shield-halved",
+        "content": de_text,
+        "value": f"{debt_to_equity:.2f}x" if debt_to_equity is not None else "N/D",
+        "status": de_status
+    })
+
+    return sections
+
+
+def build_quality_investing_analysis(asset, currency):
+    """
+    Quality Investing: Value + Quality + Momentum + Low Volatility.
+    Combina márgenes operativos, Sharpe, retornos y volatilidad baja.
+    """
+    sections = []
+
+    profit_margin = asset.get("profit_margin")
+    operating_margin = asset.get("operating_margin")
+    roe = asset.get("roe")
+    sharpe = asset.get("sharpe", 0.0) or 0.0
+    volatility = asset.get("volatility", 0.3) or 0.3
+    ret_12m = asset.get("ret_12m", 0.0) or 0.0
+    ret_3m = asset.get("ret_3m", 0.0) or 0.0
+    pe = asset.get("pe_ratio")
+
+    # --- Margen Operativo (Quality of earnings) ---
+    if operating_margin is not None:
+        op_pct = operating_margin * 100
+        if operating_margin > 0.20:
+            om_text = f"El **margen operativo del {op_pct:.1f}%** es elevado. Empresas con márgenes operativos superiores al 20% reflejan ventajas competitivas estructurales ('moat'): poder de fijación de precios, economías de escala o diferenciación de producto. Factor clave en Quality Investing."
+            om_status = "success"
+        elif operating_margin > 0.10:
+            om_text = f"El **margen operativo del {op_pct:.1f}%** es bueno (10-20%), coherente con empresas del sector que operan eficientemente."
+            om_status = "neutral"
+        elif operating_margin > 0:
+            om_text = f"El **margen operativo del {op_pct:.1f}%** es bajo pero positivo. La empresa es rentable a nivel operativo, aunque con poca holgura ante presiones de costos."
+            om_status = "warning"
+        else:
+            om_text = f"El **margen operativo es negativo ({op_pct:.1f}%)**. La empresa consume más recursos de los que genera a nivel operativo, lo cual es una señal de alerta importante para una inversión de calidad a largo plazo."
+            om_status = "danger"
+    else:
+        om_text = "No se dispone de datos de margen operativo. Este indicador es fundamental para evaluar la calidad del negocio."
+        om_status = "neutral"
+
+    sections.append({
+        "title": "Márgenes Consistentes (Quality)",
+        "icon": "fa-chart-pie",
+        "content": om_text,
+        "value": f"{operating_margin*100:.1f}%" if operating_margin is not None else "N/D",
+        "status": om_status
+    })
+
+    # --- Momentum de 3 meses ---
+    mom_pct = ret_3m * 100
+    if ret_3m > 0.10:
+        mom_text = f"El **momentum de 3 meses (+{mom_pct:.1f}%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing."
+        mom_status = "success"
+    elif ret_3m > 0:
+        mom_text = f"El **momentum trimestral (+{mom_pct:.1f}%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada."
+        mom_status = "neutral"
+    else:
+        mom_text = f"El **momentum trimestral ({mom_pct:.1f}%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista."
+        mom_status = "warning"
+
+    sections.append({
+        "title": "Momentum (Factor de Precio)",
+        "icon": "fa-rocket",
+        "content": mom_text,
+        "value": f"{ret_3m*100:+.1f}% (3M)",
+        "status": mom_status
+    })
+
+    # --- Low Volatility Factor ---
+    vol_pct = volatility * 100
+    if volatility < 0.20:
+        lv_text = f"La **volatilidad anualizada del {vol_pct:.1f}%** es baja. Uno de los hallazgos más contraintuitivos de las finanzas modernas es que activos de baja volatilidad superan en retorno ajustado por riesgo a los de alta volatilidad en el largo plazo (Low Volatility Anomaly). Este activo encaja en ese perfil."
+        lv_status = "success"
+    elif volatility < 0.35:
+        lv_text = f"La **volatilidad anualizada del {vol_pct:.1f}%** es moderada. El activo no representa riesgo extremo y puede utilizarse como pilar estabilizador en un portafolio diversificado."
+        lv_status = "neutral"
+    else:
+        lv_text = f"La **volatilidad anualizada del {vol_pct:.1f}%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables."
+        lv_status = "warning"
+
+    sections.append({
+        "title": "Baja Volatilidad (Low Vol Factor)",
+        "icon": "fa-water",
+        "content": lv_text,
+        "value": f"{vol_pct:.1f}%",
+        "status": lv_status
+    })
+
+    # --- Small / Large Cap context via P/E proxy ---
+    if pe is not None:
+        sc_text = (
+            f"**Contexto PER vs. Factor Value/Quality:** El PER de {pe:.1f}x posiciona a esta empresa en el segmento de "
+            + ("valuación razonable, donde convergen los factores Value y Quality a largo plazo." if pe < 20 else
+               "crecimiento premium, más cercano al Quality puro que al Value estricto.")
+        )
+    else:
+        sc_text = "No hay datos de PER para contextualizar el factor Small Cap / Valuación relativa."
+
+    sections.append({
+        "title": "Factor Value / Quality (Contexto PER)",
+        "icon": "fa-building-columns",
+        "content": sc_text,
+        "value": f"{pe:.1f}x" if pe else "N/D",
+        "status": "neutral"
+    })
+
+    return sections
+
+
+def build_dividend_growth_analysis(asset, currency):
+    """
+    Dividend Growth Investing.
+    No busca el dividendo más alto, sino el que crece sostenidamente año a año.
+    """
+    sections = []
+
+    dividend_yield = asset.get("dividend_yield")
+    payout_ratio = asset.get("payout_ratio")
+    dividend_growing = asset.get("dividend_growing", False)
+    roe = asset.get("roe")
+    profit_margin = asset.get("profit_margin")
+    debt_to_equity = asset.get("debt_to_equity")
+
+    # --- Dividend Yield ---
+    if dividend_yield is not None and dividend_yield > 0:
+        dy_pct = dividend_yield * 100
+        if 1.5 <= dy_pct <= 5.0:
+            dy_text = (
+                f"El **dividend yield del {dy_pct:.2f}%** se encuentra en el rango óptimo para Dividend Growth Investing (1.5% - 5%). "
+                f"No se busca el mayor dividendo del mercado, sino uno **sostenible y creciente**: Coca-Cola, Johnson & Johnson y Procter & Gamble operan en este rango. "
+                f"Un yield extremadamente alto (> 6-7%) muchas veces señala que el mercado descuenta un recorte del dividendo."
+            )
+            dy_status = "success"
+        elif dy_pct < 1.5:
+            dy_text = f"El **dividend yield del {dy_pct:.2f}%** es bajo. La empresa puede ser de alta calidad y con crecimiento de dividendos, pero actualmente paga poco en términos absolutos. Podría corresponder a una empresa de crecimiento que reinvierte en lugar de distribuir."
+            dy_status = "neutral"
+        else:
+            dy_text = f"El **dividend yield del {dy_pct:.2f}%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso."
+            dy_status = "warning"
+    else:
+        dy_text = "Este activo **no paga dividendos** actualmente. No encaja en el perfil de Dividend Growth Investing clásico. Para inversores de renta pasiva, este activo debería complementarse con otros de la cartera que sí generen flujo de dividendos."
+        dy_status = "neutral"
+
+    sections.append({
+        "title": "Dividend Yield (Rendimiento por Dividendo)",
+        "icon": "fa-coins",
+        "content": dy_text,
+        "value": f"{dividend_yield*100:.2f}%" if dividend_yield else "Sin dividendo",
+        "status": dy_status
+    })
+
+    # --- Payout Ratio ---
+    if payout_ratio is not None and payout_ratio > 0:
+        pr_pct = payout_ratio * 100
+        if payout_ratio < 0.60:
+            pr_text = f"El **payout ratio del {pr_pct:.0f}%** es saludable. La empresa distribuye menos del 60% de sus ganancias, reteniendo capital suficiente para continuar creciendo y **aumentar el dividendo en el futuro**. Este es el indicador más importante del Dividend Growth Investing: la capacidad de subir el dividendo año a año."
+            pr_status = "success"
+        elif payout_ratio < 0.85:
+            pr_text = f"El **payout ratio del {pr_pct:.0f}%** es moderado-alto. La empresa distribuye una parte significativa de sus ganancias. El crecimiento futuro del dividendo dependerá de que la empresa continúe expandiendo sus beneficios."
+            pr_status = "neutral"
+        else:
+            pr_text = f"El **payout ratio del {pr_pct:.0f}%** es muy alto. La empresa distribuye casi la totalidad de sus ganancias, lo que deja poco margen para incrementar el dividendo o absorber una caída en los ingresos. Señal de alerta para el crecimiento sostenido del dividendo."
+            pr_status = "warning"
+    else:
+        pr_text = "No hay datos de payout ratio disponibles para este activo."
+        pr_status = "neutral"
+
+    sections.append({
+        "title": "Payout Ratio (Sostenibilidad del Dividendo)",
+        "icon": "fa-sliders",
+        "content": pr_text,
+        "value": f"{payout_ratio*100:.0f}%" if payout_ratio else "N/D",
+        "status": pr_status
+    })
+
+    # --- Dividendo Creciente ---
+    if dividend_yield and dividend_yield > 0:
+        if dividend_growing:
+            dg_text = "✅ Los datos históricos sugieren que esta empresa **ha mantenido o aumentado sus dividendos** en los últimos años, siguiendo el patrón de los Dividend Aristocrats y Dividend Kings. Empresas como J&J, PG y Coca-Cola llevan más de 25 años incrementando el dividendo ininterrumpidamente."
+            dg_status = "success"
+        else:
+            dg_text = "⚠️ Los datos disponibles no confirman una trayectoria clara de crecimiento de dividendos. Puede deberse a recortes previos, estabilización, o datos incompletos. Se recomienda verificar el historial de dividendos directamente en la fuente del broker."
+            dg_status = "warning"
+    else:
+        dg_text = "Este activo no paga dividendos, por lo que no aplica el análisis de crecimiento de dividendos."
+        dg_status = "neutral"
+
+    sections.append({
+        "title": "Dividendo Creciente (Dividend Growth)",
+        "icon": "fa-arrow-trend-up",
+        "content": dg_text,
+        "value": "Sí ✅" if dividend_growing else ("No ⚠️" if (dividend_yield and dividend_yield > 0) else "N/A"),
+        "status": dg_status
+    })
+
+    # --- Solidez de los fundamentos (FCF + Margen) ---
+    fcf_yield = asset.get("fcf_yield")
+    fcf_ok = fcf_yield is not None and fcf_yield > 0.02
+    margin_ok = profit_margin is not None and profit_margin > 0.10
+    debt_ok = debt_to_equity is not None and debt_to_equity < 1.0
+
+    pillars = []
+    if fcf_ok: pillars.append("FCF positivo y sostenible")
+    if margin_ok: pillars.append(f"margen neto del {profit_margin*100:.0f}%")
+    if debt_ok: pillars.append(f"baja deuda (D/E: {debt_to_equity:.2f}x)")
+
+    if len(pillars) >= 2:
+        sol_text = f"Los fundamentos de la empresa son **sólidos**: {', '.join(pillars)}. Esto respalda la capacidad de mantener y hacer crecer el dividendo en el largo plazo, incluso en entornos económicos adversos."
+        sol_status = "success"
+    elif len(pillars) == 1:
+        sol_text = f"La empresa presenta **algunos pilares sólidos** ({', '.join(pillars)}), pero no cumple todos los criterios de robustez fundamental para Dividend Growth Investing. Se recomienda monitorear la evolución de los indicadores faltantes."
+        sol_status = "neutral"
+    else:
+        sol_text = "Los datos disponibles no permiten confirmar la solidez fundamental necesaria para una tesis de Dividend Growth estable. Puede deberse a datos faltantes o a una empresa con fundamentos más débiles."
+        sol_status = "warning"
+
+    sections.append({
+        "title": "Solidez Fundamental (Pilar del DGI)",
+        "icon": "fa-landmark-flag",
+        "content": sol_text,
+        "value": f"{len(pillars)}/3 pilares",
+        "status": sol_status
+    })
+
+    return sections
+
+
+# ============================================================
+#   ESTRATEGIAS DE MEDIANO PLAZO (6-12 meses)
+# ============================================================
+
+def build_earnings_revision_analysis(asset, currency):
+    """
+    Earnings Revision Strategy.
+    Evalúa revisiones positivas del EPS, consensus de analistas y upside de precio objetivo.
+    """
+    sections = []
+
+    eps_revision = asset.get("eps_revision_signal")
+    analyst_consensus = asset.get("analyst_consensus")
+    analyst_count = asset.get("analyst_count")
+    target_upside = asset.get("target_upside_pct")
+    target_mean = asset.get("target_mean_price")
+    eps_growth = asset.get("eps_growth")
+    revenue_growth = asset.get("revenue_growth")
+
+    # --- Revisión de EPS (Forward vs Trailing) ---
+    if eps_revision is not None:
+        er_pct = eps_revision * 100
+        if eps_revision > 0.10:
+            er_text = (
+                f"Se detecta una **revisión alcista del EPS del +{er_pct:.1f}%**: el EPS forward supera al trailing en esa magnitud. "
+                f"Las revisiones positivas de EPS son una de las señales más predictivas del rendimiento accionario en horizontes de 6-12 meses, "
+                f"ya que reflejan que los analistas han mejorado sus expectativas de ganancias futuras. "
+                f"Estrategias cuantitativas como la de Zacks demuestran que las revisiones positivas preceden retornos superiores al mercado."
+            )
+            er_status = "success"
+        elif eps_revision > 0:
+            er_text = f"La **revisión del EPS muestra una mejora moderada (+{er_pct:.1f}%)**. El consenso de analistas proyecta ganancias levemente superiores a las actuales, señal constructiva aunque sin una aceleración marcada."
+            er_status = "neutral"
+        elif eps_revision > -0.10:
+            er_text = f"La revisión del EPS indica una **leve compresión esperada ({er_pct:.1f}%)**. Las perspectivas de ganancias son algo inferiores al período anterior, lo que puede reflejar presiones en márgenes o un contexto sectorial más desafiante."
+            er_status = "warning"
+        else:
+            er_text = f"Las estimaciones de EPS muestran una **revisión a la baja significativa ({er_pct:.1f}%)**. Cuando los analistas reducen masivamente sus pronósticos, históricamente el precio tiende a ajustarse en la misma dirección. Señal de alerta para el mediano plazo."
+            er_status = "danger"
+    else:
+        er_text = "No se dispone de datos de EPS forward para este activo. Puede deberse a que es cripto, un CEDEAR sin cobertura directa de analistas, o falta de datos en la fuente."
+        er_status = "neutral"
+
+    sections.append({
+        "title": "Revisión de EPS (Forward vs Trailing)",
+        "icon": "fa-chart-bar",
+        "content": er_text,
+        "value": f"{eps_revision*100:+.1f}%" if eps_revision is not None else "N/D",
+        "status": er_status
+    })
+
+    # --- Consensus de Analistas ---
+    if analyst_consensus is not None and analyst_count is not None and analyst_count > 0:
+        # yfinance devuelve: 1.0=Strong Buy, 2.0=Buy, 3.0=Hold, 4.0=Underperform, 5.0=Sell
+        consensus_label = {1: "Compra Fuerte", 2: "Compra", 3: "Mantener", 4: "Bajo Rendimiento", 5: "Vender"}
+        label = consensus_label.get(round(analyst_consensus), "")
+        if analyst_consensus <= 1.5:
+            ac_text = f"El consenso de **{analyst_count} analistas** es **{label} ({analyst_consensus:.1f}/5.0)** — señal fuertemente positiva. Un consenso de compra fuerte amplificado por un gran número de analistas reduce el sesgo individual y otorga mayor confianza a la recomendación."
+            ac_status = "success"
+        elif analyst_consensus <= 2.5:
+            ac_text = f"El consenso de **{analyst_count} analistas** es **{label} ({analyst_consensus:.1f}/5.0)** — señal positiva. La mayoría de los profesionales recomienda incorporar el activo en los próximos 6-12 meses."
+            ac_status = "success"
+        elif analyst_consensus <= 3.2:
+            ac_text = f"El consenso de **{analyst_count} analistas** es **{label} ({analyst_consensus:.1f}/5.0)** — señal neutral. No hay convicción clara de compra ni venta por parte del mercado profesional."
+            ac_status = "neutral"
+        else:
+            ac_text = f"El consenso de **{analyst_count} analistas** es **{label} ({analyst_consensus:.1f}/5.0)** — señal negativa. Los analistas institucionales en su mayoría no recomiendan el activo en este momento para el mediano plazo."
+            ac_status = "warning"
+    else:
+        ac_text = "No hay cobertura de analistas disponible para este activo en este período. Esto es frecuente en activos no estadounidenses, cripto y en algunos CEDEARs."
+        ac_status = "neutral"
+
+    sections.append({
+        "title": "Consensus de Analistas",
+        "icon": "fa-users-line",
+        "content": ac_text,
+        "value": f"{analyst_consensus:.1f}/5.0 ({analyst_count} analistas)" if analyst_consensus and analyst_count else "Sin cobertura",
+        "status": ac_status
+    })
+
+    # --- Precio Objetivo (Upside) ---
+    if target_upside is not None:
+        up_pct = target_upside * 100
+        if target_upside > 0.15:
+            tu_text = f"El **precio objetivo medio de analistas** (${target_mean:,.2f}) implica un **upside del +{up_pct:.1f}%** sobre el precio actual. Un upside superior al 15% desde el consenso de analistas es una de las señales más directas de que el mercado profesional considera el activo subvalorado para el mediano plazo."
+            tu_status = "success"
+        elif target_upside > 0.05:
+            tu_text = f"El precio objetivo de analistas implica un **upside moderado del +{up_pct:.1f}%** — los analistas ven algo de valor por encima del precio actual, pero sin un potencial disruptivo."
+            tu_status = "neutral"
+        elif target_upside >= 0:
+            tu_text = f"El precio objetivo de analistas está apenas un **+{up_pct:.1f}%** por encima del precio actual. El potencial de upside es limitado desde el consenso profesional actual."
+            tu_status = "warning"
+        else:
+            tu_text = f"El precio objetivo de analistas está un **{up_pct:.1f}%** por debajo del precio actual (downside). Los analistas consideran que el activo está sobrevalorado respecto a sus fundamentos de mediano plazo."
+            tu_status = "danger"
+    else:
+        tu_text = "No se dispone de precio objetivo de analistas para este activo. Frecuente en cripto, activos argentinos locales y algunos CEDEARs."
+        tu_status = "neutral"
+
+    sections.append({
+        "title": "Precio Objetivo y Upside Potencial",
+        "icon": "fa-bullseye",
+        "content": tu_text,
+        "value": f"+{target_upside*100:.1f}% upside" if target_upside is not None else "N/D",
+        "status": tu_status
+    })
+
+    # --- Crecimiento de EPS e Ingresos ---
+    if eps_growth is not None or revenue_growth is not None:
+        parts = []
+        if eps_growth is not None:
+            parts.append(f"EPS creció un **{eps_growth*100:+.1f}% interanual**")
+        if revenue_growth is not None:
+            parts.append(f"ingresos crecieron un **{revenue_growth*100:+.1f}% interanual**")
+        growth_text = " y ".join(parts) + "."
+        both_positive = (eps_growth or 0) > 0.05 and (revenue_growth or 0) > 0.05
+        eg_text = (
+            f"En el último trimestre {growth_text} "
+            + ("Ambos indicadores en expansión es la señal más clara de un ciclo de ganancias positivo que típicamente acompaña apreciaciones de precio en los siguientes 6-12 meses."
+               if both_positive else
+               "Un crecimiento desigual puede indicar mejoras de eficiencia o presiones en alguno de los dos vectores del negocio.")
+        )
+        eg_status = "success" if both_positive else "neutral"
+    else:
+        eg_text = "No se dispone de datos de crecimiento trimestral de EPS e ingresos. Para activos sin cobertura de analistas (cripto, locales) este indicador puede obtenerse de los reportes directos de la empresa."
+        eg_status = "neutral"
+
+    sections.append({
+        "title": "Crecimiento de EPS e Ingresos (Trim. YoY)",
+        "icon": "fa-arrow-up-right-dots",
+        "content": eg_text,
+        "value": f"EPS {eps_growth*100:+.1f}%" if eps_growth is not None else "N/D",
+        "status": eg_status
+    })
+
+    return sections
+
+
+def build_can_slim_analysis(asset, currency):
+    """
+    CAN SLIM (William O'Neil) — Combina análisis fundamental y técnico para mediano plazo.
+    C: Current earnings, A: Annual earnings growth, N: New (product/high), S: Supply/Demand,
+    L: Leader, I: Institutional, M: Market direction.
+    """
+    sections = []
+
+    eps_growth = asset.get("eps_growth")
+    revenue_growth = asset.get("revenue_growth")
+    rsi = asset.get("rsi", 50.0) or 50.0
+    ret_3m = asset.get("ret_3m", 0.0) or 0.0
+    ret_12m = asset.get("ret_12m", 0.0) or 0.0
+    roe = asset.get("roe")
+    vol_short_vs_long = asset.get("vol_short_vs_long", 1.0) or 1.0
+    sharpe = asset.get("sharpe", 0.0) or 0.0
+    analyst_consensus = asset.get("analyst_consensus")
+    ema_cross_signal = asset.get("ema_cross_signal", 0.0) or 0.0
+
+    # C — Current Quarterly Earnings (EPS trimestral)
+    if eps_growth is not None:
+        eg_pct = eps_growth * 100
+        if eps_growth >= 0.25:
+            c_text = f"**C (Current Earnings):** El EPS trimestral creció **+{eg_pct:.0f}% interanual** — supera el umbral mínimo del 25% que O'Neil exige para los mejores candidatos. Esta aceleración demuestra que el negocio está en fase de expansión activa."
+            c_status = "success"
+        elif eps_growth > 0:
+            c_text = f"**C (Current Earnings):** El EPS trimestral creció **+{eg_pct:.0f}% interanual** — positivo, pero por debajo del umbral ideal del 25% que O'Neil considera señal de fuerza. El negocio avanza, aunque sin la aceleración óptima para CAN SLIM."
+            c_status = "neutral"
+        else:
+            c_text = f"**C (Current Earnings):** El EPS trimestral cayó **{eg_pct:.0f}% interanual** — señal de alerta. O'Neil descartaría este activo en la selección CAN SLIM por falta de aceleración de ganancias."
+            c_status = "warning"
+    else:
+        c_text = "**C (Current Earnings):** Sin datos trimestrales disponibles. Este componente no puede evaluarse para este activo (frecuente en cripto y activos sin cobertura de analistas)."
+        c_status = "neutral"
+    sections.append({"title": "C — Ganancias Trimestrales (Current Earnings)", "icon": "fa-c", "content": c_text,
+                     "value": f"{eps_growth*100:+.0f}%" if eps_growth is not None else "N/D", "status": c_status})
+
+    # A — Annual Earnings Growth
+    if ret_12m != 0:
+        ret_pct = ret_12m * 100
+        if ret_12m > 0.20:
+            a_text = f"**A (Annual Earnings):** El retorno de precio anual es **+{ret_pct:.0f}%**, consistente con empresas de alto crecimiento anual. O'Neil busca empresas con crecimiento anual de ganancias superior al 25% durante al menos 3 años consecutivos."
+            a_status = "success"
+        elif ret_12m > 0:
+            a_text = f"**A (Annual Earnings):** El retorno anual es **+{ret_pct:.0f}%** — crecimiento moderado. Para CAN SLIM, lo ideal es ver aceleración progresiva en los retornos anuales."
+            a_status = "neutral"
+        else:
+            a_text = f"**A (Annual Earnings):** El retorno anual es **{ret_pct:.0f}%** — señal de alerta. O'Neil filtra empresas cuyas ganancias no muestran crecimiento real en términos anuales."
+            a_status = "warning"
+    else:
+        a_text = "**A (Annual Earnings):** Sin datos de retorno anual disponibles."
+        a_status = "neutral"
+    sections.append({"title": "A — Crecimiento Anual de Ganancias", "icon": "fa-a", "content": a_text,
+                     "value": f"{ret_12m*100:+.0f}% (12M)" if ret_12m else "N/D", "status": a_status})
+
+    # S — Supply & Demand (volumen y precio)
+    if vol_short_vs_long < 0.85:
+        s_text = f"**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: {vol_short_vs_long:.2f}x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista."
+        s_status = "success"
+    elif vol_short_vs_long <= 1.10:
+        s_text = f"**S (Supply & Demand):** Ratio de volatilidad corta/larga de {vol_short_vs_long:.2f}x — equilibrio normal entre oferta y demanda. No se detectan señales claras de acumulación ni distribución institucional masiva."
+        s_status = "neutral"
+    else:
+        s_text = f"**S (Supply & Demand):** La volatilidad de corto plazo supera a la de largo plazo (ratio: {vol_short_vs_long:.2f}x), sugiriendo **distribución o mayor incertidumbre reciente** — señal de cautela dentro del framework CAN SLIM."
+        s_status = "warning"
+    sections.append({"title": "S — Oferta y Demanda (Volatilidad/Volumen)", "icon": "fa-s", "content": s_text,
+                     "value": f"{vol_short_vs_long:.2f}x", "status": s_status})
+
+    # L — Leader or Laggard (fuerza relativa / RSI)
+    if rsi >= 60:
+        l_text = f"**L (Leader):** El RSI de {rsi:.0f} confirma que el activo tiene **momentum de precio fuerte**: es un líder de mercado, no un rezagado. O'Neil prioriza los primeros 1-2 activos de cada sector, no los más rezagados aunque parezcan baratos."
+        l_status = "success"
+    elif rsi >= 45:
+        l_text = f"**L (Leader):** RSI de {rsi:.0f} — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa."
+        l_status = "neutral"
+    else:
+        l_text = f"**L (Leader):** RSI de {rsi:.0f} — el activo muestra debilidad relativa. O'Neil considera que comprar activos débiles esperando recuperación ('value traps') es una de las principales causas de pérdida en los inversores de mediano plazo."
+        l_status = "warning"
+    sections.append({"title": "L — Liderazgo de Mercado (Leader)", "icon": "fa-l", "content": l_text,
+                     "value": f"RSI {rsi:.0f}", "status": l_status})
+
+    # I — Institutional Sponsorship (consensus proxy)
+    if analyst_consensus is not None:
+        if analyst_consensus <= 2.0:
+            i_text = f"**I (Institutional Sponsorship):** El consenso de analistas ({analyst_consensus:.1f}/5.0) representa una fuerte cobertura institucional positiva. Las instituciones suelen moverse antes que el precio: cuando el institutional sponsorship aumenta, el precio tiende a seguir."
+            i_status = "success"
+        elif analyst_consensus <= 3.0:
+            i_text = f"**I (Institutional Sponsorship):** Cobertura institucional neutral ({analyst_consensus:.1f}/5.0). No hay señales claras de acumulación ni reducción de posiciones institucionales."
+            i_status = "neutral"
+        else:
+            i_text = f"**I (Institutional Sponsorship):** Señal negativa ({analyst_consensus:.1f}/5.0). En el framework CAN SLIM, la falta de respaldo institucional es un filtro de exclusión importante."
+            i_status = "warning"
+    else:
+        i_text = "**I (Institutional Sponsorship):** Sin cobertura de analistas disponible. Para activos argentinos locales y cripto, el 'sponsorship' se mide mejor por el volumen relativo y la acumulación en cadena."
+        i_status = "neutral"
+    sections.append({"title": "I — Respaldo Institucional (Institutional)", "icon": "fa-i", "content": i_text,
+                     "value": f"{analyst_consensus:.1f}/5" if analyst_consensus else "Sin datos", "status": i_status})
+
+    # M — Market Direction (EMA trend signal as proxy)
+    if ema_cross_signal > 0.05:
+        m_text = f"**M (Market Direction):** El cruce EMA 50/200 señala un entorno de mercado **alcista** (EMA50 supera a EMA200 en {ema_cross_signal*100:.1f}%). O'Neil insiste: 3 de cada 4 acciones siguen la dirección del mercado general. Operar a favor de la tendencia macro mejora significativamente las probabilidades de éxito."
+        m_status = "success"
+    elif ema_cross_signal > -0.03:
+        m_text = f"**M (Market Direction):** El diferencial EMA 50/200 es neutro ({ema_cross_signal*100:.1f}%). El mercado no muestra una tendencia clara que potencie o dificulte el trade. Se recomienda precaución con el tamaño de la posición."
+        m_status = "neutral"
+    else:
+        m_text = f"**M (Market Direction):** El cruce EMA señala una tendencia de mercado **bajista** ({ema_cross_signal*100:.1f}%). O'Neil prohíbe rotundamente comprar en mercados bajistas: 'Si el mercado baja, la mejor cartera no sirve'."
+        m_status = "warning"
+    sections.append({"title": "M — Dirección del Mercado (Market)", "icon": "fa-m", "content": m_text,
+                     "value": f"{ema_cross_signal*100:+.1f}%", "status": m_status})
+
+    return sections
+
+
+def build_relative_strength_analysis(asset, currency):
+    """
+    Relative Strength + Market Leadership.
+    Prioriza activos líderes dentro de los sectores más fuertes del mercado.
+    """
+    sections = []
+
+    rsi = asset.get("rsi", 50.0) or 50.0
+    ret_1m = asset.get("ret_1m", 0.0) or 0.0
+    ret_3m = asset.get("ret_3m", 0.0) or 0.0
+    ret_12m = asset.get("ret_12m", 0.0) or 0.0
+    ema_cross_signal = asset.get("ema_cross_signal", 0.0) or 0.0
+    vol_short_vs_long = asset.get("vol_short_vs_long", 1.0) or 1.0
+    volatility = asset.get("volatility", 0.3) or 0.3
+    category = asset.get("category", "")
+    momentum_accel = asset.get("momentum_accel", 0.0) or 0.0
+
+    # --- Fuerza Relativa (RSI + retornos) ---
+    rs_score = 0
+    if rsi >= 60: rs_score += 2
+    elif rsi >= 50: rs_score += 1
+    if ret_3m > 0.10: rs_score += 2
+    elif ret_3m > 0: rs_score += 1
+    if ret_12m > 0.20: rs_score += 2
+    elif ret_12m > 0: rs_score += 1
+
+    if rs_score >= 5:
+        rs_text = f"La **fuerza relativa del activo es muy alta** (score interno: {rs_score}/6): RSI={rsi:.0f}, retorno 3M={ret_3m*100:+.1f}%, retorno 12M={ret_12m*100:+.1f}%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector."
+        rs_status = "success"
+    elif rs_score >= 3:
+        rs_text = f"La **fuerza relativa es moderada** (score: {rs_score}/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI={rsi:.0f}, 3M={ret_3m*100:+.1f}%."
+        rs_status = "neutral"
+    else:
+        rs_text = f"La **fuerza relativa es débil** (score: {rs_score}/6). El activo no evidencia momentum sostenido. RSI={rsi:.0f}, 3M={ret_3m*100:+.1f}%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza."
+        rs_status = "warning"
+
+    sections.append({
+        "title": "Fuerza Relativa (Relative Strength)",
+        "icon": "fa-ranking-star",
+        "content": rs_text,
+        "value": f"Score {rs_score}/6",
+        "status": rs_status
+    })
+
+    # --- Tendencia vs Índice (EMA Cross como proxy) ---
+    if ema_cross_signal > 0.08:
+        ti_text = f"El activo supera significativamente su media de largo plazo (cruce EMA: +{ema_cross_signal*100:.1f}%), situándolo **por encima** del benchmark técnico. Esta posición estructural es lo que buscan los gestores de momentum: empresas que lideran su índice de referencia."
+        ti_status = "success"
+    elif ema_cross_signal > 0:
+        ti_text = f"El activo está levemente por encima de su tendencia de larga data (cruce EMA: +{ema_cross_signal*100:.1f}%). No es líder dominante, pero muestra resiliencia relativa."
+        ti_status = "neutral"
+    else:
+        ti_text = f"El activo está por debajo de su media de largo plazo (cruce EMA: {ema_cross_signal*100:.1f}%), indicando rezago relativo. La selección por fuerza relativa excluiría esta posición en favor de activos más fuertes del mismo sector."
+        ti_status = "warning"
+
+    sections.append({
+        "title": "Tendencia vs. Media de Largo Plazo",
+        "icon": "fa-chart-line",
+        "content": ti_text,
+        "value": f"{ema_cross_signal*100:+.1f}%",
+        "status": ti_status
+    })
+
+    # --- Aceleración de Momentum ---
+    if momentum_accel > 0.05:
+        ma_text = f"El **momentum se está acelerando** (+{momentum_accel*100:.1f}%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación."
+        ma_status = "success"
+    elif momentum_accel >= -0.05:
+        ma_text = f"El momentum se mantiene **estable** ({momentum_accel*100:+.1f}%). La velocidad de apreciación no muestra ni aceleración ni desaceleración significativa."
+        ma_status = "neutral"
+    else:
+        ma_text = f"El momentum **se está desacelerando** ({momentum_accel*100:.1f}%). El activo pierde velocidad de apreciación, lo que puede preceder una corrección o consolidación."
+        ma_status = "warning"
+
+    sections.append({
+        "title": "Aceleración de Momentum",
+        "icon": "fa-gauge-simple-high",
+        "content": ma_text,
+        "value": f"{momentum_accel*100:+.1f}%",
+        "status": ma_status
+    })
+
+    # Sector context by category
+    sector_ctx = {
+        "sp500": "El S&P 500 engloba los 500 mayores activos de EE.UU. En estrategias de liderazgo sectorial, se priorizan los sectores con mayor flujo de capital institucional (tecnología, salud, defensa, energía), seleccionando las empresas con mayor fuerza relativa dentro de cada uno.",
+        "cedears": "Los CEDEARs representan acciones internacionales cotizando en pesos. Aplica la misma lógica de liderazgo sectorial global, con el bonus de cobertura cambiaria implícita frente al dólar (CCL).",
+        "merval": "El Merval es el índice local argentino. La dinámica sectorial interna difiere de los mercados desarrollados: energía, bancos y construcción tienden a liderar en ciclos de estabilización macro.",
+        "crypto": "En cripto, el liderazgo de mercado se analiza mediante la dominancia de Bitcoin (BTC.D): cuando BTC lidera, los altcoins suelen quedarse atrás. Cuando BTC entra en lateralización, los altcoins con mayor fuerza relativa tienden a destacar (altseason).",
+    }
+    sc_text = sector_ctx.get(category, "Contexto sectorial no especificado para esta categoría de activo.")
+
+    sections.append({
+        "title": "Liderazgo Sectorial (Market Leadership)",
+        "icon": "fa-sitemap",
+        "content": sc_text,
+        "value": category.upper() if category else "N/D",
+        "status": "neutral"
+    })
+
+    return sections
+
+
+def build_garp_analysis(asset, currency):
+    """
+    GARP — Growth At a Reasonable Price.
+    Combina crecimiento de EPS con valuación razonable (PEG, PER, FCF, ROE, deuda moderada).
+    """
+    sections = []
+
+    peg_ratio = asset.get("peg_ratio")
+    eps_growth = asset.get("eps_growth")
+    revenue_growth = asset.get("revenue_growth")
+    pe = asset.get("pe_ratio")
+    forward_pe = asset.get("forward_pe")
+    roe = asset.get("roe")
+    fcf_yield = asset.get("fcf_yield")
+    debt_to_equity = asset.get("debt_to_equity")
+
+    # --- PEG Ratio ---
+    if peg_ratio is not None and peg_ratio > 0:
+        if peg_ratio < 1.0:
+            peg_text = (
+                f"El **PEG Ratio de {peg_ratio:.2f}x** es excelente para GARP (< 1.0x). "
+                f"El PEG = PER / Crecimiento esperado del EPS: un valor menor a 1 indica que el precio paga menos que el crecimiento proyectado, "
+                f"el escenario ideal para los inversores GARP como Peter Lynch. "
+                f"Lynch consideraba que pagar 1x el crecimiento era 'precio justo' y bajo 1x una ganga."
+            )
+            peg_status = "success"
+        elif peg_ratio < 2.0:
+            peg_text = f"El **PEG de {peg_ratio:.2f}x** es razonable (1-2x). El inversionista paga algo más que el crecimiento esperado, pero no está pagando una prima excesiva. Zona de valuación aceptable para GARP."
+            peg_status = "neutral"
+        else:
+            peg_text = f"El **PEG de {peg_ratio:.2f}x** es elevado (> 2x). El precio incorpora demasiado crecimiento futuro para el ritmo actual. Desde la perspectiva GARP, existe riesgo de decepción si el crecimiento real no alcanza las expectativas implícitas en el precio."
+            peg_status = "warning"
+    elif peg_ratio is not None and peg_ratio < 0:
+        peg_text = f"El **PEG Ratio es negativo** ({peg_ratio:.2f}x), lo que indica pérdidas netas actuales o contracción de EPS. Este activo no encaja en la definición clásica de GARP dado que el crecimiento esperado es negativo."
+        peg_status = "danger"
+    else:
+        peg_text = "El **PEG Ratio no está disponible** para este activo. Para cripto y activos sin cobertura de analistas, se compensa utilizando el crecimiento histórico de precio como proxy del crecimiento esperado."
+        peg_status = "neutral"
+
+    sections.append({
+        "title": "PEG Ratio (Crecimiento a Precio Razonable)",
+        "icon": "fa-balance-scale",
+        "content": peg_text,
+        "value": f"{peg_ratio:.2f}x" if peg_ratio else "N/D",
+        "status": peg_status
+    })
+
+    # --- Crecimiento esperado EPS ---
+    if eps_growth is not None:
+        eg_pct = eps_growth * 100
+        if eps_growth > 0.15:
+            eg_text = f"El **crecimiento del EPS es del +{eg_pct:.0f}% interanual** — sólido y compatible con el perfil GARP. Un crecimiento de EPS superior al 15% es el mínimo de referencia para que la valuación premium se justifique en el mediano plazo."
+            eg_status = "success"
+        elif eps_growth > 0:
+            eg_text = f"El crecimiento del EPS es **moderado (+{eg_pct:.0f}%)**. Positivo pero por debajo del umbral ideal para GARP. Puede funcionar si el PEG ratio es suficientemente bajo."
+            eg_status = "neutral"
+        else:
+            eg_text = f"El EPS muestra **contracción ({eg_pct:.0f}%)**. GARP exige crecimiento real de ganancias: sin crecimiento, la G de GARP desaparece y el PER pierde su justificación."
+            eg_status = "warning"
+    else:
+        eg_text = "Datos de crecimiento de EPS no disponibles para este activo."
+        eg_status = "neutral"
+
+    sections.append({
+        "title": "Crecimiento Esperado del EPS",
+        "icon": "fa-up-long",
+        "content": eg_text,
+        "value": f"{eps_growth*100:+.0f}% EPS" if eps_growth is not None else "N/D",
+        "status": eg_status
+    })
+
+    # --- PER Forward vs Trailing ---
+    if forward_pe is not None and pe is not None:
+        pe_trend = forward_pe - pe
+        if pe_trend < -2:
+            pe_text = f"El **PER forward ({forward_pe:.1f}x) es menor al trailing ({pe:.1f}x)** en {abs(pe_trend):.1f} puntos: los analistas esperan que las ganancias aumenten en los próximos 12 meses, comprimiendo el múltiplo. Es la señal perfecta de GARP: valuación decreciente por crecimiento."
+            pe_status = "success"
+        elif pe_trend <= 2:
+            pe_text = f"El PER forward ({forward_pe:.1f}x) y trailing ({pe:.1f}x) son similares: las ganancias esperadas son consistentes con las actuales, sin gran expansión ni contracción del múltiplo."
+            pe_status = "neutral"
+        else:
+            pe_text = f"El PER forward ({forward_pe:.1f}x) es mayor al trailing ({pe:.1f}x): los analistas esperan menores ganancias en los próximos 12 meses, lo que implica una expansión del múltiplo sin crecimiento. Señal negativa para GARP."
+            pe_status = "warning"
+    elif pe is not None:
+        pe_text = f"PER actual: **{pe:.1f}x**. Sin dato de PER forward no se puede estimar la dirección de las ganancias esperadas — dato fundamental en el análisis GARP."
+        pe_status = "neutral"
+    else:
+        pe_text = "Sin datos de PER disponibles para este activo."
+        pe_status = "neutral"
+
+    sections.append({
+        "title": "PER Forward vs. Trailing",
+        "icon": "fa-calendar-check",
+        "content": pe_text,
+        "value": f"Forward: {forward_pe:.1f}x" if forward_pe else "N/D",
+        "status": pe_status
+    })
+
+    # --- ROE + Deuda relevante para GARP ---
+    garp_pillars = []
+    if roe is not None and roe > 0.12:
+        garp_pillars.append(f"ROE sólido del {roe*100:.0f}%")
+    if fcf_yield is not None and fcf_yield > 0.02:
+        garp_pillars.append(f"FCF Yield positivo del {fcf_yield*100:.1f}%")
+    if debt_to_equity is not None and debt_to_equity < 1.5:
+        garp_pillars.append(f"Deuda moderada (D/E: {debt_to_equity:.2f}x)")
+
+    if len(garp_pillars) >= 2:
+        garp_text = f"La empresa cumple con las condiciones de calidad fundamentales del GARP: {', '.join(garp_pillars)}. Estos pilares permiten que el crecimiento sea sostenible sin depender de apalancamiento excesivo."
+        garp_status = "success"
+    elif len(garp_pillars) == 1:
+        garp_text = f"Cumple parcialmente los pilares de calidad del GARP: {', '.join(garp_pillars)}. Los inversores GARP exigen crecimiento y calidad simultáneamente."
+        garp_status = "neutral"
+    else:
+        garp_text = "Los datos disponibles no permiten confirmar los pilares de calidad del GARP (ROE, FCF, deuda). Esto puede deberse a ausencia de datos o a fundamentos más débiles que el estilo requiere."
+        garp_status = "warning"
+
+    sections.append({
+        "title": "Calidad Fundamental (ROE + FCF + Deuda)",
+        "icon": "fa-gem",
+        "content": garp_text,
+        "value": f"{len(garp_pillars)}/3 pilares",
+        "status": garp_status
+    })
+
+    return sections

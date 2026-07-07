@@ -60,6 +60,81 @@ def compute_volume_profile(prices, volumes, bins=10):
     except Exception:
         return float(prices.iloc[-1])
 
+def fetch_fundamental_metrics(ticker, category):
+    """
+    Obtiene métricas fundamentales de largo plazo mediante yf.Ticker.info.
+    Solo relevante para acciones (sp500, cedears, merval). Retorna dict vacío para cripto/bonos.
+    """
+    if category in ("crypto", "bonos", "letras"):
+        return {}
+    try:
+        info = yf.Ticker(ticker).info
+        pe = info.get("trailingPE") or info.get("forwardPE")
+        pb = info.get("priceToBook")
+        roe = info.get("returnOnEquity")
+        fcf = info.get("freeCashflow")
+        market_cap = info.get("marketCap")
+        fcf_yield = round((fcf / market_cap), 4) if fcf and market_cap and market_cap > 0 else None
+        debt_to_equity = info.get("debtToEquity")
+        if debt_to_equity is not None:
+            debt_to_equity = round(debt_to_equity / 100, 2)  # yfinance da D/E en %, normalizar a ratio
+        dividend_yield = info.get("dividendYield")  # valor entre 0 y 1
+        payout_ratio = info.get("payoutRatio")
+        trailing_annual_div = info.get("trailingAnnualDividendRate", 0.0) or 0.0
+        five_yr_avg_div = info.get("fiveYearAvgDividendYield")  # porcentual (eg: 1.5 = 1.5%)
+        # Dividend growth: si el trailing > 0 y five_yr_avg > 0, estimar crecimiento
+        div_growing = False
+        if trailing_annual_div and trailing_annual_div > 0 and five_yr_avg_div and five_yr_avg_div > 0:
+            current_yield_pct = (dividend_yield or 0) * 100
+            div_growing = current_yield_pct >= five_yr_avg_div * 0.8  # conservador: al menos 80% del promedio
+        profit_margins = info.get("profitMargins")
+        operating_margins = info.get("operatingMargins")
+        # --- Medium-term analyst and growth metrics ---
+        peg_ratio = info.get("pegRatio")
+        eps_growth = info.get("earningsGrowth")  # quarterly YoY
+        revenue_growth = info.get("revenueGrowth")  # quarterly YoY
+        analyst_consensus = info.get("recommendationMean")  # 1=Strong Buy, 5=Sell
+        analyst_count = info.get("numberOfAnalystOpinions")
+        target_mean = info.get("targetMeanPrice")
+        target_high = info.get("targetHighPrice")
+        forward_pe = info.get("forwardPE")
+        trailing_eps = info.get("trailingEps")
+        forward_eps = info.get("forwardEps")
+        current_price_info = info.get("currentPrice") or info.get("regularMarketPrice")
+        # Target upside from mean analyst target vs current price
+        target_upside_pct = None
+        if target_mean and current_price_info and current_price_info > 0:
+            target_upside_pct = round((target_mean - current_price_info) / current_price_info, 4)
+        # EPS revision: forward EPS vs trailing EPS, proxy for analyst upgrade
+        eps_revision_signal = None
+        if forward_eps and trailing_eps and trailing_eps > 0:
+            eps_revision_signal = round((forward_eps - trailing_eps) / abs(trailing_eps), 4)
+        return {
+            "pe_ratio": round(float(pe), 1) if pe else None,
+            "pb_ratio": round(float(pb), 2) if pb else None,
+            "roe": round(float(roe), 4) if roe is not None else None,
+            "fcf_yield": round(float(fcf_yield), 4) if fcf_yield is not None else None,
+            "debt_to_equity": round(float(debt_to_equity), 2) if debt_to_equity is not None else None,
+            "dividend_yield": round(float(dividend_yield), 4) if dividend_yield is not None else None,
+            "payout_ratio": round(float(payout_ratio), 4) if payout_ratio is not None else None,
+            "dividend_growing": div_growing,
+            "profit_margin": round(float(profit_margins), 4) if profit_margins is not None else None,
+            "operating_margin": round(float(operating_margins), 4) if operating_margins is not None else None,
+            # Medium-term
+            "peg_ratio": round(float(peg_ratio), 2) if peg_ratio else None,
+            "eps_growth": round(float(eps_growth), 4) if eps_growth is not None else None,
+            "revenue_growth": round(float(revenue_growth), 4) if revenue_growth is not None else None,
+            "analyst_consensus": round(float(analyst_consensus), 2) if analyst_consensus is not None else None,
+            "analyst_count": int(analyst_count) if analyst_count else None,
+            "target_mean_price": round(float(target_mean), 2) if target_mean else None,
+            "target_upside_pct": round(float(target_upside_pct), 4) if target_upside_pct is not None else None,
+            "eps_revision_signal": round(float(eps_revision_signal), 4) if eps_revision_signal is not None else None,
+            "forward_pe": round(float(forward_pe), 1) if forward_pe else None,
+        }
+    except Exception as e:
+        return {}
+
+
 def compute_asset_metrics(df, ticker, category):
     if df.empty or len(df) < 50:
         return None
@@ -83,9 +158,22 @@ def compute_asset_metrics(df, ticker, category):
     sharpe = float((ann_return - rf) / volatility if volatility > 0 else 0)
     
     # Technical Indicators
-    ema_50 = float(close.ewm(span=50, adjust=False).mean().iloc[-1])
-    ema_200 = float(close.ewm(span=200, adjust=False).mean().iloc[-1])
+    ema_50_series = close.ewm(span=50, adjust=False).mean()
+    ema_200_series = close.ewm(span=200, adjust=False).mean()
+    ema_50 = float(ema_50_series.iloc[-1])
+    ema_200 = float(ema_200_series.iloc[-1])
     
+    # Dynamic EMA 200 slope over last 30 trading days
+    if len(ema_200_series) >= 30:
+        ema_200_slope = float((ema_200 - ema_200_series.iloc[-30]) / ema_200_series.iloc[-30])
+    else:
+        ema_200_slope = 0.0
+        
+    # Drawdown from peak (52-week or 252 trading days max)
+    lookback_52w = min(252, len(close))
+    high_52w = float(close.iloc[-lookback_52w:].max())
+    drawdown_pct = float((high_52w - current_price) / high_52w) if high_52w > 0 else 0.0
+
     rsi_series = calculate_rsi(close)
     rsi = float(rsi_series[-1])
     
@@ -145,6 +233,9 @@ def compute_asset_metrics(df, ticker, category):
         "ema_50": ema_50,
         "ema_200": ema_200,
         "trend": trend,
+        "ema_200_slope": round(ema_200_slope, 4),
+        "high_52w": round(high_52w, 2),
+        "drawdown_pct": round(drawdown_pct, 4),
         "support": round(support, 2),
         "resistance": round(resistance, 2),
         "volume_cluster": round(volume_cluster, 2),
@@ -224,6 +315,8 @@ async def fetch_yfinance_market_data(force_refresh=False):
             category = categories[ticker]
             metrics = compute_asset_metrics(df, ticker, category)
             if metrics:
+                fundamentals = fetch_fundamental_metrics(ticker, category)
+                metrics.update(fundamentals)
                 results.append(metrics)
         except Exception as e:
             print(f"Error processing {ticker}: {e}")

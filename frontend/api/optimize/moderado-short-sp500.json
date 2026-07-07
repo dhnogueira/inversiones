@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "UNH",
+        "name": "UNH",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.25,
+        "weight_pct": 25.0,
+        "ars_return_est": 53.5
+      },
+      {
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.25,
+        "weight_pct": 25.0,
+        "ars_return_est": 47.2
+      },
+      {
+        "ticker": "LLY",
+        "name": "LLY",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.25,
+        "weight_pct": 25.0,
+        "ars_return_est": 44.0
+      },
+      {
+        "ticker": "ABBV",
+        "name": "ABBV",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.25,
+        "weight_pct": 25.0,
+        "ars_return_est": 42.2
+      }
+    ],
+    "expected_return": 46.76,
+    "expected_volatility": 30.05,
+    "sharpe_ratio": 1.19,
+    "profile": "moderado",
+    "horizon": "short",
+    "risk_free_rate": 11.0,
+    "inflation_reference": 11.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 35.8
+  }
+}

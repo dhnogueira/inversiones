@@ -1,0 +1,61 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "AL30D",
+        "name": "Bono Soberano AL30D (Dólares)",
+        "category": "bonos",
+        "currency": "USD",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 28.7
+      },
+      {
+        "ticker": "GD30D",
+        "name": "Bono Soberano GD30D (Dólares)",
+        "category": "bonos",
+        "currency": "USD",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 28.1
+      },
+      {
+        "ticker": "AL35",
+        "name": "Bono Soberano AL35 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.1824,
+        "weight_pct": 18.2,
+        "ars_return_est": 12.4
+      },
+      {
+        "ticker": "AE38",
+        "name": "Bono Soberano AE38 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.1169,
+        "weight_pct": 11.7,
+        "ars_return_est": 12.0
+      },
+      {
+        "ticker": "GD35",
+        "name": "Bono Soberano GD35 (Pesos)",
+        "category": "bonos",
+        "currency": "ARS",
+        "weight": 0.1007,
+        "weight_pct": 10.1,
+        "ars_return_est": 11.9
+      }
+    ],
+    "expected_return": 21.93,
+    "expected_volatility": 16.1,
+    "sharpe_ratio": 0.68,
+    "profile": "moderado",
+    "horizon": "short",
+    "risk_free_rate": 11.0,
+    "inflation_reference": 11.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 10.9
+  }
+}

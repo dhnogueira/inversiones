@@ -1,0 +1,61 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "T30J7",
+        "name": "BONCAP T30J7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.5,
+        "weight_pct": 50.0,
+        "ars_return_est": 13.9
+      },
+      {
+        "ticker": "T30A7",
+        "name": "BONCAP T30A7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": 13.3
+      },
+      {
+        "ticker": "T31M7",
+        "name": "BONCAP T31M7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 12.6
+      },
+      {
+        "ticker": "T31Y7",
+        "name": "BONCAP T31Y7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 11.5
+      },
+      {
+        "ticker": "T28F7",
+        "name": "BONCAP T28F7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 10.6
+      }
+    ],
+    "expected_return": 13.08,
+    "expected_volatility": 4.46,
+    "sharpe_ratio": 0.47,
+    "profile": "conservador",
+    "horizon": "short",
+    "risk_free_rate": 11.0,
+    "inflation_reference": 11.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 2.1
+  }
+}
