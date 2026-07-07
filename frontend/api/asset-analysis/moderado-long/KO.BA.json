@@ -4,7 +4,7 @@
     "ticker": "KO.BA",
     "name": "KO",
     "category": "cedears",
-    "price": 26780.0,
+    "price": 26760.0,
     "currency": "ARS",
     "score": 93.8,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 74.7, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
-        "value": "74.7",
+        "content": "El RSI de 14 períodos se encuentra en 74.6, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
+        "value": "74.6",
         "status": "warning"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (24487.65) se encuentra por encima de la EMA de 200 días (22377.12), y el precio actual (26780.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (24486.87) se encuentra por encima de la EMA de 200 días (22376.92), y el precio actual (26760.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+8.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (17.3%) refuerzan esta tendencia positiva.",
-        "value": "+8.8% (1M)",
+        "content": "El activo registró un rendimiento del **+8.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (17.2%) refuerzan esta tendencia positiva.",
+        "value": "+8.7% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 22,185.90 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 25,037.99 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 23,425.94. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 23,425.94",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 22,185.90 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 25,037.99 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 23,418.94. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 23,418.94",
         "status": "success"
       }
     ],
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+28.2%** y a 12 meses es **+52.4%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+28.2% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+28.1%** y a 12 meses es **+52.3%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+28.1% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **132.2%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+85.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 132.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **131.8%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+84.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 131.8%",
         "status": "success"
       }
     ],
@@ -179,16 +179,16 @@
       "icon": "fa-circle-check",
       "color": "success",
       "summary": "Este activo obtiene un score de **93.8/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. El RSI en zona de sobrecompra aconseja esperar una corrección antes de entrar.",
-      "take_profit": 41904.95,
-      "stop_loss": 20057.8,
+      "take_profit": 41873.19,
+      "stop_loss": 20043.03,
       "tp_pct": 56.5,
       "sl_pct": 25.1
     },
     "support": 22185.9,
     "resistance": 25037.99,
-    "volume_cluster": 23425.94,
-    "take_profit": 41904.95,
-    "stop_loss": 20057.8,
+    "volume_cluster": 23418.94,
+    "take_profit": 41873.19,
+    "stop_loss": 20043.03,
     "tp_pct": 56.5,
     "sl_pct": 25.1
   }
