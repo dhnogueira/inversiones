@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 166.7
+        "ars_return_est": 166.6
       },
       {
         "ticker": "GOOGL.BA",
@@ -18,7 +18,7 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 130.3
+        "ars_return_est": 131.1
       },
       {
         "ticker": "MRK",
@@ -27,35 +27,26 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 115.8
+        "ars_return_est": 114.9
       },
       {
-        "ticker": "VALO.BA",
-        "name": "VALO",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 76.6
-      },
-      {
-        "ticker": "AAPL.BA",
+        "ticker": "AAPL",
         "name": "AAPL",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 69.4
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 98.5
       }
     ],
-    "expected_return": 131.15,
-    "expected_volatility": 25.82,
-    "sharpe_ratio": 4.23,
+    "expected_return": 133.62,
+    "expected_volatility": 25.74,
+    "sharpe_ratio": 4.34,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 109.1
+    "spread_vs_inflation": 111.6
   }
 }

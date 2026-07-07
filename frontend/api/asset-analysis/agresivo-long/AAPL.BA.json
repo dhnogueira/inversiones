@@ -4,7 +4,7 @@
     "ticker": "AAPL.BA",
     "name": "AAPL",
     "category": "cedears",
-    "price": 24610.0,
+    "price": 24670.0,
     "currency": "ARS",
     "score": 100.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 67.9, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "67.9",
+        "content": "El RSI de 14 períodos se encuentra en 68.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "68.2",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (22275.05) se encuentra por encima de la EMA de 200 días (19985.67), y el precio actual (24610.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (22277.40) se encuentra por encima de la EMA de 200 días (19986.27), y el precio actual (24670.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+11.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (28.3%) refuerzan esta tendencia positiva.",
-        "value": "+11.7% (1M)",
+        "content": "El activo registró un rendimiento del **+12.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (28.6%) refuerzan esta tendencia positiva.",
+        "value": "+12.0% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 18,544.99 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,141.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 19,161.49. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 19,161.49",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 18,544.99 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,141.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 19,170.49. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 19,170.49",
         "status": "success"
       }
     ],
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.52** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
-        "value": "2.52",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.54** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "2.54",
         "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+21.9%** y a 12 meses es **+86.8%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+21.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+22.2%** y a 12 meses es **+87.2%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+22.2% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **298.7%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+251.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 298.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **300.0%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+253.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 300.0%",
         "status": "success"
       }
     ],
@@ -180,16 +180,16 @@
       "icon": "fa-circle-check",
       "color": "success",
       "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 50759.45,
-      "stop_loss": 12988.02,
+      "take_profit": 50888.76,
+      "stop_loss": 13017.22,
       "tp_pct": 106.3,
       "sl_pct": 47.2
     },
     "support": 18544.99,
     "resistance": 23141.0,
-    "volume_cluster": 19161.49,
-    "take_profit": 50759.45,
-    "stop_loss": 12988.02,
+    "volume_cluster": 19170.49,
+    "take_profit": 50888.76,
+    "stop_loss": 13017.22,
     "tp_pct": 106.3,
     "sl_pct": 47.2
   }

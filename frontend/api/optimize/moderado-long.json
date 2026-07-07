@@ -7,8 +7,8 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2976,
-        "weight_pct": 29.8,
+        "weight": 0.3177,
+        "weight_pct": 31.8,
         "ars_return_est": 500.0
       },
       {
@@ -16,9 +16,9 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2024,
-        "weight_pct": 20.2,
-        "ars_return_est": 448.9
+        "weight": 0.1823,
+        "weight_pct": 18.2,
+        "ars_return_est": 443.5
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 353.9
+        "ars_return_est": 352.2
       },
       {
         "ticker": "ABBV",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 301.8
+        "ars_return_est": 298.9
       },
       {
         "ticker": "AAPL.BA",
@@ -45,7 +45,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 248.9
+        "ars_return_est": 250.0
       },
       {
         "ticker": "GOOGL.BA",
@@ -66,22 +66,22 @@
         "ars_return_est": 235.5
       },
       {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 153.2
-      },
-      {
         "ticker": "KO.BA",
         "name": "KO",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 127.7
+        "ars_return_est": 127.0
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 152.3
       },
       {
         "ticker": "AMZN.BA",
@@ -90,17 +90,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 98.6
+        "ars_return_est": 100.4
       }
     ],
-    "expected_return": 360.92,
-    "expected_volatility": 24.28,
-    "sharpe_ratio": 12.93,
+    "expected_return": 360.57,
+    "expected_volatility": 24.36,
+    "sharpe_ratio": 12.87,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 313.9
+    "spread_vs_inflation": 313.6
   }
 }
