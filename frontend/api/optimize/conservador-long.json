@@ -16,9 +16,9 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 363.1
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 375.1
       },
       {
         "ticker": "GOOGL.BA",
@@ -72,7 +72,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 288.9
+        "ars_return_est": 299.3
       },
       {
         "ticker": "ABBV",
@@ -81,17 +81,26 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 251.9
+        "ars_return_est": 265.5
+      },
+      {
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 214.5
       }
     ],
-    "expected_return": 365.83,
-    "expected_volatility": 25.1,
-    "sharpe_ratio": 12.7,
+    "expected_return": 361.4,
+    "expected_volatility": 24.88,
+    "sharpe_ratio": 12.64,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 318.8
+    "spread_vs_inflation": 314.4
   }
 }
