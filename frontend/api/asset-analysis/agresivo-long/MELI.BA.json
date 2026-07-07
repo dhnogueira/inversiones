@@ -4,7 +4,7 @@
     "ticker": "MELI.BA",
     "name": "MELI",
     "category": "cedears",
-    "price": 23930.0,
+    "price": 23910.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 71.4, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
-        "value": "71.4",
+        "content": "El RSI de 14 períodos se encuentra en 71.3, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
+        "value": "71.3",
         "status": "warning"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (23930.00) se mantiene por encima de la EMA de 200 días (22949.85), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (21485.08) aún no confirma un cruce definitivo.",
+        "content": "El precio (23910.00) se mantiene por encima de la EMA de 200 días (22949.65), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (21484.29) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+15.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (9.8%) refuerzan esta tendencia positiva.",
-        "value": "+15.7% (1M)",
+        "content": "El activo registró un rendimiento del **+15.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (9.7%) refuerzan esta tendencia positiva.",
+        "value": "+15.6% (1M)",
         "status": "success"
       },
       {
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.23** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
-        "value": "-0.23",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.24** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
+        "value": "-0.24",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-15.6%** y a 12 meses es **-5.9%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "content": "El rendimiento acumulado a 6 meses es **-15.6%** y a 12 meses es **-6.0%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
         "value": "-15.6% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **-13.7%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-60.7%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -13.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **-13.9%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-60.9%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -13.9%",
         "status": "danger"
       }
     ],
@@ -178,16 +178,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad. El RSI en zona de sobrecompra aconseja esperar una corrección antes de entrar.",
-      "take_profit": 56541.04,
-      "stop_loss": 9436.2,
+      "take_profit": 56492.83,
+      "stop_loss": 9428.74,
       "tp_pct": 136.3,
       "sl_pct": 60.6
     },
     "support": 19859.0,
     "resistance": 22761.0,
     "volume_cluster": 20042.5,
-    "take_profit": 56541.04,
-    "stop_loss": 9436.2,
+    "take_profit": 56492.83,
+    "stop_loss": 9428.74,
     "tp_pct": 136.3,
     "sl_pct": 60.6
   }
