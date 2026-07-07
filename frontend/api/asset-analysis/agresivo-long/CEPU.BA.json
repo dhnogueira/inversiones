@@ -92,13 +92,15 @@
           "net_income_b": 187.54,
           "net_margin_pct": 54.6,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": -32.0,
           "debt_equity": 0.28,
           "favorable": [
             "Margen neto sólido del 54.6%",
             "Deuda/Equity baja: 0.28"
           ],
-          "critical": []
+          "critical": [
+            "FCF negativo: $-32.0B (quema de caja)"
+          ]
         },
         {
           "period": "Dec 2025",
@@ -106,9 +108,10 @@
           "net_income_b": 22.85,
           "net_margin_pct": 7.3,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": 82.37,
           "debt_equity": 0.19,
           "favorable": [
+            "FCF positivo: $82.4B",
             "Deuda/Equity baja: 0.19"
           ],
           "critical": [
@@ -121,10 +124,11 @@
           "net_income_b": 139.8,
           "net_margin_pct": 43.7,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": 0.72,
           "debt_equity": 0.26,
           "favorable": [
             "Margen neto sólido del 43.7%",
+            "FCF positivo: $0.7B",
             "Deuda/Equity baja: 0.26"
           ],
           "critical": []
@@ -135,10 +139,11 @@
           "net_income_b": 85.64,
           "net_margin_pct": 39.9,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": 32.47,
           "debt_equity": 0.2,
           "favorable": [
             "Margen neto sólido del 39.9%",
+            "FCF positivo: $32.5B",
             "Deuda/Equity baja: 0.20"
           ],
           "critical": [
@@ -151,10 +156,11 @@
           "net_income_b": 82.75,
           "net_margin_pct": 39.3,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": 0.24,
           "debt_equity": 0.2,
           "favorable": [
             "Margen neto sólido del 39.3%",
+            "FCF positivo: $0.2B",
             "Deuda/Equity baja: 0.20"
           ],
           "critical": []
@@ -167,11 +173,11 @@
         "avg_eps": null,
         "revenue_trend": "creciente",
         "margin_trend": "en expansión",
-        "total_favorable_signals": 9,
-        "total_critical_signals": 2,
+        "total_favorable_signals": 13,
+        "total_critical_signals": 3,
         "conclusion": "ESTABLE",
         "conclusion_color": "neutral",
-        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 37.0%. Hay 2 señales de atención y 9 puntos positivos. Perfil de riesgo moderado."
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 37.0%. Hay 3 señales de atención y 13 puntos positivos. Perfil de riesgo moderado."
       }
     },
     "verdict": {
