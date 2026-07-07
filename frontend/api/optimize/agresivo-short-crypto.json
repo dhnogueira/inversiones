@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 4.9
+        "ars_return_est": 5.0
       },
       {
         "ticker": "BNB-USD",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 3.3
+        "ars_return_est": 3.5
       },
       {
         "ticker": "LINK-USD",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -2.5
+        "ars_return_est": -2.1
       },
       {
         "ticker": "BTC-USD",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 2.4
+        "ars_return_est": 2.6
       },
       {
         "ticker": "ETH-USD",
@@ -45,10 +45,10 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": -3.3
+        "ars_return_est": -3.0
       }
     ],
-    "expected_return": 2.34,
+    "expected_return": 2.56,
     "expected_volatility": 51.0,
     "sharpe_ratio": -0.17,
     "profile": "agresivo",
@@ -56,6 +56,6 @@
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -8.7
+    "spread_vs_inflation": -8.4
   }
 }
