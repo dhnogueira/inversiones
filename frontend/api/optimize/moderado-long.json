@@ -7,7 +7,7 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3167,
+        "weight": 0.3169,
         "weight_pct": 31.7,
         "ars_return_est": 500.0
       },
@@ -16,9 +16,9 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1833,
+        "weight": 0.1831,
         "weight_pct": 18.3,
-        "ars_return_est": 443.5
+        "ars_return_est": 443.4
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 348.7
+        "ars_return_est": 348.2
       },
       {
         "ticker": "ABBV",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 306.4
+        "ars_return_est": 310.4
       },
       {
         "ticker": "AAPL.BA",
@@ -93,14 +93,14 @@
         "ars_return_est": 101.6
       }
     ],
-    "expected_return": 361.69,
+    "expected_return": 362.03,
     "expected_volatility": 24.36,
-    "sharpe_ratio": 12.92,
+    "sharpe_ratio": 12.93,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 314.7
+    "spread_vs_inflation": 315.0
   }
 }
