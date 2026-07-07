@@ -4,7 +4,7 @@
     "ticker": "LLY",
     "name": "LLY",
     "category": "sp500",
-    "price": 1235.6500244140625,
+    "price": 1235.56005859375,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -20,7 +20,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1092.97) se encuentra por encima de la EMA de 200 días (987.95), y el precio actual (1235.65) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (1092.97) se encuentra por encima de la EMA de 200 días (987.95), y el precio actual (1235.56) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -41,8 +41,8 @@
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 902.34 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 1,145.13 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 1,023.40. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 1,023.40",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 902.34 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 1,145.13 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 1,023.36. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 1,023.36",
         "status": "success"
       }
     ],
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **48.7%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+37.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 48.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **48.6%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+37.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 48.6%",
         "status": "success"
       }
     ],
@@ -177,16 +177,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 1754.43,
-      "stop_loss": 976.26,
+      "take_profit": 1754.3,
+      "stop_loss": 976.19,
       "tp_pct": 42.0,
       "sl_pct": 21.0
     },
     "support": 902.34,
     "resistance": 1145.13,
-    "volume_cluster": 1023.4,
-    "take_profit": 1754.43,
-    "stop_loss": 976.26,
+    "volume_cluster": 1023.36,
+    "take_profit": 1754.3,
+    "stop_loss": 976.19,
     "tp_pct": 42.0,
     "sl_pct": 21.0
   }

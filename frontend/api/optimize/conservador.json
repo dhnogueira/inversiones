@@ -18,7 +18,7 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 128.8
+        "ars_return_est": 129.8
       },
       {
         "ticker": "MRK",
@@ -45,17 +45,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 69.3
+        "ars_return_est": 68.8
       }
     ],
-    "expected_return": 130.05,
+    "expected_return": 130.33,
     "expected_volatility": 25.81,
-    "sharpe_ratio": 4.19,
+    "sharpe_ratio": 4.2,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 108.0
+    "spread_vs_inflation": 108.3
   }
 }

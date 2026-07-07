@@ -4,7 +4,7 @@
     "ticker": "JPM",
     "name": "JPM",
     "category": "sp500",
-    "price": 339.17999267578125,
+    "price": 339.2200012207031,
     "currency": "USD",
     "score": 64.9,
     "profile": "moderado",
@@ -20,7 +20,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (316.04) se encuentra por encima de la EMA de 200 días (301.21), y el precio actual (339.18) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (316.04) se encuentra por encima de la EMA de 200 días (301.21), y el precio actual (339.22) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -41,8 +41,8 @@
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 285.20 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 329.69 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 306.71. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 306.71",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 285.20 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 329.69 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 306.72. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 306.72",
         "status": "success"
       }
     ],
@@ -174,16 +174,16 @@
       "icon": "fa-circle-info",
       "color": "neutral",
       "summary": "Con un score de **64.9/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
-      "take_profit": 442.43,
-      "stop_loss": 287.56,
+      "take_profit": 442.48,
+      "stop_loss": 287.59,
       "tp_pct": 30.4,
       "sl_pct": 15.2
     },
     "support": 285.2,
     "resistance": 329.69,
-    "volume_cluster": 306.71,
-    "take_profit": 442.43,
-    "stop_loss": 287.56,
+    "volume_cluster": 306.72,
+    "take_profit": 442.48,
+    "stop_loss": 287.59,
     "tp_pct": 30.4,
     "sl_pct": 15.2
   }
