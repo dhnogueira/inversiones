@@ -3,6 +3,15 @@
   "optimization": {
     "weights": [
       {
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 131.1
+      },
+      {
         "ticker": "GOOGL",
         "name": "GOOGL",
         "category": "sp500",
@@ -10,15 +19,6 @@
         "weight": 0.3,
         "weight_pct": 30.0,
         "ars_return_est": 160.9
-      },
-      {
-        "ticker": "GOOGL.BA",
-        "name": "GOOGL",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.3,
-        "weight_pct": 30.0,
-        "ars_return_est": 133.2
       },
       {
         "ticker": "MRK",
@@ -39,14 +39,14 @@
         "ars_return_est": 95.4
       }
     ],
-    "expected_return": 131.46,
+    "expected_return": 130.85,
     "expected_volatility": 25.75,
-    "sharpe_ratio": 4.25,
+    "sharpe_ratio": 4.23,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 109.5
+    "spread_vs_inflation": 108.9
   }
 }
