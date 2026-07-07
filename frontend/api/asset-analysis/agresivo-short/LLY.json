@@ -4,7 +4,7 @@
     "ticker": "LLY",
     "name": "LLY",
     "category": "sp500",
-    "price": 1232.050048828125,
+    "price": 1231.6800537109375,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -20,7 +20,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1092.83) se encuentra por encima de la EMA de 200 días (987.91), y el precio actual (1232.05) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (1092.82) se encuentra por encima de la EMA de 200 días (987.91), y el precio actual (1231.68) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+8.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (32.6%) refuerzan esta tendencia positiva.",
+        "content": "El activo registró un rendimiento del **+8.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (32.5%) refuerzan esta tendencia positiva.",
         "value": "+8.9% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 902.34 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 1,145.13 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 1,021.78. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 1,021.78",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 902.34 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 1,145.13 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 1,021.62. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 1,021.62",
         "status": "success"
       }
     ],
@@ -177,16 +177,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 1749.18,
-      "stop_loss": 973.48,
+      "take_profit": 1748.64,
+      "stop_loss": 973.2,
       "tp_pct": 42.0,
       "sl_pct": 21.0
     },
     "support": 902.34,
     "resistance": 1145.13,
-    "volume_cluster": 1021.78,
-    "take_profit": 1749.18,
-    "stop_loss": 973.48,
+    "volume_cluster": 1021.62,
+    "take_profit": 1748.64,
+    "stop_loss": 973.2,
     "tp_pct": 42.0,
     "sl_pct": 21.0
   }
