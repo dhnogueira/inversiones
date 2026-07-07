@@ -16,8 +16,8 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0,
+        "weight": 0.3,
+        "weight_pct": 30.0,
         "ars_return_est": 500.0
       },
       {
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 485.8
+        "ars_return_est": 486.0
       },
       {
         "ticker": "AAPL",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 397.5
+        "ars_return_est": 396.4
       },
       {
         "ticker": "AAPL.BA",
@@ -45,7 +45,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 300.0
+        "ars_return_est": 295.0
       },
       {
         "ticker": "GOOGL.BA",
@@ -55,25 +55,16 @@
         "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 300.0
-      },
-      {
-        "ticker": "NVDA.BA",
-        "name": "NVDA",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 201.6
       }
     ],
-    "expected_return": 453.41,
-    "expected_volatility": 26.25,
-    "sharpe_ratio": 15.49,
+    "expected_return": 468.0,
+    "expected_volatility": 26.15,
+    "sharpe_ratio": 16.1,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 406.4
+    "spread_vs_inflation": 421.0
   }
 }

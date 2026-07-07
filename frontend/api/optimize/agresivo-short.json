@@ -7,9 +7,9 @@
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.2708,
-        "weight_pct": 27.1,
-        "ars_return_est": 25.1
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 24.1
       },
       {
         "ticker": "T30J7",
@@ -73,20 +73,11 @@
         "weight": 0.1,
         "weight_pct": 10.0,
         "ars_return_est": 13.8
-      },
-      {
-        "ticker": "VALE.BA",
-        "name": "VALE",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.0292,
-        "weight_pct": 2.9,
-        "ars_return_est": 14.9
       }
     ],
     "expected_return": 16.8,
-    "expected_volatility": 11.1,
-    "sharpe_ratio": 0.52,
+    "expected_volatility": 11.71,
+    "sharpe_ratio": 0.5,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
