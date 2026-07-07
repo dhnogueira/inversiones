@@ -4,23 +4,23 @@
     "ticker": "HD",
     "name": "HD",
     "category": "sp500",
-    "price": 345.489990234375,
+    "price": 345.2243957519531,
     "currency": "USD",
-    "score": 51.9,
+    "score": 52.0,
     "profile": "moderado",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 57.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "57.7",
+        "content": "El RSI de 14 períodos está en 57.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "57.5",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (345.49) cotiza por debajo de la EMA de 200 días (346.48), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (345.22) cotiza por debajo de la EMA de 200 días (346.48), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+11.2%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (8.4%) refuerzan esta tendencia positiva.",
-        "value": "+11.2% (1M)",
+        "content": "El activo registró un rendimiento del **+11.1%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (8.3%) refuerzan esta tendencia positiva.",
+        "value": "+11.1% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+1.1%** y a 12 meses es **-4.2%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+1.1% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+1.0%** y a 12 meses es **-4.3%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+1.0% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **22.3%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+11.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 22.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **22.2%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+11.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 22.2%",
         "status": "success"
       }
     ],
@@ -177,17 +177,17 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **51.9/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 404.53,
-      "stop_loss": 315.97,
+      "summary": "El score de **52.0/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "take_profit": 404.22,
+      "stop_loss": 315.72,
       "tp_pct": 17.1,
       "sl_pct": 8.5
     },
     "support": 310.58,
     "resistance": 352.89,
     "volume_cluster": 320.25,
-    "take_profit": 404.53,
-    "stop_loss": 315.97,
+    "take_profit": 404.22,
+    "stop_loss": 315.72,
     "tp_pct": 17.1,
     "sl_pct": 8.5
   }
