@@ -4,7 +4,7 @@
     "ticker": "BMA.BA",
     "name": "BMA",
     "category": "merval",
-    "price": 14460.0,
+    "price": 14440.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 56.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "56.9",
+        "content": "El RSI de 14 períodos está en 56.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.6",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (13186.73) se encuentra por encima de la EMA de 200 días (11662.30), y el precio actual (14460.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (13185.95) se encuentra por encima de la EMA de 200 días (11662.10), y el precio actual (14440.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,14 +34,14 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+8.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (24.8%) refuerzan esta tendencia positiva.",
-        "value": "+8.9% (1M)",
+        "content": "El activo registró un rendimiento del **+8.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (24.6%) refuerzan esta tendencia positiva.",
+        "value": "+8.7% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 10,127.89 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 14,463.30 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 10,295.88. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 10,127.89 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 14,448.29 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 10,295.88. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 10,295.88",
         "status": "success"
       }
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+6.1%** y a 12 meses es **+80.7%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+6.1% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+6.0%** y a 12 meses es **+80.4%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+6.0% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **6.1%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-4.9%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 6.1%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **6.0%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-5.0%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 6.0%",
         "status": "danger"
       }
     ],
@@ -175,16 +175,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 20706.72,
-      "stop_loss": 11336.64,
+      "take_profit": 20678.08,
+      "stop_loss": 11320.96,
       "tp_pct": 43.2,
       "sl_pct": 21.6
     },
     "support": 10127.89,
-    "resistance": 14463.3,
+    "resistance": 14448.29,
     "volume_cluster": 10295.88,
-    "take_profit": 20706.72,
-    "stop_loss": 11336.64,
+    "take_profit": 20678.08,
+    "stop_loss": 11320.96,
     "tp_pct": 43.2,
     "sl_pct": 21.6
   }
