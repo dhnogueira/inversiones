@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 22.5
+        "ars_return_est": 22.3
       },
       {
         "ticker": "T30J7",
@@ -84,14 +84,14 @@
         "ars_return_est": 23.5
       }
     ],
-    "expected_return": 16.36,
+    "expected_return": 16.32,
     "expected_volatility": 7.28,
-    "sharpe_ratio": 0.74,
+    "sharpe_ratio": 0.73,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 5.4
+    "spread_vs_inflation": 5.3
   }
 }

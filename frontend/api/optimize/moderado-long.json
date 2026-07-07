@@ -7,8 +7,8 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3177,
-        "weight_pct": 31.8,
+        "weight": 0.3288,
+        "weight_pct": 32.9,
         "ars_return_est": 500.0
       },
       {
@@ -16,9 +16,9 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1823,
-        "weight_pct": 18.2,
-        "ars_return_est": 443.5
+        "weight": 0.1712,
+        "weight_pct": 17.1,
+        "ars_return_est": 440.5
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 352.2
+        "ars_return_est": 351.5
       },
       {
         "ticker": "ABBV",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 298.9
+        "ars_return_est": 297.5
       },
       {
         "ticker": "AAPL.BA",
@@ -45,7 +45,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 250.0
+        "ars_return_est": 248.6
       },
       {
         "ticker": "GOOGL.BA",
@@ -63,16 +63,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 235.5
-      },
-      {
-        "ticker": "KO.BA",
-        "name": "KO",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 127.0
+        "ars_return_est": 236.1
       },
       {
         "ticker": "XOM.BA",
@@ -81,7 +72,16 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 152.3
+        "ars_return_est": 154.2
+      },
+      {
+        "ticker": "KO.BA",
+        "name": "KO",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 126.3
       },
       {
         "ticker": "AMZN.BA",
@@ -93,14 +93,14 @@
         "ars_return_est": 100.4
       }
     ],
-    "expected_return": 360.57,
-    "expected_volatility": 24.36,
-    "sharpe_ratio": 12.87,
+    "expected_return": 360.5,
+    "expected_volatility": 24.41,
+    "sharpe_ratio": 12.84,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 313.6
+    "spread_vs_inflation": 313.5
   }
 }
