@@ -4,7 +4,7 @@
     "ticker": "PG",
     "name": "PG",
     "category": "sp500",
-    "price": 151.41000366210938,
+    "price": 152.75,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 57.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "57.8",
+        "content": "El RSI de 14 períodos está en 59.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "59.0",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (151.41) se mantiene por encima de la EMA de 200 días (148.36), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (147.02) aún no confirma un cruce definitivo.",
+        "content": "El precio (152.75) se mantiene por encima de la EMA de 200 días (148.43), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (147.33) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,38 +34,45 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+8.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (6.6%) refuerzan esta tendencia positiva.",
-        "value": "+8.0% (1M)",
+        "content": "El rendimiento mensual es de **+4.2%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (8.9%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+4.2% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 141.64 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 152.96 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 144.05. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 141.64 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 152.52 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 144.05. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 144.05",
         "status": "success"
       }
     ],
     "fundamental": [
       {
+        "title": "Zona de Acumulación (Drawdown)",
+        "icon": "fa-layer-group",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **8.0%** respecto a su máximo anual de **USD 165.95**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-8.0%",
+        "status": "neutral"
+      },
+      {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.38** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
-        "value": "-0.38",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.31** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
+        "value": "-0.31",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+7.2%** y a 12 meses es **-3.4%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+7.2% (6M)",
-        "status": "neutral"
+        "content": "El rendimiento acumulado a 6 meses es **+10.4%** y a 12 meses es **-2.1%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+10.4% (6M)",
+        "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **88.3%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+41.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 88.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **93.3%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+46.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 93.3%",
         "status": "success"
       }
     ],
@@ -83,17 +90,116 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 214.42,
-      "stop_loss": 123.41,
-      "tp_pct": 41.6,
-      "sl_pct": 18.5
+      "take_profit": 216.57,
+      "stop_loss": 124.38,
+      "tp_pct": 41.8,
+      "sl_pct": 18.6
     },
     "support": 141.64,
-    "resistance": 152.96,
+    "resistance": 152.52,
     "volume_cluster": 144.05,
-    "take_profit": 214.42,
-    "stop_loss": 123.41,
-    "tp_pct": 41.6,
-    "sl_pct": 18.5
+    "take_profit": 216.57,
+    "stop_loss": 124.38,
+    "tp_pct": 41.8,
+    "sl_pct": 18.6,
+    "long_term_strategies": {
+      "value": [
+        {
+          "title": "PER — Price / Earnings",
+          "icon": "fa-tag",
+          "content": "El **PER de 22.3x** se encuentra en un rango moderado (15-25x). No es barato ni caro según el criterio clásico de Graham; el precio ya descuenta cierto crecimiento futuro.",
+          "value": "22.3x",
+          "status": "neutral"
+        },
+        {
+          "title": "Precio / Valor Libro (P/B)",
+          "icon": "fa-book-open",
+          "content": "El **P/B de 6.62x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "6.62x",
+          "status": "warning"
+        },
+        {
+          "title": "Flujo de Caja Libre (FCF Yield)",
+          "icon": "fa-money-bill-wave",
+          "content": "El **FCF Yield del 3.6%** es positivo pero moderado. La empresa genera caja libre, aunque el margen no es especialmente generoso a este nivel de precio.",
+          "value": "3.6%",
+          "status": "neutral"
+        },
+        {
+          "title": "ROE — Rentabilidad sobre Patrimonio",
+          "icon": "fa-percent",
+          "content": "El **ROE del 31.1%** es excelente (> 15%). La empresa genera una alta rentabilidad sobre el capital de los accionistas, señal de ventaja competitiva sostenible. Buffett considera el ROE alto consistente como uno de los indicadores más confiables de una gran empresa.",
+          "value": "31.1%",
+          "status": "success"
+        },
+        {
+          "title": "Bajo Endeudamiento (D/E)",
+          "icon": "fa-shield-halved",
+          "content": "La relación **Deuda/Patrimonio de 0.68x** es moderada y manejable, habitual en empresas maduras que usan apalancamiento de forma controlada.",
+          "value": "0.68x",
+          "status": "neutral"
+        }
+      ],
+      "quality": [
+        {
+          "title": "Márgenes Consistentes (Quality)",
+          "icon": "fa-chart-pie",
+          "content": "El **margen operativo del 23.1%** es elevado. Empresas con márgenes operativos superiores al 20% reflejan ventajas competitivas estructurales ('moat'): poder de fijación de precios, economías de escala o diferenciación de producto. Factor clave en Quality Investing.",
+          "value": "23.1%",
+          "status": "success"
+        },
+        {
+          "title": "Momentum (Factor de Precio)",
+          "icon": "fa-rocket",
+          "content": "El **momentum trimestral (+8.9%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
+          "value": "+8.9% (3M)",
+          "status": "neutral"
+        },
+        {
+          "title": "Baja Volatilidad (Low Vol Factor)",
+          "icon": "fa-water",
+          "content": "La **volatilidad anualizada del 19.3%** es baja. Uno de los hallazgos más contraintuitivos de las finanzas modernas es que activos de baja volatilidad superan en retorno ajustado por riesgo a los de alta volatilidad en el largo plazo (Low Volatility Anomaly). Este activo encaja en ese perfil.",
+          "value": "19.3%",
+          "status": "success"
+        },
+        {
+          "title": "Factor Value / Quality (Contexto PER)",
+          "icon": "fa-building-columns",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 22.3x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "22.3x",
+          "status": "neutral"
+        }
+      ],
+      "dividend": [
+        {
+          "title": "Dividend Yield (Rendimiento por Dividendo)",
+          "icon": "fa-coins",
+          "content": "El **dividend yield del 285.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
+          "value": "285.00%",
+          "status": "warning"
+        },
+        {
+          "title": "Payout Ratio (Sostenibilidad del Dividendo)",
+          "icon": "fa-sliders",
+          "content": "El **payout ratio del 62%** es moderado-alto. La empresa distribuye una parte significativa de sus ganancias. El crecimiento futuro del dividendo dependerá de que la empresa continúe expandiendo sus beneficios.",
+          "value": "62%",
+          "status": "neutral"
+        },
+        {
+          "title": "Dividendo Creciente (Dividend Growth)",
+          "icon": "fa-arrow-trend-up",
+          "content": "✅ Los datos históricos sugieren que esta empresa **ha mantenido o aumentado sus dividendos** en los últimos años, siguiendo el patrón de los Dividend Aristocrats y Dividend Kings. Empresas como J&J, PG y Coca-Cola llevan más de 25 años incrementando el dividendo ininterrumpidamente.",
+          "value": "Sí ✅",
+          "status": "success"
+        },
+        {
+          "title": "Solidez Fundamental (Pilar del DGI)",
+          "icon": "fa-landmark-flag",
+          "content": "Los fundamentos de la empresa son **sólidos**: FCF positivo y sostenible, margen neto del 19%, baja deuda (D/E: 0.68x). Esto respalda la capacidad de mantener y hacer crecer el dividendo en el largo plazo, incluso en entornos económicos adversos.",
+          "value": "3/3 pilares",
+          "status": "success"
+        }
+      ]
+    }
   }
 }

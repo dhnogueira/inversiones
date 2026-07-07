@@ -4,7 +4,7 @@
     "ticker": "YPFD.BA",
     "name": "YPFD",
     "category": "merval",
-    "price": 71575.0,
+    "price": 74425.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,35 +13,35 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 42.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "42.3",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 52.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "52.1",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (71575.00) se mantiene por encima de la EMA de 200 días (60511.59), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (72184.19) aún no confirma un cruce definitivo.",
-        "value": "Alcista",
-        "status": "neutral"
+        "content": "La EMA de 50 días (72289.61) se encuentra por encima de la EMA de 200 días (60774.02), y el precio actual (74425.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "value": "Fuerte Alcista",
+        "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (45.5%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "45.5%",
+        "content": "La volatilidad anualizada es **alta** (45.6%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "45.6%",
         "status": "warning"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-11.7%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-11.7% (1M)",
+        "content": "El activo cayó un **-8.5%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-8.5% (1M)",
         "status": "danger"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 54,965.00 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 81,347.50 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 65,576.25. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 55,797.50 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 81,347.50 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 65,576.25. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 65,576.25",
         "status": "success"
       }
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+26.8%** y a 12 meses es **+88.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+26.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+36.9%** y a 12 meses es **+87.8%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+36.9% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **32.2%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+21.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 32.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **44.2%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+33.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 44.2%",
         "status": "success"
       }
     ],
@@ -83,17 +83,17 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 106785.51,
-      "stop_loss": 53969.75,
-      "tp_pct": 49.2,
+      "take_profit": 111088.86,
+      "stop_loss": 56093.07,
+      "tp_pct": 49.3,
       "sl_pct": 24.6
     },
-    "support": 54965.0,
+    "support": 55797.5,
     "resistance": 81347.5,
     "volume_cluster": 65576.25,
-    "take_profit": 106785.51,
-    "stop_loss": 53969.75,
-    "tp_pct": 49.2,
+    "take_profit": 111088.86,
+    "stop_loss": 56093.07,
+    "tp_pct": 49.3,
     "sl_pct": 24.6
   }
 }

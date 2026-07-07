@@ -1,0 +1,106 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 500.0
+      },
+      {
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 446.4
+      },
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 345.0
+      },
+      {
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 249.1
+      },
+      {
+        "ticker": "ABBV",
+        "name": "ABBV",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 296.0
+      },
+      {
+        "ticker": "JPM",
+        "name": "JPM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 182.7
+      },
+      {
+        "ticker": "AVGO",
+        "name": "AVGO",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 274.2
+      },
+      {
+        "ticker": "LLY",
+        "name": "LLY",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 422.7
+      },
+      {
+        "ticker": "AMZN",
+        "name": "AMZN",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 144.3
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVDA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 212.4
+      }
+    ],
+    "expected_return": 307.27,
+    "expected_volatility": 28.94,
+    "sharpe_ratio": 8.99,
+    "profile": "moderado",
+    "horizon": "long",
+    "risk_free_rate": 47.0,
+    "inflation_reference": 47.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 260.3
+  }
+}

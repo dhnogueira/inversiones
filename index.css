@@ -308,6 +308,52 @@ body {
     box-shadow: 0 0 20px 0 rgba(236, 72, 153, 0.1);
 }
 
+/* Portfolio Category Selector Tabs (Third Row) */
+.portfolio-category-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.portfolio-category-tabs::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.portfolio-category-tab {
+    padding: 10px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glow);
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.portfolio-category-tab:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.portfolio-category-tab.active {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.05);
+}
+
 /* Metrics row */
 .metrics-grid {
     display: grid;
@@ -1421,6 +1467,16 @@ body {
         padding: 12px 10px;
         font-size: 14px;
     }
+
+    .portfolio-category-tabs {
+        gap: 6px;
+        margin-bottom: 16px;
+    }
+
+    .portfolio-category-tab {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
 }
 
 /* ============================================================
@@ -1466,10 +1522,12 @@ body {
     }
 
     .modal-container {
+        width: 100%;
         max-width: 100%;
         max-height: 92vh;
         border-radius: 20px 20px 0 0;
         padding: 20px 16px 30px;
+        overflow-y: auto;
     }
 
     .modal-container.modal-small {
@@ -1653,10 +1711,13 @@ body {
     display: flex;
     gap: 12px;
     overflow-x: auto;
+    width: 100%;
+    box-sizing: border-box;
     padding-bottom: 8px;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
     margin-bottom: 16px;
+    -webkit-overflow-scrolling: touch;
 }
 
 .balance-snapshots-container::-webkit-scrollbar {
@@ -1814,6 +1875,10 @@ body {
 }
 
 @media (max-width: 640px) {
+    .modal-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
     .balance-summary-metrics {
         grid-template-columns: 1fr 1fr;
     }

@@ -4,23 +4,23 @@
     "ticker": "UNH",
     "name": "UNH",
     "category": "sp500",
-    "price": 425.3599853515625,
+    "price": 428.19000244140625,
     "currency": "USD",
-    "score": 75.3,
+    "score": 68.5,
     "profile": "agresivo",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 65.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "65.3",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 64.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "64.2",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (385.08) se encuentra por encima de la EMA de 200 días (349.39), y el precio actual (425.36) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (388.01) se encuentra por encima de la EMA de 200 días (350.85), y el precio actual (428.19) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,38 +34,45 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+13.5%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (54.3%) refuerzan esta tendencia positiva.",
-        "value": "+13.5% (1M)",
+        "content": "El activo registró un rendimiento del **+7.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (39.9%) refuerzan esta tendencia positiva.",
+        "value": "+7.8% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 273.86 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 407.81 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 283.10. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 283.10",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 275.33 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 410.69 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 283.15. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 283.15",
         "status": "success"
       }
     ],
     "fundamental": [
       {
+        "title": "Zona de Acumulación (Drawdown)",
+        "icon": "fa-layer-group",
+        "content": "**¿Qué significa?** El activo cotiza cerca de su máximo anual de **USD 428.19** (descuento mínimo del **0.0%**), lo que indica una zona de **máximos (Peak-FOMO)**. Para un inversor de largo plazo, comprar en esta zona representa un riesgo de entrar en la parte alta del mercado. Se recomienda cautela o compras escalonadas (DCA) para mitigar el riesgo de reversión rápida.",
+        "value": "-0.0%",
+        "status": "warning"
+      },
+      {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.90** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "0.90",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.96** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
+        "value": "0.96",
         "status": "neutral"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+30.6%** y a 12 meses es **+42.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+30.6% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+26.9%** y a 12 meses es **+44.8%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+26.9% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **347.6%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+300.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 347.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **366.7%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+319.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 366.7%",
         "status": "success"
       }
     ],
@@ -82,18 +89,117 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **75.3/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
-      "take_profit": 1009.43,
-      "stop_loss": 165.77,
-      "tp_pct": 137.3,
-      "sl_pct": 61.0
+      "summary": "Con un score de **68.5/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
+      "take_profit": 1016.87,
+      "stop_loss": 166.56,
+      "tp_pct": 137.5,
+      "sl_pct": 61.1
     },
-    "support": 273.86,
-    "resistance": 407.81,
-    "volume_cluster": 283.1,
-    "take_profit": 1009.43,
-    "stop_loss": 165.77,
-    "tp_pct": 137.3,
-    "sl_pct": 61.0
+    "support": 275.33,
+    "resistance": 410.69,
+    "volume_cluster": 283.15,
+    "take_profit": 1016.87,
+    "stop_loss": 166.56,
+    "tp_pct": 137.5,
+    "sl_pct": 61.1,
+    "long_term_strategies": {
+      "value": [
+        {
+          "title": "PER — Price / Earnings",
+          "icon": "fa-tag",
+          "content": "El **PER de 32.2x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "32.2x",
+          "status": "warning"
+        },
+        {
+          "title": "Precio / Valor Libro (P/B)",
+          "icon": "fa-book-open",
+          "content": "El **P/B de 3.97x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "3.97x",
+          "status": "warning"
+        },
+        {
+          "title": "Flujo de Caja Libre (FCF Yield)",
+          "icon": "fa-money-bill-wave",
+          "content": "El **FCF Yield del 4.5%** es robusto. La empresa genera abundante flujo de caja libre en relación a su capitalización bursátil, lo que le permite reinvertir, pagar dividendos y recomprar acciones sin depender de deuda.",
+          "value": "4.5%",
+          "status": "success"
+        },
+        {
+          "title": "ROE — Rentabilidad sobre Patrimonio",
+          "icon": "fa-percent",
+          "content": "El **ROE del 12.2%** es aceptable (8-15%). La gestión del capital es razonable sin ser excepcional.",
+          "value": "12.2%",
+          "status": "neutral"
+        },
+        {
+          "title": "Bajo Endeudamiento (D/E)",
+          "icon": "fa-shield-halved",
+          "content": "La relación **Deuda/Patrimonio de 0.74x** es moderada y manejable, habitual en empresas maduras que usan apalancamiento de forma controlada.",
+          "value": "0.74x",
+          "status": "neutral"
+        }
+      ],
+      "quality": [
+        {
+          "title": "Márgenes Consistentes (Quality)",
+          "icon": "fa-chart-pie",
+          "content": "El **margen operativo del 8.1%** es bajo pero positivo. La empresa es rentable a nivel operativo, aunque con poca holgura ante presiones de costos.",
+          "value": "8.1%",
+          "status": "warning"
+        },
+        {
+          "title": "Momentum (Factor de Precio)",
+          "icon": "fa-rocket",
+          "content": "El **momentum de 3 meses (+39.9%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
+          "value": "+39.9% (3M)",
+          "status": "success"
+        },
+        {
+          "title": "Baja Volatilidad (Low Vol Factor)",
+          "icon": "fa-water",
+          "content": "La **volatilidad anualizada del 42.4%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables.",
+          "value": "42.4%",
+          "status": "warning"
+        },
+        {
+          "title": "Factor Value / Quality (Contexto PER)",
+          "icon": "fa-building-columns",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 32.2x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "32.2x",
+          "status": "neutral"
+        }
+      ],
+      "dividend": [
+        {
+          "title": "Dividend Yield (Rendimiento por Dividendo)",
+          "icon": "fa-coins",
+          "content": "El **dividend yield del 222.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
+          "value": "222.00%",
+          "status": "warning"
+        },
+        {
+          "title": "Payout Ratio (Sostenibilidad del Dividendo)",
+          "icon": "fa-sliders",
+          "content": "El **payout ratio del 67%** es moderado-alto. La empresa distribuye una parte significativa de sus ganancias. El crecimiento futuro del dividendo dependerá de que la empresa continúe expandiendo sus beneficios.",
+          "value": "67%",
+          "status": "neutral"
+        },
+        {
+          "title": "Dividendo Creciente (Dividend Growth)",
+          "icon": "fa-arrow-trend-up",
+          "content": "✅ Los datos históricos sugieren que esta empresa **ha mantenido o aumentado sus dividendos** en los últimos años, siguiendo el patrón de los Dividend Aristocrats y Dividend Kings. Empresas como J&J, PG y Coca-Cola llevan más de 25 años incrementando el dividendo ininterrumpidamente.",
+          "value": "Sí ✅",
+          "status": "success"
+        },
+        {
+          "title": "Solidez Fundamental (Pilar del DGI)",
+          "icon": "fa-landmark-flag",
+          "content": "Los fundamentos de la empresa son **sólidos**: FCF positivo y sostenible, baja deuda (D/E: 0.74x). Esto respalda la capacidad de mantener y hacer crecer el dividendo en el largo plazo, incluso en entornos económicos adversos.",
+          "value": "2/3 pilares",
+          "status": "success"
+        }
+      ]
+    }
   }
 }

@@ -3,50 +3,59 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "GOOGL.BA",
-        "name": "GOOGL",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.3028,
-        "weight_pct": 30.3,
-        "ars_return_est": 134.3
-      },
-      {
         "ticker": "GOOGL",
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3028,
-        "weight_pct": 30.3,
-        "ars_return_est": 157.9
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 164.9
+      },
+      {
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 129.8
       },
       {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3028,
-        "weight_pct": 30.3,
-        "ars_return_est": 113.0
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 115.4
       },
       {
-        "ticker": "AAPL",
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 77.0
+      },
+      {
+        "ticker": "AAPL.BA",
         "name": "AAPL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.0916,
-        "weight_pct": 9.2,
-        "ars_return_est": 94.1
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 68.8
       }
     ],
-    "expected_return": 131.31,
-    "expected_volatility": 25.76,
-    "sharpe_ratio": 4.24,
+    "expected_return": 130.33,
+    "expected_volatility": 25.81,
+    "sharpe_ratio": 4.2,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 109.3
+    "spread_vs_inflation": 108.3
   }
 }

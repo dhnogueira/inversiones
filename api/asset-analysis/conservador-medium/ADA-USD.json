@@ -4,7 +4,7 @@
     "ticker": "ADA-USD",
     "name": "ADA-USD",
     "category": "crypto",
-    "price": 0.18649999797344208,
+    "price": 0.17389999330043793,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -13,29 +13,29 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 61.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "61.9",
+        "content": "El RSI de 14 períodos está en 51.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "51.6",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (0.19) cotiza por debajo de la EMA de 200 días (0.29), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
-        "value": "Bajista",
-        "status": "warning"
+        "content": "La EMA de 50 días (0.19) se encuentra por debajo de la EMA de 200 días (0.29), y el precio (0.17) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "value": "Fuerte Bajista",
+        "status": "danger"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **muy alta** (82.4%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
-        "value": "82.4%",
+        "content": "La volatilidad anualizada es **muy alta** (82.3%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "82.3%",
         "status": "danger"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.0%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-25.2%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.0% (1M)",
+        "content": "El rendimiento mensual es de **+4.4%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-34.8%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+4.4% (1M)",
         "status": "success"
       },
       {
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-31.8%** y a 12 meses es **-72.6%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-31.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-37.0%** y a 12 meses es **-72.8%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-37.0% (6M)",
         "status": "danger"
       },
       {
@@ -83,17 +83,153 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "take_profit": 0.28,
-      "stop_loss": 0.14,
+      "take_profit": 0.26,
+      "stop_loss": 0.13,
       "tp_pct": 48.0,
       "sl_pct": 24.0
     },
     "support": 0.16,
     "resistance": 0.26,
     "volume_cluster": 0.25,
-    "take_profit": 0.28,
-    "stop_loss": 0.14,
+    "take_profit": 0.26,
+    "stop_loss": 0.13,
     "tp_pct": 48.0,
-    "sl_pct": 24.0
+    "sl_pct": 24.0,
+    "medium_term_strategies": {
+      "earnings_revision": [
+        {
+          "title": "Revisión de EPS (Forward vs Trailing)",
+          "icon": "fa-chart-bar",
+          "content": "No se dispone de datos de EPS forward para este activo. Puede deberse a que es cripto, un CEDEAR sin cobertura directa de analistas, o falta de datos en la fuente.",
+          "value": "N/D",
+          "status": "neutral"
+        },
+        {
+          "title": "Consensus de Analistas",
+          "icon": "fa-users-line",
+          "content": "No hay cobertura de analistas disponible para este activo en este período. Esto es frecuente en activos no estadounidenses, cripto y en algunos CEDEARs.",
+          "value": "Sin cobertura",
+          "status": "neutral"
+        },
+        {
+          "title": "Precio Objetivo y Upside Potencial",
+          "icon": "fa-bullseye",
+          "content": "No se dispone de precio objetivo de analistas para este activo. Frecuente en cripto, activos argentinos locales y algunos CEDEARs.",
+          "value": "N/D",
+          "status": "neutral"
+        },
+        {
+          "title": "Crecimiento de EPS e Ingresos (Trim. YoY)",
+          "icon": "fa-arrow-up-right-dots",
+          "content": "No se dispone de datos de crecimiento trimestral de EPS e ingresos. Para activos sin cobertura de analistas (cripto, locales) este indicador puede obtenerse de los reportes directos de la empresa.",
+          "value": "N/D",
+          "status": "neutral"
+        }
+      ],
+      "can_slim": [
+        {
+          "title": "C — Ganancias Trimestrales (Current Earnings)",
+          "icon": "fa-c",
+          "content": "**C (Current Earnings):** Sin datos trimestrales disponibles. Este componente no puede evaluarse para este activo (frecuente en cripto y activos sin cobertura de analistas).",
+          "value": "N/D",
+          "status": "neutral"
+        },
+        {
+          "title": "A — Crecimiento Anual de Ganancias",
+          "icon": "fa-a",
+          "content": "**A (Annual Earnings):** El retorno anual es **-73%** — señal de alerta. O'Neil filtra empresas cuyas ganancias no muestran crecimiento real en términos anuales.",
+          "value": "-73% (12M)",
+          "status": "warning"
+        },
+        {
+          "title": "S — Oferta y Demanda (Volatilidad/Volumen)",
+          "icon": "fa-s",
+          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.84x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
+          "value": "0.84x",
+          "status": "success"
+        },
+        {
+          "title": "L — Liderazgo de Mercado (Leader)",
+          "icon": "fa-l",
+          "content": "**L (Leader):** RSI de 52 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
+          "value": "RSI 52",
+          "status": "neutral"
+        },
+        {
+          "title": "I — Respaldo Institucional (Institutional)",
+          "icon": "fa-i",
+          "content": "**I (Institutional Sponsorship):** Sin cobertura de analistas disponible. Para activos argentinos locales y cripto, el 'sponsorship' se mide mejor por el volumen relativo y la acumulación en cadena.",
+          "value": "Sin datos",
+          "status": "neutral"
+        },
+        {
+          "title": "M — Dirección del Mercado (Market)",
+          "icon": "fa-m",
+          "content": "**M (Market Direction):** El cruce EMA señala una tendencia de mercado **bajista** (-35.7%). O'Neil prohíbe rotundamente comprar en mercados bajistas: 'Si el mercado baja, la mejor cartera no sirve'.",
+          "value": "-35.7%",
+          "status": "warning"
+        }
+      ],
+      "relative_strength": [
+        {
+          "title": "Fuerza Relativa (Relative Strength)",
+          "icon": "fa-ranking-star",
+          "content": "La **fuerza relativa es débil** (score: 1/6). El activo no evidencia momentum sostenido. RSI=52, 3M=-34.8%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "value": "Score 1/6",
+          "status": "warning"
+        },
+        {
+          "title": "Tendencia vs. Media de Largo Plazo",
+          "icon": "fa-chart-line",
+          "content": "El activo está por debajo de su media de largo plazo (cruce EMA: -35.7%), indicando rezago relativo. La selección por fuerza relativa excluiría esta posición en favor de activos más fuertes del mismo sector.",
+          "value": "-35.7%",
+          "status": "warning"
+        },
+        {
+          "title": "Aceleración de Momentum",
+          "icon": "fa-gauge-simple-high",
+          "content": "El **momentum se está acelerando** (+39.2%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
+          "value": "+39.2%",
+          "status": "success"
+        },
+        {
+          "title": "Liderazgo Sectorial (Market Leadership)",
+          "icon": "fa-sitemap",
+          "content": "En cripto, el liderazgo de mercado se analiza mediante la dominancia de Bitcoin (BTC.D): cuando BTC lidera, los altcoins suelen quedarse atrás. Cuando BTC entra en lateralización, los altcoins con mayor fuerza relativa tienden a destacar (altseason).",
+          "value": "CRYPTO",
+          "status": "neutral"
+        }
+      ],
+      "garp": [
+        {
+          "title": "PEG Ratio (Crecimiento a Precio Razonable)",
+          "icon": "fa-balance-scale",
+          "content": "El **PEG Ratio no está disponible** para este activo. Para cripto y activos sin cobertura de analistas, se compensa utilizando el crecimiento histórico de precio como proxy del crecimiento esperado.",
+          "value": "N/D",
+          "status": "neutral"
+        },
+        {
+          "title": "Crecimiento Esperado del EPS",
+          "icon": "fa-up-long",
+          "content": "Datos de crecimiento de EPS no disponibles para este activo.",
+          "value": "N/D",
+          "status": "neutral"
+        },
+        {
+          "title": "PER Forward vs. Trailing",
+          "icon": "fa-calendar-check",
+          "content": "Sin datos de PER disponibles para este activo.",
+          "value": "N/D",
+          "status": "neutral"
+        },
+        {
+          "title": "Calidad Fundamental (ROE + FCF + Deuda)",
+          "icon": "fa-gem",
+          "content": "Los datos disponibles no permiten confirmar los pilares de calidad del GARP (ROE, FCF, deuda). Esto puede deberse a ausencia de datos o a fundamentos más débiles que el estilo requiere.",
+          "value": "0/3 pilares",
+          "status": "warning"
+        }
+      ]
+    }
   }
 }

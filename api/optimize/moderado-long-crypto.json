@@ -1,0 +1,61 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "BTC-USD",
+        "name": "BTC-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": -19.3
+      },
+      {
+        "ticker": "ETH-USD",
+        "name": "ETH-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": -19.3
+      },
+      {
+        "ticker": "BNB-USD",
+        "name": "BNB-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": -19.3
+      },
+      {
+        "ticker": "SOL-USD",
+        "name": "SOL-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": -19.3
+      },
+      {
+        "ticker": "XRP-USD",
+        "name": "XRP-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": -19.3
+      }
+    ],
+    "expected_return": -19.34,
+    "expected_volatility": 48.22,
+    "sharpe_ratio": -1.38,
+    "profile": "moderado",
+    "horizon": "long",
+    "risk_free_rate": 47.0,
+    "inflation_reference": 47.0,
+    "beats_inflation": false,
+    "spread_vs_inflation": -66.3
+  }
+}

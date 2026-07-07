@@ -1,0 +1,88 @@
+{
+  "status": "success",
+  "optimization": {
+    "weights": [
+      {
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 194.7
+      },
+      {
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 103.2
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 73.7
+      },
+      {
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 98.3
+      },
+      {
+        "ticker": "NVDA.BA",
+        "name": "NVDA",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 70.6
+      },
+      {
+        "ticker": "AMZN.BA",
+        "name": "AMZN",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 50.2
+      },
+      {
+        "ticker": "KO.BA",
+        "name": "KO",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 61.1
+      },
+      {
+        "ticker": "TSLA.BA",
+        "name": "TSLA",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 75.8
+      }
+    ],
+    "expected_return": 125.75,
+    "expected_volatility": 31.82,
+    "sharpe_ratio": 3.26,
+    "profile": "agresivo",
+    "horizon": "medium",
+    "risk_free_rate": 22.0,
+    "inflation_reference": 22.0,
+    "beats_inflation": true,
+    "spread_vs_inflation": 103.8
+  }
+}
