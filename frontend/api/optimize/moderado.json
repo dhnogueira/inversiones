@@ -9,25 +9,25 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 197.6
-      },
-      {
-        "ticker": "MRK",
-        "name": "MRK",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.2552,
-        "weight_pct": 25.5,
-        "ars_return_est": 133.4
+        "ars_return_est": 196.8
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.2448,
-        "weight_pct": 24.5,
+        "weight": 0.2648,
+        "weight_pct": 26.5,
         "ars_return_est": 163.9
+      },
+      {
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.2352,
+        "weight_pct": 23.5,
+        "ars_return_est": 133.1
       },
       {
         "ticker": "AAPL.BA",
@@ -36,7 +36,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 86.3
+        "ars_return_est": 86.6
       },
       {
         "ticker": "VALE.BA",
@@ -45,26 +45,26 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 82.1
+        "ars_return_est": 82.2
       },
       {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 59.3
+        "ars_return_est": 111.8
       }
     ],
-    "expected_return": 154.69,
-    "expected_volatility": 25.68,
-    "sharpe_ratio": 5.17,
+    "expected_return": 157.62,
+    "expected_volatility": 25.81,
+    "sharpe_ratio": 5.25,
     "profile": "moderado",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 132.7
+    "spread_vs_inflation": 135.6
   }
 }

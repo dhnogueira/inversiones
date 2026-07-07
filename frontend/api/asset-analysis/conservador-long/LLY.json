@@ -4,7 +4,7 @@
     "ticker": "LLY",
     "name": "LLY",
     "category": "sp500",
-    "price": 1233.1650390625,
+    "price": 1234.300048828125,
     "currency": "USD",
     "score": 68.6,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 68.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "68.2",
+        "content": "El RSI de 14 períodos se encuentra en 68.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "68.4",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1092.87) se encuentra por encima de la EMA de 200 días (987.92), y el precio actual (1233.17) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (1092.92) se encuentra por encima de la EMA de 200 días (987.93), y el precio actual (1234.30) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+9.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (32.7%) refuerzan esta tendencia positiva.",
-        "value": "+9.0% (1M)",
+        "content": "El activo registró un rendimiento del **+9.1%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (32.8%) refuerzan esta tendencia positiva.",
+        "value": "+9.1% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 902.34 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 1,145.13 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 1,022.29. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 1,022.29",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 902.34 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 1,145.13 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 1,022.80. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 1,022.80",
         "status": "success"
       }
     ],
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+18.8%** y a 12 meses es **+60.7%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+18.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+18.9%** y a 12 meses es **+60.8%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+18.9% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **356.8%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+309.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 356.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **357.6%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+310.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 357.6%",
         "status": "success"
       }
     ],
@@ -177,16 +177,16 @@
       "icon": "fa-circle-info",
       "color": "neutral",
       "summary": "Con un score de **68.6/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "take_profit": 1923.35,
-      "stop_loss": 926.41,
+      "take_profit": 1925.18,
+      "stop_loss": 927.24,
       "tp_pct": 56.0,
       "sl_pct": 24.9
     },
     "support": 902.34,
     "resistance": 1145.13,
-    "volume_cluster": 1022.29,
-    "take_profit": 1923.35,
-    "stop_loss": 926.41,
+    "volume_cluster": 1022.8,
+    "take_profit": 1925.18,
+    "stop_loss": 927.24,
     "tp_pct": 56.0,
     "sl_pct": 24.9
   }

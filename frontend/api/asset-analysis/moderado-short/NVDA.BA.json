@@ -4,7 +4,7 @@
     "ticker": "NVDA.BA",
     "name": "NVDA",
     "category": "cedears",
-    "price": 12950.0,
+    "price": 12940.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 49.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "49.6",
+        "content": "El RSI de 14 períodos se encuentra en 49.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "49.4",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (12884.13) se encuentra por encima de la EMA de 200 días (11688.58), y el precio actual (12950.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (12883.74) se encuentra por encima de la EMA de 200 días (11688.48), y el precio actual (12940.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+7.6%** y a 12 meses es **+59.5%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+7.6% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+7.5%** y a 12 meses es **+59.4%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+7.5% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **7.6%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-3.4%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 7.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **7.5%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-3.5%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 7.5%",
         "status": "danger"
       }
     ],
@@ -188,16 +188,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "take_profit": 17567.89,
-      "stop_loss": 10641.05,
+      "take_profit": 17554.34,
+      "stop_loss": 10632.83,
       "tp_pct": 35.7,
       "sl_pct": 17.8
     },
     "support": 10955.99,
     "resistance": 13670.99,
     "volume_cluster": 13028.49,
-    "take_profit": 17567.89,
-    "stop_loss": 10641.05,
+    "take_profit": 17554.34,
+    "stop_loss": 10632.83,
     "tp_pct": 35.7,
     "sl_pct": 17.8
   }
