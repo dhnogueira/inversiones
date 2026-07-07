@@ -4,7 +4,7 @@
     "ticker": "MSFT.BA",
     "name": "MSFT",
     "category": "cedears",
-    "price": 20670.0,
+    "price": 20650.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 56.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "56.3",
+        "content": "El RSI de 14 períodos está en 56.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.1",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (20670.00) cotiza por debajo de la EMA de 200 días (20940.71), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (20650.00) cotiza por debajo de la EMA de 200 días (20940.51), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+1.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (13.2%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+1.5% (1M)",
+        "content": "El rendimiento mensual es de **+1.4%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (13.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+1.4% (1M)",
         "status": "neutral"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-15.4%** y a 12 meses es **+1.8%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-15.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-15.5%** y a 12 meses es **+1.7%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-15.5% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **3.7%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-43.3%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 3.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **3.5%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-43.5%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 3.5%",
         "status": "danger"
       }
     ],
@@ -182,16 +182,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 36391.88,
-      "stop_loss": 13682.5,
+      "take_profit": 36357.07,
+      "stop_loss": 13669.08,
       "tp_pct": 76.1,
       "sl_pct": 33.8
     },
     "support": 18426.97,
     "resistance": 21080.97,
     "volume_cluster": 19458.98,
-    "take_profit": 36391.88,
-    "stop_loss": 13682.5,
+    "take_profit": 36357.07,
+    "stop_loss": 13669.08,
     "tp_pct": 76.1,
     "sl_pct": 33.8
   }
