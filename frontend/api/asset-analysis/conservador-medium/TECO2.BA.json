@@ -4,23 +4,23 @@
     "ticker": "TECO2.BA",
     "name": "TECO2",
     "category": "merval",
-    "price": 4132.5,
+    "price": 4130.0,
     "currency": "ARS",
-    "score": 81.4,
+    "score": 81.3,
     "profile": "conservador",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 54.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "54.3",
+        "content": "El RSI de 14 períodos está en 54.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.2",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (3948.07) se encuentra por encima de la EMA de 200 días (3471.98), y el precio actual (4132.50) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (3947.97) se encuentra por encima de la EMA de 200 días (3471.96), y el precio actual (4130.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-3.4%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-3.4% (1M)",
+        "content": "El rendimiento mensual es de **-3.5%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-3.5% (1M)",
         "status": "danger"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+18.3%** y a 12 meses es **+87.7%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "content": "El rendimiento acumulado a 6 meses es **+18.3%** y a 12 meses es **+87.5%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
         "value": "+18.3% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **70.1%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+48.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 70.1%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **70.0%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+48.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 70.0%",
         "status": "success"
       }
     ],
@@ -175,18 +175,18 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **81.4/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "summary": "Con un score de **81.3/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (1.50) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **conservador**.",
-      "take_profit": 5976.36,
-      "stop_loss": 3210.57,
+      "take_profit": 5972.73,
+      "stop_loss": 3208.64,
       "tp_pct": 44.6,
       "sl_pct": 22.3
     },
     "support": 3325.5,
     "resistance": 4205.75,
     "volume_cluster": 3420.5,
-    "take_profit": 5976.36,
-    "stop_loss": 3210.57,
+    "take_profit": 5972.73,
+    "stop_loss": 3208.64,
     "tp_pct": 44.6,
     "sl_pct": 22.3,
     "medium_term_strategies": {
@@ -268,7 +268,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=54, retorno 3M=+22.2%, retorno 12M=+87.7%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
+          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=54, retorno 3M=+22.1%, retorno 12M=+87.5%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
           "value": "Score 5/6",
           "status": "success"
         },

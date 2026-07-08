@@ -4,23 +4,23 @@
     "ticker": "XOM",
     "name": "XOM",
     "category": "sp500",
-    "price": 140.82000732421875,
+    "price": 140.92999267578125,
     "currency": "USD",
-    "score": 86.6,
+    "score": 86.7,
     "profile": "moderado",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 47.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "47.2",
+        "content": "El RSI de 14 períodos se encuentra en 47.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "47.4",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (140.82) se mantiene por encima de la EMA de 200 días (136.98), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (144.86) aún no confirma un cruce definitivo.",
+        "content": "El precio (140.93) se mantiene por encima de la EMA de 200 días (136.98), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (144.86) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-7.2%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-7.2% (1M)",
+        "content": "El activo cayó un **-7.1%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-7.1% (1M)",
         "status": "danger"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **17.3%** por debajo de su máximo anual de **USD 170.31**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-17.3%",
+        "content": "**¿Qué significa?** Este activo cotiza un **17.2%** por debajo de su máximo anual de **USD 170.31**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-17.2%",
         "status": "success"
       },
       {
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+17.9%** y a 12 meses es **+27.3%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+17.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+18.0%** y a 12 meses es **+27.4%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+18.0% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **226.5%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+179.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 226.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **227.0%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+180.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 227.0%",
         "status": "success"
       }
     ],
@@ -175,18 +175,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **86.6/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación.",
+      "summary": "Este activo obtiene un score de **86.7/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 0.95) es óptima para el perfil **moderado**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (24.5%).",
-      "take_profit": 215.23,
-      "stop_loss": 107.75,
+      "take_profit": 215.4,
+      "stop_loss": 107.83,
       "tp_pct": 52.8,
       "sl_pct": 23.5
     },
     "support": 138.4,
     "resistance": 160.66,
     "volume_cluster": 148.05,
-    "take_profit": 215.23,
-    "stop_loss": 107.75,
+    "take_profit": 215.4,
+    "stop_loss": 107.83,
     "tp_pct": 52.8,
     "sl_pct": 23.5,
     "long_term_strategies": {

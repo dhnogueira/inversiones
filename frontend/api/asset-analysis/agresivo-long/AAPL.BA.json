@@ -4,7 +4,7 @@
     "ticker": "AAPL.BA",
     "name": "AAPL",
     "category": "cedears",
-    "price": 24740.0,
+    "price": 24730.0,
     "currency": "ARS",
     "score": 95.7,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 68.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "68.8",
+        "content": "El RSI de 14 períodos se encuentra en 68.7, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "68.7",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (22367.57) se encuentra por encima de la EMA de 200 días (20031.90), y el precio actual (24740.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (22367.18) se encuentra por encima de la EMA de 200 días (20031.80), y el precio actual (24730.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -41,8 +41,8 @@
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 18,544.99 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,160.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 19,180.99. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 19,180.99",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 18,544.99 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,160.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 19,179.49. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 19,179.49",
         "status": "success"
       }
     ],
@@ -50,29 +50,29 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo cotiza cerca de su máximo anual de **ARS 24,740.00** (descuento mínimo del **0.0%**), lo que indica una zona de **máximos (Peak-FOMO)**. Para un inversor de largo plazo, comprar en esta zona representa un riesgo de entrar en la parte alta del mercado. Se recomienda cautela o compras escalonadas (DCA) para mitigar el riesgo de reversión rápida.",
+        "content": "**¿Qué significa?** El activo cotiza cerca de su máximo anual de **ARS 24,730.00** (descuento mínimo del **0.0%**), lo que indica una zona de **máximos (Peak-FOMO)**. Para un inversor de largo plazo, comprar en esta zona representa un riesgo de entrar en la parte alta del mercado. Se recomienda cautela o compras escalonadas (DCA) para mitigar el riesgo de reversión rápida.",
         "value": "-0.0%",
         "status": "warning"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.53** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
-        "value": "2.53",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.52** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "2.52",
         "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+23.2%** y a 12 meses es **+86.7%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "content": "El rendimiento acumulado a 6 meses es **+23.2%** y a 12 meses es **+86.6%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
         "value": "+23.2% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **298.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+251.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 298.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **298.0%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+251.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 298.0%",
         "status": "success"
       }
     ],
@@ -187,17 +187,17 @@
       "icon": "fa-circle-check",
       "color": "success",
       "summary": "Este activo obtiene un score de **95.7/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 2.53) es óptima para el perfil **agresivo**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (32.8%).",
-      "take_profit": 50997.37,
-      "stop_loss": 13070.06,
+      "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 2.52) es óptima para el perfil **agresivo**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (32.8%).",
+      "take_profit": 50976.32,
+      "stop_loss": 13064.97,
       "tp_pct": 106.1,
       "sl_pct": 47.2
     },
     "support": 18544.99,
     "resistance": 23160.0,
-    "volume_cluster": 19180.99,
-    "take_profit": 50997.37,
-    "stop_loss": 13070.06,
+    "volume_cluster": 19179.49,
+    "take_profit": 50976.32,
+    "stop_loss": 13064.97,
     "tp_pct": 106.1,
     "sl_pct": 47.2,
     "long_term_strategies": {
@@ -205,15 +205,15 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 12.2x** es bajo (< 15x), indicando que el mercado valúa la empresa a un precio razonable o incluso barato respecto a sus ganancias. Benjamin Graham consideraba este rango como zona de valor.",
-          "value": "12.2x",
+          "content": "El **PER de 12.1x** es bajo (< 15x), indicando que el mercado valúa la empresa a un precio razonable o incluso barato respecto a sus ganancias. Benjamin Graham consideraba este rango como zona de valor.",
+          "value": "12.1x",
           "status": "success"
         },
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 45.68x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
-          "value": "45.68x",
+          "content": "El **P/B de 45.59x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "45.59x",
           "status": "warning"
         },
         {
@@ -263,8 +263,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 12.2x posiciona a esta empresa en el segmento de valuación razonable, donde convergen los factores Value y Quality a largo plazo.",
-          "value": "12.2x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 12.1x posiciona a esta empresa en el segmento de valuación razonable, donde convergen los factores Value y Quality a largo plazo.",
+          "value": "12.1x",
           "status": "neutral"
         }
       ],

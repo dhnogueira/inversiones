@@ -4,7 +4,7 @@
     "ticker": "YPFD.BA",
     "name": "YPFD",
     "category": "merval",
-    "price": 75675.0,
+    "price": 75600.0,
     "currency": "ARS",
     "score": 96.9,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 55.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "55.7",
+        "content": "El RSI de 14 períodos está en 55.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "55.5",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (72422.37) se encuentra por encima de la EMA de 200 días (60922.29), y el precio actual (75675.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (72419.43) se encuentra por encima de la EMA de 200 días (60921.54), y el precio actual (75600.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -64,8 +64,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+48.1%** y a 12 meses es **+89.3%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+48.1% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+47.9%** y a 12 meses es **+89.1%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+47.9% (6M)",
         "status": "success"
       },
       {
@@ -179,16 +179,16 @@
       "color": "success",
       "summary": "Este activo obtiene un score de **96.9/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 1.87) es óptima para el perfil **agresivo**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (45.6%).",
-      "take_profit": 187428.89,
-      "stop_loss": 26006.6,
+      "take_profit": 187239.28,
+      "stop_loss": 25982.54,
       "tp_pct": 147.7,
       "sl_pct": 65.6
     },
     "support": 55942.5,
     "resistance": 81347.5,
     "volume_cluster": 65576.25,
-    "take_profit": 187428.89,
-    "stop_loss": 26006.6,
+    "take_profit": 187239.28,
+    "stop_loss": 25982.54,
     "tp_pct": 147.7,
     "sl_pct": 65.6,
     "long_term_strategies": {
@@ -196,8 +196,8 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 24.7x** se encuentra en un rango moderado (15-25x). No es barato ni caro según el criterio clásico de Graham; el precio ya descuenta cierto crecimiento futuro.",
-          "value": "24.7x",
+          "content": "El **PER de 24.6x** se encuentra en un rango moderado (15-25x). No es barato ni caro según el criterio clásico de Graham; el precio ya descuenta cierto crecimiento futuro.",
+          "value": "24.6x",
           "status": "neutral"
         },
         {
@@ -240,8 +240,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum de 3 meses (+18.8%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
-          "value": "+18.8% (3M)",
+          "content": "El **momentum de 3 meses (+18.7%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
+          "value": "+18.7% (3M)",
           "status": "success"
         },
         {
@@ -254,8 +254,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 24.7x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
-          "value": "24.7x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 24.6x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "24.6x",
           "status": "neutral"
         }
       ],

@@ -4,23 +4,23 @@
     "ticker": "ALUA.BA",
     "name": "ALUA",
     "category": "merval",
-    "price": 972.0,
+    "price": 970.0,
     "currency": "ARS",
-    "score": 52.4,
+    "score": 52.0,
     "profile": "moderado",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 43.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "43.2",
+        "content": "El RSI de 14 períodos se encuentra en 42.7, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "42.7",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (972.00) se mantiene por encima de la EMA de 200 días (926.80), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (979.91) aún no confirma un cruce definitivo.",
+        "content": "El precio (970.00) se mantiene por encima de la EMA de 200 días (926.78), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (979.83) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-4.3%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-4.3% (1M)",
+        "content": "El rendimiento mensual es de **-4.5%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-4.5% (1M)",
         "status": "danger"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-2.9%** y a 12 meses es **+34.3%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-2.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-3.1%** y a 12 meses es **+34.0%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-3.1% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **34.3%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+12.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 34.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **34.0%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+12.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 34.0%",
         "status": "success"
       }
     ],
@@ -171,18 +171,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **52.4/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "summary": "El score de **52.0/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **moderado**. Esto puede deberse a una volatilidad excesiva (47.9%), un ratio de Sharpe ineficiente (0.63), o una tendencia técnica desfavorable (Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 1530.67,
-      "stop_loss": 692.66,
+      "take_profit": 1527.57,
+      "stop_loss": 691.21,
       "tp_pct": 57.5,
       "sl_pct": 28.7
     },
     "support": 798.5,
     "resistance": 1015.1,
     "volume_cluster": 984.62,
-    "take_profit": 1530.67,
-    "stop_loss": 692.66,
+    "take_profit": 1527.57,
+    "stop_loss": 691.21,
     "tp_pct": 57.5,
     "sl_pct": 28.7,
     "medium_term_strategies": {
@@ -234,8 +234,8 @@
         {
           "title": "S — Oferta y Demanda (Volatilidad/Volumen)",
           "icon": "fa-s",
-          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.53x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
-          "value": "0.53x",
+          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.54x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
+          "value": "0.54x",
           "status": "success"
         },
         {
@@ -264,7 +264,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=43, 3M=-3.8%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=43, 3M=-4.0%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
           "value": "Score 2/6",
           "status": "warning"
         },

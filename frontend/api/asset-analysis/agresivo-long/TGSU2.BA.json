@@ -4,7 +4,7 @@
     "ticker": "TGSU2.BA",
     "name": "TGSU2",
     "category": "merval",
-    "price": 9315.0,
+    "price": 9320.0,
     "currency": "ARS",
     "score": 74.7,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 51.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "51.1",
+        "content": "El RSI de 14 períodos está en 51.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "51.2",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (9247.49) se encuentra por encima de la EMA de 200 días (8735.88), y el precio actual (9315.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (9247.68) se encuentra por encima de la EMA de 200 días (8735.92), y el precio actual (9320.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+0.3%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-4.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "content": "El rendimiento mensual es de **+0.3%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-4.0%) ofrece una perspectiva más amplia de la dirección reciente.",
         "value": "+0.3% (1M)",
         "status": "neutral"
       },
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+5.1%** y a 12 meses es **+39.9%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+5.1% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+5.2%** y a 12 meses es **+39.9%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+5.2% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **114.7%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+67.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 114.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **115.0%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+68.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 115.0%",
         "status": "success"
       }
     ],
@@ -186,16 +186,16 @@
       "color": "neutral",
       "summary": "Con un score de **74.7/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.67) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
-      "take_profit": 25429.45,
-      "stop_loss": 2153.02,
+      "take_profit": 25443.05,
+      "stop_loss": 2154.2,
       "tp_pct": 173.0,
       "sl_pct": 76.9
     },
     "support": 8685.0,
     "resistance": 9890.0,
     "volume_cluster": 8994.0,
-    "take_profit": 25429.45,
-    "stop_loss": 2153.02,
+    "take_profit": 25443.05,
+    "stop_loss": 2154.2,
     "tp_pct": 173.0,
     "sl_pct": 76.9,
     "long_term_strategies": {
@@ -247,8 +247,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-4.1%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-4.1% (3M)",
+          "content": "El **momentum trimestral (-4.0%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-4.0% (3M)",
           "status": "warning"
         },
         {

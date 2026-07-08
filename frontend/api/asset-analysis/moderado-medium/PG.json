@@ -4,23 +4,23 @@
     "ticker": "PG",
     "name": "PG",
     "category": "sp500",
-    "price": 149.05499267578125,
+    "price": 148.6750030517578,
     "currency": "USD",
-    "score": 48.0,
+    "score": 47.4,
     "profile": "moderado",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 51.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "51.4",
+        "content": "El RSI de 14 períodos está en 50.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "50.7",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (149.05) se mantiene por encima de la EMA de 200 días (148.43), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (147.40) aún no confirma un cruce definitivo.",
+        "content": "El precio (148.68) se mantiene por encima de la EMA de 200 días (148.43), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (147.39) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.7%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.6%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.7% (1M)",
+        "content": "El rendimiento mensual es de **+2.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.4%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.5% (1M)",
         "status": "success"
       },
       {
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.35** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
-        "value": "-0.35",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.37** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
+        "value": "-0.37",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+8.1%** y a 12 meses es **-2.9%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+8.1% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+7.8%** y a 12 meses es **-3.1%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+7.8% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **37.9%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+15.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 37.9%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **37.6%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+15.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 37.6%",
         "status": "success"
       }
     ],
@@ -168,18 +168,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **48.0/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **moderado**. Esto puede deberse a una volatilidad excesiva (19.4%), un ratio de Sharpe ineficiente (-0.35), o una tendencia técnica desfavorable (Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 183.76,
-      "stop_loss": 131.7,
+      "summary": "El score de **47.4/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **moderado**. Esto puede deberse a una volatilidad excesiva (19.4%), un ratio de Sharpe ineficiente (-0.37), o una tendencia técnica desfavorable (Alcista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 183.32,
+      "stop_loss": 131.35,
       "tp_pct": 23.3,
       "sl_pct": 11.6
     },
     "support": 141.64,
     "resistance": 152.48,
     "volume_cluster": 144.05,
-    "take_profit": 183.76,
-    "stop_loss": 131.7,
+    "take_profit": 183.32,
+    "stop_loss": 131.35,
     "tp_pct": 23.3,
     "sl_pct": 11.6,
     "medium_term_strategies": {
@@ -187,8 +187,8 @@
         {
           "title": "Revisión de EPS (Forward vs Trailing)",
           "icon": "fa-chart-bar",
-          "content": "La **revisión del EPS muestra una mejora moderada (+3.2%)**. El consenso de analistas proyecta ganancias levemente superiores a las actuales, señal constructiva aunque sin una aceleración marcada.",
-          "value": "+3.2%",
+          "content": "La **revisión del EPS muestra una mejora moderada (+3.4%)**. El consenso de analistas proyecta ganancias levemente superiores a las actuales, señal constructiva aunque sin una aceleración marcada.",
+          "value": "+3.4%",
           "status": "neutral"
         },
         {
@@ -201,8 +201,8 @@
         {
           "title": "Precio Objetivo y Upside Potencial",
           "icon": "fa-bullseye",
-          "content": "El precio objetivo de analistas implica un **upside moderado del +9.6%** — los analistas ven algo de valor por encima del precio actual, pero sin un potencial disruptivo.",
-          "value": "+9.6% upside",
+          "content": "El precio objetivo de analistas implica un **upside moderado del +9.9%** — los analistas ven algo de valor por encima del precio actual, pero sin un potencial disruptivo.",
+          "value": "+9.9% upside",
           "status": "neutral"
         },
         {
@@ -231,8 +231,8 @@
         {
           "title": "S — Oferta y Demanda (Volatilidad/Volumen)",
           "icon": "fa-s",
-          "content": "**S (Supply & Demand):** La volatilidad de corto plazo supera a la de largo plazo (ratio: 1.28x), sugiriendo **distribución o mayor incertidumbre reciente** — señal de cautela dentro del framework CAN SLIM.",
-          "value": "1.28x",
+          "content": "**S (Supply & Demand):** La volatilidad de corto plazo supera a la de largo plazo (ratio: 1.30x), sugiriendo **distribución o mayor incertidumbre reciente** — señal de cautela dentro del framework CAN SLIM.",
+          "value": "1.30x",
           "status": "warning"
         },
         {
@@ -261,7 +261,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=51, 3M=+3.6%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=51, 3M=+3.4%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
           "value": "Score 2/6",
           "status": "warning"
         },
@@ -305,8 +305,8 @@
         {
           "title": "PER Forward vs. Trailing",
           "icon": "fa-calendar-check",
-          "content": "El PER forward (21.1x) y trailing (21.8x) son similares: las ganancias esperadas son consistentes con las actuales, sin gran expansión ni contracción del múltiplo.",
-          "value": "Forward: 21.1x",
+          "content": "El PER forward (21.0x) y trailing (21.7x) son similares: las ganancias esperadas son consistentes con las actuales, sin gran expansión ni contracción del múltiplo.",
+          "value": "Forward: 21.0x",
           "status": "neutral"
         },
         {

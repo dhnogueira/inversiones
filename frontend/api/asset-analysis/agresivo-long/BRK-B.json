@@ -4,7 +4,7 @@
     "ticker": "BRK-B",
     "name": "BRK-B",
     "category": "sp500",
-    "price": 496.82000732421875,
+    "price": 497.0299987792969,
     "currency": "USD",
     "score": 48.1,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 54.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "54.0",
+        "content": "El RSI de 14 períodos está en 54.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.2",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (488.65) se encuentra por encima de la EMA de 200 días (487.38), y el precio actual (496.82) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (488.65) se encuentra por encima de la EMA de 200 días (487.38), y el precio actual (497.03) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.0%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.6%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.0% (1M)",
+        "content": "El rendimiento mensual es de **+2.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.6%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.1% (1M)",
         "status": "success"
       },
       {
@@ -57,8 +57,8 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.00** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
-        "value": "0.00",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.01** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
+        "value": "0.01",
         "status": "warning"
       },
       {
@@ -71,8 +71,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **121.6%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+74.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 121.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **121.9%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+74.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 121.9%",
         "status": "success"
       }
     ],
@@ -176,17 +176,17 @@
       "icon": "fa-triangle-exclamation",
       "color": "warning",
       "summary": "El score de **48.1/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación.",
-      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (17.4%), un ratio de Sharpe ineficiente (0.00), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 777.66,
-      "stop_loss": 372.0,
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (17.4%), un ratio de Sharpe ineficiente (0.01), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 777.96,
+      "stop_loss": 372.17,
       "tp_pct": 56.5,
       "sl_pct": 25.1
     },
     "support": 471.41,
     "resistance": 497.35,
     "volume_cluster": 480.23,
-    "take_profit": 777.66,
-    "stop_loss": 372.0,
+    "take_profit": 777.96,
+    "stop_loss": 372.17,
     "tp_pct": 56.5,
     "sl_pct": 25.1,
     "long_term_strategies": {
