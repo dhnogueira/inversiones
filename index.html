@@ -506,6 +506,18 @@
                     <p id="modal-verdict-summary"></p>
                 </div>
             </div>
+            <!-- Horizon Tabs inside modal -->
+            <div class="modal-horizon-tabs" id="modal-horizon-tabs">
+                <button class="modal-horizon-tab active" data-modal-horizon="short">
+                    <i class="fa-solid fa-bolt"></i> Corto Plazo <span class="mht-label">≤ 6 meses</span>
+                </button>
+                <button class="modal-horizon-tab" data-modal-horizon="medium">
+                    <i class="fa-solid fa-calendar-days"></i> Mediano Plazo <span class="mht-label">6 – 12 meses</span>
+                </button>
+                <button class="modal-horizon-tab" data-modal-horizon="long">
+                    <i class="fa-solid fa-gem"></i> Largo Plazo <span class="mht-label">&gt; 1 año</span>
+                </button>
+            </div>
             <div class="modal-body" id="modal-body">
                 <div class="modal-loader"><i class="fa-solid fa-circle-notch fa-spin fa-2x"></i>
                     <p>Generando análisis...</p>
@@ -676,7 +688,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Config (carga antes que main.js para que window.CONFIG esté disponible) -->
     <script src="config.js"></script>
-    <script type="module" src="main.js?v=21"></script>
+    <script type="module" src="main.js?v=23"></script>
 </body>
 
 </html>
