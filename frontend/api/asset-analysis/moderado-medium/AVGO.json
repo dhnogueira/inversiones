@@ -4,7 +4,7 @@
     "ticker": "AVGO",
     "name": "AVGO",
     "category": "sp500",
-    "price": 389.67999267578125,
+    "price": 389.3900146484375,
     "currency": "USD",
     "score": 76.2,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 50.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "50.6",
+        "content": "El RSI de 14 períodos está en 50.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "50.5",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (389.68) se mantiene por encima de la EMA de 200 días (354.94), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (390.31) aún no confirma un cruce definitivo.",
+        "content": "El precio (389.39) se mantiene por encima de la EMA de 200 días (354.94), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (390.30) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-1.6%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-1.6% (1M)",
+        "content": "El rendimiento mensual es de **-1.7%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.7% (1M)",
         "status": "neutral"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+13.8%** y a 12 meses es **+44.4%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+13.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+13.7%** y a 12 meses es **+44.3%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+13.7% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **105.1%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+83.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 105.1%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **104.9%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+82.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 104.9%",
         "status": "success"
       }
     ],
@@ -178,16 +178,16 @@
       "color": "neutral",
       "summary": "Con un score de **76.2/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.74) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
-      "take_profit": 645.09,
-      "stop_loss": 261.98,
+      "take_profit": 644.59,
+      "stop_loss": 261.79,
       "tp_pct": 65.5,
       "sl_pct": 32.8
     },
     "support": 314.7,
     "resistance": 424.88,
     "volume_cluster": 321.13,
-    "take_profit": 645.09,
-    "stop_loss": 261.98,
+    "take_profit": 644.59,
+    "stop_loss": 261.79,
     "tp_pct": 65.5,
     "sl_pct": 32.8,
     "medium_term_strategies": {
@@ -209,8 +209,8 @@
         {
           "title": "Precio Objetivo y Upside Potencial",
           "icon": "fa-bullseye",
-          "content": "El **precio objetivo medio de analistas** ($523.73) implica un **upside del +34.4%** sobre el precio actual. Un upside superior al 15% desde el consenso de analistas es una de las señales más directas de que el mercado profesional considera el activo subvalorado para el mediano plazo.",
-          "value": "+34.4% upside",
+          "content": "El **precio objetivo medio de analistas** ($523.73) implica un **upside del +34.5%** sobre el precio actual. Un upside superior al 15% desde el consenso de analistas es una de las señales más directas de que el mercado profesional considera el activo subvalorado para el mediano plazo.",
+          "value": "+34.5% upside",
           "status": "success"
         },
         {
@@ -246,8 +246,8 @@
         {
           "title": "L — Liderazgo de Mercado (Leader)",
           "icon": "fa-l",
-          "content": "**L (Leader):** RSI de 51 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
-          "value": "RSI 51",
+          "content": "**L (Leader):** RSI de 50 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
+          "value": "RSI 50",
           "status": "neutral"
         },
         {
@@ -269,7 +269,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=51, retorno 3M=+11.3%, retorno 12M=+44.4%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
+          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=50, retorno 3M=+11.2%, retorno 12M=+44.3%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
           "value": "Score 5/6",
           "status": "success"
         },

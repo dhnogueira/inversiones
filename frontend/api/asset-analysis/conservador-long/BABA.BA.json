@@ -4,7 +4,7 @@
     "ticker": "BABA.BA",
     "name": "BABA",
     "category": "cedears",
-    "price": 19150.0,
+    "price": 19190.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 57.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "57.7",
+        "content": "El RSI de 14 períodos está en 58.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "58.0",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (19423.31) se encuentra por debajo de la EMA de 200 días (21632.99), y el precio (19150.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (19424.88) se encuentra por debajo de la EMA de 200 días (21633.39), y el precio (19190.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-1.3%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-1.3% (1M)",
+        "content": "El rendimiento mensual es de **-1.1%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.1% (1M)",
         "status": "neutral"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **41.3%** respecto a su máximo anual de **ARS 32,599.80**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-41.3%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **41.1%** respecto a su máximo anual de **ARS 32,599.80**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-41.1%",
         "status": "neutral"
       },
       {
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-23.8%** y a 12 meses es **+27.7%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-23.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-23.6%** y a 12 meses es **+27.9%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-23.6% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **50.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+3.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 50.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **50.9%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+3.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 50.9%",
         "status": "success"
       }
     ],
@@ -186,16 +186,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **conservador**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 32797.7,
-      "stop_loss": 13084.36,
+      "take_profit": 32874.0,
+      "stop_loss": 13108.22,
       "tp_pct": 71.3,
       "sl_pct": 31.7
     },
     "support": 17176.0,
     "resistance": 22531.87,
     "volume_cluster": 21595.41,
-    "take_profit": 32797.7,
-    "stop_loss": 13084.36,
+    "take_profit": 32874.0,
+    "stop_loss": 13108.22,
     "tp_pct": 71.3,
     "sl_pct": 31.7,
     "long_term_strategies": {
@@ -203,8 +203,8 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 143.2x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
-          "value": "143.2x",
+          "content": "El **PER de 143.5x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "143.5x",
           "status": "warning"
         },
         {
@@ -247,8 +247,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-8.2%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-8.2% (3M)",
+          "content": "El **momentum trimestral (-8.0%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-8.0% (3M)",
           "status": "warning"
         },
         {
@@ -261,8 +261,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 143.2x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
-          "value": "143.2x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 143.5x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "143.5x",
           "status": "neutral"
         }
       ],

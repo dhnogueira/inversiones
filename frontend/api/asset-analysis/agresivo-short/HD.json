@@ -4,23 +4,23 @@
     "ticker": "HD",
     "name": "HD",
     "category": "sp500",
-    "price": 336.8800048828125,
+    "price": 335.93499755859375,
     "currency": "USD",
-    "score": 60.7,
+    "score": 60.3,
     "profile": "agresivo",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 51.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "51.0",
+        "content": "El RSI de 14 períodos está en 50.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "50.3",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (336.88) cotiza por debajo de la EMA de 200 días (346.38), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (335.93) cotiza por debajo de la EMA de 200 días (346.37), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+8.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (0.2%) refuerzan esta tendencia positiva.",
-        "value": "+8.8% (1M)",
+        "content": "El activo registró un rendimiento del **+8.5%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-0.1%) refuerzan esta tendencia positiva.",
+        "value": "+8.5% (1M)",
         "status": "success"
       },
       {
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.45** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
-        "value": "-0.45",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.46** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
+        "value": "-0.46",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-2.9%** y a 12 meses es **-6.6%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-2.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-3.2%** y a 12 meses es **-6.9%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-3.2% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **16.8%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+5.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 16.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **16.4%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+5.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 16.4%",
         "status": "success"
       }
     ],
@@ -177,18 +177,18 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **60.7/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (-0.45) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
-      "take_profit": 423.38,
-      "stop_loss": 293.63,
+      "summary": "Con un score de **60.3/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (-0.46) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
+      "take_profit": 422.25,
+      "stop_loss": 292.78,
       "tp_pct": 25.7,
       "sl_pct": 12.8
     },
     "support": 310.58,
     "resistance": 351.36,
     "volume_cluster": 320.25,
-    "take_profit": 423.38,
-    "stop_loss": 293.63,
+    "take_profit": 422.25,
+    "stop_loss": 292.78,
     "tp_pct": 25.7,
     "sl_pct": 12.8
   }

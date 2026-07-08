@@ -4,7 +4,7 @@
     "ticker": "BABA.BA",
     "name": "BABA",
     "category": "cedears",
-    "price": 19150.0,
+    "price": 19190.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 57.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "57.7",
+        "content": "El RSI de 14 períodos está en 58.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "58.0",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (19423.31) se encuentra por debajo de la EMA de 200 días (21632.99), y el precio (19150.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (19424.88) se encuentra por debajo de la EMA de 200 días (21633.39), y el precio (19190.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-1.3%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-1.3% (1M)",
+        "content": "El rendimiento mensual es de **-1.1%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.1% (1M)",
         "status": "neutral"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-23.8%** y a 12 meses es **+27.7%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-23.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-23.6%** y a 12 meses es **+27.9%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-23.6% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **27.7%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+5.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 27.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **27.9%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+5.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 27.9%",
         "status": "success"
       }
     ],
@@ -179,16 +179,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 30523.08,
-      "stop_loss": 13463.46,
+      "take_profit": 30593.33,
+      "stop_loss": 13488.33,
       "tp_pct": 59.4,
       "sl_pct": 29.7
     },
     "support": 17176.0,
     "resistance": 22531.87,
     "volume_cluster": 21595.41,
-    "take_profit": 30523.08,
-    "stop_loss": 13463.46,
+    "take_profit": 30593.33,
+    "stop_loss": 13488.33,
     "tp_pct": 59.4,
     "sl_pct": 29.7,
     "medium_term_strategies": {
@@ -240,8 +240,8 @@
         {
           "title": "S — Oferta y Demanda (Volatilidad/Volumen)",
           "icon": "fa-s",
-          "content": "**S (Supply & Demand):** Ratio de volatilidad corta/larga de 1.08x — equilibrio normal entre oferta y demanda. No se detectan señales claras de acumulación ni distribución institucional masiva.",
-          "value": "1.08x",
+          "content": "**S (Supply & Demand):** Ratio de volatilidad corta/larga de 1.09x — equilibrio normal entre oferta y demanda. No se detectan señales claras de acumulación ni distribución institucional masiva.",
+          "value": "1.09x",
           "status": "neutral"
         },
         {
@@ -270,7 +270,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es moderada** (score: 3/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=58, 3M=-8.2%.",
+          "content": "La **fuerza relativa es moderada** (score: 3/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=58, 3M=-8.0%.",
           "value": "Score 3/6",
           "status": "neutral"
         },
@@ -314,7 +314,7 @@
         {
           "title": "PER Forward vs. Trailing",
           "icon": "fa-calendar-check",
-          "content": "PER actual: **143.2x**. Sin dato de PER forward no se puede estimar la dirección de las ganancias esperadas — dato fundamental en el análisis GARP.",
+          "content": "PER actual: **143.5x**. Sin dato de PER forward no se puede estimar la dirección de las ganancias esperadas — dato fundamental en el análisis GARP.",
           "value": "N/D",
           "status": "neutral"
         },
