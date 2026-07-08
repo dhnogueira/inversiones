@@ -4,7 +4,7 @@
     "ticker": "ETH-USD",
     "name": "ETH-USD",
     "category": "crypto",
-    "price": 1738.1500244140625,
+    "price": 1739.0400390625,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 51.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "51.5",
+        "content": "El RSI de 14 períodos está en 51.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "51.6",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1801.34) se encuentra por debajo de la EMA de 200 días (2245.76), y el precio (1738.15) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (1801.37) se encuentra por debajo de la EMA de 200 días (2245.77), y el precio (1739.04) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-2.4%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-13.4%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -2.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-2.3%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-13.3%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -2.3%",
         "status": "danger"
       }
     ],
@@ -84,16 +84,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **agresivo**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 2840.77,
-      "stop_loss": 1186.84,
+      "take_profit": 2842.21,
+      "stop_loss": 1187.45,
       "tp_pct": 63.4,
       "sl_pct": 31.7
     },
     "support": 1618.95,
     "resistance": 2348.86,
     "volume_cluster": 2292.63,
-    "take_profit": 2840.77,
-    "stop_loss": 1186.84,
+    "take_profit": 2842.21,
+    "stop_loss": 1187.45,
     "tp_pct": 63.4,
     "sl_pct": 31.7
   }
