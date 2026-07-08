@@ -4,7 +4,7 @@
     "ticker": "COST",
     "name": "COST",
     "category": "sp500",
-    "price": 953.3599853515625,
+    "price": 953.1300048828125,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 45.9, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "45.9",
+        "content": "El RSI de 14 períodos se encuentra en 45.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "45.8",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (953.36) cotiza por debajo de la EMA de 200 días (968.76), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (953.13) cotiza por debajo de la EMA de 200 días (968.80), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -71,8 +71,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **88.5%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+41.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 88.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **88.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+41.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 88.4%",
         "status": "success"
       }
     ],
@@ -189,16 +189,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **agresivo**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 1596.69,
-      "stop_loss": 667.44,
+      "take_profit": 1596.77,
+      "stop_loss": 667.07,
       "tp_pct": 67.5,
       "sl_pct": 30.0
     },
     "support": 951.65,
     "resistance": 1028.29,
     "volume_cluster": 1001.01,
-    "take_profit": 1596.69,
-    "stop_loss": 667.44,
+    "take_profit": 1596.77,
+    "stop_loss": 667.07,
     "tp_pct": 67.5,
     "sl_pct": 30.0,
     "long_term_strategies": {
@@ -220,8 +220,8 @@
         {
           "title": "Flujo de Caja Libre (FCF Yield)",
           "icon": "fa-money-bill-wave",
-          "content": "El **FCF Yield del 1.6%** es positivo pero moderado. La empresa genera caja libre, aunque el margen no es especialmente generoso a este nivel de precio.",
-          "value": "1.6%",
+          "content": "El **FCF Yield del 1.7%** es positivo pero moderado. La empresa genera caja libre, aunque el margen no es especialmente generoso a este nivel de precio.",
+          "value": "1.7%",
           "status": "neutral"
         },
         {
@@ -250,8 +250,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-7.3%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-7.3% (3M)",
+          "content": "El **momentum trimestral (-7.4%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-7.4% (3M)",
           "status": "warning"
         },
         {

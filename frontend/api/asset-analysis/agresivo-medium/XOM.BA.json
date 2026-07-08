@@ -4,23 +4,23 @@
     "ticker": "XOM.BA",
     "name": "XOM",
     "category": "cedears",
-    "price": 22200.0,
+    "price": 22210.0,
     "currency": "ARS",
-    "score": 83.3,
+    "score": 83.4,
     "profile": "agresivo",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 56.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "56.1",
+        "content": "El RSI de 14 períodos está en 56.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.3",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (21956.09) se encuentra por encima de la EMA de 200 días (20364.25), y el precio actual (22200.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (21956.48) se encuentra por encima de la EMA de 200 días (20364.35), y el precio actual (22210.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+21.4%** y a 12 meses es **+59.4%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+21.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+21.5%** y a 12 meses es **+59.5%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+21.5% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **71.3%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+49.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 71.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **71.4%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+49.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 71.4%",
         "status": "success"
       }
     ],
@@ -174,18 +174,18 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **83.3/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "summary": "Con un score de **83.4/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (1.86) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
-      "take_profit": 34115.5,
-      "stop_loss": 16242.25,
+      "take_profit": 34130.74,
+      "stop_loss": 16249.63,
       "tp_pct": 53.7,
       "sl_pct": 26.8
     },
     "support": 21266.0,
     "resistance": 23690.9,
     "volume_cluster": 21877.47,
-    "take_profit": 34115.5,
-    "stop_loss": 16242.25,
+    "take_profit": 34130.74,
+    "stop_loss": 16249.63,
     "tp_pct": 53.7,
     "sl_pct": 26.8,
     "medium_term_strategies": {
@@ -230,8 +230,8 @@
         {
           "title": "A — Crecimiento Anual de Ganancias",
           "icon": "fa-a",
-          "content": "**A (Annual Earnings):** El retorno de precio anual es **+59%**, consistente con empresas de alto crecimiento anual. O'Neil busca empresas con crecimiento anual de ganancias superior al 25% durante al menos 3 años consecutivos.",
-          "value": "+59% (12M)",
+          "content": "**A (Annual Earnings):** El retorno de precio anual es **+60%**, consistente con empresas de alto crecimiento anual. O'Neil busca empresas con crecimiento anual de ganancias superior al 25% durante al menos 3 años consecutivos.",
+          "value": "+60% (12M)",
           "status": "success"
         },
         {

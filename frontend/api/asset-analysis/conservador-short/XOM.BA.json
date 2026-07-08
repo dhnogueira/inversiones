@@ -4,23 +4,23 @@
     "ticker": "XOM.BA",
     "name": "XOM",
     "category": "cedears",
-    "price": 22200.0,
+    "price": 22210.0,
     "currency": "ARS",
-    "score": 51.8,
+    "score": 51.7,
     "profile": "conservador",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 56.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "56.1",
+        "content": "El RSI de 14 períodos está en 56.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.3",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (21956.09) se encuentra por encima de la EMA de 200 días (20364.25), y el precio actual (22200.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (21956.48) se encuentra por encima de la EMA de 200 días (20364.35), y el precio actual (22210.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+21.4%** y a 12 meses es **+59.4%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+21.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+21.5%** y a 12 meses es **+59.5%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+21.5% (6M)",
         "status": "success"
       },
       {
@@ -174,18 +174,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **51.8/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "summary": "El score de **51.7/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (29.8%), un ratio de Sharpe ineficiente (1.86), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 25377.47,
-      "stop_loss": 20611.27,
+      "take_profit": 25388.86,
+      "stop_loss": 20620.57,
       "tp_pct": 14.3,
       "sl_pct": 7.2
     },
     "support": 21266.0,
     "resistance": 23690.9,
     "volume_cluster": 21877.47,
-    "take_profit": 25377.47,
-    "stop_loss": 20611.27,
+    "take_profit": 25388.86,
+    "stop_loss": 20620.57,
     "tp_pct": 14.3,
     "sl_pct": 7.2
   }

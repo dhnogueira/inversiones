@@ -4,7 +4,7 @@
     "ticker": "META",
     "name": "META",
     "category": "sp500",
-    "price": 601.1849975585938,
+    "price": 603.1199951171875,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 53.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "53.4",
+        "content": "El RSI de 14 períodos está en 53.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "53.9",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (601.18) cotiza por debajo de la EMA de 200 días (630.32), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (603.12) cotiza por debajo de la EMA de 200 días (630.34), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.8%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.7%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.8% (1M)",
+        "content": "El rendimiento mensual es de **+3.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.4%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+3.1% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-8.8%** y a 12 meses es **-16.3%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-8.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-8.5%** y a 12 meses es **-16.0%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-8.5% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **8.2%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-2.8%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 8.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **8.6%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-2.4%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 8.6%",
         "status": "danger"
       }
     ],
@@ -181,17 +181,17 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **agresivo**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 843.34,
-      "stop_loss": 480.11,
+      "take_profit": 846.24,
+      "stop_loss": 481.56,
       "tp_pct": 40.3,
-      "sl_pct": 20.1
+      "sl_pct": 20.2
     },
     "support": 563.79,
     "resistance": 668.25,
     "volume_cluster": 614.71,
-    "take_profit": 843.34,
-    "stop_loss": 480.11,
+    "take_profit": 846.24,
+    "stop_loss": 481.56,
     "tp_pct": 40.3,
-    "sl_pct": 20.1
+    "sl_pct": 20.2
   }
 }

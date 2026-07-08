@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.4,
         "weight_pct": 40.0,
-        "ars_return_est": 401.2
+        "ars_return_est": 402.8
       },
       {
         "ticker": "GOOGL.BA",
@@ -36,7 +36,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 248.7
+        "ars_return_est": 248.0
       },
       {
         "ticker": "XOM.BA",
@@ -45,7 +45,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 185.0
+        "ars_return_est": 185.3
       },
       {
         "ticker": "AAPL.BA",
@@ -54,17 +54,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 298.0
+        "ars_return_est": 293.6
       }
     ],
-    "expected_return": 412.06,
-    "expected_volatility": 25.69,
-    "sharpe_ratio": 14.21,
+    "expected_return": 412.46,
+    "expected_volatility": 25.71,
+    "sharpe_ratio": 14.22,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 365.1
+    "spread_vs_inflation": 365.5
   }
 }
