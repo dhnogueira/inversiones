@@ -148,6 +148,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupEventListeners();
     setupAuthListeners();
     await checkHostMode();
+
+    // Restaurar sesión activa ANTES de cargar cualquier vista privada.
+    // onAuthStateChange es asíncrono y puede disparar DESPUÉS de loadActiveView(),
+    // causando que fetchPortfolio() se ejecute sin Authorization header.
+    if (supabase) {
+        try {
+            const { data: { session: initialSession } } = await supabase.auth.getSession();
+            if (initialSession) {
+                session = initialSession;
+                user = initialSession.user;
+                updateAuthUI();
+                await loadAndApplyUserPreferences();
+            }
+        } catch (e) {
+            console.warn('[auth] No se pudo restaurar la sesión inicial:', e);
+        }
+    }
+
     updateSubtitle();
     loadActiveView();
     // Iniciar ticker de chequeo de alertas cada 30 segundos
@@ -1488,6 +1506,21 @@ function renderAdvisoryReport(report) {
 
 // ===== SIMULATED PORTFOLIO METHODS =====
 async function fetchPortfolio(isSilent = false) {
+    // Safety net: si no hay sesión y supabase está disponible, intentar restaurarla.
+    // Protege contra edge-cases donde onAuthStateChange aún no disparó.
+    if (supabase && (!session || !session.access_token)) {
+        try {
+            const { data: { session: freshSession } } = await supabase.auth.getSession();
+            if (freshSession) {
+                session = freshSession;
+                user = freshSession.user;
+                updateAuthUI();
+            }
+        } catch (e) {
+            console.warn('[auth] fetchPortfolio: no se pudo obtener sesión fresca:', e);
+        }
+    }
+
     if (!isSilent) {
         const tbody = document.getElementById('portfolio-tbody');
         tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="padding: 40px;"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Cargando posiciones...</td></tr>`;
