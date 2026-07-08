@@ -2406,11 +2406,12 @@ async function openAssetModal(ticker) {
     const priceBadge = document.getElementById('modal-current-price');
     if (priceBadge) { priceBadge.innerText = ''; priceBadge.style.display = 'none'; }
 
-    // Reset horizon tabs to 'short' as active default
+    // Reset horizon tabs — default to the user's currently selected horizon
+    const defaultHorizon = state.activeHorizon || 'medium';
     const horizonTabs = document.querySelectorAll('.modal-horizon-tab');
     horizonTabs.forEach(t => {
         const h = t.getAttribute('data-modal-horizon');
-        t.classList.toggle('active', h === 'short');
+        t.classList.toggle('active', h === defaultHorizon);
         t.classList.add('loading');
     });
     const tabsEl = document.getElementById('modal-horizon-tabs');
@@ -2437,8 +2438,8 @@ async function openAssetModal(ticker) {
     // Remove loading state
     horizonTabs.forEach(t => t.classList.remove('loading'));
 
-    // Render the default tab (short)
-    const defaultData = shortData || mediumData || longData;
+    // Render the default tab (user's active horizon)
+    const defaultData = _modalAnalysisCache[defaultHorizon] || shortData || mediumData || longData;
     if (defaultData) {
         renderModalContent(defaultData);
     } else {

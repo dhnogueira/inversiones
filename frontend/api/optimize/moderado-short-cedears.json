@@ -3,6 +3,15 @@
   "optimization": {
     "weights": [
       {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 19.1
+      },
+      {
         "ticker": "KO.BA",
         "name": "KO",
         "category": "cedears",
@@ -19,15 +28,6 @@
         "weight": 0.3,
         "weight_pct": 30.0,
         "ars_return_est": 21.3
-      },
-      {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.3,
-        "weight_pct": 30.0,
-        "ars_return_est": 19.1
       },
       {
         "ticker": "GOOGL.BA",

@@ -186,7 +186,7 @@ async def get_asset_analysis(
     if not target:
         return {"status": "error", "message": f"Activo '{ticker}' no encontrado."}
     
-    analysis = generate_asset_analysis(target, profile)
+    analysis = generate_asset_analysis(target, profile, horizon)
     return {"status": "success", "analysis": analysis}
 
 # ===== PORTFOLIO OPTIMIZER (Markowitz) =====

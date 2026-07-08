@@ -7,8 +7,8 @@
         "name": "UNH",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2496,
-        "weight_pct": 25.0,
+        "weight": 0.3033,
+        "weight_pct": 30.3,
         "ars_return_est": 47.0
       },
       {
@@ -16,46 +16,46 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2229,
-        "weight_pct": 22.3,
+        "weight": 0.2709,
+        "weight_pct": 27.1,
         "ars_return_est": 42.0
       },
       {
-        "ticker": "LLY",
-        "name": "LLY",
+        "ticker": "COST",
+        "name": "COST",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2093,
-        "weight_pct": 20.9,
-        "ars_return_est": 39.4
-      },
-      {
-        "ticker": "ABBV",
-        "name": "ABBV",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.2016,
-        "weight_pct": 20.2,
-        "ars_return_est": 38.0
+        "weight": 0.1885,
+        "weight_pct": 18.9,
+        "ars_return_est": 29.2
       },
       {
         "ticker": "HD",
         "name": "HD",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1166,
-        "weight_pct": 11.7,
+        "weight": 0.1417,
+        "weight_pct": 14.2,
         "ars_return_est": 22.0
+      },
+      {
+        "ticker": "META",
+        "name": "META",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0955,
+        "weight_pct": 9.6,
+        "ars_return_est": 14.8
       }
     ],
-    "expected_return": 39.57,
-    "expected_volatility": 29.09,
-    "sharpe_ratio": 0.98,
+    "expected_return": 35.68,
+    "expected_volatility": 27.65,
+    "sharpe_ratio": 0.89,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 28.6
+    "spread_vs_inflation": 24.7
   }
 }

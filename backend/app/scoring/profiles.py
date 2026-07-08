@@ -468,16 +468,16 @@ def score_asset_for_profile(asset, profile, horizon=HORIZON_MEDIUM):
         ("trend", {"trend": f_trend}),
     ])
 
-    # Penalizaciones adicionales tácticas de Corto Plazo
+    # Penalizaciones adicionales tácticas de Corto Plazo (suavizadas para evitar cero masivo)
     if horizon == HORIZON_SHORT:
-        if momentum_accel < -0.02:
-            score -= 30.0
-        if rsi > 62.0:
-            score -= 25.0
-        if dist_resist < 0.02:
-            score -= 20.0
-        if ret_1m < 0.0:
-            score -= 35.0
+        if momentum_accel < -0.05:
+            score -= 15.0
+        if rsi > 68.0:
+            score -= 10.0
+        if dist_resist < 0.01:
+            score -= 10.0
+        if ret_1m < -0.03:
+            score -= 15.0
 
     # Penalizaciones adicionales para Largo Plazo
     if horizon == HORIZON_LONG:
