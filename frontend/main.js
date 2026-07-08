@@ -1587,43 +1587,23 @@ async function fetchPortfolio(isSilent = false) {
         tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="padding: 40px;"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Cargando posiciones...</td></tr>`;
     }
 
-    if (state.staticMode) {
-        // --- STATIC MODE ---
-        // Si el usuario está logueado, consultar Supabase directamente (sin backend).
-        // Si no, usar localStorage como fallback anónimo.
-        if (supabase && session && session.access_token) {
-            await _fetchPortfolioFromSupabaseDirect(isSilent);
-        } else {
-            _fetchPortfolioFromLocalStorage(isSilent);
-        }
+    // ESTRATEGIA PRINCIPAL: si hay sesión de Supabase activa, leer SIEMPRE de Supabase directo
+    if (supabase && session && session.access_token) {
+        await _fetchPortfolioFromSupabaseDirect(isSilent);
         return;
     }
 
-    // --- DYNAMIC MODE (backend disponible) ---
+    // Sin sesión — leer localStorage en staticMode o backend en dynamic sin auth
+    if (state.staticMode) {
+        _fetchPortfolioFromLocalStorage(isSilent);
+        return;
+    }
+
+    // --- DYNAMIC MODE sin sesión (usuarios anónimos con backend activo) ---
     try {
         const response = await fetch(`${state.apiBase}/api/portfolio`, {
             headers: getAuthHeaders()
         });
-
-        // Detectar error de autenticación explícito del backend
-        if (response.status === 401) {
-            console.warn('[portfolio] Backend rechazó el token (401). Intentando renovar sesión...');
-            if (supabase) {
-                const { data: { session: refreshed } } = await supabase.auth.refreshSession();
-                if (refreshed) {
-                    session = refreshed;
-                    user = refreshed.user;
-                    // Reintentar con token fresco
-                    const retry = await fetch(`${state.apiBase}/api/portfolio`, { headers: getAuthHeaders() });
-                    const retryData = await retry.json();
-                    if (retryData.status === 'success') {
-                        renderPortfolioHTML(retryData);
-                        await _fetchPortfolioReport(retryData);
-                        return;
-                    }
-                }
-            }
-        }
 
         const data = await response.json();
 
@@ -1885,41 +1865,50 @@ async function handleAddPositionSubmit(e) {
         quantity: parseFloat(document.getElementById('pos-qty').value)
     };
 
-    // Si está en modo estático pero está logueado a Supabase:
-    if (state.staticMode && supabase && session && session.access_token) {
+    // ESTRATEGIA PRINCIPAL: si hay sesión activa de Supabase, usar Supabase directo siempre
+    if (supabase && session && session.access_token && user) {
         try {
+            // Refrescar la sesión antes de escribir para evitar tokens expirados
+            const { data: refreshedData, error: refreshError } = await supabase.auth.refreshSession();
+            if (!refreshError && refreshedData.session) {
+                session = refreshedData.session;
+            }
+            const token = session.access_token;
             const base = CONFIG.SUPABASE_URL.replace(/\/$/, '');
             const url = `${base}/rest/v1/portfolios`;
-            const headers = {
-                'apikey': CONFIG.SUPABASE_ANON_KEY,
-                'Authorization': `Bearer ${session.access_token}`,
-                'Content-Type': 'application/json',
-                'Prefer': 'return=representation'
-            };
-            const dbPayload = {
-                user_id: user.id,
-                ...payload
-            };
+            const dbPayload = { user_id: user.id, ...payload };
+            console.log('[portfolio-add] POST directo a Supabase. user_id:', user.id, 'ticker:', payload.ticker);
             const res = await fetch(url, {
                 method: 'POST',
-                headers,
+                headers: {
+                    'apikey': CONFIG.SUPABASE_ANON_KEY,
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                    'Prefer': 'return=representation'
+                },
                 body: JSON.stringify(dbPayload)
             });
             if (res.ok) {
+                const inserted = await res.json();
+                console.log('[portfolio-add] Posición guardada exitosamente en Supabase:', inserted);
                 document.getElementById('add-pos-modal').style.display = 'none';
                 document.getElementById('add-pos-form').reset();
                 fetchPortfolio();
                 return;
             } else {
-                throw new Error(await res.text());
+                const errText = await res.text();
+                console.error('[portfolio-add] Supabase rechazó el INSERT. Status:', res.status, 'Body:', errText);
+                alert(`Error al guardar en Supabase (${res.status}): ${errText}`);
+                return;
             }
         } catch (err) {
-            console.error('[portfolio-add] Error al guardar en Supabase (staticMode):', err);
-            alert('Error al guardar la posición en la nube.');
+            console.error('[portfolio-add] Excepción al guardar en Supabase:', err);
+            alert('Error inesperado al guardar la posición.');
             return;
         }
     }
 
+    // Sin sesión y modo estático: guardar en localStorage
     if (state.staticMode) {
         const localPos = getLocalPortfolio();
         const randId = Math.random().toString(36).substr(2, 9);
@@ -1936,6 +1925,7 @@ async function handleAddPositionSubmit(e) {
         return;
     }
 
+    // Sin sesión y backend activo: usar backend local (usuarios anónimos)
     try {
         const res = await fetch(`${state.apiBase}/api/portfolio`, {
             method: 'POST',
@@ -1956,7 +1946,7 @@ async function handleAddPositionSubmit(e) {
 async function handleDeletePosition(id) {
     if (!confirm('¿Desea eliminar esta transacción simulada de su portafolio?')) return;
 
-    if (state.staticMode && supabase && session && session.access_token) {
+    if (supabase && session && session.access_token) {
         try {
             const base = CONFIG.SUPABASE_URL.replace(/\/$/, '');
             const url = `${base}/rest/v1/portfolios?id=eq.${id}`;
