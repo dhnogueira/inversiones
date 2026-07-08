@@ -3,22 +3,22 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "GOOGL",
-        "name": "GOOGL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.3,
-        "weight_pct": 30.0,
-        "ars_return_est": 163.4
-      },
-      {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 110.8
+        "ars_return_est": 111.4
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 162.8
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 99.3
+        "ars_return_est": 99.2
       },
       {
         "ticker": "ABBV",
@@ -39,7 +39,7 @@
         "ars_return_est": 85.5
       }
     ],
-    "expected_return": 120.57,
+    "expected_return": 120.55,
     "expected_volatility": 25.62,
     "sharpe_ratio": 3.85,
     "profile": "conservador",
@@ -47,6 +47,6 @@
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 98.6
+    "spread_vs_inflation": 98.5
   }
 }

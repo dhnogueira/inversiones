@@ -4,23 +4,23 @@
     "ticker": "CRES.BA",
     "name": "CRES",
     "category": "merval",
-    "price": 1671.0,
+    "price": 1672.0,
     "currency": "ARS",
-    "score": 55.3,
+    "score": 55.4,
     "profile": "agresivo",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 42.5, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "42.5",
+        "content": "El RSI de 14 períodos se encuentra en 42.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "42.6",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (1671.00) se mantiene por encima de la EMA de 200 días (1664.72), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (1729.44) aún no confirma un cruce definitivo.",
+        "content": "El precio (1672.00) se mantiene por encima de la EMA de 200 días (1664.73), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (1729.48) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -57,7 +57,7 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-8.1%** y a 12 meses es **+31.1%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "content": "El rendimiento acumulado a 6 meses es **-8.1%** y a 12 meses es **+31.2%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
         "value": "-8.1% (6M)",
         "status": "neutral"
       },
@@ -171,18 +171,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **55.3/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "summary": "El score de **55.4/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (42.6%), un ratio de Sharpe ineficiente (0.64), o una tendencia técnica desfavorable (Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 2953.57,
-      "stop_loss": 1029.71,
+      "take_profit": 2955.32,
+      "stop_loss": 1030.34,
       "tp_pct": 76.8,
       "sl_pct": 38.4
     },
     "support": 1618.9,
     "resistance": 1820.0,
     "volume_cluster": 1710.7,
-    "take_profit": 2953.57,
-    "stop_loss": 1029.71,
+    "take_profit": 2955.32,
+    "stop_loss": 1030.34,
     "tp_pct": 76.8,
     "sl_pct": 38.4,
     "medium_term_strategies": {
@@ -264,7 +264,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=43, 3M=-5.8%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=43, 3M=-5.7%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
           "value": "Score 2/6",
           "status": "warning"
         },
@@ -308,8 +308,8 @@
         {
           "title": "PER Forward vs. Trailing",
           "icon": "fa-calendar-check",
-          "content": "El PER forward (933.5x) es mayor al trailing (5.8x): los analistas esperan menores ganancias en los próximos 12 meses, lo que implica una expansión del múltiplo sin crecimiento. Señal negativa para GARP.",
-          "value": "Forward: 933.5x",
+          "content": "El PER forward (934.1x) es mayor al trailing (5.8x): los analistas esperan menores ganancias en los próximos 12 meses, lo que implica una expansión del múltiplo sin crecimiento. Señal negativa para GARP.",
+          "value": "Forward: 934.1x",
           "status": "warning"
         },
         {

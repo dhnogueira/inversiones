@@ -4,23 +4,23 @@
     "ticker": "COST",
     "name": "COST",
     "category": "sp500",
-    "price": 955.1099853515625,
+    "price": 954.6699829101562,
     "currency": "USD",
-    "score": 57.2,
+    "score": 57.1,
     "profile": "agresivo",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 46.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "46.6",
+        "content": "El RSI de 14 períodos se encuentra en 46.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "46.4",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (955.11) cotiza por debajo de la EMA de 200 días (968.78), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (954.67) cotiza por debajo de la EMA de 200 días (968.78), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-2.0%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-2.0% (1M)",
+        "content": "El rendimiento mensual es de **-2.1%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-2.1% (1M)",
         "status": "neutral"
       },
       {
@@ -64,8 +64,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **32.2%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+21.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 32.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **32.1%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+21.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 32.1%",
         "status": "success"
       }
     ],
@@ -180,18 +180,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **57.2/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "summary": "El score de **57.1/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (20.8%), un ratio de Sharpe ineficiente (-0.32), o una tendencia técnica desfavorable (Bajista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 1169.98,
-      "stop_loss": 847.68,
+      "take_profit": 1169.43,
+      "stop_loss": 847.29,
       "tp_pct": 22.5,
       "sl_pct": 11.2
     },
     "support": 951.65,
     "resistance": 1028.29,
     "volume_cluster": 1001.01,
-    "take_profit": 1169.98,
-    "stop_loss": 847.68,
+    "take_profit": 1169.43,
+    "stop_loss": 847.29,
     "tp_pct": 22.5,
     "sl_pct": 11.2
   }

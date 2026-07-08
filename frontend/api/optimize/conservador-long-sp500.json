@@ -18,16 +18,7 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 356.0
-      },
-      {
-        "ticker": "AAPL",
-        "name": "AAPL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 305.3
+        "ars_return_est": 358.8
       },
       {
         "ticker": "XOM",
@@ -36,7 +27,16 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 200.7
+        "ars_return_est": 202.1
+      },
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 304.8
       },
       {
         "ticker": "ABBV",
@@ -54,7 +54,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 172.7
+        "ars_return_est": 172.1
       },
       {
         "ticker": "AMZN",
@@ -63,7 +63,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 136.6
+        "ars_return_est": 136.5
       },
       {
         "ticker": "AVGO",
@@ -72,7 +72,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 276.9
+        "ars_return_est": 276.8
       },
       {
         "ticker": "LLY",
@@ -81,7 +81,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 345.5
+        "ars_return_est": 346.8
       },
       {
         "ticker": "NVDA",
@@ -90,17 +90,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 198.3
+        "ars_return_est": 198.8
       }
     ],
-    "expected_return": 372.64,
-    "expected_volatility": 28.17,
-    "sharpe_ratio": 11.56,
+    "expected_return": 373.15,
+    "expected_volatility": 28.18,
+    "sharpe_ratio": 11.58,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 325.6
+    "spread_vs_inflation": 326.2
   }
 }

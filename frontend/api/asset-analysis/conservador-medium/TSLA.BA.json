@@ -4,38 +4,38 @@
     "ticker": "TSLA.BA",
     "name": "TSLA",
     "category": "cedears",
-    "price": 41320.0,
+    "price": 41240.0,
     "currency": "ARS",
-    "score": 59.9,
+    "score": 59.7,
     "profile": "conservador",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 50.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "50.1",
-        "status": "success"
+        "content": "El RSI de 14 períodos se encuentra en 49.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "49.8",
+        "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (40873.46) se encuentra por encima de la EMA de 200 días (39154.72), y el precio actual (41320.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (40870.33) se encuentra por encima de la EMA de 200 días (39153.92), y el precio actual (41240.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **muy alta** (62.0%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
-        "value": "62.0%",
+        "content": "La volatilidad anualizada es **muy alta** (62.1%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "62.1%",
         "status": "danger"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+7.3%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (20.2%) refuerzan esta tendencia positiva.",
-        "value": "+7.3% (1M)",
+        "content": "El activo registró un rendimiento del **+7.1%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (20.0%) refuerzan esta tendencia positiva.",
+        "value": "+7.1% (1M)",
         "status": "success"
       },
       {
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.90** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "0.90",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.89** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
+        "value": "0.89",
         "status": "neutral"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-7.4%** y a 12 meses es **+59.7%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-7.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-7.6%** y a 12 meses es **+59.4%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-7.6% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **47.8%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+25.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 47.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **47.5%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+25.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 47.5%",
         "status": "success"
       }
     ],
@@ -187,18 +187,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **59.9/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (62.0%), un ratio de Sharpe ineficiente (0.90), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 61153.6,
-      "stop_loss": 31403.2,
+      "summary": "El score de **59.7/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (62.1%), un ratio de Sharpe ineficiente (0.89), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 61035.2,
+      "stop_loss": 31342.4,
       "tp_pct": 48.0,
       "sl_pct": 24.0
     },
     "support": 35916.0,
     "resistance": 42928.0,
     "volume_cluster": 37559.0,
-    "take_profit": 61153.6,
-    "stop_loss": 31403.2,
+    "take_profit": 61035.2,
+    "stop_loss": 31342.4,
     "tp_pct": 48.0,
     "sl_pct": 24.0,
     "medium_term_strategies": {
@@ -243,8 +243,8 @@
         {
           "title": "A — Crecimiento Anual de Ganancias",
           "icon": "fa-a",
-          "content": "**A (Annual Earnings):** El retorno de precio anual es **+60%**, consistente con empresas de alto crecimiento anual. O'Neil busca empresas con crecimiento anual de ganancias superior al 25% durante al menos 3 años consecutivos.",
-          "value": "+60% (12M)",
+          "content": "**A (Annual Earnings):** El retorno de precio anual es **+59%**, consistente con empresas de alto crecimiento anual. O'Neil busca empresas con crecimiento anual de ganancias superior al 25% durante al menos 3 años consecutivos.",
+          "value": "+59% (12M)",
           "status": "success"
         },
         {
@@ -280,9 +280,9 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=50, retorno 3M=+20.2%, retorno 12M=+59.7%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
-          "value": "Score 5/6",
-          "status": "success"
+          "content": "La **fuerza relativa es moderada** (score: 4/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=50, 3M=+20.0%.",
+          "value": "Score 4/6",
+          "status": "neutral"
         },
         {
           "title": "Tendencia vs. Media de Largo Plazo",
@@ -294,8 +294,8 @@
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El momentum **se está desacelerando** (-12.9%). El activo pierde velocidad de apreciación, lo que puede preceder una corrección o consolidación.",
-          "value": "-12.9%",
+          "content": "El momentum **se está desacelerando** (-12.8%). El activo pierde velocidad de apreciación, lo que puede preceder una corrección o consolidación.",
+          "value": "-12.8%",
           "status": "warning"
         },
         {
@@ -324,7 +324,7 @@
         {
           "title": "PER Forward vs. Trailing",
           "icon": "fa-calendar-check",
-          "content": "PER actual: **25.7x**. Sin dato de PER forward no se puede estimar la dirección de las ganancias esperadas — dato fundamental en el análisis GARP.",
+          "content": "PER actual: **25.6x**. Sin dato de PER forward no se puede estimar la dirección de las ganancias esperadas — dato fundamental en el análisis GARP.",
           "value": "N/D",
           "status": "neutral"
         },

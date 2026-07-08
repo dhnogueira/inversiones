@@ -4,7 +4,7 @@
     "ticker": "CRES.BA",
     "name": "CRES",
     "category": "merval",
-    "price": 1671.0,
+    "price": 1672.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 42.5, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "42.5",
+        "content": "El RSI de 14 períodos se encuentra en 42.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "42.6",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (1671.00) se mantiene por encima de la EMA de 200 días (1664.72), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (1729.44) aún no confirma un cruce definitivo.",
+        "content": "El precio (1672.00) se mantiene por encima de la EMA de 200 días (1664.73), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (1729.48) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-8.1%** y a 12 meses es **+31.1%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "content": "El rendimiento acumulado a 6 meses es **-8.1%** y a 12 meses es **+31.2%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
         "value": "-8.1% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **24.9%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+2.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 24.9%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **25.0%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+3.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 25.0%",
         "status": "success"
       }
     ],
@@ -173,16 +173,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **conservador**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Alcista).",
-      "take_profit": 2241.03,
-      "stop_loss": 1385.98,
+      "take_profit": 2242.36,
+      "stop_loss": 1386.82,
       "tp_pct": 34.1,
       "sl_pct": 17.1
     },
     "support": 1618.9,
     "resistance": 1820.0,
     "volume_cluster": 1710.7,
-    "take_profit": 2241.03,
-    "stop_loss": 1385.98,
+    "take_profit": 2242.36,
+    "stop_loss": 1386.82,
     "tp_pct": 34.1,
     "sl_pct": 17.1,
     "medium_term_strategies": {
@@ -264,7 +264,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=43, 3M=-5.8%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=43, 3M=-5.7%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
           "value": "Score 2/6",
           "status": "warning"
         },
@@ -308,8 +308,8 @@
         {
           "title": "PER Forward vs. Trailing",
           "icon": "fa-calendar-check",
-          "content": "El PER forward (933.5x) es mayor al trailing (5.8x): los analistas esperan menores ganancias en los próximos 12 meses, lo que implica una expansión del múltiplo sin crecimiento. Señal negativa para GARP.",
-          "value": "Forward: 933.5x",
+          "content": "El PER forward (934.1x) es mayor al trailing (5.8x): los analistas esperan menores ganancias en los próximos 12 meses, lo que implica una expansión del múltiplo sin crecimiento. Señal negativa para GARP.",
+          "value": "Forward: 934.1x",
           "status": "warning"
         },
         {

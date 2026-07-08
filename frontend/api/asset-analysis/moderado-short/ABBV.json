@@ -4,7 +4,7 @@
     "ticker": "ABBV",
     "name": "ABBV",
     "category": "sp500",
-    "price": 254.1300048828125,
+    "price": 254.14999389648438,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -20,7 +20,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (228.43) se encuentra por encima de la EMA de 200 días (216.17), y el precio actual (254.13) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (228.43) se encuentra por encima de la EMA de 200 días (216.17), y el precio actual (254.15) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+15.3%** y a 12 meses es **+38.3%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+15.3% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+15.4%** y a 12 meses es **+38.3%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+15.4% (6M)",
         "status": "success"
       },
       {
@@ -178,16 +178,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Alcista).",
-      "take_profit": 303.47,
-      "stop_loss": 229.46,
+      "take_profit": 303.5,
+      "stop_loss": 229.48,
       "tp_pct": 19.4,
       "sl_pct": 9.7
     },
     "support": 203.37,
     "resistance": 235.71,
     "volume_cluster": 206.93,
-    "take_profit": 303.47,
-    "stop_loss": 229.46,
+    "take_profit": 303.5,
+    "stop_loss": 229.48,
     "tp_pct": 19.4,
     "sl_pct": 9.7
   }

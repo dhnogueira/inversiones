@@ -4,7 +4,7 @@
     "ticker": "COST",
     "name": "COST",
     "category": "sp500",
-    "price": 955.1099853515625,
+    "price": 954.6699829101562,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 46.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "46.6",
+        "content": "El RSI de 14 períodos se encuentra en 46.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "46.4",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (955.11) cotiza por debajo de la EMA de 200 días (968.78), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (954.67) cotiza por debajo de la EMA de 200 días (968.78), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-2.0%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-2.0% (1M)",
+        "content": "El rendimiento mensual es de **-2.1%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-2.1% (1M)",
         "status": "neutral"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **12.7%** por debajo de su máximo anual de **USD 1,094.32**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-12.7%",
+        "content": "**¿Qué significa?** Este activo cotiza un **12.8%** por debajo de su máximo anual de **USD 1,094.32**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-12.8%",
         "status": "success"
       },
       {
@@ -71,8 +71,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **91.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+44.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 91.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **91.2%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+44.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 91.2%",
         "status": "success"
       }
     ],
@@ -189,16 +189,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 1384.84,
-      "stop_loss": 764.12,
+      "take_profit": 1384.19,
+      "stop_loss": 763.77,
       "tp_pct": 45.0,
       "sl_pct": 20.0
     },
     "support": 951.65,
     "resistance": 1028.29,
     "volume_cluster": 1001.01,
-    "take_profit": 1384.84,
-    "stop_loss": 764.12,
+    "take_profit": 1384.19,
+    "stop_loss": 763.77,
     "tp_pct": 45.0,
     "sl_pct": 20.0,
     "long_term_strategies": {
@@ -213,8 +213,8 @@
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 25.62x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
-          "value": "25.62x",
+          "content": "El **P/B de 25.61x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "25.61x",
           "status": "warning"
         },
         {
@@ -273,23 +273,23 @@
         {
           "title": "Dividend Yield (Rendimiento por Dividendo)",
           "icon": "fa-coins",
-          "content": "Este activo **no paga dividendos** actualmente. No encaja en el perfil de Dividend Growth Investing clásico. Para inversores de renta pasiva, este activo debería complementarse con otros de la cartera que sí generen flujo de dividendos.",
-          "value": "Sin dividendo",
-          "status": "neutral"
+          "content": "El **dividend yield del 62.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
+          "value": "62.00%",
+          "status": "warning"
         },
         {
           "title": "Payout Ratio (Sostenibilidad del Dividendo)",
           "icon": "fa-sliders",
-          "content": "No hay datos de payout ratio disponibles para este activo.",
-          "value": "N/D",
-          "status": "neutral"
+          "content": "El **payout ratio del 27%** es saludable. La empresa distribuye menos del 60% de sus ganancias, reteniendo capital suficiente para continuar creciendo y **aumentar el dividendo en el futuro**. Este es el indicador más importante del Dividend Growth Investing: la capacidad de subir el dividendo año a año.",
+          "value": "27%",
+          "status": "success"
         },
         {
           "title": "Dividendo Creciente (Dividend Growth)",
           "icon": "fa-arrow-trend-up",
-          "content": "Este activo no paga dividendos, por lo que no aplica el análisis de crecimiento de dividendos.",
-          "value": "N/A",
-          "status": "neutral"
+          "content": "✅ Los datos históricos sugieren que esta empresa **ha mantenido o aumentado sus dividendos** en los últimos años, siguiendo el patrón de los Dividend Aristocrats y Dividend Kings. Empresas como J&J, PG y Coca-Cola llevan más de 25 años incrementando el dividendo ininterrumpidamente.",
+          "value": "Sí ✅",
+          "status": "success"
         },
         {
           "title": "Solidez Fundamental (Pilar del DGI)",
