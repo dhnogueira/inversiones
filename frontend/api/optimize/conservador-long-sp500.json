@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 359.5
+        "ars_return_est": 358.0
       },
       {
         "ticker": "XOM",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 201.8
+        "ars_return_est": 203.6
       },
       {
         "ticker": "AAPL",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 288.1
+        "ars_return_est": 293.5
       },
       {
         "ticker": "ABBV",
@@ -45,7 +45,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 243.5
+        "ars_return_est": 247.3
       },
       {
         "ticker": "JPM",
@@ -63,7 +63,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 268.4
+        "ars_return_est": 270.5
       },
       {
         "ticker": "LLY",
@@ -72,7 +72,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 343.2
+        "ars_return_est": 348.3
       },
       {
         "ticker": "AMZN",
@@ -81,7 +81,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 138.9
+        "ars_return_est": 138.2
       },
       {
         "ticker": "NVDA",
@@ -90,17 +90,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 191.0
+        "ars_return_est": 185.5
       }
     ],
-    "expected_return": 371.44,
-    "expected_volatility": 28.15,
-    "sharpe_ratio": 11.52,
+    "expected_return": 371.82,
+    "expected_volatility": 28.16,
+    "sharpe_ratio": 11.54,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 324.4
+    "spread_vs_inflation": 324.8
   }
 }

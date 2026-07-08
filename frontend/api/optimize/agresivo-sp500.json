@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 228.3
+        "ars_return_est": 227.0
       },
       {
         "ticker": "MRK",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 146.3
+        "ars_return_est": 145.8
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 121.8
+        "ars_return_est": 123.7
       },
       {
         "ticker": "LLY",
@@ -36,16 +36,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 140.9
-      },
-      {
-        "ticker": "UNH",
-        "name": "UNH",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 114.3
+        "ars_return_est": 142.6
       },
       {
         "ticker": "AVGO",
@@ -54,7 +45,16 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 114.6
+        "ars_return_est": 115.4
+      },
+      {
+        "ticker": "UNH",
+        "name": "UNH",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 115.8
       },
       {
         "ticker": "ABBV",
@@ -63,16 +63,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 105.2
-      },
-      {
-        "ticker": "NVDA",
-        "name": "NVDA",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 84.0
+        "ars_return_est": 106.7
       },
       {
         "ticker": "XOM",
@@ -81,7 +72,16 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 88.6
+        "ars_return_est": 89.3
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVDA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 81.7
       },
       {
         "ticker": "JPM",
@@ -90,17 +90,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 77.3
+        "ars_return_est": 77.4
       }
     ],
-    "expected_return": 158.8,
+    "expected_return": 158.51,
     "expected_volatility": 28.06,
-    "sharpe_ratio": 4.88,
+    "sharpe_ratio": 4.86,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 136.8
+    "spread_vs_inflation": 136.5
   }
 }

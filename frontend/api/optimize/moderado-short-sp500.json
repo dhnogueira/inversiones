@@ -3,22 +3,22 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "PG",
-        "name": "PG",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0,
-        "ars_return_est": 30.9
-      },
-      {
         "ticker": "COST",
         "name": "COST",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 29.7
+        "ars_return_est": 30.7
+      },
+      {
+        "ticker": "PG",
+        "name": "PG",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.25,
+        "weight_pct": 25.0,
+        "ars_return_est": 31.3
       },
       {
         "ticker": "MRK",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 43.1
+        "ars_return_est": 42.9
       },
       {
         "ticker": "XOM",
@@ -36,17 +36,17 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 42.7
+        "ars_return_est": 43.2
       }
     ],
-    "expected_return": 36.64,
+    "expected_return": 37.03,
     "expected_volatility": 20.41,
-    "sharpe_ratio": 1.26,
+    "sharpe_ratio": 1.28,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 25.6
+    "spread_vs_inflation": 26.0
   }
 }

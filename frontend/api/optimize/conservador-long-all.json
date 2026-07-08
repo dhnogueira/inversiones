@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 359.5
+        "ars_return_est": 358.0
       },
       {
         "ticker": "GOOGL.BA",
@@ -72,7 +72,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 201.8
+        "ars_return_est": 203.6
       },
       {
         "ticker": "AAPL",
@@ -81,7 +81,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 288.1
+        "ars_return_est": 293.5
       },
       {
         "ticker": "ABBV",
@@ -90,17 +90,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 243.5
+        "ars_return_est": 247.3
       }
     ],
-    "expected_return": 356.2,
+    "expected_return": 356.52,
     "expected_volatility": 24.86,
-    "sharpe_ratio": 12.44,
+    "sharpe_ratio": 12.45,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 309.2
+    "spread_vs_inflation": 309.5
   }
 }
