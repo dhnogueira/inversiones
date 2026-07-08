@@ -4,7 +4,7 @@
     "ticker": "SOL-USD",
     "name": "SOL-USD",
     "category": "crypto",
-    "price": 77.20999908447266,
+    "price": 77.2300033569336,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -20,7 +20,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (77.21) cotiza por debajo de la EMA de 200 días (96.06), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (77.23) cotiza por debajo de la EMA de 200 días (96.06), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+10.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-12.7%) refuerzan esta tendencia positiva.",
+        "content": "El activo registró un rendimiento del **+10.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-12.6%) refuerzan esta tendencia positiva.",
         "value": "+10.9% (1M)",
         "status": "success"
       },
@@ -84,16 +84,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 132.8,
-      "stop_loss": 49.41,
+      "take_profit": 132.84,
+      "stop_loss": 49.43,
       "tp_pct": 72.0,
       "sl_pct": 36.0
     },
     "support": 67.94,
     "resistance": 89.01,
     "volume_cluster": 85.04,
-    "take_profit": 132.8,
-    "stop_loss": 49.41,
+    "take_profit": 132.84,
+    "stop_loss": 49.43,
     "tp_pct": 72.0,
     "sl_pct": 36.0,
     "medium_term_strategies": {
@@ -175,7 +175,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es débil** (score: 1/6). El activo no evidencia momentum sostenido. RSI=53, 3M=-12.7%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "content": "La **fuerza relativa es débil** (score: 1/6). El activo no evidencia momentum sostenido. RSI=53, 3M=-12.6%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
           "value": "Score 1/6",
           "status": "warning"
         },
@@ -189,8 +189,8 @@
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El **momentum se está acelerando** (+23.5%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
-          "value": "+23.5%",
+          "content": "El **momentum se está acelerando** (+23.6%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
+          "value": "+23.6%",
           "status": "success"
         },
         {
