@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 223.3
+        "ars_return_est": 223.7
       },
       {
         "ticker": "MRK",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 145.9
+        "ars_return_est": 145.4
       },
       {
         "ticker": "AAPL",
@@ -36,16 +36,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 142.3
-      },
-      {
-        "ticker": "UNH",
-        "name": "UNH",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 113.4
+        "ars_return_est": 141.7
       },
       {
         "ticker": "AVGO",
@@ -54,7 +45,16 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 117.5
+        "ars_return_est": 117.8
+      },
+      {
+        "ticker": "UNH",
+        "name": "UNH",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 113.5
       },
       {
         "ticker": "NVDA",
@@ -63,7 +63,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 87.9
+        "ars_return_est": 89.1
       },
       {
         "ticker": "ABBV",
@@ -72,7 +72,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 107.1
+        "ars_return_est": 106.9
       },
       {
         "ticker": "XOM",
@@ -90,10 +90,10 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 75.7
+        "ars_return_est": 75.5
       }
     ],
-    "expected_return": 157.63,
+    "expected_return": 157.67,
     "expected_volatility": 28.08,
     "sharpe_ratio": 4.83,
     "profile": "agresivo",
@@ -101,6 +101,6 @@
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 135.6
+    "spread_vs_inflation": 135.7
   }
 }
