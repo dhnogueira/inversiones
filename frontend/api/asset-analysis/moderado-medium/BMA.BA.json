@@ -4,23 +4,23 @@
     "ticker": "BMA.BA",
     "name": "BMA",
     "category": "merval",
-    "price": 14380.0,
+    "price": 14350.0,
     "currency": "ARS",
-    "score": 85.0,
+    "score": 84.6,
     "profile": "moderado",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 55.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "55.9",
+        "content": "El RSI de 14 períodos está en 55.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "55.5",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (13232.40) se encuentra por encima de la EMA de 200 días (11689.04), y el precio actual (14380.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (13231.22) se encuentra por encima de la EMA de 200 días (11688.75), y el precio actual (14350.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+9.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (24.6%) refuerzan esta tendencia positiva.",
-        "value": "+9.9% (1M)",
+        "content": "El activo registró un rendimiento del **+9.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (24.4%) refuerzan esta tendencia positiva.",
+        "value": "+9.6% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+6.4%** y a 12 meses es **+80.8%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+6.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+6.2%** y a 12 meses es **+80.4%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+6.2% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **80.8%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+58.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 80.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **80.4%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+58.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 80.4%",
         "status": "success"
       }
     ],
@@ -171,21 +171,21 @@
       }
     },
     "verdict": {
-      "action": "COMPRAR",
-      "icon": "fa-circle-check",
-      "color": "success",
-      "summary": "Este activo obtiene un score de **85.0/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 1.24) es óptima para el perfil **moderado**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (61.7%).",
-      "take_profit": 24733.6,
-      "stop_loss": 9203.2,
+      "action": "CONSIDERAR",
+      "icon": "fa-circle-info",
+      "color": "neutral",
+      "summary": "Con un score de **84.6/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (1.24) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
+      "take_profit": 24682.0,
+      "stop_loss": 9184.0,
       "tp_pct": 72.0,
       "sl_pct": 36.0
     },
     "support": 10127.89,
     "resistance": 14448.29,
     "volume_cluster": 10295.88,
-    "take_profit": 24733.6,
-    "stop_loss": 9203.2,
+    "take_profit": 24682.0,
+    "stop_loss": 9184.0,
     "tp_pct": 72.0,
     "sl_pct": 36.0,
     "medium_term_strategies": {
@@ -207,8 +207,8 @@
         {
           "title": "Precio Objetivo y Upside Potencial",
           "icon": "fa-bullseye",
-          "content": "El **precio objetivo medio de analistas** ($18,751.61) implica un **upside del +30.4%** sobre el precio actual. Un upside superior al 15% desde el consenso de analistas es una de las señales más directas de que el mercado profesional considera el activo subvalorado para el mediano plazo.",
-          "value": "+30.4% upside",
+          "content": "El **precio objetivo medio de analistas** ($18,751.61) implica un **upside del +30.7%** sobre el precio actual. Un upside superior al 15% desde el consenso de analistas es una de las señales más directas de que el mercado profesional considera el activo subvalorado para el mediano plazo.",
+          "value": "+30.7% upside",
           "status": "success"
         },
         {
@@ -230,8 +230,8 @@
         {
           "title": "A — Crecimiento Anual de Ganancias",
           "icon": "fa-a",
-          "content": "**A (Annual Earnings):** El retorno de precio anual es **+81%**, consistente con empresas de alto crecimiento anual. O'Neil busca empresas con crecimiento anual de ganancias superior al 25% durante al menos 3 años consecutivos.",
-          "value": "+81% (12M)",
+          "content": "**A (Annual Earnings):** El retorno de precio anual es **+80%**, consistente con empresas de alto crecimiento anual. O'Neil busca empresas con crecimiento anual de ganancias superior al 25% durante al menos 3 años consecutivos.",
+          "value": "+80% (12M)",
           "status": "success"
         },
         {
@@ -267,7 +267,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=56, retorno 3M=+24.6%, retorno 12M=+80.8%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
+          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=56, retorno 3M=+24.4%, retorno 12M=+80.4%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
           "value": "Score 5/6",
           "status": "success"
         },
@@ -311,8 +311,8 @@
         {
           "title": "PER Forward vs. Trailing",
           "icon": "fa-calendar-check",
-          "content": "El **PER forward (9.5x) es menor al trailing (24.8x)** en 15.3 puntos: los analistas esperan que las ganancias aumenten en los próximos 12 meses, comprimiendo el múltiplo. Es la señal perfecta de GARP: valuación decreciente por crecimiento.",
-          "value": "Forward: 9.5x",
+          "content": "El **PER forward (9.4x) es menor al trailing (24.8x)** en 15.4 puntos: los analistas esperan que las ganancias aumenten en los próximos 12 meses, comprimiendo el múltiplo. Es la señal perfecta de GARP: valuación decreciente por crecimiento.",
+          "value": "Forward: 9.4x",
           "status": "success"
         },
         {

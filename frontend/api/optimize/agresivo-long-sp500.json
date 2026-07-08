@@ -12,22 +12,22 @@
         "ars_return_est": 500.0
       },
       {
-        "ticker": "AVGO",
-        "name": "AVGO",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 359.3
-      },
-      {
         "ticker": "AAPL",
         "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 390.4
+        "ars_return_est": 391.1
+      },
+      {
+        "ticker": "AVGO",
+        "name": "AVGO",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 353.6
       },
       {
         "ticker": "MRK",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 481.3
+        "ars_return_est": 485.0
       },
       {
         "ticker": "LLY",
@@ -45,16 +45,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 472.1
-      },
-      {
-        "ticker": "NVDA",
-        "name": "NVDA",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 230.3
+        "ars_return_est": 471.7
       },
       {
         "ticker": "XOM",
@@ -63,7 +54,16 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 263.2
+        "ars_return_est": 265.7
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVDA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 224.8
       },
       {
         "ticker": "ABBV",
@@ -72,7 +72,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 321.6
+        "ars_return_est": 324.8
       },
       {
         "ticker": "AMZN",
@@ -81,7 +81,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 152.6
+        "ars_return_est": 152.5
       },
       {
         "ticker": "TSLA",
@@ -90,17 +90,17 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 278.9
+        "ars_return_est": 278.1
       }
     ],
-    "expected_return": 344.96,
+    "expected_return": 344.74,
     "expected_volatility": 32.01,
-    "sharpe_ratio": 9.31,
+    "sharpe_ratio": 9.3,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 298.0
+    "spread_vs_inflation": 297.7
   }
 }

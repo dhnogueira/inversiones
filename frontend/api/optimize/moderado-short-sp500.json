@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 31.0
+        "ars_return_est": 31.2
       },
       {
         "ticker": "PG",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 31.3
+        "ars_return_est": 31.5
       },
       {
         "ticker": "MRK",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 42.3
+        "ars_return_est": 42.7
       },
       {
         "ticker": "XOM",
@@ -36,17 +36,17 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 44.8
+        "ars_return_est": 45.2
       }
     ],
-    "expected_return": 37.33,
+    "expected_return": 37.67,
     "expected_volatility": 20.41,
-    "sharpe_ratio": 1.29,
+    "sharpe_ratio": 1.31,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 26.3
+    "spread_vs_inflation": 26.7
   }
 }
