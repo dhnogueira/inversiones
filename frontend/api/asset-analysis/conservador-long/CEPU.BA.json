@@ -4,23 +4,23 @@
     "ticker": "CEPU.BA",
     "name": "CEPU",
     "category": "merval",
-    "price": 2335.0,
+    "price": 2328.0,
     "currency": "ARS",
-    "score": 63.9,
+    "score": 63.6,
     "profile": "conservador",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 53.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "53.9",
+        "content": "El RSI de 14 períodos está en 53.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "53.2",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (2284.67) se encuentra por encima de la EMA de 200 días (2151.60), y el precio actual (2335.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (2284.40) se encuentra por encima de la EMA de 200 días (2151.53), y el precio actual (2328.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,9 +34,9 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.2%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.8%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.2% (1M)",
-        "status": "success"
+        "content": "El rendimiento mensual es de **+1.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-2.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+1.9% (1M)",
+        "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
@@ -50,29 +50,29 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **14.9%** por debajo de su máximo anual de **ARS 2,745.00**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-14.9%",
+        "content": "**¿Qué significa?** Este activo cotiza un **15.2%** por debajo de su máximo anual de **ARS 2,745.00**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-15.2%",
         "status": "success"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **1.08** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
-        "value": "1.08",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **1.07** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "1.07",
         "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-6.7%** y a 12 meses es **+61.6%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-6.7% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-7.0%** y a 12 meses es **+61.1%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-7.0% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **128.9%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+81.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 128.9%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **127.6%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+80.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 127.6%",
         "status": "success"
       }
     ],
@@ -184,18 +184,18 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **63.9/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (1.08) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **conservador**.",
-      "take_profit": 4122.09,
-      "stop_loss": 1540.74,
+      "summary": "Con un score de **63.6/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (1.07) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **conservador**.",
+      "take_profit": 4109.74,
+      "stop_loss": 1536.12,
       "tp_pct": 76.5,
       "sl_pct": 34.0
     },
     "support": 2117.8,
     "resistance": 2393.2,
     "volume_cluster": 2295.4,
-    "take_profit": 4122.09,
-    "stop_loss": 1540.74,
+    "take_profit": 4109.74,
+    "stop_loss": 1536.12,
     "tp_pct": 76.5,
     "sl_pct": 34.0,
     "long_term_strategies": {
@@ -203,8 +203,8 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 7.7x** es bajo (< 15x), indicando que el mercado valúa la empresa a un precio razonable o incluso barato respecto a sus ganancias. Benjamin Graham consideraba este rango como zona de valor.",
-          "value": "7.7x",
+          "content": "El **PER de 7.8x** es bajo (< 15x), indicando que el mercado valúa la empresa a un precio razonable o incluso barato respecto a sus ganancias. Benjamin Graham consideraba este rango como zona de valor.",
+          "value": "7.8x",
           "status": "success"
         },
         {
@@ -247,8 +247,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-1.8%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-1.8% (3M)",
+          "content": "El **momentum trimestral (-2.1%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-2.1% (3M)",
           "status": "warning"
         },
         {
@@ -261,8 +261,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 7.7x posiciona a esta empresa en el segmento de valuación razonable, donde convergen los factores Value y Quality a largo plazo.",
-          "value": "7.7x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 7.8x posiciona a esta empresa en el segmento de valuación razonable, donde convergen los factores Value y Quality a largo plazo.",
+          "value": "7.8x",
           "status": "neutral"
         }
       ],

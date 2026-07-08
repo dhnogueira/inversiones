@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 164.4
+        "ars_return_est": 164.3
       },
       {
         "ticker": "MRK",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 109.6
+        "ars_return_est": 109.5
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 98.1
+        "ars_return_est": 98.6
       },
       {
         "ticker": "ABBV",
@@ -36,10 +36,10 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 85.2
+        "ars_return_est": 84.9
       }
     ],
-    "expected_return": 120.14,
+    "expected_return": 120.24,
     "expected_volatility": 25.62,
     "sharpe_ratio": 3.83,
     "profile": "conservador",
@@ -47,6 +47,6 @@
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 98.1
+    "spread_vs_inflation": 98.2
   }
 }

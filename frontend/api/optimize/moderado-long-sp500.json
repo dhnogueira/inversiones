@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 412.8
+        "ars_return_est": 412.6
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 350.0
+        "ars_return_est": 352.8
       },
       {
         "ticker": "XOM",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 225.1
+        "ars_return_est": 224.1
       },
       {
         "ticker": "ABBV",
@@ -45,16 +45,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 284.2
-      },
-      {
-        "ticker": "AMZN",
-        "name": "AMZN",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 145.3
+        "ars_return_est": 282.9
       },
       {
         "ticker": "AVGO",
@@ -63,7 +54,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 327.6
+        "ars_return_est": 330.1
       },
       {
         "ticker": "JPM",
@@ -72,7 +63,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 192.1
+        "ars_return_est": 191.9
       },
       {
         "ticker": "LLY",
@@ -81,7 +72,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 411.0
+        "ars_return_est": 408.1
       },
       {
         "ticker": "NVDA",
@@ -90,17 +81,26 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 214.0
+        "ars_return_est": 217.3
+      },
+      {
+        "ticker": "AMZN",
+        "name": "AMZN",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 146.1
       }
     ],
-    "expected_return": 306.21,
+    "expected_return": 306.6,
     "expected_volatility": 28.94,
-    "sharpe_ratio": 8.96,
+    "sharpe_ratio": 8.97,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 259.2
+    "spread_vs_inflation": 259.6
   }
 }

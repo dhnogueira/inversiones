@@ -18,7 +18,7 @@
         "currency": "ARS",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 111.1
+        "ars_return_est": 112.0
       },
       {
         "ticker": "TECO2.BA",
@@ -27,35 +27,35 @@
         "currency": "ARS",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 104.4
+        "ars_return_est": 103.8
       },
       {
         "ticker": "BYMA.BA",
         "name": "BYMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1433,
-        "weight_pct": 14.3,
-        "ars_return_est": 75.5
+        "weight": 0.1541,
+        "weight_pct": 15.4,
+        "ars_return_est": 76.9
       },
       {
         "ticker": "BMA.BA",
         "name": "BMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1067,
-        "weight_pct": 10.7,
-        "ars_return_est": 98.0
+        "weight": 0.0959,
+        "weight_pct": 9.6,
+        "ars_return_est": 98.6
       }
     ],
-    "expected_return": 103.56,
-    "expected_volatility": 42.42,
-    "sharpe_ratio": 1.92,
+    "expected_return": 103.66,
+    "expected_volatility": 42.3,
+    "sharpe_ratio": 1.93,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 81.6
+    "spread_vs_inflation": 81.7
   }
 }
