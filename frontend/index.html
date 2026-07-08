@@ -56,6 +56,10 @@
                 <div class="update-status">
                     <i class="fa-solid fa-circle-check text-green"></i> Local Database OK
                 </div>
+                <button id="btn-diagnostic-trigger" class="btn btn-outline-secondary btn-sm"
+                    style="margin-top: 10px; width: 100%; font-size: 11px; padding: 6px 12px; justify-content: center; background: rgba(255, 255, 255, 0.02); color: var(--text-secondary); border: 1px solid var(--border-glow); display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-bug"></i> Diagnóstico y Logs
+                </button>
             </div>
         </aside>
 
@@ -681,6 +685,63 @@
                         style="color: var(--color-moderado); text-decoration: none; font-weight: 500;">Inicia Sesión</a>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Diagnostic Drawer -->
+    <div id="diagnostic-drawer" class="diagnostic-drawer glass-panel" style="display: none;">
+        <div class="drawer-header">
+            <h3 style="margin: 0; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-terminal"
+                    style="color: var(--color-moderado);"></i> Consola de Diagnóstico</h3>
+            <button id="diagnostic-drawer-close" class="modal-close-btn"
+                style="background: transparent; border: none; color: var(--text-secondary); cursor: pointer;"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body">
+            <!-- Systems Status grid -->
+            <div class="diagnostic-grid-status">
+                <div class="status-box"><strong>Auth:</strong> <span id="diag-auth-state">--</span></div>
+                <div class="status-box"><strong>User ID:</strong> <span id="diag-user-id"
+                        style="font-size:10px;">--</span></div>
+                <div class="status-box"><strong>Token Exp:</strong> <span id="diag-token-exp">--</span></div>
+                <div class="status-box"><strong>Host Mode:</strong> <span id="diag-host-mode">--</span></div>
+                <div class="status-box"><strong>API Base:</strong> <span id="diag-api-base">--</span></div>
+                <div class="status-box"><strong>Local Pos:</strong> <span id="diag-local-count">--</span></div>
+            </div>
+
+            <!-- Tests launcher -->
+            <div style="display: flex; gap: 8px; margin: 15px 0;">
+                <button id="btn-diag-test-supabase" class="btn btn-primary btn-sm"
+                    style="font-size: 11px; padding: 6px 12px; flex: 1; justify-content: center;"><i
+                        class="fa-solid fa-cloud"></i> Test Supabase</button>
+                <button id="btn-diag-test-api" class="btn btn-primary btn-sm"
+                    style="font-size: 11px; padding: 6px 12px; flex: 1; justify-content: center;"><i
+                        class="fa-solid fa-server"></i> Test API Backend</button>
+                <button id="btn-diag-test-local" class="btn btn-primary btn-sm"
+                    style="font-size: 11px; padding: 6px 12px; flex: 1; justify-content: center;"><i
+                        class="fa-solid fa-database"></i> Inspector Local</button>
+            </div>
+
+            <!-- Log Console -->
+            <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; font-weight: 600;">Registro
+                de Eventos y Errores:</div>
+            <div id="diagnostic-console-log" class="console-box">
+                <div style="color: #6b7280;">[sistema] Consola inicializada. Ejecutá tests para ver reportes detallados.
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 15px;">
+                <button id="btn-diag-sync" class="btn btn-primary"
+                    style="justify-content: center; padding: 8px 16px; font-size: 12px; background: #6d28d9; border-color: #7c3aed;"><i
+                        class="fa-solid fa-sync"></i> Forzar Sincronización Local -> Supabase</button>
+                <button id="btn-diag-copy" class="btn"
+                    style="justify-content: center; padding: 8px 16px; font-size: 12px; background: rgba(255,255,255,0.05); color: #fff;"><i
+                        class="fa-solid fa-copy"></i> Copiar Logs de Diagnóstico</button>
+                <button id="btn-diag-clear" class="btn"
+                    style="justify-content: center; padding: 8px 16px; font-size: 12px; background: rgba(239, 68, 68, 0.15); color: #fca5a5;"><i
+                        class="fa-solid fa-trash-can"></i> Limpiar Caché / Borrar Todo y Recargar</button>
+            </div>
         </div>
     </div>
 
