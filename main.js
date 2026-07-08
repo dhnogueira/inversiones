@@ -313,7 +313,9 @@ function setupEventListeners() {
                 f.classList.toggle('active', f.getAttribute('data-category') === cat);
             });
 
-            loadActiveView();
+            // Immediately re-render table from cached data and fetch new category optimization
+            if (state.marketData) renderTable();
+            fetchCategoryOptimization(state.activeProfile, state.activeHorizon, cat);
         });
     });
 
@@ -331,7 +333,9 @@ function setupEventListeners() {
                 f.classList.toggle('active', f.getAttribute('data-category') === cat);
             });
 
-            loadActiveView();
+            // Immediately re-render table from cached data and fetch new category optimization
+            if (state.marketData) renderTable();
+            fetchCategoryOptimization(state.activeProfile, state.activeHorizon, cat);
         });
     });
 
@@ -674,6 +678,26 @@ async function fetchRecommendationsAndOptimize(profile) {
         tableBody.innerHTML = `<tr><td colspan="8" class="text-center" style="color: var(--color-agresivo);"><i class="fa-solid fa-triangle-exclamation"></i> Error al conectar con las cotizaciones.</td></tr>`;
     }
 }
+
+// Standalone category optimization fetch — used when only the category tab changes
+async function fetchCategoryOptimization(profile, horizon, cat) {
+    try {
+        const optUrl = state.staticMode
+            ? `api/optimize/${profile}-${horizon}-${cat}.json`
+            : `${state.apiBase}/api/optimize?profile=${profile}&horizon=${horizon}&category=${cat}`;
+        const optResponse = await fetch(optUrl);
+        if (optResponse.ok) {
+            const optData = await optResponse.json();
+            if (optData.status === 'success') {
+                renderOptimalDashboard(optData.optimization);
+            }
+        }
+    } catch (e) {
+        console.warn('Error fetching category optimization:', e);
+    }
+}
+
+
 
 // Render dynamic optimization metrics & donut
 function renderOptimalDashboard(optimization) {
@@ -2358,44 +2382,89 @@ function closeModal() {
     }
 }
 
+// Cache for the 3 horizon analyses per opened asset
+let _modalTicker = null;
+let _modalAnalysisCache = {};
+
 async function openAssetModal(ticker) {
     if (!modal) return;
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    _modalTicker = ticker;
+    _modalAnalysisCache = {};
 
+    // Reset UI
     document.getElementById('modal-body').innerHTML = `
         <div class="modal-loader">
             <i class="fa-solid fa-circle-notch fa-spin fa-2x"></i>
             <p>Generando análisis detallado...</p>
         </div>
     `;
-
     document.getElementById('modal-ticker').innerText = ticker.replace('.BA', '').replace('-USD', '');
     document.getElementById('modal-name').innerText = '';
     document.getElementById('modal-verdict').style.display = 'none';
-    // Reset price badge so it doesn't show stale data or empty box
     const priceBadge = document.getElementById('modal-current-price');
     if (priceBadge) { priceBadge.innerText = ''; priceBadge.style.display = 'none'; }
 
-    try {
-        const safeTicker = ticker.replace("/", "_");
-        const analysisUrl = state.staticMode
-            ? `api/asset-analysis/${state.activeProfile}-${state.activeHorizon}/${safeTicker}.json`
-            : `${state.apiBase}/api/asset-analysis?ticker=${encodeURIComponent(ticker)}&profile=${state.activeProfile}&horizon=${state.activeHorizon}`;
+    // Reset horizon tabs to 'short' as active default
+    const horizonTabs = document.querySelectorAll('.modal-horizon-tab');
+    horizonTabs.forEach(t => {
+        const h = t.getAttribute('data-modal-horizon');
+        t.classList.toggle('active', h === 'short');
+        t.classList.add('loading');
+    });
+    const tabsEl = document.getElementById('modal-horizon-tabs');
+    if (tabsEl) tabsEl.style.display = 'flex';
 
-        const res = await fetch(analysisUrl);
-        const data = await res.json();
+    // Fetch all 3 horizons in parallel
+    const HORIZONS = ['short', 'medium', 'long'];
+    const safeTicker = ticker.replace('/', '_');
+    const fetchHorizon = async (h) => {
+        const url = state.staticMode
+            ? `api/asset-analysis/${state.activeProfile}-${h}/${safeTicker}.json`
+            : `${state.apiBase}/api/asset-analysis?ticker=${encodeURIComponent(ticker)}&profile=${state.activeProfile}&horizon=${h}`;
+        try {
+            const res = await fetch(url);
+            if (!res.ok) return null;
+            const data = await res.json();
+            return data.status === 'success' ? data.analysis : null;
+        } catch { return null; }
+    };
 
-        if (data.status === 'success') {
-            renderModalContent(data.analysis);
-        } else {
-            document.getElementById('modal-body').innerHTML = `<p style="color:#ef4444; text-align:center; padding:30px;"><i class="fa-solid fa-triangle-exclamation"></i> ${data.message || 'Error al obtener análisis.'}</p>`;
-        }
-    } catch (e) {
-        document.getElementById('modal-body').innerHTML = `<p style="color:#ef4444; text-align:center; padding:30px;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar el análisis estático.</p>`;
+    const [shortData, mediumData, longData] = await Promise.all(HORIZONS.map(fetchHorizon));
+    _modalAnalysisCache = { short: shortData, medium: mediumData, long: longData };
+
+    // Remove loading state
+    horizonTabs.forEach(t => t.classList.remove('loading'));
+
+    // Render the default tab (short)
+    const defaultData = shortData || mediumData || longData;
+    if (defaultData) {
+        renderModalContent(defaultData);
+    } else {
+        document.getElementById('modal-body').innerHTML = `<p style="color:#ef4444; text-align:center; padding:30px;"><i class="fa-solid fa-triangle-exclamation"></i> No se encontró análisis para este activo.</p>`;
+    }
+
+    // Wire tab click listener (use event delegation on the container)
+    if (tabsEl) {
+        tabsEl.onclick = (e) => {
+            const btn = e.target.closest('.modal-horizon-tab');
+            if (!btn) return;
+            const h = btn.getAttribute('data-modal-horizon');
+            tabsEl.querySelectorAll('.modal-horizon-tab').forEach(t => t.classList.toggle('active', t === btn));
+            const d = _modalAnalysisCache[h];
+            if (d) {
+                renderModalContent(d);
+            } else {
+                document.getElementById('modal-body').innerHTML = `<p style="color:var(--text-muted); text-align:center; padding:30px;"><i class="fa-solid fa-circle-info"></i> Análisis no disponible para este horizonte.</p>`;
+                document.getElementById('modal-verdict').style.display = 'none';
+            }
+        };
     }
 }
 window.openAssetModal = openAssetModal;
+
+
 
 function renderModalContent(analysis) {
     document.getElementById('modal-ticker').innerText = analysis.ticker.replace('.BA', '').replace('-USD', '');

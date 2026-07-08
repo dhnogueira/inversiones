@@ -18,7 +18,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 21.5
+        "ars_return_est": 21.4
       },
       {
         "ticker": "T31Y7",
@@ -30,14 +30,14 @@
         "ars_return_est": 20.5
       }
     ],
-    "expected_return": 23.22,
+    "expected_return": 23.15,
     "expected_volatility": 4.47,
-    "sharpe_ratio": 0.27,
+    "sharpe_ratio": 0.26,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 1.2
+    "spread_vs_inflation": 1.1
   }
 }
