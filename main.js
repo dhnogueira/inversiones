@@ -1793,6 +1793,9 @@ function renderPortfolioHTML(data) {
     if (!container) return;
     container.innerHTML = '';
 
+    // Cache portfolio positions globally for fallback/dynamic details modal rendering
+    state.portfolioPositions = data.positions || [];
+
     document.getElementById('pf-invested').innerText = `$ ${data.summary.total_invested.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`;
     document.getElementById('pf-current').innerText = `$ ${data.summary.total_current.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`;
 
@@ -1842,7 +1845,6 @@ function renderPortfolioHTML(data) {
         });
         const catPnL = catCurrent - catInvested;
         const catPnLPct = catInvested > 0 ? (catPnL / catInvested * 100) : 0;
-        const pnlClass = catPnL >= 0 ? 'text-green' : 'text-red';
         const pnlPctClass = catPnL >= 0 ? 'trend-up' : 'trend-down';
         const pnlSign = catPnL >= 0 ? '+' : '';
 
@@ -1893,16 +1895,29 @@ function renderPortfolioHTML(data) {
             const pnlClass = pnlPos >= 0 ? 'trend-up' : 'trend-down';
             const pnlSign = pnlPos >= 0 ? '+' : '';
 
+            // Color highlighting rule for asset name based on pnl_pct
+            let nameColorStyle = 'color: var(--text-primary); font-weight: 600;';
+            if (pos.pnl_pct > 0) {
+                nameColorStyle = 'color: #10b981; font-weight: 700;'; // Green for gains
+            } else if (pos.pnl_pct <= -5) {
+                nameColorStyle = 'color: #ef4444; font-weight: 700;'; // Red for losses > 5%
+            } else if (pos.pnl_pct > -5 && pos.pnl_pct <= 0) {
+                nameColorStyle = 'color: #eab308; font-weight: 700;'; // Yellow/amber for losses between 0% and 5%
+            }
+
             tr.innerHTML = `
-                <td><span class="asset-tag">${pos.ticker.replace('.BA', '')}</span></td>
-                <td><div>${pos.name}</div><span style="font-size:10px; color:var(--text-muted); text-transform:uppercase;">${pos.category}</span></td>
-                <td>${pos.quantity}</td>
-                <td>${pos.currency} ${pos.entry_price.toFixed(2)}</td>
-                <td>${pos.currency} ${pos.current_price.toFixed(2)}</td>
-                <td>$ ${pos.invested.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</td>
-                <td>$ ${pos.current_value.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</td>
-                <td><span class="trend-badge ${pnlClass}">${pnlSign}${pos.pnl_pct.toFixed(2)}%</span></td>
-                <td><button class="delete-btn" data-id="${pos.id}"><i class="fa-solid fa-trash"></i></button></td>
+                <td data-label="Ticker"><span class="asset-tag">${pos.ticker.replace('.BA', '')}</span></td>
+                <td data-label="Nombre">
+                    <div style="${nameColorStyle}">${pos.name}</div>
+                    <span style="font-size:10px; color:var(--text-muted); text-transform:uppercase;">${pos.category}</span>
+                </td>
+                <td data-label="Cant.">${pos.quantity}</td>
+                <td data-label="Entrada">${pos.currency} ${pos.entry_price.toFixed(2)}</td>
+                <td data-label="Actual">${pos.currency} ${pos.current_price.toFixed(2)}</td>
+                <td data-label="Invertido">$ ${pos.invested.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</td>
+                <td data-label="Valor Actual">$ ${pos.current_value.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</td>
+                <td data-label="P&L"><span class="trend-badge ${pnlClass}">${pnlSign}${pos.pnl_pct.toFixed(2)}%</span></td>
+                <td class="td-actions"><button class="delete-btn" data-id="${pos.id}"><i class="fa-solid fa-trash"></i></button></td>
             `;
 
             tr.addEventListener('click', (e) => {
@@ -1914,6 +1929,7 @@ function renderPortfolioHTML(data) {
                 e.stopPropagation();
                 handleDeletePosition(pos.id);
             });
+
             tbodyCat.appendChild(tr);
         });
     });
@@ -2790,7 +2806,108 @@ async function openAssetModal(ticker) {
     horizonTabs.forEach(t => t.classList.remove('loading'));
 
     // Render the default tab (user's active horizon)
-    const defaultData = _modalAnalysisCache[defaultHorizon] || shortData || mediumData || longData;
+    let defaultData = _modalAnalysisCache[defaultHorizon] || shortData || mediumData || longData;
+
+    if (!defaultData && state.portfolioPositions) {
+        const pos = state.portfolioPositions.find(p => p.ticker === ticker);
+        if (pos) {
+            const price = pos.current_price || pos.entry_price || 0.0;
+            const currencySymbol = pos.currency === 'ARS' ? '$' : 'u$s';
+
+            const makeSynthetic = (h) => {
+                let score = 50;
+                let action = 'CONSIDERAR';
+                let color = 'moderado';
+                let icon = 'fa-circle-info';
+                let why = `Este activo se agregó de forma manual y no cuenta con datos históricos agregados en el motor principal. Se calcula en base a tu precio de entrada de ${pos.currency} ${pos.entry_price.toFixed(2)}.`;
+                let trendText = `Tu posición tiene un PnL de ${pos.pnl_pct.toFixed(2)}%.`;
+                let trendBadge = "ESTABLE";
+                let trendStatus = "neutral";
+
+                if (pos.pnl_pct > 0) {
+                    score = 75;
+                    action = 'COMPRAR';
+                    color = 'conservador';
+                    icon = 'fa-circle-check';
+                    why = `El activo presenta retornos positivos de +${pos.pnl_pct.toFixed(2)}% respecto a tu precio de entrada de ${pos.currency} ${pos.entry_price.toFixed(2)}. El perfil de riesgo es favorable para mantener o incrementar posiciones en este horizonte.`;
+                    trendText = `Rendimiento positivo del +${pos.pnl_pct.toFixed(2)}%. Tendencia local alcista para tu portafolio.`;
+                    trendBadge = "ALCISTA";
+                    trendStatus = "trend-up";
+                } else if (pos.pnl_pct <= -5) {
+                    score = 25;
+                    action = 'EVITAR';
+                    color = 'agresivo';
+                    icon = 'fa-triangle-exclamation';
+                    why = `Pérdida acumulada del ${pos.pnl_pct.toFixed(2)}% (mayor al umbral del 5%). Se recomienda precaución extrema en el horizonte para evaluar reestructuración o diversificación.`;
+                    trendText = `Caída bajista significativa del ${pos.pnl_pct.toFixed(2)}% respecto al precio de compra inicial.`;
+                    trendBadge = "BAJISTA";
+                    trendStatus = "trend-down";
+                } else if (pos.pnl_pct > -5 && pos.pnl_pct <= 0) {
+                    score = 45;
+                    action = 'CAUTELA';
+                    color = 'moderado';
+                    icon = 'fa-shield-halved';
+                    why = `Pérdida menor acumulada del ${pos.pnl_pct.toFixed(2)}%. El activo se mantiene dentro del rango de fluctuación normal de mercado. Monitorear de cerca.`;
+                    trendText = `Fluctuación de pérdida leve del ${pos.pnl_pct.toFixed(2)}%.`;
+                    trendBadge = "DEBIL";
+                    trendStatus = "neutral";
+                }
+
+                const isCrypto = pos.category === 'crypto';
+                const tpCoeff = isCrypto ? 0.30 : 0.15;
+                const slCoeff = isCrypto ? 0.20 : 0.08;
+
+                return {
+                    ticker: pos.ticker,
+                    name: pos.name,
+                    category: pos.category,
+                    currency: pos.currency,
+                    price: price,
+                    profile: state.activeProfile,
+                    score: score,
+                    take_profit: price * (1 + tpCoeff),
+                    tp_pct: Math.round(tpCoeff * 100),
+                    stop_loss: price * (1 - slCoeff),
+                    sl_pct: Math.round(slCoeff * 100),
+                    resistance: price * 1.08,
+                    volume_cluster: price,
+                    support: price * 0.92,
+                    verdict: {
+                        color: color,
+                        icon: icon,
+                        action: action,
+                        summary: `Análisis dinámico de activo manual **${pos.name}** (${pos.ticker})`,
+                        why: why
+                    },
+                    technical: [
+                        {
+                            title: "Estado de la Posición",
+                            status: trendStatus,
+                            badge: trendBadge,
+                            text: trendText
+                        }
+                    ],
+                    fundamental: [
+                        {
+                            title: "Detalles del Activo",
+                            status: "neutral",
+                            badge: "DATOS MANUALES",
+                            text: `Ingresado bajo la categoría '${pos.category.toUpperCase()}'. Cantidad poseída: ${pos.quantity}. Valor total en cartera: $ ${pos.current_value.toLocaleString('es-AR')}.`
+                        }
+                    ],
+                    macro: []
+                };
+            };
+
+            _modalAnalysisCache = {
+                short: makeSynthetic('short'),
+                medium: makeSynthetic('medium'),
+                long: makeSynthetic('long')
+            };
+            defaultData = _modalAnalysisCache[defaultHorizon];
+        }
+    }
+
     if (defaultData) {
         renderModalContent(defaultData);
     } else {
