@@ -4,38 +4,38 @@
     "ticker": "BABA.BA",
     "name": "BABA",
     "category": "cedears",
-    "price": 19100.0,
+    "price": 19090.0,
     "currency": "ARS",
-    "score": 38.2,
+    "score": 38.1,
     "profile": "agresivo",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 57.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "57.3",
+        "content": "El RSI de 14 períodos está en 57.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "57.2",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (19421.35) se encuentra por debajo de la EMA de 200 días (21632.49), y el precio (19100.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (19420.96) se encuentra por debajo de la EMA de 200 días (21632.39), y el precio (19090.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (49.5%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "49.5%",
+        "content": "La volatilidad anualizada es **alta** (49.4%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "49.4%",
         "status": "warning"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-1.5%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-1.5% (1M)",
+        "content": "El rendimiento mensual es de **-1.6%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.6% (1M)",
         "status": "neutral"
       },
       {
@@ -71,8 +71,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **74.6%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+27.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 74.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **74.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+27.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 74.4%",
         "status": "success"
       }
     ],
@@ -184,18 +184,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **38.2/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo.",
-      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (49.5%), un ratio de Sharpe ineficiente (0.47), o una tendencia técnica desfavorable (Fuerte Bajista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 49705.78,
-      "stop_loss": 5497.43,
+      "summary": "El score de **38.1/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (49.4%), un ratio de Sharpe ineficiente (0.47), o una tendencia técnica desfavorable (Fuerte Bajista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 49675.55,
+      "stop_loss": 5496.42,
       "tp_pct": 160.2,
       "sl_pct": 71.2
     },
     "support": 17176.0,
     "resistance": 22531.87,
     "volume_cluster": 21595.41,
-    "take_profit": 49705.78,
-    "stop_loss": 5497.43,
+    "take_profit": 49675.55,
+    "stop_loss": 5496.42,
     "tp_pct": 160.2,
     "sl_pct": 71.2,
     "long_term_strategies": {
@@ -203,8 +203,8 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 142.9x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
-          "value": "142.9x",
+          "content": "El **PER de 142.8x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "142.8x",
           "status": "warning"
         },
         {
@@ -247,22 +247,22 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-8.4%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-8.4% (3M)",
+          "content": "El **momentum trimestral (-8.5%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-8.5% (3M)",
           "status": "warning"
         },
         {
           "title": "Baja Volatilidad (Low Vol Factor)",
           "icon": "fa-water",
-          "content": "La **volatilidad anualizada del 49.5%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables.",
-          "value": "49.5%",
+          "content": "La **volatilidad anualizada del 49.4%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables.",
+          "value": "49.4%",
           "status": "warning"
         },
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 142.9x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
-          "value": "142.9x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 142.8x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "142.8x",
           "status": "neutral"
         }
       ],

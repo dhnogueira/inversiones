@@ -4,23 +4,23 @@
     "ticker": "GOOGL",
     "name": "GOOGL",
     "category": "sp500",
-    "price": 361.3799133300781,
+    "price": 361.20989990234375,
     "currency": "USD",
-    "score": 39.0,
+    "score": 38.9,
     "profile": "agresivo",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 50.0, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "50.0",
+        "content": "El RSI de 14 períodos se encuentra en 49.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "49.8",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (359.36) se encuentra por encima de la EMA de 200 días (315.60), y el precio actual (361.38) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (359.36) se encuentra por encima de la EMA de 200 días (315.60), y el precio actual (361.21) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-0.5%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-0.5% (1M)",
+        "content": "El rendimiento mensual es de **-0.6%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-0.6% (1M)",
         "status": "neutral"
       },
       {
@@ -57,7 +57,7 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+15.1%** y a 12 meses es **+107.9%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "content": "El rendimiento acumulado a 6 meses es **+15.1%** y a 12 meses es **+107.8%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
         "value": "+15.1% (6M)",
         "status": "success"
       },
@@ -175,18 +175,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **39.0/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "summary": "El score de **38.9/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (31.0%), un ratio de Sharpe ineficiente (3.35), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 482.43,
-      "stop_loss": 300.85,
+      "take_profit": 482.21,
+      "stop_loss": 300.71,
       "tp_pct": 33.5,
       "sl_pct": 16.7
     },
     "support": 299.64,
     "resistance": 388.65,
     "volume_cluster": 305.6,
-    "take_profit": 482.43,
-    "stop_loss": 300.85,
+    "take_profit": 482.21,
+    "stop_loss": 300.71,
     "tp_pct": 33.5,
     "sl_pct": 16.7
   }

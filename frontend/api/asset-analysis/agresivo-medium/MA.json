@@ -4,7 +4,7 @@
     "ticker": "MA",
     "name": "MA",
     "category": "sp500",
-    "price": 519.2249755859375,
+    "price": 518.8499755859375,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 57.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "57.5",
+        "content": "El RSI de 14 períodos está en 57.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "57.2",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (519.22) cotiza por debajo de la EMA de 200 días (520.33), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (518.85) cotiza por debajo de la EMA de 200 días (520.33), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+6.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (2.6%) refuerzan esta tendencia positiva.",
-        "value": "+6.9% (1M)",
+        "content": "El activo registró un rendimiento del **+6.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (2.5%) refuerzan esta tendencia positiva.",
+        "value": "+6.8% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-10.2%** y a 12 meses es **-7.1%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-10.2% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-10.3%** y a 12 meses es **-7.2%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-10.3% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **29.8%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+7.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 29.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **29.7%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+7.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 29.7%",
         "status": "success"
       }
     ],
@@ -182,16 +182,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **agresivo**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 726.77,
-      "stop_loss": 415.45,
+      "take_profit": 726.28,
+      "stop_loss": 415.13,
       "tp_pct": 40.0,
       "sl_pct": 20.0
     },
     "support": 488.84,
     "resistance": 521.31,
     "volume_cluster": 495.29,
-    "take_profit": 726.77,
-    "stop_loss": 415.45,
+    "take_profit": 726.28,
+    "stop_loss": 415.13,
     "tp_pct": 40.0,
     "sl_pct": 20.0,
     "medium_term_strategies": {
@@ -213,8 +213,8 @@
         {
           "title": "Precio Objetivo y Upside Potencial",
           "icon": "fa-bullseye",
-          "content": "El **precio objetivo medio de analistas** ($643.84) implica un **upside del +24.0%** sobre el precio actual. Un upside superior al 15% desde el consenso de analistas es una de las señales más directas de que el mercado profesional considera el activo subvalorado para el mediano plazo.",
-          "value": "+24.0% upside",
+          "content": "El **precio objetivo medio de analistas** ($643.84) implica un **upside del +24.1%** sobre el precio actual. Un upside superior al 15% desde el consenso de analistas es una de las señales más directas de que el mercado profesional considera el activo subvalorado para el mediano plazo.",
+          "value": "+24.1% upside",
           "status": "success"
         },
         {
@@ -273,7 +273,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=57, 3M=+2.6%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=57, 3M=+2.5%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
           "value": "Score 2/6",
           "status": "warning"
         },
@@ -317,7 +317,7 @@
         {
           "title": "PER Forward vs. Trailing",
           "icon": "fa-calendar-check",
-          "content": "El **PER forward (22.8x) es menor al trailing (30.1x)** en 7.3 puntos: los analistas esperan que las ganancias aumenten en los próximos 12 meses, comprimiendo el múltiplo. Es la señal perfecta de GARP: valuación decreciente por crecimiento.",
+          "content": "El **PER forward (22.8x) es menor al trailing (30.0x)** en 7.2 puntos: los analistas esperan que las ganancias aumenten en los próximos 12 meses, comprimiendo el múltiplo. Es la señal perfecta de GARP: valuación decreciente por crecimiento.",
           "value": "Forward: 22.8x",
           "status": "success"
         },

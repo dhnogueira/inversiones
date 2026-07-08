@@ -4,23 +4,23 @@
     "ticker": "PAMP.BA",
     "name": "PAMP",
     "category": "merval",
-    "price": 5285.0,
+    "price": 5280.0,
     "currency": "ARS",
-    "score": 66.4,
+    "score": 66.5,
     "profile": "moderado",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 61.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "61.6",
+        "content": "El RSI de 14 períodos está en 61.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "61.3",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (5046.99) se encuentra por encima de la EMA de 200 días (4778.19), y el precio actual (5285.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (5046.79) se encuentra por encima de la EMA de 200 días (4778.14), y el precio actual (5280.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+5.0%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.8%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+5.0% (1M)",
+        "content": "El rendimiento mensual es de **+4.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.7%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+4.9% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+5.3%** y a 12 meses es **+46.8%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+5.3% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+5.2%** y a 12 meses es **+46.7%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+5.2% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **46.8%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+24.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 46.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **46.7%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+24.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 46.7%",
         "status": "success"
       }
     ],
@@ -178,18 +178,18 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **66.4/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
+      "summary": "Con un score de **66.5/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.99) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
-      "take_profit": 8019.19,
-      "stop_loss": 3917.91,
+      "take_profit": 8011.47,
+      "stop_loss": 3914.26,
       "tp_pct": 51.7,
       "sl_pct": 25.9
     },
     "support": 4716.25,
     "resistance": 5191.0,
     "volume_cluster": 4932.62,
-    "take_profit": 8019.19,
-    "stop_loss": 3917.91,
+    "take_profit": 8011.47,
+    "stop_loss": 3914.26,
     "tp_pct": 51.7,
     "sl_pct": 25.9,
     "medium_term_strategies": {
@@ -211,8 +211,8 @@
         {
           "title": "Precio Objetivo y Upside Potencial",
           "icon": "fa-bullseye",
-          "content": "El **precio objetivo medio de analistas** ($6,636.17) implica un **upside del +25.8%** sobre el precio actual. Un upside superior al 15% desde el consenso de analistas es una de las señales más directas de que el mercado profesional considera el activo subvalorado para el mediano plazo.",
-          "value": "+25.8% upside",
+          "content": "El **precio objetivo medio de analistas** ($6,636.17) implica un **upside del +25.7%** sobre el precio actual. Un upside superior al 15% desde el consenso de analistas es una de las señales más directas de que el mercado profesional considera el activo subvalorado para el mediano plazo.",
+          "value": "+25.7% upside",
           "status": "success"
         },
         {
@@ -248,8 +248,8 @@
         {
           "title": "L — Liderazgo de Mercado (Leader)",
           "icon": "fa-l",
-          "content": "**L (Leader):** El RSI de 62 confirma que el activo tiene **momentum de precio fuerte**: es un líder de mercado, no un rezagado. O'Neil prioriza los primeros 1-2 activos de cada sector, no los más rezagados aunque parezcan baratos.",
-          "value": "RSI 62",
+          "content": "**L (Leader):** El RSI de 61 confirma que el activo tiene **momentum de precio fuerte**: es un líder de mercado, no un rezagado. O'Neil prioriza los primeros 1-2 activos de cada sector, no los más rezagados aunque parezcan baratos.",
+          "value": "RSI 61",
           "status": "success"
         },
         {
@@ -271,7 +271,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=62, retorno 3M=+3.8%, retorno 12M=+46.8%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
+          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=61, retorno 3M=+3.7%, retorno 12M=+46.7%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
           "value": "Score 5/6",
           "status": "success"
         },

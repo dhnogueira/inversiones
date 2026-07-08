@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 42.3
+        "ars_return_est": 41.6
       },
       {
         "ticker": "XOM",
@@ -36,17 +36,17 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 43.5
+        "ars_return_est": 42.3
       }
     ],
-    "expected_return": 36.85,
+    "expected_return": 36.4,
     "expected_volatility": 20.42,
-    "sharpe_ratio": 1.27,
+    "sharpe_ratio": 1.24,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 25.8
+    "spread_vs_inflation": 25.4
   }
 }

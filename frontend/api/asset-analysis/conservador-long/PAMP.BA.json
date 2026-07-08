@@ -4,23 +4,23 @@
     "ticker": "PAMP.BA",
     "name": "PAMP",
     "category": "merval",
-    "price": 5285.0,
+    "price": 5280.0,
     "currency": "ARS",
-    "score": 47.8,
+    "score": 47.7,
     "profile": "conservador",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 61.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "61.6",
+        "content": "El RSI de 14 períodos está en 61.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "61.3",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (5046.99) se encuentra por encima de la EMA de 200 días (4778.19), y el precio actual (5285.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (5046.79) se encuentra por encima de la EMA de 200 días (4778.14), y el precio actual (5280.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+5.0%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.8%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+5.0% (1M)",
+        "content": "El rendimiento mensual es de **+4.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.7%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+4.9% (1M)",
         "status": "success"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **5.8%** respecto a su máximo anual de **ARS 5,610.00**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-5.8%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **5.9%** respecto a su máximo anual de **ARS 5,610.00**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-5.9%",
         "status": "neutral"
       },
       {
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+5.3%** y a 12 meses es **+46.8%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+5.3% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+5.2%** y a 12 meses es **+46.7%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+5.2% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **92.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+45.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 92.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **92.1%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+45.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 92.1%",
         "status": "success"
       }
     ],
@@ -185,18 +185,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **47.8/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "summary": "El score de **47.7/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (43.1%), un ratio de Sharpe ineficiente (0.99), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 8566.02,
-      "stop_loss": 3826.77,
+      "take_profit": 8557.76,
+      "stop_loss": 3823.22,
       "tp_pct": 62.1,
       "sl_pct": 27.6
     },
     "support": 4716.25,
     "resistance": 5191.0,
     "volume_cluster": 4932.62,
-    "take_profit": 8566.02,
-    "stop_loss": 3826.77,
+    "take_profit": 8557.76,
+    "stop_loss": 3823.22,
     "tp_pct": 62.1,
     "sl_pct": 27.6,
     "long_term_strategies": {
@@ -248,8 +248,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (+3.8%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
-          "value": "+3.8% (3M)",
+          "content": "El **momentum trimestral (+3.7%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
+          "value": "+3.7% (3M)",
           "status": "neutral"
         },
         {
