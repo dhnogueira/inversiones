@@ -3244,6 +3244,32 @@ function runLocalStorageTest() {
     }
 }
 
+function safeStringify(x) {
+    if (x === null) return 'null';
+    if (x === undefined) return 'undefined';
+    if (typeof x === 'object') {
+        if (x instanceof Error) {
+            return `${x.name}: ${x.message}\n${x.stack || ''}`;
+        }
+        try {
+            return JSON.stringify(x);
+        } catch (err) {
+            try {
+                const keys = Object.keys(x);
+                const objSummary = {};
+                keys.slice(0, 10).forEach(k => {
+                    const val = x[k];
+                    objSummary[k] = (typeof val === 'object' && val !== null) ? '[Object]' : String(val);
+                });
+                return `[Complex Object: ${keys.join(', ')}] -> Preview: ${JSON.stringify(objSummary)}`;
+            } catch (innerErr) {
+                return `[Object: ${String(x)}]`;
+            }
+        }
+    }
+    return String(x);
+}
+
 function setupDiagnosticConsole() {
     // Interceptar logs
     const originalLog = console.log;
@@ -3252,15 +3278,15 @@ function setupDiagnosticConsole() {
 
     console.log = (...args) => {
         originalLog(...args);
-        addConsoleLine(args.map(x => (typeof x === 'object' ? JSON.stringify(x) : x)).join(' '), 'info');
+        addConsoleLine(args.map(safeStringify).join(' '), 'info');
     };
     console.error = (...args) => {
         originalError(...args);
-        addConsoleLine(args.map(x => (typeof x === 'object' ? JSON.stringify(x) : x)).join(' '), 'error');
+        addConsoleLine(args.map(safeStringify).join(' '), 'error');
     };
     console.warn = (...args) => {
         originalWarn(...args);
-        addConsoleLine(args.map(x => (typeof x === 'object' ? JSON.stringify(x) : x)).join(' '), 'warn');
+        addConsoleLine(args.map(safeStringify).join(' '), 'warn');
     };
 
     // Interceptar excepciones globales
