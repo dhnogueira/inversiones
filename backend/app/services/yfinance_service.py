@@ -292,7 +292,26 @@ async def fetch_yfinance_market_data(force_refresh=False):
             print(f"Error parseando cache de yfinance: {e}")
             
     # If expired or force_refresh, fetch new data
-    all_tickers = SP500_TICKERS + CEDEAR_TICKERS + MERVAL_TICKERS + CRYPTO_TICKERS + BONO_TICKERS
+    custom_tickers = []
+    custom_tickers_path = os.path.join(CACHE_DIR, "custom_tickers.json")
+    if os.path.exists(custom_tickers_path):
+        try:
+            with open(custom_tickers_path, "r") as f:
+                custom_tickers = json.load(f)
+        except Exception:
+            pass
+    if not isinstance(custom_tickers, list):
+        custom_tickers = []
+
+    default_tickers = SP500_TICKERS + CEDEAR_TICKERS + MERVAL_TICKERS + CRYPTO_TICKERS + BONO_TICKERS
+    all_tickers = []
+    for t in default_tickers:
+        if t not in all_tickers:
+            all_tickers.append(t)
+    for t in custom_tickers:
+        t_upper = t.upper().strip()
+        if t_upper not in all_tickers:
+            all_tickers.append(t_upper)
     
     # Download 2 years of historical daily data to guarantee enough trading days for 12m metrics (>252)
     print(f"Downloading data for {len(all_tickers)} tickers...")
@@ -307,6 +326,10 @@ async def fetch_yfinance_market_data(force_refresh=False):
     for t in MERVAL_TICKERS: categories[t] = "merval"
     for t in CRYPTO_TICKERS: categories[t] = "crypto"
     for t in BONO_TICKERS: categories[t] = "bonos"
+    for t in custom_tickers:
+        t_upper = t.upper().strip()
+        if t_upper not in categories:
+            categories[t_upper] = "cedears" if t_upper.endswith(".BA") else "sp500"
     
     for ticker in all_tickers:
         try:

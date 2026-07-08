@@ -7,7 +7,7 @@ import os
 import json
 import time
 import httpx
-from app.config import CACHE_DIR, SUPABASE_URL, SUPABASE_ANON_KEY
+from app.config import CACHE_DIR, SUPABASE_URL, SUPABASE_ANON_KEY, register_custom_ticker
 
 WATCHLIST_FILE = os.path.join(CACHE_DIR, "watchlist.json")
 
@@ -44,6 +44,7 @@ async def get_watchlist(user: dict = None):
                     items = response.json()
                     mapped = []
                     for item in items:
+                        register_custom_ticker(item["ticker"])
                         mapped.append({
                             "ticker": item["ticker"],
                             "name": item["name"],
@@ -56,11 +57,15 @@ async def get_watchlist(user: dict = None):
             print(f"Exception loading watchlist from Supabase: {e}")
 
     # Fallback local
-    return _load_watchlist().get("items", [])
+    local_items = _load_watchlist().get("items", [])
+    for item in local_items:
+        register_custom_ticker(item["ticker"])
+    return local_items
 
 
 async def add_to_watchlist(ticker, name, category, alert_rules=None, user: dict = None):
     """Agrega un activo a la watchlist (local o de Supabase)."""
+    register_custom_ticker(ticker)
     if user and SUPABASE_URL and SUPABASE_ANON_KEY:
         base_url = SUPABASE_URL.rstrip("/").replace("/rest/v1", "")
         url = f"{base_url}/rest/v1/watchlists"

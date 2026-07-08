@@ -8,7 +8,7 @@ import json
 import time
 import uuid
 import httpx
-from app.config import CACHE_DIR, SUPABASE_URL, SUPABASE_ANON_KEY
+from app.config import CACHE_DIR, SUPABASE_URL, SUPABASE_ANON_KEY, register_custom_ticker
 
 PORTFOLIO_FILE = os.path.join(CACHE_DIR, "portfolio.json")
 
@@ -50,6 +50,8 @@ async def get_all_positions(user: dict = None):
                     print(f"[DIAGNOSTIC] Supabase portfolios returned {len(positions)} records.")
                     mapped = []
                     for p in positions:
+                        # Auto-register manual tickers
+                        register_custom_ticker(p["ticker"])
                         mapped.append({
                             "id": p["id"],
                             "ticker": p["ticker"],
@@ -69,11 +71,15 @@ async def get_all_positions(user: dict = None):
  
     print("[DIAGNOSTIC] Falling back to local portfolio storage.")
     # Fallback local
-    return _load_portfolio().get("positions", [])
+    local_pos = _load_portfolio().get("positions", [])
+    for p in local_pos:
+        register_custom_ticker(p["ticker"])
+    return local_pos
 
 
 async def add_position(ticker, name, category, currency, entry_price, quantity, user: dict = None):
     """Agrega una nueva posición simulada a la cartera (Local o Supabase)."""
+    register_custom_ticker(ticker)
     if user and SUPABASE_URL and SUPABASE_ANON_KEY:
         base_url = SUPABASE_URL.rstrip("/").replace("/rest/v1", "")
         url = f"{base_url}/rest/v1/portfolios"

@@ -184,6 +184,34 @@ async def get_asset_analysis(
                 target = {**a, "score": round(s, 1)}; break
     
     if not target:
+        # Dynamic fallback for custom tickers
+        import yfinance as yf_lib
+        import pandas as pd
+        try:
+            ticker_upper = ticker.upper().strip()
+            df = yf_lib.download(ticker_upper, period="2y", interval="1d", group_by="ticker", progress=False)
+            if not df.empty:
+                if isinstance(df.columns, pd.MultiIndex):
+                    df_clean = df[ticker_upper].dropna(subset=['Close'])
+                else:
+                    df_clean = df.dropna(subset=['Close'])
+                
+                if not df_clean.empty and len(df_clean) >= 50:
+                    from app.services.yfinance_service import compute_asset_metrics, fetch_fundamental_metrics
+                    category = "cedears" if ticker_upper.endswith(".BA") else "sp500"
+                    metrics = compute_asset_metrics(df_clean, ticker_upper, category)
+                    if metrics:
+                        fundamentals = fetch_fundamental_metrics(ticker_upper, category)
+                        metrics.update(fundamentals)
+                        from app.config import register_custom_ticker
+                        register_custom_ticker(ticker_upper)
+                        from app.scoring.profiles import score_asset_for_profile
+                        s = score_asset_for_profile(metrics, profile, horizon)
+                        target = {**metrics, "score": round(s, 1)}
+        except Exception as e:
+            print(f"Error fetching dynamic analysis for custom ticker {ticker}: {e}")
+
+    if not target:
         return {"status": "error", "message": f"Activo '{ticker}' no encontrado."}
     
     analysis = generate_asset_analysis(target, profile, horizon)
@@ -247,6 +275,28 @@ async def get_portfolio(user: Optional[Dict] = Depends(get_current_user)):
     positions = await get_all_positions(user)
     all_assets = await _get_all_assets()
     price_map = {a["ticker"]: a["price"] for a in all_assets}
+    
+    # Dynamically fetch missing prices for custom tickers
+    missing_tickers = [p["ticker"] for p in positions if p["ticker"] not in price_map]
+    if missing_tickers:
+        print(f"Dynamically fetching prices for missing custom tickers: {missing_tickers}")
+        import yfinance as yf_lib
+        try:
+            tick_data = yf_lib.download(missing_tickers, period="5d", interval="1d", group_by="ticker", progress=False)
+            for t in missing_tickers:
+                try:
+                    if len(missing_tickers) == 1:
+                        df_t = tick_data.dropna(subset=['Close'])
+                    else:
+                        df_t = tick_data[t].dropna(subset=['Close'])
+                    if not df_t.empty:
+                        price_map[t] = float(df_t['Close'].iloc[-1])
+                        print(f"Loaded price dynamically for {t}: {price_map[t]}")
+                except Exception as ex:
+                    print(f"Error parsing on-the-fly price for {t}: {ex}")
+        except Exception as e:
+            print(f"Error fetching on-the-fly prices for {missing_tickers}: {e}")
+            
     result = calculate_portfolio_pnl(positions, price_map)
     return {"status": "success", **result}
 
@@ -274,6 +324,36 @@ async def get_portfolio_report_endpoint(
     positions = await get_all_positions(user)
     all_assets = await _get_all_assets()
     price_map = {a["ticker"]: a["price"] for a in all_assets}
+    
+    # Dynamically fetch missing prices/assets for custom tickers and add to all_assets
+    missing_tickers = [p["ticker"] for p in positions if p["ticker"] not in price_map]
+    if missing_tickers:
+        print(f"Dynamically fetching assets for missing custom tickers in report: {missing_tickers}")
+        import yfinance as yf_lib
+        import pandas as pd
+        try:
+            tick_data = yf_lib.download(missing_tickers, period="2y", interval="1d", group_by="ticker", progress=False)
+            for t in missing_tickers:
+                try:
+                    if len(missing_tickers) == 1:
+                        df_t = tick_data.dropna(subset=['Close'])
+                    else:
+                        df_t = tick_data[t].dropna(subset=['Close'])
+                    if not df_t.empty and len(df_t) >= 50:
+                        from app.services.yfinance_service import compute_asset_metrics, fetch_fundamental_metrics
+                        category = "cedears" if t.endswith(".BA") else "sp500"
+                        metrics = compute_asset_metrics(df_t, t, category)
+                        if metrics:
+                            fundamentals = fetch_fundamental_metrics(t, category)
+                            metrics.update(fundamentals)
+                            price_map[t] = metrics["price"]
+                            all_assets.append(metrics)
+                            print(f"Loaded asset metrics dynamically for report: {t}")
+                except Exception as ex:
+                    print(f"Error parsing on-the-fly asset for report {t}: {ex}")
+        except Exception as e:
+            print(f"Error fetching on-the-fly assets for report: {e}")
+            
     pnl_data = calculate_portfolio_pnl(positions, price_map)
     report = generate_portfolio_report(pnl_data["positions"], all_assets, profile, horizon)
     return {"status": "success", "report": report}
