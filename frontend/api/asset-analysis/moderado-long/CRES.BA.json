@@ -4,23 +4,23 @@
     "ticker": "CRES.BA",
     "name": "CRES",
     "category": "merval",
-    "price": 1679.0,
+    "price": 1680.0,
     "currency": "ARS",
-    "score": 46.4,
+    "score": 46.5,
     "profile": "moderado",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 43.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "43.3",
+        "content": "El RSI de 14 períodos se encuentra en 43.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "43.4",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (1679.00) se mantiene por encima de la EMA de 200 días (1664.80), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (1729.76) aún no confirma un cruce definitivo.",
+        "content": "El precio (1680.00) se mantiene por encima de la EMA de 200 días (1664.81), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (1729.80) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-4.7%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-4.7% (1M)",
+        "content": "El rendimiento mensual es de **-4.6%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-4.6% (1M)",
         "status": "danger"
       },
       {
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-7.7%** y a 12 meses es **+31.8%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-7.7% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-7.6%** y a 12 meses es **+31.8%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-7.6% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **73.6%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+26.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 73.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **73.8%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+26.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 73.8%",
         "status": "success"
       }
     ],
@@ -178,18 +178,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **46.4/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "summary": "El score de **46.5/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **moderado**. Esto puede deberse a una volatilidad excesiva (42.6%), un ratio de Sharpe ineficiente (0.65), o una tendencia técnica desfavorable (Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 3225.29,
-      "stop_loss": 991.76,
+      "take_profit": 3227.2,
+      "stop_loss": 992.36,
       "tp_pct": 92.1,
       "sl_pct": 40.9
     },
     "support": 1618.9,
     "resistance": 1820.0,
     "volume_cluster": 1710.7,
-    "take_profit": 3225.29,
-    "stop_loss": 991.76,
+    "take_profit": 3227.2,
+    "stop_loss": 992.36,
     "tp_pct": 92.1,
     "sl_pct": 40.9,
     "long_term_strategies": {
@@ -241,8 +241,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-5.3%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-5.3% (3M)",
+          "content": "El **momentum trimestral (-5.2%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-5.2% (3M)",
           "status": "warning"
         },
         {

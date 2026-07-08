@@ -4,7 +4,7 @@
     "ticker": "AVGO",
     "name": "AVGO",
     "category": "sp500",
-    "price": 385.98028564453125,
+    "price": 387.3299865722656,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 49.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "49.4",
+        "content": "El RSI de 14 períodos se encuentra en 49.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "49.8",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (385.98) se mantiene por encima de la EMA de 200 días (354.91), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (390.16) aún no confirma un cruce definitivo.",
+        "content": "El precio (387.33) se mantiene por encima de la EMA de 200 días (354.92), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (390.22) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-2.5%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-2.5% (1M)",
+        "content": "El rendimiento mensual es de **-2.2%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-2.2% (1M)",
         "status": "neutral"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+12.7%** y a 12 meses es **+43.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+12.7% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+13.1%** y a 12 meses es **+43.5%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+13.1% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **36.4%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+25.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 36.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **36.8%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+25.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 36.8%",
         "status": "success"
       }
     ],
@@ -178,17 +178,17 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Alcista).",
-      "take_profit": 537.66,
-      "stop_loss": 310.14,
+      "take_profit": 539.58,
+      "stop_loss": 311.21,
       "tp_pct": 39.3,
-      "sl_pct": 19.6
+      "sl_pct": 19.7
     },
     "support": 314.7,
     "resistance": 424.88,
     "volume_cluster": 321.13,
-    "take_profit": 537.66,
-    "stop_loss": 310.14,
+    "take_profit": 539.58,
+    "stop_loss": 311.21,
     "tp_pct": 39.3,
-    "sl_pct": 19.6
+    "sl_pct": 19.7
   }
 }

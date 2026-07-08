@@ -4,23 +4,23 @@
     "ticker": "KO.BA",
     "name": "KO",
     "category": "cedears",
-    "price": 26680.0,
+    "price": 26560.0,
     "currency": "ARS",
-    "score": 93.0,
+    "score": 92.5,
     "profile": "moderado",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 73.1, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
-        "value": "73.1",
+        "content": "El RSI de 14 períodos se encuentra en 72.1, lo que indica una zona de **sobrecompra**. Históricamente, un RSI por encima de 70 sugiere que el activo podría experimentar una corrección a la baja en el corto plazo. Se recomienda cautela para nuevas entradas.",
+        "value": "72.1",
         "status": "warning"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (24563.83) se encuentra por encima de la EMA de 200 días (22417.37), y el precio actual (26680.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (24559.13) se encuentra por encima de la EMA de 200 días (22416.18), y el precio actual (26560.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,15 +34,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+5.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (19.0%) refuerzan esta tendencia positiva.",
-        "value": "+5.9% (1M)",
+        "content": "El activo registró un rendimiento del **+5.4%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (18.5%) refuerzan esta tendencia positiva.",
+        "value": "+5.4% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 22,185.90 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 25,219.90 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 23,390.94. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 23,390.94",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 22,185.90 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 25,219.90 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 23,362.94. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 23,362.94",
         "status": "success"
       }
     ],
@@ -50,29 +50,29 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo cotiza cerca de su máximo anual de **ARS 26,680.00** (descuento mínimo del **0.0%**), lo que indica una zona de **máximos (Peak-FOMO)**. Para un inversor de largo plazo, comprar en esta zona representa un riesgo de entrar en la parte alta del mercado. Se recomienda cautela o compras escalonadas (DCA) para mitigar el riesgo de reversión rápida.",
-        "value": "-0.0%",
+        "content": "**¿Qué significa?** El activo cotiza cerca de su máximo anual de **ARS 26,600.00** (descuento mínimo del **0.1%**), lo que indica una zona de **máximos (Peak-FOMO)**. Para un inversor de largo plazo, comprar en esta zona representa un riesgo de entrar en la parte alta del mercado. Se recomienda cautela o compras escalonadas (DCA) para mitigar el riesgo de reversión rápida.",
+        "value": "-0.1%",
         "status": "warning"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **1.79** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
-        "value": "1.79",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **1.76** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "1.76",
         "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+28.8%** y a 12 meses es **+50.7%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+28.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+28.2%** y a 12 meses es **+50.1%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+28.2% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **127.2%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+80.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 127.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **125.2%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+78.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 125.2%",
         "status": "success"
       }
     ],
@@ -185,18 +185,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **93.0/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. El RSI en zona de sobrecompra aconseja esperar una corrección antes de entrar.",
-      "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 1.79) es óptima para el perfil **moderado**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (26.1%).",
-      "take_profit": 41733.61,
-      "stop_loss": 19989.51,
+      "summary": "Este activo obtiene un score de **92.5/100** para el perfil **moderado**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. El RSI en zona de sobrecompra aconseja esperar una corrección antes de entrar.",
+      "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 1.76) es óptima para el perfil **moderado**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (26.1%).",
+      "take_profit": 41544.49,
+      "stop_loss": 19900.23,
       "tp_pct": 56.4,
       "sl_pct": 25.1
     },
     "support": 22185.9,
     "resistance": 25219.9,
-    "volume_cluster": 23390.94,
-    "take_profit": 41733.61,
-    "stop_loss": 19989.51,
+    "volume_cluster": 23362.94,
+    "take_profit": 41544.49,
+    "stop_loss": 19900.23,
     "tp_pct": 56.4,
     "sl_pct": 25.1,
     "long_term_strategies": {
@@ -211,8 +211,8 @@
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 13.77x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
-          "value": "13.77x",
+          "content": "El **P/B de 13.70x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "13.70x",
           "status": "warning"
         },
         {
@@ -248,8 +248,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum de 3 meses (+19.0%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
-          "value": "+19.0% (3M)",
+          "content": "El **momentum de 3 meses (+18.5%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
+          "value": "+18.5% (3M)",
           "status": "success"
         },
         {

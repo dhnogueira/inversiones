@@ -9,7 +9,7 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 126.7
+        "ars_return_est": 126.3
       },
       {
         "ticker": "GOOGL",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 165.1
+        "ars_return_est": 164.8
       },
       {
         "ticker": "MRK",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 110.4
+        "ars_return_est": 111.8
       },
       {
         "ticker": "AAPL",
@@ -36,17 +36,17 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 96.6
+        "ars_return_est": 96.9
       }
     ],
-    "expected_return": 130.32,
-    "expected_volatility": 25.73,
-    "sharpe_ratio": 4.21,
+    "expected_return": 130.59,
+    "expected_volatility": 25.72,
+    "sharpe_ratio": 4.22,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 108.3
+    "spread_vs_inflation": 108.6
   }
 }
