@@ -9,7 +9,7 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 129.8
+        "ars_return_est": 126.7
       },
       {
         "ticker": "AAPL.BA",
@@ -18,35 +18,44 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 68.8
+        "ars_return_est": 67.6
       },
       {
         "ticker": "VALE.BA",
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.3,
-        "weight_pct": 30.0,
-        "ars_return_est": 65.5
+        "weight": 0.2296,
+        "weight_pct": 23.0,
+        "ars_return_est": 61.7
       },
       {
         "ticker": "XOM.BA",
         "name": "XOM",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 49.2
+        "weight": 0.1401,
+        "weight_pct": 14.0,
+        "ars_return_est": 48.3
+      },
+      {
+        "ticker": "KO.BA",
+        "name": "KO",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.0304,
+        "weight_pct": 3.0,
+        "ars_return_est": 40.6
       }
     ],
-    "expected_return": 84.15,
-    "expected_volatility": 30.6,
-    "sharpe_ratio": 2.03,
+    "expected_return": 80.47,
+    "expected_volatility": 29.94,
+    "sharpe_ratio": 1.95,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 62.2
+    "spread_vs_inflation": 58.5
   }
 }

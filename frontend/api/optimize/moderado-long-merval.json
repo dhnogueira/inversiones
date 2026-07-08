@@ -3,6 +3,15 @@
   "optimization": {
     "weights": [
       {
+        "ticker": "TECO2.BA",
+        "name": "TECO2",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": 249.6
+      },
+      {
         "ticker": "VALO.BA",
         "name": "VALO",
         "category": "merval",
@@ -10,15 +19,6 @@
         "weight": 0.2,
         "weight_pct": 20.0,
         "ars_return_est": 250.0
-      },
-      {
-        "ticker": "TECO2.BA",
-        "name": "TECO2",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 240.2
       },
       {
         "ticker": "YPFD.BA",
@@ -36,7 +36,7 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 225.2
+        "ars_return_est": 235.9
       },
       {
         "ticker": "BYMA.BA",
@@ -45,17 +45,17 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 161.1
+        "ars_return_est": 163.7
       }
     ],
-    "expected_return": 225.29,
-    "expected_volatility": 43.63,
-    "sharpe_ratio": 4.09,
+    "expected_return": 229.84,
+    "expected_volatility": 43.6,
+    "sharpe_ratio": 4.19,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 178.3
+    "spread_vs_inflation": 182.8
   }
 }

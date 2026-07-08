@@ -16,17 +16,17 @@
         "name": "AAPL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.2294,
-        "weight_pct": 22.9,
-        "ars_return_est": 295.0
+        "weight": 0.2038,
+        "weight_pct": 20.4,
+        "ars_return_est": 288.3
       },
       {
         "ticker": "VALO.BA",
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1135,
-        "weight_pct": 11.4,
+        "weight": 0.1205,
+        "weight_pct": 12.0,
         "ars_return_est": 300.0
       },
       {
@@ -36,25 +36,16 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 354.9
+        "ars_return_est": 354.8
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.0571,
-        "weight_pct": 5.7,
+        "weight": 0.0757,
+        "weight_pct": 7.6,
         "ars_return_est": 300.0
-      },
-      {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 192.8
       },
       {
         "ticker": "VALE.BA",
@@ -63,17 +54,26 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 277.1
+        "ars_return_est": 256.7
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 188.9
       }
     ],
-    "expected_return": 377.83,
-    "expected_volatility": 27.63,
-    "sharpe_ratio": 11.97,
+    "expected_return": 375.37,
+    "expected_volatility": 27.64,
+    "sharpe_ratio": 11.88,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 330.8
+    "spread_vs_inflation": 328.4
   }
 }
