@@ -3,59 +3,59 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "BNB-USD",
-        "name": "BNB-USD",
+        "ticker": "BTC-USD",
+        "name": "BTC-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.2998,
-        "weight_pct": 30.0,
-        "ars_return_est": 4.5
+        "weight": 0.3172,
+        "weight_pct": 31.7,
+        "ars_return_est": 5.6
       },
       {
         "ticker": "SOL-USD",
         "name": "SOL-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.2883,
-        "weight_pct": 28.8,
-        "ars_return_est": 4.4
+        "weight": 0.2928,
+        "weight_pct": 29.3,
+        "ars_return_est": 5.2
       },
       {
-        "ticker": "BTC-USD",
-        "name": "BTC-USD",
+        "ticker": "BNB-USD",
+        "name": "BNB-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.2799,
-        "weight_pct": 28.0,
-        "ars_return_est": 4.2
-      },
-      {
-        "ticker": "LINK-USD",
-        "name": "LINK-USD",
-        "category": "crypto",
-        "currency": "USD",
-        "weight": 0.066,
-        "weight_pct": 6.6,
-        "ars_return_est": -0.6
+        "weight": 0.2684,
+        "weight_pct": 26.8,
+        "ars_return_est": 4.7
       },
       {
         "ticker": "ETH-USD",
         "name": "ETH-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.066,
-        "weight_pct": 6.6,
-        "ars_return_est": -0.7
+        "weight": 0.065,
+        "weight_pct": 6.5,
+        "ars_return_est": 1.1
+      },
+      {
+        "ticker": "LINK-USD",
+        "name": "LINK-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.0566,
+        "weight_pct": 5.7,
+        "ars_return_est": -0.6
       }
     ],
-    "expected_return": 3.73,
-    "expected_volatility": 45.16,
-    "sharpe_ratio": -0.16,
+    "expected_return": 4.6,
+    "expected_volatility": 44.87,
+    "sharpe_ratio": -0.14,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -7.3
+    "spread_vs_inflation": -6.4
   }
 }
