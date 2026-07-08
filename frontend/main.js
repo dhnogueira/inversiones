@@ -3037,8 +3037,18 @@ function renderModalContent(analysis) {
         analysis.macro.forEach(section => { body.innerHTML += renderAnalysisCard(section); });
     }
 
+    // Balance section — wrapped in try/catch to prevent silent failures
     if (analysis.balances) {
-        body.innerHTML += renderBalanceSection(analysis.balances);
+        try {
+            const balanceHtml = renderBalanceSection(analysis.balances);
+            if (balanceHtml) {
+                body.innerHTML += balanceHtml;
+            }
+        } catch (e) {
+            console.error('[renderModalContent] Error rendering balance section:', e);
+            body.innerHTML += `<div class="analysis-section-title"><i class="fa-solid fa-file-invoice-dollar"></i> Análisis de Balances</div>
+            <div class="analysis-card"><div class="analysis-card-content" style="color: var(--text-muted); text-align: center; padding: 16px;"><i class="fa-solid fa-triangle-exclamation"></i> No se pudo renderizar el análisis de balances.</div></div>`;
+        }
     }
 }
 
@@ -3046,7 +3056,7 @@ function renderBalanceSection(balances) {
     if (!balances || !balances.snapshots || balances.snapshots.length === 0) return '';
 
     const snapshots = balances.snapshots;
-    const summary = balances.summary;
+    const summary = balances.summary || {};
 
     // Color de la conclusión del resumen
     const conclusionColorMap = {
