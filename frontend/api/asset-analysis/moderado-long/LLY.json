@@ -4,7 +4,7 @@
     "ticker": "LLY",
     "name": "LLY",
     "category": "sp500",
-    "price": 1228.1390380859375,
+    "price": 1228.3599853515625,
     "currency": "USD",
     "score": 63.5,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 66.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "66.6",
+        "content": "El RSI de 14 períodos se encuentra en 66.7, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "66.7",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1098.27) se encuentra por encima de la EMA de 200 días (990.34), y el precio actual (1228.14) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (1098.28) se encuentra por encima de la EMA de 200 días (990.34), y el precio actual (1228.36) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+15.8%** y a 12 meses es **+59.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "content": "El rendimiento acumulado a 6 meses es **+15.8%** y a 12 meses es **+59.1%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
         "value": "+15.8% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **410.1%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+363.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 410.1%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **410.2%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+363.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 410.2%",
         "status": "success"
       }
     ],
@@ -185,16 +185,16 @@
       "color": "neutral",
       "summary": "Con un score de **63.5/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (1.42) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
-      "take_profit": 2258.44,
-      "stop_loss": 770.23,
+      "take_profit": 2258.85,
+      "stop_loss": 770.37,
       "tp_pct": 83.9,
       "sl_pct": 37.3
     },
     "support": 902.34,
     "resistance": 1150.33,
     "volume_cluster": 1023.36,
-    "take_profit": 2258.44,
-    "stop_loss": 770.23,
+    "take_profit": 2258.85,
+    "stop_loss": 770.37,
     "tp_pct": 83.9,
     "sl_pct": 37.3,
     "long_term_strategies": {
@@ -209,8 +209,8 @@
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 35.15x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
-          "value": "35.15x",
+          "content": "El **P/B de 35.16x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "35.16x",
           "status": "warning"
         },
         {

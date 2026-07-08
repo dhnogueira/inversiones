@@ -4,7 +4,7 @@
     "ticker": "LLY",
     "name": "LLY",
     "category": "sp500",
-    "price": 1228.1390380859375,
+    "price": 1228.3599853515625,
     "currency": "USD",
     "score": 75.5,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 66.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "66.6",
+        "content": "El RSI de 14 períodos se encuentra en 66.7, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "66.7",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1098.27) se encuentra por encima de la EMA de 200 días (990.34), y el precio actual (1228.14) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (1098.28) se encuentra por encima de la EMA de 200 días (990.34), y el precio actual (1228.36) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -57,7 +57,7 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+15.8%** y a 12 meses es **+59.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "content": "El rendimiento acumulado a 6 meses es **+15.8%** y a 12 meses es **+59.1%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
         "value": "+15.8% (6M)",
         "status": "success"
       },
@@ -178,16 +178,16 @@
       "color": "neutral",
       "summary": "Con un score de **75.5/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (1.42) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **conservador**.",
-      "take_profit": 1609.73,
-      "stop_loss": 1037.34,
+      "take_profit": 1610.02,
+      "stop_loss": 1037.53,
       "tp_pct": 31.1,
       "sl_pct": 15.5
     },
     "support": 902.34,
     "resistance": 1150.33,
     "volume_cluster": 1023.36,
-    "take_profit": 1609.73,
-    "stop_loss": 1037.34,
+    "take_profit": 1610.02,
+    "stop_loss": 1037.53,
     "tp_pct": 31.1,
     "sl_pct": 15.5,
     "medium_term_strategies": {
@@ -209,8 +209,8 @@
         {
           "title": "Precio Objetivo y Upside Potencial",
           "icon": "fa-bullseye",
-          "content": "El precio objetivo de analistas está apenas un **+0.1%** por encima del precio actual. El potencial de upside es limitado desde el consenso profesional actual.",
-          "value": "+0.1% upside",
+          "content": "El precio objetivo de analistas está apenas un **+0.0%** por encima del precio actual. El potencial de upside es limitado desde el consenso profesional actual.",
+          "value": "+0.0% upside",
           "status": "warning"
         },
         {
@@ -269,7 +269,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa del activo es muy alta** (score interno: 6/6): RSI=67, retorno 3M=+29.1%, retorno 12M=+59.0%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
+          "content": "La **fuerza relativa del activo es muy alta** (score interno: 6/6): RSI=67, retorno 3M=+29.1%, retorno 12M=+59.1%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
           "value": "Score 6/6",
           "status": "success"
         },

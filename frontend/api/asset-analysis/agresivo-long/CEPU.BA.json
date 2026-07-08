@@ -4,23 +4,23 @@
     "ticker": "CEPU.BA",
     "name": "CEPU",
     "category": "merval",
-    "price": 2340.0,
+    "price": 2342.0,
     "currency": "ARS",
-    "score": 93.4,
+    "score": 93.5,
     "profile": "agresivo",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 54.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "54.4",
+        "content": "El RSI de 14 períodos está en 54.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.6",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (2284.87) se encuentra por encima de la EMA de 200 días (2151.65), y el precio actual (2340.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (2284.94) se encuentra por encima de la EMA de 200 días (2151.67), y el precio actual (2342.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.4%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.6%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.4% (1M)",
+        "content": "El rendimiento mensual es de **+2.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.5%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.5% (1M)",
         "status": "success"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **14.8%** por debajo de su máximo anual de **ARS 2,745.00**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-14.8%",
+        "content": "**¿Qué significa?** Este activo cotiza un **14.7%** por debajo de su máximo anual de **ARS 2,745.00**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-14.7%",
         "status": "success"
       },
       {
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-6.5%** y a 12 meses es **+61.9%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-6.5% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-6.4%** y a 12 meses es **+62.1%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-6.4% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **194.7%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+147.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 194.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **195.2%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+148.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 195.2%",
         "status": "success"
       }
     ],
@@ -184,18 +184,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **93.4/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "summary": "Este activo obtiene un score de **93.5/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 1.09) es óptima para el perfil **agresivo**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (53.1%).",
-      "take_profit": 6369.59,
-      "stop_loss": 549.07,
+      "take_profit": 6375.05,
+      "stop_loss": 549.53,
       "tp_pct": 172.2,
       "sl_pct": 76.5
     },
     "support": 2117.8,
     "resistance": 2393.2,
     "volume_cluster": 2295.4,
-    "take_profit": 6369.59,
-    "stop_loss": 549.07,
+    "take_profit": 6375.05,
+    "stop_loss": 549.53,
     "tp_pct": 172.2,
     "sl_pct": 76.5,
     "long_term_strategies": {
@@ -247,8 +247,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-1.6%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-1.6% (3M)",
+          "content": "El **momentum trimestral (-1.5%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-1.5% (3M)",
           "status": "warning"
         },
         {

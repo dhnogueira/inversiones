@@ -4,7 +4,7 @@
     "ticker": "DOT-USD",
     "name": "DOT-USD",
     "category": "crypto",
-    "price": 0.8159999847412109,
+    "price": 0.8190000057220459,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,8 +13,8 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 32.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "32.1",
+        "content": "El RSI de 14 períodos se encuentra en 32.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "32.4",
         "status": "neutral"
       },
       {
@@ -27,15 +27,15 @@
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **muy alta** (71.2%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
-        "value": "71.2%",
+        "content": "La volatilidad anualizada es **muy alta** (71.1%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "71.1%",
         "status": "danger"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-16.1%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-16.1% (1M)",
+        "content": "El activo cayó un **-15.8%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-15.8% (1M)",
         "status": "danger"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-46.7%** y a 12 meses es **-71.6%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-46.7% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-46.5%** y a 12 meses es **-71.5%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-46.5% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-46.8%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-57.8%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -46.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-46.5%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-57.5%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -46.5%",
         "status": "danger"
       }
     ],
@@ -84,7 +84,7 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad. El RSI en zona de sobreventa podría representar una oportunidad contrarian si los fundamentos sostienen el precio.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **agresivo**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 1.34,
+      "take_profit": 1.35,
       "stop_loss": 0.55,
       "tp_pct": 64.8,
       "sl_pct": 32.4
@@ -92,7 +92,7 @@
     "support": 0.85,
     "resistance": 1.32,
     "volume_cluster": 1.24,
-    "take_profit": 1.34,
+    "take_profit": 1.35,
     "stop_loss": 0.55,
     "tp_pct": 64.8,
     "sl_pct": 32.4

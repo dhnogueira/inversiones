@@ -4,23 +4,23 @@
     "ticker": "BRK-B",
     "name": "BRK-B",
     "category": "sp500",
-    "price": 501.94000244140625,
+    "price": 502.2300109863281,
     "currency": "USD",
-    "score": 52.1,
+    "score": 52.0,
     "profile": "conservador",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 59.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "59.6",
+        "content": "El RSI de 14 períodos está en 60.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "60.0",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (488.85) se encuentra por encima de la EMA de 200 días (487.43), y el precio actual (501.94) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (488.86) se encuentra por encima de la EMA de 200 días (487.43), y el precio actual (502.23) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+3.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (4.6%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "content": "El rendimiento mensual es de **+3.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (4.7%) ofrece una perspectiva más amplia de la dirección reciente.",
         "value": "+3.1% (1M)",
         "status": "success"
       },
@@ -50,22 +50,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.06** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
-        "value": "0.06",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.07** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
+        "value": "0.07",
         "status": "warning"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+0.6%** y a 12 meses es **+5.1%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "content": "El rendimiento acumulado a 6 meses es **+0.6%** y a 12 meses es **+5.2%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
         "value": "+0.6% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **47.8%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+25.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 47.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **47.9%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+25.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 47.9%",
         "status": "success"
       }
     ],
@@ -168,18 +168,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **52.1/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación.",
-      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (17.4%), un ratio de Sharpe ineficiente (0.06), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 571.88,
-      "stop_loss": 466.97,
+      "summary": "El score de **52.0/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (17.4%), un ratio de Sharpe ineficiente (0.07), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 572.21,
+      "stop_loss": 467.24,
       "tp_pct": 13.9,
       "sl_pct": 7.0
     },
     "support": 471.41,
     "resistance": 498.69,
     "volume_cluster": 480.23,
-    "take_profit": 571.88,
-    "stop_loss": 466.97,
+    "take_profit": 572.21,
+    "stop_loss": 467.24,
     "tp_pct": 13.9,
     "sl_pct": 7.0,
     "medium_term_strategies": {
@@ -201,8 +201,8 @@
         {
           "title": "Precio Objetivo y Upside Potencial",
           "icon": "fa-bullseye",
-          "content": "El precio objetivo de analistas está apenas un **+3.7%** por encima del precio actual. El potencial de upside es limitado desde el consenso profesional actual.",
-          "value": "+3.7% upside",
+          "content": "El precio objetivo de analistas está apenas un **+3.6%** por encima del precio actual. El potencial de upside es limitado desde el consenso profesional actual.",
+          "value": "+3.6% upside",
           "status": "warning"
         },
         {
@@ -261,7 +261,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es moderada** (score: 3/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=60, 3M=+4.6%.",
+          "content": "La **fuerza relativa es moderada** (score: 3/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=60, 3M=+4.7%.",
           "value": "Score 3/6",
           "status": "neutral"
         },

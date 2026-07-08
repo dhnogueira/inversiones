@@ -4,7 +4,7 @@
     "ticker": "GOOGL.BA",
     "name": "GOOGL",
     "category": "cedears",
-    "price": 9835.0,
+    "price": 9825.0,
     "currency": "ARS",
     "score": 100.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 56.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "56.8",
+        "content": "El RSI de 14 períodos está en 56.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.5",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (9443.94) se encuentra por encima de la EMA de 200 días (8110.53), y el precio actual (9835.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (9443.55) se encuentra por encima de la EMA de 200 días (8110.43), y el precio actual (9825.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+6.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (21.0%) refuerzan esta tendencia positiva.",
-        "value": "+6.0% (1M)",
+        "content": "El activo registró un rendimiento del **+5.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (20.9%) refuerzan esta tendencia positiva.",
+        "value": "+5.9% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+15.5%** y a 12 meses es **+157.1%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+15.5% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+15.4%** y a 12 meses es **+156.9%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+15.4% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **188.5%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+166.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 188.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **188.2%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+166.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 188.2%",
         "status": "success"
       }
     ],
@@ -183,16 +183,16 @@
       "color": "success",
       "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 4.24) es óptima para el perfil **agresivo**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (36.1%).",
-      "take_profit": 16223.63,
-      "stop_loss": 6640.69,
+      "take_profit": 16207.55,
+      "stop_loss": 6633.72,
       "tp_pct": 65.0,
       "sl_pct": 32.5
     },
     "support": 7629.0,
     "resistance": 9962.0,
     "volume_cluster": 9785.75,
-    "take_profit": 16223.63,
-    "stop_loss": 6640.69,
+    "take_profit": 16207.55,
+    "stop_loss": 6633.72,
     "tp_pct": 65.0,
     "sl_pct": 32.5,
     "medium_term_strategies": {
@@ -274,7 +274,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=57, retorno 3M=+21.0%, retorno 12M=+157.1%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
+          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=57, retorno 3M=+20.9%, retorno 12M=+156.9%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
           "value": "Score 5/6",
           "status": "success"
         },
@@ -288,8 +288,8 @@
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El momentum **se está desacelerando** (-15.1%). El activo pierde velocidad de apreciación, lo que puede preceder una corrección o consolidación.",
-          "value": "-15.1%",
+          "content": "El momentum **se está desacelerando** (-15.0%). El activo pierde velocidad de apreciación, lo que puede preceder una corrección o consolidación.",
+          "value": "-15.0%",
           "status": "warning"
         },
         {

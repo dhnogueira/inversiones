@@ -18,7 +18,7 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 285.9
+        "ars_return_est": 288.9
       },
       {
         "ticker": "VALE.BA",
@@ -27,16 +27,7 @@
         "currency": "ARS",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 247.4
-      },
-      {
-        "ticker": "NVDA.BA",
-        "name": "NVDA",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 181.5
+        "ars_return_est": 244.7
       },
       {
         "ticker": "XOM.BA",
@@ -45,7 +36,16 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 193.9
+        "ars_return_est": 195.5
+      },
+      {
+        "ticker": "NVDA.BA",
+        "name": "NVDA",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 175.5
       },
       {
         "ticker": "KO.BA",
@@ -63,7 +63,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 184.5
+        "ars_return_est": 183.1
       },
       {
         "ticker": "AMZN.BA",
@@ -72,10 +72,10 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 110.2
+        "ars_return_est": 109.8
       }
     ],
-    "expected_return": 253.93,
+    "expected_return": 254.12,
     "expected_volatility": 31.71,
     "sharpe_ratio": 6.53,
     "profile": "agresivo",
@@ -83,6 +83,6 @@
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 206.9
+    "spread_vs_inflation": 207.1
   }
 }

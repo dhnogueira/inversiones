@@ -4,23 +4,23 @@
     "ticker": "AMZN.BA",
     "name": "AMZN",
     "category": "cedears",
-    "price": 2652.5,
+    "price": 2650.0,
     "currency": "ARS",
-    "score": 59.4,
+    "score": 59.2,
     "profile": "conservador",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 54.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "54.0",
+        "content": "El RSI de 14 períodos está en 53.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "53.7",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (2591.98) se encuentra por encima de la EMA de 200 días (2408.30), y el precio actual (2652.50) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (2591.88) se encuentra por encima de la EMA de 200 días (2408.27), y el precio actual (2650.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+6.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (9.2%) refuerzan esta tendencia positiva.",
-        "value": "+6.7% (1M)",
+        "content": "El activo registró un rendimiento del **+6.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (9.1%) refuerzan esta tendencia positiva.",
+        "value": "+6.6% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+2.7%** y a 12 meses es **+38.5%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+2.7% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+2.6%** y a 12 meses es **+38.4%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+2.6% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **30.8%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+8.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 30.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **30.7%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+8.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 30.7%",
         "status": "success"
       }
     ],
@@ -182,18 +182,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **59.4/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "summary": "El score de **59.2/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (37.9%), un ratio de Sharpe ineficiente (0.91), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 3456.43,
-      "stop_loss": 2250.54,
+      "take_profit": 3453.21,
+      "stop_loss": 2248.39,
       "tp_pct": 30.3,
       "sl_pct": 15.2
     },
     "support": 2141.4,
     "resistance": 2759.25,
     "volume_cluster": 2546.4,
-    "take_profit": 3456.43,
-    "stop_loss": 2250.54,
+    "take_profit": 3453.21,
+    "stop_loss": 2248.39,
     "tp_pct": 30.3,
     "sl_pct": 15.2,
     "medium_term_strategies": {
@@ -238,8 +238,8 @@
         {
           "title": "A — Crecimiento Anual de Ganancias",
           "icon": "fa-a",
-          "content": "**A (Annual Earnings):** El retorno de precio anual es **+39%**, consistente con empresas de alto crecimiento anual. O'Neil busca empresas con crecimiento anual de ganancias superior al 25% durante al menos 3 años consecutivos.",
-          "value": "+39% (12M)",
+          "content": "**A (Annual Earnings):** El retorno de precio anual es **+38%**, consistente con empresas de alto crecimiento anual. O'Neil busca empresas con crecimiento anual de ganancias superior al 25% durante al menos 3 años consecutivos.",
+          "value": "+38% (12M)",
           "status": "success"
         },
         {
@@ -275,7 +275,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es moderada** (score: 4/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=54, 3M=+9.2%.",
+          "content": "La **fuerza relativa es moderada** (score: 4/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=54, 3M=+9.1%.",
           "value": "Score 4/6",
           "status": "neutral"
         },
