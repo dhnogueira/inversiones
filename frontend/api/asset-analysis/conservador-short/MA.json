@@ -4,7 +4,7 @@
     "ticker": "MA",
     "name": "MA",
     "category": "sp500",
-    "price": 520.010009765625,
+    "price": 519.8200073242188,
     "currency": "USD",
     "score": 45.8,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 57.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "57.9",
+        "content": "El RSI de 14 períodos está en 57.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "57.8",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (520.01) cotiza por debajo de la EMA de 200 días (520.34), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (519.82) cotiza por debajo de la EMA de 200 días (520.34), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+7.1%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (2.7%) refuerzan esta tendencia positiva.",
-        "value": "+7.1% (1M)",
+        "content": "El activo registró un rendimiento del **+7.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (2.7%) refuerzan esta tendencia positiva.",
+        "value": "+7.0% (1M)",
         "status": "success"
       },
       {
@@ -182,16 +182,16 @@
       "color": "warning",
       "summary": "El score de **45.8/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (22.2%), un ratio de Sharpe ineficiente (-0.50), o una tendencia técnica desfavorable (Bajista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 575.42,
-      "stop_loss": 492.3,
+      "take_profit": 575.21,
+      "stop_loss": 492.12,
       "tp_pct": 10.7,
       "sl_pct": 5.3
     },
     "support": 488.84,
     "resistance": 521.31,
     "volume_cluster": 495.29,
-    "take_profit": 575.42,
-    "stop_loss": 492.3,
+    "take_profit": 575.21,
+    "stop_loss": 492.12,
     "tp_pct": 10.7,
     "sl_pct": 5.3
   }

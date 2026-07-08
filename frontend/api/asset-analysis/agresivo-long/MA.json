@@ -4,7 +4,7 @@
     "ticker": "MA",
     "name": "MA",
     "category": "sp500",
-    "price": 520.010009765625,
+    "price": 519.8200073242188,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 57.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "57.9",
+        "content": "El RSI de 14 períodos está en 57.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "57.8",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (520.01) cotiza por debajo de la EMA de 200 días (520.34), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (519.82) cotiza por debajo de la EMA de 200 días (520.34), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+7.1%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (2.7%) refuerzan esta tendencia positiva.",
-        "value": "+7.1% (1M)",
+        "content": "El activo registró un rendimiento del **+7.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (2.7%) refuerzan esta tendencia positiva.",
+        "value": "+7.0% (1M)",
         "status": "success"
       },
       {
@@ -71,8 +71,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **69.0%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+22.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 69.0%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **68.8%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+21.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 68.8%",
         "status": "success"
       }
     ],
@@ -189,16 +189,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **agresivo**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 894.03,
-      "stop_loss": 353.78,
+      "take_profit": 893.74,
+      "stop_loss": 353.64,
       "tp_pct": 71.9,
       "sl_pct": 32.0
     },
     "support": 488.84,
     "resistance": 521.31,
     "volume_cluster": 495.29,
-    "take_profit": 894.03,
-    "stop_loss": 353.78,
+    "take_profit": 893.74,
+    "stop_loss": 353.64,
     "tp_pct": 71.9,
     "sl_pct": 32.0,
     "long_term_strategies": {
@@ -213,8 +213,8 @@
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 68.62x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
-          "value": "68.62x",
+          "content": "El **P/B de 68.64x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "68.64x",
           "status": "warning"
         },
         {

@@ -4,9 +4,9 @@
     "ticker": "MRK",
     "name": "MRK",
     "category": "sp500",
-    "price": 126.51000213623047,
+    "price": 126.5199966430664,
     "currency": "USD",
-    "score": 97.6,
+    "score": 97.7,
     "profile": "conservador",
     "horizon": "long",
     "technical": [
@@ -20,7 +20,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (119.41) se encuentra por encima de la EMA de 200 días (108.83), y el precio actual (126.51) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (119.41) se encuentra por encima de la EMA de 200 días (108.83), y el precio actual (126.52) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+6.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (3.4%) refuerzan esta tendencia positiva.",
+        "content": "El activo registró un rendimiento del **+6.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (3.5%) refuerzan esta tendencia positiva.",
         "value": "+6.6% (1M)",
         "status": "success"
       },
@@ -178,18 +178,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **97.6/100** para el perfil **conservador**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "summary": "Este activo obtiene un score de **97.7/100** para el perfil **conservador**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 2.03) es óptima para el perfil **conservador**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (28.0%).",
-      "take_profit": 177.45,
-      "stop_loss": 103.87,
+      "take_profit": 177.46,
+      "stop_loss": 103.88,
       "tp_pct": 40.3,
       "sl_pct": 17.9
     },
     "support": 111.48,
     "resistance": 122.61,
     "volume_cluster": 120.04,
-    "take_profit": 177.45,
-    "stop_loss": 103.87,
+    "take_profit": 177.46,
+    "stop_loss": 103.88,
     "tp_pct": 40.3,
     "sl_pct": 17.9,
     "long_term_strategies": {
@@ -241,8 +241,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (+3.4%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
-          "value": "+3.4% (3M)",
+          "content": "El **momentum trimestral (+3.5%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
+          "value": "+3.5% (3M)",
           "status": "neutral"
         },
         {

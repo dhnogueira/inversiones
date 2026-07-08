@@ -4,7 +4,7 @@
     "ticker": "PG",
     "name": "PG",
     "category": "sp500",
-    "price": 149.08999633789062,
+    "price": 149.05499267578125,
     "currency": "USD",
     "score": 56.9,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 51.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "51.5",
+        "content": "El RSI de 14 períodos está en 51.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "51.4",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (149.09) se mantiene por encima de la EMA de 200 días (148.43), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (147.40) aún no confirma un cruce definitivo.",
+        "content": "El precio (149.05) se mantiene por encima de la EMA de 200 días (148.43), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (147.40) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.7%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.7%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "content": "El rendimiento mensual es de **+2.7%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.6%) ofrece una perspectiva más amplia de la dirección reciente.",
         "value": "+2.7% (1M)",
         "status": "success"
       },
@@ -170,16 +170,16 @@
       "color": "warning",
       "summary": "El score de **56.9/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (19.4%), un ratio de Sharpe ineficiente (-0.35), o una tendencia técnica desfavorable (Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 180.33,
-      "stop_loss": 133.47,
+      "take_profit": 180.29,
+      "stop_loss": 133.44,
       "tp_pct": 21.0,
       "sl_pct": 10.5
     },
     "support": 141.64,
     "resistance": 152.48,
     "volume_cluster": 144.05,
-    "take_profit": 180.33,
-    "stop_loss": 133.47,
+    "take_profit": 180.29,
+    "stop_loss": 133.44,
     "tp_pct": 21.0,
     "sl_pct": 10.5
   }

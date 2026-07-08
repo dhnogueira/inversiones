@@ -4,7 +4,7 @@
     "ticker": "VALO.BA",
     "name": "VALO",
     "category": "merval",
-    "price": 655.5,
+    "price": 655.0,
     "currency": "ARS",
     "score": 100.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 56.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "56.9",
+        "content": "El RSI de 14 períodos está en 56.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.6",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (644.15) se encuentra por encima de la EMA de 200 días (559.38), y el precio actual (655.50) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (644.13) se encuentra por encima de la EMA de 200 días (559.38), y el precio actual (655.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+5.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-6.3%) refuerzan esta tendencia positiva.",
-        "value": "+5.7% (1M)",
+        "content": "El activo registró un rendimiento del **+5.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-6.4%) refuerzan esta tendencia positiva.",
+        "value": "+5.6% (1M)",
         "status": "success"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **10.2%** respecto a su máximo anual de **ARS 729.99**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-10.2%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **10.3%** respecto a su máximo anual de **ARS 729.99**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-10.3%",
         "status": "neutral"
       },
       {
@@ -64,8 +64,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+19.9%** y a 12 meses es **+94.7%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+19.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+19.8%** y a 12 meses es **+94.5%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+19.8% (6M)",
         "status": "success"
       },
       {
@@ -185,16 +185,16 @@
       "color": "success",
       "summary": "Este activo obtiene un score de **100.0/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 2.33) es óptima para el perfil **agresivo**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (38.9%).",
-      "take_profit": 1480.76,
-      "stop_loss": 288.72,
+      "take_profit": 1479.63,
+      "stop_loss": 288.5,
       "tp_pct": 125.9,
       "sl_pct": 56.0
     },
     "support": 581.32,
     "resistance": 686.22,
     "volume_cluster": 623.75,
-    "take_profit": 1480.76,
-    "stop_loss": 288.72,
+    "take_profit": 1479.63,
+    "stop_loss": 288.5,
     "tp_pct": 125.9,
     "sl_pct": 56.0,
     "long_term_strategies": {
@@ -209,8 +209,8 @@
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 2.06x** es razonable. El mercado paga una moderada prima sobre el valor contable, coherente con empresas de calidad que generan retorbos superiores al promedio.",
-          "value": "2.06x",
+          "content": "El **P/B de 2.07x** es razonable. El mercado paga una moderada prima sobre el valor contable, coherente con empresas de calidad que generan retorbos superiores al promedio.",
+          "value": "2.07x",
           "status": "neutral"
         },
         {
@@ -246,8 +246,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-6.3%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-6.3% (3M)",
+          "content": "El **momentum trimestral (-6.4%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-6.4% (3M)",
           "status": "warning"
         },
         {
