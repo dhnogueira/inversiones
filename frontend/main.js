@@ -160,6 +160,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 user = initialSession.user;
                 updateAuthUI();
                 await loadAndApplyUserPreferences();
+                // Sincronizar posiciones locales si existen
+                await syncLocalPortfolioToSupabase();
             }
         } catch (e) {
             console.warn('[auth] No se pudo restaurar la sesión inicial:', e);
@@ -577,6 +579,8 @@ function setupAuthListeners() {
         if (user) {
             document.getElementById('auth-modal').style.display = 'none';
             await loadAndApplyUserPreferences();
+            // Automatizar sincronización al loguearse/cambiar estado a login
+            await syncLocalPortfolioToSupabase();
             loadActiveView();
         } else {
             loadActiveView();
@@ -1032,6 +1036,60 @@ function getLocalPortfolio() {
 
 function saveLocalPortfolio(positions) {
     localStorage.setItem('inversiones_portfolio', JSON.stringify(positions));
+}
+
+// Sincroniza las posiciones guardadas localmente en localStorage con Supabase.
+// Se ejecuta al iniciar sesión o cargar la app si ya hay una sesión activa.
+async function syncLocalPortfolioToSupabase() {
+    if (!supabase || !session || !session.access_token) return;
+    const localPos = getLocalPortfolio();
+    if (!localPos || localPos.length === 0) return;
+
+    console.log(`[sync] Sincronizando ${localPos.length} posiciones de localStorage a Supabase...`);
+    const base = CONFIG.SUPABASE_URL.replace(/\/$/, '');
+    const url = `${base}/rest/v1/portfolios`;
+    const headers = {
+        'apikey': CONFIG.SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${session.access_token}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=representation'
+    };
+
+    let successCount = 0;
+    for (const pos of localPos) {
+        const payload = {
+            user_id: user.id,
+            ticker: pos.ticker,
+            name: pos.name,
+            category: pos.category,
+            currency: pos.currency,
+            entry_price: parseFloat(pos.entry_price),
+            quantity: parseFloat(pos.quantity)
+        };
+        try {
+            const res = await fetch(url, {
+                method: 'POST',
+                headers,
+                body: JSON.stringify(payload)
+            });
+            if (res.ok) {
+                successCount++;
+            } else {
+                console.error('[sync] Error al sincronizar posición:', await res.text());
+            }
+        } catch (e) {
+            console.error('[sync] Error de red al sincronizar:', e);
+        }
+    }
+
+    if (successCount > 0) {
+        console.log(`[sync] Sincronizados exitosamente ${successCount}/${localPos.length} activos.`);
+        // Limpiamos localStorage únicamente tras completar con éxito la migración
+        saveLocalPortfolio([]);
+        if (state.currentView === 'portfolio') {
+            fetchPortfolio();
+        }
+    }
 }
 
 // Obtener un mapeo de precios desde los datos precargados
@@ -1527,100 +1585,217 @@ async function fetchPortfolio(isSilent = false) {
     }
 
     if (state.staticMode) {
-        if (!state.marketData) {
-            try {
-                const recRes = await fetch(`api/recommendations/${state.activeProfile}.json`);
-                const recD = await recRes.json();
-                state.marketData = recD.results;
-            } catch (e) {
-                console.error("No se pudo precargar tabla de precios para la cartera.");
-            }
-        }
-
-        const localPos = getLocalPortfolio();
-        const priceMap = getPriceMapFromMarketData();
-
-        let totalInvested = 0;
-        let totalCurrent = 0;
-        const enriched = [];
-
-        localPos.forEach(pos => {
-            const current = priceMap[pos.ticker] || pos.entry_price;
-            const invested = pos.entry_price * pos.quantity;
-            const current_value = current * pos.quantity;
-            const pnl = current_value - invested;
-            const pnl_pct = invested > 0 ? (pnl / invested * 100) : 0;
-
-            totalInvested += invested;
-            totalCurrent += current_value;
-
-            enriched.push({
-                ...pos,
-                current_price: current,
-                invested: invested,
-                current_value: current_value,
-                pnl: pnl,
-                pnl_pct: pnl_pct
-            });
-        });
-
-        const totalPnl = totalCurrent - totalInvested;
-        const totalPnlPct = totalInvested > 0 ? (totalPnl / totalInvested * 100) : 0;
-
-        const mockResponse = {
-            positions: enriched,
-            summary: {
-                total_invested: totalInvested,
-                total_current: totalCurrent,
-                total_pnl: totalPnl,
-                total_pnl_pct: totalPnlPct
-            }
-        };
-
-        renderPortfolioHTML(mockResponse);
-
-        // Generar informe de cartera local client-side
-        if (enriched.length > 0) {
-            const localReport = generateLocalPortfolioReport(enriched, state.activeProfile, state.activeHorizon);
-            renderAdvisoryReport(localReport);
+        // --- STATIC MODE ---
+        // Si el usuario está logueado, consultar Supabase directamente (sin backend).
+        // Si no, usar localStorage como fallback anónimo.
+        if (supabase && session && session.access_token) {
+            await _fetchPortfolioFromSupabaseDirect(isSilent);
         } else {
-            renderAdvisoryReport(null);
+            _fetchPortfolioFromLocalStorage(isSilent);
         }
         return;
     }
 
+    // --- DYNAMIC MODE (backend disponible) ---
     try {
         const response = await fetch(`${state.apiBase}/api/portfolio`, {
             headers: getAuthHeaders()
         });
+
+        // Detectar error de autenticación explícito del backend
+        if (response.status === 401) {
+            console.warn('[portfolio] Backend rechazó el token (401). Intentando renovar sesión...');
+            if (supabase) {
+                const { data: { session: refreshed } } = await supabase.auth.refreshSession();
+                if (refreshed) {
+                    session = refreshed;
+                    user = refreshed.user;
+                    // Reintentar con token fresco
+                    const retry = await fetch(`${state.apiBase}/api/portfolio`, { headers: getAuthHeaders() });
+                    const retryData = await retry.json();
+                    if (retryData.status === 'success') {
+                        renderPortfolioHTML(retryData);
+                        await _fetchPortfolioReport(retryData);
+                        return;
+                    }
+                }
+            }
+        }
+
         const data = await response.json();
 
         if (data.status === 'success') {
             renderPortfolioHTML(data);
-
-            // Consultar endpoint de informe del Backend
-            if (data.positions && data.positions.length > 0) {
-                try {
-                    const repRes = await fetch(`${state.apiBase}/api/portfolio/report?profile=${state.activeProfile}&horizon=${state.activeHorizon}`, {
-                        headers: getAuthHeaders()
-                    });
-                    const repData = await repRes.json();
-                    if (repData.status === 'success') {
-                        renderAdvisoryReport(repData.report);
-                    }
-                } catch (errReport) {
-                    console.error("Error al cargar informe del backend:", errReport);
-                    renderAdvisoryReport(null);
-                }
-            } else {
-                renderAdvisoryReport(null);
-            }
+            await _fetchPortfolioReport(data);
         }
     } catch (e) {
         if (!isSilent) {
             const tbody = document.getElementById('portfolio-tbody');
             tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar datos de cartera.</td></tr>`;
         }
+    }
+}
+
+// Consulta Supabase directamente desde el navegador (sin pasar por el backend de Python).
+// Se usa en staticMode cuando el usuario está autenticado.
+async function _fetchPortfolioFromSupabaseDirect(isSilent = false) {
+    try {
+        const base = CONFIG.SUPABASE_URL.replace(/\/$/, '');
+        const url = `${base}/rest/v1/portfolios?select=*&order=created_at.asc`;
+        const headers = {
+            'apikey': CONFIG.SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json'
+        };
+
+        const res = await fetch(url, { headers });
+
+        if (res.status === 401) {
+            // Token expirado — refrescar y reintentar
+            console.warn('[portfolio-direct] Token expirado. Intentando refresh...');
+            const { data: { session: refreshed } } = await supabase.auth.refreshSession();
+            if (refreshed) {
+                session = refreshed;
+                user = refreshed.user;
+                headers['Authorization'] = `Bearer ${session.access_token}`;
+                const retry = await fetch(url, { headers });
+                if (retry.ok) {
+                    const positions = await retry.json();
+                    _renderPortfolioFromRawPositions(positions);
+                    return;
+                }
+            }
+            throw new Error('No se pudo renovar la sesión de Supabase.');
+        }
+
+        if (!res.ok) throw new Error(`Supabase error ${res.status}`);
+
+        const positions = await res.json();
+        console.log(`[portfolio-direct] Supabase devolvió ${positions.length} posiciones.`);
+        _renderPortfolioFromRawPositions(positions);
+
+    } catch (e) {
+        console.error('[portfolio-direct] Error consultando Supabase:', e);
+        if (!isSilent) {
+            const tbody = document.getElementById('portfolio-tbody');
+            tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar posiciones desde la nube.</td></tr>`;
+        }
+    }
+}
+
+// Mapea posiciones crudas de Supabase al mismo formato que el backend devuelve y renderiza.
+function _renderPortfolioFromRawPositions(rawPositions) {
+    // Precios actuales desde caché de marketData si está disponible
+    const priceMap = getPriceMapFromMarketData();
+
+    let totalInvested = 0;
+    let totalCurrent = 0;
+    const enriched = [];
+
+    rawPositions.forEach(p => {
+        const entryPrice = parseFloat(p.entry_price);
+        const quantity = parseFloat(p.quantity);
+        const current = priceMap[p.ticker] || entryPrice;
+        const invested = entryPrice * quantity;
+        const current_value = current * quantity;
+        const pnl = current_value - invested;
+        const pnl_pct = invested > 0 ? (pnl / invested * 100) : 0;
+
+        totalInvested += invested;
+        totalCurrent += current_value;
+
+        enriched.push({
+            id: p.id,
+            ticker: p.ticker,
+            name: p.name,
+            category: p.category,
+            currency: p.currency,
+            entry_price: entryPrice,
+            quantity: quantity,
+            entry_date: p.entry_date,
+            current_price: current,
+            invested,
+            current_value,
+            pnl,
+            pnl_pct
+        });
+    });
+
+    const totalPnl = totalCurrent - totalInvested;
+    const totalPnlPct = totalInvested > 0 ? (totalPnl / totalInvested * 100) : 0;
+
+    renderPortfolioHTML({
+        positions: enriched,
+        summary: {
+            total_invested: totalInvested,
+            total_current: totalCurrent,
+            total_pnl: totalPnl,
+            total_pnl_pct: totalPnlPct
+        }
+    });
+
+    if (enriched.length > 0) {
+        const localReport = generateLocalPortfolioReport(enriched, state.activeProfile, state.activeHorizon);
+        renderAdvisoryReport(localReport);
+    } else {
+        renderAdvisoryReport(null);
+    }
+}
+
+// Fallback solo cuando el usuario NO está logueado en modo estático.
+function _fetchPortfolioFromLocalStorage(isSilent = false) {
+    const localPos = getLocalPortfolio();
+    const priceMap = getPriceMapFromMarketData();
+
+    let totalInvested = 0;
+    let totalCurrent = 0;
+    const enriched = [];
+
+    localPos.forEach(pos => {
+        const current = priceMap[pos.ticker] || pos.entry_price;
+        const invested = pos.entry_price * pos.quantity;
+        const current_value = current * pos.quantity;
+        const pnl = current_value - invested;
+        const pnl_pct = invested > 0 ? (pnl / invested * 100) : 0;
+
+        totalInvested += invested;
+        totalCurrent += current_value;
+
+        enriched.push({ ...pos, current_price: current, invested, current_value, pnl, pnl_pct });
+    });
+
+    const totalPnl = totalCurrent - totalInvested;
+    const totalPnlPct = totalInvested > 0 ? (totalPnl / totalInvested * 100) : 0;
+
+    renderPortfolioHTML({
+        positions: enriched,
+        summary: { total_invested: totalInvested, total_current: totalCurrent, total_pnl: totalPnl, total_pnl_pct: totalPnlPct }
+    });
+
+    if (enriched.length > 0) {
+        renderAdvisoryReport(generateLocalPortfolioReport(enriched, state.activeProfile, state.activeHorizon));
+    } else {
+        renderAdvisoryReport(null);
+    }
+}
+
+// Fetch del informe de cartera desde el backend (modo dinámico).
+async function _fetchPortfolioReport(data) {
+    if (!data || !data.positions || data.positions.length === 0) {
+        renderAdvisoryReport(null);
+        return;
+    }
+    try {
+        const repRes = await fetch(`${state.apiBase}/api/portfolio/report?profile=${state.activeProfile}&horizon=${state.activeHorizon}`, {
+            headers: getAuthHeaders()
+        });
+        const repData = await repRes.json();
+        if (repData.status === 'success') {
+            renderAdvisoryReport(repData.report);
+        }
+    } catch (errReport) {
+        console.error("Error al cargar informe del backend:", errReport);
+        renderAdvisoryReport(null);
     }
 }
 
@@ -1707,6 +1882,41 @@ async function handleAddPositionSubmit(e) {
         quantity: parseFloat(document.getElementById('pos-qty').value)
     };
 
+    // Si está en modo estático pero está logueado a Supabase:
+    if (state.staticMode && supabase && session && session.access_token) {
+        try {
+            const base = CONFIG.SUPABASE_URL.replace(/\/$/, '');
+            const url = `${base}/rest/v1/portfolios`;
+            const headers = {
+                'apikey': CONFIG.SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${session.access_token}`,
+                'Content-Type': 'application/json',
+                'Prefer': 'return=representation'
+            };
+            const dbPayload = {
+                user_id: user.id,
+                ...payload
+            };
+            const res = await fetch(url, {
+                method: 'POST',
+                headers,
+                body: JSON.stringify(dbPayload)
+            });
+            if (res.ok) {
+                document.getElementById('add-pos-modal').style.display = 'none';
+                document.getElementById('add-pos-form').reset();
+                fetchPortfolio();
+                return;
+            } else {
+                throw new Error(await res.text());
+            }
+        } catch (err) {
+            console.error('[portfolio-add] Error al guardar en Supabase (staticMode):', err);
+            alert('Error al guardar la posición en la nube.');
+            return;
+        }
+    }
+
     if (state.staticMode) {
         const localPos = getLocalPortfolio();
         const randId = Math.random().toString(36).substr(2, 9);
@@ -1742,6 +1952,32 @@ async function handleAddPositionSubmit(e) {
 
 async function handleDeletePosition(id) {
     if (!confirm('¿Desea eliminar esta transacción simulada de su portafolio?')) return;
+
+    if (state.staticMode && supabase && session && session.access_token) {
+        try {
+            const base = CONFIG.SUPABASE_URL.replace(/\/$/, '');
+            const url = `${base}/rest/v1/portfolios?id=eq.${id}`;
+            const headers = {
+                'apikey': CONFIG.SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${session.access_token}`,
+                'Content-Type': 'application/json'
+            };
+            const res = await fetch(url, {
+                method: 'DELETE',
+                headers
+            });
+            if (res.ok) {
+                fetchPortfolio();
+                return;
+            } else {
+                throw new Error(await res.text());
+            }
+        } catch (err) {
+            console.error('[portfolio-delete] Error al borrar de Supabase (staticMode):', err);
+            alert('Error al borrar la transacción de la nube.');
+            return;
+        }
+    }
 
     if (state.staticMode) {
         const localPos = getLocalPortfolio();

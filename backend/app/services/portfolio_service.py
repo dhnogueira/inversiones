@@ -30,6 +30,7 @@ def _save_portfolio(data):
 
 async def get_all_positions(user: dict = None):
     """Retorna todas las posiciones de la cartera simulada, o de Supabase si el usuario está autenticado."""
+    print(f"[DIAGNOSTIC] get_all_positions called. user={user}")
     if user and SUPABASE_URL and SUPABASE_ANON_KEY:
         # Cargar desde Supabase
         base_url = SUPABASE_URL.rstrip("/").replace("/rest/v1", "")
@@ -39,11 +40,14 @@ async def get_all_positions(user: dict = None):
             "Authorization": f"Bearer {user['token']}",
             "Content-Type": "application/json"
         }
+        print(f"[DIAGNOSTIC] Contacting Supabase at {url} with user token.")
         try:
             async with httpx.AsyncClient() as client:
                 response = await client.get(url, headers=headers)
+                print(f"[DIAGNOSTIC] Supabase portfolios GET response status_code={response.status_code}")
                 if response.status_code == 200:
                     positions = response.json()
+                    print(f"[DIAGNOSTIC] Supabase portfolios returned {len(positions)} records.")
                     mapped = []
                     for p in positions:
                         mapped.append({
@@ -57,11 +61,13 @@ async def get_all_positions(user: dict = None):
                             "entry_date": p["entry_date"]
                         })
                     return mapped
+                  
                 else:
-                    print(f"Error querying Supabase portfolios: {response.text}")
+                    print(f"[DIAGNOSTIC] Error querying Supabase portfolios: {response.text}")
         except Exception as e:
-            print(f"Exception querying Supabase: {e}")
-
+            print(f"[DIAGNOSTIC] Exception querying Supabase: {e}")
+ 
+    print("[DIAGNOSTIC] Falling back to local portfolio storage.")
     # Fallback local
     return _load_portfolio().get("positions", [])
 
