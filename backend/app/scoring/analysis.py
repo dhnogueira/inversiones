@@ -383,7 +383,7 @@ def generate_asset_analysis(asset, profile, horizon="medium"):
 
     # ------- Sección 4: Veredicto Final -------
     tp, sl, tp_pct, sl_pct = calculate_tp_sl(price, volatility, profile, category, horizon)
-    verdict = build_verdict(score, profile, category, trend, sharpe, rsi, volatility)
+    verdict = build_verdict(score, profile, category, trend, sharpe, rsi, volatility, tna)
     verdict["take_profit"] = tp
     verdict["stop_loss"] = sl
     verdict["tp_pct"] = tp_pct
@@ -773,7 +773,9 @@ def build_macro_context(category, currency, profile):
     return sections
 
 
-def build_verdict(score, profile, category, trend, sharpe, rsi, volatility):
+def build_verdict(score, profile, category, trend, sharpe, rsi, volatility, tna=None):
+    tna_val = (tna * 100) if tna is not None else 0.0
+
     if score >= 85:
         action = "COMPRAR"
         icon = "fa-circle-check"
@@ -819,11 +821,57 @@ def build_verdict(score, profile, category, trend, sharpe, rsi, volatility):
 
     summary += " ".join(reasons)
 
+    # Generar explicación detallada y concreta según la nota del scoring
+    if category in ("letras", "bonos"):
+        if score >= 85:
+            why = (
+                f"**Por qué esta estrategia:** El instrumento de renta fija ofrece un rendimiento esperado que supera cómodamente "
+                f"la tasa de inflación proyectada para el horizonte seleccionado, con un vencimiento y TNA ({tna_val:.1f}%) que se "
+                f"ajustam óptimamente a los límites de riesgo del perfil **{profile}**."
+            )
+        elif score >= 60:
+            why = (
+                f"**Por qué esta estrategia:** El activo es viable y ofrece un rendimiento aceptable de {tna_val:.1f}%, pero el score se modera "
+                f"debido a un spread más estrecho sobre la inflación o un leve descalce de plazos respecto al horizonte del perfil."
+            )
+        else:
+            why = (
+                f"**Por qué esta estrategia:** Se indica cautela/evitación debido a que el rendimiento esperado real (ajustado por devaluación "
+                f"e inflación del período) es negativo, o bien porque el vencimiento excede el límite del perfil **{profile}**, exponiendo al inversor "
+                f"a un riesgo de tasa o liquidez no deseado."
+            )
+    else: # Renta variable / Crypto
+        if score >= 85:
+            why = (
+                f"**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. "
+                f"La tendencia alcista está consolidada ({trend}), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: {sharpe:.2f}) "
+                f"es óptima para el perfil **{profile}**, ofreciendo un sólido margen de seguridad en relación a su volatilidad ({volatility*100:.1f}%)."
+            )
+        elif score >= 60:
+            why = (
+                f"**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. "
+                f"Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe ({sharpe:.2f}) "
+                f"o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **{profile}**."
+            )
+        elif score >= 35:
+            why = (
+                f"**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **{profile}**. "
+                f"Esto puede deberse a una volatilidad excesiva ({volatility*100:.1f}%), un ratio de Sharpe ineficiente ({sharpe:.2f}), "
+                f"o una tendencia técnica desfavorable ({trend}) que aumenta el riesgo de entrada en este momento."
+            )
+        else:
+            why = (
+                f"**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad "
+                f"para el perfil **{profile}**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, "
+                f"una volatilidad desmedida, o una tendencia bajista pronunciada ({trend})."
+            )
+
     return {
         "action": action,
         "icon": icon,
         "color": color,
-        "summary": summary
+        "summary": summary,
+        "why": why
     }
 
 

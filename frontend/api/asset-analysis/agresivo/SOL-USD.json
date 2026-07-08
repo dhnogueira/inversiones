@@ -4,7 +4,7 @@
     "ticker": "SOL-USD",
     "name": "SOL-USD",
     "category": "crypto",
-    "price": 78.87000274658203,
+    "price": 78.3499984741211,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 56.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "56.7",
+        "content": "El RSI de 14 períodos está en 55.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "55.6",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (78.87) cotiza por debajo de la EMA de 200 días (96.23), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (78.35) cotiza por debajo de la EMA de 200 días (96.23), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+9.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-11.5%) refuerzan esta tendencia positiva.",
-        "value": "+9.6% (1M)",
+        "content": "El activo registró un rendimiento del **+8.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-12.1%) refuerzan esta tendencia positiva.",
+        "value": "+8.9% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-13.2%** y a 12 meses es **-59.4%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-13.2% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-13.7%** y a 12 meses es **-59.7%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-13.7% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **-59.3%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-81.3%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -59.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **-59.7%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-81.7%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -59.7%",
         "status": "danger"
       }
     ],
@@ -84,16 +84,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **agresivo**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 164.05,
-      "stop_loss": 36.28,
+      "take_profit": 162.97,
+      "stop_loss": 36.04,
       "tp_pct": 108.0,
       "sl_pct": 54.0
     },
     "support": 67.94,
     "resistance": 89.01,
     "volume_cluster": 85.04,
-    "take_profit": 164.05,
-    "stop_loss": 36.28,
+    "take_profit": 162.97,
+    "stop_loss": 36.04,
     "tp_pct": 108.0,
     "sl_pct": 54.0,
     "medium_term_strategies": {
@@ -138,22 +138,22 @@
         {
           "title": "A — Crecimiento Anual de Ganancias",
           "icon": "fa-a",
-          "content": "**A (Annual Earnings):** El retorno anual es **-59%** — señal de alerta. O'Neil filtra empresas cuyas ganancias no muestran crecimiento real en términos anuales.",
-          "value": "-59% (12M)",
+          "content": "**A (Annual Earnings):** El retorno anual es **-60%** — señal de alerta. O'Neil filtra empresas cuyas ganancias no muestran crecimiento real en términos anuales.",
+          "value": "-60% (12M)",
           "status": "warning"
         },
         {
           "title": "S — Oferta y Demanda (Volatilidad/Volumen)",
           "icon": "fa-s",
-          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.76x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
-          "value": "0.76x",
+          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.77x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
+          "value": "0.77x",
           "status": "success"
         },
         {
           "title": "L — Liderazgo de Mercado (Leader)",
           "icon": "fa-l",
-          "content": "**L (Leader):** RSI de 57 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
-          "value": "RSI 57",
+          "content": "**L (Leader):** RSI de 56 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
+          "value": "RSI 56",
           "status": "neutral"
         },
         {
@@ -175,7 +175,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es débil** (score: 1/6). El activo no evidencia momentum sostenido. RSI=57, 3M=-11.5%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "content": "La **fuerza relativa es débil** (score: 1/6). El activo no evidencia momentum sostenido. RSI=56, 3M=-12.1%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
           "value": "Score 1/6",
           "status": "warning"
         },
@@ -189,8 +189,8 @@
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El **momentum se está acelerando** (+21.2%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
-          "value": "+21.2%",
+          "content": "El **momentum se está acelerando** (+21.0%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
+          "value": "+21.0%",
           "status": "success"
         },
         {
