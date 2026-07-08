@@ -3057,9 +3057,9 @@ function renderBalanceSection(balances) {
     const conclusionStyle = conclusionColorMap[summary.conclusion_color] || conclusionColorMap['neutral'];
 
     // Métricas del resumen
-    const avgRevStr = summary.avg_revenue_b !== null ? `$${summary.avg_revenue_b.toFixed(1)}B` : '—';
-    const avgMarginStr = summary.avg_net_margin_pct !== null ? `${summary.avg_net_margin_pct.toFixed(1)}%` : '—';
-    const avgEpsStr = summary.avg_eps !== null ? `$${summary.avg_eps.toFixed(2)}` : '—';
+    const avgRevStr = summary.avg_revenue_b != null ? `$${summary.avg_revenue_b.toFixed(1)}B` : '—';
+    const avgMarginStr = summary.avg_net_margin_pct != null ? `${summary.avg_net_margin_pct.toFixed(1)}%` : '—';
+    const avgEpsStr = summary.avg_eps != null ? `$${summary.avg_eps.toFixed(2)}` : '—';
 
     const trendArrow = (trend) => {
         if (trend === 'creciente' || trend === 'en expansión') return '<span style="color: var(--color-conservador);">↑</span>';
@@ -3070,18 +3070,18 @@ function renderBalanceSection(balances) {
     // Renderizar snapshots trimestrales
     let snapshotCards = '';
     snapshots.forEach((snap, idx) => {
-        const revStr = snap.revenue_b !== null ? `$${snap.revenue_b.toFixed(1)}B` : '—';
-        const niStr = snap.net_income_b !== null ? `$${snap.net_income_b.toFixed(1)}B` : '—';
-        const marginStr = snap.net_margin_pct !== null ? `${snap.net_margin_pct.toFixed(1)}%` : '—';
-        const epsStr = snap.eps !== null ? `$${snap.eps.toFixed(2)}` : '—';
-        const fcfStr = snap.fcf_b !== null ? `$${snap.fcf_b.toFixed(1)}B` : '—';
-        const deStr = snap.debt_equity !== null ? snap.debt_equity.toFixed(2) : '—';
+        const revStr = snap.revenue_b != null ? `$${snap.revenue_b.toFixed(1)}B` : '—';
+        const niStr = snap.net_income_b != null ? `$${snap.net_income_b.toFixed(1)}B` : '—';
+        const marginStr = snap.net_margin_pct != null ? `${snap.net_margin_pct.toFixed(1)}%` : '—';
+        const epsStr = snap.eps != null ? `$${snap.eps.toFixed(2)}` : '—';
+        const fcfStr = snap.fcf_b != null ? `$${snap.fcf_b.toFixed(1)}B` : '—';
+        const deStr = snap.debt_equity != null ? snap.debt_equity.toFixed(2) : '—';
 
-        const marginColor = snap.net_margin_pct !== null
+        const marginColor = snap.net_margin_pct != null
             ? (snap.net_margin_pct >= 15 ? 'var(--color-conservador)' : snap.net_margin_pct < 5 ? '#ef4444' : '#f59e0b')
             : 'var(--text-muted)';
 
-        const fcfColor = snap.fcf_b !== null
+        const fcfColor = snap.fcf_b != null
             ? (snap.fcf_b >= 0 ? 'var(--color-conservador)' : '#ef4444')
             : 'var(--text-muted)';
 

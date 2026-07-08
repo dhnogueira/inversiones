@@ -4,75 +4,75 @@
     "ticker": "TSLA",
     "name": "TSLA",
     "category": "sp500",
-    "price": 402.8999938964844,
+    "price": 394.05999755859375,
     "currency": "USD",
-    "score": 49.9,
+    "score": 48.0,
     "profile": "conservador",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 49.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "49.6",
+        "content": "El RSI de 14 períodos se encuentra en 47.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "47.1",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (402.90) se mantiene por encima de la EMA de 200 días (397.52), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (403.90) aún no confirma un cruce definitivo.",
-        "value": "Alcista",
-        "status": "neutral"
+        "content": "El precio (394.06) cotiza por debajo de la EMA de 200 días (397.55), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "value": "Bajista",
+        "status": "warning"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **muy alta** (61.3%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
-        "value": "61.3%",
+        "content": "La volatilidad anualizada es **muy alta** (61.2%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "61.2%",
         "status": "danger"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+3.0%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (16.2%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+3.0% (1M)",
-        "status": "success"
+        "content": "El rendimiento mensual es de **-3.6%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-3.6% (1M)",
+        "status": "danger"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
         "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 363.96 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 426.24 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 399.36. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 399.36",
-        "status": "success"
+        "status": "neutral"
       }
     ],
     "fundamental": [
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **17.8%** por debajo de su máximo anual de **USD 489.88**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-17.8%",
+        "content": "**¿Qué significa?** Este activo cotiza un **19.6%** por debajo de su máximo anual de **USD 489.88**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-19.6%",
         "status": "success"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.54** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "0.54",
-        "status": "neutral"
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.46** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
+        "value": "0.46",
+        "status": "warning"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-10.8%** y a 12 meses es **+37.1%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-10.8% (6M)",
-        "status": "danger"
+        "content": "El rendimiento acumulado a 6 meses es **-9.0%** y a 12 meses es **+32.3%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-9.0% (6M)",
+        "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **243.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+196.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 243.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **222.8%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+175.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 222.8%",
         "status": "success"
       }
     ],
@@ -89,18 +89,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **49.9/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
-      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (61.3%), un ratio de Sharpe ineficiente (0.54), o una tendencia técnica desfavorable (Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 751.01,
-      "stop_loss": 248.19,
+      "summary": "El score de **48.0/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (61.2%), un ratio de Sharpe ineficiente (0.46), o una tendencia técnica desfavorable (Bajista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 734.53,
+      "stop_loss": 242.74,
       "tp_pct": 86.4,
       "sl_pct": 38.4
     },
     "support": 363.96,
     "resistance": 426.24,
     "volume_cluster": 399.36,
-    "take_profit": 751.01,
-    "stop_loss": 248.19,
+    "take_profit": 734.53,
+    "stop_loss": 242.74,
     "tp_pct": 86.4,
     "sl_pct": 38.4,
     "long_term_strategies": {
@@ -108,15 +108,15 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 383.7x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
-          "value": "383.7x",
+          "content": "El **PER de 361.5x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "361.5x",
           "status": "warning"
         },
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 18.40x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
-          "value": "18.40x",
+          "content": "El **P/B de 18.00x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "18.00x",
           "status": "warning"
         },
         {
@@ -152,22 +152,22 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum de 3 meses (+16.2%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
-          "value": "+16.2% (3M)",
+          "content": "El **momentum de 3 meses (+14.8%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
+          "value": "+14.8% (3M)",
           "status": "success"
         },
         {
           "title": "Baja Volatilidad (Low Vol Factor)",
           "icon": "fa-water",
-          "content": "La **volatilidad anualizada del 61.3%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables.",
-          "value": "61.3%",
+          "content": "La **volatilidad anualizada del 61.2%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables.",
+          "value": "61.2%",
           "status": "warning"
         },
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 383.7x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
-          "value": "383.7x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 361.5x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "361.5x",
           "status": "neutral"
         }
       ],

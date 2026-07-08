@@ -4,7 +4,7 @@
     "ticker": "BABA.BA",
     "name": "BABA",
     "category": "cedears",
-    "price": 17140.0,
+    "price": 19060.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "moderado",
@@ -13,36 +13,36 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 35.0, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "35.0",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 57.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "57.0",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (19434.46) se encuentra por debajo de la EMA de 200 días (21657.95), y el precio (17140.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (19419.78) se encuentra por debajo de la EMA de 200 días (21632.10), y el precio (19060.00) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (48.8%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "48.8%",
+        "content": "La volatilidad anualizada es **alta** (49.4%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "49.4%",
         "status": "warning"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-14.9%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-14.9% (1M)",
-        "status": "danger"
+        "content": "El rendimiento mensual es de **-1.8%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.8% (1M)",
+        "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 17,176.00 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 22,579.86 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 22,233.41. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 22,233.41",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 17,176.00 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 22,531.87 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 21,595.41. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 21,595.41",
         "status": "neutral"
       }
     ],
@@ -50,30 +50,30 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **47.4%** respecto a su máximo anual de **ARS 32,599.80**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-47.4%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **41.5%** respecto a su máximo anual de **ARS 32,599.80**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-41.5%",
         "status": "neutral"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.17** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
-        "value": "0.17",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.47** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
+        "value": "0.47",
         "status": "warning"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-33.9%** y a 12 meses es **+12.2%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-33.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-24.1%** y a 12 meses es **+27.1%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-24.1% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **25.9%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-21.1%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 25.9%",
-        "status": "danger"
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **61.5%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+14.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 61.5%",
+        "status": "success"
       }
     ],
     "macro": [
@@ -97,32 +97,32 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 35222.31,
-      "stop_loss": 9103.42,
-      "tp_pct": 105.5,
-      "sl_pct": 46.9
+      "take_profit": 39410.01,
+      "stop_loss": 10015.55,
+      "tp_pct": 106.8,
+      "sl_pct": 47.5
     },
     "support": 17176.0,
-    "resistance": 22579.86,
-    "volume_cluster": 22233.41,
-    "take_profit": 35222.31,
-    "stop_loss": 9103.42,
-    "tp_pct": 105.5,
-    "sl_pct": 46.9,
+    "resistance": 22531.87,
+    "volume_cluster": 21595.41,
+    "take_profit": 39410.01,
+    "stop_loss": 10015.55,
+    "tp_pct": 106.8,
+    "sl_pct": 47.5,
     "long_term_strategies": {
       "value": [
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 128.6x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
-          "value": "128.6x",
+          "content": "El **PER de 142.6x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "142.6x",
           "status": "warning"
         },
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 0.17x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado.",
-          "value": "0.17x",
+          "content": "El **P/B de 0.19x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado.",
+          "value": "0.19x",
           "status": "success"
         },
         {
@@ -158,22 +158,22 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-17.9%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-17.9% (3M)",
+          "content": "El **momentum trimestral (-8.6%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-8.6% (3M)",
           "status": "warning"
         },
         {
           "title": "Baja Volatilidad (Low Vol Factor)",
           "icon": "fa-water",
-          "content": "La **volatilidad anualizada del 48.8%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables.",
-          "value": "48.8%",
+          "content": "La **volatilidad anualizada del 49.4%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables.",
+          "value": "49.4%",
           "status": "warning"
         },
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 128.6x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
-          "value": "128.6x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 142.6x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "142.6x",
           "status": "neutral"
         }
       ],

@@ -12,22 +12,22 @@
         "ars_return_est": 195.6
       },
       {
-        "ticker": "MRK",
-        "name": "MRK",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.2624,
-        "weight_pct": 26.2,
-        "ars_return_est": 133.7
-      },
-      {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.2376,
-        "weight_pct": 23.8,
-        "ars_return_est": 162.3
+        "weight": 0.2636,
+        "weight_pct": 26.4,
+        "ars_return_est": 157.1
+      },
+      {
+        "ticker": "MRK",
+        "name": "MRK",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1864,
+        "weight_pct": 18.6,
+        "ars_return_est": 127.2
       },
       {
         "ticker": "AAPL.BA",
@@ -36,7 +36,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 86.0
+        "ars_return_est": 86.1
       },
       {
         "ticker": "XOM.BA",
@@ -45,26 +45,35 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 61.5
+        "ars_return_est": 59.4
       },
       {
-        "ticker": "VALE.BA",
-        "name": "VALE",
-        "category": "cedears",
-        "currency": "ARS",
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 81.9
+        "ars_return_est": 112.7
+      },
+      {
+        "ticker": "LLY",
+        "name": "LLY",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 123.6
       }
     ],
-    "expected_return": 153.6,
-    "expected_volatility": 25.64,
-    "sharpe_ratio": 5.13,
+    "expected_return": 152.68,
+    "expected_volatility": 25.92,
+    "sharpe_ratio": 5.04,
     "profile": "moderado",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 131.6
+    "spread_vs_inflation": 130.7
   }
 }

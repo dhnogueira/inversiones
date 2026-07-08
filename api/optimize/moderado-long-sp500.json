@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 446.4
+        "ars_return_est": 416.3
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 345.0
+        "ars_return_est": 352.6
       },
       {
         "ticker": "XOM",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 249.1
+        "ars_return_est": 228.0
       },
       {
         "ticker": "ABBV",
@@ -45,16 +45,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 296.0
-      },
-      {
-        "ticker": "JPM",
-        "name": "JPM",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 182.7
+        "ars_return_est": 281.3
       },
       {
         "ticker": "AVGO",
@@ -63,7 +54,16 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 274.2
+        "ars_return_est": 318.4
+      },
+      {
+        "ticker": "JPM",
+        "name": "JPM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 186.3
       },
       {
         "ticker": "LLY",
@@ -72,16 +72,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 422.7
-      },
-      {
-        "ticker": "AMZN",
-        "name": "AMZN",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 144.3
+        "ars_return_est": 399.9
       },
       {
         "ticker": "NVDA",
@@ -90,17 +81,26 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 212.4
+        "ars_return_est": 228.3
+      },
+      {
+        "ticker": "AMZN",
+        "name": "AMZN",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 148.7
       }
     ],
-    "expected_return": 307.27,
-    "expected_volatility": 28.94,
-    "sharpe_ratio": 8.99,
+    "expected_return": 305.98,
+    "expected_volatility": 28.96,
+    "sharpe_ratio": 8.94,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 260.3
+    "spread_vs_inflation": 259.0
   }
 }

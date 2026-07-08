@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 226.4
+        "ars_return_est": 226.3
       },
       {
         "ticker": "MRK",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 152.1
+        "ars_return_est": 144.3
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 124.7
+        "ars_return_est": 126.9
       },
       {
         "ticker": "LLY",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 145.9
+        "ars_return_est": 139.9
       },
       {
         "ticker": "UNH",
@@ -45,7 +45,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 118.3
+        "ars_return_est": 113.6
       },
       {
         "ticker": "AVGO",
@@ -54,25 +54,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 103.7
-      },
-      {
-        "ticker": "XOM",
-        "name": "XOM",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 95.8
-      },
-      {
-        "ticker": "ABBV",
-        "name": "ABBV",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 110.4
+        "ars_return_est": 117.1
       },
       {
         "ticker": "NVDA",
@@ -81,26 +63,44 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 83.7
+        "ars_return_est": 89.0
       },
       {
-        "ticker": "AMZN",
-        "name": "AMZN",
+        "ticker": "ABBV",
+        "name": "ABBV",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 59.2
+        "ars_return_est": 105.9
+      },
+      {
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 88.9
+      },
+      {
+        "ticker": "JPM",
+        "name": "JPM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 74.6
       }
     ],
-    "expected_return": 159.34,
-    "expected_volatility": 28.38,
+    "expected_return": 158.07,
+    "expected_volatility": 28.1,
     "sharpe_ratio": 4.84,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 137.3
+    "spread_vs_inflation": 136.1
   }
 }
