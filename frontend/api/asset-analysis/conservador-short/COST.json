@@ -4,7 +4,7 @@
     "ticker": "COST",
     "name": "COST",
     "category": "sp500",
-    "price": 954.0,
+    "price": 954.3200073242188,
     "currency": "USD",
     "score": 56.5,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 46.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "46.2",
+        "content": "El RSI de 14 períodos se encuentra en 46.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "46.3",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (954.00) cotiza por debajo de la EMA de 200 días (968.77), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (954.32) cotiza por debajo de la EMA de 200 días (968.77), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -182,16 +182,16 @@
       "color": "warning",
       "summary": "El score de **56.5/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (20.8%), un ratio de Sharpe ineficiente (-0.32), o una tendencia técnica desfavorable (Bajista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 1049.38,
-      "stop_loss": 906.31,
+      "take_profit": 1049.73,
+      "stop_loss": 906.61,
       "tp_pct": 10.0,
       "sl_pct": 5.0
     },
     "support": 951.65,
     "resistance": 1028.29,
     "volume_cluster": 1001.01,
-    "take_profit": 1049.38,
-    "stop_loss": 906.31,
+    "take_profit": 1049.73,
+    "stop_loss": 906.61,
     "tp_pct": 10.0,
     "sl_pct": 5.0
   }

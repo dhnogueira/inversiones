@@ -7,26 +7,26 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2636,
-        "weight_pct": 26.4,
-        "ars_return_est": 37.6
+        "weight": 0.2759,
+        "weight_pct": 27.6,
+        "ars_return_est": 37.9
       },
       {
         "ticker": "PG",
         "name": "PG",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2023,
-        "weight_pct": 20.2,
-        "ars_return_est": 28.9
+        "weight": 0.2099,
+        "weight_pct": 21.0,
+        "ars_return_est": 28.8
       },
       {
         "ticker": "COST",
         "name": "COST",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1986,
-        "weight_pct": 19.9,
+        "weight": 0.2069,
+        "weight_pct": 20.7,
         "ars_return_est": 28.4
       },
       {
@@ -34,32 +34,32 @@
         "name": "HD",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1263,
-        "weight_pct": 12.6,
+        "weight": 0.1312,
+        "weight_pct": 13.1,
         "ars_return_est": 18.0
-      },
-      {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.1177,
-        "weight_pct": 11.8,
-        "ars_return_est": 16.8
       },
       {
         "ticker": "META",
         "name": "META",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.0914,
-        "weight_pct": 9.1,
+        "weight": 0.0951,
+        "weight_pct": 9.5,
         "ars_return_est": 13.0
+      },
+      {
+        "ticker": "MA",
+        "name": "MA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0811,
+        "weight_pct": 8.1,
+        "ars_return_est": 11.1
       }
     ],
-    "expected_return": 26.85,
-    "expected_volatility": 21.16,
-    "sharpe_ratio": 0.75,
+    "expected_return": 26.87,
+    "expected_volatility": 21.41,
+    "sharpe_ratio": 0.74,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,

@@ -3,22 +3,13 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 16.8
-      },
-      {
         "ticker": "KO.BA",
         "name": "KO",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 22.5
+        "ars_return_est": 22.1
       },
       {
         "ticker": "AAPL.BA",
@@ -27,7 +18,16 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 18.4
+        "ars_return_est": 18.5
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": 16.5
       },
       {
         "ticker": "GOOGL.BA",
@@ -45,17 +45,17 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 7.1
+        "ars_return_est": 8.0
       }
     ],
-    "expected_return": 15.42,
-    "expected_volatility": 30.45,
+    "expected_return": 15.51,
+    "expected_volatility": 30.46,
     "sharpe_ratio": 0.15,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 4.4
+    "spread_vs_inflation": 4.5
   }
 }
