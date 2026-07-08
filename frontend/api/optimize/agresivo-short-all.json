@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 47.1
+        "ars_return_est": 47.4
       },
       {
         "ticker": "COST",
@@ -45,17 +45,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 23.7
+        "ars_return_est": 23.6
       }
     ],
-    "expected_return": 38.94,
-    "expected_volatility": 20.6,
+    "expected_return": 38.99,
+    "expected_volatility": 20.59,
     "sharpe_ratio": 1.36,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 27.9
+    "spread_vs_inflation": 28.0
   }
 }

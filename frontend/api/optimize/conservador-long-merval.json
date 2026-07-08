@@ -3,11 +3,20 @@
   "optimization": {
     "weights": [
       {
+        "ticker": "TECO2.BA",
+        "name": "TECO2",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.1782,
+        "weight_pct": 17.8,
+        "ars_return_est": 200.0
+      },
+      {
         "ticker": "VALO.BA",
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1781,
+        "weight": 0.1782,
         "weight_pct": 17.8,
         "ars_return_est": 200.0
       },
@@ -16,34 +25,25 @@
         "name": "YPFD",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1781,
+        "weight": 0.1782,
         "weight_pct": 17.8,
         "ars_return_est": 200.0
-      },
-      {
-        "ticker": "TECO2.BA",
-        "name": "TECO2",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.1775,
-        "weight_pct": 17.8,
-        "ars_return_est": 199.3
       },
       {
         "ticker": "BMA.BA",
         "name": "BMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1573,
-        "weight_pct": 15.7,
-        "ars_return_est": 176.7
+        "weight": 0.1577,
+        "weight_pct": 15.8,
+        "ars_return_est": 177.0
       },
       {
         "ticker": "BYMA.BA",
         "name": "BYMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.12,
+        "weight": 0.1201,
         "weight_pct": 12.0,
         "ars_return_est": 134.8
       },
@@ -52,28 +52,28 @@
         "name": "CEPU",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1121,
-        "weight_pct": 11.2,
-        "ars_return_est": 125.9
+        "weight": 0.1109,
+        "weight_pct": 11.1,
+        "ars_return_est": 124.4
       },
       {
         "ticker": "PAMP.BA",
         "name": "PAMP",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0768,
+        "weight": 0.0766,
         "weight_pct": 7.7,
-        "ars_return_est": 86.3
+        "ars_return_est": 86.0
       }
     ],
-    "expected_return": 171.34,
-    "expected_volatility": 42.92,
+    "expected_return": 171.43,
+    "expected_volatility": 42.93,
     "sharpe_ratio": 2.9,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 124.3
+    "spread_vs_inflation": 124.4
   }
 }

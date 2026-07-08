@@ -9,7 +9,7 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 17.2
+        "ars_return_est": 17.0
       },
       {
         "ticker": "KO.BA",
@@ -18,7 +18,7 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 21.1
+        "ars_return_est": 21.7
       },
       {
         "ticker": "AAPL.BA",
@@ -27,7 +27,7 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 18.0
+        "ars_return_est": 18.4
       },
       {
         "ticker": "GOOGL.BA",
@@ -36,7 +36,7 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 11.9
+        "ars_return_est": 12.5
       },
       {
         "ticker": "NVDA.BA",
@@ -45,17 +45,17 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 8.4
+        "ars_return_est": 8.6
       }
     ],
-    "expected_return": 15.33,
+    "expected_return": 15.66,
     "expected_volatility": 30.46,
-    "sharpe_ratio": 0.14,
+    "sharpe_ratio": 0.15,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 4.3
+    "spread_vs_inflation": 4.7
   }
 }

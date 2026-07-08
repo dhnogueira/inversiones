@@ -4,7 +4,7 @@
     "ticker": "MA",
     "name": "MA",
     "category": "sp500",
-    "price": 519.875,
+    "price": 519.8599853515625,
     "currency": "USD",
     "score": 45.8,
     "profile": "conservador",
@@ -20,7 +20,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (519.88) cotiza por debajo de la EMA de 200 días (520.33), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (519.86) cotiza por debajo de la EMA de 200 días (520.33), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -182,16 +182,16 @@
       "color": "warning",
       "summary": "El score de **45.8/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (22.2%), un ratio de Sharpe ineficiente (-0.50), o una tendencia técnica desfavorable (Bajista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 575.33,
-      "stop_loss": 492.15,
+      "take_profit": 575.31,
+      "stop_loss": 492.13,
       "tp_pct": 10.7,
       "sl_pct": 5.3
     },
     "support": 488.84,
     "resistance": 521.31,
     "volume_cluster": 495.29,
-    "take_profit": 575.33,
-    "stop_loss": 492.15,
+    "take_profit": 575.31,
+    "stop_loss": 492.13,
     "tp_pct": 10.7,
     "sl_pct": 5.3
   }

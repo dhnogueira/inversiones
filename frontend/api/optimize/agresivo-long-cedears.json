@@ -18,16 +18,16 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 293.6
+        "ars_return_est": 297.3
       },
       {
         "ticker": "VALE.BA",
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 248.0
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 245.4
       },
       {
         "ticker": "XOM.BA",
@@ -36,7 +36,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 185.3
+        "ars_return_est": 183.9
       },
       {
         "ticker": "NVDA.BA",
@@ -45,7 +45,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 198.9
+        "ars_return_est": 200.3
       },
       {
         "ticker": "KO.BA",
@@ -54,7 +54,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 142.5
+        "ars_return_est": 145.4
       },
       {
         "ticker": "TSLA.BA",
@@ -63,7 +63,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 184.5
+        "ars_return_est": 187.5
       },
       {
         "ticker": "AMZN.BA",
@@ -72,26 +72,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 111.5
-      },
-      {
-        "ticker": "BABA.BA",
-        "name": "BABA",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 75.0
+        "ars_return_est": 114.1
       }
     ],
-    "expected_return": 247.78,
-    "expected_volatility": 32.2,
-    "sharpe_ratio": 6.24,
+    "expected_return": 257.58,
+    "expected_volatility": 31.72,
+    "sharpe_ratio": 6.64,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 200.8
+    "spread_vs_inflation": 210.6
   }
 }
