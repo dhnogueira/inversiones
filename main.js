@@ -1583,8 +1583,10 @@ async function fetchPortfolio(isSilent = false) {
     }
 
     if (!isSilent) {
-        const tbody = document.getElementById('portfolio-tbody');
-        tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="padding: 40px;"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Cargando posiciones...</td></tr>`;
+        const container = document.getElementById('portfolio-categories-container');
+        if (container) {
+            container.innerHTML = `<div class="glass-panel" style="padding: 40px; text-align: center; color: var(--text-secondary);"><i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>Cargando posiciones de cartera...</div>`;
+        }
     }
 
     // ESTRATEGIA PRINCIPAL: si hay sesión de Supabase activa, leer SIEMPRE de Supabase directo
@@ -1613,8 +1615,10 @@ async function fetchPortfolio(isSilent = false) {
         }
     } catch (e) {
         if (!isSilent) {
-            const tbody = document.getElementById('portfolio-tbody');
-            tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar datos de cartera.</td></tr>`;
+            const container = document.getElementById('portfolio-categories-container');
+            if (container) {
+                container.innerHTML = `<div class="glass-panel" style="padding: 40px; text-align: center; color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar datos de cartera.</div>`;
+            }
         }
     }
 }
@@ -1660,8 +1664,10 @@ async function _fetchPortfolioFromSupabaseDirect(isSilent = false) {
     } catch (e) {
         console.error('[portfolio-direct] Error consultando Supabase:', e);
         if (!isSilent) {
-            const tbody = document.getElementById('portfolio-tbody');
-            tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar posiciones desde la nube.</td></tr>`;
+            const container = document.getElementById('portfolio-categories-container');
+            if (container) {
+                container.innerHTML = `<div class="glass-panel" style="padding: 40px; text-align: center; color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar posiciones desde la nube.</div>`;
+            }
         }
     }
 }
@@ -1783,7 +1789,10 @@ async function _fetchPortfolioReport(data) {
 }
 
 function renderPortfolioHTML(data) {
-    const tbody = document.getElementById('portfolio-tbody');
+    const container = document.getElementById('portfolio-categories-container');
+    if (!container) return;
+    container.innerHTML = '';
+
     document.getElementById('pf-invested').innerText = `$ ${data.summary.total_invested.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`;
     document.getElementById('pf-current').innerText = `$ ${data.summary.total_current.toLocaleString('es-AR', { maximumFractionDigits: 2 })}`;
 
@@ -1792,44 +1801,124 @@ function renderPortfolioHTML(data) {
     pnlLabel.innerText = `${pnl >= 0 ? '+' : ''}$ ${pnl.toLocaleString('es-AR', { maximumFractionDigits: 2 })} (${data.summary.total_pnl_pct.toFixed(2)}%)`;
     pnlLabel.style.color = pnl >= 0 ? '#10b981' : '#ef4444';
 
-    tbody.innerHTML = '';
     if (data.positions.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="padding:30px; color:var(--text-secondary);">La cartera está vacía. Agregue posiciones para comenzar a trackear.</td></tr>`;
+        container.innerHTML = `<div class="glass-panel" style="padding:40px; text-align:center; color:var(--text-secondary);">La cartera está vacía. Agregue posiciones para comenzar a trackear.</div>`;
         renderCategoryBreakdown([], []);
         return;
     }
 
+    // Agrupar por categoría
+    const categoriesMap = {};
     data.positions.forEach(pos => {
-        const tr = document.createElement('tr');
-        const pnlPos = pos.pnl;
-        const pnlClass = pnlPos >= 0 ? 'trend-up' : 'trend-down';
-        const pnlSign = pnlPos >= 0 ? '+' : '';
-
-        tr.innerHTML = `
-            <td><span class="asset-tag">${pos.ticker.replace('.BA', '')}</span></td>
-            <td><div>${pos.name}</div><span style="font-size:10px; color:var(--text-muted); text-transform:uppercase;">${pos.category}</span></td>
-            <td>${pos.quantity}</td>
-            <td>${pos.currency} ${pos.entry_price.toFixed(2)}</td>
-            <td>${pos.currency} ${pos.current_price.toFixed(2)}</td>
-            <td>$ ${pos.invested.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</td>
-            <td>$ ${pos.current_value.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</td>
-            <td><span class="trend-badge ${pnlClass}">${pnlSign}${pos.pnl_pct.toFixed(2)}%</span></td>
-            <td><button class="delete-btn" data-id="${pos.id}"><i class="fa-solid fa-trash"></i></button></td>
-        `;
-
-        tr.addEventListener('click', (e) => {
-            if (e.target.closest('.delete-btn')) return;
-            openAssetModal(pos.ticker);
-        });
-
-        tr.querySelector('.delete-btn').addEventListener('click', (e) => {
-            e.stopPropagation();
-            handleDeletePosition(pos.id);
-        });
-        tbody.appendChild(tr);
+        const cat = pos.category || 'otros';
+        if (!categoriesMap[cat]) {
+            categoriesMap[cat] = [];
+        }
+        categoriesMap[cat].push(pos);
     });
 
-    // Generar breakdown de categorías
+    // Mapeo estético de categorías (títulos y colores/iconos)
+    const categoryConfig = {
+        'merval': { title: 'Acciones MERVAL', icon: 'fa-chart-line', color: '#0ea5e9' },
+        'cedears': { title: 'CEDEARs', icon: 'fa-globe', color: '#f59e0b' },
+        'sp500': { title: 'S&P 500 (USA)', icon: 'fa-industry', color: '#10b981' },
+        'crypto': { title: 'Criptomonedas', icon: 'fa-bitcoin', brand: true, color: '#eab308' },
+        'bonos': { title: 'Bonos Soberanos', icon: 'fa-receipt', color: '#6366f1' },
+        'letras': { title: 'Letras (LECAPs)', icon: 'fa-money-check', color: '#a855f7' }
+    };
+
+    // Renderizar cada sub-cartera
+    Object.keys(categoriesMap).forEach(cat => {
+        const catPositions = categoriesMap[cat];
+        const config = categoryConfig[cat] || { title: cat.toUpperCase(), icon: 'fa-briefcase', color: '#f43f5e' };
+        const iconClass = config.brand ? `fa-brands ${config.icon}` : `fa-solid ${config.icon}`;
+
+        // Calcular métricas de la categoría
+        let catInvested = 0;
+        let catCurrent = 0;
+        catPositions.forEach(p => {
+            catInvested += p.invested;
+            catCurrent += p.current_value;
+        });
+        const catPnL = catCurrent - catInvested;
+        const catPnLPct = catInvested > 0 ? (catPnL / catInvested * 100) : 0;
+        const pnlClass = catPnL >= 0 ? 'text-green' : 'text-red';
+        const pnlPctClass = catPnL >= 0 ? 'trend-up' : 'trend-down';
+        const pnlSign = catPnL >= 0 ? '+' : '';
+
+        // Crear la sub-cartera (Panel HTML)
+        const catPanel = document.createElement('div');
+        catPanel.className = 'ranking-panel glass-panel';
+        catPanel.style.marginBottom = '24px';
+        catPanel.style.padding = '20px';
+
+        catPanel.innerHTML = `
+            <div class="portfolio-category-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 8px; margin: 0;">
+                    <i class="${iconClass}" style="color:${config.color}"></i> ${config.title}
+                </h3>
+                <div style="display: flex; gap: 15px; font-size: 13px; flex-wrap: wrap;">
+                    <span>Invertido: <strong style="color:var(--text-primary)">$ ${catInvested.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</strong></span>
+                    <span>Valor: <strong style="color:var(--text-primary)">$ ${catCurrent.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</strong></span>
+                    <span class="trend-badge ${pnlPctClass}" style="font-size: 11px;">PnL: ${pnlSign}${catPnLPct.toFixed(2)}%</span>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="asset-table">
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>Nombre</th>
+                            <th>Cant.</th>
+                            <th>Entrada</th>
+                            <th>Actual</th>
+                            <th>Invertido</th>
+                            <th>Valor Actual</th>
+                            <th>P&L</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-cat-${cat}"></tbody>
+                </table>
+            </div>
+        `;
+
+        container.appendChild(catPanel);
+
+        // Renderizar las filas de este sub-portfolio
+        const tbodyCat = document.getElementById(`tbody-cat-${cat}`);
+        catPositions.forEach(pos => {
+            const tr = document.createElement('tr');
+            const pnlPos = pos.pnl;
+            const pnlClass = pnlPos >= 0 ? 'trend-up' : 'trend-down';
+            const pnlSign = pnlPos >= 0 ? '+' : '';
+
+            tr.innerHTML = `
+                <td><span class="asset-tag">${pos.ticker.replace('.BA', '')}</span></td>
+                <td><div>${pos.name}</div><span style="font-size:10px; color:var(--text-muted); text-transform:uppercase;">${pos.category}</span></td>
+                <td>${pos.quantity}</td>
+                <td>${pos.currency} ${pos.entry_price.toFixed(2)}</td>
+                <td>${pos.currency} ${pos.current_price.toFixed(2)}</td>
+                <td>$ ${pos.invested.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</td>
+                <td>$ ${pos.current_value.toLocaleString('es-AR', { maximumFractionDigits: 2 })}</td>
+                <td><span class="trend-badge ${pnlClass}">${pnlSign}${pos.pnl_pct.toFixed(2)}%</span></td>
+                <td><button class="delete-btn" data-id="${pos.id}"><i class="fa-solid fa-trash"></i></button></td>
+            `;
+
+            tr.addEventListener('click', (e) => {
+                if (e.target.closest('.delete-btn')) return;
+                openAssetModal(pos.ticker);
+            });
+
+            tr.querySelector('.delete-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                handleDeletePosition(pos.id);
+            });
+            tbodyCat.appendChild(tr);
+        });
+    });
+
+    // Generar breakdown de categorías consolidado
     const catMap = {};
     data.positions.forEach(pos => {
         if (!catMap[pos.category]) {
@@ -2775,7 +2864,11 @@ function renderModalContent(analysis) {
     verdictEl.className = `modal-verdict verdict-${verdict.color}`;
     document.getElementById('modal-verdict-icon').className = `fa-solid ${verdict.icon}`;
     document.getElementById('modal-verdict-action').innerText = verdict.action;
-    document.getElementById('modal-verdict-summary').innerHTML = formatMarkdownBold(verdict.summary);
+    let summaryHtml = formatMarkdownBold(verdict.summary);
+    if (verdict.why) {
+        summaryHtml += `<div class="verdict-why-box" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-weight: normal; font-size: 12.5px; opacity: 0.9; line-height: 1.45;">${formatMarkdownBold(verdict.why)}</div>`;
+    }
+    document.getElementById('modal-verdict-summary').innerHTML = summaryHtml;
 
     const body = document.getElementById('modal-body');
 
