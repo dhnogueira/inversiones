@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -31.4
+        "ars_return_est": -31.2
       },
       {
         "ticker": "BNB-USD",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -40.9
+        "ars_return_est": -39.9
       },
       {
         "ticker": "ETH-USD",
@@ -27,16 +27,7 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -52.2
-      },
-      {
-        "ticker": "XRP-USD",
-        "name": "XRP-USD",
-        "category": "crypto",
-        "currency": "USD",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": -55.4
+        "ars_return_est": -50.9
       },
       {
         "ticker": "LINK-USD",
@@ -45,17 +36,26 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -56.1
+        "ars_return_est": -51.9
+      },
+      {
+        "ticker": "XRP-USD",
+        "name": "XRP-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": -53.3
       }
     ],
-    "expected_return": -47.21,
-    "expected_volatility": 49.58,
-    "sharpe_ratio": -1.4,
+    "expected_return": -45.44,
+    "expected_volatility": 49.55,
+    "sharpe_ratio": -1.36,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -69.2
+    "spread_vs_inflation": -67.4
   }
 }

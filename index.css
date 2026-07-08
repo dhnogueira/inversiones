@@ -1210,6 +1210,15 @@ body {
     flex-shrink: 0;
 }
 
+.ticker-suggestion-free {
+    border-top: 1px solid rgba(245, 158, 11, 0.18);
+    background: rgba(245, 158, 11, 0.04);
+}
+
+.ticker-suggestion-free:hover {
+    background: rgba(245, 158, 11, 0.12);
+}
+
 /* Watchlist alerts cards */
 .alerts-container {
     display: flex;

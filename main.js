@@ -3138,13 +3138,9 @@ function setupTickerAutocomplete() {
                 ticker.toUpperCase().startsWith(q) ||
                 meta.company.toUpperCase().includes(q)
             )
-            .slice(0, 8);
+            .slice(0, 7);
 
-        if (matches.length === 0) {
-            hideSuggestions();
-            return;
-        }
-
+        // Render known matches first
         matches.forEach(([ticker, meta]) => {
             const item = document.createElement('div');
             item.className = 'ticker-suggestion-item';
@@ -3163,6 +3159,32 @@ function setupTickerAutocomplete() {
             });
             suggestionsBox.appendChild(item);
         });
+
+        // Always show a "use this ticker directly" fallback if query looks valid
+        const cleanQ = q.trim();
+        const alreadyExact = matches.some(([t]) => t.toUpperCase() === cleanQ);
+        if (cleanQ.length >= 1 && !alreadyExact) {
+            const freeItem = document.createElement('div');
+            freeItem.className = 'ticker-suggestion-item ticker-suggestion-free';
+            freeItem.innerHTML = `
+                <span class="ticker-suggestion-symbol" style="color:#f59e0b">↩ ${cleanQ}</span>
+                <span class="ticker-suggestion-name" style="color:var(--text-muted); font-style:italic;">Agregar manualmente — completá Nombre y Precio</span>
+            `;
+            freeItem.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                tickerInput.value = cleanQ;
+                // auto-select category based on pattern
+                if (categorySelect) categorySelect.value = guessCategory(cleanQ);
+                hideSuggestions();
+                if (nameInput) { nameInput.value = ''; nameInput.focus(); }
+            });
+            suggestionsBox.appendChild(freeItem);
+        }
+
+        if (suggestionsBox.children.length === 0) {
+            hideSuggestions();
+            return;
+        }
 
         positionDropdown();
         suggestionsBox.style.display = 'block';
