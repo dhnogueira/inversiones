@@ -4,7 +4,7 @@
     "ticker": "MELI.BA",
     "name": "MELI",
     "category": "cedears",
-    "price": 23360.0,
+    "price": 23300.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 65.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "65.3",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 64.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "64.6",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (23360.00) se mantiene por encima de la EMA de 200 días (22952.56), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (21553.33) aún no confirma un cruce definitivo.",
+        "content": "El precio (23300.00) se mantiene por encima de la EMA de 200 días (22951.96), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (21550.97) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+17.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (4.3%) refuerzan esta tendencia positiva.",
-        "value": "+17.0% (1M)",
+        "content": "El activo registró un rendimiento del **+16.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (4.0%) refuerzan esta tendencia positiva.",
+        "value": "+16.7% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-15.1%** y a 12 meses es **-9.8%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-15.1% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-15.3%** y a 12 meses es **-10.0%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-15.3% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **-11.8%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-33.8%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -11.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **-12.0%**, quedando por debajo de la inflación proyectada del período de **22.0%** (rendimiento real negativo de **-34.0%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -12.0%",
         "status": "danger"
       }
     ],
@@ -179,16 +179,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **agresivo**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Alcista).",
-      "take_profit": 41033.94,
-      "stop_loss": 14523.03,
+      "take_profit": 40931.13,
+      "stop_loss": 14484.43,
       "tp_pct": 75.7,
       "sl_pct": 37.8
     },
     "support": 19859.0,
     "resistance": 22773.0,
     "volume_cluster": 20020.0,
-    "take_profit": 41033.94,
-    "stop_loss": 14523.03,
+    "take_profit": 40931.13,
+    "stop_loss": 14484.43,
     "tp_pct": 75.7,
     "sl_pct": 37.8,
     "medium_term_strategies": {
@@ -270,7 +270,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es moderada** (score: 3/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=65, 3M=+4.3%.",
+          "content": "La **fuerza relativa es moderada** (score: 3/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=65, 3M=+4.0%.",
           "value": "Score 3/6",
           "status": "neutral"
         },
@@ -284,8 +284,8 @@
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El **momentum se está acelerando** (+12.8%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
-          "value": "+12.8%",
+          "content": "El **momentum se está acelerando** (+12.7%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
+          "value": "+12.7%",
           "status": "success"
         },
         {
