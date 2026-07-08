@@ -4,7 +4,7 @@
     "ticker": "AVAX-USD",
     "name": "AVAX-USD",
     "category": "crypto",
-    "price": 6.440000057220459,
+    "price": 6.449999809265137,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 41.0, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "41.0",
+        "content": "El RSI de 14 períodos se encuentra en 41.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "41.2",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (7.26) se encuentra por debajo de la EMA de 200 días (10.24), y el precio (6.44) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (7.26) se encuentra por debajo de la EMA de 200 días (10.24), y el precio (6.45) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-32.2%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.1% (1M)",
+        "content": "El rendimiento mensual es de **+2.3%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-32.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.3% (1M)",
         "status": "success"
       },
       {
@@ -64,8 +64,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-31.4%** y a 12 meses es **-64.5%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-31.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-31.3%** y a 12 meses es **-64.4%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-31.3% (6M)",
         "status": "danger"
       },
       {
@@ -91,7 +91,7 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 14.79,
+      "take_profit": 14.81,
       "stop_loss": 2.73,
       "tp_pct": 129.6,
       "sl_pct": 57.6
@@ -99,7 +99,7 @@
     "support": 6.44,
     "resistance": 9.67,
     "volume_cluster": 9.15,
-    "take_profit": 14.79,
+    "take_profit": 14.81,
     "stop_loss": 2.73,
     "tp_pct": 129.6,
     "sl_pct": 57.6

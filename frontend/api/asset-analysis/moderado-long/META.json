@@ -4,7 +4,7 @@
     "ticker": "META",
     "name": "META",
     "category": "sp500",
-    "price": 605.260009765625,
+    "price": 605.5599975585938,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 54.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "54.5",
+        "content": "El RSI de 14 períodos está en 54.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.6",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (605.26) cotiza por debajo de la EMA de 200 días (630.36), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (605.56) cotiza por debajo de la EMA de 200 días (630.36), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+3.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "content": "El rendimiento mensual es de **+3.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.0%) ofrece una perspectiva más amplia de la dirección reciente.",
         "value": "+3.5% (1M)",
         "status": "success"
       },
@@ -71,8 +71,8 @@
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **43.2%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-3.8%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 43.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **43.3%**, quedando por debajo de la inflación proyectada del período de **47.0%** (rendimiento real negativo de **-3.7%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 43.3%",
         "status": "danger"
       }
     ],
@@ -188,16 +188,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 1092.62,
-      "stop_loss": 388.66,
+      "take_profit": 1093.14,
+      "stop_loss": 388.86,
       "tp_pct": 80.5,
       "sl_pct": 35.8
     },
     "support": 563.79,
     "resistance": 668.25,
     "volume_cluster": 614.71,
-    "take_profit": 1092.62,
-    "stop_loss": 388.66,
+    "take_profit": 1093.14,
+    "stop_loss": 388.86,
     "tp_pct": 80.5,
     "sl_pct": 35.8,
     "long_term_strategies": {
@@ -249,8 +249,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-1.1%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-1.1% (3M)",
+          "content": "El **momentum trimestral (-1.0%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-1.0% (3M)",
           "status": "warning"
         },
         {

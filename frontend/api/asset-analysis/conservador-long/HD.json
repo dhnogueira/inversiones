@@ -4,7 +4,7 @@
     "ticker": "HD",
     "name": "HD",
     "category": "sp500",
-    "price": 336.22601318359375,
+    "price": 336.635009765625,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 50.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "50.5",
+        "content": "El RSI de 14 períodos está en 50.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "50.8",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (336.23) cotiza por debajo de la EMA de 200 días (346.38), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (336.64) cotiza por debajo de la EMA de 200 días (346.38), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+8.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (0.0%) refuerzan esta tendencia positiva.",
-        "value": "+8.6% (1M)",
+        "content": "El activo registró un rendimiento del **+8.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (0.1%) refuerzan esta tendencia positiva.",
+        "value": "+8.7% (1M)",
         "status": "success"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **19.5%** por debajo de su máximo anual de **USD 417.91**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-19.5%",
+        "content": "**¿Qué significa?** Este activo cotiza un **19.4%** por debajo de su máximo anual de **USD 417.91**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-19.4%",
         "status": "success"
       },
       {
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-3.1%** y a 12 meses es **-6.8%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-3.1% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-3.0%** y a 12 meses es **-6.7%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-3.0% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **80.5%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+33.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 80.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **80.9%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+33.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 80.9%",
         "status": "success"
       }
     ],
@@ -186,17 +186,17 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **conservador**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 451.39,
-      "stop_loss": 285.04,
-      "tp_pct": 34.3,
+      "take_profit": 451.91,
+      "stop_loss": 285.4,
+      "tp_pct": 34.2,
       "sl_pct": 15.2
     },
     "support": 310.58,
     "resistance": 351.36,
     "volume_cluster": 320.25,
-    "take_profit": 451.39,
-    "stop_loss": 285.04,
-    "tp_pct": 34.3,
+    "take_profit": 451.91,
+    "stop_loss": 285.4,
+    "tp_pct": 34.2,
     "sl_pct": 15.2,
     "long_term_strategies": {
       "value": [
@@ -210,8 +210,8 @@
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 24.15x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
-          "value": "24.15x",
+          "content": "El **P/B de 24.18x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "24.18x",
           "status": "warning"
         },
         {
@@ -247,8 +247,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (+0.0%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
-          "value": "+0.0% (3M)",
+          "content": "El **momentum trimestral (+0.1%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
+          "value": "+0.1% (3M)",
           "status": "neutral"
         },
         {

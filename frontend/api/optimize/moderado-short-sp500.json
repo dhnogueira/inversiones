@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 30.2
+        "ars_return_est": 30.3
       },
       {
         "ticker": "PG",
@@ -27,26 +27,26 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 42.1
+        "ars_return_est": 42.5
       },
       {
-        "ticker": "BRK-B",
-        "name": "BRK-B",
+        "ticker": "XOM",
+        "name": "XOM",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 21.2
+        "ars_return_est": 42.4
       }
     ],
-    "expected_return": 31.08,
-    "expected_volatility": 18.88,
-    "sharpe_ratio": 1.06,
+    "expected_return": 36.53,
+    "expected_volatility": 20.41,
+    "sharpe_ratio": 1.25,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 20.1
+    "spread_vs_inflation": 25.5
   }
 }

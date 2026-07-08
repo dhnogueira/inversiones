@@ -4,7 +4,7 @@
     "ticker": "VALE.BA",
     "name": "VALE",
     "category": "cedears",
-    "price": 11170.0,
+    "price": 11160.0,
     "currency": "ARS",
     "score": 100.0,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 36.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "36.2",
+        "content": "El RSI de 14 períodos se encuentra en 36.0, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "36.0",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (11170.00) se mantiene por encima de la EMA de 200 días (10751.94), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (11807.94) aún no confirma un cruce definitivo.",
+        "content": "El precio (11160.00) se mantiene por encima de la EMA de 200 días (10751.84), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (11807.55) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-0.8%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-0.8% (1M)",
+        "content": "El rendimiento mensual es de **-0.9%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-0.9% (1M)",
         "status": "neutral"
       },
       {
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+3.2%** y a 12 meses es **+75.9%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+3.2% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+3.1%** y a 12 meses es **+75.8%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+3.1% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **167.6%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+120.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 167.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **167.1%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+120.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 167.1%",
         "status": "success"
       }
     ],
@@ -190,16 +190,16 @@
       "color": "success",
       "summary": "Este activo obtiene un score de **100.0/100** para el perfil **conservador**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 1.98) es óptima para el perfil **conservador**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (36.3%).",
-      "take_profit": 17002.11,
-      "stop_loss": 8577.95,
+      "take_profit": 16987.56,
+      "stop_loss": 8569.97,
       "tp_pct": 52.2,
       "sl_pct": 23.2
     },
     "support": 11078.0,
     "resistance": 12706.0,
     "volume_cluster": 12104.5,
-    "take_profit": 17002.11,
-    "stop_loss": 8577.95,
+    "take_profit": 16987.56,
+    "stop_loss": 8569.97,
     "tp_pct": 52.2,
     "sl_pct": 23.2,
     "long_term_strategies": {
@@ -274,23 +274,23 @@
         {
           "title": "Dividend Yield (Rendimiento por Dividendo)",
           "icon": "fa-coins",
-          "content": "Este activo **no paga dividendos** actualmente. No encaja en el perfil de Dividend Growth Investing clásico. Para inversores de renta pasiva, este activo debería complementarse con otros de la cartera que sí generen flujo de dividendos.",
-          "value": "Sin dividendo",
-          "status": "neutral"
+          "content": "El **dividend yield del 706.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
+          "value": "706.00%",
+          "status": "warning"
         },
         {
           "title": "Payout Ratio (Sostenibilidad del Dividendo)",
           "icon": "fa-sliders",
-          "content": "No hay datos de payout ratio disponibles para este activo.",
-          "value": "N/D",
-          "status": "neutral"
+          "content": "El **payout ratio del 30%** es saludable. La empresa distribuye menos del 60% de sus ganancias, reteniendo capital suficiente para continuar creciendo y **aumentar el dividendo en el futuro**. Este es el indicador más importante del Dividend Growth Investing: la capacidad de subir el dividendo año a año.",
+          "value": "30%",
+          "status": "success"
         },
         {
           "title": "Dividendo Creciente (Dividend Growth)",
           "icon": "fa-arrow-trend-up",
-          "content": "Este activo no paga dividendos, por lo que no aplica el análisis de crecimiento de dividendos.",
-          "value": "N/A",
-          "status": "neutral"
+          "content": "✅ Los datos históricos sugieren que esta empresa **ha mantenido o aumentado sus dividendos** en los últimos años, siguiendo el patrón de los Dividend Aristocrats y Dividend Kings. Empresas como J&J, PG y Coca-Cola llevan más de 25 años incrementando el dividendo ininterrumpidamente.",
+          "value": "Sí ✅",
+          "status": "success"
         },
         {
           "title": "Solidez Fundamental (Pilar del DGI)",
