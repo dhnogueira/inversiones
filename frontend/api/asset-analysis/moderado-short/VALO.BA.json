@@ -4,23 +4,23 @@
     "ticker": "VALO.BA",
     "name": "VALO",
     "category": "merval",
-    "price": 653.0,
+    "price": 652.5,
     "currency": "ARS",
-    "score": 67.6,
+    "score": 67.8,
     "profile": "moderado",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 55.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "55.1",
+        "content": "El RSI de 14 períodos está en 54.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.7",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (644.05) se encuentra por encima de la EMA de 200 días (559.36), y el precio actual (653.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (644.03) se encuentra por encima de la EMA de 200 días (559.35), y el precio actual (652.50) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+5.3%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-6.7%) refuerzan esta tendencia positiva.",
-        "value": "+5.3% (1M)",
+        "content": "El activo registró un rendimiento del **+5.2%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-6.8%) refuerzan esta tendencia positiva.",
+        "value": "+5.2% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+19.5%** y a 12 meses es **+93.9%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+19.5% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+19.4%** y a 12 meses es **+93.8%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+19.4% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **19.5%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+8.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 19.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **19.4%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+8.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 19.4%",
         "status": "success"
       }
     ],
@@ -176,18 +176,18 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **67.6/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "summary": "Con un score de **67.8/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (2.31) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
-      "take_profit": 835.69,
-      "stop_loss": 561.65,
+      "take_profit": 835.06,
+      "stop_loss": 561.22,
       "tp_pct": 28.0,
       "sl_pct": 14.0
     },
     "support": 581.32,
     "resistance": 686.22,
     "volume_cluster": 623.75,
-    "take_profit": 835.69,
-    "stop_loss": 561.65,
+    "take_profit": 835.06,
+    "stop_loss": 561.22,
     "tp_pct": 28.0,
     "sl_pct": 14.0
   }

@@ -7,46 +7,55 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3028,
-        "weight_pct": 30.3,
-        "ars_return_est": 164.8
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 164.5
       },
       {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3028,
-        "weight_pct": 30.3,
-        "ars_return_est": 111.8
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 110.5
       },
       {
         "ticker": "AAPL",
         "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2869,
-        "weight_pct": 28.7,
-        "ars_return_est": 96.9
+        "weight": 0.2813,
+        "weight_pct": 28.1,
+        "ars_return_est": 96.6
       },
       {
         "ticker": "ABBV",
         "name": "ABBV",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1075,
-        "weight_pct": 10.7,
-        "ars_return_est": 85.7
+        "weight": 0.0984,
+        "weight_pct": 9.8,
+        "ars_return_est": 85.4
+      },
+      {
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0203,
+        "weight_pct": 2.0,
+        "ars_return_est": 75.1
       }
     ],
-    "expected_return": 120.79,
-    "expected_volatility": 25.59,
-    "sharpe_ratio": 3.86,
+    "expected_return": 119.6,
+    "expected_volatility": 25.5,
+    "sharpe_ratio": 3.83,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 98.8
+    "spread_vs_inflation": 97.6
   }
 }

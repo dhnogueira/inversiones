@@ -12,22 +12,13 @@
         "ars_return_est": 500.0
       },
       {
-        "ticker": "AAPL.BA",
+        "ticker": "AAPL",
         "name": "AAPL",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.204,
-        "weight_pct": 20.4,
-        "ars_return_est": 288.3
-      },
-      {
-        "ticker": "VALO.BA",
-        "name": "VALO",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.1205,
-        "weight_pct": 12.1,
-        "ars_return_est": 300.0
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 390.4
       },
       {
         "ticker": "AVGO",
@@ -36,15 +27,15 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 358.3
+        "ars_return_est": 359.3
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.0755,
-        "weight_pct": 7.6,
+        "weight": 0.05,
+        "weight_pct": 5.0,
         "ars_return_est": 300.0
       },
       {
@@ -54,26 +45,26 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 253.4
+        "ars_return_est": 246.7
       },
       {
-        "ticker": "XOM.BA",
-        "name": "XOM",
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 191.6
+        "ars_return_est": 286.9
       }
     ],
-    "expected_return": 375.69,
-    "expected_volatility": 27.64,
-    "sharpe_ratio": 11.89,
+    "expected_return": 414.26,
+    "expected_volatility": 27.92,
+    "sharpe_ratio": 13.15,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 328.7
+    "spread_vs_inflation": 367.3
   }
 }

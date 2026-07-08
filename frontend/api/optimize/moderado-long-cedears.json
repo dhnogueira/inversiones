@@ -18,16 +18,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 240.2
-      },
-      {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 159.7
+        "ars_return_est": 239.1
       },
       {
         "ticker": "VALE.BA",
@@ -36,7 +27,16 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 211.1
+        "ars_return_est": 205.6
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 160.9
       },
       {
         "ticker": "KO.BA",
@@ -45,7 +45,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 125.2
+        "ars_return_est": 125.5
       },
       {
         "ticker": "AMZN.BA",
@@ -54,7 +54,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 95.1
+        "ars_return_est": 92.6
       },
       {
         "ticker": "NVDA.BA",
@@ -63,7 +63,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 147.4
+        "ars_return_est": 147.0
       },
       {
         "ticker": "TSLA.BA",
@@ -72,17 +72,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 158.0
+        "ars_return_est": 154.8
       }
     ],
-    "expected_return": 216.41,
+    "expected_return": 215.51,
     "expected_volatility": 31.8,
-    "sharpe_ratio": 5.33,
+    "sharpe_ratio": 5.3,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 169.4
+    "spread_vs_inflation": 168.5
   }
 }

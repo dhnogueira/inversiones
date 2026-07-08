@@ -9,7 +9,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 23.4
+        "ars_return_est": 23.3
       },
       {
         "ticker": "YPFD.BA",
@@ -18,7 +18,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 60.4
+        "ars_return_est": 63.5
       },
       {
         "ticker": "TECO2.BA",
@@ -27,16 +27,7 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 21.3
-      },
-      {
-        "ticker": "BMA.BA",
-        "name": "BMA",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 8.5
+        "ars_return_est": 22.5
       },
       {
         "ticker": "TGSU2.BA",
@@ -45,17 +36,26 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 7.2
+        "ars_return_est": 8.1
+      },
+      {
+        "ticker": "BMA.BA",
+        "name": "BMA",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 7.7
       }
     ],
-    "expected_return": 34.35,
-    "expected_volatility": 41.06,
-    "sharpe_ratio": 0.57,
+    "expected_return": 35.66,
+    "expected_volatility": 41.09,
+    "sharpe_ratio": 0.6,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 23.3
+    "spread_vs_inflation": 24.7
   }
 }

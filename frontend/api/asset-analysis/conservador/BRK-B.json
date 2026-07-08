@@ -4,23 +4,23 @@
     "ticker": "BRK-B",
     "name": "BRK-B",
     "category": "sp500",
-    "price": 501.0,
+    "price": 500.3999938964844,
     "currency": "USD",
-    "score": 52.6,
+    "score": 52.9,
     "profile": "conservador",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 58.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "58.5",
+        "content": "El RSI de 14 períodos está en 57.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "57.8",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (488.81) se encuentra por encima de la EMA de 200 días (487.42), y el precio actual (501.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (488.79) se encuentra por encima de la EMA de 200 días (487.42), y el precio actual (500.40) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (4.4%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.9% (1M)",
+        "content": "El rendimiento mensual es de **+2.8%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (4.3%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.8% (1M)",
         "status": "success"
       },
       {
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+0.4%** y a 12 meses es **+4.9%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+0.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+0.3%** y a 12 meses es **+4.8%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+0.3% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **47.6%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+25.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 47.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **47.5%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+25.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 47.5%",
         "status": "success"
       }
     ],
@@ -168,18 +168,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **52.6/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "summary": "El score de **52.9/100** indica que este activo no es ideal para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **conservador**. Esto puede deberse a una volatilidad excesiva (17.4%), un ratio de Sharpe ineficiente (0.05), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 570.82,
-      "stop_loss": 466.09,
+      "take_profit": 570.15,
+      "stop_loss": 465.52,
       "tp_pct": 13.9,
       "sl_pct": 7.0
     },
     "support": 471.41,
     "resistance": 498.69,
     "volume_cluster": 480.23,
-    "take_profit": 570.82,
-    "stop_loss": 466.09,
+    "take_profit": 570.15,
+    "stop_loss": 465.52,
     "tp_pct": 13.9,
     "sl_pct": 7.0,
     "medium_term_strategies": {
@@ -201,8 +201,8 @@
         {
           "title": "Precio Objetivo y Upside Potencial",
           "icon": "fa-bullseye",
-          "content": "El precio objetivo de analistas está apenas un **+3.9%** por encima del precio actual. El potencial de upside es limitado desde el consenso profesional actual.",
-          "value": "+3.9% upside",
+          "content": "El precio objetivo de analistas está apenas un **+4.0%** por encima del precio actual. El potencial de upside es limitado desde el consenso profesional actual.",
+          "value": "+4.0% upside",
           "status": "warning"
         },
         {
@@ -231,8 +231,8 @@
         {
           "title": "S — Oferta y Demanda (Volatilidad/Volumen)",
           "icon": "fa-s",
-          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.82x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
-          "value": "0.82x",
+          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.83x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
+          "value": "0.83x",
           "status": "success"
         },
         {
@@ -261,7 +261,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es moderada** (score: 3/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=58, 3M=+4.4%.",
+          "content": "La **fuerza relativa es moderada** (score: 3/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=58, 3M=+4.3%.",
           "value": "Score 3/6",
           "status": "neutral"
         },

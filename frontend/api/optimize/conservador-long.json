@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 360.8
+        "ars_return_est": 354.7
       },
       {
         "ticker": "GOOGL.BA",
@@ -30,22 +30,22 @@
         "ars_return_est": 200.0
       },
       {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 127.8
-      },
-      {
         "ticker": "VALE.BA",
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 168.9
+        "ars_return_est": 164.5
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 128.7
       },
       {
         "ticker": "KO.BA",
@@ -54,7 +54,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 100.1
+        "ars_return_est": 100.4
       },
       {
         "ticker": "AAPL.BA",
@@ -63,7 +63,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 192.2
+        "ars_return_est": 191.3
       },
       {
         "ticker": "XOM",
@@ -72,7 +72,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 208.4
+        "ars_return_est": 209.4
       },
       {
         "ticker": "AAPL",
@@ -81,7 +81,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 295.3
+        "ars_return_est": 294.2
       },
       {
         "ticker": "ABBV",
@@ -90,17 +90,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 249.7
+        "ars_return_est": 248.3
       }
     ],
-    "expected_return": 356.25,
-    "expected_volatility": 24.86,
-    "sharpe_ratio": 12.44,
+    "expected_return": 355.04,
+    "expected_volatility": 24.87,
+    "sharpe_ratio": 12.39,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 309.2
+    "spread_vs_inflation": 308.0
   }
 }

@@ -3,104 +3,104 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "VALO.BA",
-        "name": "VALO",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.1476,
-        "weight_pct": 14.8,
-        "ars_return_est": 75.2
-      },
-      {
         "ticker": "YPFD.BA",
         "name": "YPFD",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1447,
+        "weight": 0.1479,
+        "weight_pct": 14.8,
+        "ars_return_est": 76.4
+      },
+      {
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.1453,
         "weight_pct": 14.5,
-        "ars_return_est": 73.7
+        "ars_return_est": 75.0
       },
       {
         "ticker": "TECO2.BA",
         "name": "TECO2",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1363,
-        "weight_pct": 13.6,
-        "ars_return_est": 69.4
+        "weight": 0.1368,
+        "weight_pct": 13.7,
+        "ars_return_est": 70.7
       },
       {
         "ticker": "BMA.BA",
         "name": "BMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1286,
-        "weight_pct": 12.9,
-        "ars_return_est": 65.5
+        "weight": 0.1251,
+        "weight_pct": 12.5,
+        "ars_return_est": 64.6
       },
       {
         "ticker": "BYMA.BA",
         "name": "BYMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.097,
-        "weight_pct": 9.7,
-        "ars_return_est": 49.4
+        "weight": 0.0981,
+        "weight_pct": 9.8,
+        "ars_return_est": 50.7
       },
       {
         "ticker": "CEPU.BA",
         "name": "CEPU",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0955,
-        "weight_pct": 9.5,
-        "ars_return_est": 48.6
+        "weight": 0.0959,
+        "weight_pct": 9.6,
+        "ars_return_est": 49.6
       },
       {
         "ticker": "PAMP.BA",
         "name": "PAMP",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0718,
-        "weight_pct": 7.2,
-        "ars_return_est": 36.6
+        "weight": 0.0727,
+        "weight_pct": 7.3,
+        "ars_return_est": 37.6
       },
       {
         "ticker": "TGSU2.BA",
         "name": "TGSU2",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0644,
-        "weight_pct": 6.4,
-        "ars_return_est": 32.8
+        "weight": 0.065,
+        "weight_pct": 6.5,
+        "ars_return_est": 33.6
       },
       {
         "ticker": "ALUA.BA",
         "name": "ALUA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0593,
+        "weight": 0.0589,
         "weight_pct": 5.9,
-        "ars_return_est": 30.2
+        "ars_return_est": 30.4
       },
       {
         "ticker": "GGAL.BA",
         "name": "GGAL",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0548,
-        "weight_pct": 5.5,
-        "ars_return_est": 27.9
+        "weight": 0.0543,
+        "weight_pct": 5.4,
+        "ars_return_est": 28.0
       }
     ],
-    "expected_return": 57.13,
-    "expected_volatility": 42.88,
-    "sharpe_ratio": 0.82,
+    "expected_return": 57.9,
+    "expected_volatility": 42.86,
+    "sharpe_ratio": 0.84,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 35.1
+    "spread_vs_inflation": 35.9
   }
 }
