@@ -3,22 +3,13 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "COST",
-        "name": "COST",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0,
-        "ars_return_est": 33.3
-      },
-      {
         "ticker": "PG",
         "name": "PG",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 33.5
+        "ars_return_est": 32.8
       },
       {
         "ticker": "MRK",
@@ -27,7 +18,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 47.3
+        "ars_return_est": 46.5
       },
       {
         "ticker": "XOM",
@@ -36,17 +27,35 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 49.0
+        "ars_return_est": 48.0
+      },
+      {
+        "ticker": "COST",
+        "name": "COST",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.219,
+        "weight_pct": 21.9,
+        "ars_return_est": 32.8
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.031,
+        "weight_pct": 3.1,
+        "ars_return_est": 42.9
       }
     ],
-    "expected_return": 40.76,
-    "expected_volatility": 20.41,
-    "sharpe_ratio": 1.46,
+    "expected_return": 40.33,
+    "expected_volatility": 20.63,
+    "sharpe_ratio": 1.42,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 29.8
+    "spread_vs_inflation": 29.3
   }
 }

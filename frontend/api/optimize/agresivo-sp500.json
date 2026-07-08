@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 224.8
+        "ars_return_est": 225.8
       },
       {
         "ticker": "MRK",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 145.8
+        "ars_return_est": 144.6
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 124.7
+        "ars_return_est": 125.1
       },
       {
         "ticker": "LLY",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 142.8
+        "ars_return_est": 143.5
       },
       {
         "ticker": "AVGO",
@@ -45,7 +45,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 115.4
+        "ars_return_est": 119.7
       },
       {
         "ticker": "UNH",
@@ -54,16 +54,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 114.9
-      },
-      {
-        "ticker": "XOM",
-        "name": "XOM",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 90.9
+        "ars_return_est": 115.0
       },
       {
         "ticker": "ABBV",
@@ -72,7 +63,16 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 107.4
+        "ars_return_est": 107.1
+      },
+      {
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 89.7
       },
       {
         "ticker": "NVDA",
@@ -81,7 +81,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 82.2
+        "ars_return_est": 83.9
       },
       {
         "ticker": "JPM",
@@ -90,17 +90,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 75.9
+        "ars_return_est": 76.3
       }
     ],
-    "expected_return": 157.85,
+    "expected_return": 158.2,
     "expected_volatility": 28.07,
-    "sharpe_ratio": 4.84,
+    "sharpe_ratio": 4.85,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 135.9
+    "spread_vs_inflation": 136.2
   }
 }

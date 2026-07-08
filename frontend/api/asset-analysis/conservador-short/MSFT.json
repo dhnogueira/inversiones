@@ -4,7 +4,7 @@
     "ticker": "MSFT",
     "name": "MSFT",
     "category": "sp500",
-    "price": 382.7099914550781,
+    "price": 382.3599853515625,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 46.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "46.3",
+        "content": "El RSI de 14 períodos se encuentra en 46.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "46.1",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (396.95) se encuentra por debajo de la EMA de 200 días (425.59), y el precio (382.71) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (396.94) se encuentra por debajo de la EMA de 200 días (425.59), y el precio (382.36) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-19.7%** y a 12 meses es **-22.3%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "content": "El rendimiento acumulado a 6 meses es **-19.7%** y a 12 meses es **-22.4%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
         "value": "-19.7% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **2.0%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-9.0%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 2.0%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **1.9%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-9.1%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 1.9%",
         "status": "danger"
       }
     ],
@@ -177,16 +177,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **conservador**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 431.08,
-      "stop_loss": 358.53,
+      "take_profit": 430.69,
+      "stop_loss": 358.19,
       "tp_pct": 12.6,
       "sl_pct": 6.3
     },
     "support": 370.0,
     "resistance": 423.72,
     "volume_cluster": 368.98,
-    "take_profit": 431.08,
-    "stop_loss": 358.53,
+    "take_profit": 430.69,
+    "stop_loss": 358.19,
     "tp_pct": 12.6,
     "sl_pct": 6.3
   }

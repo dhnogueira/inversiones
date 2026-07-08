@@ -4,23 +4,23 @@
     "ticker": "ABBV",
     "name": "ABBV",
     "category": "sp500",
-    "price": 254.27999877929688,
+    "price": 253.9600067138672,
     "currency": "USD",
-    "score": 74.9,
+    "score": 74.8,
     "profile": "agresivo",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 68.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "68.3",
+        "content": "El RSI de 14 períodos se encuentra en 67.9, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "67.9",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (228.44) se encuentra por encima de la EMA de 200 días (216.17), y el precio actual (254.28) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (228.43) se encuentra por encima de la EMA de 200 días (216.17), y el precio actual (253.96) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+14.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (21.2%) refuerzan esta tendencia positiva.",
-        "value": "+14.0% (1M)",
+        "content": "El activo registró un rendimiento del **+13.8%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (21.0%) refuerzan esta tendencia positiva.",
+        "value": "+13.8% (1M)",
         "status": "success"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **2.6%** respecto a su máximo anual de **USD 261.07**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-2.6%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **2.7%** respecto a su máximo anual de **USD 261.07**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-2.7%",
         "status": "neutral"
       },
       {
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+15.4%** y a 12 meses es **+38.4%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+15.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+15.3%** y a 12 meses es **+38.2%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+15.3% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **322.9%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+275.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 322.9%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **321.7%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+274.7%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 321.7%",
         "status": "success"
       }
     ],
@@ -183,18 +183,18 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **74.9/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "summary": "Con un score de **74.8/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (1.27) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
-      "take_profit": 476.45,
-      "stop_loss": 155.54,
+      "take_profit": 475.86,
+      "stop_loss": 155.34,
       "tp_pct": 87.4,
       "sl_pct": 38.8
     },
     "support": 203.37,
     "resistance": 235.71,
     "volume_cluster": 206.93,
-    "take_profit": 476.45,
-    "stop_loss": 155.54,
+    "take_profit": 475.86,
+    "stop_loss": 155.34,
     "tp_pct": 87.4,
     "sl_pct": 38.8,
     "long_term_strategies": {
@@ -202,15 +202,15 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 124.7x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
-          "value": "124.7x",
+          "content": "El **PER de 124.4x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "124.4x",
           "status": "warning"
         },
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de -67.51x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado.",
-          "value": "-67.51x",
+          "content": "El **P/B de -67.39x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado.",
+          "value": "-67.39x",
           "status": "success"
         },
         {
@@ -246,8 +246,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum de 3 meses (+21.2%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
-          "value": "+21.2% (3M)",
+          "content": "El **momentum de 3 meses (+21.0%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
+          "value": "+21.0% (3M)",
           "status": "success"
         },
         {
@@ -260,8 +260,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 124.7x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
-          "value": "124.7x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 124.4x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "124.4x",
           "status": "neutral"
         }
       ],
