@@ -4,7 +4,7 @@
     "ticker": "AVAX-USD",
     "name": "AVAX-USD",
     "category": "crypto",
-    "price": 6.690000057220459,
+    "price": 6.650000095367432,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 46.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "46.1",
+        "content": "El RSI de 14 períodos se encuentra en 45.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "45.3",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (7.29) se encuentra por debajo de la EMA de 200 días (10.28), y el precio (6.69) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (7.29) se encuentra por debajo de la EMA de 200 días (10.28), y el precio (6.65) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-0.9%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-0.9% (1M)",
+        "content": "El rendimiento mensual es de **-1.5%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.5% (1M)",
         "status": "neutral"
       },
       {
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-29.6%** y a 12 meses es **-66.0%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-29.6% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-30.0%** y a 12 meses es **-66.2%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-30.0% (6M)",
         "status": "danger"
       },
       {
@@ -83,16 +83,16 @@
       "icon": "fa-circle-xmark",
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "take_profit": 13.92,
-      "stop_loss": 3.08,
+      "take_profit": 13.83,
+      "stop_loss": 3.06,
       "tp_pct": 108.0,
       "sl_pct": 54.0
     },
     "support": 6.44,
     "resistance": 9.67,
     "volume_cluster": 9.15,
-    "take_profit": 13.92,
-    "stop_loss": 3.08,
+    "take_profit": 13.83,
+    "stop_loss": 3.06,
     "tp_pct": 108.0,
     "sl_pct": 54.0,
     "medium_term_strategies": {
@@ -151,8 +151,8 @@
         {
           "title": "L — Liderazgo de Mercado (Leader)",
           "icon": "fa-l",
-          "content": "**L (Leader):** RSI de 46 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
-          "value": "RSI 46",
+          "content": "**L (Leader):** RSI de 45 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
+          "value": "RSI 45",
           "status": "neutral"
         },
         {
@@ -165,8 +165,8 @@
         {
           "title": "M — Dirección del Mercado (Market)",
           "icon": "fa-m",
-          "content": "**M (Market Direction):** El cruce EMA señala una tendencia de mercado **bajista** (-29.0%). O'Neil prohíbe rotundamente comprar en mercados bajistas: 'Si el mercado baja, la mejor cartera no sirve'.",
-          "value": "-29.0%",
+          "content": "**M (Market Direction):** El cruce EMA señala una tendencia de mercado **bajista** (-29.1%). O'Neil prohíbe rotundamente comprar en mercados bajistas: 'Si el mercado baja, la mejor cartera no sirve'.",
+          "value": "-29.1%",
           "status": "warning"
         }
       ],
@@ -174,22 +174,22 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es débil** (score: 0/6). El activo no evidencia momentum sostenido. RSI=46, 3M=-30.4%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "content": "La **fuerza relativa es débil** (score: 0/6). El activo no evidencia momentum sostenido. RSI=45, 3M=-30.8%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
           "value": "Score 0/6",
           "status": "warning"
         },
         {
           "title": "Tendencia vs. Media de Largo Plazo",
           "icon": "fa-chart-line",
-          "content": "El activo está por debajo de su media de largo plazo (cruce EMA: -29.0%), indicando rezago relativo. La selección por fuerza relativa excluiría esta posición en favor de activos más fuertes del mismo sector.",
-          "value": "-29.0%",
+          "content": "El activo está por debajo de su media de largo plazo (cruce EMA: -29.1%), indicando rezago relativo. La selección por fuerza relativa excluiría esta posición en favor de activos más fuertes del mismo sector.",
+          "value": "-29.1%",
           "status": "warning"
         },
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El **momentum se está acelerando** (+29.5%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
-          "value": "+29.5%",
+          "content": "El **momentum se está acelerando** (+29.3%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
+          "value": "+29.3%",
           "status": "success"
         },
         {
