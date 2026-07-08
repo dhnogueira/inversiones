@@ -7,55 +7,55 @@
         "name": "BTC-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.3062,
+        "weight": 0.3064,
         "weight_pct": 30.6,
-        "ars_return_est": 6.4
-      },
-      {
-        "ticker": "BNB-USD",
-        "name": "BNB-USD",
-        "category": "crypto",
-        "currency": "USD",
-        "weight": 0.2751,
-        "weight_pct": 27.5,
-        "ars_return_est": 5.8
+        "ars_return_est": 6.2
       },
       {
         "ticker": "SOL-USD",
         "name": "SOL-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.2722,
-        "weight_pct": 27.2,
-        "ars_return_est": 5.7
+        "weight": 0.2754,
+        "weight_pct": 27.5,
+        "ars_return_est": 5.6
+      },
+      {
+        "ticker": "BNB-USD",
+        "name": "BNB-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.2749,
+        "weight_pct": 27.5,
+        "ars_return_est": 5.6
       },
       {
         "ticker": "ETH-USD",
         "name": "ETH-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.0988,
-        "weight_pct": 9.9,
-        "ars_return_est": 2.1
+        "weight": 0.094,
+        "weight_pct": 9.4,
+        "ars_return_est": 1.9
       },
       {
         "ticker": "LINK-USD",
         "name": "LINK-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.0477,
-        "weight_pct": 4.8,
-        "ars_return_est": 0.4
+        "weight": 0.0493,
+        "weight_pct": 4.9,
+        "ars_return_est": 0.3
       }
     ],
-    "expected_return": 5.33,
-    "expected_volatility": 44.6,
+    "expected_return": 5.16,
+    "expected_volatility": 44.66,
     "sharpe_ratio": -0.13,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -5.7
+    "spread_vs_inflation": -5.8
   }
 }
