@@ -2989,9 +2989,9 @@ function renderModalContent(analysis) {
 
     const body = document.getElementById('modal-body');
 
-    // Inyectar Grid de Límites (TP/SL) y Niveles Clave (Soporte/Resistencia/POC)
+    // Build entire body HTML as a single string to avoid scroll-reset from innerHTML += 
     const currencySymbol = analysis.currency === 'ARS' ? '$' : 'u$s';
-    body.innerHTML = `
+    let bodyHtml = `
         <div class="modal-stats-grid">
             <div class="modal-stat-card">
                 <div class="modal-stat-title"><i class="fa-solid fa-crosshairs"></i> Límites Sugeridos</div>
@@ -3023,34 +3023,43 @@ function renderModalContent(analysis) {
     `;
 
     if (analysis.technical && analysis.technical.length > 0) {
-        body.innerHTML += `<div class="analysis-section-title"><i class="fa-solid fa-chart-line"></i> Análisis Técnico</div>`;
-        analysis.technical.forEach(section => { body.innerHTML += renderAnalysisCard(section); });
+        bodyHtml += `<div class="analysis-section-title"><i class="fa-solid fa-chart-line"></i> Análisis Técnico</div>`;
+        analysis.technical.forEach(section => { bodyHtml += renderAnalysisCard(section); });
     }
 
     if (analysis.fundamental && analysis.fundamental.length > 0) {
-        body.innerHTML += `<div class="analysis-section-title"><i class="fa-solid fa-scale-balanced"></i> Análisis Fundamental</div>`;
-        analysis.fundamental.forEach(section => { body.innerHTML += renderAnalysisCard(section); });
+        bodyHtml += `<div class="analysis-section-title"><i class="fa-solid fa-scale-balanced"></i> Análisis Fundamental</div>`;
+        analysis.fundamental.forEach(section => { bodyHtml += renderAnalysisCard(section); });
     }
 
     if (analysis.macro && analysis.macro.length > 0) {
-        body.innerHTML += `<div class="analysis-section-title"><i class="fa-solid fa-globe"></i> Contexto Macroeconómico</div>`;
-        analysis.macro.forEach(section => { body.innerHTML += renderAnalysisCard(section); });
+        bodyHtml += `<div class="analysis-section-title"><i class="fa-solid fa-globe"></i> Contexto Macroeconómico</div>`;
+        analysis.macro.forEach(section => { bodyHtml += renderAnalysisCard(section); });
     }
 
-    // Balance section — wrapped in try/catch to prevent silent failures
+    // Balance section — built as part of the same string to avoid scroll issues
     if (analysis.balances) {
         try {
             const balanceHtml = renderBalanceSection(analysis.balances);
             if (balanceHtml) {
-                body.innerHTML += balanceHtml;
+                bodyHtml += balanceHtml;
             }
+            console.debug('[renderModalContent] Balance section included, snapshots:', analysis.balances.snapshots?.length || 0);
         } catch (e) {
             console.error('[renderModalContent] Error rendering balance section:', e);
-            body.innerHTML += `<div class="analysis-section-title"><i class="fa-solid fa-file-invoice-dollar"></i> Análisis de Balances</div>
+            bodyHtml += `<div class="analysis-section-title"><i class="fa-solid fa-file-invoice-dollar"></i> Análisis de Balances</div>
             <div class="analysis-card"><div class="analysis-card-content" style="color: var(--text-muted); text-align: center; padding: 16px;"><i class="fa-solid fa-triangle-exclamation"></i> No se pudo renderizar el análisis de balances.</div></div>`;
         }
+    } else {
+        console.debug('[renderModalContent] No analysis.balances in data for', analysis.ticker);
     }
+
+    // Single assignment — no scroll resets, no DOM thrashing
+    body.innerHTML = bodyHtml;
+    // Reset scroll to top after render
+    body.scrollTop = 0;
 }
+
 
 function renderBalanceSection(balances) {
     if (!balances || !balances.snapshots || balances.snapshots.length === 0) return '';
