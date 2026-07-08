@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 32.7
+        "ars_return_est": 32.8
       },
       {
         "ticker": "MRK",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 45.7
+        "ars_return_est": 46.0
       },
       {
         "ticker": "XOM",
@@ -27,16 +27,25 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 46.3
+        "ars_return_est": 45.9
       },
       {
         "ticker": "COST",
         "name": "COST",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1618,
-        "weight_pct": 16.2,
-        "ars_return_est": 32.4
+        "weight": 0.1439,
+        "weight_pct": 14.4,
+        "ars_return_est": 32.0
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "GOOGL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0561,
+        "weight_pct": 5.6,
+        "ars_return_est": 42.9
       },
       {
         "ticker": "VALO.BA",
@@ -45,26 +54,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 23.9
-      },
-      {
-        "ticker": "GOOGL",
-        "name": "GOOGL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.0382,
-        "weight_pct": 3.8,
-        "ars_return_est": 42.8
+        "ars_return_est": 24.0
       }
     ],
-    "expected_return": 39.27,
-    "expected_volatility": 20.86,
-    "sharpe_ratio": 1.36,
+    "expected_return": 39.39,
+    "expected_volatility": 21.0,
+    "sharpe_ratio": 1.35,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 28.3
+    "spread_vs_inflation": 28.4
   }
 }

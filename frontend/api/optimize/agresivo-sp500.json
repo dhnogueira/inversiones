@@ -9,7 +9,7 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 225.5
+        "ars_return_est": 225.6
       },
       {
         "ticker": "MRK",
@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 143.3
+        "ars_return_est": 143.7
       },
       {
         "ticker": "AAPL",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 127.0
+        "ars_return_est": 127.1
       },
       {
         "ticker": "LLY",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 142.1
+        "ars_return_est": 141.5
       },
       {
         "ticker": "AVGO",
@@ -45,7 +45,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 120.5
+        "ars_return_est": 119.5
       },
       {
         "ticker": "UNH",
@@ -57,22 +57,22 @@
         "ars_return_est": 115.3
       },
       {
-        "ticker": "ABBV",
-        "name": "ABBV",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 106.4
-      },
-      {
         "ticker": "NVDA",
         "name": "NVDA",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 85.3
+        "ars_return_est": 87.6
+      },
+      {
+        "ticker": "ABBV",
+        "name": "ABBV",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 106.2
       },
       {
         "ticker": "XOM",
@@ -81,7 +81,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 87.6
+        "ars_return_est": 87.1
       },
       {
         "ticker": "JPM",
@@ -90,10 +90,10 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 76.6
+        "ars_return_est": 76.2
       }
     ],
-    "expected_return": 157.78,
+    "expected_return": 157.93,
     "expected_volatility": 28.08,
     "sharpe_ratio": 4.84,
     "profile": "agresivo",
@@ -101,6 +101,6 @@
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 135.8
+    "spread_vs_inflation": 135.9
   }
 }

@@ -3,59 +3,59 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "UNH",
-        "name": "UNH",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.2834,
-        "weight_pct": 28.3,
-        "ars_return_est": 44.7
-      },
-      {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2375,
-        "weight_pct": 23.8,
-        "ars_return_est": 37.5
+        "weight": 0.2988,
+        "weight_pct": 29.9,
+        "ars_return_est": 37.6
       },
       {
         "ticker": "PG",
         "name": "PG",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1827,
-        "weight_pct": 18.3,
-        "ars_return_est": 28.8
+        "weight": 0.2293,
+        "weight_pct": 22.9,
+        "ars_return_est": 28.9
       },
       {
         "ticker": "COST",
         "name": "COST",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1815,
-        "weight_pct": 18.2,
-        "ars_return_est": 28.6
+        "weight": 0.2251,
+        "weight_pct": 22.5,
+        "ars_return_est": 28.4
       },
       {
         "ticker": "HD",
         "name": "HD",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1148,
-        "weight_pct": 11.5,
-        "ars_return_est": 18.1
+        "weight": 0.1432,
+        "weight_pct": 14.3,
+        "ars_return_est": 18.0
+      },
+      {
+        "ticker": "META",
+        "name": "META",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1036,
+        "weight_pct": 10.4,
+        "ars_return_est": 13.0
       }
     ],
-    "expected_return": 34.11,
-    "expected_volatility": 25.38,
-    "sharpe_ratio": 0.91,
+    "expected_return": 28.19,
+    "expected_volatility": 21.7,
+    "sharpe_ratio": 0.79,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 23.1
+    "spread_vs_inflation": 17.2
   }
 }

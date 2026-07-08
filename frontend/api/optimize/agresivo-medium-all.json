@@ -9,15 +9,15 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 225.5
+        "ars_return_est": 225.6
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.3279,
-        "weight_pct": 32.8,
+        "weight": 0.3259,
+        "weight_pct": 32.6,
         "ars_return_est": 188.4
       },
       {
@@ -25,9 +25,9 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1721,
-        "weight_pct": 17.2,
-        "ars_return_est": 143.3
+        "weight": 0.1741,
+        "weight_pct": 17.4,
+        "ars_return_est": 143.7
       },
       {
         "ticker": "AAPL.BA",
@@ -36,7 +36,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 102.8
+        "ars_return_est": 103.6
       },
       {
         "ticker": "AAPL",
@@ -45,7 +45,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 127.0
+        "ars_return_est": 127.1
       },
       {
         "ticker": "LLY",
@@ -54,17 +54,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 142.1
+        "ars_return_est": 141.5
       }
     ],
-    "expected_return": 183.95,
-    "expected_volatility": 26.43,
+    "expected_return": 184.01,
+    "expected_volatility": 26.41,
     "sharpe_ratio": 6.13,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 161.9
+    "spread_vs_inflation": 162.0
   }
 }

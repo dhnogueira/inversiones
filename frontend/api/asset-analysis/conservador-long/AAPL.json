@@ -4,23 +4,23 @@
     "ticker": "AAPL",
     "name": "AAPL",
     "category": "sp500",
-    "price": 313.4700012207031,
+    "price": 313.69000244140625,
     "currency": "USD",
-    "score": 87.1,
+    "score": 87.2,
     "profile": "conservador",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 62.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "62.3",
+        "content": "El RSI de 14 períodos está en 62.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "62.4",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (292.99) se encuentra por encima de la EMA de 200 días (270.17), y el precio actual (313.47) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (292.99) se encuentra por encima de la EMA de 200 días (270.18), y el precio actual (313.69) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+4.0%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (21.2%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "content": "El rendimiento mensual es de **+4.0%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (21.3%) ofrece una perspectiva más amplia de la dirección reciente.",
         "value": "+4.0% (1M)",
         "status": "success"
       },
@@ -64,15 +64,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+19.7%** y a 12 meses es **+49.9%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+19.7% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+19.8%** y a 12 meses es **+50.0%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+19.8% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **302.6%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+255.6%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 302.6%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **303.1%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+256.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 303.1%",
         "status": "success"
       }
     ],
@@ -180,18 +180,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **87.1/100** para el perfil **conservador**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "summary": "Este activo obtiene un score de **87.2/100** para el perfil **conservador**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 1.62) es óptima para el perfil **conservador**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (28.4%).",
-      "take_profit": 441.64,
-      "stop_loss": 256.51,
+      "take_profit": 441.95,
+      "stop_loss": 256.69,
       "tp_pct": 40.9,
       "sl_pct": 18.2
     },
     "support": 252.57,
     "resistance": 308.96,
     "volume_cluster": 263.6,
-    "take_profit": 441.64,
-    "stop_loss": 256.51,
+    "take_profit": 441.95,
+    "stop_loss": 256.69,
     "tp_pct": 40.9,
     "sl_pct": 18.2,
     "long_term_strategies": {
@@ -199,15 +199,15 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 37.9x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
-          "value": "37.9x",
+          "content": "El **PER de 38.0x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "38.0x",
           "status": "warning"
         },
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 43.18x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
-          "value": "43.18x",
+          "content": "El **P/B de 43.21x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "43.21x",
           "status": "warning"
         },
         {
@@ -243,8 +243,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum de 3 meses (+21.2%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
-          "value": "+21.2% (3M)",
+          "content": "El **momentum de 3 meses (+21.3%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
+          "value": "+21.3% (3M)",
           "status": "success"
         },
         {
@@ -257,8 +257,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 37.9x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
-          "value": "37.9x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 38.0x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "38.0x",
           "status": "neutral"
         }
       ],
