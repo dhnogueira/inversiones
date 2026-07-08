@@ -3,59 +3,68 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "UNH",
-        "name": "UNH",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.3033,
-        "weight_pct": 30.3,
-        "ars_return_est": 47.0
-      },
-      {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2709,
-        "weight_pct": 27.1,
-        "ars_return_est": 42.0
+        "weight": 0.2819,
+        "weight_pct": 28.2,
+        "ars_return_est": 38.7
+      },
+      {
+        "ticker": "PG",
+        "name": "PG",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.2109,
+        "weight_pct": 21.1,
+        "ars_return_est": 29.0
       },
       {
         "ticker": "COST",
         "name": "COST",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1885,
-        "weight_pct": 18.9,
-        "ars_return_est": 29.2
+        "weight": 0.2039,
+        "weight_pct": 20.4,
+        "ars_return_est": 28.0
       },
       {
         "ticker": "HD",
         "name": "HD",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1417,
-        "weight_pct": 14.2,
-        "ars_return_est": 22.0
+        "weight": 0.1276,
+        "weight_pct": 12.8,
+        "ars_return_est": 17.5
       },
       {
         "ticker": "META",
         "name": "META",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.0955,
-        "weight_pct": 9.6,
-        "ars_return_est": 14.8
+        "weight": 0.0907,
+        "weight_pct": 9.1,
+        "ars_return_est": 12.4
+      },
+      {
+        "ticker": "MA",
+        "name": "MA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0849,
+        "weight_pct": 8.5,
+        "ars_return_est": 11.7
       }
     ],
-    "expected_return": 35.68,
-    "expected_volatility": 27.65,
-    "sharpe_ratio": 0.89,
+    "expected_return": 27.08,
+    "expected_volatility": 21.38,
+    "sharpe_ratio": 0.75,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 24.7
+    "spread_vs_inflation": 16.1
   }
 }
