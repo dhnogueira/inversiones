@@ -385,6 +385,9 @@ function setupEventListeners() {
     // ===== TICKER AUTOCOMPLETE =====
     setupTickerAutocomplete();
 
+    // ===== DIAGNOSTIC CONSOLE =====
+    setupDiagnosticConsole();
+
     // ===== EMAIL SUBSCRIBE — Open confirmation modal =====
     const subscribeBtn = document.querySelector('#subscribe-form button[type="submit"]');
     if (subscribeBtn) {
@@ -3100,4 +3103,226 @@ function setupTickerAutocomplete() {
             hideSuggestions();
         }
     });
+}
+
+// ===== DIAGNOSTIC CONSOLE LOGIC =====
+let diagnosticsLogs = [];
+
+function addConsoleLine(message, type = 'info') {
+    const consoleBox = document.getElementById('diagnostic-console-log');
+    if (!consoleBox) return;
+
+    const timestamp = new Date().toLocaleTimeString();
+    const prefix = `[${timestamp}] `;
+
+    const line = document.createElement('div');
+    line.className = `console-line console-${type}`;
+    line.innerText = `${prefix}${message}`;
+
+    consoleBox.appendChild(line);
+    consoleBox.scrollTop = consoleBox.scrollHeight;
+
+    // Guardar para el reporte final exportable
+    diagnosticsLogs.push(`[${type.toUpperCase()}] ${prefix}${message}`);
+}
+
+function updateDiagnosticUI() {
+    const diagAuth = document.getElementById('diag-auth-state');
+    const diagUserId = document.getElementById('diag-user-id');
+    const diagTokenExp = document.getElementById('diag-token-exp');
+    const diagHostMode = document.getElementById('diag-host-mode');
+    const diagApiBase = document.getElementById('diag-api-base');
+    const diagLocalCount = document.getElementById('diag-local-count');
+
+    if (diagAuth) diagAuth.innerText = user ? `Sí (${user.email})` : 'No (Anónimo)';
+    if (diagUserId) diagUserId.innerText = user ? user.id : '--';
+    if (diagTokenExp) {
+        if (session && session.expires_at) {
+            const expDate = new Date(session.expires_at * 1000);
+            diagTokenExp.innerText = expDate.toLocaleTimeString();
+        } else {
+            diagTokenExp.innerText = '--';
+        }
+    }
+    if (diagHostMode) diagHostMode.innerText = state.staticMode ? 'Estático (GitHub/Offline)' : 'Dinámico (API Local)';
+    if (diagApiBase) diagApiBase.innerText = state.apiBase || '--';
+    if (diagLocalCount) {
+        const localPos = getLocalPortfolio();
+        diagLocalCount.innerText = localPos.length;
+    }
+}
+
+async function runSupabaseTest() {
+    addConsoleLine('Iniciando test de conectividad directa a Supabase...', 'info');
+    if (!supabase) {
+        addConsoleLine('Supabase JS library no está cargada / inicializada en window.', 'error');
+        return;
+    }
+    if (!session || !session.access_token) {
+        addConsoleLine('Error: no hay sesión activa de Supabase en el cliente frontend.', 'warn');
+        return;
+    }
+
+    try {
+        const base = CONFIG.SUPABASE_URL.replace(/\/$/, '');
+        const url = `${base}/rest/v1/portfolios?select=*`;
+        addConsoleLine(`Consultando GET ${url} ...`, 'info');
+
+        const res = await fetch(url, {
+            headers: {
+                'apikey': CONFIG.SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${session.access_token}`
+            }
+        });
+
+        addConsoleLine(`Respuesta recibida. HTTP Status: ${res.status} (${res.statusText})`, res.ok ? 'success' : 'error');
+        if (res.ok) {
+            const data = await res.json();
+            addConsoleLine(`Supabase retornó ${data.length} posiciones en portfolios.`, 'success');
+            data.forEach((p, idx) => {
+                addConsoleLine(`  [Activo #${idx + 1}] Ticker: ${p.ticker}, Cantidad: ${p.quantity}, Entrada: ${p.entry_price}`, 'success');
+            });
+        } else {
+            const errorText = await res.text();
+            addConsoleLine(`Error body: ${errorText}`, 'error');
+        }
+    } catch (e) {
+        addConsoleLine(`Excepción durante la consulta a Supabase: ${e.message}`, 'error');
+        console.error(e);
+    }
+}
+
+async function runApiTest() {
+    addConsoleLine('Iniciando test de backend local FastAPI...', 'info');
+    const apiBaseUrl = state.apiBase;
+    addConsoleLine(`Base API URL: ${apiBaseUrl}`, 'info');
+
+    try {
+        addConsoleLine(`Consultando GET ${apiBaseUrl}/api/health ...`, 'info');
+        const res = await fetch(`${apiBaseUrl}/api/health`);
+        addConsoleLine(`Health response Status: ${res.status}`, res.ok ? 'success' : 'error');
+        if (res.ok) {
+            const h = await res.json();
+            addConsoleLine(`Backend Health: status=${h.status}, updating=${h.updating}`, 'success');
+        }
+
+        addConsoleLine(`Consultando GET ${apiBaseUrl}/api/portfolio ...`, 'info');
+        const resP = await fetch(`${apiBaseUrl}/api/portfolio`, {
+            headers: getAuthHeaders()
+        });
+        addConsoleLine(`Portfolio response Status: ${resP.status}`, resP.ok ? 'success' : 'error');
+        const pData = await resP.json();
+        addConsoleLine(`Backend devolvió status=${pData.status}, posiciones=${pData.positions?.length || 0}`, pData.status === 'success' ? 'success' : 'error');
+    } catch (e) {
+        addConsoleLine(`Excepción consultando Backend: ${e.message}`, 'error');
+    }
+}
+
+function runLocalStorageTest() {
+    addConsoleLine('Iniciando inspección de local storage...', 'info');
+    try {
+        const keys = Object.keys(localStorage);
+        addConsoleLine(`Claves en localStorage del navegador: [${keys.join(', ')}]`, 'info');
+
+        const localPosStr = localStorage.getItem('inversiones_portfolio');
+        if (localPosStr) {
+            addConsoleLine(`inversiones_portfolio crudo: ${localPosStr}`, 'success');
+            const parsed = JSON.parse(localPosStr);
+            addConsoleLine(`localStorage inversiones_portfolio contiene ${parsed.length} activos.`, 'success');
+        } else {
+            addConsoleLine('inversiones_portfolio no existe en localStorage.', 'warn');
+        }
+
+        const supKey = Object.keys(localStorage).find(k => k.startsWith('sb-'));
+        if (supKey) {
+            addConsoleLine(`Detectada sesión guardada de Supabase en la clave: ${supKey}`, 'info');
+        } else {
+            addConsoleLine('No se encontró clave sb-* de Supabase en localStorage.', 'warn');
+        }
+    } catch (e) {
+        addConsoleLine(`Error leyendo local storage: ${e.message}`, 'error');
+    }
+}
+
+function setupDiagnosticConsole() {
+    // Interceptar logs
+    const originalLog = console.log;
+    const originalError = console.error;
+    const originalWarn = console.warn;
+
+    console.log = (...args) => {
+        originalLog(...args);
+        addConsoleLine(args.map(x => (typeof x === 'object' ? JSON.stringify(x) : x)).join(' '), 'info');
+    };
+    console.error = (...args) => {
+        originalError(...args);
+        addConsoleLine(args.map(x => (typeof x === 'object' ? JSON.stringify(x) : x)).join(' '), 'error');
+    };
+    console.warn = (...args) => {
+        originalWarn(...args);
+        addConsoleLine(args.map(x => (typeof x === 'object' ? JSON.stringify(x) : x)).join(' '), 'warn');
+    };
+
+    // Interceptar excepciones globales
+    window.addEventListener('error', (e) => {
+        addConsoleLine(`[runtime error] ${e.message} en línea ${e.lineno} en ${e.filename}`, 'error');
+    });
+    window.addEventListener('unhandledrejection', (e) => {
+        addConsoleLine(`[unhandled promise rejection] ${e.reason}`, 'error');
+    });
+
+    // Eventos UI Drawer
+    const btnTrigger = document.getElementById('btn-diagnostic-trigger');
+    const drawer = document.getElementById('diagnostic-drawer');
+    const btnClose = document.getElementById('diagnostic-drawer-close');
+
+    if (btnTrigger && drawer) {
+        btnTrigger.addEventListener('click', () => {
+            drawer.style.display = 'flex';
+            updateDiagnosticUI();
+            addConsoleLine('Diagnostic panel abierto por el usuario.', 'system');
+        });
+    }
+
+    if (btnClose && drawer) {
+        btnClose.addEventListener('click', () => {
+            drawer.style.display = 'none';
+        });
+    }
+
+    // Botones de Tests
+    document.getElementById('btn-diag-test-supabase')?.addEventListener('click', runSupabaseTest);
+    document.getElementById('btn-diag-test-api')?.addEventListener('click', runApiTest);
+    document.getElementById('btn-diag-test-local')?.addEventListener('click', runLocalStorageTest);
+
+    // Sincronización Manual
+    document.getElementById('btn-diag-sync')?.addEventListener('click', async () => {
+        addConsoleLine('Ejecutando forzado manual de sincronización...', 'system');
+        await syncLocalPortfolioToSupabase();
+        updateDiagnosticUI();
+    });
+
+    // Copiar Logs
+    document.getElementById('btn-diag-copy')?.addEventListener('click', () => {
+        const header = `### REPORTE DE DIAGNÓSTICO FINANCIERO\nFecha: ${new Date().toLocaleString()}\n`;
+        const stateStr = `Auth: ${user ? user.email : 'Anónimo'}\nHostMode: ${state.staticMode ? 'Estático' : 'Dinámico'}\nAPI: ${state.apiBase}\n`;
+        const logContent = diagnosticsLogs.join('\n');
+
+        navigator.clipboard.writeText(`${header}\n\`\`\`\n${stateStr}\n${logContent}\n\`\`\``)
+            .then(() => alert('Reporte de diagnóstico copiado al portapapeles. Pegalo en el chat.'))
+            .catch(() => alert('No se pudo copiar de forma automática. Revisa permisos del navegador.'));
+    });
+
+    // Borrar todo y Recargar
+    document.getElementById('btn-diag-clear')?.addEventListener('click', () => {
+        if (confirm('¿Estás seguro de que deseas borrar toda la caché local, cerrar sesión y recargar la aplicación desde cero?')) {
+            addConsoleLine('Borrando localStorage y recargando...', 'warn');
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.reload();
+        }
+    });
+
+    // Primera actualización silenciosa de datos de diagnóstico
+    setTimeout(updateDiagnosticUI, 1000);
 }
