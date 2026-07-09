@@ -4,7 +4,7 @@
     "ticker": "AVAX-USD",
     "name": "AVAX-USD",
     "category": "crypto",
-    "price": 6.730000019073486,
+    "price": 6.699999809265137,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 48.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "48.1",
+        "content": "El RSI de 14 períodos se encuentra en 47.4, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "47.4",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (7.24) se encuentra por debajo de la EMA de 200 días (10.21), y el precio (6.73) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (7.24) se encuentra por debajo de la EMA de 200 días (10.21), y el precio (6.70) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+14.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-32.0%) refuerzan esta tendencia positiva.",
-        "value": "+14.0% (1M)",
+        "content": "El activo registró un rendimiento del **+13.4%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-32.3%) refuerzan esta tendencia positiva.",
+        "value": "+13.4% (1M)",
         "status": "success"
       },
       {
@@ -57,8 +57,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-25.4%** y a 12 meses es **-63.0%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-25.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-25.8%** y a 12 meses es **-63.2%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-25.8% (6M)",
         "status": "danger"
       },
       {
@@ -84,16 +84,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 11.58,
-      "stop_loss": 4.31,
+      "take_profit": 11.52,
+      "stop_loss": 4.29,
       "tp_pct": 72.0,
       "sl_pct": 36.0
     },
     "support": 6.44,
     "resistance": 9.67,
     "volume_cluster": 9.15,
-    "take_profit": 11.58,
-    "stop_loss": 4.31,
+    "take_profit": 11.52,
+    "stop_loss": 4.29,
     "tp_pct": 72.0,
     "sl_pct": 36.0,
     "medium_term_strategies": {
@@ -145,15 +145,15 @@
         {
           "title": "S — Oferta y Demanda (Volatilidad/Volumen)",
           "icon": "fa-s",
-          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.65x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
-          "value": "0.65x",
+          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.64x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
+          "value": "0.64x",
           "status": "success"
         },
         {
           "title": "L — Liderazgo de Mercado (Leader)",
           "icon": "fa-l",
-          "content": "**L (Leader):** RSI de 48 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
-          "value": "RSI 48",
+          "content": "**L (Leader):** RSI de 47 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
+          "value": "RSI 47",
           "status": "neutral"
         },
         {
@@ -175,7 +175,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es débil** (score: 0/6). El activo no evidencia momentum sostenido. RSI=48, 3M=-32.0%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "content": "La **fuerza relativa es débil** (score: 0/6). El activo no evidencia momentum sostenido. RSI=47, 3M=-32.3%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
           "value": "Score 0/6",
           "status": "warning"
         },
@@ -189,8 +189,8 @@
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El **momentum se está acelerando** (+46.0%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
-          "value": "+46.0%",
+          "content": "El **momentum se está acelerando** (+45.8%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
+          "value": "+45.8%",
           "status": "success"
         },
         {
