@@ -3,77 +3,59 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "HD",
-        "name": "HD",
+        "ticker": "UNH",
+        "name": "UNH",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 18.0
+        "weight": 0.3077,
+        "weight_pct": 30.8,
+        "ars_return_est": 48.3
       },
       {
-        "ticker": "COST",
-        "name": "COST",
+        "ticker": "AAPL",
+        "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 28.3
-      },
-      {
-        "ticker": "PG",
-        "name": "PG",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 28.4
+        "weight": 0.2554,
+        "weight_pct": 25.5,
+        "ars_return_est": 40.1
       },
       {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 37.9
+        "weight": 0.2397,
+        "weight_pct": 24.0,
+        "ars_return_est": 37.6
       },
       {
-        "ticker": "MA",
-        "name": "MA",
+        "ticker": "HD",
+        "name": "HD",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 11.2
-      },
-      {
-        "ticker": "UNG",
-        "name": "UNG",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1495,
-        "weight_pct": 15.0,
-        "ars_return_est": 23.7
+        "weight": 0.1183,
+        "weight_pct": 11.8,
+        "ars_return_est": 18.6
       },
       {
         "ticker": "META",
         "name": "META",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1005,
-        "weight_pct": 10.0,
-        "ars_return_est": 12.7
+        "weight": 0.0789,
+        "weight_pct": 7.9,
+        "ars_return_est": 12.4
       }
     ],
-    "expected_return": 23.38,
-    "expected_volatility": 25.92,
-    "sharpe_ratio": 0.48,
+    "expected_return": 37.31,
+    "expected_volatility": 28.93,
+    "sharpe_ratio": 0.91,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 12.4
+    "spread_vs_inflation": 26.3
   }
 }
