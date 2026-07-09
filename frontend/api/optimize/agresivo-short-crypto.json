@@ -3,22 +3,22 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "SOL-USD",
-        "name": "SOL-USD",
-        "category": "crypto",
-        "currency": "USD",
-        "weight": 0.35,
-        "weight_pct": 35.0,
-        "ars_return_est": 9.7
-      },
-      {
         "ticker": "BTC-USD",
         "name": "BTC-USD",
         "category": "crypto",
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 9.5
+        "ars_return_est": 10.1
+      },
+      {
+        "ticker": "SOL-USD",
+        "name": "SOL-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.35,
+        "weight_pct": 35.0,
+        "ars_return_est": 9.8
       },
       {
         "ticker": "BNB-USD",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 4.2
+        "ars_return_est": 4.4
       },
       {
         "ticker": "LINK-USD",
@@ -45,17 +45,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 3.1
+        "ars_return_est": 3.4
       }
     ],
-    "expected_return": 8.79,
+    "expected_return": 9.02,
     "expected_volatility": 45.83,
-    "sharpe_ratio": -0.05,
+    "sharpe_ratio": -0.04,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -2.2
+    "spread_vs_inflation": -2.0
   }
 }
