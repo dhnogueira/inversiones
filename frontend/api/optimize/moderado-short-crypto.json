@@ -3,59 +3,59 @@
   "optimization": {
     "weights": [
       {
-        "ticker": "BTC-USD",
-        "name": "BTC-USD",
-        "category": "crypto",
-        "currency": "USD",
-        "weight": 0.2958,
-        "weight_pct": 29.6,
-        "ars_return_est": 6.6
-      },
-      {
         "ticker": "BNB-USD",
         "name": "BNB-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.2929,
-        "weight_pct": 29.3,
-        "ars_return_est": 6.6
+        "weight": 0.2982,
+        "weight_pct": 29.8,
+        "ars_return_est": 6.4
+      },
+      {
+        "ticker": "BTC-USD",
+        "name": "BTC-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.2969,
+        "weight_pct": 29.7,
+        "ars_return_est": 6.4
       },
       {
         "ticker": "SOL-USD",
         "name": "SOL-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.2869,
-        "weight_pct": 28.7,
-        "ars_return_est": 6.4
+        "weight": 0.2858,
+        "weight_pct": 28.6,
+        "ars_return_est": 6.2
       },
       {
         "ticker": "ETH-USD",
         "name": "ETH-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.0797,
-        "weight_pct": 8.0,
-        "ars_return_est": 1.8
+        "weight": 0.0727,
+        "weight_pct": 7.3,
+        "ars_return_est": 1.6
       },
       {
         "ticker": "LINK-USD",
         "name": "LINK-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.0446,
-        "weight_pct": 4.5,
-        "ars_return_est": 0.9
+        "weight": 0.0464,
+        "weight_pct": 4.6,
+        "ars_return_est": 0.8
       }
     ],
-    "expected_return": 5.91,
-    "expected_volatility": 44.7,
-    "sharpe_ratio": -0.11,
+    "expected_return": 5.73,
+    "expected_volatility": 44.64,
+    "sharpe_ratio": -0.12,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -5.1
+    "spread_vs_inflation": -5.3
   }
 }
