@@ -692,12 +692,12 @@ body {
     width: 100%;
     max-width: 720px;
     max-height: 90vh;
-    overflow: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
     padding: 32px;
     animation: slideUp 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
 /* Small modals (e.g. add position, add watchlist) */
@@ -972,13 +972,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
     padding-right: 4px;
-    padding-bottom: 16px;
+    padding-bottom: 24px;
 }
 
 .modal-loader {
@@ -1611,18 +1607,14 @@ body {
         max-height: 92vh;
         border-radius: 20px 20px 0 0;
         padding: 20px 16px 20px;
-        overflow: hidden;
-        overflow-x: hidden;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .modal-body {
-        flex: 1;
-        min-height: 0;
         overflow-y: auto;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
+        display: block;
+    }
+
+    .modal-body {
+        overflow: visible;
         padding-bottom: 60px;
     }
 
