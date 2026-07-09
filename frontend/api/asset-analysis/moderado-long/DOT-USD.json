@@ -4,7 +4,7 @@
     "ticker": "DOT-USD",
     "name": "DOT-USD",
     "category": "crypto",
-    "price": 0.8299999833106995,
+    "price": 0.824999988079071,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 33.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "33.8",
+        "content": "El RSI de 14 períodos se encuentra en 33.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "33.2",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (0.99) se encuentra por debajo de la EMA de 200 días (1.51), y el precio (0.83) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (0.99) se encuentra por debajo de la EMA de 200 días (1.51), y el precio (0.82) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-14.7%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-14.7% (1M)",
+        "content": "El activo cayó un **-15.2%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-15.2% (1M)",
         "status": "danger"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **74.6%** respecto a su máximo anual de **USD 3.26**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-74.6%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **74.7%** respecto a su máximo anual de **USD 3.26**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-74.7%",
         "status": "neutral"
       },
       {
@@ -64,8 +64,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-45.8%** y a 12 meses es **-71.1%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-45.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-46.1%** y a 12 meses es **-71.3%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-46.1% (6M)",
         "status": "danger"
       },
       {
@@ -91,7 +91,7 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad. El RSI en zona de sobreventa podría representar una oportunidad contrarian si los fundamentos sostienen el precio.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 1.91,
+      "take_profit": 1.89,
       "stop_loss": 0.35,
       "tp_pct": 129.6,
       "sl_pct": 57.6
@@ -99,7 +99,7 @@
     "support": 0.85,
     "resistance": 1.32,
     "volume_cluster": 1.24,
-    "take_profit": 1.91,
+    "take_profit": 1.89,
     "stop_loss": 0.35,
     "tp_pct": 129.6,
     "sl_pct": 57.6
