@@ -114,6 +114,7 @@ let state = {
     activeCategory: 'all',
     searchQuery: '',
     marketData: null,
+    tickersData: null,
     updating: false,
     currentView: 'dashboard',
     staticMode: false,         // Si es true, usa JSONs estáticos y localStorage
@@ -148,6 +149,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupEventListeners();
     setupAuthListeners();
     await checkHostMode();
+    await fetchTickersData();
 
     // Restaurar sesión activa ANTES de cargar cualquier vista privada.
     // onAuthStateChange es asíncrono y puede disparar DESPUÉS de loadActiveView(),
@@ -228,6 +230,24 @@ async function checkHostMode() {
     document.querySelector('.update-status').innerHTML = '<i class="fa-solid fa-cloud text-blue"></i> Cloud Static Offline Mode';
     if (btnRefresh) {
         btnRefresh.style.display = 'none';
+    }
+}
+
+async function fetchTickersData() {
+    try {
+        const url = state.staticMode
+            ? `api/tickers-data.json`
+            : `${state.apiBase}/api/tickers-data`;
+        const res = await fetch(url);
+        if (res.ok) {
+            const data = await res.json();
+            if (data.status === 'success') {
+                state.tickersData = data.tickers;
+                console.log(`[tickers-data] Loaded ${Object.keys(state.tickersData).length} tickers.`);
+            }
+        }
+    } catch (e) {
+        console.warn('Error loading tickers-data:', e);
     }
 }
 
@@ -1105,6 +1125,13 @@ function getPriceMapFromMarketData() {
             });
         });
     }
+    if (state.tickersData) {
+        Object.keys(state.tickersData).forEach(ticker => {
+            if (map[ticker] === undefined) {
+                map[ticker] = state.tickersData[ticker].price;
+            }
+        });
+    }
     return map;
 }
 
@@ -1184,6 +1211,9 @@ function generateLocalPortfolioReport(positions, profile, horizon) {
                 const found = state.marketData.categories[cat].find(a => a.ticker === pos.ticker);
                 if (found) { assetData = found; break; }
             }
+        }
+        if (!assetData && state.tickersData && state.tickersData[pos.ticker]) {
+            assetData = state.tickersData[pos.ticker];
         }
 
         const rsi = assetData ? (assetData.rsi || 50) : 50;
@@ -2714,6 +2744,7 @@ async function checkRefreshStatus() {
         } else {
             btnRefresh.disabled = false;
             btnRefresh.innerHTML = `<i class="fa-solid fa-rotate"></i> Actualizar`;
+            await fetchTickersData();
             loadActiveView();
         }
     } catch (e) {
@@ -2767,7 +2798,7 @@ async function openAssetModal(ticker) {
             <p>Generando análisis detallado...</p>
         </div>
     `;
-    document.getElementById('modal-ticker').innerText = ticker.replace('.BA', '').replace('-USD', '');
+    document.getElementById('modal-ticker').innerText = ticker.replace('.BA', '').replace('-USD', '').toUpperCase();
     document.getElementById('modal-name').innerText = '';
     document.getElementById('modal-verdict').style.display = 'none';
     const priceBadge = document.getElementById('modal-current-price');
@@ -2786,7 +2817,7 @@ async function openAssetModal(ticker) {
 
     // Fetch all 3 horizons in parallel
     const HORIZONS = ['short', 'medium', 'long'];
-    const safeTicker = ticker.replace('/', '_');
+    const safeTicker = ticker.replace('/', '_').toUpperCase();
     const fetchHorizon = async (h) => {
         const url = state.staticMode
             ? `api/asset-analysis/${state.activeProfile}-${h}/${safeTicker}.json`

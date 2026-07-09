@@ -693,7 +693,6 @@ body {
     max-width: 720px;
     max-height: 90vh;
     overflow: hidden;
-    /* The body scrolls, not the container */
     overflow-x: hidden;
     padding: 32px;
     animation: slideUp 0.3s ease;
@@ -979,6 +978,7 @@ body {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     padding-right: 4px;
+    padding-bottom: 16px;
 }
 
 .modal-loader {
@@ -1623,7 +1623,7 @@ body {
         overflow-y: auto;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
 
     .modal-container.modal-small {

@@ -269,6 +269,26 @@ async def get_yield_curve():
         "bonos": [_to_point(b) for b in bonos]
     }
 
+# ===== TICKERS DATA (Unified list of prices and metrics) =====
+@app.get("/api/tickers-data")
+async def get_tickers_data_api():
+    all_assets = await _get_all_assets()
+    tickers_dict = {}
+    for asset in all_assets:
+        tickers_dict[asset["ticker"]] = {
+            "ticker": asset["ticker"],
+            "name": asset.get("name", asset["ticker"]),
+            "price": asset.get("price", 0.0),
+            "category": asset.get("category", ""),
+            "currency": asset.get("currency", "ARS"),
+            "rsi": asset.get("rsi", 50.0),
+            "sharpe": asset.get("sharpe", 0.5),
+            "volatility": asset.get("volatility", 0.25),
+            "trend": asset.get("trend", "Estable"),
+            "ret_1m": asset.get("ret_1m", 0.0)
+        }
+    return {"status": "success", "tickers": tickers_dict}
+
 # ===== PORTFOLIO (Mi Cartera) =====
 @app.get("/api/portfolio")
 async def get_portfolio(user: Optional[Dict] = Depends(get_current_user)):

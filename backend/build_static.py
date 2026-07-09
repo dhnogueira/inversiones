@@ -147,7 +147,28 @@ async def main():
                     with open(filepath_fallback, "w", encoding="utf-8") as f:
                         json.dump(analysis_data, f, indent=2, ensure_ascii=False)
 
-    # 5. Generar historial de alertas estático (copiando desde el cache)
+    # 5. Generar tickers-data.json con todos los activos
+    print("Generando lista unificada de precios y métricas de mercado...")
+    tickers_dict = {}
+    for asset in all_assets:
+        tickers_dict[asset["ticker"]] = {
+            "ticker": asset["ticker"],
+            "name": asset.get("name", asset["ticker"]),
+            "price": asset.get("price", 0.0),
+            "category": asset.get("category", ""),
+            "currency": asset.get("currency", "ARS"),
+            "rsi": asset.get("rsi", 50.0),
+            "sharpe": asset.get("sharpe", 0.5),
+            "volatility": asset.get("volatility", 0.25),
+            "trend": asset.get("trend", "Estable"),
+            "ret_1m": asset.get("ret_1m", 0.0)
+        }
+    tickers_data = {"status": "success", "tickers": tickers_dict}
+    with open(os.path.join(API_DIR, "tickers-data.json"), "w", encoding="utf-8") as f:
+        json.dump(tickers_data, f, indent=2, ensure_ascii=False)
+    print("✓ Lista unificada tickers-data.json compilada correctamente.")
+
+    # 6. Generar historial de alertas estático (copiando desde el cache)
     print("Compilando historial de alertas enviado...")
     import shutil
     cache_history = os.path.join(os.path.dirname(__file__), "cache", "alert_history.json")
@@ -161,6 +182,7 @@ async def main():
         print("✓ Historial de alertas vacío creado.")
 
     print("Compilación estática completada con éxito. Todos los archivos JSON generados en frontend/api/")
+
 
 
 if __name__ == "__main__":
