@@ -693,12 +693,13 @@ body {
 .modal-container {
     width: 100%;
     max-width: 720px;
-    /* No max-height: overlay is the scroll container now */
     overflow: visible;
     padding: 32px;
     animation: slideUp 0.3s ease;
     display: block;
     margin: auto 0;
+    /* Ensure content doesn't get clipped on desktop either */
+    min-height: 0;
 }
 
 /* Small modals (e.g. add position, add watchlist) */
@@ -1597,34 +1598,53 @@ body {
         padding: 10px 8px;
     }
 
+    /* ===== MOBILE MODAL: full-screen, container scrolls =====
+       Safari/Chrome on real devices ignore overflow-y:auto on
+       position:fixed overlays unless the CONTAINER itself is the
+       scroll target. We make the overlay transparent/non-scrolling
+       and the container the actual scroll area. */
     .modal-overlay {
         padding: 0;
-        align-items: flex-start;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        align-items: flex-end;
+        /* slide up from bottom */
+        overflow: hidden;
+        /* overlay does NOT scroll */
+        justify-content: center;
     }
 
     .modal-container {
+        position: relative;
         width: 100%;
         max-width: 100%;
-        /* No max-height — overlay scrolls */
-        overflow: visible;
+        /* Use dvh (dynamic viewport height) so the container respects
+           the actual visible area even when the browser address bar
+           is visible. Falls back to 100vh if dvh unsupported. */
+        height: 92vh;
+        height: 92dvh;
+        max-height: 92vh;
+        max-height: 92dvh;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior: contain;
         border-radius: 20px 20px 0 0;
-        padding: 20px 16px 40px;
+        padding: 20px 16px 60px;
         display: block;
-        margin: auto;
+        margin: 0;
     }
 
     .modal-body {
         overflow: visible;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
 
     .modal-container.modal-small {
         max-width: 100%;
-        border-radius: 16px;
-        align-self: center;
-        margin: auto;
+        height: auto;
+        max-height: 80vh;
+        max-height: 80dvh;
+        overflow-y: auto;
+        border-radius: 20px 20px 0 0;
+        align-self: flex-end;
     }
 
     .modal-container::before {
@@ -1634,7 +1654,7 @@ body {
         height: 5px;
         background: rgba(255, 255, 255, 0.15);
         border-radius: 3px;
-        margin: -10px auto 16px;
+        margin: -6px auto 16px;
     }
 
     .modal-title-group h2 {
