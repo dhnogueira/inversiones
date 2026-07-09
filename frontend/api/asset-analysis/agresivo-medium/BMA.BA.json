@@ -4,23 +4,23 @@
     "ticker": "BMA.BA",
     "name": "BMA",
     "category": "merval",
-    "price": 14260.0,
+    "price": 14250.0,
     "currency": "ARS",
-    "score": 88.9,
+    "score": 88.8,
     "profile": "agresivo",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 54.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "54.4",
+        "content": "El RSI de 14 períodos está en 54.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.3",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (13227.69) se encuentra por encima de la EMA de 200 días (11687.85), y el precio actual (14260.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (13227.30) se encuentra por encima de la EMA de 200 días (11687.75), y el precio actual (14250.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -34,7 +34,7 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+8.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (23.6%) refuerzan esta tendencia positiva.",
+        "content": "El activo registró un rendimiento del **+8.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (23.5%) refuerzan esta tendencia positiva.",
         "value": "+8.9% (1M)",
         "status": "success"
       },
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+5.5%** y a 12 meses es **+79.2%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "content": "El rendimiento acumulado a 6 meses es **+5.5%** y a 12 meses es **+79.1%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
         "value": "+5.5% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **95.1%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+73.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 95.1%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **94.9%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+72.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 94.9%",
         "status": "success"
       }
     ],
@@ -174,18 +174,18 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **88.9/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "summary": "Este activo obtiene un score de **88.8/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
       "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 1.22) es óptima para el perfil **agresivo**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (61.7%).",
-      "take_profit": 29660.8,
-      "stop_loss": 6559.6,
+      "take_profit": 29640.0,
+      "stop_loss": 6555.0,
       "tp_pct": 108.0,
       "sl_pct": 54.0
     },
     "support": 10127.89,
     "resistance": 14448.29,
     "volume_cluster": 10295.88,
-    "take_profit": 29660.8,
-    "stop_loss": 6559.6,
+    "take_profit": 29640.0,
+    "stop_loss": 6555.0,
     "tp_pct": 108.0,
     "sl_pct": 54.0,
     "medium_term_strategies": {
@@ -267,7 +267,7 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=54, retorno 3M=+23.6%, retorno 12M=+79.2%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
+          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=54, retorno 3M=+23.5%, retorno 12M=+79.1%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
           "value": "Score 5/6",
           "status": "success"
         },
@@ -281,8 +281,8 @@
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El momentum **se está desacelerando** (-14.7%). El activo pierde velocidad de apreciación, lo que puede preceder una corrección o consolidación.",
-          "value": "-14.7%",
+          "content": "El momentum **se está desacelerando** (-14.6%). El activo pierde velocidad de apreciación, lo que puede preceder una corrección o consolidación.",
+          "value": "-14.6%",
           "status": "warning"
         },
         {

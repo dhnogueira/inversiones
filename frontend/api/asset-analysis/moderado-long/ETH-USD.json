@@ -4,7 +4,7 @@
     "ticker": "ETH-USD",
     "name": "ETH-USD",
     "category": "crypto",
-    "price": 1753.68994140625,
+    "price": 1755.1099853515625,
     "currency": "USD",
     "score": 0.0,
     "profile": "moderado",
@@ -13,14 +13,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 53.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "53.2",
+        "content": "El RSI de 14 períodos está en 53.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "53.4",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1799.64) se encuentra por debajo de la EMA de 200 días (2240.94), y el precio (1753.69) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (1799.69) se encuentra por debajo de la EMA de 200 días (2240.96), y el precio (1755.11) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
@@ -34,8 +34,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-24.0%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.5% (1M)",
+        "content": "El rendimiento mensual es de **+2.6%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-23.9%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.6% (1M)",
         "status": "success"
       },
       {
@@ -50,8 +50,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **55.2%** por debajo de su máximo anual de **USD 3,911.06**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-55.2%",
+        "content": "**¿Qué significa?** Este activo cotiza un **55.1%** por debajo de su máximo anual de **USD 3,911.06**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-55.1%",
         "status": "success"
       },
       {
@@ -64,8 +64,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-11.4%** y a 12 meses es **-54.4%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-11.4% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-11.3%** y a 12 meses es **-54.4%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-11.3% (6M)",
         "status": "danger"
       },
       {
@@ -91,16 +91,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **moderado**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 3978.34,
-      "stop_loss": 764.96,
+      "take_profit": 3981.58,
+      "stop_loss": 765.57,
       "tp_pct": 126.9,
       "sl_pct": 56.4
     },
     "support": 1618.95,
     "resistance": 2348.86,
     "volume_cluster": 2292.63,
-    "take_profit": 3978.34,
-    "stop_loss": 764.96,
+    "take_profit": 3981.58,
+    "stop_loss": 765.57,
     "tp_pct": 126.9,
     "sl_pct": 56.4
   }

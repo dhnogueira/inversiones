@@ -18,7 +18,7 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 9.6
+        "ars_return_est": 9.9
       },
       {
         "ticker": "BNB-USD",
@@ -36,7 +36,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 4.5
+        "ars_return_est": 4.6
       },
       {
         "ticker": "LINK-USD",
@@ -45,17 +45,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 3.6
+        "ars_return_est": 3.9
       }
     ],
-    "expected_return": 8.86,
+    "expected_return": 9.01,
     "expected_volatility": 45.83,
-    "sharpe_ratio": -0.05,
+    "sharpe_ratio": -0.04,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -2.1
+    "spread_vs_inflation": -2.0
   }
 }

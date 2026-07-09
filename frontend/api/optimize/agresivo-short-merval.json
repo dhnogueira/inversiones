@@ -27,16 +27,7 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 22.0
-      },
-      {
-        "ticker": "TGSU2.BA",
-        "name": "TGSU2",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 6.7
+        "ars_return_est": 21.6
       },
       {
         "ticker": "BMA.BA",
@@ -45,17 +36,26 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 6.6
+        "ars_return_est": 6.5
+      },
+      {
+        "ticker": "TGSU2.BA",
+        "name": "TGSU2",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 6.1
       }
     ],
-    "expected_return": 33.56,
-    "expected_volatility": 41.07,
+    "expected_return": 33.44,
+    "expected_volatility": 41.05,
     "sharpe_ratio": 0.55,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 22.6
+    "spread_vs_inflation": 22.4
   }
 }
