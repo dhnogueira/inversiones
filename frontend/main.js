@@ -1,3 +1,22 @@
+// Global error capture for diagnostics logs (crucial for mobile debugging)
+window.addEventListener('error', (event) => {
+    // Si addConsoleLine está definida, registrar el error
+    if (typeof addConsoleLine === 'function') {
+        addConsoleLine(`Uncaught Error: ${event.message} at ${event.filename}:${event.lineno}:${event.colno}`, 'error');
+    } else {
+        if (!window._earlyErrors) window._earlyErrors = [];
+        window._earlyErrors.push(`[ERROR] ${event.message} at ${event.filename}:${event.lineno}`);
+    }
+});
+window.addEventListener('unhandledrejection', (event) => {
+    if (typeof addConsoleLine === 'function') {
+        addConsoleLine(`Unhandled Promise Rejection: ${event.reason}`, 'error');
+    } else {
+        if (!window._earlyErrors) window._earlyErrors = [];
+        window._earlyErrors.push(`[REJECTION] ${event.reason}`);
+    }
+});
+
 // Lee la configuración de Supabase desde window.CONFIG (inyectado por config.js como script clásico)
 // Si no está disponible, usa valores de fallback para que la app funcione sin Supabase
 const CONFIG = window.CONFIG || {
