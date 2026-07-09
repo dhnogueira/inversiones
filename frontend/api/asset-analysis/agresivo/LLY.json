@@ -77,101 +77,7 @@
         "status": "neutral"
       }
     ],
-    "balances": {
-      "snapshots": [
-        {
-          "period": "Mar 2026",
-          "revenue_b": 19.8,
-          "net_income_b": 7.4,
-          "net_margin_pct": 37.4,
-          "eps": null,
-          "fcf_b": 2.8,
-          "debt_equity": 1.39,
-          "favorable": [
-            "Margen neto sólido del 37.4%",
-            "FCF positivo: $2.8B"
-          ],
-          "critical": []
-        },
-        {
-          "period": "Dec 2025",
-          "revenue_b": 19.29,
-          "net_income_b": 6.64,
-          "net_margin_pct": 34.4,
-          "eps": null,
-          "fcf_b": 0.25,
-          "debt_equity": 1.6,
-          "favorable": [
-            "Margen neto sólido del 34.4%",
-            "FCF positivo: $0.2B"
-          ],
-          "critical": []
-        },
-        {
-          "period": "Sep 2025",
-          "revenue_b": 17.6,
-          "net_income_b": 5.58,
-          "net_margin_pct": 31.7,
-          "eps": null,
-          "fcf_b": 6.03,
-          "debt_equity": 1.79,
-          "favorable": [
-            "Margen neto sólido del 31.7%",
-            "FCF positivo: $6.0B"
-          ],
-          "critical": [
-            "Ingresos en baja vs trimestre anterior: -8.8%"
-          ]
-        },
-        {
-          "period": "Jun 2025",
-          "revenue_b": 15.56,
-          "net_income_b": 5.66,
-          "net_margin_pct": 36.4,
-          "eps": null,
-          "fcf_b": 1.28,
-          "debt_equity": 2.18,
-          "favorable": [
-            "Margen neto sólido del 36.4%",
-            "FCF positivo: $1.3B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 2.18",
-            "Ingresos en baja vs trimestre anterior: -11.6%"
-          ]
-        },
-        {
-          "period": "Mar 2025",
-          "revenue_b": 12.73,
-          "net_income_b": 2.76,
-          "net_margin_pct": 21.7,
-          "eps": null,
-          "fcf_b": -1.6,
-          "debt_equity": 2.44,
-          "favorable": [
-            "Margen neto sólido del 21.7%"
-          ],
-          "critical": [
-            "FCF negativo: $-1.6B (quema de caja)",
-            "Deuda/Equity elevada: 2.44",
-            "Ingresos en baja vs trimestre anterior: -18.2%"
-          ]
-        }
-      ],
-      "summary": {
-        "periods_analyzed": 5,
-        "avg_revenue_b": 17.0,
-        "avg_net_margin_pct": 32.3,
-        "avg_eps": null,
-        "revenue_trend": "creciente",
-        "margin_trend": "en expansión",
-        "total_favorable_signals": 9,
-        "total_critical_signals": 6,
-        "conclusion": "ESTABLE",
-        "conclusion_color": "neutral",
-        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 32.3%. Hay 6 señales de atención y 9 puntos positivos. Perfil de riesgo moderado."
-      }
-    },
+    "balances": null,
     "verdict": {
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
@@ -195,8 +101,8 @@
         {
           "title": "Revisión de EPS (Forward vs Trailing)",
           "icon": "fa-chart-bar",
-          "content": "Se detecta una **revisión alcista del EPS del +58.8%**: el EPS forward supera al trailing en esa magnitud. Las revisiones positivas de EPS son una de las señales más predictivas del rendimiento accionario en horizontes de 6-12 meses, ya que reflejan que los analistas han mejorado sus expectativas de ganancias futuras. Estrategias cuantitativas como la de Zacks demuestran que las revisiones positivas preceden retornos superiores al mercado.",
-          "value": "+58.8%",
+          "content": "Se detecta una **revisión alcista del EPS del +59.1%**: el EPS forward supera al trailing en esa magnitud. Las revisiones positivas de EPS son una de las señales más predictivas del rendimiento accionario en horizontes de 6-12 meses, ya que reflejan que los analistas han mejorado sus expectativas de ganancias futuras. Estrategias cuantitativas como la de Zacks demuestran que las revisiones positivas preceden retornos superiores al mercado.",
+          "value": "+59.1%",
           "status": "success"
         },
         {
@@ -313,7 +219,7 @@
         {
           "title": "PER Forward vs. Trailing",
           "icon": "fa-calendar-check",
-          "content": "El **PER forward (27.1x) es menor al trailing (43.1x)** en 16.0 puntos: los analistas esperan que las ganancias aumenten en los próximos 12 meses, comprimiendo el múltiplo. Es la señal perfecta de GARP: valuación decreciente por crecimiento.",
+          "content": "El **PER forward (27.1x) es menor al trailing (43.2x)** en 16.1 puntos: los analistas esperan que las ganancias aumenten en los próximos 12 meses, comprimiendo el múltiplo. Es la señal perfecta de GARP: valuación decreciente por crecimiento.",
           "value": "Forward: 27.1x",
           "status": "success"
         },

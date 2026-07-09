@@ -84,102 +84,7 @@
         "status": "neutral"
       }
     ],
-    "balances": {
-      "snapshots": [
-        {
-          "period": "Mar 2026",
-          "revenue_b": 0.78,
-          "net_income_b": 0.23,
-          "net_margin_pct": 29.5,
-          "eps": null,
-          "fcf_b": 0.33,
-          "debt_equity": -3.96,
-          "favorable": [
-            "Margen neto sólido del 29.5%",
-            "FCF positivo: $0.3B",
-            "Deuda/Equity baja: -3.96"
-          ],
-          "critical": []
-        },
-        {
-          "period": "Dec 2025",
-          "revenue_b": 0.78,
-          "net_income_b": 0.2,
-          "net_margin_pct": 25.6,
-          "eps": null,
-          "fcf_b": 0.28,
-          "debt_equity": 15.86,
-          "favorable": [
-            "Margen neto sólido del 25.6%",
-            "FCF positivo: $0.3B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 15.86"
-          ]
-        },
-        {
-          "period": "Sep 2025",
-          "revenue_b": 0.77,
-          "net_income_b": 0.23,
-          "net_margin_pct": 29.9,
-          "eps": null,
-          "fcf_b": 0.34,
-          "debt_equity": 12.98,
-          "favorable": [
-            "Margen neto sólido del 29.9%",
-            "FCF positivo: $0.3B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 12.98"
-          ]
-        },
-        {
-          "period": "Jun 2025",
-          "revenue_b": 0.77,
-          "net_income_b": 0.25,
-          "net_margin_pct": 32.5,
-          "eps": null,
-          "fcf_b": 0.19,
-          "debt_equity": 11.0,
-          "favorable": [
-            "Margen neto sólido del 32.5%",
-            "FCF positivo: $0.2B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 11.00"
-          ]
-        },
-        {
-          "period": "Mar 2025",
-          "revenue_b": 0.75,
-          "net_income_b": 0.23,
-          "net_margin_pct": 30.7,
-          "eps": null,
-          "fcf_b": 0.39,
-          "debt_equity": 31.99,
-          "favorable": [
-            "Margen neto sólido del 30.7%",
-            "FCF positivo: $0.4B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 31.99"
-          ]
-        }
-      ],
-      "summary": {
-        "periods_analyzed": 5,
-        "avg_revenue_b": 0.77,
-        "avg_net_margin_pct": 29.6,
-        "avg_eps": null,
-        "revenue_trend": "creciente",
-        "margin_trend": "en contracción",
-        "total_favorable_signals": 11,
-        "total_critical_signals": 4,
-        "conclusion": "ESTABLE",
-        "conclusion_color": "neutral",
-        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 29.6%. Hay 4 señales de atención y 11 puntos positivos. Perfil de riesgo moderado."
-      }
-    },
+    "balances": null,
     "verdict": {
       "action": "EVITAR",
       "icon": "fa-circle-xmark",
@@ -270,8 +175,8 @@
         {
           "title": "Dividend Yield (Rendimiento por Dividendo)",
           "icon": "fa-coins",
-          "content": "El **dividend yield del 105.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
-          "value": "105.00%",
+          "content": "El **dividend yield del 104.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
+          "value": "104.00%",
           "status": "warning"
         },
         {

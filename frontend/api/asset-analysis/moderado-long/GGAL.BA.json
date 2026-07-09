@@ -84,99 +84,7 @@
         "status": "neutral"
       }
     ],
-    "balances": {
-      "snapshots": [
-        {
-          "period": "Mar 2026",
-          "revenue_b": 2555.34,
-          "net_income_b": 66.49,
-          "net_margin_pct": 2.6,
-          "eps": null,
-          "fcf_b": null,
-          "debt_equity": 0.38,
-          "favorable": [
-            "Deuda/Equity baja: 0.38"
-          ],
-          "critical": [
-            "Margen neto muy bajo: 2.6%"
-          ]
-        },
-        {
-          "period": "Dec 2025",
-          "revenue_b": 2649.24,
-          "net_income_b": -34.98,
-          "net_margin_pct": -1.3,
-          "eps": null,
-          "fcf_b": null,
-          "debt_equity": 0.38,
-          "favorable": [
-            "Deuda/Equity baja: 0.38"
-          ],
-          "critical": [
-            "Margen neto muy bajo: -1.3%"
-          ]
-        },
-        {
-          "period": "Sep 2025",
-          "revenue_b": 1972.49,
-          "net_income_b": -87.71,
-          "net_margin_pct": -4.4,
-          "eps": null,
-          "fcf_b": null,
-          "debt_equity": 0.38,
-          "favorable": [
-            "Deuda/Equity baja: 0.38"
-          ],
-          "critical": [
-            "Margen neto muy bajo: -4.4%",
-            "Ingresos en baja vs trimestre anterior: -25.5%"
-          ]
-        },
-        {
-          "period": "Jun 2025",
-          "revenue_b": 2086.39,
-          "net_income_b": 172.64,
-          "net_margin_pct": 8.3,
-          "eps": null,
-          "fcf_b": null,
-          "debt_equity": 0.32,
-          "favorable": [
-            "Deuda/Equity baja: 0.32",
-            "Ingresos en alza vs trimestre anterior: +5.8%"
-          ],
-          "critical": []
-        },
-        {
-          "period": "Mar 2025",
-          "revenue_b": 2477.96,
-          "net_income_b": 193.58,
-          "net_margin_pct": 7.8,
-          "eps": null,
-          "fcf_b": -1174.19,
-          "debt_equity": 0.28,
-          "favorable": [
-            "Deuda/Equity baja: 0.28",
-            "Ingresos en alza vs trimestre anterior: +18.8%"
-          ],
-          "critical": [
-            "FCF negativo: $-1174.2B (quema de caja)"
-          ]
-        }
-      ],
-      "summary": {
-        "periods_analyzed": 5,
-        "avg_revenue_b": 2348.28,
-        "avg_net_margin_pct": 2.6,
-        "avg_eps": null,
-        "revenue_trend": "creciente",
-        "margin_trend": "en contracción",
-        "total_favorable_signals": 7,
-        "total_critical_signals": 5,
-        "conclusion": "CON SEÑALES DE ALERTA",
-        "conclusion_color": "warning",
-        "conclusion_detail": "Los últimos 5 balances detectan 5 señales críticas frente a 7 favorables. Se observan presiones en la rentabilidad (margen 2.6%, en contracción) con ingresos crecientes. Se recomienda precaución."
-      }
-    },
+    "balances": null,
     "verdict": {
       "action": "EVITAR",
       "icon": "fa-circle-xmark",
@@ -200,8 +108,8 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 147.1x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
-          "value": "147.1x",
+          "content": "El **PER de 148.4x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "148.4x",
           "status": "warning"
         },
         {
@@ -258,8 +166,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 147.1x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
-          "value": "147.1x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 148.4x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "148.4x",
           "status": "neutral"
         }
       ],
@@ -267,8 +175,8 @@
         {
           "title": "Dividend Yield (Rendimiento por Dividendo)",
           "icon": "fa-coins",
-          "content": "El **dividend yield del 126.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
-          "value": "126.00%",
+          "content": "El **dividend yield del 124.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
+          "value": "124.00%",
           "status": "warning"
         },
         {

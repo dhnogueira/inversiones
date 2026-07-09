@@ -77,105 +77,7 @@
         "status": "neutral"
       }
     ],
-    "balances": {
-      "snapshots": [
-        {
-          "period": "Mar 2026",
-          "revenue_b": 8.4,
-          "net_income_b": 3.88,
-          "net_margin_pct": 46.2,
-          "eps": null,
-          "fcf_b": 2.66,
-          "debt_equity": 2.82,
-          "favorable": [
-            "Margen neto sólido del 46.2%",
-            "FCF positivo: $2.7B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 2.82"
-          ]
-        },
-        {
-          "period": "Dec 2025",
-          "revenue_b": 8.81,
-          "net_income_b": 4.06,
-          "net_margin_pct": 46.1,
-          "eps": null,
-          "fcf_b": 4.71,
-          "debt_equity": 2.46,
-          "favorable": [
-            "Margen neto sólido del 46.1%",
-            "FCF positivo: $4.7B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 2.46"
-          ]
-        },
-        {
-          "period": "Sep 2025",
-          "revenue_b": 8.6,
-          "net_income_b": 3.93,
-          "net_margin_pct": 45.7,
-          "eps": null,
-          "fcf_b": 5.3,
-          "debt_equity": 2.4,
-          "favorable": [
-            "Margen neto sólido del 45.7%",
-            "FCF positivo: $5.3B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 2.40"
-          ]
-        },
-        {
-          "period": "Jun 2025",
-          "revenue_b": 8.13,
-          "net_income_b": 3.7,
-          "net_margin_pct": 45.5,
-          "eps": null,
-          "fcf_b": 4.39,
-          "debt_equity": 2.42,
-          "favorable": [
-            "Margen neto sólido del 45.5%",
-            "FCF positivo: $4.4B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 2.42",
-            "Ingresos en baja vs trimestre anterior: -5.5%"
-          ]
-        },
-        {
-          "period": "Mar 2025",
-          "revenue_b": 7.25,
-          "net_income_b": 3.28,
-          "net_margin_pct": 45.2,
-          "eps": null,
-          "fcf_b": 2.02,
-          "debt_equity": 2.82,
-          "favorable": [
-            "Margen neto sólido del 45.2%",
-            "FCF positivo: $2.0B"
-          ],
-          "critical": [
-            "Deuda/Equity elevada: 2.82",
-            "Ingresos en baja vs trimestre anterior: -10.8%"
-          ]
-        }
-      ],
-      "summary": {
-        "periods_analyzed": 5,
-        "avg_revenue_b": 8.24,
-        "avg_net_margin_pct": 45.7,
-        "avg_eps": null,
-        "revenue_trend": "creciente",
-        "margin_trend": "estable",
-        "total_favorable_signals": 10,
-        "total_critical_signals": 7,
-        "conclusion": "ESTABLE",
-        "conclusion_color": "neutral",
-        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 45.7%. Hay 7 señales de atención y 10 puntos positivos. Perfil de riesgo moderado."
-      }
-    },
+    "balances": null,
     "verdict": {
       "action": "EVITAR",
       "icon": "fa-circle-xmark",
@@ -199,8 +101,8 @@
         {
           "title": "Revisión de EPS (Forward vs Trailing)",
           "icon": "fa-chart-bar",
-          "content": "Se detecta una **revisión alcista del EPS del +32.0%**: el EPS forward supera al trailing en esa magnitud. Las revisiones positivas de EPS son una de las señales más predictivas del rendimiento accionario en horizontes de 6-12 meses, ya que reflejan que los analistas han mejorado sus expectativas de ganancias futuras. Estrategias cuantitativas como la de Zacks demuestran que las revisiones positivas preceden retornos superiores al mercado.",
-          "value": "+32.0%",
+          "content": "Se detecta una **revisión alcista del EPS del +31.9%**: el EPS forward supera al trailing en esa magnitud. Las revisiones positivas de EPS son una de las señales más predictivas del rendimiento accionario en horizontes de 6-12 meses, ya que reflejan que los analistas han mejorado sus expectativas de ganancias futuras. Estrategias cuantitativas como la de Zacks demuestran que las revisiones positivas preceden retornos superiores al mercado.",
+          "value": "+31.9%",
           "status": "success"
         },
         {

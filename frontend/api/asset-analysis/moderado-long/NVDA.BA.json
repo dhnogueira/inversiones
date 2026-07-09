@@ -90,106 +90,7 @@
         "status": "neutral"
       }
     ],
-    "balances": {
-      "snapshots": [
-        {
-          "period": "Apr 2026",
-          "revenue_b": 81.61,
-          "net_income_b": 58.32,
-          "net_margin_pct": 71.5,
-          "eps": null,
-          "fcf_b": 48.59,
-          "debt_equity": 0.06,
-          "favorable": [
-            "Margen neto sólido del 71.5%",
-            "FCF positivo: $48.6B",
-            "Deuda/Equity baja: 0.06"
-          ],
-          "critical": []
-        },
-        {
-          "period": "Jan 2026",
-          "revenue_b": 68.13,
-          "net_income_b": 42.96,
-          "net_margin_pct": 63.1,
-          "eps": null,
-          "fcf_b": 34.9,
-          "debt_equity": 0.07,
-          "favorable": [
-            "Margen neto sólido del 63.1%",
-            "FCF positivo: $34.9B",
-            "Deuda/Equity baja: 0.07"
-          ],
-          "critical": [
-            "Ingresos en baja vs trimestre anterior: -16.5%"
-          ]
-        },
-        {
-          "period": "Oct 2025",
-          "revenue_b": 57.01,
-          "net_income_b": 31.91,
-          "net_margin_pct": 56.0,
-          "eps": null,
-          "fcf_b": 22.12,
-          "debt_equity": 0.09,
-          "favorable": [
-            "Margen neto sólido del 56.0%",
-            "FCF positivo: $22.1B",
-            "Deuda/Equity baja: 0.09"
-          ],
-          "critical": [
-            "Ingresos en baja vs trimestre anterior: -16.3%"
-          ]
-        },
-        {
-          "period": "Jul 2025",
-          "revenue_b": 46.74,
-          "net_income_b": 26.42,
-          "net_margin_pct": 56.5,
-          "eps": null,
-          "fcf_b": 13.47,
-          "debt_equity": 0.11,
-          "favorable": [
-            "Margen neto sólido del 56.5%",
-            "FCF positivo: $13.5B",
-            "Deuda/Equity baja: 0.11"
-          ],
-          "critical": [
-            "Ingresos en baja vs trimestre anterior: -18.0%"
-          ]
-        },
-        {
-          "period": "Apr 2025",
-          "revenue_b": 44.06,
-          "net_income_b": 18.77,
-          "net_margin_pct": 42.6,
-          "eps": null,
-          "fcf_b": 26.19,
-          "debt_equity": 0.12,
-          "favorable": [
-            "Margen neto sólido del 42.6%",
-            "FCF positivo: $26.2B",
-            "Deuda/Equity baja: 0.12"
-          ],
-          "critical": [
-            "Ingresos en baja vs trimestre anterior: -5.7%"
-          ]
-        }
-      ],
-      "summary": {
-        "periods_analyzed": 5,
-        "avg_revenue_b": 59.51,
-        "avg_net_margin_pct": 57.9,
-        "avg_eps": null,
-        "revenue_trend": "creciente",
-        "margin_trend": "en expansión",
-        "total_favorable_signals": 15,
-        "total_critical_signals": 4,
-        "conclusion": "ESTABLE",
-        "conclusion_color": "neutral",
-        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 57.9%. Hay 4 señales de atención y 15 puntos positivos. Perfil de riesgo moderado."
-      }
-    },
+    "balances": null,
     "verdict": {
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
@@ -280,8 +181,8 @@
         {
           "title": "Dividend Yield (Rendimiento por Dividendo)",
           "icon": "fa-coins",
-          "content": "El **dividend yield del 46.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
-          "value": "46.00%",
+          "content": "El **dividend yield del 48.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
+          "value": "48.00%",
           "status": "warning"
         },
         {
