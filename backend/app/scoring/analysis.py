@@ -9,6 +9,29 @@ from app.scoring.profiles import (
 
 import numpy as np
 
+# Cache in-process to optimize local build compile time and bypass yfinance rate limits
+_balance_cache = {}
+
+def load_existing_balance_from_static(ticker):
+    """
+    Busca si ya existe un archivo JSON compilado para el mismo ticker
+    que contenga datos de 'balances' válidos en alguna de las subcarpetas del frontend.
+    """
+    import os
+    import glob
+    import json
+    try:
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+        pattern = os.path.join(base_dir, "frontend", "api", "asset-analysis", "*", f"{ticker}.json")
+        for path in glob.glob(pattern):
+            if os.path.exists(path):
+                with open(path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                if data.get("status") == "success" and data.get("analysis") and data["analysis"].get("balances"):
+                    return data["analysis"]["balances"]
+    except Exception as e:
+        print(f"[load_existing_balance_from_static] Error para {ticker}: {e}")
+    return None
 
 def build_balance_analysis(ticker, category):
     """
@@ -23,6 +46,12 @@ def build_balance_analysis(ticker, category):
     if category in ("letras", "bonos", "crypto"):
         return None
 
+    # Check cache
+    cache_key = (ticker, category)
+    if cache_key in _balance_cache:
+        return _balance_cache[cache_key]
+
+    result = None
     try:
         import yfinance as yf
         stock = yf.Ticker(ticker)
@@ -35,12 +64,12 @@ def build_balance_analysis(ticker, category):
         qcf = stock.quarterly_cashflow
 
         if qf is None or qf.empty:
-            return None
+            raise ValueError("Quarterly financials is empty")
 
         # Tomar las últimas 5 columnas (trimestres, más reciente primero)
         periods = list(qf.columns[:5])
         if len(periods) == 0:
-            return None
+            raise ValueError("No quarters available in quarterly financials")
 
         # Intentar obtener EPS trimestral
         try:
@@ -185,7 +214,7 @@ def build_balance_analysis(ticker, category):
             })
 
         if not snapshots:
-            return None
+            raise ValueError("No snapshots compiled")
 
         # --- Resumen promedio de los 5 balances ---
         valid_revenues = [r for r in revenues if r is not None]
@@ -262,15 +291,17 @@ def build_balance_analysis(ticker, category):
             "conclusion_detail": conclusion_detail
         }
 
-        return {
+        result = {
             "snapshots": snapshots,
             "summary": balance_summary
         }
-
     except Exception as e:
-        # Si yfinance falla (activo sin datos, timeout, etc.) retornar None silenciosamente
-        print(f"[balance_analysis] No se pudieron obtener balances para {ticker}: {e}")
-        return None
+        print(f"[balance_analysis] yfinance falló para {ticker}: {e}. Intentando fallback local...")
+        result = load_existing_balance_from_static(ticker)
+
+    _balance_cache[cache_key] = result
+    return result
+
 
 def calculate_tp_sl(price, volatility, profile, category, horizon="medium"):
     """

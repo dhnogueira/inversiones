@@ -4,7 +4,7 @@
     "ticker": "ADA-USD",
     "name": "ADA-USD",
     "category": "crypto",
-    "price": 0.1687999963760376,
+    "price": 0.16660000383853912,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -13,8 +13,8 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 48.7, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "48.7",
+        "content": "El RSI de 14 períodos se encuentra en 47.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "47.3",
         "status": "neutral"
       },
       {
@@ -34,9 +34,9 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+4.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-38.2%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+4.1% (1M)",
-        "status": "success"
+        "content": "El rendimiento mensual es de **+1.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-36.6%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+1.9% (1M)",
+        "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
@@ -57,15 +57,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-34.8%** y a 12 meses es **-72.3%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-34.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-38.1%** y a 12 meses es **-72.3%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-38.1% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-12.7%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-23.7%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: -12.7%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **-15.8%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-26.8%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: -15.8%",
         "status": "danger"
       }
     ],
@@ -84,7 +84,7 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **conservador**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 0.22,
+      "take_profit": 0.21,
       "stop_loss": 0.14,
       "tp_pct": 28.8,
       "sl_pct": 14.4
@@ -92,7 +92,7 @@
     "support": 0.16,
     "resistance": 0.26,
     "volume_cluster": 0.25,
-    "take_profit": 0.22,
+    "take_profit": 0.21,
     "stop_loss": 0.14,
     "tp_pct": 28.8,
     "sl_pct": 14.4
