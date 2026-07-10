@@ -84,7 +84,97 @@
         "status": "neutral"
       }
     ],
-    "balances": null,
+    "balances": {
+      "snapshots": [
+        {
+          "period": "Mar 2026",
+          "revenue_b": 846.71,
+          "net_income_b": 117.85,
+          "net_margin_pct": 13.9,
+          "eps": null,
+          "fcf_b": 12.25,
+          "debt_equity": 0.45,
+          "favorable": [
+            "FCF positivo: $12.2B",
+            "Deuda/Equity baja: 0.45"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Dec 2025",
+          "revenue_b": 872.55,
+          "net_income_b": 59.78,
+          "net_margin_pct": 6.9,
+          "eps": null,
+          "fcf_b": -62.35,
+          "debt_equity": 0.54,
+          "favorable": [],
+          "critical": [
+            "FCF negativo: $-62.4B (quema de caja)"
+          ]
+        },
+        {
+          "period": "Sep 2025",
+          "revenue_b": 740.84,
+          "net_income_b": 40.64,
+          "net_margin_pct": 5.5,
+          "eps": null,
+          "fcf_b": -79.8,
+          "debt_equity": 0.4,
+          "favorable": [
+            "Deuda/Equity baja: 0.40"
+          ],
+          "critical": [
+            "FCF negativo: $-79.8B (quema de caja)",
+            "Ingresos en baja vs trimestre anterior: -15.1%"
+          ]
+        },
+        {
+          "period": "Jun 2025",
+          "revenue_b": 661.38,
+          "net_income_b": 92.93,
+          "net_margin_pct": 14.1,
+          "eps": null,
+          "fcf_b": -49.18,
+          "debt_equity": 0.3,
+          "favorable": [
+            "Deuda/Equity baja: 0.30"
+          ],
+          "critical": [
+            "FCF negativo: $-49.2B (quema de caja)",
+            "Ingresos en baja vs trimestre anterior: -10.7%"
+          ]
+        },
+        {
+          "period": "Mar 2025",
+          "revenue_b": 846.74,
+          "net_income_b": 47.62,
+          "net_margin_pct": 5.6,
+          "eps": null,
+          "fcf_b": 14.89,
+          "debt_equity": 0.27,
+          "favorable": [
+            "FCF positivo: $14.9B",
+            "Deuda/Equity baja: 0.27",
+            "Ingresos en alza vs trimestre anterior: +28.0%"
+          ],
+          "critical": []
+        }
+      ],
+      "summary": {
+        "periods_analyzed": 5,
+        "avg_revenue_b": 793.64,
+        "avg_net_margin_pct": 9.2,
+        "avg_eps": null,
+        "revenue_trend": "decreciente",
+        "margin_trend": "en expansión",
+        "total_favorable_signals": 7,
+        "total_critical_signals": 5,
+        "conclusion": "ESTABLE",
+        "conclusion_color": "neutral",
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos decrecientes y margen promedio del 9.2%. Hay 5 señales de atención y 7 puntos positivos. Perfil de riesgo moderado."
+      }
+    },
     "verdict": {
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",

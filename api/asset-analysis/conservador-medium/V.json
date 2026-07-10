@@ -77,7 +77,97 @@
         "status": "neutral"
       }
     ],
-    "balances": null,
+    "balances": {
+      "snapshots": [
+        {
+          "period": "Mar 2026",
+          "revenue_b": 11.23,
+          "net_income_b": 6.02,
+          "net_margin_pct": 53.6,
+          "eps": null,
+          "fcf_b": 2.62,
+          "debt_equity": 0.67,
+          "favorable": [
+            "Margen neto sólido del 53.6%",
+            "FCF positivo: $2.6B"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Dec 2025",
+          "revenue_b": 10.9,
+          "net_income_b": 5.85,
+          "net_margin_pct": 53.7,
+          "eps": null,
+          "fcf_b": 6.4,
+          "debt_equity": 0.55,
+          "favorable": [
+            "Margen neto sólido del 53.7%",
+            "FCF positivo: $6.4B"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Sep 2025",
+          "revenue_b": 10.72,
+          "net_income_b": 5.09,
+          "net_margin_pct": 47.5,
+          "eps": null,
+          "fcf_b": 5.85,
+          "debt_equity": 0.66,
+          "favorable": [
+            "Margen neto sólido del 47.5%",
+            "FCF positivo: $5.8B"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Jun 2025",
+          "revenue_b": 10.17,
+          "net_income_b": 5.27,
+          "net_margin_pct": 51.8,
+          "eps": null,
+          "fcf_b": 6.31,
+          "debt_equity": 0.65,
+          "favorable": [
+            "Margen neto sólido del 51.8%",
+            "FCF positivo: $6.3B"
+          ],
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -5.1%"
+          ]
+        },
+        {
+          "period": "Mar 2025",
+          "revenue_b": 9.59,
+          "net_income_b": 4.58,
+          "net_margin_pct": 47.8,
+          "eps": null,
+          "fcf_b": 4.37,
+          "debt_equity": 0.55,
+          "favorable": [
+            "Margen neto sólido del 47.8%",
+            "FCF positivo: $4.4B"
+          ],
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -5.7%"
+          ]
+        }
+      ],
+      "summary": {
+        "periods_analyzed": 5,
+        "avg_revenue_b": 10.52,
+        "avg_net_margin_pct": 50.9,
+        "avg_eps": null,
+        "revenue_trend": "creciente",
+        "margin_trend": "en expansión",
+        "total_favorable_signals": 10,
+        "total_critical_signals": 2,
+        "conclusion": "ESTABLE",
+        "conclusion_color": "neutral",
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 50.9%. Hay 2 señales de atención y 10 puntos positivos. Perfil de riesgo moderado."
+      }
+    },
     "verdict": {
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",

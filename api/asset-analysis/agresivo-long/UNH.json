@@ -84,7 +84,94 @@
         "status": "neutral"
       }
     ],
-    "balances": null,
+    "balances": {
+      "snapshots": [
+        {
+          "period": "Mar 2026",
+          "revenue_b": 111.72,
+          "net_income_b": 6.28,
+          "net_margin_pct": 5.6,
+          "eps": null,
+          "fcf_b": 8.15,
+          "debt_equity": 0.8,
+          "favorable": [
+            "FCF positivo: $8.2B"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Dec 2025",
+          "revenue_b": 113.22,
+          "net_income_b": 0.01,
+          "net_margin_pct": 0.0,
+          "eps": null,
+          "fcf_b": 0.16,
+          "debt_equity": 0.83,
+          "favorable": [
+            "FCF positivo: $0.2B"
+          ],
+          "critical": [
+            "Margen neto muy bajo: 0.0%"
+          ]
+        },
+        {
+          "period": "Sep 2025",
+          "revenue_b": 113.16,
+          "net_income_b": 2.35,
+          "net_margin_pct": 2.1,
+          "eps": null,
+          "fcf_b": 5.06,
+          "debt_equity": 0.84,
+          "favorable": [
+            "FCF positivo: $5.1B"
+          ],
+          "critical": [
+            "Margen neto muy bajo: 2.1%"
+          ]
+        },
+        {
+          "period": "Jun 2025",
+          "revenue_b": 111.62,
+          "net_income_b": 3.41,
+          "net_margin_pct": 3.1,
+          "eps": null,
+          "fcf_b": 6.3,
+          "debt_equity": 0.84,
+          "favorable": [
+            "FCF positivo: $6.3B"
+          ],
+          "critical": [
+            "Margen neto muy bajo: 3.1%"
+          ]
+        },
+        {
+          "period": "Mar 2025",
+          "revenue_b": 109.58,
+          "net_income_b": 6.29,
+          "net_margin_pct": 5.7,
+          "eps": null,
+          "fcf_b": 4.56,
+          "debt_equity": 0.86,
+          "favorable": [
+            "FCF positivo: $4.6B"
+          ],
+          "critical": []
+        }
+      ],
+      "summary": {
+        "periods_analyzed": 5,
+        "avg_revenue_b": 111.86,
+        "avg_net_margin_pct": 3.3,
+        "avg_eps": null,
+        "revenue_trend": "creciente",
+        "margin_trend": "estable",
+        "total_favorable_signals": 5,
+        "total_critical_signals": 3,
+        "conclusion": "CON SEÑALES DE ALERTA",
+        "conclusion_color": "warning",
+        "conclusion_detail": "Los últimos 5 balances detectan 3 señales críticas frente a 5 favorables. Se observan presiones en la rentabilidad (margen 3.3%, estable) con ingresos crecientes. Se recomienda precaución."
+      }
+    },
     "verdict": {
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
