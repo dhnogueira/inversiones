@@ -2150,8 +2150,8 @@ body {
         padding: 14px;
         margin-bottom: 12px;
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px 12px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px 10px;
         cursor: pointer;
         position: relative;
         transition: transform 0.2s, background 0.2s;
@@ -2169,41 +2169,44 @@ body {
         align-items: flex-start;
         padding: 0 !important;
         border: none !important;
-        font-size: 12.5px;
+        font-size: 12px;
     }
 
     /* Ticker */
     .asset-table td[data-label="Ticker"] {
-        grid-column: 1 / 2;
-        font-size: 15px;
+        grid-column: 1 / 3;
+        font-size: 14px;
         font-weight: 700;
         margin-bottom: 2px;
     }
 
     /* Nombre (div y categoría) */
     .asset-table td[data-label="Nombre"] {
-        grid-column: 2 / -1;
-        align-items: flex-end;
-        text-align: right;
+        grid-column: 1 / -1;
+        align-items: flex-start;
+        text-align: left;
         max-width: 100%;
         overflow: hidden;
+        margin-bottom: 6px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+        padding-bottom: 6px !important;
     }
 
     .asset-table td[data-label="Nombre"] div {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 100%;
+        max-width: 90%;
     }
 
     /* Celdas con etiquetas */
     .asset-table td[data-label]::before {
         content: attr(data-label);
-        font-size: 9px;
+        font-size: 8px;
         color: var(--text-muted);
         text-transform: uppercase;
         margin-bottom: 1px;
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: 0.3px;
     }
 
@@ -2213,34 +2216,30 @@ body {
         content: none;
     }
 
-    /* Cantidad y Entrada */
+    /* Cantidad, Entrada, Actual */
     .asset-table td[data-label="Cant."] {
         grid-column: 1 / 2;
     }
 
     .asset-table td[data-label="Entrada"] {
-        grid-column: 2 / -1;
-        align-items: flex-end;
+        grid-column: 2 / 3;
     }
 
-    /* Actual e Invertido */
     .asset-table td[data-label="Actual"] {
-        grid-column: 1 / 2;
+        grid-column: 3 / 4;
     }
 
+    /* Invertido, Valor Actual, P&L */
     .asset-table td[data-label="Invertido"] {
-        grid-column: 2 / -1;
-        align-items: flex-end;
+        grid-column: 1 / 2;
     }
 
-    /* Valor Actual y P&L */
     .asset-table td[data-label="Valor Actual"] {
-        grid-column: 1 / 2;
+        grid-column: 2 / 3;
     }
 
     .asset-table td[data-label="P&L"] {
-        grid-column: 2 / -1;
-        align-items: flex-end;
+        grid-column: 3 / 4;
     }
 
     /* Eliminar/Acciones en esquina superior derecha de la tarjeta */
