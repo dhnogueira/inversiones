@@ -203,6 +203,59 @@
                         </table>
                     </div>
                 </div>
+
+                <!-- ===== JOYAS OCULTAS PANEL ===== -->
+                <div class="ranking-panel glass-panel" id="screener-gems-panel" style="margin-top: 24px;">
+                    <div class="ranking-header"
+                        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <h3 class="panel-title"
+                                style="margin-bottom: 0; display: flex; align-items: center; gap: 8px;">
+                                <i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i>
+                                Joyas Ocultas Detectadas Hoy
+                                <span id="screener-new-badge" class="badge badge-ars"
+                                    style="display: none; padding: 2px 6px; font-size: 10px; font-weight: 700;">NUEVAS</span>
+                            </h3>
+                            <span style="font-size: 12px; color: var(--text-secondary);">
+                                Activos con volumen y liquidez segura, tendencia alcista técnica y RSI favorable.
+                                Excluye la lista principal.
+                            </span>
+                        </div>
+                        <div class="category-filters" id="screener-category-filters">
+                            <button class="category-filter active" data-screener-category="all">Todos</button>
+                            <button class="category-filter" data-screener-category="merval">Merval</button>
+                            <button class="category-filter" data-screener-category="cedears">CEDEARs</button>
+                            <button class="category-filter" data-screener-category="sp500">S&P 500</button>
+                            <button class="category-filter" data-screener-category="crypto">Crypto</button>
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="asset-table">
+                            <thead>
+                                <tr>
+                                    <th>Símbolo</th>
+                                    <th>Nombre</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>KPI / Score</th>
+                                    <th>Vol. Diario</th>
+                                    <th>Sharpe</th>
+                                    <th>RSI</th>
+                                    <th>Tendencia</th>
+                                </tr>
+                            </thead>
+                            <tbody id="screener-tbody">
+                                <tr>
+                                    <td colspan="9" class="text-center"
+                                        style="padding: 24px; color: var(--text-secondary);">
+                                        <i class="fa-solid fa-circle-notch fa-spin"></i> Cargando oportunidades
+                                        analizadas hoy...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
             <!-- ===== MI CARTERA VIEW ===== -->

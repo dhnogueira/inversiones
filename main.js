@@ -138,7 +138,9 @@ let state = {
     currentView: 'dashboard',
     staticMode: false,         // Si es true, usa JSONs estáticos y localStorage
     apiBase: 'http://localhost:8000',   // Se sobreescribe dinámicamente en checkHostMode
-    portfolioPollingInterval: null  // Referencia para polling en tiempo real de cartera
+    portfolioPollingInterval: null,  // Referencia para polling en tiempo real de cartera
+    screenerCategory: 'all',         // Categoría actual del screener
+    screenerData: null               // Datos cargados del market screener
 };
 
 
@@ -395,6 +397,22 @@ function setupEventListeners() {
             // Immediately re-render table from cached data and fetch new category optimization
             if (state.marketData) renderTable();
             fetchCategoryOptimization(state.activeProfile, state.activeHorizon, cat);
+        });
+    });
+
+    // Screener Category filters
+    document.querySelectorAll('#screener-category-filters .category-filter').forEach(filter => {
+        filter.addEventListener('click', () => {
+            const cat = filter.getAttribute('data-screener-category');
+            state.screenerCategory = cat;
+
+            // Cambiar clase activa en los filtros del screener
+            document.querySelectorAll('#screener-category-filters .category-filter').forEach(f => {
+                f.classList.toggle('active', f.getAttribute('data-screener-category') === cat);
+            });
+
+            // Re-renderizar la tabla del screener
+            renderScreenerTable();
         });
     });
 
@@ -673,7 +691,15 @@ function setupAuthListeners() {
         errEl.style.display = 'none';
         sucEl.style.display = 'none';
 
-        const { error } = await supabase.auth.signUp({ email, password });
+        // Determinar la URL de redirección del email de verificación:
+        // En GitHub Pages usamos la URL pública; en local usamos localhost.
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const redirectBase = isLocalhost
+            ? window.location.origin
+            : 'https://dhnogueira.github.io/inversiones';
+        const emailRedirectTo = `${redirectBase}/`;
+
+        const { error } = await supabase.auth.signUp({ email, password, options: { emailRedirectTo } });
         if (error) {
             errEl.textContent = error.message;
             errEl.style.display = 'block';
@@ -737,10 +763,148 @@ async function fetchRecommendationsAndOptimize(profile) {
                 renderOptimalDashboard(optData.optimization);
             }
         }
+
+        // Cargar el Market Screener (Joyas Ocultas)
+        await fetchMarketScreener();
     } catch (e) {
         console.error('Error fetching dashboard details:', e);
         tableBody.innerHTML = `<tr><td colspan="8" class="text-center" style="color: var(--color-agresivo);"><i class="fa-solid fa-triangle-exclamation"></i> Error al conectar con las cotizaciones.</td></tr>`;
     }
+}
+
+// Fetch market screener results using the profile+horizon-aware cascade funnel
+async function fetchMarketScreener() {
+    try {
+        const profile = state.activeProfile || 'moderado';
+        const horizon = state.activeHorizon || 'medium';
+        const url = state.staticMode
+            ? `api/market-screener-${profile}-${horizon}.json`
+            : `${state.apiBase}/api/screener?profile=${profile}&horizon=${horizon}`;
+        const response = await fetch(url);
+        if (response.ok) {
+            const data = await response.json();
+            // Nuevo formato: data.results (por categoría) y data.pipeline (métricas del funnel)
+            if (data.status === 'success') {
+                // Compatibilidad tanto con el JSON estático (categories) como con el nuevo endpoint (results)
+                state.screenerData = data.results || data.categories || null;
+                state.screenerPipeline = data.pipeline || null;
+
+                // Badge: total de activos detectados
+                const totalFound = state.screenerData
+                    ? Object.values(state.screenerData).reduce((acc, arr) => acc + (arr || []).length, 0)
+                    : 0;
+                const badge = document.getElementById('screener-new-badge');
+                if (badge) {
+                    if (totalFound > 0) {
+                        badge.innerText = `${totalFound} oportunidades`;
+                        badge.style.display = 'inline-block';
+                    } else {
+                        badge.style.display = 'none';
+                    }
+                }
+                renderScreenerTable();
+            }
+        }
+    } catch (e) {
+        console.warn('Error fetching market screener:', e);
+        const tbody = document.getElementById('screener-tbody');
+        if (tbody) {
+            tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="color: var(--color-agresivo);"><i class="fa-solid fa-triangle-exclamation"></i> Error al cargar las oportunidades del screener.</td></tr>`;
+        }
+    }
+}
+
+// Render market screener items into the dedicated gems panel table
+function renderScreenerTable() {
+    const tbody = document.getElementById('screener-tbody');
+    if (!tbody) return;
+    if (!state.screenerData) {
+        tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="color: var(--text-secondary);">No hay datos de escáner disponibles.</td></tr>`;
+        return;
+    }
+
+    let assets = [];
+    const cat = state.screenerCategory || 'all';
+
+    if (cat === 'all') {
+        Object.keys(state.screenerData).forEach(k => {
+            assets = assets.concat(state.screenerData[k]);
+        });
+    } else {
+        assets = state.screenerData[cat] || [];
+    }
+
+    // Ordenar por funnel_score descendente (nuevo campo)
+    // Soporte retrocompatible con gem_score (JSON estático legacy)
+    assets.sort((a, b) => (b.funnel_score ?? b.gem_score ?? 0) - (a.funnel_score ?? a.gem_score ?? 0));
+
+    if (assets.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="9" class="text-center" style="color: var(--text-secondary); padding: 20px;">No se detectaron oportunidades para esta categoría.</td></tr>`;
+        return;
+    }
+
+    const activeProfile = state.activeProfile || 'moderado';
+    const activeHorizon = state.activeHorizon || 'medium';
+    const horizonLabels = { short: 'Corto', medium: 'Medio', long: 'Largo' };
+
+    tbody.innerHTML = assets.map(asset => {
+        const categoryName = (asset.category || '').toUpperCase();
+        const score = asset.funnel_score ?? asset.gem_score ?? 0;
+
+        // Formatear precio
+        const priceFormatted = asset.currency === 'USD'
+            ? `u$s ${asset.price.toFixed(2)}`
+            : `$ ${asset.price.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 2 })}`;
+
+        // Formatear volumen (dollar_vol_20d nuevo, avg_daily_volume legacy)
+        const rawVol = asset.dollar_vol_20d ?? asset.avg_daily_volume ?? 0;
+        let volFormatted = rawVol >= 1_000_000_000
+            ? `${(rawVol / 1_000_000_000).toFixed(1)}B`
+            : rawVol >= 1_000_000
+                ? `${(rawVol / 1_000_000).toFixed(1)}M`
+                : rawVol >= 1_000
+                    ? `${(rawVol / 1_000).toFixed(0)}k`
+                    : rawVol.toLocaleString();
+
+        // Badge de perfil/horizonte
+        const profileBadge = `<span class="badge" style="background: rgba(var(--color-${activeProfile}-rgb, 59,130,246), 0.1); color: var(--color-${activeProfile}); border: 1px solid rgba(var(--color-${activeProfile}-rgb, 59,130,246), 0.25); font-size: 8px; margin-left: 6px; text-transform: uppercase;">${activeProfile[0].toUpperCase()} · ${horizonLabels[activeHorizon]}</span>`;
+
+        // Score color según nivel
+        let scoreColor = '#f59e0b';
+        if (score >= 70) scoreColor = 'var(--color-conservador)';
+        else if (score >= 55) scoreColor = 'var(--color-moderado)';
+        else if (score < 40) scoreColor = '#ef4444';
+
+        // Determinar clase de tendencia
+        let trendClass = 'trend-stable';
+        if ((asset.trend || '').includes('Alcista')) trendClass = 'trend-up';
+        if ((asset.trend || '').includes('Bajista')) trendClass = 'trend-down';
+
+        // Sharpe color
+        const sharpeText = (asset.sharpe || 0).toFixed(2);
+        let sharpeStyle = 'color: var(--text-primary);';
+        if ((asset.sharpe || 0) > 1.0) sharpeStyle = 'color: var(--color-conservador); font-weight: 700;';
+        else if ((asset.sharpe || 0) < 0) sharpeStyle = 'color: #ef4444;';
+
+        // RSI Color
+        let rsiColor = 'var(--text-primary)';
+        if (asset.rsi < 35) rsiColor = '#60a5fa';
+        else if (asset.rsi > 65) rsiColor = '#ef4444';
+
+        return `
+            <tr style="cursor: pointer;" onclick="openAssetModal('${asset.ticker}')">
+                <td><span class="asset-tag">${asset.ticker}</span>${profileBadge}</td>
+                <td><span style="font-size:13px; color:var(--text-secondary);">${asset.name}</span></td>
+                <td><span class="badge badge-${(asset.currency || 'usd').toLowerCase()}">${categoryName}</span></td>
+                <td><strong>${priceFormatted}</strong></td>
+                <td><strong style="color: ${scoreColor}; font-size: 15px;">${score.toFixed(1)}</strong></td>
+                <td><span style="font-weight: 500;">${volFormatted}</span></td>
+                <td><span style="${sharpeStyle}">${sharpeText}</span></td>
+                <td><span style="color: ${rsiColor}; font-weight: 600;">${(asset.rsi || 0).toFixed(1)}</span></td>
+                <td><span class="trend-badge ${trendClass}">${asset.trend || 'N/A'}</span></td>
+            </tr>
+        `;
+    }).join('');
 }
 
 // Standalone category optimization fetch — used when only the category tab changes
@@ -2858,8 +3022,8 @@ async function openAssetModal(ticker) {
     // Render the default tab (user's active horizon)
     let defaultData = _modalAnalysisCache[defaultHorizon] || shortData || mediumData || longData;
 
-    if (!defaultData && state.portfolioPositions) {
-        const pos = state.portfolioPositions.find(p => p.ticker === ticker);
+    if (!defaultData) {
+        let pos = state.portfolioPositions ? state.portfolioPositions.find(p => p.ticker === ticker) : null;
         if (pos) {
             const price = pos.current_price || pos.entry_price || 0.0;
             const currencySymbol = pos.currency === 'ARS' ? '$' : 'u$s';
@@ -2955,6 +3119,79 @@ async function openAssetModal(ticker) {
                 long: makeSynthetic('long')
             };
             defaultData = _modalAnalysisCache[defaultHorizon];
+        } else if (state.screenerData) {
+            // Buscar si es una joya del screener
+            let gem = null;
+            Object.keys(state.screenerData).forEach(k => {
+                const found = state.screenerData[k].find(a => a.ticker === ticker);
+                if (found) gem = found;
+            });
+
+            if (gem) {
+                const makeSyntheticGem = (h) => {
+                    const price = gem.price;
+                    const action = gem.gem_score >= 82 ? 'COMPRAR' : 'CONSIDERAR';
+                    const color = gem.gem_score >= 82 ? 'conservador' : 'moderado';
+                    const icon = gem.gem_score >= 82 ? 'fa-circle-check' : 'fa-circle-info';
+                    const why = `Este activo fue detectado por nuestro escáner como una **Joya Oculta** hoy. Tiene un score de oportunidad de **${gem.gem_score.toFixed(1)}/100**, Sharpe de **${gem.sharpe.toFixed(2)}** y volumen de negociación representativo diario.`;
+
+                    let trendClass = 'neutral';
+                    if (gem.trend.includes('Alcista')) trendClass = 'trend-up';
+                    if (gem.trend.includes('Bajista')) trendClass = 'trend-down';
+
+                    const isCrypto = gem.category === 'crypto';
+                    const tpCoeff = isCrypto ? 0.35 : 0.18;
+                    const slCoeff = isCrypto ? 0.22 : 0.09;
+
+                    return {
+                        ticker: gem.ticker,
+                        name: gem.name,
+                        category: gem.category,
+                        currency: gem.currency,
+                        price: price,
+                        profile: state.activeProfile,
+                        score: Math.round(gem.gem_score),
+                        take_profit: price * (1 + tpCoeff),
+                        tp_pct: Math.round(tpCoeff * 100),
+                        stop_loss: price * (1 - slCoeff),
+                        sl_pct: Math.round(slCoeff * 100),
+                        resistance: price * 1.07,
+                        volume_cluster: price,
+                        support: price * 0.93,
+                        verdict: {
+                            color: color,
+                            icon: icon,
+                            action: action,
+                            summary: `Oportunidad detectada por Screener: **${gem.name}**`,
+                            why: why
+                        },
+                        technical: [
+                            {
+                                title: "Fuerza de Tendencia",
+                                status: trendClass,
+                                badge: gem.trend.toUpperCase(),
+                                text: `RSI actual de **${gem.rsi.toFixed(1)}** y Sharpe de **${gem.sharpe.toFixed(2)}**. Momento positivo con volumen de operación seguro.`
+                            }
+                        ],
+                        fundamental: [
+                            {
+                                title: "Detalles del Escaneo",
+                                status: "neutral",
+                                badge: "SCREENER ACTIVO",
+                                text: `Este activo no pertenece a la base fija precargada. Se evalúa diariamente frente a un gran universo de oportunidades.`
+                            }
+                        ],
+                        macro: []
+                    };
+                };
+
+                _modalAnalysisCache = {
+                    short: makeSyntheticGem('short'),
+                    medium: makeSyntheticGem('medium'),
+                    long: makeSyntheticGem('long')
+                };
+                defaultData = _modalAnalysisCache[defaultHorizon];
+            }
         }
     }
 
