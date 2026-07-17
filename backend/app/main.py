@@ -19,9 +19,44 @@ from app.services.watchlist_service import (
     get_watchlist, add_to_watchlist, remove_from_watchlist, check_alerts
 )
 from app.services.auth_service import get_current_user
+from app.services.market_screener import run_market_screener, run_screener_all_profiles
 
 # Estado de carga de datos iniciales
 is_updating = False
+
+import json as _json
+from datetime import datetime as _dt
+
+SCHEDULER_LOG_PATH = os.path.abspath(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "../cache/scheduler_log.json")
+)
+
+def _write_scheduler_log(event: str, status: str, detail: str = ""):
+    """Escribe una entrada en el log de auditoría del scheduler."""
+    entry = {
+        "timestamp": _dt.now().isoformat(timespec="seconds"),
+        "event": event,
+        "status": status,
+        "detail": detail,
+    }
+    log = []
+    if os.path.exists(SCHEDULER_LOG_PATH):
+        try:
+            with open(SCHEDULER_LOG_PATH, "r", encoding="utf-8") as f:
+                log = _json.load(f)
+            if not isinstance(log, list):
+                log = []
+        except Exception:
+            log = []
+    log.append(entry)
+    # Mantener solo los últimos 200 eventos
+    log = log[-200:]
+    try:
+        with open(SCHEDULER_LOG_PATH, "w", encoding="utf-8") as f:
+            _json.dump(log, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"[scheduler] Error escribiendo audit log: {e}")
+
 
 async def refresh_all_data(force=False):
     global is_updating
@@ -30,7 +65,7 @@ async def refresh_all_data(force=False):
         return
     is_updating = True
     try:
-        print("Starting market data synchronous refresh...")
+        print("Starting market data cache refresh...")
         await asyncio.gather(
             fetch_yfinance_market_data(force_refresh=force),
             fetch_arg_fixed_income_data(force_refresh=force)
@@ -41,57 +76,148 @@ async def refresh_all_data(force=False):
     finally:
         is_updating = False
 
-def run_scheduler_refresh():
-    import sys
-    import subprocess
-    
-    # 1. Actualizar caché y base de datos locales
+
+def run_10min_cache_refresh():
+    """
+    Job de 10 minutos: SOLO refresca la caché en memoria/disco.
+    NO ejecuta build_static.py (evita rate-limiting en Yahoo Finance).
+    """
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     try:
         loop.run_until_complete(refresh_all_data(force=True))
+        _write_scheduler_log("cache_refresh_10min", "ok")
+    except Exception as e:
+        _write_scheduler_log("cache_refresh_10min", "error", str(e))
     finally:
         loop.close()
 
-    # Rutas base
-    backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # Inversiones/backend
-    root_dir = os.path.dirname(backend_dir) # Inversiones/
 
-    # 2. Compilar los archivos estáticos en frontend/api
+def run_daily_funnel_all():
+    """
+    Job diario a las 11:15 AM (lunes a viernes):
+    Ejecuta el funnel de selección en cascada para los 9 combos
+    perfil×horizonte (conservador/moderado/agresivo × short/medium/long)
+    y guarda las cachés en disco.
+    """
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
+        loop.run_until_complete(run_screener_all_profiles(force_refresh=True))
+        _write_scheduler_log("funnel_all_profiles", "ok",
+                             "Funnel 9× combos completado exitosamente.")
+        print("[daily_funnel] Funnel 9× combos completado.")
+    except Exception as e:
+        _write_scheduler_log("funnel_all_profiles", "error", str(e))
+        print(f"[daily_funnel] Error: {e}")
+    finally:
+        loop.close()
+
+
+def run_daily_full_build():
+    """
+    Job diario a las 11:00 AM (lunes a viernes):
+    1. Refresca la caché de datos de mercado.
+    2. Ejecuta build_static.py → recalcula Markowitz + clasificación por categoría
+       para todos los perfiles, horizontes y categorías.
+    3. Hace git add + commit + push para actualizar GitHub Pages.
+    4. Escribe una entrada en el log de auditoría.
+    """
+    import sys
+    import subprocess
+
+    backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    root_dir = os.path.dirname(backend_dir)
+
+    print("[daily_build] Iniciando rebuild diario completo (Markowitz + clasificación)...")
+    _write_scheduler_log("daily_full_build", "started")
+
+    # 1. Actualizar caché
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
+        loop.run_until_complete(refresh_all_data(force=True))
+    except Exception as e:
+        _write_scheduler_log("daily_full_build", "error", f"cache refresh failed: {e}")
+        return
+    finally:
+        loop.close()
+
+    # 2. Compilar archivos estáticos → Markowitz + clasificaciones
+    build_ok = False
     try:
         python_executable = sys.executable or "python"
         build_script = os.path.join(backend_dir, "build_static.py")
-        print(f"[scheduler] Ejecutando compilación estática: {python_executable} {build_script}")
-        res_build = subprocess.run([python_executable, build_script], capture_output=True, text=True, cwd=backend_dir)
+        print(f"[daily_build] Ejecutando: {python_executable} {build_script}")
+        res_build = subprocess.run(
+            [python_executable, build_script],
+            capture_output=True, text=True, cwd=backend_dir
+        )
         if res_build.returncode == 0:
-            print("[scheduler] Compilación estática finalizada con éxito.")
+            print("[daily_build] Compilación estática completada exitosamente.")
+            build_ok = True
         else:
-            print(f"[scheduler] Error compilando estáticos (código {res_build.returncode}): {res_build.stderr}")
+            err = res_build.stderr[-500:] if res_build.stderr else ""
+            print(f"[daily_build] Error en compilación (código {res_build.returncode}): {err}")
+            _write_scheduler_log("daily_full_build", "error", f"build_static.py failed: {err}")
+            return
     except Exception as e:
-        print(f"[scheduler] Excepción al compilar estáticos: {e}")
+        _write_scheduler_log("daily_full_build", "error", f"build exception: {e}")
+        return
 
-    # 3. Autopush a GitHub Pages si se generaron cambios en frontend/api
+    # 3. Git add + commit + push
     try:
-        print(f"[scheduler] Ejecutando git add y verificación en {root_dir}")
         subprocess.run(["git", "add", "frontend/api/"], capture_output=True, text=True, cwd=root_dir)
-        
-        # Verificar cambios staged
-        status_res = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, cwd=root_dir)
-        staged_changes = [line for line in status_res.stdout.splitlines() if line.startswith(('M ', 'A ', 'D ', 'MM', 'AM'))]
-        
+        status_res = subprocess.run(
+            ["git", "status", "--porcelain"],
+            capture_output=True, text=True, cwd=root_dir
+        )
+        staged_changes = [
+            line for line in status_res.stdout.splitlines()
+            if line.startswith(('M ', 'A ', 'D ', 'MM', 'AM'))
+        ]
+
+        commit_ok = False
         if staged_changes:
-            print(f"[scheduler] Detectados {len(staged_changes)} cambios. Ejecutando git commit...")
-            git_commit = subprocess.run(["git", "commit", "-m", "data: 10-minute automated market update"], capture_output=True, text=True, cwd=root_dir)
-            print(f"[scheduler] Git commit ejecutado: {git_commit.stdout.strip()}")
+            ts = _dt.now().strftime("%Y-%m-%d %H:%M")
+            git_commit = subprocess.run(
+                ["git", "commit", "-m", f"data: daily market update {ts} (Markowitz+clasificacion)"],
+                capture_output=True, text=True, cwd=root_dir
+            )
+            print(f"[daily_build] Git commit: {git_commit.stdout.strip()}")
+            commit_ok = git_commit.returncode == 0
         else:
-            print("[scheduler] Sin cambios nuevos para commitear.")
+            print("[daily_build] Sin cambios nuevos para commitear.")
+            commit_ok = True
+
+        # Push siempre (commit o no) para garantizar sincronización
+        git_push = subprocess.run(
+            ["git", "push", "origin", "main"],
+            capture_output=True, text=True, cwd=root_dir
+        )
+        if git_push.returncode == 0:
+            print("[daily_build] Git push exitoso.")
+            _write_scheduler_log(
+                "daily_full_build", "ok",
+                f"{len(staged_changes)} archivos actualizados. Push: ok."
+            )
+        else:
+            push_err = git_push.stderr[-300:] if git_push.stderr else ""
+            print(f"[daily_build] Git push falló: {push_err}")
+            _write_scheduler_log("daily_full_build", "warning", f"commit ok, push failed: {push_err}")
+
     except Exception as e:
-        print(f"[scheduler] Error en autopush: {e}")
+        _write_scheduler_log("daily_full_build", "error", f"git step failed: {e}")
+        print(f"[daily_build] Error en paso git: {e}")
 
 
 scheduler = BackgroundScheduler()
-# Ejecutar cada 10 minutos (interval)
-scheduler.add_job(run_scheduler_refresh, 'interval', minutes=10, id='market_data_10_min')
+# Job 1: Refresco de caché cada 10 minutos (solo cache, sin rebuild completo)
+scheduler.add_job(run_10min_cache_refresh, 'interval', minutes=10, id='market_data_10_min')
+# Job 2: Rebuild diario completo a las 11:00 AM (lun-vie): Markowitz + clasificaciones + git push
+scheduler.add_job(run_daily_full_build, 'cron', day_of_week='mon-fri', hour=11, minute=0, id='daily_full_build')
+# Job 3: Funnel de screening a las 11:15 AM (lun-vie): 9 combos perfil×horizonte
+scheduler.add_job(run_daily_funnel_all, 'cron', day_of_week='mon-fri', hour=11, minute=15, id='daily_funnel_all')
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -139,6 +265,22 @@ def read_config_js():
 @app.get("/api/health")
 def read_health():
     return {"status": "online", "updating": is_updating}
+
+# ===== SCHEDULER AUDIT LOG =====
+@app.get("/api/scheduler-log")
+def read_scheduler_log(limit: int = Query(50, ge=1, le=200)):
+    """Devuelve las últimas entradas del log de auditoría del scheduler (Markowitz + clasificación diaria)."""
+    if not os.path.exists(SCHEDULER_LOG_PATH):
+        return {"status": "ok", "log": [], "message": "Sin entradas de log todavía."}
+    try:
+        with open(SCHEDULER_LOG_PATH, "r", encoding="utf-8") as f:
+            log = _json.load(f)
+        if not isinstance(log, list):
+            log = []
+        return {"status": "ok", "count": len(log), "log": log[-limit:]}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
 
 # ===== HELPER: load all assets =====
 async def _get_all_assets():
@@ -450,6 +592,76 @@ scheduler.add_job(run_scheduler_email_alert, 'cron', day_of_week='mon-fri', hour
 async def post_send_test_alert(background_tasks: BackgroundTasks):
     background_tasks.add_task(dispatch_daily_alert_email)
     return {"status": "started", "message": "Proceso de envío de emails de prueba iniciado en segundo plano."}
+
+# ===== MARKET SCREENER (Funnel de selección en cascada) =====
+@app.get("/api/screener")
+async def get_screener(
+    profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$"),
+    horizon: str = Query("medium", regex="^(short|medium|long)$"),
+    force: bool = Query(False)
+):
+    """
+    Ejecuta el funnel de 3 etapas (liquidez → técnico grueso → scoring compuesto)
+    y retorna los mejores activos del universo para el perfil y horizonte indicados.
+
+    Los umbrales, pesos y cantidad de resultados varían según perfil e horizonte:
+    - conservador: umbrales de liquidez altos, score mín. 55, top 5 por categoría
+    - moderado:    umbrales intermedios, score mín. 45, top 8 por categoría
+    - agresivo:    umbrales bajos (más oportunidades), score mín. 35, top 10 por categoría
+
+    short   → pesa más momentum y cercanía al soporte
+    medium  → pesa más EMA cross y Sharpe
+    long    → pesa más Sharpe y retorno ajustado
+    """
+    result = await run_market_screener(profile=profile, horizon=horizon, force_refresh=force)
+    return {"status": "success", **result}
+
+
+@app.get("/api/funnel-status")
+async def get_funnel_status(
+    profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$"),
+    horizon: str = Query("medium", regex="^(short|medium|long)$")
+):
+    """
+    Retorna las métricas del último run del funnel (cuántos tickers
+    pasaron cada etapa) sin volver a ejecutarlo.
+    """
+    import json as _json_inner
+    from app.config import CACHE_DIR as _CACHE_DIR
+    cache_key = f"funnel_{profile}_{horizon}.json"
+    cache_path = os.path.join(_CACHE_DIR, cache_key)
+    if not os.path.exists(cache_path):
+        return {
+            "status": "not_run",
+            "message": f"El funnel para '{profile}/{horizon}' no ha sido ejecutado todavía.",
+            "profile": profile,
+            "horizon": horizon,
+        }
+    try:
+        with open(cache_path, "r", encoding="utf-8") as f:
+            data = _json_inner.load(f)
+        pipeline = data.get("pipeline", {})
+        results = data.get("results", {})
+        summary = {cat: len(assets) for cat, assets in results.items()}
+        return {
+            "status": "ok",
+            "pipeline": pipeline,
+            "results_summary": summary,
+        }
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+
+@app.post("/api/screener/refresh")
+async def trigger_screener_refresh(
+    background_tasks: BackgroundTasks,
+    profile: str = Query("moderado", regex="^(conservador|moderado|agresivo)$"),
+    horizon: str = Query("medium", regex="^(short|medium|long)$")
+):
+    """Dispara la re-ejecución del funnel para un combo perfil/horizonte en segundo plano."""
+    background_tasks.add_task(run_market_screener, profile=profile, horizon=horizon, force_refresh=True)
+    return {"status": "started", "message": f"Funnel {profile}/{horizon} iniciado en segundo plano."}
+
 
 # ===== REFRESH =====
 @app.post("/api/refresh")

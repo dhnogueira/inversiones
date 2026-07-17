@@ -1,8 +1,14 @@
 {
-  "status": "success",
-  "scan_date": "2026-07-16",
-  "total_new_discoveries": 25,
-  "categories": {
+  "pipeline": {
+    "universe_size": 270,
+    "stage1_passed": 253,
+    "stage2_passed": 125,
+    "final_count": 25,
+    "timestamp": 1784253090.13487,
+    "profile": "moderado",
+    "horizon": "medium"
+  },
+  "results": {
     "sp500": [
       {
         "ticker": "AMD",
@@ -836,14 +842,5 @@
         "horizon": "medium"
       }
     ]
-  },
-  "pipeline": {
-    "universe_size": 270,
-    "stage1_passed": 253,
-    "stage2_passed": 125,
-    "final_count": 25,
-    "timestamp": 1784253090.13487,
-    "profile": "moderado",
-    "horizon": "medium"
   }
 }

@@ -8,6 +8,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from app.services.yfinance_service import fetch_yfinance_market_data
 from app.services.arg_fixed_income import fetch_arg_fixed_income_data
+from app.services.market_screener import run_market_screener
 from app.scoring.profiles import get_recommendations_by_profile, score_asset_for_profile
 from app.scoring.analysis import generate_asset_analysis
 from app.scoring.optimizer import optimize_portfolio
@@ -29,10 +30,11 @@ async def main():
     ensure_directory(os.path.join(API_DIR, "recommendations"))
     ensure_directory(os.path.join(API_DIR, "optimize"))
     
-    # 2. Descargar y combinar datos reales de mercado
-    print("Recuperando cotizaciones de mercado y de renta fija...")
-    yf_assets = await fetch_yfinance_market_data(force_refresh=True)
-    fi_assets = await fetch_arg_fixed_income_data(force_refresh=True)
+    # 2. Leer datos desde caché en disco (el scheduler de 10 min los mantiene frescos).
+    # use_cache_only=True: sin TTL, sin descarga — evita rate-limiting de Yahoo Finance en subprocess.
+    print("Recuperando cotizaciones de mercado y de renta fija desde caché (sin descarga)...")
+    yf_assets = await fetch_yfinance_market_data(use_cache_only=True)
+    fi_assets = await fetch_arg_fixed_income_data(force_refresh=False)
     all_assets = yf_assets + fi_assets
     
     # Validar que ningún instrumento de renta fija esté vencido (Seguridad en compilación)
@@ -181,8 +183,45 @@ async def main():
             json.dump([], f)
         print("[OK] Historial de alertas vacio creado.")
 
-    print("Compilación estática completada con éxito. Todos los archivos JSON generados en frontend/api/")
+    # 7. Ejecutar el Market Screener de Joyas Ocultas para todos los combos perfil-horizonte
+    print("Ejecutando Market Screener (Funnel en cascada) para todos los profiles/horizontes...")
+    try:
+        from app.services.market_screener import run_screener_all_profiles
+        all_combos = await run_screener_all_profiles()
+        
+        total_new_global = 0
+        for key, value in all_combos.items():
+            p, h = key.split("_")
+            results = value.get("results", {})
+            pipeline = value.get("pipeline", {})
+            total_count = sum(len(lst) for lst in results.values())
+            
+            screener_data = {
+                "status": "success",
+                "scan_date": datetime.now().strftime("%Y-%m-%d"),
+                "total_new_discoveries": total_count,
+                "categories": results,
+                "pipeline": pipeline
+            }
+            
+            filepath = os.path.join(API_DIR, f"market-screener-{p}-{h}.json")
+            with open(filepath, "w", encoding="utf-8") as f:
+                json.dump(screener_data, f, indent=2, ensure_ascii=False)
+                
+            if p == "moderado" and h == "medium":
+                total_new_global = total_count
+                fallback_path = os.path.join(API_DIR, "market-screener.json")
+                with open(fallback_path, "w", encoding="utf-8") as f:
+                    json.dump(screener_data, f, indent=2, ensure_ascii=False)
+                    
+        print(f"[OK] Market Screener completado. Oportunidades en moderado/medium: {total_new_global}.")
+    except Exception as e:
+        print(f"[WARNING] Market Screener falló (no crítico): {e}")
+        # Generar un JSON vacío para que el frontend no falle
+        with open(os.path.join(API_DIR, "market-screener.json"), "w", encoding="utf-8") as f:
+            json.dump({"status": "error", "message": str(e), "categories": {}}, f)
 
+    print("Compilación estática completada con éxito. Todos los archivos JSON generados en frontend/api/")
 
 
 if __name__ == "__main__":

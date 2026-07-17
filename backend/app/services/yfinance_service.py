@@ -247,8 +247,20 @@ def compute_asset_metrics(df, ticker, category):
         "timestamp": time.time()
     }
 
-async def fetch_yfinance_market_data(force_refresh=False):
+async def fetch_yfinance_market_data(force_refresh=False, use_cache_only=False):
     cache_path = os.path.join(CACHE_DIR, "yfinance_market_data.json")
+
+    # use_cache_only: retorna el caché en disco sin TTL ni descargas (usado por build_static.py)
+    if use_cache_only and os.path.exists(cache_path):
+        try:
+            with open(cache_path, "r") as f:
+                cached = json.load(f)
+            cached_data = cached.get("data", [])
+            if len(cached_data) > 0:
+                print(f"[yfinance] Usando caché en disco ({len(cached_data)} activos). Sin descarga.")
+                return cached_data
+        except Exception as e:
+            print(f"[yfinance] Error leyendo caché para use_cache_only: {e}")
     
     # Evaluar validez del cache elemento por elemento según las reglas de la skill Caching
     if not force_refresh and os.path.exists(cache_path):
