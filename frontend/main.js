@@ -3541,6 +3541,7 @@ function renderBalanceSection(balances) {
 function renderAnalysisCard(section) {
     const statusClass = `analysis-status-${section.status || 'neutral'}`;
     const valueHtml = section.value ? `<span class="analysis-card-value ${statusClass}">${section.value}</span>` : '';
+    const content = section.content || section.text || '';
 
     return `
         <div class="analysis-card">
@@ -3552,7 +3553,7 @@ function renderAnalysisCard(section) {
                 ${valueHtml}
             </div>
             <div class="analysis-card-content">
-                ${formatMarkdownBold(section.content)}
+                ${formatMarkdownBold(content)}
             </div>
         </div>
     `;
@@ -3560,7 +3561,7 @@ function renderAnalysisCard(section) {
 
 function formatMarkdownBold(text) {
     if (!text) return '';
-    return text.replace(/\*\*(.*?)\*\"/g, '<strong>$1</strong>');
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 }
 
 function setupTickerAutocomplete() {
