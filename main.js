@@ -534,6 +534,27 @@ function setupEventListeners() {
         });
     }
 
+    // Toggle collapsible panels
+    const btnToggleCategory = document.getElementById('btn-toggle-category');
+    const iconToggleCategory = document.getElementById('icon-toggle-category');
+    const categoryPanelContent = document.getElementById('category-panel-content');
+    if (btnToggleCategory && categoryPanelContent) {
+        btnToggleCategory.addEventListener('click', () => {
+            categoryPanelContent.classList.toggle('collapsed');
+            iconToggleCategory?.classList.toggle('collapsed');
+        });
+    }
+
+    const btnToggleScreener = document.getElementById('btn-toggle-screener');
+    const iconToggleScreener = document.getElementById('icon-toggle-screener');
+    const screenerGemsContent = document.getElementById('screener-gems-content');
+    if (btnToggleScreener && screenerGemsContent) {
+        btnToggleScreener.addEventListener('click', () => {
+            screenerGemsContent.classList.toggle('collapsed');
+            iconToggleScreener?.classList.toggle('collapsed');
+        });
+    }
+
 }
 
 // ===== SUPABASE AUTH HELPERS =====
@@ -757,7 +778,7 @@ async function fetchRecommendationsAndOptimize(profile) {
         if (recData.status === 'success') {
             state.marketData = recData.results;
             state.updating = recData.updating;
-            updateMetadata();
+            updateMetadata(recData.timestamp);
             renderTable();
         }
 
@@ -2951,9 +2972,14 @@ function showTableLoader() {
     tableBody.innerHTML = `<tr><td colspan="8" class="text-center" style="padding: 40px;"><i class="fa-solid fa-circle-notch fa-spin fa-2x"></i><br><br>Modelando asignaciones dinámicas óptimas...</td></tr>`;
 }
 
-function updateMetadata() {
-    const now = new Date();
-    updateTimeSpan.innerText = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')} (${now.toLocaleDateString()})`;
+function updateMetadata(dataTimestamp) {
+    let date;
+    if (dataTimestamp) {
+        date = dataTimestamp > 1000000000000 ? new Date(dataTimestamp) : new Date(dataTimestamp * 1000);
+    } else {
+        date = new Date();
+    }
+    updateTimeSpan.innerText = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')} (${date.toLocaleDateString()})`;
 }
 
 // ===== DETAIL MODAL DIALOGS =====
