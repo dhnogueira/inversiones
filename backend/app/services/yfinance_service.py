@@ -247,7 +247,7 @@ def compute_asset_metrics(df, ticker, category):
         "timestamp": time.time()
     }
 
-async def fetch_yfinance_market_data(force_refresh=False, use_cache_only=False):
+def _sync_fetch_yfinance_market_data(force_refresh=False, use_cache_only=False):
     cache_path = os.path.join(CACHE_DIR, "yfinance_market_data.json")
 
     # use_cache_only: retorna el caché en disco sin TTL ni descargas (usado por build_static.py)
@@ -262,6 +262,27 @@ async def fetch_yfinance_market_data(force_refresh=False, use_cache_only=False):
         except Exception as e:
             print(f"[yfinance] Error leyendo caché para use_cache_only: {e}")
     
+    # Mapear fundamentales previos desde el caché existente para su reutilización
+    prev_fundamentals = {}
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, "r") as f:
+                prev_cached = json.load(f)
+            for asset in prev_cached.get("data", []):
+                ticker_key = asset.get("ticker")
+                if ticker_key:
+                    prev_fundamentals[ticker_key] = {
+                        k: asset[k] for k in [
+                            "pe_ratio", "pb_ratio", "roe", "fcf_yield", "debt_to_equity",
+                            "dividend_yield", "payout_ratio", "dividend_growing", "profit_margin",
+                            "operating_margin", "peg_ratio", "eps_growth", "revenue_growth",
+                            "analyst_consensus", "analyst_count", "target_mean_price",
+                            "target_upside_pct", "eps_revision_signal", "forward_pe"
+                        ] if k in asset
+                    }
+        except Exception as e:
+            print(f"[yfinance] Error cargando fundamentales del caché anterior: {e}")
+
     # Evaluar validez del cache elemento por elemento según las reglas de la skill Caching
     if not force_refresh and os.path.exists(cache_path):
         try:
@@ -350,7 +371,11 @@ async def fetch_yfinance_market_data(force_refresh=False, use_cache_only=False):
             category = categories[ticker]
             metrics = compute_asset_metrics(df, ticker, category)
             if metrics:
-                fundamentals = fetch_fundamental_metrics(ticker, category)
+                # Reutilizar fundamentales si existen en caché y no se forza el refresh
+                if not force_refresh and ticker in prev_fundamentals:
+                    fundamentals = prev_fundamentals[ticker]
+                else:
+                    fundamentals = fetch_fundamental_metrics(ticker, category)
                 metrics.update(fundamentals)
                 results.append(metrics)
         except Exception as e:
@@ -376,6 +401,12 @@ async def fetch_yfinance_market_data(force_refresh=False, use_cache_only=False):
                 print(f"Error cargando caché previo de resguardo: {e}")
         
     return results
+
+async def fetch_yfinance_market_data(force_refresh=False, use_cache_only=False):
+    import asyncio
+    return await asyncio.to_thread(
+        _sync_fetch_yfinance_market_data, force_refresh, use_cache_only
+    )
 
 if __name__ == "__main__":
     import asyncio

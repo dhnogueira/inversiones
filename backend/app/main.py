@@ -222,7 +222,16 @@ scheduler.add_job(run_daily_funnel_all, 'cron', day_of_week='mon-fri', hour=11, 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     scheduler.start()
-    asyncio.create_task(refresh_all_data(force=False))
+    
+    # Solo ejecutar la actualización inicial si no existe el caché, para evitar congelar el event loop en el arranque
+    from app.config import CACHE_DIR
+    cache_path = os.path.join(CACHE_DIR, "yfinance_market_data.json")
+    if not os.path.exists(cache_path):
+        print("[startup] No se detectó caché de mercado. Iniciando descarga en background...")
+        asyncio.create_task(refresh_all_data(force=False))
+    else:
+        print("[startup] Caché de mercado existente encontrado. Saltando descarga de inicio para evitar bloqueos del event loop.")
+        
     yield
     scheduler.shutdown()
 
@@ -284,7 +293,10 @@ def read_scheduler_log(limit: int = Query(50, ge=1, le=200)):
 
 # ===== HELPER: load all assets =====
 async def _get_all_assets():
-    yf = await fetch_yfinance_market_data(force_refresh=False)
+    # use_cache_only=True: lee el caché en disco sin TTL ni descargas.
+    # Las actualizaciones las maneja el scheduler automático (cada 10 min o diariamente).
+    # Esto evita bloquear el event loop durante los request HTTP.
+    yf = await fetch_yfinance_market_data(use_cache_only=True)
     fi = await fetch_arg_fixed_income_data(force_refresh=False)
     return yf + fi
 
