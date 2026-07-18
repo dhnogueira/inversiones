@@ -534,26 +534,28 @@ function setupEventListeners() {
         });
     }
 
-    // Toggle collapsible panels
-    const btnToggleCategory = document.getElementById('btn-toggle-category');
-    const iconToggleCategory = document.getElementById('icon-toggle-category');
-    const categoryPanelContent = document.getElementById('category-panel-content');
-    if (btnToggleCategory && categoryPanelContent) {
-        btnToggleCategory.addEventListener('click', () => {
-            categoryPanelContent.classList.toggle('collapsed');
-            iconToggleCategory?.classList.toggle('collapsed');
-        });
-    }
+    // Toggle collapsible panels — use event delegation so these work
+    // regardless of when the view renders (loadActiveView runs after setupEventListeners)
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('#btn-toggle-category, #btn-toggle-screener');
+        if (!trigger) return;
 
-    const btnToggleScreener = document.getElementById('btn-toggle-screener');
-    const iconToggleScreener = document.getElementById('icon-toggle-screener');
-    const screenerGemsContent = document.getElementById('screener-gems-content');
-    if (btnToggleScreener && screenerGemsContent) {
-        btnToggleScreener.addEventListener('click', () => {
-            screenerGemsContent.classList.toggle('collapsed');
-            iconToggleScreener?.classList.toggle('collapsed');
-        });
-    }
+        if (trigger.id === 'btn-toggle-category') {
+            const content = document.getElementById('category-panel-content');
+            const icon = document.getElementById('icon-toggle-category');
+            if (content) {
+                content.classList.toggle('collapsed');
+                icon?.classList.toggle('collapsed');
+            }
+        } else if (trigger.id === 'btn-toggle-screener') {
+            const content = document.getElementById('screener-gems-content');
+            const icon = document.getElementById('icon-toggle-screener');
+            if (content) {
+                content.classList.toggle('collapsed');
+                icon?.classList.toggle('collapsed');
+            }
+        }
+    });
 
 }
 

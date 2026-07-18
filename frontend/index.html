@@ -174,7 +174,7 @@
                             style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; user-select: none; margin-bottom: 0;">
                             <i class="fa-solid fa-list-ul"></i>
                             Clasificación por Categoría
-                            <i class="fa-solid fa-chevron-down toggle-icon" id="icon-toggle-category"></i>
+                            <i class="fa-solid fa-chevron-down toggle-icon collapsed" id="icon-toggle-category"></i>
                         </h3>
                         <div class="category-filters">
                             <button class="category-filter active" data-category="all">Todos</button>
@@ -186,7 +186,7 @@
                             <button class="category-filter" data-category="crypto">Crypto</button>
                         </div>
                     </div>
-                    <div class="collapsible-content" id="category-panel-content">
+                    <div class="collapsible-content collapsed" id="category-panel-content">
                         <div class="table-search-bar">
                             <i class="fa-solid fa-magnifying-glass search-icon"></i>
                             <input type="text" id="asset-search" placeholder="Buscar por símbolo o nombre...">
@@ -222,7 +222,7 @@
                                 Joyas Ocultas Detectadas Hoy
                                 <span id="screener-new-badge" class="badge badge-ars"
                                     style="display: none; padding: 2px 6px; font-size: 10px; font-weight: 700;">NUEVAS</span>
-                                <i class="fa-solid fa-chevron-down toggle-icon" id="icon-toggle-screener"></i>
+                                <i class="fa-solid fa-chevron-down toggle-icon collapsed" id="icon-toggle-screener"></i>
                             </h3>
                             <span style="font-size: 12px; color: var(--text-secondary);">
                                 Activos con volumen y liquidez segura, tendencia alcista técnica y RSI favorable.
@@ -237,7 +237,7 @@
                             <button class="category-filter" data-screener-category="crypto">Crypto</button>
                         </div>
                     </div>
-                    <div class="collapsible-content" id="screener-gems-content">
+                    <div class="collapsible-content collapsed" id="screener-gems-content">
                         <div class="table-wrapper">
                             <table class="asset-table">
                                 <thead>
