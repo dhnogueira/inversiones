@@ -3169,10 +3169,11 @@ async function openAssetModal(ticker) {
             if (gem) {
                 const makeSyntheticGem = (h) => {
                     const price = gem.price;
-                    const action = gem.gem_score >= 82 ? 'COMPRAR' : 'CONSIDERAR';
-                    const color = gem.gem_score >= 82 ? 'conservador' : 'moderado';
-                    const icon = gem.gem_score >= 82 ? 'fa-circle-check' : 'fa-circle-info';
-                    const why = `Este activo fue detectado por nuestro escáner como una **Joya Oculta** hoy. Tiene un score de oportunidad de **${gem.gem_score.toFixed(1)}/100**, Sharpe de **${gem.sharpe.toFixed(2)}** y volumen de negociación representativo diario.`;
+                    const score = gem.funnel_score || gem.gem_score || 60;
+                    const action = score >= 82 ? 'COMPRAR' : score >= 70 ? 'CONSIDERAR' : 'CAUTELA';
+                    const color = score >= 82 ? 'conservador' : score >= 70 ? 'moderado' : 'agresivo';
+                    const icon = score >= 82 ? 'fa-circle-check' : score >= 70 ? 'fa-circle-info' : 'fa-shield-halved';
+                    const why = `Este activo fue detectado por nuestro escáner como una **Joya Oculta** hoy. Tiene un score de oportunidad de **${score.toFixed(1)}/100**, Sharpe de **${gem.sharpe.toFixed(2)}** y volumen de negociación representativo diario.`;
 
                     let trendClass = 'neutral';
                     if (gem.trend.includes('Alcista')) trendClass = 'trend-up';
@@ -3182,6 +3183,11 @@ async function openAssetModal(ticker) {
                     const tpCoeff = isCrypto ? 0.35 : 0.18;
                     const slCoeff = isCrypto ? 0.22 : 0.09;
 
+                    const ret1m = gem.ret_1m != null ? (gem.ret_1m * 100).toFixed(1) : 'N/D';
+                    const ret3m = gem.ret_3m != null ? (gem.ret_3m * 100).toFixed(1) : 'N/D';
+                    const ret12m = gem.ret_12m != null ? (gem.ret_12m * 100).toFixed(1) : 'N/D';
+                    const currSym = gem.currency === 'ARS' ? '$' : 'u$s';
+
                     return {
                         ticker: gem.ticker,
                         name: gem.name,
@@ -3189,27 +3195,39 @@ async function openAssetModal(ticker) {
                         currency: gem.currency,
                         price: price,
                         profile: state.activeProfile,
-                        score: Math.round(gem.gem_score),
-                        take_profit: price * (1 + tpCoeff),
-                        tp_pct: Math.round(tpCoeff * 100),
-                        stop_loss: price * (1 - slCoeff),
-                        sl_pct: Math.round(slCoeff * 100),
-                        resistance: price * 1.07,
+                        score: Math.round(score),
+                        take_profit: gem.resistance || price * (1 + tpCoeff),
+                        tp_pct: gem.resistance ? Math.round(((gem.resistance / price) - 1) * 100) : Math.round(tpCoeff * 100),
+                        stop_loss: gem.support || price * (1 - slCoeff),
+                        sl_pct: gem.support ? Math.round((1 - (gem.support / price)) * 100) : Math.round(slCoeff * 100),
+                        resistance: gem.resistance || price * 1.07,
                         volume_cluster: price,
-                        support: price * 0.93,
+                        support: gem.support || price * 0.93,
                         verdict: {
                             color: color,
                             icon: icon,
                             action: action,
-                            summary: `Oportunidad detectada por Screener: **${gem.name}**`,
+                            summary: `Oportunidad detectada por Screener: **${gem.name}** (${gem.ticker})`,
                             why: why
                         },
                         technical: [
                             {
                                 title: "Fuerza de Tendencia",
                                 status: trendClass,
-                                badge: gem.trend.toUpperCase(),
-                                text: `RSI actual de **${gem.rsi.toFixed(1)}** y Sharpe de **${gem.sharpe.toFixed(2)}**. Momento positivo con volumen de operación seguro.`
+                                badge: gem.trend ? gem.trend.toUpperCase() : 'N/D',
+                                text: `RSI **${gem.rsi != null ? gem.rsi.toFixed(1) : 'N/D'}** — EMA cruce: **${gem.ema_cross_signal != null ? gem.ema_cross_signal.toFixed(3) : 'N/D'}**. Pendiente EMA200: **${gem.ema_200_slope != null ? (gem.ema_200_slope * 100).toFixed(2) + '%' : 'N/D'}**.`
+                            },
+                            {
+                                title: "Rendimientos Históricos",
+                                status: gem.ret_1m >= 0 ? 'trend-up' : 'trend-down',
+                                badge: `1M: ${ret1m}%`,
+                                text: `Retorno 1 mes: **${ret1m}%** | 3 meses: **${ret3m}%** | 12 meses: **${ret12m}%**. Sharpe: **${gem.sharpe.toFixed(2)}**. Volatilidad anualizada: **${gem.volatility != null ? (gem.volatility * 100).toFixed(1) + '%' : 'N/D'}**.`
+                            },
+                            {
+                                title: "Soporte y Resistencia",
+                                status: 'neutral',
+                                badge: 'NIVELES TÉCNICOS',
+                                text: `Soporte clave: **${currSym} ${gem.support != null ? gem.support.toLocaleString('es-AR', { maximumFractionDigits: 2 }) : 'N/D'}** — Resistencia: **${currSym} ${gem.resistance != null ? gem.resistance.toLocaleString('es-AR', { maximumFractionDigits: 2 }) : 'N/D'}**. Máximo 52s: **${currSym} ${gem.high_52w != null ? gem.high_52w.toLocaleString('es-AR', { maximumFractionDigits: 2 }) : 'N/D'}**.`
                             }
                         ],
                         fundamental: [
@@ -3217,7 +3235,7 @@ async function openAssetModal(ticker) {
                                 title: "Detalles del Escaneo",
                                 status: "neutral",
                                 badge: "SCREENER ACTIVO",
-                                text: `Este activo no pertenece a la base fija precargada. Se evalúa diariamente frente a un gran universo de oportunidades.`
+                                text: `Score del funnel: **${score.toFixed(1)}/100**. Categoría: **${gem.category.toUpperCase()}**. Volumen operado (20d): **${currSym} ${gem.dollar_vol_20d != null ? Math.round(gem.dollar_vol_20d).toLocaleString('es-AR') : 'N/D'}**. Drawdown actual: **${gem.drawdown_pct != null ? (gem.drawdown_pct * 100).toFixed(1) + '%' : 'N/D'}**.`
                             }
                         ],
                         macro: []
