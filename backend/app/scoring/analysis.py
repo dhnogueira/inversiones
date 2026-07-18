@@ -8,9 +8,214 @@ from app.scoring.profiles import (
 )
 
 import numpy as np
+import os
+import json
+import yfinance as yf
+import datetime
 
 # Cache in-process to optimize local build compile time and bypass yfinance rate limits
 _balance_cache = {}
+
+DEFAULT_METADATA = {
+    # S&P 500
+    'AAPL': {'company': 'Apple Inc.', 'sector': 'Tecnología', 'ipo': 1980},
+    'MSFT': {'company': 'Microsoft Corporation', 'sector': 'Software & Nube', 'ipo': 1986},
+    'NVDA': {'company': 'NVIDIA Corporation', 'sector': 'Semiconductores', 'ipo': 1999},
+    'AMZN': {'company': 'Amazon.com Inc.', 'sector': 'E-Commerce & Nube', 'ipo': 1997},
+    'META': {'company': 'Meta Platforms Inc.', 'sector': 'Redes Sociales', 'ipo': 2012},
+    'GOOGL': {'company': 'Alphabet Inc. (Google)', 'sector': 'Tecnología & Publicidad', 'ipo': 2004},
+    'BRK-B': {'company': 'Berkshire Hathaway Inc.', 'sector': 'Holding Financiero', 'ipo': 1996},
+    'LLY': {'company': 'Eli Lilly and Company', 'sector': 'Farmacéutica', 'ipo': 1952},
+    'AVGO': {'company': 'Broadcom Inc.', 'sector': 'Semiconductores', 'ipo': 2009},
+    'JPM': {'company': 'JPMorgan Chase & Co.', 'sector': 'Banca & Servicios Financieros', 'ipo': 1969},
+    'TSLA': {'company': 'Tesla Inc.', 'sector': 'Automotriz & Energía', 'ipo': 2010},
+    'XOM': {'company': 'ExxonMobil Corporation', 'sector': 'Petróleo & Gas', 'ipo': 1920},
+    'UNH': {'company': 'UnitedHealth Group Inc.', 'sector': 'Seguros & Salud', 'ipo': 1984},
+    'PG': {'company': 'Procter & Gamble Co.', 'sector': 'Consumo Masivo', 'ipo': 1890},
+    'V': {'company': 'Visa Inc.', 'sector': 'Pagos Digitales', 'ipo': 2008},
+    'MA': {'company': 'Mastercard Incorporated', 'sector': 'Pagos Digitales', 'ipo': 2006},
+    'HD': {'company': 'The Home Depot Inc.', 'sector': 'Retail & Construcción', 'ipo': 1981},
+    'COST': {'company': 'Costco Wholesale Corporation', 'sector': 'Retail Mayorista', 'ipo': 1985},
+    'MRK': {'company': 'Merck & Co. Inc.', 'sector': 'Farmacéutica', 'ipo': 1946},
+    'ABBV': {'company': 'AbbVie Inc.', 'sector': 'Biofarmacéutica', 'ipo': 2013},
+    'KO': {'company': 'The Coca-Cola Company', 'sector': 'Bebidas & Consumo', 'ipo': 1919},
+    'MELI': {'company': 'MercadoLibre Inc.', 'sector': 'E-Commerce Latinoamérica', 'ipo': 2007},
+    'BABA': {'company': 'Alibaba Group Holding Ltd.', 'sector': 'E-Commerce & Nube China', 'ipo': 2014},
+    'VALE': {'company': 'Vale S.A.', 'sector': 'Minería & Metales', 'ipo': 2002},
+    'PBR': {'company': 'Petróleo Brasileiro S.A.', 'sector': 'Petróleo & Gas', 'ipo': 2001},
+    'GOLD': {'company': 'Barrick Gold Corporation', 'sector': 'Minería de Oro', 'ipo': 1983},
+    'DESP': {'company': 'Despegar.com Corp.', 'sector': 'Turismo Online', 'ipo': 2017},
+    'YPF': {'company': 'YPF S.A.', 'sector': 'Petróleo & Gas', 'ipo': 1993},
+    'GGAL': {'company': 'Grupo Financiero Galicia S.A.', 'sector': 'Banca', 'ipo': 2000},
+    'BMA': {'company': 'Banco Macro S.A.', 'sector': 'Banca', 'ipo': 1994},
+    'CEPU': {'company': 'Central Puerto S.A.', 'sector': 'Generación Eléctrica', 'ipo': 1993},
+    'TGS': {'company': 'Transportadora de Gas del Sur S.A.', 'sector': 'Gas & Energía', 'ipo': 1994},
+    'EDN': {'company': 'Edenor S.A.', 'sector': 'Distribución Eléctrica', 'ipo': 1993},
+    'LOMA': {'company': 'Loma Negra Compañía Industrial Argentina S.A.', 'sector': 'Cemento', 'ipo': 2017},
+    'CRES': {'company': 'Cresud S.A.C.I.F. y A.', 'sector': 'Agropecuario', 'ipo': 1997},
+    'SUPV': {'company': 'Grupo Supervielle S.A.', 'sector': 'Banca & Finanzas', 'ipo': 2016},
+    'TEO': {'company': 'Telecom Argentina S.A.', 'sector': 'Telecomunicaciones', 'ipo': 1992},
+    # CEDEARs
+    'AAPL.BA': {'company': 'Apple Inc.', 'sector': 'Tecnología', 'ipo': 1980},
+    'MSFT.BA': {'company': 'Microsoft Corporation', 'sector': 'Software & Nube', 'ipo': 1986},
+    'TSLA.BA': {'company': 'Tesla Inc.', 'sector': 'Automotriz & Energía', 'ipo': 2010},
+    'MELI.BA': {'company': 'MercadoLibre Inc.', 'sector': 'E-Commerce Latinoamérica', 'ipo': 2007},
+    'KO.BA': {'company': 'The Coca-Cola Company', 'sector': 'Bebidas & Consumo', 'ipo': 1919},
+    'NVDA.BA': {'company': 'NVIDIA Corporation', 'sector': 'Semiconductores', 'ipo': 1999},
+    'AMZN.BA': {'company': 'Amazon.com Inc.', 'sector': 'E-Commerce & Nube', 'ipo': 1997},
+    'META.BA': {'company': 'Meta Platforms Inc.', 'sector': 'Redes Sociales', 'ipo': 2012},
+    'GOOGL.BA': {'company': 'Alphabet Inc. (Google)', 'sector': 'Tecnología & Publicidad', 'ipo': 2004},
+    'XOM.BA': {'company': 'ExxonMobil Corporation', 'sector': 'Petróleo & Gas', 'ipo': 1920},
+    'BABA.BA': {'company': 'Alibaba Group Holding Ltd.', 'sector': 'E-Commerce & Nube China', 'ipo': 2014},
+    'VALE.BA': {'company': 'Vale S.A.', 'sector': 'Minería & Metales', 'ipo': 2002},
+    'PBR.BA': {'company': 'Petróleo Brasileiro S.A.', 'sector': 'Petróleo & Gas', 'ipo': 2001},
+    'GGLD.BA': {'company': 'Barrick Gold Corporation', 'sector': 'Minería de Oro', 'ipo': 1983},
+    'DESP.BA': {'company': 'Despegar.com Corp.', 'sector': 'Turismo Online', 'ipo': 2017},
+    # Merval
+    'YPFD.BA': {'company': 'YPF S.A.', 'sector': 'Petróleo & Gas', 'ipo': 1993},
+    'GGAL.BA': {'company': 'Grupo Financiero Galicia S.A.', 'sector': 'Banca', 'ipo': 2000},
+    'PAMP.BA': {'company': 'Pampa Energía S.A.', 'sector': 'Energía Eléctrica', 'ipo': 1993},
+    'ALUA.BA': {'company': 'Aluar Aluminio Argentino S.A.', 'sector': 'Aluminio & Metales', 'ipo': 1993},
+    'TXAR.BA': {'company': 'Ternium Argentina S.A.', 'sector': 'Siderurgia', 'ipo': 1993},
+    'BMA.BA': {'company': 'Banco Macro S.A.', 'sector': 'Banca', 'ipo': 1994},
+    'CEPU.BA': {'company': 'Central Puerto S.A.', 'sector': 'Generación Eléctrica', 'ipo': 1993},
+    'TGSU2.BA': {'company': 'Transportadora de Gas del Sur S.A.', 'sector': 'Gas & Energía', 'ipo': 1994},
+    'EDN.BA': {'company': 'Edenor S.A.', 'sector': 'Distribución Eléctrica', 'ipo': 1993},
+    'LOMA.BA': {'company': 'Loma Negra Compañía Industrial Argentina S.A.', 'sector': 'Cemento', 'ipo': 2017},
+    'CRES.BA': {'company': 'Cresud S.A.C.I.F. y A.', 'sector': 'Agropecuario', 'ipo': 1997},
+    'TECO2.BA': {'company': 'Telecom Argentina S.A.', 'sector': 'Telecomunicaciones', 'ipo': 1992},
+    'SUPV.BA': {'company': 'Grupo Supervielle S.A.', 'sector': 'Banca & Finanzas', 'ipo': 2016},
+    'VALO.BA': {'company': 'Grupo Financiero Valores S.A.', 'sector': 'Finanzas & Inversiones', 'ipo': 2018},
+    'BYMA.BA': {'company': 'Bolsas y Mercados Argentinos S.A.', 'sector': 'Mercado de Capitales', 'ipo': 2017},
+    # Crypto
+    'BTC-USD': {'company': 'Bitcoin', 'sector': 'Criptomoneda — Reserva de Valor', 'ipo': 2009},
+    'ETH-USD': {'company': 'Ethereum', 'sector': 'Plataforma de Smart Contracts', 'ipo': 2015},
+    'BNB-USD': {'company': 'BNB (Binance Coin)', 'sector': 'Token de Exchange', 'ipo': 2017},
+    'SOL-USD': {'company': 'Solana', 'sector': 'Blockchain L1', 'ipo': 2020},
+    'XRP-USD': {'company': 'Ripple (XRP)', 'sector': 'Pagos Transfronterizos', 'ipo': 2013},
+    'ADA-USD': {'company': 'Cardano (ADA)', 'sector': 'Blockchain L1', 'ipo': 2017},
+    'DOGE-USD': {'company': 'Dogecoin', 'sector': 'Criptomoneda Meme', 'ipo': 2013},
+    'AVAX-USD': {'company': 'Avalanche (AVAX)', 'sector': 'Blockchain L1', 'ipo': 2020},
+    'LINK-USD': {'company': 'Chainlink (LINK)', 'sector': 'Oráculos Blockchain', 'ipo': 2017},
+    'DOT-USD': {'company': 'Polkadot (DOT)', 'sector': 'Interoperabilidad Blockchain', 'ipo': 2020},
+    # Bonos soberanos argentinos
+    'AL30.BA': {'company': 'Bono Soberano Argentina AL30', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+    'GD30.BA': {'company': 'Bono Soberano Argentina GD30', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+    'AL29.BA': {'company': 'Bono Soberano Argentina AL29', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+    'GD29.BA': {'company': 'Bono Soberano Argentina GD29', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+    'AL35.BA': {'company': 'Bono Soberano Argentina AL35', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+    'GD35.BA': {'company': 'Bono Soberano Argentina GD35', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+    'AE38.BA': {'company': 'Bono Soberano Argentina AE38', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+    'GD38.BA': {'company': 'Bono Soberano Argentina GD38', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+    'AL41.BA': {'company': 'Bono Soberano Argentina AL41', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+    'GD41.BA': {'company': 'Bono Soberano Argentina GD41', 'sector': 'Renta Fija Soberana USD', 'ipo': 2020},
+}
+
+_metadata_cache = None
+
+def get_ticker_meta(ticker, category=None):
+    global _metadata_cache
+    if _metadata_cache is None:
+        _metadata_cache = {}
+        try:
+            from app.config import CACHE_DIR
+            cache_path = os.path.join(CACHE_DIR, "ticker_metadata.json")
+            if os.path.exists(cache_path):
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    _metadata_cache = json.load(f)
+        except Exception:
+            pass
+        
+        # Merge with DEFAULT_METADATA
+        for k, v in DEFAULT_METADATA.items():
+            if k not in _metadata_cache:
+                _metadata_cache[k] = v
+
+    t_key = ticker.upper().strip()
+    if t_key in _metadata_cache:
+        return _metadata_cache[t_key]
+
+    t_clean = t_key.replace(".BA", "")
+    if t_clean in _metadata_cache:
+        return _metadata_cache[t_clean]
+
+    # Fetch from yfinance info
+    try:
+        stock = yf.Ticker(t_key)
+        info = stock.info or {}
+        company = info.get("longName") or info.get("shortName") or t_clean.replace("-USD", "")
+        sector = info.get("sector") or info.get("industry")
+        if not sector:
+            if category == "crypto" or t_key.endswith("-USD"):
+                sector = "Criptomoneda"
+            elif category == "bonos" or category == "letras" or (t_key.endswith(".BA") and any(x in t_key for x in ["AL", "GD", "AE"])):
+                sector = "Renta Fija"
+            else:
+                sector = "Otros"
+        else:
+            sector_map = {
+                "Technology": "Tecnología",
+                "Financial Services": "Servicios Financieros",
+                "Consumer Cyclical": "Consumo Cíclico",
+                "Industrials": "Industriales",
+                "Healthcare": "Salud",
+                "Communication Services": "Servicios de Comunicación",
+                "Energy": "Energía",
+                "Consumer Defensive": "Consumo Defensivo",
+                "Utilities": "Servicios Públicos",
+                "Real Estate": "Bienes Raíces",
+                "Basic Materials": "Materiales Básicos"
+            }
+            sector = sector_map.get(sector, sector)
+
+        ipo_year = None
+        ft_ms = info.get("firstTradeDateMilliseconds")
+        if ft_ms:
+            try:
+                ipo_year = datetime.datetime.fromtimestamp(ft_ms / 1000.0, datetime.timezone.utc).year
+            except Exception:
+                pass
+        if not ipo_year:
+            ft_epoch = info.get("firstTradeDateEpochUtc")
+            if ft_epoch:
+                try:
+                    ipo_year = datetime.datetime.fromtimestamp(ft_epoch, datetime.timezone.utc).year
+                except Exception:
+                    pass
+        if not ipo_year:
+            try:
+                hist = stock.history(period="max")
+                if not hist.empty:
+                    ipo_year = hist.index[0].year
+            except Exception:
+                pass
+        if not ipo_year:
+            ipo_year = "N/D"
+
+        meta_val = {
+            "company": company,
+            "sector": sector,
+            "ipo": ipo_year
+        }
+        _metadata_cache[t_key] = meta_val
+
+        # Save cache
+        try:
+            from app.config import CACHE_DIR
+            cache_path = os.path.join(CACHE_DIR, "ticker_metadata.json")
+            with open(cache_path, "w", encoding="utf-8") as f:
+                json.dump(_metadata_cache, f, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
+
+        return meta_val
+    except Exception as e:
+        print(f"[analysis.py] Error fetching meta for {ticker}: {e}")
+        return {
+            "company": t_clean.replace("-USD", ""),
+            "sector": "Otros",
+            "ipo": "N/D"
+        }
 
 def load_existing_balance_from_static(ticker):
     """
@@ -442,9 +647,15 @@ def generate_asset_analysis(asset, profile, horizon="medium"):
             "garp": build_garp_analysis(asset, currency),
         }
 
+    meta = get_ticker_meta(ticker, category)
+    company_name = meta.get("company", name)
+
     result = {
         "ticker": ticker,
-        "name": name,
+        "name": company_name,
+        "company": company_name,
+        "sector": meta.get("sector", "Otros"),
+        "ipo": meta.get("ipo", "N/D"),
         "category": category,
         "price": price,
         "currency": currency,

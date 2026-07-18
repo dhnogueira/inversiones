@@ -1,0 +1,717 @@
+{
+  "AAPL": {
+    "company": "Apple Inc.",
+    "sector": "Tecnología",
+    "ipo": 1980
+  },
+  "MSFT": {
+    "company": "Microsoft Corporation",
+    "sector": "Software & Nube",
+    "ipo": 1986
+  },
+  "NVDA": {
+    "company": "NVIDIA Corporation",
+    "sector": "Semiconductores",
+    "ipo": 1999
+  },
+  "AMZN": {
+    "company": "Amazon.com Inc.",
+    "sector": "E-Commerce & Nube",
+    "ipo": 1997
+  },
+  "META": {
+    "company": "Meta Platforms Inc.",
+    "sector": "Redes Sociales",
+    "ipo": 2012
+  },
+  "GOOGL": {
+    "company": "Alphabet Inc. (Google)",
+    "sector": "Tecnología & Publicidad",
+    "ipo": 2004
+  },
+  "BRK-B": {
+    "company": "Berkshire Hathaway Inc.",
+    "sector": "Holding Financiero",
+    "ipo": 1996
+  },
+  "LLY": {
+    "company": "Eli Lilly and Company",
+    "sector": "Farmacéutica",
+    "ipo": 1952
+  },
+  "AVGO": {
+    "company": "Broadcom Inc.",
+    "sector": "Semiconductores",
+    "ipo": 2009
+  },
+  "JPM": {
+    "company": "JPMorgan Chase & Co.",
+    "sector": "Banca & Servicios Financieros",
+    "ipo": 1969
+  },
+  "TSLA": {
+    "company": "Tesla Inc.",
+    "sector": "Automotriz & Energía",
+    "ipo": 2010
+  },
+  "XOM": {
+    "company": "ExxonMobil Corporation",
+    "sector": "Petróleo & Gas",
+    "ipo": 1920
+  },
+  "UNH": {
+    "company": "UnitedHealth Group Inc.",
+    "sector": "Seguros & Salud",
+    "ipo": 1984
+  },
+  "PG": {
+    "company": "Procter & Gamble Co.",
+    "sector": "Consumo Masivo",
+    "ipo": 1890
+  },
+  "V": {
+    "company": "Visa Inc.",
+    "sector": "Pagos Digitales",
+    "ipo": 2008
+  },
+  "MA": {
+    "company": "Mastercard Incorporated",
+    "sector": "Pagos Digitales",
+    "ipo": 2006
+  },
+  "HD": {
+    "company": "The Home Depot Inc.",
+    "sector": "Retail & Construcción",
+    "ipo": 1981
+  },
+  "COST": {
+    "company": "Costco Wholesale Corporation",
+    "sector": "Retail Mayorista",
+    "ipo": 1985
+  },
+  "MRK": {
+    "company": "Merck & Co. Inc.",
+    "sector": "Farmacéutica",
+    "ipo": 1946
+  },
+  "ABBV": {
+    "company": "AbbVie Inc.",
+    "sector": "Biofarmacéutica",
+    "ipo": 2013
+  },
+  "KO": {
+    "company": "The Coca-Cola Company",
+    "sector": "Bebidas & Consumo",
+    "ipo": 1919
+  },
+  "MELI": {
+    "company": "MercadoLibre Inc.",
+    "sector": "E-Commerce Latinoamérica",
+    "ipo": 2007
+  },
+  "BABA": {
+    "company": "Alibaba Group Holding Ltd.",
+    "sector": "E-Commerce & Nube China",
+    "ipo": 2014
+  },
+  "VALE": {
+    "company": "Vale S.A.",
+    "sector": "Minería & Metales",
+    "ipo": 2002
+  },
+  "PBR": {
+    "company": "Petróleo Brasileiro S.A.",
+    "sector": "Petróleo & Gas",
+    "ipo": 2001
+  },
+  "GOLD": {
+    "company": "Barrick Gold Corporation",
+    "sector": "Minería de Oro",
+    "ipo": 1983
+  },
+  "DESP": {
+    "company": "Despegar.com Corp.",
+    "sector": "Turismo Online",
+    "ipo": 2017
+  },
+  "YPF": {
+    "company": "YPF S.A.",
+    "sector": "Petróleo & Gas",
+    "ipo": 1993
+  },
+  "GGAL": {
+    "company": "Grupo Financiero Galicia S.A.",
+    "sector": "Banca",
+    "ipo": 2000
+  },
+  "BMA": {
+    "company": "Banco Macro S.A.",
+    "sector": "Banca",
+    "ipo": 1994
+  },
+  "CEPU": {
+    "company": "Central Puerto S.A.",
+    "sector": "Generación Eléctrica",
+    "ipo": 1993
+  },
+  "TGS": {
+    "company": "Transportadora de Gas del Sur S.A.",
+    "sector": "Gas & Energía",
+    "ipo": 1994
+  },
+  "EDN": {
+    "company": "Edenor S.A.",
+    "sector": "Distribución Eléctrica",
+    "ipo": 1993
+  },
+  "LOMA": {
+    "company": "Loma Negra Compañía Industrial Argentina S.A.",
+    "sector": "Cemento",
+    "ipo": 2017
+  },
+  "CRES": {
+    "company": "Cresud S.A.C.I.F. y A.",
+    "sector": "Agropecuario",
+    "ipo": 1997
+  },
+  "SUPV": {
+    "company": "Grupo Supervielle S.A.",
+    "sector": "Banca & Finanzas",
+    "ipo": 2016
+  },
+  "TEO": {
+    "company": "Telecom Argentina S.A.",
+    "sector": "Telecomunicaciones",
+    "ipo": 1992
+  },
+  "AAPL.BA": {
+    "company": "Apple Inc.",
+    "sector": "Tecnología",
+    "ipo": 1980
+  },
+  "MSFT.BA": {
+    "company": "Microsoft Corporation",
+    "sector": "Software & Nube",
+    "ipo": 1986
+  },
+  "TSLA.BA": {
+    "company": "Tesla Inc.",
+    "sector": "Automotriz & Energía",
+    "ipo": 2010
+  },
+  "MELI.BA": {
+    "company": "MercadoLibre Inc.",
+    "sector": "E-Commerce Latinoamérica",
+    "ipo": 2007
+  },
+  "KO.BA": {
+    "company": "The Coca-Cola Company",
+    "sector": "Bebidas & Consumo",
+    "ipo": 1919
+  },
+  "NVDA.BA": {
+    "company": "NVIDIA Corporation",
+    "sector": "Semiconductores",
+    "ipo": 1999
+  },
+  "AMZN.BA": {
+    "company": "Amazon.com Inc.",
+    "sector": "E-Commerce & Nube",
+    "ipo": 1997
+  },
+  "META.BA": {
+    "company": "Meta Platforms Inc.",
+    "sector": "Redes Sociales",
+    "ipo": 2012
+  },
+  "GOOGL.BA": {
+    "company": "Alphabet Inc. (Google)",
+    "sector": "Tecnología & Publicidad",
+    "ipo": 2004
+  },
+  "XOM.BA": {
+    "company": "ExxonMobil Corporation",
+    "sector": "Petróleo & Gas",
+    "ipo": 1920
+  },
+  "BABA.BA": {
+    "company": "Alibaba Group Holding Ltd.",
+    "sector": "E-Commerce & Nube China",
+    "ipo": 2014
+  },
+  "VALE.BA": {
+    "company": "Vale S.A.",
+    "sector": "Minería & Metales",
+    "ipo": 2002
+  },
+  "PBR.BA": {
+    "company": "Petróleo Brasileiro S.A.",
+    "sector": "Petróleo & Gas",
+    "ipo": 2001
+  },
+  "GGLD.BA": {
+    "company": "Barrick Gold Corporation",
+    "sector": "Minería de Oro",
+    "ipo": 1983
+  },
+  "DESP.BA": {
+    "company": "Despegar.com Corp.",
+    "sector": "Turismo Online",
+    "ipo": 2017
+  },
+  "YPFD.BA": {
+    "company": "YPF S.A.",
+    "sector": "Petróleo & Gas",
+    "ipo": 1993
+  },
+  "GGAL.BA": {
+    "company": "Grupo Financiero Galicia S.A.",
+    "sector": "Banca",
+    "ipo": 2000
+  },
+  "PAMP.BA": {
+    "company": "Pampa Energía S.A.",
+    "sector": "Energía Eléctrica",
+    "ipo": 1993
+  },
+  "ALUA.BA": {
+    "company": "Aluar Aluminio Argentino S.A.",
+    "sector": "Aluminio & Metales",
+    "ipo": 1993
+  },
+  "TXAR.BA": {
+    "company": "Ternium Argentina S.A.",
+    "sector": "Siderurgia",
+    "ipo": 1993
+  },
+  "BMA.BA": {
+    "company": "Banco Macro S.A.",
+    "sector": "Banca",
+    "ipo": 1994
+  },
+  "CEPU.BA": {
+    "company": "Central Puerto S.A.",
+    "sector": "Generación Eléctrica",
+    "ipo": 1993
+  },
+  "TGSU2.BA": {
+    "company": "Transportadora de Gas del Sur S.A.",
+    "sector": "Gas & Energía",
+    "ipo": 1994
+  },
+  "EDN.BA": {
+    "company": "Edenor S.A.",
+    "sector": "Distribución Eléctrica",
+    "ipo": 1993
+  },
+  "LOMA.BA": {
+    "company": "Loma Negra Compañía Industrial Argentina S.A.",
+    "sector": "Cemento",
+    "ipo": 2017
+  },
+  "CRES.BA": {
+    "company": "Cresud S.A.C.I.F. y A.",
+    "sector": "Agropecuario",
+    "ipo": 1997
+  },
+  "TECO2.BA": {
+    "company": "Telecom Argentina S.A.",
+    "sector": "Telecomunicaciones",
+    "ipo": 1992
+  },
+  "SUPV.BA": {
+    "company": "Grupo Supervielle S.A.",
+    "sector": "Banca & Finanzas",
+    "ipo": 2016
+  },
+  "VALO.BA": {
+    "company": "Grupo Financiero Valores S.A.",
+    "sector": "Finanzas & Inversiones",
+    "ipo": 2018
+  },
+  "BYMA.BA": {
+    "company": "Bolsas y Mercados Argentinos S.A.",
+    "sector": "Mercado de Capitales",
+    "ipo": 2017
+  },
+  "BTC-USD": {
+    "company": "Bitcoin",
+    "sector": "Criptomoneda — Reserva de Valor",
+    "ipo": 2009
+  },
+  "ETH-USD": {
+    "company": "Ethereum",
+    "sector": "Plataforma de Smart Contracts",
+    "ipo": 2015
+  },
+  "BNB-USD": {
+    "company": "BNB (Binance Coin)",
+    "sector": "Token de Exchange",
+    "ipo": 2017
+  },
+  "SOL-USD": {
+    "company": "Solana",
+    "sector": "Blockchain L1",
+    "ipo": 2020
+  },
+  "XRP-USD": {
+    "company": "Ripple (XRP)",
+    "sector": "Pagos Transfronterizos",
+    "ipo": 2013
+  },
+  "ADA-USD": {
+    "company": "Cardano (ADA)",
+    "sector": "Blockchain L1",
+    "ipo": 2017
+  },
+  "DOGE-USD": {
+    "company": "Dogecoin",
+    "sector": "Criptomoneda Meme",
+    "ipo": 2013
+  },
+  "AVAX-USD": {
+    "company": "Avalanche (AVAX)",
+    "sector": "Blockchain L1",
+    "ipo": 2020
+  },
+  "LINK-USD": {
+    "company": "Chainlink (LINK)",
+    "sector": "Oráculos Blockchain",
+    "ipo": 2017
+  },
+  "DOT-USD": {
+    "company": "Polkadot (DOT)",
+    "sector": "Interoperabilidad Blockchain",
+    "ipo": 2020
+  },
+  "AL30.BA": {
+    "company": "Bono Soberano Argentina AL30",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "GD30.BA": {
+    "company": "Bono Soberano Argentina GD30",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "AL29.BA": {
+    "company": "Bono Soberano Argentina AL29",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "GD29.BA": {
+    "company": "Bono Soberano Argentina GD29",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "AL35.BA": {
+    "company": "Bono Soberano Argentina AL35",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "GD35.BA": {
+    "company": "Bono Soberano Argentina GD35",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "AE38.BA": {
+    "company": "Bono Soberano Argentina AE38",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "GD38.BA": {
+    "company": "Bono Soberano Argentina GD38",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "AL41.BA": {
+    "company": "Bono Soberano Argentina AL41",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "GD41.BA": {
+    "company": "Bono Soberano Argentina GD41",
+    "sector": "Renta Fija Soberana USD",
+    "ipo": 2020
+  },
+  "VRSK": {
+    "company": "Verisk Analytics, Inc.",
+    "sector": "Industriales",
+    "ipo": 2009
+  },
+  "UNG": {
+    "company": "UNG",
+    "sector": "Otros",
+    "ipo": 2007
+  },
+  "T15E7": {
+    "company": "T15E7",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "T31Y7": {
+    "company": "T31Y7",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "T30J7": {
+    "company": "T30J7",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "T28F7": {
+    "company": "T28F7",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "T31M7": {
+    "company": "T31M7",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "T30A7": {
+    "company": "T30A7",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "S28F7": {
+    "company": "S28F7",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "S31M7": {
+    "company": "S31M7",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "AL30": {
+    "company": "AL30",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "GD30": {
+    "company": "GD30",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "AL29": {
+    "company": "AL29",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "GD29": {
+    "company": "GD29",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "AL35": {
+    "company": "AL35",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "GD35": {
+    "company": "GD35",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "AE38": {
+    "company": "AE38",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "GD38": {
+    "company": "GD38",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "AL30D": {
+    "company": "AL30D",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "GD30D": {
+    "company": "GD30D",
+    "sector": "Renta Fija",
+    "ipo": "N/D"
+  },
+  "JNJ": {
+    "company": "Johnson & Johnson",
+    "sector": "Salud",
+    "ipo": 1962
+  },
+  "AMGN": {
+    "company": "Amgen Inc.",
+    "sector": "Salud",
+    "ipo": 1983
+  },
+  "USB": {
+    "company": "U.S. Bancorp",
+    "sector": "Servicios Financieros",
+    "ipo": 1973
+  },
+  "GILD": {
+    "company": "Gilead Sciences, Inc.",
+    "sector": "Salud",
+    "ipo": 1992
+  },
+  "CSCO": {
+    "company": "Cisco Systems, Inc.",
+    "sector": "Tecnología",
+    "ipo": 1990
+  },
+  "CVS": {
+    "company": "CVS Health Corporation",
+    "sector": "Salud",
+    "ipo": 1973
+  },
+  "PANW": {
+    "company": "Palo Alto Networks, Inc.",
+    "sector": "Tecnología",
+    "ipo": 2012
+  },
+  "ASML": {
+    "company": "ASML Holding N.V.",
+    "sector": "Tecnología",
+    "ipo": 1995
+  },
+  "GS.BA": {
+    "company": "The Goldman Sachs Group, Inc.",
+    "sector": "Servicios Financieros",
+    "ipo": 2019
+  },
+  "AMD.BA": {
+    "company": "Advanced Micro Devices, Inc.",
+    "sector": "Tecnología",
+    "ipo": 2020
+  },
+  "XLV": {
+    "company": "XLV",
+    "sector": "Otros",
+    "ipo": 1998
+  },
+  "XLF": {
+    "company": "State Street Financial Select Sector SPDR ETF",
+    "sector": "Otros",
+    "ipo": 1998
+  },
+  "XLU": {
+    "company": "State Street Utilities Select Sector SPDR ETF",
+    "sector": "Otros",
+    "ipo": 1998
+  },
+  "NEE": {
+    "company": "NEE",
+    "sector": "Servicios Públicos",
+    "ipo": 1973
+  },
+  "RTX": {
+    "company": "RTX Corporation",
+    "sector": "Industriales",
+    "ipo": 1962
+  },
+  "DE": {
+    "company": "Deere & Company",
+    "sector": "Industriales",
+    "ipo": 1972
+  },
+  "BRKB.BA": {
+    "company": "Berkshire Hathaway Inc.",
+    "sector": "Servicios Financieros",
+    "ipo": 2021
+  },
+  "METR.BA": {
+    "company": "MetroGAS S.A.",
+    "sector": "Servicios Públicos",
+    "ipo": 2000
+  },
+  "BOLT.BA": {
+    "company": "Boldt S.A.",
+    "sector": "Tecnología",
+    "ipo": 2000
+  },
+  "IRSA.BA": {
+    "company": "IRSA Inversiones y Representaciones Sociedad Anónima",
+    "sector": "Bienes Raíces",
+    "ipo": 2000
+  },
+  "LTC-USD": {
+    "company": "Litecoin USD",
+    "sector": "Criptomoneda",
+    "ipo": 2014
+  },
+  "AMD": {
+    "company": "AMD",
+    "sector": "Tecnología",
+    "ipo": 1980
+  },
+  "MS": {
+    "company": "Morgan Stanley",
+    "sector": "Servicios Financieros",
+    "ipo": 1993
+  },
+  "FDX": {
+    "company": "FDX",
+    "sector": "Industriales",
+    "ipo": 1978
+  },
+  "EQIX": {
+    "company": "Equinix, Inc.",
+    "sector": "Bienes Raíces",
+    "ipo": 2000
+  },
+  "GS": {
+    "company": "GS",
+    "sector": "Servicios Financieros",
+    "ipo": 1999
+  },
+  "INTC.BA": {
+    "company": "Intel Corporation",
+    "sector": "Tecnología",
+    "ipo": 2008
+  },
+  "TMO": {
+    "company": "TMO",
+    "sector": "Salud",
+    "ipo": 1980
+  },
+  "ABNB": {
+    "company": "Airbnb, Inc.",
+    "sector": "Consumo Cíclico",
+    "ipo": 2020
+  },
+  "INJ-USD": {
+    "company": "Injective USD",
+    "sector": "Criptomoneda",
+    "ipo": 2020
+  },
+  "LRCX": {
+    "company": "Lam Research Corporation",
+    "sector": "Tecnología",
+    "ipo": 1984
+  },
+  "AMAT": {
+    "company": "Applied Materials, Inc.",
+    "sector": "Tecnología",
+    "ipo": 1980
+  },
+  "MRNA": {
+    "company": "Moderna, Inc.",
+    "sector": "Salud",
+    "ipo": 2018
+  },
+  "F": {
+    "company": "F",
+    "sector": "Consumo Cíclico",
+    "ipo": 1972
+  },
+  "CAT": {
+    "company": "CAT",
+    "sector": "Industriales",
+    "ipo": 1962
+  },
+  "KLAC": {
+    "company": "KLA Corporation",
+    "sector": "Tecnología",
+    "ipo": 1980
+  }
+}
