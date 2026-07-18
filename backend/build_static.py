@@ -236,7 +236,50 @@ async def main():
                 fallback_path = os.path.join(API_DIR, "market-screener.json")
                 with open(fallback_path, "w", encoding="utf-8") as f:
                     json.dump(screener_data, f, indent=2, ensure_ascii=False)
-                    
+
+            # 7b. Generar análisis detallado (mismo que activos Markowitz) para cada joya detectada
+            # Si el ticker ya fue procesado en el loop principal de activos (all_assets), no hay
+            # colisión: se sobreescribirá con los datos frescos del screener que son más ricos.
+            print(f"  Generando análisis detallado para Joyas Ocultas [{p}/{h}] ({total_count} activos)...")
+            gems_dir = os.path.join(API_DIR, "asset-analysis", f"{p}-{h}")
+            ensure_directory(gems_dir)
+            if h == "medium":
+                ensure_directory(os.path.join(API_DIR, "asset-analysis", p))
+
+            for cat_assets in results.values():
+                for gem in cat_assets:
+                    try:
+                        ticker = gem.get("ticker", "")
+                        if not ticker:
+                            continue
+
+                        # Adaptar el gem al formato esperado por generate_asset_analysis
+                        gem_asset = {
+                            **gem,
+                            # generate_asset_analysis usa "score" (no "funnel_score")
+                            "score": gem.get("funnel_score", gem.get("score", 0.0)),
+                            # soporte, resistencia y POC si están disponibles en el gem
+                            "support":          gem.get("support",          round(gem.get("price", 0) * 0.90, 2)),
+                            "resistance":       gem.get("resistance",       round(gem.get("price", 0) * 1.10, 2)),
+                            "volume_cluster":   gem.get("volume_cluster",   round(gem.get("price", 0) * 0.98, 2)),
+                        }
+
+                        analysis = generate_asset_analysis(gem_asset, p, h)
+                        analysis_data = {"status": "success", "analysis": analysis}
+
+                        safe_ticker = ticker.replace("/", "_")
+                        gem_filepath = os.path.join(gems_dir, f"{safe_ticker}.json")
+                        with open(gem_filepath, "w", encoding="utf-8") as f:
+                            json.dump(analysis_data, f, indent=2, ensure_ascii=False)
+
+                        if h == "medium":
+                            fallback_gem_path = os.path.join(API_DIR, "asset-analysis", p, f"{safe_ticker}.json")
+                            with open(fallback_gem_path, "w", encoding="utf-8") as f:
+                                json.dump(analysis_data, f, indent=2, ensure_ascii=False)
+
+                    except Exception as gem_err:
+                        print(f"  [WARNING] Error generando análisis para gem {gem.get('ticker', '?')}: {gem_err}")
+
         print(f"[OK] Market Screener completado. Oportunidades en moderado/medium: {total_new_global}.")
     except Exception as e:
         print(f"[WARNING] Market Screener falló (no crítico): {e}")
