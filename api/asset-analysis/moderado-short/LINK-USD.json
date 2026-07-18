@@ -2,25 +2,28 @@
   "status": "success",
   "analysis": {
     "ticker": "LINK-USD",
-    "name": "LINK",
+    "name": "Chainlink (LINK)",
+    "company": "Chainlink (LINK)",
+    "sector": "Oráculos Blockchain",
+    "ipo": 2017,
     "category": "crypto",
-    "price": 8.348,
+    "price": 8.363,
     "currency": "USD",
-    "score": 50.0,
+    "score": 50.4,
     "profile": "moderado",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 58.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "58.4",
+        "content": "El RSI de 14 períodos está en 58.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "58.7",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (8.35) cotiza por debajo de la EMA de 200 días (9.96), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (8.36) cotiza por debajo de la EMA de 200 días (9.96), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -34,15 +37,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+15.0%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-12.6%) refuerzan esta tendencia positiva.",
-        "value": "+15.0% (1M)",
+        "content": "El activo registró un rendimiento del **+15.2%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-12.5%) refuerzan esta tendencia positiva.",
+        "value": "+15.2% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 7.41 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 9.87 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 8.18. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 8.18",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 7.41 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 9.87 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 8.20. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 8.20",
         "status": "success"
       }
     ],
@@ -57,15 +60,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-12.0%** y a 12 meses es **-47.6%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-12.0% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-11.8%** y a 12 meses es **-47.5%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-11.8% (6M)",
         "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **6.5%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-4.5%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 6.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **6.7%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-4.3%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 6.7%",
         "status": "danger"
       }
     ],
@@ -82,18 +85,18 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **50.0/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "summary": "El score de **50.4/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **moderado**. Esto puede deberse a una volatilidad excesiva (63.4%), un ratio de Sharpe ineficiente (-0.81), o una tendencia técnica desfavorable (Bajista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 11.95,
-      "stop_loss": 6.54,
+      "take_profit": 11.98,
+      "stop_loss": 6.56,
       "tp_pct": 43.2,
       "sl_pct": 21.6
     },
     "support": 7.41,
     "resistance": 9.87,
-    "volume_cluster": 8.18,
-    "take_profit": 11.95,
-    "stop_loss": 6.54,
+    "volume_cluster": 8.2,
+    "take_profit": 11.98,
+    "stop_loss": 6.56,
     "tp_pct": 43.2,
     "sl_pct": 21.6
   }

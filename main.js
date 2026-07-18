@@ -3280,21 +3280,25 @@ window.openAssetModal = openAssetModal;
 
 
 function renderModalContent(analysis) {
+    // Poblar metadatos: sector y año de cotización
+    const meta = ASSET_METADATA[analysis.ticker] || ASSET_METADATA[analysis.ticker.replace('.BA', '')] || null;
+    const sector = meta ? meta.sector : (analysis.sector || null);
+    const ipo = meta ? meta.ipo : (analysis.ipo || null);
+    const companyName = meta ? meta.company : (analysis.company || analysis.name || analysis.ticker);
+
     document.getElementById('modal-ticker').innerText = analysis.ticker.replace('.BA', '').replace('-USD', '');
-    document.getElementById('modal-name').innerText = analysis.name;
+    document.getElementById('modal-name').innerText = companyName;
 
     const catBadge = document.getElementById('modal-category-badge');
     catBadge.innerText = analysis.category.toUpperCase();
     catBadge.className = `badge ${analysis.currency === 'USD' ? 'badge-usd' : 'badge-ars'}`;
 
-    // Poblar metadatos: sector y año de cotización
-    const meta = ASSET_METADATA[analysis.ticker] || ASSET_METADATA[analysis.ticker.replace('.BA', '')] || null;
     const sectorEl = document.getElementById('modal-sector-text');
     const ipoEl = document.getElementById('modal-ipo-text');
     const metaRow = document.getElementById('modal-sector')?.parentElement;
-    if (meta) {
-        if (sectorEl) sectorEl.innerText = meta.sector;
-        if (ipoEl) ipoEl.innerText = meta.ipo;
+    if (sector || ipo) {
+        if (sectorEl) sectorEl.innerText = sector || 'N/D';
+        if (ipoEl) ipoEl.innerText = ipo || 'N/D';
         if (metaRow) metaRow.style.display = 'flex';
     } else {
         if (metaRow) metaRow.style.display = 'none';
