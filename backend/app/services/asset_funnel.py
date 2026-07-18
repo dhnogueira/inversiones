@@ -27,6 +27,8 @@ import time
 import numpy as np
 import pandas as pd
 import yfinance as yf
+import asyncio
+
 
 from app.config import CACHE_DIR
 
@@ -602,6 +604,97 @@ def _stage3_composite_score(
     return score_final, desglose
 
 
+async def _run_funnel_fallback(profile: str, horizon: str) -> dict:
+    """
+    Fallback del funnel: usa los datos de mercado cacheados (yfinance_service)
+    en lugar de descargar datos frescos. Se activa cuando yfinance.download falla.
+
+    Retorna el mismo formato que run_funnel:
+    { "pipeline": {...}, "results": {cat: [assets...]} }
+    """
+    import math
+
+    def _safe_float(v, d=0.0):
+        if v is None:
+            return d
+        try:
+            f = float(v)
+            return d if (math.isnan(f) or math.isinf(f)) else f
+        except (TypeError, ValueError):
+            return d
+
+    try:
+        from app.services.yfinance_service import fetch_yfinance_market_data
+        from app.services.arg_fixed_income import fetch_arg_fixed_income_data
+        from app.scoring.profiles import get_recommendations_by_profile
+
+        yf_data = await fetch_yfinance_market_data(use_cache_only=True)
+        fi_data = await fetch_arg_fixed_income_data(force_refresh=False)
+        all_assets = yf_data + fi_data
+
+        if not all_assets:
+            print(f"[funnel_fallback:{profile}/{horizon}] Sin datos en caché.")
+            return {"pipeline": {"universe_size": 0, "timestamp": time.time(), "profile": profile, "horizon": horizon, "source": "fallback_empty"}, "results": {}}
+
+        results = get_recommendations_by_profile(all_assets, profile, horizon)
+        categories = results.get("categories", {})
+        top_n = _TOP_N.get(profile, 8)
+        min_score = _MIN_COMPOSITE_SCORE.get(profile, 45.0)
+
+        results_by_cat: dict[str, list] = {cat: [] for cat in ["sp500", "cedears", "merval", "crypto"]}
+        total = 0
+        for cat, assets in categories.items():
+            valid = [a for a in assets if a.get("score", 0) >= min_score]
+            valid.sort(key=lambda x: x.get("score", 0), reverse=True)
+            for a in valid[:top_n]:
+                entry = {
+                    "ticker": a.get("ticker", ""),
+                    "name": a.get("name", a.get("ticker", "")),
+                    "category": cat,
+                    "price": _safe_float(a.get("price")),
+                    "currency": a.get("currency", "ARS"),
+                    "funnel_score": _safe_float(a.get("score")),
+                    "ret_1m": _safe_float(a.get("ret_1m")),
+                    "ret_6m": _safe_float(a.get("ret_6m")),
+                    "ret_12m": _safe_float(a.get("ret_12m")),
+                    "volatility": _safe_float(a.get("volatility"), 0.25),
+                    "sharpe": _safe_float(a.get("sharpe")),
+                    "rsi": _safe_float(a.get("rsi"), 50),
+                    "trend": a.get("trend", "Alcista"),
+                    "ema_50": _safe_float(a.get("ema_50")),
+                    "ema_200": _safe_float(a.get("ema_200")),
+                    "momentum_accel": _safe_float(a.get("momentum_accel")),
+                    "dist_to_support_pct": _safe_float(a.get("dist_to_support_pct"), 0.1),
+                    "dist_to_resistance_pct": _safe_float(a.get("dist_to_resistance_pct"), 0.1),
+                    "dollar_vol_20d": _safe_float(a.get("dollar_vol_20d")),
+                    "drawdown_pct": _safe_float(a.get("drawdown_pct")),
+                    "profile": profile,
+                    "horizon": horizon,
+                    "timestamp": time.time(),
+                    "source": "fallback",
+                }
+                results_by_cat.setdefault(cat, []).append(entry)
+                total += 1
+
+        print(f"[funnel_fallback:{profile}/{horizon}] Generado {total} activos desde caché de recomendaciones.")
+        return {
+            "pipeline": {
+                "universe_size": len(all_assets),
+                "stage1_passed": total,
+                "stage2_passed": total,
+                "final_count": total,
+                "timestamp": time.time(),
+                "profile": profile,
+                "horizon": horizon,
+                "source": "fallback_recommendations",
+            },
+            "results": results_by_cat,
+        }
+    except Exception as e:
+        print(f"[funnel_fallback:{profile}/{horizon}] Error en fallback: {e}")
+        return {"pipeline": {"universe_size": 0, "timestamp": time.time(), "profile": profile, "horizon": horizon}, "results": {}}
+
+
 # ============================================================
 # FUNCIÓN PRINCIPAL DEL FUNNEL
 # ============================================================
@@ -653,17 +746,27 @@ async def run_funnel(
 
     # ── Descarga de datos (mínimo histórico requerido: 6 meses) ──────────
     try:
-        raw = yf.download(
-            FULL_UNIVERSE,
-            period="1y",
-            interval="1d",
-            group_by="ticker",
-            progress=False,
-            timeout=90,
+        raw = await asyncio.wait_for(
+            asyncio.to_thread(
+                yf.download,
+                FULL_UNIVERSE,
+                period="1y",
+                interval="1d",
+                group_by="ticker",
+                progress=False,
+                timeout=10,
+            ),
+            timeout=12.0
         )
     except Exception as e:
-        print(f"[funnel] Error descargando datos: {e}")
-        return {"pipeline": {"universe_size": 0, "timestamp": time.time(), "profile": profile, "horizon": horizon}, "results": {}}
+        print(f"[funnel] Error o timeout descargando datos: {e}. Usando fallback desde recomendaciones.")
+        return await _run_funnel_fallback(profile, horizon)
+
+
+    # ── Verificar que el download retornó datos útiles ──────────────────
+    if raw is None or raw.empty or len(raw.columns) == 0:
+        print(f"[funnel:{profile}/{horizon}] DataFrame de yfinance vacío. Usando fallback.")
+        return await _run_funnel_fallback(profile, horizon)
 
     pipeline_meta = {
         "universe_size": len(FULL_UNIVERSE),
