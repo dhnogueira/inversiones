@@ -346,32 +346,42 @@ def _sync_fetch_yfinance_market_data(force_refresh=False, use_cache_only=False):
         if t_upper not in all_tickers:
             all_tickers.append(t_upper)
     
-    # Download 2 years of historical daily data to guarantee enough trading days for 12m metrics (>252)
-    print(f"Downloading data for {len(all_tickers)} tickers...")
-    data = yf.download(all_tickers, period="2y", interval="1d", group_by="ticker", progress=False)
-    
-    results = []
-    
-    # Categories mapping
-    categories = {}
-    for t in SP500_TICKERS: categories[t] = "sp500"
-    for t in CEDEAR_TICKERS: categories[t] = "cedears"
-    for t in MERVAL_TICKERS: categories[t] = "merval"
-    for t in CRYPTO_TICKERS: categories[t] = "crypto"
-    for t in BONO_TICKERS: categories[t] = "bonos"
+    # ── Categorías ───────────────────────────────────────────────────────────
+    categories: dict[str, str] = {}
+    for t in SP500_TICKERS:   categories[t] = "sp500"
+    for t in CEDEAR_TICKERS:  categories[t] = "cedears"
+    for t in MERVAL_TICKERS:  categories[t] = "merval"
+    for t in CRYPTO_TICKERS:  categories[t] = "crypto"
+    for t in BONO_TICKERS:    categories[t] = "bonos"
     for t in custom_tickers:
         t_upper = t.upper().strip()
         if t_upper not in categories:
             categories[t_upper] = "cedears" if t_upper.endswith(".BA") else "sp500"
-    
+
+    # ── Descarga multi-fuente: yfinance → Stooq (US) / Binance (crypto) ──────
+    print(f"Descargando datos multi-fuente para {len(all_tickers)} tickers...")
+    from app.services.data_providers import fetch_ohlcv_batch
+    import asyncio
+
+    loop = asyncio.new_event_loop()
+    try:
+        ohlcv_map = loop.run_until_complete(
+            fetch_ohlcv_batch(all_tickers, categories, days=500, max_concurrent=10)
+        )
+    finally:
+        loop.close()
+
+    print(f"Datos obtenidos: {len(ohlcv_map)}/{len(all_tickers)} tickers con datos.")
+
+    results = []
     for ticker in all_tickers:
         try:
-            # yfinance returns multi-index if downloading multiple tickers
-            df = data[ticker].dropna(subset=['Close'])
+            df = ohlcv_map.get(ticker)
+            if df is None or df.empty:
+                continue
             category = categories[ticker]
             metrics = compute_asset_metrics(df, ticker, category)
             if metrics:
-                # Reutilizar fundamentales si existen en caché y no se forza el refresh
                 if not force_refresh and ticker in prev_fundamentals:
                     fundamentals = prev_fundamentals[ticker]
                 else:
@@ -380,6 +390,7 @@ def _sync_fetch_yfinance_market_data(force_refresh=False, use_cache_only=False):
                 results.append(metrics)
         except Exception as e:
             print(f"Error processing {ticker}: {e}")
+
             
     # Save cache if we got decent results (at least 50% of expected tickers)
     if len(results) >= len(all_tickers) * 0.5:

@@ -744,28 +744,17 @@ async def run_funnel(
 
     print(f"[funnel:{profile}/{horizon}] Iniciando escaneo de {len(FULL_UNIVERSE)} tickers...")
 
-    # ── Descarga de datos (mínimo histórico requerido: 6 meses) ──────────
     try:
-        raw = await asyncio.wait_for(
-            asyncio.to_thread(
-                yf.download,
-                FULL_UNIVERSE,
-                period="1y",
-                interval="1d",
-                group_by="ticker",
-                progress=False,
-                timeout=10,
-            ),
-            timeout=12.0
-        )
+        from app.services.data_providers import fetch_ohlcv_batch
+        raw_dict = await fetch_ohlcv_batch(FULL_UNIVERSE, _CATEGORIES, days=365, max_concurrent=10)
     except Exception as e:
-        print(f"[funnel] Error o timeout descargando datos: {e}. Usando fallback desde recomendaciones.")
+        print(f"[funnel] Error descargando datos multi-fuente: {e}. Usando fallback desde recomendaciones.")
         return await _run_funnel_fallback(profile, horizon)
 
 
     # ── Verificar que el download retornó datos útiles ──────────────────
-    if raw is None or raw.empty or len(raw.columns) == 0:
-        print(f"[funnel:{profile}/{horizon}] DataFrame de yfinance vacío. Usando fallback.")
+    if not raw_dict:
+        print(f"[funnel:{profile}/{horizon}] No se obtuvieron datos de ninguna fuente. Usando fallback.")
         return await _run_funnel_fallback(profile, horizon)
 
     pipeline_meta = {
@@ -784,7 +773,7 @@ async def run_funnel(
     for ticker in FULL_UNIVERSE:
         category = _CATEGORIES.get(ticker, "sp500")
         try:
-            df = raw[ticker].dropna(subset=["Close"]) if ticker in raw.columns.get_level_values(0) else pd.DataFrame()
+            df = raw_dict.get(ticker, pd.DataFrame())
             if df.empty:
                 continue
 
