@@ -218,10 +218,21 @@ async function checkHostMode() {
     console.log("Detectando disponibilidad de backend FastAPI...");
 
     // Lista de candidatos a probar en orden:
-    // 1. El mismo host en puerto 8000 (para acceso LAN desde celular vía IP)
-    // 2. localhost:8000 (para acceso desde GitHub Pages en la misma PC)
-    const currentHostBase = `http://${window.location.hostname}:8000`;
-    const candidates = [currentHostBase];
+    // 1. localhost:8001 (puerto actual del backend FastAPI)
+    // 2. El mismo host en el puerto actual de la location (ej: si se sirve desde 8001)
+    // 3. El mismo host en puerto 8000 (fallback legacy)
+    // 4. localhost:8000 (para acceso desde GitHub Pages en la misma PC)
+    const currentPort = window.location.port || '8000';
+    const currentHostBase = `http://${window.location.hostname}:${currentPort}`;
+    // Siempre intentar primero el puerto 8001 donde corre uvicorn
+    const candidates = ['http://localhost:8001', `http://${window.location.hostname}:8001`];
+    // Agregar el host actual si no es 8001
+    if (currentPort !== '8001' && !candidates.includes(currentHostBase)) {
+        candidates.push(currentHostBase);
+    }
+    if (currentPort !== '8000') {
+        candidates.push(`http://${window.location.hostname}:8000`);
+    }
     if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
         candidates.push('http://localhost:8000');
     }
