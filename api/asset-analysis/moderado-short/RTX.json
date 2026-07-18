@@ -1,0 +1,186 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "RTX",
+    "name": "RTX",
+    "category": "sp500",
+    "price": 193.51,
+    "currency": "USD",
+    "score": 63.1,
+    "profile": "moderado",
+    "horizon": "short",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos está en 59.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "59.0",
+        "status": "success"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "La EMA de 50 días (188.20) se encuentra por encima de la EMA de 200 días (180.55), y el precio actual (193.51) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "value": "Fuerte Alcista",
+        "status": "success"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es de **27.2%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
+        "value": "27.2%",
+        "status": "neutral"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **+0.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+0.5% (1M)",
+        "status": "neutral"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 174.09 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 201.99 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 189.64. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 189.64",
+        "status": "success"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.95** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
+        "value": "0.95",
+        "status": "neutral"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **-2.4%** y a 12 meses es **+29.8%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-2.4% (6M)",
+        "status": "neutral"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **18.0%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+7.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 18.0%",
+        "status": "success"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno de Mercados Internacionales (EE.UU.)",
+        "icon": "fa-globe",
+        "content": "**Contexto EE.UU. (Jul 2026):** La Reserva Federal mantiene una postura de política monetaria que equilibra el control inflacionario con el sostenimiento del empleo. Los mercados de renta variable estadounidenses han mostrado resiliencia, impulsados por el sector tecnológico y la inteligencia artificial. Los CEDEARs permiten al inversor argentino acceder a estas dinámicas con cobertura implícita en dólares (tipo de cambio CCL). El ratio P/E del S&P 500 se encuentra por encima de su promedio histórico, lo que sugiere valuaciones exigentes que podrían limitar el upside de corto plazo.",
+        "status": "neutral"
+      }
+    ],
+    "balances": {
+      "snapshots": [
+        {
+          "period": "Mar 2026",
+          "revenue_b": 22.08,
+          "net_income_b": 2.06,
+          "net_margin_pct": 9.3,
+          "eps": null,
+          "fcf_b": 1.21,
+          "debt_equity": 0.59,
+          "favorable": [
+            "FCF positivo: $1.2B"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Dec 2025",
+          "revenue_b": 24.24,
+          "net_income_b": 1.62,
+          "net_margin_pct": 6.7,
+          "eps": null,
+          "fcf_b": 3.05,
+          "debt_equity": 0.61,
+          "favorable": [
+            "FCF positivo: $3.0B",
+            "Ingresos en alza vs trimestre anterior: +9.8%"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Sep 2025",
+          "revenue_b": 22.48,
+          "net_income_b": 1.92,
+          "net_margin_pct": 8.5,
+          "eps": null,
+          "fcf_b": 3.9,
+          "debt_equity": 0.63,
+          "favorable": [
+            "FCF positivo: $3.9B"
+          ],
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -7.3%"
+          ]
+        },
+        {
+          "period": "Jun 2025",
+          "revenue_b": 21.58,
+          "net_income_b": 1.66,
+          "net_margin_pct": 7.7,
+          "eps": null,
+          "fcf_b": -0.19,
+          "debt_equity": 0.7,
+          "favorable": [],
+          "critical": [
+            "FCF negativo: $-0.2B (quema de caja)"
+          ]
+        },
+        {
+          "period": "Mar 2025",
+          "revenue_b": 20.31,
+          "net_income_b": 1.54,
+          "net_margin_pct": 7.6,
+          "eps": null,
+          "fcf_b": 0.69,
+          "debt_equity": 0.7,
+          "favorable": [
+            "FCF positivo: $0.7B"
+          ],
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -5.9%"
+          ]
+        }
+      ],
+      "summary": {
+        "periods_analyzed": 5,
+        "avg_revenue_b": 22.14,
+        "avg_net_margin_pct": 8.0,
+        "avg_eps": null,
+        "revenue_trend": "creciente",
+        "margin_trend": "en expansión",
+        "total_favorable_signals": 5,
+        "total_critical_signals": 3,
+        "conclusion": "ESTABLE",
+        "conclusion_color": "neutral",
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 8.0%. Hay 3 señales de atención y 5 puntos positivos. Perfil de riesgo moderado."
+      }
+    },
+    "verdict": {
+      "action": "CONSIDERAR",
+      "icon": "fa-circle-info",
+      "color": "neutral",
+      "summary": "Con un score de **63.1/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
+      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.95) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
+      "take_profit": 231.46,
+      "stop_loss": 174.53,
+      "tp_pct": 19.6,
+      "sl_pct": 9.8
+    },
+    "support": 174.09,
+    "resistance": 201.99,
+    "volume_cluster": 189.64,
+    "take_profit": 231.46,
+    "stop_loss": 174.53,
+    "tp_pct": 19.6,
+    "sl_pct": 9.8
+  }
+}

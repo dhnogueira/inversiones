@@ -1,0 +1,196 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "AMD.BA",
+    "name": "AMD",
+    "category": "cedears",
+    "price": 78550.0,
+    "currency": "ARS",
+    "score": 51.6,
+    "profile": "agresivo",
+    "horizon": "short",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos se encuentra en 44.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "44.1",
+        "status": "neutral"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "La EMA de 50 días (74287.00) se encuentra por encima de la EMA de 200 días (49848.54), y el precio actual (78550.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "value": "Fuerte Alcista",
+        "status": "success"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es **muy alta** (66.6%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "66.6%",
+        "status": "danger"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El rendimiento mensual es de **-4.3%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-4.3% (1M)",
+        "status": "danger"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 29,808.00 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 82,950.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 76,979.00. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 76,979.00",
+        "status": "success"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **4.38** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "4.38",
+        "status": "success"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **+123.2%** y a 12 meses es **+295.2%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+123.2% (6M)",
+        "status": "success"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **147.8%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+136.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 147.8%",
+        "status": "success"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno Macroeconómico Argentino",
+        "icon": "fa-flag",
+        "content": "**Contexto Argentina (Jul 2026):** La economía argentina transita un proceso de estabilización macroeconómica. La reducción gradual de la brecha cambiaria (dólar oficial vs. CCL) ha generado mayor previsibilidad en el mercado de capitales local. Sin embargo, la inflación acumulada sigue siendo un factor determinante para evaluar rendimientos reales en pesos. Los instrumentos en ARS deben superar la inflación esperada para generar retorno real positivo. El riesgo país sigue siendo un indicador clave para bonos soberanos.",
+        "status": "neutral"
+      },
+      {
+        "title": "Entorno de Mercados Internacionales (EE.UU.)",
+        "icon": "fa-globe",
+        "content": "**Contexto EE.UU. (Jul 2026):** La Reserva Federal mantiene una postura de política monetaria que equilibra el control inflacionario con el sostenimiento del empleo. Los mercados de renta variable estadounidenses han mostrado resiliencia, impulsados por el sector tecnológico y la inteligencia artificial. Los CEDEARs permiten al inversor argentino acceder a estas dinámicas con cobertura implícita en dólares (tipo de cambio CCL). El ratio P/E del S&P 500 se encuentra por encima de su promedio histórico, lo que sugiere valuaciones exigentes que podrían limitar el upside de corto plazo.",
+        "status": "neutral"
+      }
+    ],
+    "balances": {
+      "snapshots": [
+        {
+          "period": "Mar 2026",
+          "revenue_b": 10.25,
+          "net_income_b": 1.37,
+          "net_margin_pct": 13.4,
+          "eps": null,
+          "fcf_b": 2.57,
+          "debt_equity": 0.06,
+          "favorable": [
+            "FCF positivo: $2.6B",
+            "Deuda/Equity baja: 0.06"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Dec 2025",
+          "revenue_b": 10.27,
+          "net_income_b": 1.62,
+          "net_margin_pct": 15.8,
+          "eps": null,
+          "fcf_b": 2.38,
+          "debt_equity": 0.06,
+          "favorable": [
+            "FCF positivo: $2.4B",
+            "Deuda/Equity baja: 0.06"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Sep 2025",
+          "revenue_b": 9.25,
+          "net_income_b": 1.17,
+          "net_margin_pct": 12.6,
+          "eps": null,
+          "fcf_b": 1.9,
+          "debt_equity": 0.06,
+          "favorable": [
+            "FCF positivo: $1.9B",
+            "Deuda/Equity baja: 0.06"
+          ],
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -9.9%"
+          ]
+        },
+        {
+          "period": "Jun 2025",
+          "revenue_b": 7.68,
+          "net_income_b": 0.77,
+          "net_margin_pct": 10.0,
+          "eps": null,
+          "fcf_b": 1.73,
+          "debt_equity": 0.07,
+          "favorable": [
+            "FCF positivo: $1.7B",
+            "Deuda/Equity baja: 0.07"
+          ],
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -17.0%"
+          ]
+        },
+        {
+          "period": "Mar 2025",
+          "revenue_b": 7.44,
+          "net_income_b": 0.71,
+          "net_margin_pct": 9.5,
+          "eps": null,
+          "fcf_b": 0.73,
+          "debt_equity": 0.08,
+          "favorable": [
+            "FCF positivo: $0.7B",
+            "Deuda/Equity baja: 0.08"
+          ],
+          "critical": []
+        }
+      ],
+      "summary": {
+        "periods_analyzed": 5,
+        "avg_revenue_b": 8.98,
+        "avg_net_margin_pct": 12.3,
+        "avg_eps": null,
+        "revenue_trend": "creciente",
+        "margin_trend": "en expansión",
+        "total_favorable_signals": 10,
+        "total_critical_signals": 2,
+        "conclusion": "ESTABLE",
+        "conclusion_color": "neutral",
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 12.3%. Hay 2 señales de atención y 10 puntos positivos. Perfil de riesgo moderado."
+      }
+    },
+    "verdict": {
+      "action": "CAUTELA",
+      "icon": "fa-triangle-exclamation",
+      "color": "warning",
+      "summary": "El score de **51.6/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (66.6%), un ratio de Sharpe ineficiente (4.38), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 129450.4,
+      "stop_loss": 53099.8,
+      "tp_pct": 64.8,
+      "sl_pct": 32.4
+    },
+    "support": 29808.0,
+    "resistance": 82950.0,
+    "volume_cluster": 76979.0,
+    "take_profit": 129450.4,
+    "stop_loss": 53099.8,
+    "tp_pct": 64.8,
+    "sl_pct": 32.4
+  }
+}
