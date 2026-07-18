@@ -36,6 +36,20 @@ async def main():
     yf_assets = await fetch_yfinance_market_data(use_cache_only=True)
     fi_assets = await fetch_arg_fixed_income_data(force_refresh=False)
     all_assets = yf_assets + fi_assets
+
+    # Obtener el timestamp exacto de la última actualización del mercado desde el caché de yfinance
+    cache_path = os.path.join(os.path.dirname(__file__), "cache", "yfinance_market_data.json")
+    market_data_time = None
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, "r", encoding="utf-8") as f:
+                c_data = json.load(f)
+                market_data_time = c_data.get("timestamp")
+        except Exception as e:
+            print(f"Error al leer timestamp del cache de yfinance: {e}")
+    if not market_data_time:
+        import time
+        market_data_time = time.time()
     
     # Validar que ningún instrumento de renta fija esté vencido (Seguridad en compilación)
     from datetime import datetime
@@ -85,7 +99,12 @@ async def main():
             
             # Recommendations
             scored = get_recommendations_by_profile(all_assets, profile, horizon)
-            rec_data = {"status": "success", "updating": False, "results": scored}
+            rec_data = {
+                "status": "success",
+                "updating": False,
+                "timestamp": market_data_time,
+                "results": scored
+            }
             with open(os.path.join(API_DIR, "recommendations", f"{profile}-{horizon}.json"), "w", encoding="utf-8") as f:
                 json.dump(rec_data, f, indent=2, ensure_ascii=False)
                 
@@ -103,7 +122,11 @@ async def main():
                     top_assets = scored["categories"].get(cat, [])
                 
                 optimal = optimize_portfolio(top_assets, profile, horizon)
-                opt_data = {"status": "success", "optimization": optimal}
+                opt_data = {
+                    "status": "success",
+                    "timestamp": market_data_time,
+                    "optimization": optimal
+                }
                 
                 # Guardar el específico por categoría: {profile}-{horizon}-{category}.json
                 with open(os.path.join(API_DIR, "optimize", f"{profile}-{horizon}-{cat}.json"), "w", encoding="utf-8") as f:

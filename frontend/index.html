@@ -170,7 +170,12 @@
 
                 <div class="ranking-panel glass-panel">
                     <div class="ranking-header">
-                        <h3 class="panel-title">Clasificación por Categoría</h3>
+                        <h3 class="panel-title" id="btn-toggle-category"
+                            style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; user-select: none; margin-bottom: 0;">
+                            <i class="fa-solid fa-list-ul"></i>
+                            Clasificación por Categoría
+                            <i class="fa-solid fa-chevron-down toggle-icon" id="icon-toggle-category"></i>
+                        </h3>
                         <div class="category-filters">
                             <button class="category-filter active" data-category="all">Todos</button>
                             <button class="category-filter" data-category="letras">Letras</button>
@@ -181,26 +186,28 @@
                             <button class="category-filter" data-category="crypto">Crypto</button>
                         </div>
                     </div>
-                    <div class="table-search-bar">
-                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" id="asset-search" placeholder="Buscar por símbolo o nombre...">
-                    </div>
-                    <div class="table-wrapper">
-                        <table class="asset-table">
-                            <thead>
-                                <tr>
-                                    <th>Símbolo</th>
-                                    <th>Nombre</th>
-                                    <th>Moneda</th>
-                                    <th>Cotización</th>
-                                    <th>Volatilidad</th>
-                                    <th>Sharpe</th>
-                                    <th>Score</th>
-                                    <th>Tendencia</th>
-                                </tr>
-                            </thead>
-                            <tbody id="assets-tbody"></tbody>
-                        </table>
+                    <div class="collapsible-content" id="category-panel-content">
+                        <div class="table-search-bar">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" id="asset-search" placeholder="Buscar por símbolo o nombre...">
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="asset-table">
+                                <thead>
+                                    <tr>
+                                        <th>Símbolo</th>
+                                        <th>Nombre</th>
+                                        <th>Moneda</th>
+                                        <th>Cotización</th>
+                                        <th>Volatilidad</th>
+                                        <th>Sharpe</th>
+                                        <th>Score</th>
+                                        <th>Tendencia</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="assets-tbody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -209,12 +216,13 @@
                     <div class="ranking-header"
                         style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
                         <div style="display: flex; flex-direction: column; gap: 4px;">
-                            <h3 class="panel-title"
-                                style="margin-bottom: 0; display: flex; align-items: center; gap: 8px;">
+                            <h3 class="panel-title" id="btn-toggle-screener"
+                                style="margin-bottom: 0; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none;">
                                 <i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i>
                                 Joyas Ocultas Detectadas Hoy
                                 <span id="screener-new-badge" class="badge badge-ars"
                                     style="display: none; padding: 2px 6px; font-size: 10px; font-weight: 700;">NUEVAS</span>
+                                <i class="fa-solid fa-chevron-down toggle-icon" id="icon-toggle-screener"></i>
                             </h3>
                             <span style="font-size: 12px; color: var(--text-secondary);">
                                 Activos con volumen y liquidez segura, tendencia alcista técnica y RSI favorable.
@@ -229,196 +237,28 @@
                             <button class="category-filter" data-screener-category="crypto">Crypto</button>
                         </div>
                     </div>
-                    <div class="table-wrapper">
-                        <table class="asset-table">
-                            <thead>
-                                <tr>
-                                    <th>Símbolo</th>
-                                    <th>Nombre</th>
-                                    <th>Categoría</th>
-                                    <th>Precio</th>
-                                    <th>KPI / Score</th>
-                                    <th>Vol. Diario</th>
-                                    <th>Sharpe</th>
-                                    <th>RSI</th>
-                                    <th>Tendencia</th>
-                                </tr>
-                            </thead>
-                            <tbody id="screener-tbody">
-                                <tr>
-                                    <td colspan="9" class="text-center"
-                                        style="padding: 24px; color: var(--text-secondary);">
-                                        <i class="fa-solid fa-circle-notch fa-spin"></i> Cargando oportunidades
-                                        analizadas hoy...
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== MI CARTERA VIEW ===== -->
-            <div id="view-portfolio" class="content-view">
-                <div class="portfolio-header-row">
-                    <h2><i class="fa-solid fa-briefcase"></i> Mi Cartera Simulada</h2>
-                    <button id="btn-add-position" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Agregar
-                        Posición</button>
-                </div>
-
-                <div class="metrics-grid" id="portfolio-metrics">
-                    <div class="metric-card glass-panel">
-                        <div class="metric-info"><span class="metric-title">Capital Invertido</span>
-                            <h3 id="pf-invested" class="metric-value">$0</h3>
-                        </div>
-                        <div class="metric-icon bg-blue-glow"><i class="fa-solid fa-coins"></i></div>
-                    </div>
-                    <div class="metric-card glass-panel">
-                        <div class="metric-info"><span class="metric-title">Valor Actual</span>
-                            <h3 id="pf-current" class="metric-value">$0</h3>
-                        </div>
-                        <div class="metric-icon bg-green-glow"><i class="fa-solid fa-sack-dollar"></i></div>
-                    </div>
-                    <div class="metric-card glass-panel">
-                        <div class="metric-info"><span class="metric-title">Ganancia / Pérdida</span>
-                            <h3 id="pf-pnl" class="metric-value">$0</h3>
-                        </div>
-                        <div class="metric-icon bg-purple-glow"><i class="fa-solid fa-chart-line"></i></div>
-                    </div>
-                </div>
-
-                <!-- Distribución por Categoría (Gráfico y Lista de Rendimiento por Categoría) -->
-                <div class="dashboard-grid" id="portfolio-distribution-section"
-                    style="display: none; margin-bottom: 24px;">
-                    <div class="chart-container glass-panel">
-                        <h3 class="panel-title">Distribución por Categoría</h3>
-                        <div id="portfolio-category-chart"></div>
-                    </div>
-                    <div class="allocation-list glass-panel">
-                        <h3 class="panel-title">Rendimiento por Categoría</h3>
-                        <div id="portfolio-category-list" class="allocation-items"></div>
-                    </div>
-                </div>
-
-                <!-- Contenedor dinámico de carteras por categoría -->
-                <div id="portfolio-categories-container"></div>
-
-                <!-- Informe Diario de Asesoría Financiera generado dinámicamente -->
-                <div id="portfolio-report-section" class="glass-panel"
-                    style="padding: 24px; display: none; margin-top: 24px;">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--border-glow); padding-bottom: 15px;">
-                        <h3
-                            style="font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 10px; margin: 0;">
-                            <i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i>
-                            Informe Diario de Asesoría Financiera
-                        </h3>
-                        <span id="report-timestamp" style="font-size: 12px; color: var(--text-muted);"></span>
-                    </div>
-
-                    <div id="portfolio-report-overall" style="margin-bottom: 24px;">
-                        <!-- Acción recomendada general -->
-                    </div>
-
-                    <div id="portfolio-report-content" class="portfolio-report-grid"
-                        style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px;">
-                        <!-- Columna izquierda: Análisis detallado activo por activo -->
-                        <div class="report-analysis-col">
-                            <h4
-                                style="font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 14px; letter-spacing: 0.5px;">
-                                Recomendaciones por Activo</h4>
-                            <div id="report-active-list" style="display: flex; flex-direction: column; gap: 14px;">
-                            </div>
-                        </div>
-
-                        <!-- Columna derecha: Factores de riesgo del mercado y Cisnes Negros -->
-                        <div class="report-risks-col">
-                            <h4
-                                style="font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 14px; letter-spacing: 0.5px;">
-                                Riesgos del Contexto y Cisnes Negros</h4>
-                            <div id="report-market-context" style="display: flex; flex-direction: column; gap: 14px;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== RENTA FIJA VIEW ===== -->
-            <div id="view-analysis" class="content-view">
-                <h2><i class="fa-solid fa-landmark"></i> Curva de Rendimientos – Renta Fija Argentina</h2>
-                <p class="subtitle" style="margin-bottom: 24px;">TNA (%) vs. Días al vencimiento para Letras y Bonos
-                    soberanos</p>
-                <div class="glass-panel" style="padding: 24px;">
-                    <div id="yield-curve-chart" style="min-height: 400px;"></div>
-                </div>
-                <div class="ranking-panel glass-panel" style="margin-top: 24px;">
-                    <h3 class="panel-title">Detalle de Instrumentos</h3>
-                    <div class="table-wrapper">
-                        <table class="asset-table">
-                            <thead>
-                                <tr>
-                                    <th>Ticker</th>
-                                    <th>Nombre</th>
-                                    <th>TNA %</th>
-                                    <th>Vencimiento</th>
-                                    <th>Días Restantes</th>
-                                    <th>Moneda</th>
-                                    <th>Precio</th>
-                                </tr>
-                            </thead>
-                            <tbody id="yield-tbody"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== ALERTS VIEW ===== -->
-            <div id="view-alerts" class="content-view">
-                <div class="portfolio-header-row">
-                    <h2><i class="fa-solid fa-bell"></i> Alertas Técnicas</h2>
-                    <button id="btn-add-watchlist" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Agregar a
-                        Watchlist</button>
-                </div>
-
-                <div id="active-alerts" class="alerts-container"></div>
-
-                <!-- row of subscription and history -->
-                <div class="alerts-double-grid"
-                    style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px; margin-top: 24px;">
-                    <!-- subscribe widget -->
-                    <div class="ranking-panel glass-panel" style="margin-top: 0;">
-                        <h3 class="panel-title"><i class="fa-solid fa-envelope"></i> Suscribirse a Alertas</h3>
-                        <p
-                            style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">
-                            Recibí diariamente en tu email el Top 5 de los mejores activos recomendados para comprar,
-                            junto con una síntesis técnica y enlaces de acceso.
-                        </p>
-                        <form id="subscribe-form" style="display: flex; flex-direction: column; gap: 12px;">
-                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;"><i
-                                    class="fa-solid fa-envelope-circle-check"></i> Suscribirme a Alertas</button>
-                        </form>
-                        <div id="subscribe-msg"
-                            style="margin-top: 12px; font-size: 13px; font-weight: 500; display: none;"></div>
-                    </div>
-
-                    <!-- history panel -->
-                    <div class="ranking-panel glass-panel" style="margin-top: 0;">
-                        <h3 class="panel-title"><i class="fa-solid fa-clock-rotate-left"></i> Historial de Alertas
-                            Enviadas</h3>
-                        <div class="table-wrapper" style="max-height: 250px; overflow-y: auto;">
+                    <div class="collapsible-content" id="screener-gems-content">
+                        <div class="table-wrapper">
                             <table class="asset-table">
                                 <thead>
                                     <tr>
-                                        <th>Fecha / Hora</th>
-                                        <th>Resumen de Alerta de Correo</th>
-                                        <th>Enviado a</th>
-                                        <th style="width:50px;"></th>
+                                        <th>Símbolo</th>
+                                        <th>Nombre</th>
+                                        <th>Categoría</th>
+                                        <th>Precio</th>
+                                        <th>KPI / Score</th>
+                                        <th>Vol. Diario</th>
+                                        <th>Sharpe</th>
+                                        <th>RSI</th>
+                                        <th>Tendencia</th>
                                     </tr>
                                 </thead>
-                                <tbody id="email-history-tbody">
+                                <tbody id="screener-tbody">
                                     <tr>
-                                        <td colspan="4" class="text-center"
-                                            style="padding: 16px; color: var(--text-secondary);">Cargando historial...
+                                        <td colspan="9" class="text-center"
+                                            style="padding: 24px; color: var(--text-secondary);">
+                                            <i class="fa-solid fa-circle-notch fa-spin"></i> Cargando oportunidades
+                                            analizadas hoy...
                                         </td>
                                     </tr>
                                 </tbody>
@@ -427,24 +267,197 @@
                     </div>
                 </div>
 
-                <div class="ranking-panel glass-panel" style="margin-top: 24px;">
-                    <h3 class="panel-title">Mi Watchlist</h3>
-                    <div class="table-wrapper">
-                        <table class="asset-table">
-                            <thead>
-                                <tr>
-                                    <th>Ticker</th>
-                                    <th>Nombre</th>
-                                    <th>Categoría</th>
-                                    <th>Reglas</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody id="watchlist-tbody"></tbody>
-                        </table>
+                <!-- ===== MI CARTERA VIEW ===== -->
+                <div id="view-portfolio" class="content-view">
+                    <div class="portfolio-header-row">
+                        <h2><i class="fa-solid fa-briefcase"></i> Mi Cartera Simulada</h2>
+                        <button id="btn-add-position" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Agregar
+                            Posición</button>
+                    </div>
+
+                    <div class="metrics-grid" id="portfolio-metrics">
+                        <div class="metric-card glass-panel">
+                            <div class="metric-info"><span class="metric-title">Capital Invertido</span>
+                                <h3 id="pf-invested" class="metric-value">$0</h3>
+                            </div>
+                            <div class="metric-icon bg-blue-glow"><i class="fa-solid fa-coins"></i></div>
+                        </div>
+                        <div class="metric-card glass-panel">
+                            <div class="metric-info"><span class="metric-title">Valor Actual</span>
+                                <h3 id="pf-current" class="metric-value">$0</h3>
+                            </div>
+                            <div class="metric-icon bg-green-glow"><i class="fa-solid fa-sack-dollar"></i></div>
+                        </div>
+                        <div class="metric-card glass-panel">
+                            <div class="metric-info"><span class="metric-title">Ganancia / Pérdida</span>
+                                <h3 id="pf-pnl" class="metric-value">$0</h3>
+                            </div>
+                            <div class="metric-icon bg-purple-glow"><i class="fa-solid fa-chart-line"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Distribución por Categoría (Gráfico y Lista de Rendimiento por Categoría) -->
+                    <div class="dashboard-grid" id="portfolio-distribution-section"
+                        style="display: none; margin-bottom: 24px;">
+                        <div class="chart-container glass-panel">
+                            <h3 class="panel-title">Distribución por Categoría</h3>
+                            <div id="portfolio-category-chart"></div>
+                        </div>
+                        <div class="allocation-list glass-panel">
+                            <h3 class="panel-title">Rendimiento por Categoría</h3>
+                            <div id="portfolio-category-list" class="allocation-items"></div>
+                        </div>
+                    </div>
+
+                    <!-- Contenedor dinámico de carteras por categoría -->
+                    <div id="portfolio-categories-container"></div>
+
+                    <!-- Informe Diario de Asesoría Financiera generado dinámicamente -->
+                    <div id="portfolio-report-section" class="glass-panel"
+                        style="padding: 24px; display: none; margin-top: 24px;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--border-glow); padding-bottom: 15px;">
+                            <h3
+                                style="font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 10px; margin: 0;">
+                                <i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i>
+                                Informe Diario de Asesoría Financiera
+                            </h3>
+                            <span id="report-timestamp" style="font-size: 12px; color: var(--text-muted);"></span>
+                        </div>
+
+                        <div id="portfolio-report-overall" style="margin-bottom: 24px;">
+                            <!-- Acción recomendada general -->
+                        </div>
+
+                        <div id="portfolio-report-content" class="portfolio-report-grid"
+                            style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px;">
+                            <!-- Columna izquierda: Análisis detallado activo por activo -->
+                            <div class="report-analysis-col">
+                                <h4
+                                    style="font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 14px; letter-spacing: 0.5px;">
+                                    Recomendaciones por Activo</h4>
+                                <div id="report-active-list" style="display: flex; flex-direction: column; gap: 14px;">
+                                </div>
+                            </div>
+
+                            <!-- Columna derecha: Factores de riesgo del mercado y Cisnes Negros -->
+                            <div class="report-risks-col">
+                                <h4
+                                    style="font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 14px; letter-spacing: 0.5px;">
+                                    Riesgos del Contexto y Cisnes Negros</h4>
+                                <div id="report-market-context"
+                                    style="display: flex; flex-direction: column; gap: 14px;">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- ===== RENTA FIJA VIEW ===== -->
+                <div id="view-analysis" class="content-view">
+                    <h2><i class="fa-solid fa-landmark"></i> Curva de Rendimientos – Renta Fija Argentina</h2>
+                    <p class="subtitle" style="margin-bottom: 24px;">TNA (%) vs. Días al vencimiento para Letras y Bonos
+                        soberanos</p>
+                    <div class="glass-panel" style="padding: 24px;">
+                        <div id="yield-curve-chart" style="min-height: 400px;"></div>
+                    </div>
+                    <div class="ranking-panel glass-panel" style="margin-top: 24px;">
+                        <h3 class="panel-title">Detalle de Instrumentos</h3>
+                        <div class="table-wrapper">
+                            <table class="asset-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ticker</th>
+                                        <th>Nombre</th>
+                                        <th>TNA %</th>
+                                        <th>Vencimiento</th>
+                                        <th>Días Restantes</th>
+                                        <th>Moneda</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="yield-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== ALERTS VIEW ===== -->
+                <div id="view-alerts" class="content-view">
+                    <div class="portfolio-header-row">
+                        <h2><i class="fa-solid fa-bell"></i> Alertas Técnicas</h2>
+                        <button id="btn-add-watchlist" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Agregar
+                            a
+                            Watchlist</button>
+                    </div>
+
+                    <div id="active-alerts" class="alerts-container"></div>
+
+                    <!-- row of subscription and history -->
+                    <div class="alerts-double-grid"
+                        style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px; margin-top: 24px;">
+                        <!-- subscribe widget -->
+                        <div class="ranking-panel glass-panel" style="margin-top: 0;">
+                            <h3 class="panel-title"><i class="fa-solid fa-envelope"></i> Suscribirse a Alertas</h3>
+                            <p
+                                style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4;">
+                                Recibí diariamente en tu email el Top 5 de los mejores activos recomendados para
+                                comprar,
+                                junto con una síntesis técnica y enlaces de acceso.
+                            </p>
+                            <form id="subscribe-form" style="display: flex; flex-direction: column; gap: 12px;">
+                                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;"><i
+                                        class="fa-solid fa-envelope-circle-check"></i> Suscribirme a Alertas</button>
+                            </form>
+                            <div id="subscribe-msg"
+                                style="margin-top: 12px; font-size: 13px; font-weight: 500; display: none;"></div>
+                        </div>
+
+                        <!-- history panel -->
+                        <div class="ranking-panel glass-panel" style="margin-top: 0;">
+                            <h3 class="panel-title"><i class="fa-solid fa-clock-rotate-left"></i> Historial de Alertas
+                                Enviadas</h3>
+                            <div class="table-wrapper" style="max-height: 250px; overflow-y: auto;">
+                                <table class="asset-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha / Hora</th>
+                                            <th>Resumen de Alerta de Correo</th>
+                                            <th>Enviado a</th>
+                                            <th style="width:50px;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="email-history-tbody">
+                                        <tr>
+                                            <td colspan="4" class="text-center"
+                                                style="padding: 16px; color: var(--text-secondary);">Cargando
+                                                historial...
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ranking-panel glass-panel" style="margin-top: 24px;">
+                        <h3 class="panel-title">Mi Watchlist</h3>
+                        <div class="table-wrapper">
+                            <table class="asset-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ticker</th>
+                                        <th>Nombre</th>
+                                        <th>Categoría</th>
+                                        <th>Reglas</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="watchlist-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
         </main>
     </div>
 
@@ -796,10 +809,11 @@
     <script>
         window._mobileErrors = [];
         window._showMobileErrors = function () {
-            var msg = window._mobileErrors.length === 0
-                ? 'Sin errores JS capturados hasta ahora. Si el modal no muestra balances, intenta abrir el modal de un activo DESPUÉS de tocar este botón.'
+            const msg = window._mobileErrors.length === 0
+                ? 'Sin errores JS capturados hasta ahora.'
                 : window._mobileErrors.join('\n\n');
-            alert('[DEBUG] Errores capturados (' + window._mobileErrors.length + '):\n\n' + msg);
+            const alertMsg = '[DEBUG] Errores capturados (' + window._mobileErrors.length + '):\n\n' + msg;
+            alert(alertMsg);
         };
         window.addEventListener('error', function (e) {
             window._mobileErrors.push('[ERROR] ' + e.message + '\nat ' + e.filename + ':' + e.lineno + ':' + e.colno);
