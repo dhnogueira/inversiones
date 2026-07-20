@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
       {
@@ -8,8 +8,8 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
+        "weight": 0.4015,
+        "weight_pct": 40.2,
         "ars_return_est": 500.0
       },
       {
@@ -17,16 +17,25 @@
         "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.4,
-        "weight_pct": 40.0,
-        "ars_return_est": 402.8
+        "weight": 0.4015,
+        "weight_pct": 40.2,
+        "ars_return_est": 450.6
+      },
+      {
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.0966,
+        "weight_pct": 9.7,
+        "ars_return_est": 300.0
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.05,
+        "weight": 0.0502,
         "weight_pct": 5.0,
         "ars_return_est": 300.0
       },
@@ -35,37 +44,19 @@
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.05,
+        "weight": 0.0502,
         "weight_pct": 5.0,
-        "ars_return_est": 246.1
-      },
-      {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 185.0
-      },
-      {
-        "ticker": "AAPL.BA",
-        "name": "AAPL",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 295.7
+        "ars_return_est": 270.9
       }
     ],
-    "expected_return": 412.45,
-    "expected_volatility": 25.71,
-    "sharpe_ratio": 14.22,
+    "expected_return": 439.33,
+    "expected_volatility": 25.95,
+    "sharpe_ratio": 15.12,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 365.4
+    "spread_vs_inflation": 392.3
   }
 }

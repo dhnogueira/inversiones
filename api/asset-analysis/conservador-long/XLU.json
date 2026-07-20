@@ -7,45 +7,45 @@
     "sector": "Otros",
     "ipo": 1998,
     "category": "sp500",
-    "price": 45.17,
+    "price": 45.27,
     "currency": "USD",
-    "score": 63.8,
+    "score": 68.3,
     "profile": "conservador",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 40.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "40.6",
+        "content": "El RSI de 14 períodos se encuentra en 43.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "43.1",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (45.03) se encuentra por encima de la EMA de 200 días (43.97), y el precio actual (45.17) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (45.04) se encuentra por encima de la EMA de 200 días (43.98), y el precio actual (45.27) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es de **16.0%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
-        "value": "16.0%",
+        "content": "La volatilidad anualizada es de **15.9%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
+        "value": "15.9%",
         "status": "neutral"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+2.2%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-1.5%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+2.2% (1M)",
-        "status": "success"
+        "content": "El rendimiento mensual es de **+1.8%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-0.4%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+1.8% (1M)",
+        "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 43.77 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 46.18 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 44.27. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 44.27",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 43.77 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 46.18 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 44.36. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 44.36",
         "status": "success"
       }
     ],
@@ -53,29 +53,29 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **4.1%** respecto a su máximo anual de **USD 47.10**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-4.1%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **3.9%** respecto a su máximo anual de **USD 47.10**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-3.9%",
         "status": "neutral"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.55** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "0.55",
-        "status": "neutral"
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.45** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
+        "value": "0.45",
+        "status": "warning"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+5.0%** y a 12 meses es **+12.7%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+5.0% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+5.7%** y a 12 meses es **+11.1%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+5.7% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **145.3%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+98.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 145.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **139.5%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+92.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 139.5%",
         "status": "success"
       }
     ],
@@ -92,19 +92,19 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **63.8/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
-      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.55) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **conservador**.",
-      "take_profit": 55.54,
-      "stop_loss": 40.56,
-      "tp_pct": 23.0,
+      "summary": "Con un score de **68.3/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
+      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.45) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **conservador**.",
+      "take_profit": 55.65,
+      "stop_loss": 40.65,
+      "tp_pct": 22.9,
       "sl_pct": 10.2
     },
     "support": 43.77,
     "resistance": 46.18,
-    "volume_cluster": 44.27,
-    "take_profit": 55.54,
-    "stop_loss": 40.56,
-    "tp_pct": 23.0,
+    "volume_cluster": 44.36,
+    "take_profit": 55.65,
+    "stop_loss": 40.65,
+    "tp_pct": 22.9,
     "sl_pct": 10.2,
     "long_term_strategies": {
       "value": [
@@ -155,15 +155,15 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-1.5%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-1.5% (3M)",
+          "content": "El **momentum trimestral (-0.4%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-0.4% (3M)",
           "status": "warning"
         },
         {
           "title": "Baja Volatilidad (Low Vol Factor)",
           "icon": "fa-water",
-          "content": "La **volatilidad anualizada del 16.0%** es baja. Uno de los hallazgos más contraintuitivos de las finanzas modernas es que activos de baja volatilidad superan en retorno ajustado por riesgo a los de alta volatilidad en el largo plazo (Low Volatility Anomaly). Este activo encaja en ese perfil.",
-          "value": "16.0%",
+          "content": "La **volatilidad anualizada del 15.9%** es baja. Uno de los hallazgos más contraintuitivos de las finanzas modernas es que activos de baja volatilidad superan en retorno ajustado por riesgo a los de alta volatilidad en el largo plazo (Low Volatility Anomaly). Este activo encaja en ese perfil.",
+          "value": "15.9%",
           "status": "success"
         },
         {

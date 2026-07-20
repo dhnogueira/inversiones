@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 26.4
+        "ars_return_est": 26.3
       },
       {
         "ticker": "T30A7",
@@ -19,7 +19,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 20.7
+        "ars_return_est": 20.6
       },
       {
         "ticker": "T31Y7",
@@ -28,17 +28,17 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 19.9
+        "ars_return_est": 19.7
       }
     ],
-    "expected_return": 22.47,
+    "expected_return": 22.33,
     "expected_volatility": 4.47,
-    "sharpe_ratio": 0.1,
+    "sharpe_ratio": 0.07,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 0.5
+    "spread_vs_inflation": 0.3
   }
 }

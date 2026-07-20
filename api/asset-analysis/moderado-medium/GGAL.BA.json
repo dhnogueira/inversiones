@@ -23,7 +23,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (7595.02) se encuentra por encima de la EMA de 200 días (7051.34), y el precio actual (7860.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (7595.02) se encuentra por encima de la EMA de 200 días (7047.40), y el precio actual (7860.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -89,10 +89,8 @@
           "net_margin_pct": 2.6,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": 0.38,
-          "favorable": [
-            "Deuda/Equity baja: 0.38"
-          ],
+          "debt_equity": null,
+          "favorable": [],
           "critical": [
             "Margen neto muy bajo: 2.6%"
           ]
@@ -104,10 +102,8 @@
           "net_margin_pct": -1.3,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": 0.38,
-          "favorable": [
-            "Deuda/Equity baja: 0.38"
-          ],
+          "debt_equity": null,
+          "favorable": [],
           "critical": [
             "Margen neto muy bajo: -1.3%"
           ]
@@ -119,10 +115,8 @@
           "net_margin_pct": -4.4,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": 0.38,
-          "favorable": [
-            "Deuda/Equity baja: 0.38"
-          ],
+          "debt_equity": null,
+          "favorable": [],
           "critical": [
             "Margen neto muy bajo: -4.4%",
             "Ingresos en baja vs trimestre anterior: -25.5%"
@@ -135,9 +129,8 @@
           "net_margin_pct": 8.3,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": 0.32,
+          "debt_equity": null,
           "favorable": [
-            "Deuda/Equity baja: 0.32",
             "Ingresos en alza vs trimestre anterior: +5.8%"
           ],
           "critical": []
@@ -149,9 +142,8 @@
           "net_margin_pct": 7.8,
           "eps": null,
           "fcf_b": -1174.19,
-          "debt_equity": 0.28,
+          "debt_equity": null,
           "favorable": [
-            "Deuda/Equity baja: 0.28",
             "Ingresos en alza vs trimestre anterior: +18.8%"
           ],
           "critical": [
@@ -166,11 +158,11 @@
         "avg_eps": null,
         "revenue_trend": "creciente",
         "margin_trend": "en contracción",
-        "total_favorable_signals": 7,
+        "total_favorable_signals": 2,
         "total_critical_signals": 5,
         "conclusion": "CON SEÑALES DE ALERTA",
         "conclusion_color": "warning",
-        "conclusion_detail": "Los últimos 5 balances detectan 5 señales críticas frente a 7 favorables. Se observan presiones en la rentabilidad (margen 2.6%, en contracción) con ingresos crecientes. Se recomienda precaución."
+        "conclusion_detail": "Los últimos 5 balances detectan 5 señales críticas frente a 2 favorables. Se observan presiones en la rentabilidad (margen 2.6%, en contracción) con ingresos crecientes. Se recomienda precaución."
       }
     },
     "verdict": {
@@ -179,17 +171,17 @@
       "color": "neutral",
       "summary": "Con un score de **66.2/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.54) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
-      "take_profit": 13356.03,
-      "stop_loss": 5111.99,
-      "tp_pct": 69.9,
+      "take_profit": 13361.69,
+      "stop_loss": 5109.16,
+      "tp_pct": 70.0,
       "sl_pct": 35.0
     },
     "support": 6118.01,
     "resistance": 8160.99,
     "volume_cluster": 7702.8,
-    "take_profit": 13356.03,
-    "stop_loss": 5111.99,
-    "tp_pct": 69.9,
+    "take_profit": 13361.69,
+    "stop_loss": 5109.16,
+    "tp_pct": 70.0,
     "sl_pct": 35.0,
     "medium_term_strategies": {
       "earnings_revision": [
@@ -261,8 +253,8 @@
         {
           "title": "M — Dirección del Mercado (Market)",
           "icon": "fa-m",
-          "content": "**M (Market Direction):** El cruce EMA 50/200 señala un entorno de mercado **alcista** (EMA50 supera a EMA200 en 7.7%). O'Neil insiste: 3 de cada 4 acciones siguen la dirección del mercado general. Operar a favor de la tendencia macro mejora significativamente las probabilidades de éxito.",
-          "value": "+7.7%",
+          "content": "**M (Market Direction):** El cruce EMA 50/200 señala un entorno de mercado **alcista** (EMA50 supera a EMA200 en 7.8%). O'Neil insiste: 3 de cada 4 acciones siguen la dirección del mercado general. Operar a favor de la tendencia macro mejora significativamente las probabilidades de éxito.",
+          "value": "+7.8%",
           "status": "success"
         }
       ],
@@ -277,8 +269,8 @@
         {
           "title": "Tendencia vs. Media de Largo Plazo",
           "icon": "fa-chart-line",
-          "content": "El activo está levemente por encima de su tendencia de larga data (cruce EMA: +7.7%). No es líder dominante, pero muestra resiliencia relativa.",
-          "value": "+7.7%",
+          "content": "El activo está levemente por encima de su tendencia de larga data (cruce EMA: +7.8%). No es líder dominante, pero muestra resiliencia relativa.",
+          "value": "+7.8%",
           "status": "neutral"
         },
         {

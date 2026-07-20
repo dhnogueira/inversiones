@@ -1,16 +1,16 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
       {
-        "ticker": "PG",
-        "name": "PG",
+        "ticker": "XOM",
+        "name": "XOM",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 32.1
+        "ars_return_est": 43.1
       },
       {
         "ticker": "MRK",
@@ -19,44 +19,35 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 46.3
+        "ars_return_est": 48.1
       },
       {
-        "ticker": "XOM",
-        "name": "XOM",
+        "ticker": "PG",
+        "name": "PG",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 47.4
+        "ars_return_est": 27.5
       },
       {
-        "ticker": "COST",
-        "name": "COST",
+        "ticker": "JPM",
+        "name": "JPM",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1746,
-        "weight_pct": 17.5,
-        "ars_return_est": 31.9
-      },
-      {
-        "ticker": "GOOGL",
-        "name": "GOOGL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.0754,
-        "weight_pct": 7.5,
-        "ars_return_est": 43.2
+        "weight": 0.25,
+        "weight_pct": 25.0,
+        "ars_return_est": 36.3
       }
     ],
-    "expected_return": 40.26,
-    "expected_volatility": 20.99,
-    "sharpe_ratio": 1.39,
+    "expected_return": 38.76,
+    "expected_volatility": 21.51,
+    "sharpe_ratio": 1.29,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 29.3
+    "spread_vs_inflation": 27.8
   }
 }

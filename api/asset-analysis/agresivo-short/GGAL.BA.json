@@ -23,7 +23,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (7595.02) se encuentra por encima de la EMA de 200 días (7051.34), y el precio actual (7860.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (7595.02) se encuentra por encima de la EMA de 200 días (7047.40), y el precio actual (7860.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -89,10 +89,8 @@
           "net_margin_pct": 2.6,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": 0.38,
-          "favorable": [
-            "Deuda/Equity baja: 0.38"
-          ],
+          "debt_equity": null,
+          "favorable": [],
           "critical": [
             "Margen neto muy bajo: 2.6%"
           ]
@@ -104,10 +102,8 @@
           "net_margin_pct": -1.3,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": 0.38,
-          "favorable": [
-            "Deuda/Equity baja: 0.38"
-          ],
+          "debt_equity": null,
+          "favorable": [],
           "critical": [
             "Margen neto muy bajo: -1.3%"
           ]
@@ -119,10 +115,8 @@
           "net_margin_pct": -4.4,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": 0.38,
-          "favorable": [
-            "Deuda/Equity baja: 0.38"
-          ],
+          "debt_equity": null,
+          "favorable": [],
           "critical": [
             "Margen neto muy bajo: -4.4%",
             "Ingresos en baja vs trimestre anterior: -25.5%"
@@ -135,9 +129,8 @@
           "net_margin_pct": 8.3,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": 0.32,
+          "debt_equity": null,
           "favorable": [
-            "Deuda/Equity baja: 0.32",
             "Ingresos en alza vs trimestre anterior: +5.8%"
           ],
           "critical": []
@@ -149,9 +142,8 @@
           "net_margin_pct": 7.8,
           "eps": null,
           "fcf_b": -1174.19,
-          "debt_equity": 0.28,
+          "debt_equity": null,
           "favorable": [
-            "Deuda/Equity baja: 0.28",
             "Ingresos en alza vs trimestre anterior: +18.8%"
           ],
           "critical": [
@@ -166,11 +158,11 @@
         "avg_eps": null,
         "revenue_trend": "creciente",
         "margin_trend": "en contracción",
-        "total_favorable_signals": 7,
+        "total_favorable_signals": 2,
         "total_critical_signals": 5,
         "conclusion": "CON SEÑALES DE ALERTA",
         "conclusion_color": "warning",
-        "conclusion_detail": "Los últimos 5 balances detectan 5 señales críticas frente a 7 favorables. Se observan presiones en la rentabilidad (margen 2.6%, en contracción) con ingresos crecientes. Se recomienda precaución."
+        "conclusion_detail": "Los últimos 5 balances detectan 5 señales críticas frente a 2 favorables. Se observan presiones en la rentabilidad (margen 2.6%, en contracción) con ingresos crecientes. Se recomienda precaución."
       }
     },
     "verdict": {
@@ -179,17 +171,17 @@
       "color": "warning",
       "summary": "El score de **43.8/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (58.3%), un ratio de Sharpe ineficiente (0.54), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 12806.42,
-      "stop_loss": 5386.79,
-      "tp_pct": 62.9,
+      "take_profit": 12811.52,
+      "stop_loss": 5384.24,
+      "tp_pct": 63.0,
       "sl_pct": 31.5
     },
     "support": 6118.01,
     "resistance": 8160.99,
     "volume_cluster": 7702.8,
-    "take_profit": 12806.42,
-    "stop_loss": 5386.79,
-    "tp_pct": 62.9,
+    "take_profit": 12811.52,
+    "stop_loss": 5384.24,
+    "tp_pct": 63.0,
     "sl_pct": 31.5
   }
 }

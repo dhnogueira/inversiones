@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
       {
@@ -10,16 +10,7 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 17.2
-      },
-      {
-        "ticker": "KO.BA",
-        "name": "KO",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 21.6
+        "ars_return_est": 14.4
       },
       {
         "ticker": "AAPL.BA",
@@ -28,16 +19,16 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 18.2
+        "ars_return_est": 27.8
       },
       {
-        "ticker": "GOOGL.BA",
-        "name": "GOOGL",
+        "ticker": "KO.BA",
+        "name": "KO",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 12.4
+        "ars_return_est": 16.0
       },
       {
         "ticker": "NVDA.BA",
@@ -46,17 +37,26 @@
         "currency": "ARS",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": 8.5
+        "ars_return_est": 9.8
+      },
+      {
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.2,
+        "weight_pct": 20.0,
+        "ars_return_est": 7.1
       }
     ],
-    "expected_return": 15.58,
-    "expected_volatility": 30.46,
-    "sharpe_ratio": 0.15,
+    "expected_return": 15.02,
+    "expected_volatility": 30.45,
+    "sharpe_ratio": 0.13,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 4.6
+    "spread_vs_inflation": 4.0
   }
 }

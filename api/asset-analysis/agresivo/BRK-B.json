@@ -7,44 +7,44 @@
     "sector": "Holding Financiero",
     "ipo": 1996,
     "category": "sp500",
-    "price": 494.7900085449219,
+    "price": 491.2799987792969,
     "currency": "USD",
-    "score": 51.5,
+    "score": 49.9,
     "profile": "agresivo",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 52.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "52.0",
-        "status": "success"
+        "content": "El RSI de 14 períodos se encuentra en 48.6, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "48.6",
+        "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (488.57) se encuentra por encima de la EMA de 200 días (487.37), y el precio actual (494.79) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (489.63) se encuentra por encima de la EMA de 200 días (487.93), y el precio actual (491.28) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es de **17.5%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
-        "value": "17.5%",
+        "content": "La volatilidad anualizada es de **17.3%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
+        "value": "17.3%",
         "status": "neutral"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+1.6%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (3.1%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+1.6% (1M)",
+        "content": "El rendimiento mensual es de **+0.4%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (4.1%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+0.4% (1M)",
         "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 471.41 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 497.35 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 480.23. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 471.41 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 495.46 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 480.23. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 480.23",
         "status": "success"
       }
@@ -60,15 +60,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-0.9%** y a 12 meses es **+3.6%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-0.9% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-0.4%** y a 12 meses es **+3.7%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-0.4% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **48.2%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+26.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 48.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **mediano plazo (6 a 12 meses)** es del **48.3%**, superando la inflación proyectada del período del **22.0%** con un spread real positivo de **+26.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 48.3%",
         "status": "success"
       }
     ],
@@ -171,27 +171,27 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **51.5/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (17.5%), un ratio de Sharpe ineficiente (-0.02), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 650.49,
-      "stop_loss": 416.94,
-      "tp_pct": 31.5,
-      "sl_pct": 15.7
+      "summary": "El score de **49.9/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (17.3%), un ratio de Sharpe ineficiente (-0.02), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 644.41,
+      "stop_loss": 414.71,
+      "tp_pct": 31.2,
+      "sl_pct": 15.6
     },
     "support": 471.41,
-    "resistance": 497.35,
+    "resistance": 495.46,
     "volume_cluster": 480.23,
-    "take_profit": 650.49,
-    "stop_loss": 416.94,
-    "tp_pct": 31.5,
-    "sl_pct": 15.7,
+    "take_profit": 644.41,
+    "stop_loss": 414.71,
+    "tp_pct": 31.2,
+    "sl_pct": 15.6,
     "medium_term_strategies": {
       "earnings_revision": [
         {
           "title": "Revisión de EPS (Forward vs Trailing)",
           "icon": "fa-chart-bar",
-          "content": "Las estimaciones de EPS muestran una **revisión a la baja significativa (-36.0%)**. Cuando los analistas reducen masivamente sus pronósticos, históricamente el precio tiende a ajustarse en la misma dirección. Señal de alerta para el mediano plazo.",
-          "value": "-36.0%",
+          "content": "Las estimaciones de EPS muestran una **revisión a la baja significativa (-35.9%)**. Cuando los analistas reducen masivamente sus pronósticos, históricamente el precio tiende a ajustarse en la misma dirección. Señal de alerta para el mediano plazo.",
+          "value": "-35.9%",
           "status": "danger"
         },
         {
@@ -204,8 +204,8 @@
         {
           "title": "Precio Objetivo y Upside Potencial",
           "icon": "fa-bullseye",
-          "content": "El precio objetivo de analistas implica un **upside moderado del +5.2%** — los analistas ven algo de valor por encima del precio actual, pero sin un potencial disruptivo.",
-          "value": "+5.2% upside",
+          "content": "El precio objetivo de analistas implica un **upside moderado del +5.9%** — los analistas ven algo de valor por encima del precio actual, pero sin un potencial disruptivo.",
+          "value": "+5.9% upside",
           "status": "neutral"
         },
         {
@@ -234,15 +234,15 @@
         {
           "title": "S — Oferta y Demanda (Volatilidad/Volumen)",
           "icon": "fa-s",
-          "content": "**S (Supply & Demand):** Ratio de volatilidad corta/larga de 0.90x — equilibrio normal entre oferta y demanda. No se detectan señales claras de acumulación ni distribución institucional masiva.",
-          "value": "0.90x",
+          "content": "**S (Supply & Demand):** Ratio de volatilidad corta/larga de 0.91x — equilibrio normal entre oferta y demanda. No se detectan señales claras de acumulación ni distribución institucional masiva.",
+          "value": "0.91x",
           "status": "neutral"
         },
         {
           "title": "L — Liderazgo de Mercado (Leader)",
           "icon": "fa-l",
-          "content": "**L (Leader):** RSI de 52 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
-          "value": "RSI 52",
+          "content": "**L (Leader):** RSI de 49 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
+          "value": "RSI 49",
           "status": "neutral"
         },
         {
@@ -255,8 +255,8 @@
         {
           "title": "M — Dirección del Mercado (Market)",
           "icon": "fa-m",
-          "content": "**M (Market Direction):** El diferencial EMA 50/200 es neutro (0.2%). El mercado no muestra una tendencia clara que potencie o dificulte el trade. Se recomienda precaución con el tamaño de la posición.",
-          "value": "+0.2%",
+          "content": "**M (Market Direction):** El diferencial EMA 50/200 es neutro (0.4%). El mercado no muestra una tendencia clara que potencie o dificulte el trade. Se recomienda precaución con el tamaño de la posición.",
+          "value": "+0.4%",
           "status": "neutral"
         }
       ],
@@ -264,22 +264,22 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa es moderada** (score: 3/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=52, 3M=+3.1%.",
-          "value": "Score 3/6",
-          "status": "neutral"
+          "content": "La **fuerza relativa es débil** (score: 2/6). El activo no evidencia momentum sostenido. RSI=49, 3M=+4.1%. Desde la perspectiva de Relative Strength Investing, se priorizan activos en el percentil 80+ de fuerza.",
+          "value": "Score 2/6",
+          "status": "warning"
         },
         {
           "title": "Tendencia vs. Media de Largo Plazo",
           "icon": "fa-chart-line",
-          "content": "El activo está levemente por encima de su tendencia de larga data (cruce EMA: +0.2%). No es líder dominante, pero muestra resiliencia relativa.",
-          "value": "+0.2%",
+          "content": "El activo está levemente por encima de su tendencia de larga data (cruce EMA: +0.4%). No es líder dominante, pero muestra resiliencia relativa.",
+          "value": "+0.4%",
           "status": "neutral"
         },
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El momentum se mantiene **estable** (-1.5%). La velocidad de apreciación no muestra ni aceleración ni desaceleración significativa.",
-          "value": "-1.5%",
+          "content": "El momentum se mantiene **estable** (-3.7%). La velocidad de apreciación no muestra ni aceleración ni desaceleración significativa.",
+          "value": "-3.7%",
           "status": "neutral"
         },
         {
@@ -308,14 +308,14 @@
         {
           "title": "PER Forward vs. Trailing",
           "icon": "fa-calendar-check",
-          "content": "El PER forward (23.0x) es mayor al trailing (14.7x): los analistas esperan menores ganancias en los próximos 12 meses, lo que implica una expansión del múltiplo sin crecimiento. Señal negativa para GARP.",
-          "value": "Forward: 23.0x",
+          "content": "El PER forward (22.8x) es mayor al trailing (14.6x): los analistas esperan menores ganancias en los próximos 12 meses, lo que implica una expansión del múltiplo sin crecimiento. Señal negativa para GARP.",
+          "value": "Forward: 22.8x",
           "status": "warning"
         },
         {
           "title": "Calidad Fundamental (ROE + FCF + Deuda)",
           "icon": "fa-gem",
-          "content": "La empresa cumple con las condiciones de calidad fundamentales del GARP: FCF Yield positivo del 5.7%, Deuda moderada (D/E: 0.18x). Estos pilares permiten que el crecimiento sea sostenible sin depender de apalancamiento excesivo.",
+          "content": "La empresa cumple con las condiciones de calidad fundamentales del GARP: FCF Yield positivo del 5.8%, Deuda moderada (D/E: 0.18x). Estos pilares permiten que el crecimiento sea sostenible sin depender de apalancamiento excesivo.",
           "value": "2/3 pilares",
           "status": "success"
         }

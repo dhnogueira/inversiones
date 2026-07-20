@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
       {
@@ -19,16 +19,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 246.4
-      },
-      {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 154.2
+        "ars_return_est": 250.0
       },
       {
         "ticker": "VALE.BA",
@@ -37,7 +28,16 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 205.0
+        "ars_return_est": 225.8
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 160.9
       },
       {
         "ticker": "KO.BA",
@@ -46,7 +46,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 120.8
+        "ars_return_est": 108.7
       },
       {
         "ticker": "AMZN.BA",
@@ -55,7 +55,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 92.9
+        "ars_return_est": 82.1
       },
       {
         "ticker": "NVDA.BA",
@@ -64,7 +64,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 166.1
+        "ars_return_est": 114.4
       },
       {
         "ticker": "TSLA.BA",
@@ -73,17 +73,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 156.7
+        "ars_return_est": 128.8
       }
     ],
-    "expected_return": 218.53,
-    "expected_volatility": 31.81,
-    "sharpe_ratio": 5.39,
+    "expected_return": 216.04,
+    "expected_volatility": 31.8,
+    "sharpe_ratio": 5.32,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 171.5
+    "spread_vs_inflation": 169.0
   }
 }
