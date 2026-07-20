@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
       {
@@ -8,55 +8,55 @@
         "name": "BTC-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.296,
-        "weight_pct": 29.6,
-        "ars_return_est": 6.2
-      },
-      {
-        "ticker": "BNB-USD",
-        "name": "BNB-USD",
-        "category": "crypto",
-        "currency": "USD",
-        "weight": 0.2904,
-        "weight_pct": 29.0,
-        "ars_return_est": 6.0
-      },
-      {
-        "ticker": "SOL-USD",
-        "name": "SOL-USD",
-        "category": "crypto",
-        "currency": "USD",
-        "weight": 0.2863,
-        "weight_pct": 28.6,
-        "ars_return_est": 6.0
-      },
-      {
-        "ticker": "ETH-USD",
-        "name": "ETH-USD",
-        "category": "crypto",
-        "currency": "USD",
-        "weight": 0.0792,
-        "weight_pct": 7.9,
-        "ars_return_est": 1.7
+        "weight": 0.4033,
+        "weight_pct": 40.3,
+        "ars_return_est": 5.2
       },
       {
         "ticker": "LINK-USD",
         "name": "LINK-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.048,
-        "weight_pct": 4.8,
-        "ars_return_est": 0.1
+        "weight": 0.2539,
+        "weight_pct": 25.4,
+        "ars_return_est": 3.3
+      },
+      {
+        "ticker": "BNB-USD",
+        "name": "BNB-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.1881,
+        "weight_pct": 18.8,
+        "ars_return_est": 2.4
+      },
+      {
+        "ticker": "SOL-USD",
+        "name": "SOL-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.0773,
+        "weight_pct": 7.7,
+        "ars_return_est": -2.6
+      },
+      {
+        "ticker": "ETH-USD",
+        "name": "ETH-USD",
+        "category": "crypto",
+        "currency": "USD",
+        "weight": 0.0773,
+        "weight_pct": 7.7,
+        "ars_return_est": -2.9
       }
     ],
-    "expected_return": 5.43,
-    "expected_volatility": 44.77,
-    "sharpe_ratio": -0.12,
+    "expected_return": 2.97,
+    "expected_volatility": 42.16,
+    "sharpe_ratio": -0.19,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -5.6
+    "spread_vs_inflation": -8.0
   }
 }

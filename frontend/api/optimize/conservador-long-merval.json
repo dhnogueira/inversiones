@@ -1,24 +1,15 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
-      {
-        "ticker": "TECO2.BA",
-        "name": "TECO2",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.1779,
-        "weight_pct": 17.8,
-        "ars_return_est": 200.0
-      },
       {
         "ticker": "VALO.BA",
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1779,
-        "weight_pct": 17.8,
+        "weight": 0.1999,
+        "weight_pct": 20.0,
         "ars_return_est": 200.0
       },
       {
@@ -26,8 +17,8 @@
         "name": "YPFD",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1779,
-        "weight_pct": 17.8,
+        "weight": 0.1999,
+        "weight_pct": 20.0,
         "ars_return_est": 200.0
       },
       {
@@ -35,46 +26,46 @@
         "name": "BMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1572,
-        "weight_pct": 15.7,
-        "ars_return_est": 176.7
+        "weight": 0.1818,
+        "weight_pct": 18.2,
+        "ars_return_est": 181.8
+      },
+      {
+        "ticker": "TECO2.BA",
+        "name": "TECO2",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.1789,
+        "weight_pct": 17.9,
+        "ars_return_est": 178.9
       },
       {
         "ticker": "BYMA.BA",
         "name": "BYMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1199,
-        "weight_pct": 12.0,
-        "ars_return_est": 134.8
+        "weight": 0.1246,
+        "weight_pct": 12.5,
+        "ars_return_est": 124.6
       },
       {
         "ticker": "CEPU.BA",
         "name": "CEPU",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1115,
-        "weight_pct": 11.2,
-        "ars_return_est": 125.3
-      },
-      {
-        "ticker": "PAMP.BA",
-        "name": "PAMP",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.0776,
-        "weight_pct": 7.8,
-        "ars_return_est": 87.2
+        "weight": 0.115,
+        "weight_pct": 11.5,
+        "ars_return_est": 115.0
       }
     ],
-    "expected_return": 171.43,
-    "expected_volatility": 42.92,
-    "sharpe_ratio": 2.9,
+    "expected_return": 173.77,
+    "expected_volatility": 43.38,
+    "sharpe_ratio": 2.92,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 124.4
+    "spread_vs_inflation": 126.8
   }
 }

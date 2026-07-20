@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
       {
@@ -19,16 +19,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 402.8
-      },
-      {
-        "ticker": "AVGO",
-        "name": "AVGO",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 361.8
+        "ars_return_est": 450.6
       },
       {
         "ticker": "MRK",
@@ -37,7 +28,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 479.2
+        "ars_return_est": 500.0
       },
       {
         "ticker": "LLY",
@@ -46,16 +37,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 459.5
-      },
-      {
-        "ticker": "NVDA",
-        "name": "NVDA",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 253.6
+        "ars_return_est": 427.7
       },
       {
         "ticker": "XOM",
@@ -64,7 +46,25 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 253.2
+        "ars_return_est": 343.4
+      },
+      {
+        "ticker": "AVGO",
+        "name": "AVGO",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 295.0
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVDA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 205.3
       },
       {
         "ticker": "ABBV",
@@ -73,16 +73,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 317.3
-      },
-      {
-        "ticker": "TSLA",
-        "name": "TSLA",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 283.3
+        "ars_return_est": 327.2
       },
       {
         "ticker": "UNH",
@@ -91,17 +82,26 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 347.7
+        "ars_return_est": 437.3
+      },
+      {
+        "ticker": "JPM",
+        "name": "JPM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 206.5
       }
     ],
-    "expected_return": 365.85,
-    "expected_volatility": 32.86,
-    "sharpe_ratio": 9.7,
+    "expected_return": 369.3,
+    "expected_volatility": 29.74,
+    "sharpe_ratio": 10.84,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 318.8
+    "spread_vs_inflation": 322.3
   }
 }

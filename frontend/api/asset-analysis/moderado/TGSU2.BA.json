@@ -9,7 +9,7 @@
     "category": "merval",
     "price": 9370.0,
     "currency": "ARS",
-    "score": 68.6,
+    "score": 68.7,
     "profile": "moderado",
     "horizon": "medium",
     "technical": [
@@ -23,7 +23,7 @@
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (9315.47) se encuentra por encima de la EMA de 200 días (8830.34), y el precio actual (9370.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (9315.47) se encuentra por encima de la EMA de 200 días (8822.54), y el precio actual (9370.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -180,19 +180,19 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **68.6/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
+      "summary": "Con un score de **68.7/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.70) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
-      "take_profit": 15477.74,
-      "stop_loss": 6316.13,
-      "tp_pct": 65.2,
+      "take_profit": 15472.12,
+      "stop_loss": 6318.94,
+      "tp_pct": 65.1,
       "sl_pct": 32.6
     },
     "support": 8843.0,
     "resistance": 9890.0,
     "volume_cluster": 9182.6,
-    "take_profit": 15477.74,
-    "stop_loss": 6316.13,
-    "tp_pct": 65.2,
+    "take_profit": 15472.12,
+    "stop_loss": 6318.94,
+    "tp_pct": 65.1,
     "sl_pct": 32.6,
     "medium_term_strategies": {
       "earnings_revision": [
@@ -264,8 +264,8 @@
         {
           "title": "M — Dirección del Mercado (Market)",
           "icon": "fa-m",
-          "content": "**M (Market Direction):** El cruce EMA 50/200 señala un entorno de mercado **alcista** (EMA50 supera a EMA200 en 5.5%). O'Neil insiste: 3 de cada 4 acciones siguen la dirección del mercado general. Operar a favor de la tendencia macro mejora significativamente las probabilidades de éxito.",
-          "value": "+5.5%",
+          "content": "**M (Market Direction):** El cruce EMA 50/200 señala un entorno de mercado **alcista** (EMA50 supera a EMA200 en 5.6%). O'Neil insiste: 3 de cada 4 acciones siguen la dirección del mercado general. Operar a favor de la tendencia macro mejora significativamente las probabilidades de éxito.",
+          "value": "+5.6%",
           "status": "success"
         }
       ],
@@ -280,8 +280,8 @@
         {
           "title": "Tendencia vs. Media de Largo Plazo",
           "icon": "fa-chart-line",
-          "content": "El activo está levemente por encima de su tendencia de larga data (cruce EMA: +5.5%). No es líder dominante, pero muestra resiliencia relativa.",
-          "value": "+5.5%",
+          "content": "El activo está levemente por encima de su tendencia de larga data (cruce EMA: +5.6%). No es líder dominante, pero muestra resiliencia relativa.",
+          "value": "+5.6%",
           "status": "neutral"
         },
         {

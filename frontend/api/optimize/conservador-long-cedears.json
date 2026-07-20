@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "ARS",
         "weight": 0.4,
         "weight_pct": 40.0,
-        "ars_return_est": 197.1
+        "ars_return_est": 200.0
       },
       {
         "ticker": "GOOGL.BA",
@@ -22,22 +22,22 @@
         "ars_return_est": 200.0
       },
       {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 123.3
-      },
-      {
         "ticker": "VALE.BA",
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 164.0
+        "ars_return_est": 180.6
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 128.7
       },
       {
         "ticker": "KO.BA",
@@ -46,7 +46,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 96.6
+        "ars_return_est": 87.0
       },
       {
         "ticker": "AMZN.BA",
@@ -55,16 +55,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 74.4
-      },
-      {
-        "ticker": "NVDA.BA",
-        "name": "NVDA",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 132.9
+        "ars_return_est": 65.7
       },
       {
         "ticker": "TSLA.BA",
@@ -73,17 +64,26 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 125.4
+        "ars_return_est": 103.0
+      },
+      {
+        "ticker": "NVDA.BA",
+        "name": "NVDA",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 91.5
       }
     ],
-    "expected_return": 174.68,
-    "expected_volatility": 31.66,
-    "sharpe_ratio": 4.03,
+    "expected_return": 172.83,
+    "expected_volatility": 31.65,
+    "sharpe_ratio": 3.98,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 127.7
+    "spread_vs_inflation": 125.8
   }
 }

@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1783556283.1773105,
+  "timestamp": 1784556046.598522,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 188.5
+        "ars_return_est": 159.5
       },
       {
         "ticker": "AAPL.BA",
@@ -19,16 +19,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 103.3
-      },
-      {
-        "ticker": "NVDA.BA",
-        "name": "NVDA",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 75.8
+        "ars_return_est": 115.1
       },
       {
         "ticker": "XOM.BA",
@@ -37,7 +28,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 71.3
+        "ars_return_est": 73.8
       },
       {
         "ticker": "VALE.BA",
@@ -46,7 +37,16 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 89.6
+        "ars_return_est": 96.6
+      },
+      {
+        "ticker": "NVDA.BA",
+        "name": "NVDA",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 55.7
       },
       {
         "ticker": "KO.BA",
@@ -55,7 +55,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 58.3
+        "ars_return_est": 53.4
       },
       {
         "ticker": "AMZN.BA",
@@ -64,7 +64,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 46.7
+        "ars_return_est": 41.9
       },
       {
         "ticker": "TSLA.BA",
@@ -73,17 +73,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 72.3
+        "ars_return_est": 61.5
       }
     ],
-    "expected_return": 122.86,
-    "expected_volatility": 31.81,
-    "sharpe_ratio": 3.17,
+    "expected_return": 115.24,
+    "expected_volatility": 31.8,
+    "sharpe_ratio": 2.93,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 100.9
+    "spread_vs_inflation": 93.2
   }
 }
