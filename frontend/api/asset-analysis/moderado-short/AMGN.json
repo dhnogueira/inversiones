@@ -7,45 +7,45 @@
     "sector": "Salud",
     "ipo": 1983,
     "category": "sp500",
-    "price": 367.045,
+    "price": 367.585,
     "currency": "USD",
-    "score": 65.1,
+    "score": 64.2,
     "profile": "moderado",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 55.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "55.4",
+        "content": "El RSI de 14 períodos está en 54.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.3",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (352.70) se encuentra por encima de la EMA de 200 días (335.45), y el precio actual (367.05) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (353.18) se encuentra por encima de la EMA de 200 días (336.20), y el precio actual (367.58) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es de **28.1%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
-        "value": "28.1%",
+        "content": "La volatilidad anualizada es de **27.6%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
+        "value": "27.6%",
         "status": "neutral"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+8.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (5.6%) refuerzan esta tendencia positiva.",
-        "value": "+8.7% (1M)",
+        "content": "El activo registró un rendimiento del **+6.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (7.4%) refuerzan esta tendencia positiva.",
+        "value": "+6.6% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 329.08 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 363.76 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 359.70. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 359.70",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 329.08 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 363.67 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 360.23. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 360.23",
         "status": "success"
       }
     ],
@@ -60,15 +60,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+12.7%** y a 12 meses es **+28.3%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "content": "El rendimiento acumulado a 6 meses es **+12.7%** y a 12 meses es **+28.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
         "value": "+12.7% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **36.4%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+25.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 36.4%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **36.3%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+25.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 36.3%",
         "status": "success"
       }
     ],
@@ -181,19 +181,19 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **65.1/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
+      "summary": "Con un score de **64.2/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.87) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
-      "take_profit": 441.17,
-      "stop_loss": 329.98,
-      "tp_pct": 20.2,
-      "sl_pct": 10.1
+      "take_profit": 440.5,
+      "stop_loss": 331.13,
+      "tp_pct": 19.8,
+      "sl_pct": 9.9
     },
     "support": 329.08,
-    "resistance": 363.76,
-    "volume_cluster": 359.7,
-    "take_profit": 441.17,
-    "stop_loss": 329.98,
-    "tp_pct": 20.2,
-    "sl_pct": 10.1
+    "resistance": 363.67,
+    "volume_cluster": 360.23,
+    "take_profit": 440.5,
+    "stop_loss": 331.13,
+    "tp_pct": 19.8,
+    "sl_pct": 9.9
   }
 }

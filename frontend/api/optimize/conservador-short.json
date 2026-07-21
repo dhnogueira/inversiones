@@ -1,17 +1,8 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
-      {
-        "ticker": "XOM",
-        "name": "XOM",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 35.7
-      },
       {
         "ticker": "AMZN",
         "name": "AMZN",
@@ -19,25 +10,34 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 24.8
+        "ars_return_est": 28.0
       },
       {
-        "ticker": "COST",
-        "name": "COST",
+        "ticker": "XOM",
+        "name": "XOM",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 19.2
+        "ars_return_est": 36.8
       },
       {
-        "ticker": "MRK",
-        "name": "MRK",
+        "ticker": "META",
+        "name": "META",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 39.0
+        "ars_return_est": 28.3
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVDA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 36.1
       },
       {
         "ticker": "PG",
@@ -46,7 +46,7 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 25.4
+        "ars_return_est": 23.0
       },
       {
         "ticker": "MA",
@@ -55,35 +55,35 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 21.5
+        "ars_return_est": 23.3
       },
       {
-        "ticker": "NVDA",
-        "name": "NVDA",
+        "ticker": "COST",
+        "name": "COST",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.0531,
-        "weight_pct": 5.3,
-        "ars_return_est": 31.3
+        "weight": 0.0798,
+        "weight_pct": 8.0,
+        "ars_return_est": 17.5
       },
       {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.0469,
-        "weight_pct": 4.7,
-        "ars_return_est": 14.4
+        "ticker": "AVGO",
+        "name": "AVGO",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0202,
+        "weight_pct": 2.0,
+        "ars_return_est": 35.8
       }
     ],
-    "expected_return": 27.19,
-    "expected_volatility": 22.15,
-    "sharpe_ratio": 0.73,
+    "expected_return": 28.44,
+    "expected_volatility": 26.25,
+    "sharpe_ratio": 0.66,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 16.2
+    "spread_vs_inflation": 17.4
   }
 }

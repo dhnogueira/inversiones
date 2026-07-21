@@ -7,7 +7,7 @@
     "sector": "Pagos Transfronterizos",
     "ipo": 2013,
     "category": "crypto",
-    "price": 1.089900016784668,
+    "price": 1.1394000053405762,
     "currency": "USD",
     "score": 0.0,
     "profile": "agresivo",
@@ -16,35 +16,35 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 45.7, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "45.7",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 56.5, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.5",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (1.14) se encuentra por debajo de la EMA de 200 días (1.45), y el precio (1.09) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
+        "content": "La EMA de 50 días (1.15) se encuentra por debajo de la EMA de 200 días (1.44), y el precio (1.14) cotiza por debajo de ambas. Esta configuración se conoce como **Death Cross** y es una señal de debilidad técnica persistente.",
         "value": "Fuerte Bajista",
         "status": "danger"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **muy alta** (56.0%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
-        "value": "56.0%",
+        "content": "La volatilidad anualizada es **muy alta** (55.7%). Este activo presenta fluctuaciones extremas y es apto exclusivamente para inversores con alta tolerancia al riesgo y horizonte flexible.",
+        "value": "55.7%",
         "status": "danger"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+5.0%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-19.9%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+5.0% (1M)",
+        "content": "El activo registró un rendimiento del **+8.3%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-16.5%) refuerzan esta tendencia positiva.",
+        "value": "+8.3% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 1.08 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 1.43 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 1.42. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 1.08 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 1.42 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 1.42. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 1.42",
         "status": "neutral"
       }
@@ -53,22 +53,22 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **54.4%** por debajo de su máximo anual de **USD 2.39**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-54.4%",
+        "content": "**¿Qué significa?** Este activo cotiza un **52.3%** por debajo de su máximo anual de **USD 2.39**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-52.3%",
         "status": "success"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-1.04** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
-        "value": "-1.04",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-1.01** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
+        "value": "-1.01",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-28.2%** y a 12 meses es **-54.4%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
-        "value": "-28.2% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-22.2%** y a 12 meses es **-52.3%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-22.2% (6M)",
         "status": "danger"
       },
       {
@@ -94,17 +94,17 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **agresivo**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Bajista).",
-      "take_profit": 3.07,
-      "stop_loss": 0.21,
-      "tp_pct": 181.3,
-      "sl_pct": 80.6
+      "take_profit": 3.2,
+      "stop_loss": 0.23,
+      "tp_pct": 180.5,
+      "sl_pct": 80.2
     },
     "support": 1.08,
-    "resistance": 1.43,
+    "resistance": 1.42,
     "volume_cluster": 1.42,
-    "take_profit": 3.07,
-    "stop_loss": 0.21,
-    "tp_pct": 181.3,
-    "sl_pct": 80.6
+    "take_profit": 3.2,
+    "stop_loss": 0.23,
+    "tp_pct": 180.5,
+    "sl_pct": 80.2
   }
 }

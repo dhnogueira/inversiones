@@ -7,23 +7,23 @@
     "sector": "Banca & Servicios Financieros",
     "ipo": 1969,
     "category": "sp500",
-    "price": 342.1650085449219,
+    "price": 342.0450134277344,
     "currency": "USD",
-    "score": 72.2,
+    "score": 72.6,
     "profile": "conservador",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 61.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "61.8",
+        "content": "El RSI de 14 períodos está en 60.9, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "60.9",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (323.18) se encuentra por encima de la EMA de 200 días (304.53), y el precio actual (342.17) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (323.79) se encuentra por encima de la EMA de 200 días (304.87), y el precio actual (342.05) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -37,14 +37,14 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+5.7%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (8.4%) refuerzan esta tendencia positiva.",
-        "value": "+5.7% (1M)",
+        "content": "El rendimiento mensual es de **+3.7%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (9.8%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+3.7% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 285.20 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 334.62 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 310.19. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 286.95 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 335.57 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 310.19. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 310.19",
         "status": "success"
       }
@@ -67,15 +67,15 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+10.6%** y a 12 meses es **+19.7%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+10.6% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+14.1%** y a 12 meses es **+19.8%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+14.1% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **171.5%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+124.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 171.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **171.9%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+124.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 171.9%",
         "status": "success"
       }
     ],
@@ -179,18 +179,18 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **72.2/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
+      "summary": "Con un score de **72.6/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.62) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **conservador**.",
-      "take_profit": 466.99,
-      "stop_loss": 286.69,
+      "take_profit": 466.89,
+      "stop_loss": 286.56,
       "tp_pct": 36.5,
       "sl_pct": 16.2
     },
-    "support": 285.2,
-    "resistance": 334.62,
+    "support": 286.95,
+    "resistance": 335.57,
     "volume_cluster": 310.19,
-    "take_profit": 466.99,
-    "stop_loss": 286.69,
+    "take_profit": 466.89,
+    "stop_loss": 286.56,
     "tp_pct": 36.5,
     "sl_pct": 16.2,
     "long_term_strategies": {
@@ -198,15 +198,15 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 14.7x** es bajo (< 15x), indicando que el mercado valúa la empresa a un precio razonable o incluso barato respecto a sus ganancias. Benjamin Graham consideraba este rango como zona de valor.",
-          "value": "14.7x",
+          "content": "El **PER de 14.6x** es bajo (< 15x), indicando que el mercado valúa la empresa a un precio razonable o incluso barato respecto a sus ganancias. Benjamin Graham consideraba este rango como zona de valor.",
+          "value": "14.6x",
           "status": "success"
         },
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 2.58x** es razonable. El mercado paga una moderada prima sobre el valor contable, coherente con empresas de calidad que generan retorbos superiores al promedio.",
-          "value": "2.58x",
+          "content": "El **P/B de 2.57x** es razonable. El mercado paga una moderada prima sobre el valor contable, coherente con empresas de calidad que generan retorbos superiores al promedio.",
+          "value": "2.57x",
           "status": "neutral"
         },
         {
@@ -242,8 +242,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (+8.4%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
-          "value": "+8.4% (3M)",
+          "content": "El **momentum trimestral (+9.8%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
+          "value": "+9.8% (3M)",
           "status": "neutral"
         },
         {
@@ -256,8 +256,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 14.7x posiciona a esta empresa en el segmento de valuación razonable, donde convergen los factores Value y Quality a largo plazo.",
-          "value": "14.7x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 14.6x posiciona a esta empresa en el segmento de valuación razonable, donde convergen los factores Value y Quality a largo plazo.",
+          "value": "14.6x",
           "status": "neutral"
         }
       ],
@@ -265,8 +265,8 @@
         {
           "title": "Dividend Yield (Rendimiento por Dividendo)",
           "icon": "fa-coins",
-          "content": "El **dividend yield del 176.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
-          "value": "176.00%",
+          "content": "El **dividend yield del 177.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
+          "value": "177.00%",
           "status": "warning"
         },
         {

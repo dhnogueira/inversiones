@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -22.1
+        "ars_return_est": -16.5
       },
       {
         "ticker": "BNB-USD",
@@ -19,7 +19,7 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -27.7
+        "ars_return_est": -25.2
       },
       {
         "ticker": "LINK-USD",
@@ -28,7 +28,7 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -35.3
+        "ars_return_est": -30.3
       },
       {
         "ticker": "ETH-USD",
@@ -37,7 +37,7 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -35.6
+        "ars_return_est": -31.6
       },
       {
         "ticker": "SOL-USD",
@@ -46,17 +46,17 @@
         "currency": "USD",
         "weight": 0.2,
         "weight_pct": 20.0,
-        "ars_return_est": -44.4
+        "ars_return_est": -41.2
       }
     ],
-    "expected_return": -33.01,
-    "expected_volatility": 45.55,
-    "sharpe_ratio": -1.21,
+    "expected_return": -28.97,
+    "expected_volatility": 45.31,
+    "sharpe_ratio": -1.12,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -55.0
+    "spread_vs_inflation": -51.0
   }
 }
