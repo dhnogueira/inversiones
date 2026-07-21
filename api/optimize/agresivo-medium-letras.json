@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
@@ -8,9 +8,9 @@
         "name": "BONCAP T30J7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.2149,
+        "weight": 0.2151,
         "weight_pct": 21.5,
-        "ars_return_est": 30.7
+        "ars_return_est": 30.6
       },
       {
         "ticker": "T30A7",
@@ -19,43 +19,43 @@
         "currency": "ARS",
         "weight": 0.1654,
         "weight_pct": 16.5,
-        "ars_return_est": 23.7
+        "ars_return_est": 23.6
       },
       {
         "ticker": "T31Y7",
         "name": "BONCAP T31Y7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.165,
+        "weight": 0.1651,
         "weight_pct": 16.5,
-        "ars_return_est": 23.6
+        "ars_return_est": 23.5
       },
       {
         "ticker": "T31M7",
         "name": "BONCAP T31M7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.1392,
+        "weight": 0.1391,
         "weight_pct": 13.9,
-        "ars_return_est": 19.9
+        "ars_return_est": 19.8
       },
       {
         "ticker": "S31M7",
         "name": "LECAP S31M7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.1179,
+        "weight": 0.1178,
         "weight_pct": 11.8,
-        "ars_return_est": 16.9
+        "ars_return_est": 16.8
       },
       {
         "ticker": "T28F7",
         "name": "BONCAP T28F7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.104,
+        "weight": 0.1039,
         "weight_pct": 10.4,
-        "ars_return_est": 14.9
+        "ars_return_est": 14.8
       },
       {
         "ticker": "S28F7",
@@ -64,17 +64,17 @@
         "currency": "ARS",
         "weight": 0.0936,
         "weight_pct": 9.4,
-        "ars_return_est": 13.4
+        "ars_return_est": 13.3
       }
     ],
-    "expected_return": 21.98,
+    "expected_return": 21.9,
     "expected_volatility": 4.32,
-    "sharpe_ratio": -0.0,
+    "sharpe_ratio": -0.02,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -0.0
+    "spread_vs_inflation": -0.1
   }
 }

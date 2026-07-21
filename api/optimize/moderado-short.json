@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
@@ -17,8 +17,8 @@
         "name": "BONCAP T30A7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.2442,
-        "weight_pct": 24.4,
+        "weight": 0.2378,
+        "weight_pct": 23.8,
         "ars_return_est": 14.4
       },
       {
@@ -26,9 +26,9 @@
         "name": "XOM",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2058,
-        "weight_pct": 20.6,
-        "ars_return_est": 39.4
+        "weight": 0.2122,
+        "weight_pct": 21.2,
+        "ars_return_est": 40.8
       },
       {
         "ticker": "T28F7",
@@ -67,14 +67,14 @@
         "ars_return_est": 12.7
       }
     ],
-    "expected_return": 19.4,
-    "expected_volatility": 5.84,
-    "sharpe_ratio": 1.44,
+    "expected_return": 19.85,
+    "expected_volatility": 5.95,
+    "sharpe_ratio": 1.49,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 8.4
+    "spread_vs_inflation": 8.9
   }
 }

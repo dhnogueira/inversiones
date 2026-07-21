@@ -7,23 +7,23 @@
     "sector": "Banca",
     "ipo": 2000,
     "category": "merval",
-    "price": 7860.0,
+    "price": 7845.0,
     "currency": "ARS",
-    "score": 72.5,
+    "score": 75.2,
     "profile": "agresivo",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 50.2, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "50.2",
-        "status": "success"
+        "content": "El RSI de 14 períodos se encuentra en 49.9, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "49.9",
+        "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (7595.02) se encuentra por encima de la EMA de 200 días (6982.56), y el precio actual (7860.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (7604.83) se encuentra por encima de la EMA de 200 días (6991.14), y el precio actual (7845.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -37,8 +37,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-4.7%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-4.7% (1M)",
+        "content": "El rendimiento mensual es de **-3.8%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-3.8% (1M)",
         "status": "danger"
       },
       {
@@ -53,29 +53,29 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **11.3%** respecto a su máximo anual de **ARS 8,860.86**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-11.3%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **11.5%** respecto a su máximo anual de **ARS 8,860.86**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-11.5%",
         "status": "neutral"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.56** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "0.56",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.62** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
+        "value": "0.62",
         "status": "neutral"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+4.0%** y a 12 meses es **+35.6%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "content": "El rendimiento acumulado a 6 meses es **+4.0%** y a 12 meses es **+39.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
         "value": "+4.0% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **100.8%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+53.8%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 100.8%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **112.0%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+65.0%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 112.0%",
         "status": "success"
       }
     ],
@@ -96,8 +96,10 @@
           "net_margin_pct": 2.6,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": null,
-          "favorable": [],
+          "debt_equity": 0.38,
+          "favorable": [
+            "Deuda/Equity baja: 0.38"
+          ],
           "critical": [
             "Margen neto muy bajo: 2.6%"
           ]
@@ -109,8 +111,10 @@
           "net_margin_pct": -1.3,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": null,
-          "favorable": [],
+          "debt_equity": 0.38,
+          "favorable": [
+            "Deuda/Equity baja: 0.38"
+          ],
           "critical": [
             "Margen neto muy bajo: -1.3%"
           ]
@@ -122,8 +126,10 @@
           "net_margin_pct": -4.4,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": null,
-          "favorable": [],
+          "debt_equity": 0.38,
+          "favorable": [
+            "Deuda/Equity baja: 0.38"
+          ],
           "critical": [
             "Margen neto muy bajo: -4.4%",
             "Ingresos en baja vs trimestre anterior: -25.5%"
@@ -136,8 +142,9 @@
           "net_margin_pct": 8.3,
           "eps": null,
           "fcf_b": null,
-          "debt_equity": null,
+          "debt_equity": 0.32,
           "favorable": [
+            "Deuda/Equity baja: 0.32",
             "Ingresos en alza vs trimestre anterior: +5.8%"
           ],
           "critical": []
@@ -149,8 +156,9 @@
           "net_margin_pct": 7.8,
           "eps": null,
           "fcf_b": -1174.19,
-          "debt_equity": null,
+          "debt_equity": 0.28,
           "favorable": [
+            "Deuda/Equity baja: 0.28",
             "Ingresos en alza vs trimestre anterior: +18.8%"
           ],
           "critical": [
@@ -165,29 +173,29 @@
         "avg_eps": null,
         "revenue_trend": "creciente",
         "margin_trend": "en contracción",
-        "total_favorable_signals": 2,
+        "total_favorable_signals": 7,
         "total_critical_signals": 5,
         "conclusion": "CON SEÑALES DE ALERTA",
         "conclusion_color": "warning",
-        "conclusion_detail": "Los últimos 5 balances detectan 5 señales críticas frente a 2 favorables. Se observan presiones en la rentabilidad (margen 2.6%, en contracción) con ingresos crecientes. Se recomienda precaución."
+        "conclusion_detail": "Los últimos 5 balances detectan 5 señales críticas frente a 7 favorables. Se observan presiones en la rentabilidad (margen 2.6%, en contracción) con ingresos crecientes. Se recomienda precaución."
       }
     },
     "verdict": {
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **72.5/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
-      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.56) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
-      "take_profit": 22234.81,
-      "stop_loss": 1471.2,
+      "summary": "Con un score de **75.2/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
+      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.62) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
+      "take_profit": 22192.52,
+      "stop_loss": 1468.33,
       "tp_pct": 182.9,
       "sl_pct": 81.3
     },
     "support": 6118.01,
     "resistance": 8160.99,
     "volume_cluster": 6296.58,
-    "take_profit": 22234.81,
-    "stop_loss": 1471.2,
+    "take_profit": 22192.52,
+    "stop_loss": 1468.33,
     "tp_pct": 182.9,
     "sl_pct": 81.3,
     "long_term_strategies": {
@@ -195,15 +203,15 @@
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 145.9x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
-          "value": "145.9x",
+          "content": "El **PER de 147.0x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "147.0x",
           "status": "warning"
         },
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 1.46x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado.",
-          "value": "1.46x",
+          "content": "El **P/B de 1.47x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado.",
+          "value": "1.47x",
           "status": "success"
         },
         {
@@ -239,8 +247,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum de 3 meses (+17.3%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
-          "value": "+17.3% (3M)",
+          "content": "El **momentum de 3 meses (+24.3%)** es fuerte. Los mercados muestran persistencia de rendimiento: activos que superan al mercado en los últimos 3-12 meses tienden a seguir haciéndolo. Esta es la base del factor Momentum en Quality Investing.",
+          "value": "+24.3% (3M)",
           "status": "success"
         },
         {
@@ -253,8 +261,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 145.9x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
-          "value": "145.9x",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 147.0x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "147.0x",
           "status": "neutral"
         }
       ],

@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 115.2
+        "ars_return_est": 115.5
       },
       {
         "ticker": "GOOGL",
@@ -19,35 +19,35 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 149.1
-      },
-      {
-        "ticker": "AAPL",
-        "name": "AAPL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.2548,
-        "weight_pct": 25.5,
-        "ars_return_est": 105.9
+        "ars_return_est": 138.0
       },
       {
         "ticker": "XOM",
         "name": "XOM",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1452,
-        "weight_pct": 14.5,
-        "ars_return_est": 89.0
+        "weight": 0.226,
+        "weight_pct": 22.6,
+        "ars_return_est": 90.9
+      },
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.174,
+        "weight_pct": 17.4,
+        "ars_return_est": 102.4
       }
     ],
-    "expected_return": 119.2,
-    "expected_volatility": 25.34,
-    "sharpe_ratio": 3.84,
+    "expected_return": 114.42,
+    "expected_volatility": 25.04,
+    "sharpe_ratio": 3.69,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 97.2
+    "spread_vs_inflation": 92.4
   }
 }

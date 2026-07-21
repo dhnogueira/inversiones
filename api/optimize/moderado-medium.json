@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
@@ -10,25 +10,25 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 175.8
+        "ars_return_est": 162.0
       },
       {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.296,
-        "weight_pct": 29.6,
-        "ars_return_est": 133.5
+        "weight": 0.3165,
+        "weight_pct": 31.7,
+        "ars_return_est": 133.9
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.154,
-        "weight_pct": 15.4,
-        "ars_return_est": 132.9
+        "weight": 0.1835,
+        "weight_pct": 18.3,
+        "ars_return_est": 137.5
       },
       {
         "ticker": "AAPL.BA",
@@ -37,16 +37,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 95.9
-      },
-      {
-        "ticker": "LLY",
-        "name": "LLY",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 117.6
+        "ars_return_est": 91.4
       },
       {
         "ticker": "AAPL",
@@ -55,26 +46,26 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 121.9
+        "ars_return_est": 117.4
       },
       {
-        "ticker": "UNH",
-        "name": "UNH",
+        "ticker": "LLY",
+        "name": "LLY",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 119.4
+        "ars_return_est": 116.4
       }
     ],
-    "expected_return": 144.27,
-    "expected_volatility": 26.37,
-    "sharpe_ratio": 4.64,
+    "expected_return": 140.59,
+    "expected_volatility": 25.96,
+    "sharpe_ratio": 4.57,
     "profile": "moderado",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 122.3
+    "spread_vs_inflation": 118.6
   }
 }

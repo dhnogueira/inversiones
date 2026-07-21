@@ -1,11 +1,11 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
-        "ticker": "GOOGL.BA",
-        "name": "GOOGL",
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.35,
@@ -13,8 +13,8 @@
         "ars_return_est": 250.0
       },
       {
-        "ticker": "AAPL.BA",
-        "name": "AAPL",
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.35,
@@ -28,7 +28,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 225.8
+        "ars_return_est": 217.9
       },
       {
         "ticker": "XOM.BA",
@@ -37,7 +37,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 160.9
+        "ars_return_est": 165.3
       },
       {
         "ticker": "KO.BA",
@@ -46,7 +46,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 108.7
+        "ars_return_est": 113.4
       },
       {
         "ticker": "AMZN.BA",
@@ -55,7 +55,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 82.1
+        "ars_return_est": 91.4
       },
       {
         "ticker": "NVDA.BA",
@@ -64,7 +64,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 114.4
+        "ars_return_est": 113.1
       },
       {
         "ticker": "TSLA.BA",
@@ -73,17 +73,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 128.8
+        "ars_return_est": 100.6
       }
     ],
-    "expected_return": 216.04,
+    "expected_return": 215.08,
     "expected_volatility": 31.8,
-    "sharpe_ratio": 5.32,
+    "sharpe_ratio": 5.29,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 169.0
+    "spread_vs_inflation": 168.1
   }
 }

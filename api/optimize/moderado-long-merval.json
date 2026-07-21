@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
@@ -8,8 +8,8 @@
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
+        "weight": 0.2037,
+        "weight_pct": 20.4,
         "ars_return_est": 250.0
       },
       {
@@ -17,17 +17,26 @@
         "name": "TECO2",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 223.7
+        "weight": 0.2037,
+        "weight_pct": 20.4,
+        "ars_return_est": 230.0
       },
       {
         "ticker": "YPFD.BA",
         "name": "YPFD",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
+        "weight": 0.2037,
+        "weight_pct": 20.4,
+        "ars_return_est": 250.0
+      },
+      {
+        "ticker": "BMA.BA",
+        "name": "BMA",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.2037,
+        "weight_pct": 20.4,
         "ars_return_est": 250.0
       },
       {
@@ -35,28 +44,19 @@
         "name": "BYMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 155.8
-      },
-      {
-        "ticker": "BMA.BA",
-        "name": "BMA",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.2,
-        "weight_pct": 20.0,
-        "ars_return_est": 227.3
+        "weight": 0.1852,
+        "weight_pct": 18.5,
+        "ars_return_est": 147.1
       }
     ],
-    "expected_return": 221.35,
-    "expected_volatility": 43.46,
-    "sharpe_ratio": 4.01,
+    "expected_return": 226.86,
+    "expected_volatility": 43.5,
+    "sharpe_ratio": 4.13,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 174.3
+    "spread_vs_inflation": 179.9
   }
 }

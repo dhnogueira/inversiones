@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 115.2
+        "ars_return_est": 115.5
       },
       {
         "ticker": "GOOGL",
@@ -19,44 +19,44 @@
         "currency": "USD",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 149.1
-      },
-      {
-        "ticker": "AAPL",
-        "name": "AAPL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.1824,
-        "weight_pct": 18.2,
-        "ars_return_est": 105.9
+        "ars_return_est": 138.0
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.16,
-        "weight_pct": 16.0,
-        "ars_return_est": 106.3
+        "weight": 0.1867,
+        "weight_pct": 18.7,
+        "ars_return_est": 110.0
       },
       {
         "ticker": "XOM",
         "name": "XOM",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.0576,
-        "weight_pct": 5.8,
-        "ars_return_est": 89.0
+        "weight": 0.1211,
+        "weight_pct": 12.1,
+        "ars_return_est": 90.9
+      },
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0922,
+        "weight_pct": 9.2,
+        "ars_return_est": 102.4
       }
     ],
-    "expected_return": 120.75,
-    "expected_volatility": 25.21,
-    "sharpe_ratio": 3.92,
+    "expected_return": 117.05,
+    "expected_volatility": 25.01,
+    "sharpe_ratio": 3.8,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 98.7
+    "spread_vs_inflation": 95.0
   }
 }

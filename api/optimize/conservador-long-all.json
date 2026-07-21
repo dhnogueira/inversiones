@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "USD",
         "weight": 0.45,
         "weight_pct": 45.0,
-        "ars_return_est": 500.0
+        "ars_return_est": 489.7
       },
       {
         "ticker": "MRK",
@@ -19,7 +19,16 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 376.7
+        "ars_return_est": 378.1
+      },
+      {
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 200.0
       },
       {
         "ticker": "GOOGL.BA",
@@ -37,7 +46,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 180.6
+        "ars_return_est": 174.3
       },
       {
         "ticker": "XOM",
@@ -46,7 +55,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 262.8
+        "ars_return_est": 270.4
       },
       {
         "ticker": "XOM.BA",
@@ -55,16 +64,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 128.7
-      },
-      {
-        "ticker": "AAPL.BA",
-        "name": "AAPL",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 200.0
+        "ars_return_est": 132.2
       },
       {
         "ticker": "AAPL",
@@ -73,7 +73,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 334.3
+        "ars_return_est": 318.6
       },
       {
         "ticker": "KO.BA",
@@ -82,7 +82,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 87.0
+        "ars_return_est": 90.7
       },
       {
         "ticker": "ABBV",
@@ -91,17 +91,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 252.0
+        "ars_return_est": 267.9
       }
     ],
-    "expected_return": 363.78,
-    "expected_volatility": 25.03,
-    "sharpe_ratio": 12.66,
+    "expected_return": 359.76,
+    "expected_volatility": 25.01,
+    "sharpe_ratio": 12.51,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 316.8
+    "spread_vs_inflation": 312.8
   }
 }

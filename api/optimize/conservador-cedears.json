@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784556046.598522,
+  "timestamp": 1784642474.5700042,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 106.3
+        "ars_return_est": 110.0
       },
       {
         "ticker": "AAPL.BA",
@@ -19,35 +19,35 @@
         "currency": "ARS",
         "weight": 0.3,
         "weight_pct": 30.0,
-        "ars_return_est": 76.7
+        "ars_return_est": 73.1
       },
       {
         "ticker": "VALE.BA",
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.3,
-        "weight_pct": 30.0,
-        "ars_return_est": 64.4
+        "weight": 0.2349,
+        "weight_pct": 23.5,
+        "ars_return_est": 62.6
       },
       {
         "ticker": "XOM.BA",
         "name": "XOM",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.1,
-        "weight_pct": 10.0,
-        "ars_return_est": 49.2
+        "weight": 0.1651,
+        "weight_pct": 16.5,
+        "ars_return_est": 50.3
       }
     ],
-    "expected_return": 79.15,
-    "expected_volatility": 30.62,
-    "sharpe_ratio": 1.87,
+    "expected_return": 77.96,
+    "expected_volatility": 30.14,
+    "sharpe_ratio": 1.86,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 57.1
+    "spread_vs_inflation": 56.0
   }
 }
