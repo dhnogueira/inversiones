@@ -7,7 +7,7 @@
     "sector": "Energía Eléctrica",
     "ipo": 1993,
     "category": "merval",
-    "price": 5270.0,
+    "price": 5475.0,
     "currency": "ARS",
     "score": 0.0,
     "profile": "conservador",
@@ -16,36 +16,36 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 59.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "59.0",
-        "status": "success"
+        "content": "El RSI de 14 períodos se encuentra en 68.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "68.1",
+        "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (5087.70) se encuentra por encima de la EMA de 200 días (4810.97), y el precio actual (5270.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (5102.89) se encuentra por encima de la EMA de 200 días (4815.37), y el precio actual (5475.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (42.9%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "42.9%",
+        "content": "La volatilidad anualizada es **alta** (42.1%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "42.1%",
         "status": "warning"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+1.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (7.4%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+1.9% (1M)",
-        "status": "neutral"
+        "content": "El activo registró un rendimiento del **+6.9%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (13.2%) refuerzan esta tendencia positiva.",
+        "value": "+6.9% (1M)",
+        "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 4,768.25 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 5,220.50 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 4,932.62. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 4,932.62",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 4,768.25 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 5,225.50 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 4,926.38. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 4,926.38",
         "status": "success"
       }
     ],
@@ -53,22 +53,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **1.00** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "1.00",
-        "status": "neutral"
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **1.11** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "1.11",
+        "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+9.9%** y a 12 meses es **+46.8%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+9.9% (6M)",
-        "status": "neutral"
+        "content": "El rendimiento acumulado a 6 meses es **+11.6%** y a 12 meses es **+50.6%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+11.6% (6M)",
+        "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **7.9%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-3.1%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
-        "value": "Retorno Est.: 7.9%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **9.3%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-1.7%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 9.3%",
         "status": "danger"
       }
     ],
@@ -181,19 +181,19 @@
       "action": "EVITAR",
       "icon": "fa-circle-xmark",
       "color": "danger",
-      "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **conservador**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Fuerte Alcista).",
-      "take_profit": 6355.15,
-      "stop_loss": 4727.42,
-      "tp_pct": 20.6,
-      "sl_pct": 10.3
+      "take_profit": 6580.91,
+      "stop_loss": 4922.05,
+      "tp_pct": 20.2,
+      "sl_pct": 10.1
     },
     "support": 4768.25,
-    "resistance": 5220.5,
-    "volume_cluster": 4932.62,
-    "take_profit": 6355.15,
-    "stop_loss": 4727.42,
-    "tp_pct": 20.6,
-    "sl_pct": 10.3
+    "resistance": 5225.5,
+    "volume_cluster": 4926.38,
+    "take_profit": 6580.91,
+    "stop_loss": 4922.05,
+    "tp_pct": 20.2,
+    "sl_pct": 10.1
   }
 }

@@ -7,44 +7,44 @@
     "sector": "Petróleo & Gas",
     "ipo": 1920,
     "category": "cedears",
-    "price": 23330.0,
+    "price": 23780.0,
     "currency": "ARS",
-    "score": 88.2,
+    "score": 89.3,
     "profile": "agresivo",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 65.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "65.1",
+        "content": "El RSI de 14 períodos se encuentra en 68.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "68.8",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (22159.00) se encuentra por encima de la EMA de 200 días (20545.59), y el precio actual (23330.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (22222.57) se encuentra por encima de la EMA de 200 días (20570.29), y el precio actual (23780.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es de **29.9%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
-        "value": "29.9%",
+        "content": "La volatilidad anualizada es de **29.5%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
+        "value": "29.5%",
         "status": "neutral"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+10.5%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (5.1%) refuerzan esta tendencia positiva.",
-        "value": "+10.5% (1M)",
+        "content": "El activo registró un rendimiento del **+9.1%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (7.0%) refuerzan esta tendencia positiva.",
+        "value": "+9.1% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 21,266.00 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,690.90 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 22,360.46. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 21,266.00 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 23,708.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 22,360.46. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 22,360.46",
         "status": "success"
       }
@@ -53,29 +53,29 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **8.5%** respecto a su máximo anual de **ARS 25,499.88**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-8.5%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **6.7%** respecto a su máximo anual de **ARS 25,499.88**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-6.7%",
         "status": "neutral"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **1.97** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
-        "value": "1.97",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.08** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "2.08",
         "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+20.0%** y a 12 meses es **+62.9%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+20.0% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+19.9%** y a 12 meses es **+65.4%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+19.9% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **198.3%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+151.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 198.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **208.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+161.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 208.4%",
         "status": "success"
       }
     ],
@@ -184,20 +184,20 @@
       "action": "COMPRAR",
       "icon": "fa-circle-check",
       "color": "success",
-      "summary": "Este activo obtiene un score de **88.2/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 1.97) es óptima para el perfil **agresivo**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (29.9%).",
-      "take_profit": 45902.2,
-      "stop_loss": 13297.91,
-      "tp_pct": 96.8,
-      "sl_pct": 43.0
+      "summary": "Este activo obtiene un score de **89.3/100** para el perfil **agresivo**, posicionándose entre las mejores alternativas disponibles. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "why": "**Por qué esta estrategia:** Este activo reúne una combinación técnica y fundamental sobresaliente. La tendencia alcista está consolidada (Fuerte Alcista), el momentum es fuerte, y la eficiencia riesgo/retorno (Sharpe: 2.08) es óptima para el perfil **agresivo**, ofreciendo un sólido margen de seguridad en relación a su volatilidad (29.5%).",
+      "take_profit": 46497.11,
+      "stop_loss": 13683.5,
+      "tp_pct": 95.5,
+      "sl_pct": 42.5
     },
     "support": 21266.0,
-    "resistance": 23690.9,
+    "resistance": 23708.0,
     "volume_cluster": 22360.46,
-    "take_profit": 45902.2,
-    "stop_loss": 13297.91,
-    "tp_pct": 96.8,
-    "sl_pct": 43.0,
+    "take_profit": 46497.11,
+    "stop_loss": 13683.5,
+    "tp_pct": 95.5,
+    "sl_pct": 42.5,
     "long_term_strategies": {
       "value": [
         {
@@ -210,8 +210,8 @@
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 1.02x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado.",
-          "value": "1.02x",
+          "content": "El **P/B de 1.04x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado.",
+          "value": "1.04x",
           "status": "success"
         },
         {
@@ -247,15 +247,15 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (+5.1%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
-          "value": "+5.1% (3M)",
+          "content": "El **momentum trimestral (+7.0%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
+          "value": "+7.0% (3M)",
           "status": "neutral"
         },
         {
           "title": "Baja Volatilidad (Low Vol Factor)",
           "icon": "fa-water",
-          "content": "La **volatilidad anualizada del 29.9%** es moderada. El activo no representa riesgo extremo y puede utilizarse como pilar estabilizador en un portafolio diversificado.",
-          "value": "29.9%",
+          "content": "La **volatilidad anualizada del 29.5%** es moderada. El activo no representa riesgo extremo y puede utilizarse como pilar estabilizador en un portafolio diversificado.",
+          "value": "29.5%",
           "status": "neutral"
         },
         {
@@ -270,8 +270,8 @@
         {
           "title": "Dividend Yield (Rendimiento por Dividendo)",
           "icon": "fa-coins",
-          "content": "El **dividend yield del 250.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
-          "value": "250.00%",
+          "content": "El **dividend yield del 245.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
+          "value": "245.00%",
           "status": "warning"
         },
         {

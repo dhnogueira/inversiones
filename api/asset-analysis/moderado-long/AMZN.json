@@ -7,25 +7,25 @@
     "sector": "E-Commerce & Nube",
     "ipo": 1997,
     "category": "sp500",
-    "price": 247.63499450683594,
+    "price": 245.66409301757812,
     "currency": "USD",
-    "score": 60.0,
+    "score": 59.9,
     "profile": "moderado",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 51.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "51.4",
-        "status": "success"
+        "content": "El RSI de 14 períodos se encuentra en 49.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "49.2",
+        "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (246.40) se encuentra por encima de la EMA de 200 días (235.80), y el precio actual (247.63) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
-        "value": "Fuerte Alcista",
-        "status": "success"
+        "content": "El precio (245.66) se mantiene por encima de la EMA de 200 días (235.86), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (246.37) aún no confirma un cruce definitivo.",
+        "value": "Alcista",
+        "status": "neutral"
       },
       {
         "title": "Volatilidad Anualizada",
@@ -37,14 +37,14 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+6.4%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-0.9%) refuerzan esta tendencia positiva.",
-        "value": "+6.4% (1M)",
+        "content": "El rendimiento mensual es de **+4.9%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-3.8%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+4.9% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 209.75 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 269.10 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 210.69. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 209.86 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 269.10 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 210.69. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
         "value": "POC: 210.69",
         "status": "success"
       }
@@ -53,8 +53,8 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **10.0%** respecto a su máximo anual de **USD 274.99**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-10.0%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **10.7%** respecto a su máximo anual de **USD 274.99**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-10.7%",
         "status": "neutral"
       },
       {
@@ -67,8 +67,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+7.2%** y a 12 meses es **+8.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+7.2% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+6.2%** y a 12 meses es **+8.0%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+6.2% (6M)",
         "status": "neutral"
       },
       {
@@ -183,58 +183,58 @@
       }
     },
     "verdict": {
-      "action": "CONSIDERAR",
-      "icon": "fa-circle-info",
-      "color": "neutral",
-      "summary": "Con un score de **60.0/100** para el perfil **moderado**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
-      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.12) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **moderado**.",
-      "take_profit": 423.27,
-      "stop_loss": 169.58,
-      "tp_pct": 70.9,
+      "action": "CAUTELA",
+      "icon": "fa-triangle-exclamation",
+      "color": "warning",
+      "summary": "El score de **59.9/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **moderado**. Esto puede deberse a una volatilidad excesiva (32.8%), un ratio de Sharpe ineficiente (0.12), o una tendencia técnica desfavorable (Alcista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 419.55,
+      "stop_loss": 168.38,
+      "tp_pct": 70.8,
       "sl_pct": 31.5
     },
-    "support": 209.75,
+    "support": 209.86,
     "resistance": 269.1,
     "volume_cluster": 210.69,
-    "take_profit": 423.27,
-    "stop_loss": 169.58,
-    "tp_pct": 70.9,
+    "take_profit": 419.55,
+    "stop_loss": 168.38,
+    "tp_pct": 70.8,
     "sl_pct": 31.5,
     "long_term_strategies": {
       "value": [
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "No hay datos de PER disponibles para este activo (puede ser una empresa sin ganancias positivas o un CEDEAR sin cobertura directa).",
-          "value": "N/D",
-          "status": "neutral"
+          "content": "El **PER de 29.4x** es elevado (> 25x). El mercado paga una prima alta por esta acción respecto a sus ganancias actuales. Requiere un crecimiento sostenido para justificar la valuación.",
+          "value": "29.4x",
+          "status": "warning"
         },
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El Precio/Valor Libro no está disponible para este activo.",
-          "value": "N/D",
-          "status": "neutral"
+          "content": "El **P/B de 5.98x** es alto. La empresa cotiza a una prima significativa sobre su valor en libros. Esto puede justificarse por una ventaja competitiva (moat) sólida, pero ofrece menos margen de seguridad.",
+          "value": "5.98x",
+          "status": "warning"
         },
         {
           "title": "Flujo de Caja Libre (FCF Yield)",
           "icon": "fa-money-bill-wave",
-          "content": "No se dispone de datos de flujo de caja libre para este activo.",
-          "value": "N/D",
+          "content": "El **FCF Yield del 0.4%** es positivo pero moderado. La empresa genera caja libre, aunque el margen no es especialmente generoso a este nivel de precio.",
+          "value": "0.4%",
           "status": "neutral"
         },
         {
           "title": "ROE — Rentabilidad sobre Patrimonio",
           "icon": "fa-percent",
-          "content": "No hay datos de ROE disponibles para este activo.",
-          "value": "N/D",
-          "status": "neutral"
+          "content": "El **ROE del 24.3%** es excelente (> 15%). La empresa genera una alta rentabilidad sobre el capital de los accionistas, señal de ventaja competitiva sostenible. Buffett considera el ROE alto consistente como uno de los indicadores más confiables de una gran empresa.",
+          "value": "24.3%",
+          "status": "success"
         },
         {
           "title": "Bajo Endeudamiento (D/E)",
           "icon": "fa-shield-halved",
-          "content": "Datos de deuda no disponibles para este activo.",
-          "value": "N/D",
+          "content": "La relación **Deuda/Patrimonio de 0.53x** es moderada y manejable, habitual en empresas maduras que usan apalancamiento de forma controlada.",
+          "value": "0.53x",
           "status": "neutral"
         }
       ],
@@ -242,15 +242,15 @@
         {
           "title": "Márgenes Consistentes (Quality)",
           "icon": "fa-chart-pie",
-          "content": "No se dispone de datos de margen operativo. Este indicador es fundamental para evaluar la calidad del negocio.",
-          "value": "N/D",
+          "content": "El **margen operativo del 13.1%** es bueno (10-20%), coherente con empresas del sector que operan eficientemente.",
+          "value": "13.1%",
           "status": "neutral"
         },
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (-0.9%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
-          "value": "-0.9% (3M)",
+          "content": "El **momentum trimestral (-3.8%)** es negativo. Desde la perspectiva del factor Momentum, este activo no está mostrando la dinámica de precio favorable que caracteriza las inversiones de quality en fase alcista.",
+          "value": "-3.8% (3M)",
           "status": "warning"
         },
         {
@@ -263,8 +263,8 @@
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "No hay datos de PER para contextualizar el factor Small Cap / Valuación relativa.",
-          "value": "N/D",
+          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 29.4x posiciona a esta empresa en el segmento de crecimiento premium, más cercano al Quality puro que al Value estricto.",
+          "value": "29.4x",
           "status": "neutral"
         }
       ],
@@ -293,9 +293,9 @@
         {
           "title": "Solidez Fundamental (Pilar del DGI)",
           "icon": "fa-landmark-flag",
-          "content": "Los datos disponibles no permiten confirmar la solidez fundamental necesaria para una tesis de Dividend Growth estable. Puede deberse a datos faltantes o a una empresa con fundamentos más débiles.",
-          "value": "0/3 pilares",
-          "status": "warning"
+          "content": "Los fundamentos de la empresa son **sólidos**: margen neto del 12%, baja deuda (D/E: 0.53x). Esto respalda la capacidad de mantener y hacer crecer el dividendo en el largo plazo, incluso en entornos económicos adversos.",
+          "value": "2/3 pilares",
+          "status": "success"
         }
       ]
     }

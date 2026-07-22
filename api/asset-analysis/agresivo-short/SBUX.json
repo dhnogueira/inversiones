@@ -2,28 +2,28 @@
   "status": "success",
   "analysis": {
     "ticker": "SBUX",
-    "name": "SBUX",
-    "company": "SBUX",
-    "sector": "Otros",
-    "ipo": "N/D",
+    "name": "Starbucks Corporation",
+    "company": "Starbucks Corporation",
+    "sector": "Consumo Cíclico",
+    "ipo": 1992,
     "category": "sp500",
-    "price": 105.885,
+    "price": 105.19,
     "currency": "USD",
-    "score": 60.0,
+    "score": 64.8,
     "profile": "agresivo",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 54.4, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "54.4",
+        "content": "El RSI de 14 períodos está en 54.7, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.7",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (102.45) se encuentra por encima de la EMA de 200 días (96.42), y el precio actual (105.89) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (102.60) se encuentra por encima de la EMA de 200 días (96.61), y el precio actual (105.19) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
@@ -37,15 +37,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+5.2%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (7.6%) refuerzan esta tendencia positiva.",
-        "value": "+5.2% (1M)",
+        "content": "El rendimiento mensual es de **+4.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (6.3%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+4.1% (1M)",
         "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 92.16 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 105.96 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 103.77. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 103.77",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 92.16 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 105.96 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 103.09. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 103.09",
         "status": "success"
       }
     ],
@@ -53,22 +53,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.36** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
-        "value": "0.36",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.23** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
+        "value": "0.23",
         "status": "warning"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+15.3%** y a 12 meses es **+15.9%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+15.3% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+10.4%** y a 12 meses es **+11.4%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+10.4% (6M)",
         "status": "success"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **43.2%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+32.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 43.2%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **36.1%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+25.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 36.1%",
         "status": "success"
       }
     ],
@@ -178,19 +178,19 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **60.0/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
-      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.36) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
-      "take_profit": 143.06,
-      "stop_loss": 87.3,
+      "summary": "Con un score de **64.8/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación.",
+      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.23) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
+      "take_profit": 142.1,
+      "stop_loss": 86.73,
       "tp_pct": 35.1,
-      "sl_pct": 17.6
+      "sl_pct": 17.5
     },
     "support": 92.16,
     "resistance": 105.96,
-    "volume_cluster": 103.77,
-    "take_profit": 143.06,
-    "stop_loss": 87.3,
+    "volume_cluster": 103.09,
+    "take_profit": 142.1,
+    "stop_loss": 86.73,
     "tp_pct": 35.1,
-    "sl_pct": 17.6
+    "sl_pct": 17.5
   }
 }

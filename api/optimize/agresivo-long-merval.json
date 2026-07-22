@@ -1,17 +1,8 @@
 {
   "status": "success",
-  "timestamp": 1784642474.5700042,
+  "timestamp": 1784728871.7398624,
   "optimization": {
     "weights": [
-      {
-        "ticker": "TECO2.BA",
-        "name": "TECO2",
-        "category": "merval",
-        "currency": "ARS",
-        "weight": 0.25,
-        "weight_pct": 25.0,
-        "ars_return_est": 276.0
-      },
       {
         "ticker": "VALO.BA",
         "name": "VALO",
@@ -31,23 +22,32 @@
         "ars_return_est": 300.0
       },
       {
+        "ticker": "TECO2.BA",
+        "name": "TECO2",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.25,
+        "weight_pct": 25.0,
+        "ars_return_est": 286.5
+      },
+      {
         "ticker": "BMA.BA",
         "name": "BMA",
         "category": "merval",
         "currency": "ARS",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 300.0
+        "ars_return_est": 295.0
       }
     ],
-    "expected_return": 293.99,
-    "expected_volatility": 44.38,
-    "sharpe_ratio": 5.56,
+    "expected_return": 295.39,
+    "expected_volatility": 43.82,
+    "sharpe_ratio": 5.67,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 247.0
+    "spread_vs_inflation": 248.4
   }
 }
