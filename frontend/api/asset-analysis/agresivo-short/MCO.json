@@ -1,0 +1,196 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "MCO",
+    "name": "Moody's Corporation",
+    "company": "Moody's Corporation",
+    "sector": "Servicios Financieros",
+    "ipo": 1994,
+    "category": "sp500",
+    "price": 490.69,
+    "currency": "USD",
+    "score": 62.6,
+    "profile": "agresivo",
+    "horizon": "short",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos está en 60.0, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "60.0",
+        "status": "success"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "La EMA de 50 días (470.80) se encuentra por encima de la EMA de 200 días (468.54), y el precio actual (490.69) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "value": "Fuerte Alcista",
+        "status": "success"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es de **29.3%**, ubicándose en un rango **moderado**. Este nivel es compatible con inversiones de mediano plazo siempre que se acompañe de un buen ratio de Sharpe.",
+        "value": "29.3%",
+        "status": "neutral"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El activo registró un rendimiento del **+10.5%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (5.4%) refuerzan esta tendencia positiva.",
+        "value": "+10.5% (1M)",
+        "status": "success"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 431.66 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 490.70 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 480.88. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 480.88",
+        "status": "success"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.17** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
+        "value": "-0.17",
+        "status": "danger"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **-6.1%** y a 12 meses es **-0.9%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-6.1% (6M)",
+        "status": "neutral"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **12.2%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+1.2%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 12.2%",
+        "status": "success"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno de Mercados Internacionales (EE.UU.)",
+        "icon": "fa-globe",
+        "content": "**Contexto EE.UU. (Jul 2026):** La Reserva Federal mantiene una postura de política monetaria que equilibra el control inflacionario con el sostenimiento del empleo. Los mercados de renta variable estadounidenses han mostrado resiliencia, impulsados por el sector tecnológico y la inteligencia artificial. Los CEDEARs permiten al inversor argentino acceder a estas dinámicas con cobertura implícita en dólares (tipo de cambio CCL). El ratio P/E del S&P 500 se encuentra por encima de su promedio histórico, lo que sugiere valuaciones exigentes que podrían limitar el upside de corto plazo.",
+        "status": "neutral"
+      }
+    ],
+    "balances": {
+      "snapshots": [
+        {
+          "period": "Mar 2026",
+          "revenue_b": 2.08,
+          "net_income_b": 0.66,
+          "net_margin_pct": 31.7,
+          "eps": null,
+          "fcf_b": 0.84,
+          "debt_equity": 2.44,
+          "favorable": [
+            "Margen neto sólido del 31.7%",
+            "FCF positivo: $0.8B"
+          ],
+          "critical": [
+            "Deuda/Equity elevada: 2.44"
+          ]
+        },
+        {
+          "period": "Dec 2025",
+          "revenue_b": 1.89,
+          "net_income_b": 0.61,
+          "net_margin_pct": 32.3,
+          "eps": null,
+          "fcf_b": 0.78,
+          "debt_equity": 1.81,
+          "favorable": [
+            "Margen neto sólido del 32.3%",
+            "FCF positivo: $0.8B"
+          ],
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -9.1%"
+          ]
+        },
+        {
+          "period": "Sep 2025",
+          "revenue_b": 2.01,
+          "net_income_b": 0.65,
+          "net_margin_pct": 32.3,
+          "eps": null,
+          "fcf_b": 0.66,
+          "debt_equity": 1.86,
+          "favorable": [
+            "Margen neto sólido del 32.3%",
+            "FCF positivo: $0.7B",
+            "Ingresos en alza vs trimestre anterior: +6.3%"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Jun 2025",
+          "revenue_b": 1.9,
+          "net_income_b": 0.58,
+          "net_margin_pct": 30.5,
+          "eps": null,
+          "fcf_b": 0.47,
+          "debt_equity": 1.84,
+          "favorable": [
+            "Margen neto sólido del 30.5%",
+            "FCF positivo: $0.5B"
+          ],
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -5.5%"
+          ]
+        },
+        {
+          "period": "Mar 2025",
+          "revenue_b": 1.92,
+          "net_income_b": 0.62,
+          "net_margin_pct": 32.3,
+          "eps": null,
+          "fcf_b": 0.67,
+          "debt_equity": 1.93,
+          "favorable": [
+            "Margen neto sólido del 32.3%",
+            "FCF positivo: $0.7B"
+          ],
+          "critical": []
+        }
+      ],
+      "summary": {
+        "periods_analyzed": 5,
+        "avg_revenue_b": 1.96,
+        "avg_net_margin_pct": 31.8,
+        "avg_eps": null,
+        "revenue_trend": "creciente",
+        "margin_trend": "estable",
+        "total_favorable_signals": 11,
+        "total_critical_signals": 3,
+        "conclusion": "ESTABLE",
+        "conclusion_color": "neutral",
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 31.8%. Hay 3 señales de atención y 11 puntos positivos. Perfil de riesgo moderado."
+      }
+    },
+    "verdict": {
+      "action": "CONSIDERAR",
+      "icon": "fa-circle-info",
+      "color": "neutral",
+      "summary": "Con un score de **62.6/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (-0.17) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
+      "take_profit": 646.07,
+      "stop_loss": 413.0,
+      "tp_pct": 31.7,
+      "sl_pct": 15.8
+    },
+    "support": 431.66,
+    "resistance": 490.7,
+    "volume_cluster": 480.88,
+    "take_profit": 646.07,
+    "stop_loss": 413.0,
+    "tp_pct": 31.7,
+    "sl_pct": 15.8
+  }
+}

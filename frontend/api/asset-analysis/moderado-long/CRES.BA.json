@@ -7,75 +7,75 @@
     "sector": "Agropecuario",
     "ipo": 1997,
     "category": "merval",
-    "price": 1698.0,
+    "price": 1759.0,
     "currency": "ARS",
-    "score": 43.2,
+    "score": 47.5,
     "profile": "moderado",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 46.8, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "46.8",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 57.1, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "57.1",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (1698.00) se mantiene por encima de la EMA de 200 días (1667.56), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (1720.95) aún no confirma un cruce definitivo.",
-        "value": "Alcista",
-        "status": "neutral"
+        "content": "La EMA de 50 días (1722.44) se encuentra por encima de la EMA de 200 días (1675.46), y el precio actual (1759.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "value": "Fuerte Alcista",
+        "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (42.4%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "42.4%",
+        "content": "La volatilidad anualizada es **alta** (41.3%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "41.3%",
         "status": "warning"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **-3.6%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
-        "value": "-3.6% (1M)",
-        "status": "danger"
+        "content": "El rendimiento mensual es de **-1.0%**, una corrección **leve** que podría representar una oportunidad de entrada si los indicadores de largo plazo son favorables.",
+        "value": "-1.0% (1M)",
+        "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 1,645.60 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 1,820.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 1,710.70. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 1,710.70",
-        "status": "neutral"
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 1,645.60 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 1,820.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 1,723.82. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 1,723.82",
+        "status": "success"
       }
     ],
     "fundamental": [
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **19.9%** por debajo de su máximo anual de **ARS 2,120.00**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-19.9%",
+        "content": "**¿Qué significa?** Este activo cotiza un **17.0%** por debajo de su máximo anual de **ARS 2,120.00**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-17.0%",
         "status": "success"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.59** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
-        "value": "0.59",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.67** (aceptable, entre 0.5 y 1.0): el rendimiento compensa razonablemente el riesgo asumido. Es una relación **equilibrada** para horizontes de 6-12 meses.",
+        "value": "0.67",
         "status": "neutral"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-8.8%** y a 12 meses es **+28.9%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-8.8% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-6.4%** y a 12 meses es **+31.7%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-6.4% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **66.3%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+19.3%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 66.3%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **largo plazo (más de 1 año)** es del **73.4%**, superando la inflación proyectada del período del **47.0%** con un spread real positivo de **+26.4%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 73.4%",
         "status": "success"
       }
     ],
@@ -96,7 +96,7 @@
           "net_margin_pct": 15.9,
           "eps": null,
           "fcf_b": -56.79,
-          "debt_equity": null,
+          "debt_equity": 1.49,
           "favorable": [],
           "critical": [
             "FCF negativo: $-56.8B (quema de caja)"
@@ -109,7 +109,7 @@
           "net_margin_pct": 11.3,
           "eps": null,
           "fcf_b": -77.28,
-          "debt_equity": null,
+          "debt_equity": 1.86,
           "favorable": [
             "Ingresos en alza vs trimestre anterior: +21.7%"
           ],
@@ -124,7 +124,7 @@
           "net_margin_pct": 11.6,
           "eps": null,
           "fcf_b": 139.03,
-          "debt_equity": null,
+          "debt_equity": 1.55,
           "favorable": [
             "FCF positivo: $139.0B"
           ],
@@ -137,7 +137,7 @@
           "net_margin_pct": 23.9,
           "eps": null,
           "fcf_b": -45.52,
-          "debt_equity": null,
+          "debt_equity": 1.69,
           "favorable": [
             "Margen neto sólido del 23.9%"
           ],
@@ -153,7 +153,7 @@
           "net_margin_pct": 4.8,
           "eps": null,
           "fcf_b": -36.18,
-          "debt_equity": null,
+          "debt_equity": 1.51,
           "favorable": [
             "Ingresos en alza vs trimestre anterior: +6.3%"
           ],
@@ -181,55 +181,55 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **43.2/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
-      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **moderado**. Esto puede deberse a una volatilidad excesiva (42.4%), un ratio de Sharpe ineficiente (0.59), o una tendencia técnica desfavorable (Alcista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 3254.91,
-      "stop_loss": 1006.04,
-      "tp_pct": 91.7,
-      "sl_pct": 40.8
+      "summary": "El score de **47.5/100** indica que este activo no es ideal para el perfil **moderado**. La tendencia técnica es favorable y acompaña la recomendación.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **moderado**. Esto puede deberse a una volatilidad excesiva (41.3%), un ratio de Sharpe ineficiente (0.67), o una tendencia técnica desfavorable (Fuerte Alcista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 3329.69,
+      "stop_loss": 1060.92,
+      "tp_pct": 89.3,
+      "sl_pct": 39.7
     },
     "support": 1645.6,
     "resistance": 1820.0,
-    "volume_cluster": 1710.7,
-    "take_profit": 3254.91,
-    "stop_loss": 1006.04,
-    "tp_pct": 91.7,
-    "sl_pct": 40.8,
+    "volume_cluster": 1723.82,
+    "take_profit": 3329.69,
+    "stop_loss": 1060.92,
+    "tp_pct": 89.3,
+    "sl_pct": 39.7,
     "long_term_strategies": {
       "value": [
         {
           "title": "PER — Price / Earnings",
           "icon": "fa-tag",
-          "content": "El **PER de 5.9x** es bajo (< 15x), indicando que el mercado valúa la empresa a un precio razonable o incluso barato respecto a sus ganancias. Benjamin Graham consideraba este rango como zona de valor.",
-          "value": "5.9x",
-          "status": "success"
+          "content": "No hay datos de PER disponibles para este activo (puede ser una empresa sin ganancias positivas o un CEDEAR sin cobertura directa).",
+          "value": "N/D",
+          "status": "neutral"
         },
         {
           "title": "Precio / Valor Libro (P/B)",
           "icon": "fa-book-open",
-          "content": "El **P/B de 0.92x** es bajo. La empresa cotiza cerca o por debajo de su valor en libros, lo que históricamente (Graham) representa una oportunidad de margen de seguridad elevado.",
-          "value": "0.92x",
-          "status": "success"
+          "content": "El Precio/Valor Libro no está disponible para este activo.",
+          "value": "N/D",
+          "status": "neutral"
         },
         {
           "title": "Flujo de Caja Libre (FCF Yield)",
           "icon": "fa-money-bill-wave",
-          "content": "El **FCF Yield es negativo (-10.5%)**. La empresa está en etapa de inversión intensa (quema de caja). Puede ser estratégico, pero requiere vigilar que la reinversión genere retornos futuros superiores al costo del capital.",
-          "value": "-10.5%",
-          "status": "danger"
+          "content": "No se dispone de datos de flujo de caja libre para este activo.",
+          "value": "N/D",
+          "status": "neutral"
         },
         {
           "title": "ROE — Rentabilidad sobre Patrimonio",
           "icon": "fa-percent",
-          "content": "El **ROE del 16.0%** es excelente (> 15%). La empresa genera una alta rentabilidad sobre el capital de los accionistas, señal de ventaja competitiva sostenible. Buffett considera el ROE alto consistente como uno de los indicadores más confiables de una gran empresa.",
-          "value": "16.0%",
-          "status": "success"
+          "content": "No hay datos de ROE disponibles para este activo.",
+          "value": "N/D",
+          "status": "neutral"
         },
         {
           "title": "Bajo Endeudamiento (D/E)",
           "icon": "fa-shield-halved",
-          "content": "La relación **Deuda/Patrimonio de 0.69x** es moderada y manejable, habitual en empresas maduras que usan apalancamiento de forma controlada.",
-          "value": "0.69x",
+          "content": "Datos de deuda no disponibles para este activo.",
+          "value": "N/D",
           "status": "neutral"
         }
       ],
@@ -237,29 +237,29 @@
         {
           "title": "Márgenes Consistentes (Quality)",
           "icon": "fa-chart-pie",
-          "content": "El **margen operativo del 12.2%** es bueno (10-20%), coherente con empresas del sector que operan eficientemente.",
-          "value": "12.2%",
+          "content": "No se dispone de datos de margen operativo. Este indicador es fundamental para evaluar la calidad del negocio.",
+          "value": "N/D",
           "status": "neutral"
         },
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (+4.9%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
-          "value": "+4.9% (3M)",
+          "content": "El **momentum trimestral (+5.9%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
+          "value": "+5.9% (3M)",
           "status": "neutral"
         },
         {
           "title": "Baja Volatilidad (Low Vol Factor)",
           "icon": "fa-water",
-          "content": "La **volatilidad anualizada del 42.4%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables.",
-          "value": "42.4%",
+          "content": "La **volatilidad anualizada del 41.3%** es alta. El factor Low Volatility indica cautela: a largo plazo, los activos muy volátiles suelen ofrecer peor relación riesgo/retorno que los más estables.",
+          "value": "41.3%",
           "status": "warning"
         },
         {
           "title": "Factor Value / Quality (Contexto PER)",
           "icon": "fa-building-columns",
-          "content": "**Contexto PER vs. Factor Value/Quality:** El PER de 5.9x posiciona a esta empresa en el segmento de valuación razonable, donde convergen los factores Value y Quality a largo plazo.",
-          "value": "5.9x",
+          "content": "No hay datos de PER para contextualizar el factor Small Cap / Valuación relativa.",
+          "value": "N/D",
           "status": "neutral"
         }
       ],
@@ -267,30 +267,30 @@
         {
           "title": "Dividend Yield (Rendimiento por Dividendo)",
           "icon": "fa-coins",
-          "content": "El **dividend yield del 612.00%** es muy alto (> 5%). Históricamente, yields superiores al 5-6% suelen señalar que el mercado descuenta riesgos de sostenibilidad del dividendo. Analizar el payout ratio es crítico en este caso.",
-          "value": "612.00%",
-          "status": "warning"
+          "content": "Este activo **no paga dividendos** actualmente. No encaja en el perfil de Dividend Growth Investing clásico. Para inversores de renta pasiva, este activo debería complementarse con otros de la cartera que sí generen flujo de dividendos.",
+          "value": "Sin dividendo",
+          "status": "neutral"
         },
         {
           "title": "Payout Ratio (Sostenibilidad del Dividendo)",
           "icon": "fa-sliders",
-          "content": "El **payout ratio del 36%** es saludable. La empresa distribuye menos del 60% de sus ganancias, reteniendo capital suficiente para continuar creciendo y **aumentar el dividendo en el futuro**. Este es el indicador más importante del Dividend Growth Investing: la capacidad de subir el dividendo año a año.",
-          "value": "36%",
-          "status": "success"
+          "content": "No hay datos de payout ratio disponibles para este activo.",
+          "value": "N/D",
+          "status": "neutral"
         },
         {
           "title": "Dividendo Creciente (Dividend Growth)",
           "icon": "fa-arrow-trend-up",
-          "content": "⚠️ Los datos disponibles no confirman una trayectoria clara de crecimiento de dividendos. Puede deberse a recortes previos, estabilización, o datos incompletos. Se recomienda verificar el historial de dividendos directamente en la fuente del broker.",
-          "value": "No ⚠️",
-          "status": "warning"
+          "content": "Este activo no paga dividendos, por lo que no aplica el análisis de crecimiento de dividendos.",
+          "value": "N/A",
+          "status": "neutral"
         },
         {
           "title": "Solidez Fundamental (Pilar del DGI)",
           "icon": "fa-landmark-flag",
-          "content": "Los fundamentos de la empresa son **sólidos**: margen neto del 18%, baja deuda (D/E: 0.69x). Esto respalda la capacidad de mantener y hacer crecer el dividendo en el largo plazo, incluso en entornos económicos adversos.",
-          "value": "2/3 pilares",
-          "status": "success"
+          "content": "Los datos disponibles no permiten confirmar la solidez fundamental necesaria para una tesis de Dividend Growth estable. Puede deberse a datos faltantes o a una empresa con fundamentos más débiles.",
+          "value": "0/3 pilares",
+          "status": "warning"
         }
       ]
     }

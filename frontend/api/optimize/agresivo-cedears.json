@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784642474.5700042,
+  "timestamp": 1784728871.7398624,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 165.0
+        "ars_return_est": 158.0
       },
       {
         "ticker": "AAPL.BA",
@@ -19,7 +19,7 @@
         "currency": "ARS",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 109.7
+        "ars_return_est": 108.2
       },
       {
         "ticker": "XOM.BA",
@@ -28,25 +28,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 75.4
-      },
-      {
-        "ticker": "VALE.BA",
-        "name": "VALE",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 94.0
-      },
-      {
-        "ticker": "KO.BA",
-        "name": "KO",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 55.3
+        "ars_return_est": 78.5
       },
       {
         "ticker": "NVDA.BA",
@@ -55,7 +37,25 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 55.2
+        "ars_return_est": 55.1
+      },
+      {
+        "ticker": "VALE.BA",
+        "name": "VALE",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 93.5
+      },
+      {
+        "ticker": "KO.BA",
+        "name": "KO",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 50.7
       },
       {
         "ticker": "AMZN.BA",
@@ -64,7 +64,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 46.0
+        "ars_return_est": 42.3
       },
       {
         "ticker": "TSLA.BA",
@@ -73,17 +73,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 49.9
+        "ars_return_est": 54.4
       }
     ],
-    "expected_return": 114.93,
-    "expected_volatility": 31.8,
-    "sharpe_ratio": 2.92,
+    "expected_return": 111.91,
+    "expected_volatility": 31.42,
+    "sharpe_ratio": 2.86,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 92.9
+    "spread_vs_inflation": 89.9
   }
 }

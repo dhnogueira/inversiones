@@ -1,8 +1,26 @@
 {
   "status": "success",
-  "timestamp": 1784642474.5700042,
+  "timestamp": 1784728871.7398624,
   "optimization": {
     "weights": [
+      {
+        "ticker": "META",
+        "name": "META",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 24.3
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVDA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 34.0
+      },
       {
         "ticker": "AMZN",
         "name": "AMZN",
@@ -10,7 +28,16 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 28.0
+        "ars_return_est": 27.0
+      },
+      {
+        "ticker": "AVGO",
+        "name": "AVGO",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.15,
+        "weight_pct": 15.0,
+        "ars_return_est": 38.1
       },
       {
         "ticker": "XOM",
@@ -19,16 +46,7 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 36.8
-      },
-      {
-        "ticker": "PG",
-        "name": "PG",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 23.0
+        "ars_return_est": 36.9
       },
       {
         "ticker": "MA",
@@ -37,53 +55,26 @@
         "currency": "USD",
         "weight": 0.15,
         "weight_pct": 15.0,
-        "ars_return_est": 23.3
+        "ars_return_est": 23.0
       },
       {
-        "ticker": "MRK",
-        "name": "MRK",
+        "ticker": "VRSK",
+        "name": "VRSK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.15,
-        "weight_pct": 15.0,
-        "ars_return_est": 37.6
-      },
-      {
-        "ticker": "NVDA",
-        "name": "NVDA",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.126,
-        "weight_pct": 12.6,
-        "ars_return_est": 36.1
-      },
-      {
-        "ticker": "META",
-        "name": "META",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.0706,
-        "weight_pct": 7.1,
-        "ars_return_est": 28.3
-      },
-      {
-        "ticker": "COST",
-        "name": "COST",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.0534,
-        "weight_pct": 5.3,
-        "ars_return_est": 17.5
+        "weight": 0.1,
+        "weight_pct": 10.0,
+        "ars_return_est": 11.6
       }
     ],
-    "expected_return": 29.79,
-    "expected_volatility": 24.87,
-    "sharpe_ratio": 0.76,
+    "expected_return": 28.66,
+    "expected_volatility": 30.76,
+    "sharpe_ratio": 0.57,
     "profile": "conservador",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 18.8
+    "spread_vs_inflation": 17.7
   }
 }
