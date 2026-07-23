@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784728871.7398624,
+  "timestamp": 1784815238.597225,
   "optimization": {
     "weights": [
       {
@@ -8,55 +8,55 @@
         "name": "YPFD",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.482,
-        "weight_pct": 48.2,
-        "ars_return_est": 53.1
+        "weight": 0.4813,
+        "weight_pct": 48.1,
+        "ars_return_est": 52.8
       },
       {
         "ticker": "TECO2.BA",
         "name": "TECO2",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.2532,
-        "weight_pct": 25.3,
-        "ars_return_est": 27.9
+        "weight": 0.2692,
+        "weight_pct": 26.9,
+        "ars_return_est": 29.5
       },
       {
         "ticker": "PAMP.BA",
         "name": "PAMP",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.1056,
-        "weight_pct": 10.6,
-        "ars_return_est": 11.6
+        "weight": 0.1119,
+        "weight_pct": 11.2,
+        "ars_return_est": 12.3
       },
       {
-        "ticker": "TGSU2.BA",
-        "name": "TGSU2",
+        "ticker": "VALO.BA",
+        "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0816,
-        "weight_pct": 8.2,
-        "ars_return_est": 9.0
+        "weight": 0.0715,
+        "weight_pct": 7.2,
+        "ars_return_est": 7.8
       },
       {
         "ticker": "BMA.BA",
         "name": "BMA",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0777,
-        "weight_pct": 7.8,
-        "ars_return_est": 8.6
+        "weight": 0.0661,
+        "weight_pct": 6.6,
+        "ars_return_est": 7.2
       }
     ],
-    "expected_return": 35.26,
-    "expected_volatility": 43.47,
-    "sharpe_ratio": 0.56,
+    "expected_return": 35.76,
+    "expected_volatility": 42.63,
+    "sharpe_ratio": 0.58,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 24.3
+    "spread_vs_inflation": 24.8
   }
 }

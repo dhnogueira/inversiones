@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784728871.7398624,
+  "timestamp": 1784815238.597225,
   "optimization": {
     "weights": [
       {
@@ -10,7 +10,7 @@
         "currency": "USD",
         "weight": 0.35,
         "weight_pct": 35.0,
-        "ars_return_est": 182.7
+        "ars_return_est": 160.3
       },
       {
         "ticker": "MRK",
@@ -19,7 +19,7 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 147.0
+        "ars_return_est": 142.8
       },
       {
         "ticker": "AAPL",
@@ -28,7 +28,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 131.6
+        "ars_return_est": 127.4
       },
       {
         "ticker": "LLY",
@@ -37,7 +37,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 128.1
+        "ars_return_est": 121.6
       },
       {
         "ticker": "UNH",
@@ -46,7 +46,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 138.5
+        "ars_return_est": 126.8
       },
       {
         "ticker": "AVGO",
@@ -55,25 +55,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 109.1
-      },
-      {
-        "ticker": "NVDA",
-        "name": "NVDA",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 83.7
-      },
-      {
-        "ticker": "XOM",
-        "name": "XOM",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 120.2
+        "ars_return_est": 110.3
       },
       {
         "ticker": "ABBV",
@@ -82,7 +64,25 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 112.2
+        "ars_return_est": 107.0
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVDA",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 80.6
+      },
+      {
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 122.4
       },
       {
         "ticker": "JPM",
@@ -91,17 +91,17 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 77.8
+        "ars_return_est": 74.2
       }
     ],
-    "expected_return": 145.78,
-    "expected_volatility": 28.09,
-    "sharpe_ratio": 4.41,
+    "expected_return": 135.33,
+    "expected_volatility": 28.17,
+    "sharpe_ratio": 4.02,
     "profile": "agresivo",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 123.8
+    "spread_vs_inflation": 113.3
   }
 }

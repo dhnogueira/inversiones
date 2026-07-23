@@ -7,23 +7,23 @@
     "sector": "Tecnología & Publicidad",
     "ipo": 2004,
     "category": "cedears",
-    "price": 9430.0,
+    "price": 9335.0,
     "currency": "ARS",
-    "score": 75.9,
+    "score": 76.8,
     "profile": "agresivo",
     "horizon": "long",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 41.0, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "41.0",
+        "content": "El RSI de 14 períodos se encuentra en 38.5, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "38.5",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (9430.00) se mantiene por encima de la EMA de 200 días (8241.43), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (9497.92) aún no confirma un cruce definitivo.",
+        "content": "El precio (9335.00) se mantiene por encima de la EMA de 200 días (8254.54), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (9491.53) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
@@ -37,15 +37,15 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+1.3%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (6.0%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+1.3% (1M)",
+        "content": "El rendimiento mensual es de **+1.1%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (1.6%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+1.1% (1M)",
         "status": "neutral"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
         "icon": "fa-chart-area",
-        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 7,673.50 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 9,983.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 9,241.40. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
-        "value": "POC: 9,241.40",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** ARS 7,742.50 (zona histórica de compra).\n- **Resistencia de largo plazo:** ARS 9,983.00 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** ARS 9,148.30. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 9,148.30",
         "status": "success"
       }
     ],
@@ -53,23 +53,23 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** El activo presenta un descuento del **8.3%** respecto a su máximo anual de **ARS 10,280.00**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
-        "value": "-8.3%",
+        "content": "**¿Qué significa?** El activo presenta un descuento del **9.2%** respecto a su máximo anual de **ARS 10,280.00**. Se encuentra en una **Zona Neutral** de precio para el largo plazo, por lo que su conveniencia depende de los fundamentos generales.",
+        "value": "-9.2%",
         "status": "neutral"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **3.41** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
-        "value": "3.41",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **3.26** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "3.26",
         "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+11.3%** y a 12 meses es **+131.7%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+11.3% (6M)",
-        "status": "success"
+        "content": "El rendimiento acumulado a 6 meses es **+8.3%** y a 12 meses es **+126.3%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
+        "value": "+8.3% (6M)",
+        "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
@@ -101,10 +101,11 @@
           "net_income_b": 62.58,
           "net_margin_pct": 56.9,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": 10.12,
           "debt_equity": 0.19,
           "favorable": [
             "Margen neto sólido del 56.9%",
+            "FCF positivo: $10.1B",
             "Deuda/Equity baja: 0.19"
           ],
           "critical": []
@@ -115,10 +116,11 @@
           "net_income_b": 34.46,
           "net_margin_pct": 30.3,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": 24.55,
           "debt_equity": 0.14,
           "favorable": [
             "Margen neto sólido del 30.3%",
+            "FCF positivo: $24.6B",
             "Deuda/Equity baja: 0.14"
           ],
           "critical": []
@@ -129,10 +131,11 @@
           "net_income_b": 34.98,
           "net_margin_pct": 34.2,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": 24.46,
           "debt_equity": 0.09,
           "favorable": [
             "Margen neto sólido del 34.2%",
+            "FCF positivo: $24.5B",
             "Deuda/Equity baja: 0.09"
           ],
           "critical": [
@@ -145,10 +148,11 @@
           "net_income_b": 28.2,
           "net_margin_pct": 29.2,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": 5.3,
           "debt_equity": 0.1,
           "favorable": [
             "Margen neto sólido del 29.2%",
+            "FCF positivo: $5.3B",
             "Deuda/Equity baja: 0.10"
           ],
           "critical": [
@@ -161,10 +165,11 @@
           "net_income_b": 34.54,
           "net_margin_pct": 38.3,
           "eps": null,
-          "fcf_b": null,
+          "fcf_b": 18.95,
           "debt_equity": 0.07,
           "favorable": [
             "Margen neto sólido del 38.3%",
+            "FCF positivo: $18.9B",
             "Deuda/Equity baja: 0.07"
           ],
           "critical": [
@@ -179,30 +184,30 @@
         "avg_eps": null,
         "revenue_trend": "creciente",
         "margin_trend": "en expansión",
-        "total_favorable_signals": 10,
+        "total_favorable_signals": 15,
         "total_critical_signals": 3,
         "conclusion": "ESTABLE",
         "conclusion_color": "neutral",
-        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 37.8%. Hay 3 señales de atención y 10 puntos positivos. Perfil de riesgo moderado."
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 37.8%. Hay 3 señales de atención y 15 puntos positivos. Perfil de riesgo moderado."
       }
     },
     "verdict": {
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **75.9/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
-      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (3.41) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
-      "take_profit": 20884.39,
-      "stop_loss": 4339.16,
-      "tp_pct": 121.5,
+      "summary": "Con un score de **76.8/100** para el perfil **agresivo**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido.",
+      "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (3.26) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **agresivo**.",
+      "take_profit": 20667.95,
+      "stop_loss": 4298.13,
+      "tp_pct": 121.4,
       "sl_pct": 54.0
     },
-    "support": 7673.5,
+    "support": 7742.5,
     "resistance": 9983.0,
-    "volume_cluster": 9241.4,
-    "take_profit": 20884.39,
-    "stop_loss": 4339.16,
-    "tp_pct": 121.5,
+    "volume_cluster": 9148.3,
+    "take_profit": 20667.95,
+    "stop_loss": 4298.13,
+    "tp_pct": 121.4,
     "sl_pct": 54.0,
     "long_term_strategies": {
       "value": [
@@ -253,8 +258,8 @@
         {
           "title": "Momentum (Factor de Precio)",
           "icon": "fa-rocket",
-          "content": "El **momentum trimestral (+6.0%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
-          "value": "+6.0% (3M)",
+          "content": "El **momentum trimestral (+1.6%)** es levemente positivo. El activo supera a la tasa libre de riesgo en el corto plazo aunque sin una aceleración marcada.",
+          "value": "+1.6% (3M)",
           "status": "neutral"
         },
         {
