@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784728871.7398624,
+  "timestamp": 1784815238.597225,
   "optimization": {
     "weights": [
       {
@@ -8,55 +8,55 @@
         "name": "LINK-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.2978,
-        "weight_pct": 29.8,
-        "ars_return_est": 16.1
+        "weight": 0.3087,
+        "weight_pct": 30.9,
+        "ars_return_est": 12.6
       },
       {
         "ticker": "BTC-USD",
         "name": "BTC-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.2602,
-        "weight_pct": 26.0,
-        "ars_return_est": 14.0
+        "weight": 0.2761,
+        "weight_pct": 27.6,
+        "ars_return_est": 11.3
       },
       {
         "ticker": "ETH-USD",
         "name": "ETH-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.1803,
-        "weight_pct": 18.0,
-        "ars_return_est": 9.7
+        "weight": 0.172,
+        "weight_pct": 17.2,
+        "ars_return_est": 7.0
       },
       {
         "ticker": "BNB-USD",
         "name": "BNB-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.1526,
-        "weight_pct": 15.3,
-        "ars_return_est": 8.2
+        "weight": 0.1627,
+        "weight_pct": 16.3,
+        "ars_return_est": 6.6
       },
       {
         "ticker": "SOL-USD",
         "name": "SOL-USD",
         "category": "crypto",
         "currency": "USD",
-        "weight": 0.109,
-        "weight_pct": 10.9,
-        "ars_return_est": 5.9
+        "weight": 0.0805,
+        "weight_pct": 8.0,
+        "ars_return_est": 3.3
       }
     ],
-    "expected_return": 12.1,
-    "expected_volatility": 45.32,
-    "sharpe_ratio": 0.02,
+    "expected_return": 9.56,
+    "expected_volatility": 44.88,
+    "sharpe_ratio": -0.03,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
-    "beats_inflation": true,
-    "spread_vs_inflation": 1.1
+    "beats_inflation": false,
+    "spread_vs_inflation": -1.4
   }
 }

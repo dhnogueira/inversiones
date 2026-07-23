@@ -7,7 +7,7 @@
     "sector": "Plataforma de Smart Contracts",
     "ipo": 2015,
     "category": "crypto",
-    "price": 1938.3800048828125,
+    "price": 1898.530029296875,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -16,14 +16,14 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 65.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "65.3",
-        "status": "neutral"
+        "content": "El RSI de 14 períodos está en 59.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "59.6",
+        "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (1938.38) cotiza por debajo de la EMA de 200 días (2187.27), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (1898.53) cotiza por debajo de la EMA de 200 días (2184.74), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -37,8 +37,8 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+14.1%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-9.1%) refuerzan esta tendencia positiva.",
-        "value": "+14.1% (1M)",
+        "content": "El activo registró un rendimiento del **+8.1%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-8.0%) refuerzan esta tendencia positiva.",
+        "value": "+8.1% (1M)",
         "status": "success"
       },
       {
@@ -53,23 +53,23 @@
       {
         "title": "Zona de Acumulación (Drawdown)",
         "icon": "fa-layer-group",
-        "content": "**¿Qué significa?** Este activo cotiza un **42.2%** por debajo de su máximo anual de **USD 3,354.72**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
-        "value": "-42.2%",
+        "content": "**¿Qué significa?** Este activo cotiza un **43.4%** por debajo de su máximo anual de **USD 3,354.72**. Para horizontes de largo plazo, este descuento representa una **Zona de Acumulación Óptima**. La relación riesgo/retorno es altamente asimétrica a favor del inversor, permitiendo comprar activos a precios de descuento.",
+        "value": "-43.4%",
         "status": "success"
       },
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.76** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
-        "value": "-0.76",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.74** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
+        "value": "-0.74",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-9.3%** y a 12 meses es **-40.0%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-9.3% (6M)",
-        "status": "neutral"
+        "content": "El rendimiento acumulado a 6 meses es **-11.6%** y a 12 meses es **-38.8%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-11.6% (6M)",
+        "status": "danger"
       },
       {
         "title": "Comparativa de Inflación Argentina",
@@ -94,16 +94,16 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **conservador**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Bajista).",
-      "take_profit": 3551.27,
-      "stop_loss": 1221.54,
+      "take_profit": 3477.53,
+      "stop_loss": 1196.75,
       "tp_pct": 83.2,
       "sl_pct": 37.0
     },
     "support": 1618.95,
     "resistance": 2316.49,
     "volume_cluster": 2292.63,
-    "take_profit": 3551.27,
-    "stop_loss": 1221.54,
+    "take_profit": 3477.53,
+    "stop_loss": 1196.75,
     "tp_pct": 83.2,
     "sl_pct": 37.0
   }

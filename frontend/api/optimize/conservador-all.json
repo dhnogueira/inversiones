@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784728871.7398624,
+  "timestamp": 1784815238.597225,
   "optimization": {
     "weights": [
       {
@@ -8,46 +8,55 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3,
-        "weight_pct": 30.0,
-        "ars_return_est": 112.0
-      },
-      {
-        "ticker": "GOOGL",
-        "name": "GOOGL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.3,
-        "weight_pct": 30.0,
-        "ars_return_est": 135.8
-      },
-      {
-        "ticker": "AAPL",
-        "name": "AAPL",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.2018,
-        "weight_pct": 20.2,
-        "ars_return_est": 101.7
+        "weight": 0.3091,
+        "weight_pct": 30.9,
+        "ars_return_est": 109.2
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.1982,
-        "weight_pct": 19.8,
-        "ars_return_est": 105.4
+        "weight": 0.3091,
+        "weight_pct": 30.9,
+        "ars_return_est": 101.0
+      },
+      {
+        "ticker": "AAPL",
+        "name": "AAPL",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.3091,
+        "weight_pct": 30.9,
+        "ars_return_est": 98.9
+      },
+      {
+        "ticker": "VALO.BA",
+        "name": "VALO",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.0515,
+        "weight_pct": 5.2,
+        "ars_return_est": 75.0
+      },
+      {
+        "ticker": "YPFD.BA",
+        "name": "YPFD",
+        "category": "merval",
+        "currency": "ARS",
+        "weight": 0.0211,
+        "weight_pct": 2.1,
+        "ars_return_est": 85.3
       }
     ],
-    "expected_return": 115.76,
-    "expected_volatility": 25.38,
-    "sharpe_ratio": 3.69,
+    "expected_return": 101.23,
+    "expected_volatility": 25.27,
+    "sharpe_ratio": 3.14,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 93.8
+    "spread_vs_inflation": 79.2
   }
 }

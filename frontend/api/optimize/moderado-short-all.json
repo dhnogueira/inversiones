@@ -1,17 +1,8 @@
 {
   "status": "success",
-  "timestamp": 1784728871.7398624,
+  "timestamp": 1784815238.597225,
   "optimization": {
     "weights": [
-      {
-        "ticker": "T30A7",
-        "name": "BONCAP T30A7 (Pesos)",
-        "category": "letras",
-        "currency": "ARS",
-        "weight": 0.35,
-        "weight_pct": 35.0,
-        "ars_return_est": 14.4
-      },
       {
         "ticker": "T30J7",
         "name": "BONCAP T30J7 (Pesos)",
@@ -22,13 +13,22 @@
         "ars_return_est": 15.2
       },
       {
-        "ticker": "T31M7",
-        "name": "BONCAP T31M7 (Pesos)",
+        "ticker": "T30A7",
+        "name": "BONCAP T30A7 (Pesos)",
         "category": "letras",
         "currency": "ARS",
-        "weight": 0.0583,
-        "weight_pct": 5.8,
-        "ars_return_est": 13.5
+        "weight": 0.2251,
+        "weight_pct": 22.5,
+        "ars_return_est": 14.4
+      },
+      {
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.2249,
+        "weight_pct": 22.5,
+        "ars_return_est": 43.9
       },
       {
         "ticker": "T28F7",
@@ -38,6 +38,15 @@
         "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 11.5
+      },
+      {
+        "ticker": "T31M7",
+        "name": "BONCAP T31M7 (Pesos)",
+        "category": "letras",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 13.5
       },
       {
         "ticker": "S31M7",
@@ -56,43 +65,16 @@
         "weight": 0.05,
         "weight_pct": 5.0,
         "ars_return_est": 12.7
-      },
-      {
-        "ticker": "AMZN",
-        "name": "AMZN",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.0317,
-        "weight_pct": 3.2,
-        "ars_return_est": 28.5
-      },
-      {
-        "ticker": "AVGO",
-        "name": "AVGO",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.0312,
-        "weight_pct": 3.1,
-        "ars_return_est": 42.4
-      },
-      {
-        "ticker": "NVDA",
-        "name": "NVDA",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.0288,
-        "weight_pct": 2.9,
-        "ars_return_est": 37.2
       }
     ],
-    "expected_return": 16.21,
-    "expected_volatility": 5.11,
-    "sharpe_ratio": 1.02,
+    "expected_return": 20.88,
+    "expected_volatility": 6.19,
+    "sharpe_ratio": 1.6,
     "profile": "moderado",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 5.2
+    "spread_vs_inflation": 9.9
   }
 }

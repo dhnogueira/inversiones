@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784728871.7398624,
+  "timestamp": 1784815238.597225,
   "optimization": {
     "weights": [
       {
@@ -8,7 +8,7 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.401,
+        "weight": 0.4007,
         "weight_pct": 40.1,
         "ars_return_est": 500.0
       },
@@ -17,16 +17,16 @@
         "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.401,
+        "weight": 0.4007,
         "weight_pct": 40.1,
-        "ars_return_est": 422.9
+        "ars_return_est": 404.7
       },
       {
         "ticker": "AAPL.BA",
         "name": "AAPL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.0976,
+        "weight": 0.0984,
         "weight_pct": 9.8,
         "ars_return_est": 300.0
       },
@@ -40,23 +40,23 @@
         "ars_return_est": 300.0
       },
       {
-        "ticker": "VALE.BA",
-        "name": "VALE",
+        "ticker": "XOM.BA",
+        "name": "XOM",
         "category": "cedears",
         "currency": "ARS",
         "weight": 0.0501,
         "weight_pct": 5.0,
-        "ars_return_est": 260.0
+        "ars_return_est": 242.6
       }
     ],
-    "expected_return": 427.49,
-    "expected_volatility": 25.77,
-    "sharpe_ratio": 14.77,
+    "expected_return": 419.24,
+    "expected_volatility": 25.67,
+    "sharpe_ratio": 14.5,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 380.5
+    "spread_vs_inflation": 372.2
   }
 }
