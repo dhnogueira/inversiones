@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784815238.597225,
+  "timestamp": 1784901768.4664905,
   "optimization": {
     "weights": [
       {
@@ -8,18 +8,18 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3316,
-        "weight_pct": 33.2,
-        "ars_return_est": 478.9
+        "weight": 0.2647,
+        "weight_pct": 26.5,
+        "ars_return_est": 471.2
       },
       {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1184,
-        "weight_pct": 11.8,
-        "ars_return_est": 410.8
+        "weight": 0.1853,
+        "weight_pct": 18.5,
+        "ars_return_est": 420.3
       },
       {
         "ticker": "AAPL",
@@ -28,7 +28,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 354.2
+        "ars_return_est": 376.1
       },
       {
         "ticker": "XOM",
@@ -37,7 +37,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 336.8
+        "ars_return_est": 331.5
       },
       {
         "ticker": "ABBV",
@@ -46,7 +46,7 @@
         "currency": "USD",
         "weight": 0.1,
         "weight_pct": 10.0,
-        "ars_return_est": 284.9
+        "ars_return_est": 295.7
       },
       {
         "ticker": "AAPL.BA",
@@ -55,7 +55,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 250.0
+        "ars_return_est": 248.4
       },
       {
         "ticker": "GOOGL.BA",
@@ -73,7 +73,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 202.2
+        "ars_return_est": 218.6
       },
       {
         "ticker": "VALE.BA",
@@ -82,7 +82,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 242.8
+        "ars_return_est": 225.3
       },
       {
         "ticker": "KO.BA",
@@ -91,17 +91,17 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 105.1
+        "ars_return_est": 103.7
       }
     ],
-    "expected_return": 357.55,
-    "expected_volatility": 23.98,
-    "sharpe_ratio": 12.95,
+    "expected_return": 355.23,
+    "expected_volatility": 23.72,
+    "sharpe_ratio": 13.0,
     "profile": "moderado",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 310.6
+    "spread_vs_inflation": 308.2
   }
 }

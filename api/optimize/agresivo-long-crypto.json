@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784815238.597225,
+  "timestamp": 1784901768.4664905,
   "optimization": {
     "weights": [
       {
@@ -37,7 +37,7 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": -26.1
+        "ars_return_est": -31.6
       },
       {
         "ticker": "BNB-USD",
@@ -49,14 +49,14 @@
         "ars_return_est": -43.5
       }
     ],
-    "expected_return": -42.67,
-    "expected_volatility": 49.43,
-    "sharpe_ratio": -1.81,
+    "expected_return": -42.95,
+    "expected_volatility": 49.44,
+    "sharpe_ratio": -1.82,
     "profile": "agresivo",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": false,
-    "spread_vs_inflation": -89.7
+    "spread_vs_inflation": -89.9
   }
 }

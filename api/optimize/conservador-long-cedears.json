@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784815238.597225,
+  "timestamp": 1784901768.4664905,
   "optimization": {
     "weights": [
       {
@@ -10,15 +10,24 @@
         "currency": "ARS",
         "weight": 0.4,
         "weight_pct": 40.0,
-        "ars_return_est": 200.0
+        "ars_return_est": 198.8
+      },
+      {
+        "ticker": "XOM.BA",
+        "name": "XOM",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.2592,
+        "weight_pct": 25.9,
+        "ars_return_est": 174.9
       },
       {
         "ticker": "GOOGL.BA",
         "name": "GOOGL",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.2576,
-        "weight_pct": 25.8,
+        "weight": 0.1908,
+        "weight_pct": 19.1,
         "ars_return_est": 200.0
       },
       {
@@ -26,18 +35,9 @@
         "name": "VALE",
         "category": "cedears",
         "currency": "ARS",
-        "weight": 0.1424,
-        "weight_pct": 14.2,
-        "ars_return_est": 194.2
-      },
-      {
-        "ticker": "XOM.BA",
-        "name": "XOM",
-        "category": "cedears",
-        "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 161.8
+        "ars_return_est": 180.2
       },
       {
         "ticker": "KO.BA",
@@ -46,16 +46,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 84.1
-      },
-      {
-        "ticker": "AMZN.BA",
-        "name": "AMZN",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 58.1
+        "ars_return_est": 82.9
       },
       {
         "ticker": "NVDA.BA",
@@ -67,14 +58,14 @@
         "ars_return_est": 98.7
       }
     ],
-    "expected_return": 179.31,
-    "expected_volatility": 30.16,
-    "sharpe_ratio": 4.39,
+    "expected_return": 181.08,
+    "expected_volatility": 29.05,
+    "sharpe_ratio": 4.62,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 132.3
+    "spread_vs_inflation": 134.1
   }
 }
