@@ -1,0 +1,197 @@
+{
+  "status": "success",
+  "analysis": {
+    "ticker": "REGN",
+    "name": "Regeneron Pharmaceuticals, Inc.",
+    "company": "Regeneron Pharmaceuticals, Inc.",
+    "sector": "Salud",
+    "ipo": 1991,
+    "category": "sp500",
+    "price": 661.115,
+    "currency": "USD",
+    "score": 59.1,
+    "profile": "agresivo",
+    "horizon": "short",
+    "technical": [
+      {
+        "title": "RSI (Índice de Fuerza Relativa)",
+        "icon": "fa-gauge-high",
+        "content": "El RSI de 14 períodos está en 54.6, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "54.6",
+        "status": "success"
+      },
+      {
+        "title": "Cruce de Medias Móviles (EMA 50/200)",
+        "icon": "fa-chart-line",
+        "content": "El precio (661.12) cotiza por debajo de la EMA de 200 días (680.61), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "value": "Bajista",
+        "status": "warning"
+      },
+      {
+        "title": "Volatilidad Anualizada",
+        "icon": "fa-wave-square",
+        "content": "La volatilidad anualizada es **alta** (38.3%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "38.3%",
+        "status": "warning"
+      },
+      {
+        "title": "Momentum de Corto Plazo",
+        "icon": "fa-bolt",
+        "content": "El activo registró un rendimiento del **+6.6%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (-11.9%) refuerzan esta tendencia positiva.",
+        "value": "+6.6% (1M)",
+        "status": "success"
+      },
+      {
+        "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
+        "icon": "fa-chart-area",
+        "content": "El análisis de la estructura de precios ubica los niveles clave del activo:\n- **Soporte de mediano plazo:** USD 614.51 (zona histórica de compra).\n- **Resistencia de largo plazo:** USD 755.83 (zona histórica de toma de ganancias).\n- **Precio Clave del Volumen (POC):** USD 647.89. Este nivel representa el precio más operado del trimestre, operando como un pivote de estabilidad de volumen.",
+        "value": "POC: 647.89",
+        "status": "success"
+      }
+    ],
+    "fundamental": [
+      {
+        "title": "Ratio de Sharpe (Riesgo/Retorno)",
+        "icon": "fa-scale-balanced",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **0.36** (bajo positivo, entre 0 y 0.5): el activo genera retorno por encima de la tasa libre de riesgo, pero el **premio por volatilidad es marginal**. Hay alternativas más eficientes disponibles.",
+        "value": "0.36",
+        "status": "warning"
+      },
+      {
+        "title": "Rendimiento Acumulado (Mediano Plazo)",
+        "icon": "fa-arrow-trend-up",
+        "content": "El rendimiento acumulado a 6 meses es **-12.0%** y a 12 meses es **+17.7%**. La caída acumulada es **significativa** y requiere precaución. Es necesario evaluar si existen catalizadores de recuperación.",
+        "value": "-12.0% (6M)",
+        "status": "danger"
+      },
+      {
+        "title": "Comparativa de Inflación Argentina",
+        "icon": "fa-fire-flame-curved",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **3.5%**, quedando por debajo de la inflación proyectada del período de **11.0%** (rendimiento real negativo de **-7.5%**). Por lo tanto, no califica como una recomendación robusta para esta ventana temporal.",
+        "value": "Retorno Est.: 3.5%",
+        "status": "danger"
+      }
+    ],
+    "macro": [
+      {
+        "title": "Entorno de Mercados Internacionales (EE.UU.)",
+        "icon": "fa-globe",
+        "content": "**Contexto EE.UU. (Jul 2026):** La Reserva Federal mantiene una postura de política monetaria que equilibra el control inflacionario con el sostenimiento del empleo. Los mercados de renta variable estadounidenses han mostrado resiliencia, impulsados por el sector tecnológico y la inteligencia artificial. Los CEDEARs permiten al inversor argentino acceder a estas dinámicas con cobertura implícita en dólares (tipo de cambio CCL). El ratio P/E del S&P 500 se encuentra por encima de su promedio histórico, lo que sugiere valuaciones exigentes que podrían limitar el upside de corto plazo.",
+        "status": "neutral"
+      }
+    ],
+    "balances": {
+      "snapshots": [
+        {
+          "period": "Mar 2026",
+          "revenue_b": 3.61,
+          "net_income_b": 0.73,
+          "net_margin_pct": 20.2,
+          "eps": null,
+          "fcf_b": 0.8,
+          "debt_equity": 0.09,
+          "favorable": [
+            "Margen neto sólido del 20.2%",
+            "FCF positivo: $0.8B",
+            "Deuda/Equity baja: 0.09"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Dec 2025",
+          "revenue_b": 3.88,
+          "net_income_b": 0.84,
+          "net_margin_pct": 21.6,
+          "eps": null,
+          "fcf_b": 0.88,
+          "debt_equity": 0.09,
+          "favorable": [
+            "Margen neto sólido del 21.6%",
+            "FCF positivo: $0.9B",
+            "Deuda/Equity baja: 0.09",
+            "Ingresos en alza vs trimestre anterior: +7.5%"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Sep 2025",
+          "revenue_b": 3.75,
+          "net_income_b": 1.46,
+          "net_margin_pct": 38.9,
+          "eps": null,
+          "fcf_b": 1.37,
+          "debt_equity": 0.09,
+          "favorable": [
+            "Margen neto sólido del 38.9%",
+            "FCF positivo: $1.4B",
+            "Deuda/Equity baja: 0.09"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Jun 2025",
+          "revenue_b": 3.68,
+          "net_income_b": 1.39,
+          "net_margin_pct": 37.8,
+          "eps": null,
+          "fcf_b": 0.74,
+          "debt_equity": 0.09,
+          "favorable": [
+            "Margen neto sólido del 37.8%",
+            "FCF positivo: $0.7B",
+            "Deuda/Equity baja: 0.09"
+          ],
+          "critical": []
+        },
+        {
+          "period": "Mar 2025",
+          "revenue_b": 3.03,
+          "net_income_b": 0.81,
+          "net_margin_pct": 26.7,
+          "eps": null,
+          "fcf_b": 0.77,
+          "debt_equity": 0.09,
+          "favorable": [
+            "Margen neto sólido del 26.7%",
+            "FCF positivo: $0.8B",
+            "Deuda/Equity baja: 0.09"
+          ],
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -17.7%"
+          ]
+        }
+      ],
+      "summary": {
+        "periods_analyzed": 5,
+        "avg_revenue_b": 3.59,
+        "avg_net_margin_pct": 29.0,
+        "avg_eps": null,
+        "revenue_trend": "creciente",
+        "margin_trend": "en contracción",
+        "total_favorable_signals": 16,
+        "total_critical_signals": 1,
+        "conclusion": "ESTABLE",
+        "conclusion_color": "neutral",
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 29.0%. Hay 1 señales de atención y 16 puntos positivos. Perfil de riesgo moderado."
+      }
+    },
+    "verdict": {
+      "action": "CAUTELA",
+      "icon": "fa-triangle-exclamation",
+      "color": "warning",
+      "summary": "El score de **59.1/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (38.3%), un ratio de Sharpe ineficiente (0.36), o una tendencia técnica desfavorable (Bajista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 934.36,
+      "stop_loss": 524.49,
+      "tp_pct": 41.3,
+      "sl_pct": 20.7
+    },
+    "support": 614.51,
+    "resistance": 755.83,
+    "volume_cluster": 647.89,
+    "take_profit": 934.36,
+    "stop_loss": 524.49,
+    "tp_pct": 41.3,
+    "sl_pct": 20.7
+  }
+}

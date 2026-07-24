@@ -7,38 +7,38 @@
     "sector": "Semiconductores",
     "ipo": 1999,
     "category": "cedears",
-    "price": 13900.0,
+    "price": 13720.0,
     "currency": "ARS",
-    "score": 67.1,
+    "score": 68.5,
     "profile": "conservador",
     "horizon": "medium",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos está en 60.3, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
-        "value": "60.3",
+        "content": "El RSI de 14 períodos está en 56.8, situado en una zona de **momentum alcista moderado**. Este es el rango ideal para inversiones de mediano plazo (6-12 meses), ya que indica fuerza de tendencia sin agotamiento.",
+        "value": "56.8",
         "status": "success"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "La EMA de 50 días (13123.02) se encuentra por encima de la EMA de 200 días (11878.01), y el precio actual (13900.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
+        "content": "La EMA de 50 días (13146.43) se encuentra por encima de la EMA de 200 días (11894.23), y el precio actual (13720.00) supera ambas medias. Esta configuración se denomina **Golden Cross activo** y es una señal técnica fuertemente alcista para el mediano plazo.",
         "value": "Fuerte Alcista",
         "status": "success"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (48.8%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "48.8%",
+        "content": "La volatilidad anualizada es **alta** (48.7%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "48.7%",
         "status": "warning"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo registró un rendimiento del **+8.4%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (1.7%) refuerzan esta tendencia positiva.",
-        "value": "+8.4% (1M)",
+        "content": "El activo registró un rendimiento del **+9.5%** en el último mes, mostrando un **fuerte momentum alcista**. Los retornos de 3 meses (2.7%) refuerzan esta tendencia positiva.",
+        "value": "+9.5% (1M)",
         "status": "success"
       },
       {
@@ -60,8 +60,8 @@
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+19.3%** y a 12 meses es **+49.5%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
-        "value": "+19.3% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **+18.2%** y a 12 meses es **+49.5%**. Estos retornos son **superiores al promedio** del mercado y refuerzan la tesis alcista para mediano plazo.",
+        "value": "+18.2% (6M)",
         "status": "success"
       },
       {
@@ -190,19 +190,19 @@
       "action": "CONSIDERAR",
       "icon": "fa-circle-info",
       "color": "neutral",
-      "summary": "Con un score de **67.1/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
+      "summary": "Con un score de **68.5/100** para el perfil **conservador**, este activo presenta una relación riesgo/retorno aceptable. La tendencia técnica es favorable y acompaña la recomendación. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital.",
       "why": "**Por qué esta estrategia:** El activo presenta buenos fundamentos pero con un timing técnico o volatilidad intermedia. Se recomienda en ponderaciones moderadas ya que, aunque la tendencia es aceptable, el ratio Sharpe (0.93) o las oscilaciones de corto plazo restan convicción para una asignación agresiva en el perfil **conservador**.",
-      "take_profit": 19323.32,
-      "stop_loss": 11188.34,
-      "tp_pct": 39.0,
+      "take_profit": 19061.3,
+      "stop_loss": 11049.35,
+      "tp_pct": 38.9,
       "sl_pct": 19.5
     },
     "support": 10964.99,
     "resistance": 13746.0,
     "volume_cluster": 13028.49,
-    "take_profit": 19323.32,
-    "stop_loss": 11188.34,
-    "tp_pct": 39.0,
+    "take_profit": 19061.3,
+    "stop_loss": 11049.35,
+    "tp_pct": 38.9,
     "sl_pct": 19.5,
     "medium_term_strategies": {
       "earnings_revision": [
@@ -253,16 +253,16 @@
         {
           "title": "S — Oferta y Demanda (Volatilidad/Volumen)",
           "icon": "fa-s",
-          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.64x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
-          "value": "0.64x",
+          "content": "**S (Supply & Demand):** La volatilidad de corto plazo es significativamente menor que la de largo plazo (ratio: 0.62x), indicando **acumulación institucional tranquila** — patrón característico de los mejores setups de CAN SLIM antes de una ruptura alcista.",
+          "value": "0.62x",
           "status": "success"
         },
         {
           "title": "L — Liderazgo de Mercado (Leader)",
           "icon": "fa-l",
-          "content": "**L (Leader):** El RSI de 60 confirma que el activo tiene **momentum de precio fuerte**: es un líder de mercado, no un rezagado. O'Neil prioriza los primeros 1-2 activos de cada sector, no los más rezagados aunque parezcan baratos.",
-          "value": "RSI 60",
-          "status": "success"
+          "content": "**L (Leader):** RSI de 57 — el activo no destaca como líder claro ni como rezagado. Para CAN SLIM, el liderazgo de precio relativo es clave: buscar activos en el percentil 80+ de fuerza relativa.",
+          "value": "RSI 57",
+          "status": "neutral"
         },
         {
           "title": "I — Respaldo Institucional (Institutional)",
@@ -283,9 +283,9 @@
         {
           "title": "Fuerza Relativa (Relative Strength)",
           "icon": "fa-ranking-star",
-          "content": "La **fuerza relativa del activo es muy alta** (score interno: 5/6): RSI=60, retorno 3M=+1.7%, retorno 12M=+49.5%. El activo muestra momentum sostenido en múltiples ventanas temporales, compatible con los líderes de su sector.",
-          "value": "Score 5/6",
-          "status": "success"
+          "content": "La **fuerza relativa es moderada** (score: 4/6): el activo muestra solidez en algunas ventanas pero no domina todas. RSI=57, 3M=+2.7%.",
+          "value": "Score 4/6",
+          "status": "neutral"
         },
         {
           "title": "Tendencia vs. Media de Largo Plazo",
@@ -297,8 +297,8 @@
         {
           "title": "Aceleración de Momentum",
           "icon": "fa-gauge-simple-high",
-          "content": "El **momentum se está acelerando** (+6.7%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
-          "value": "+6.7%",
+          "content": "El **momentum se está acelerando** (+6.8%): el retorno de corto plazo supera al de mediano plazo, señal de que el activo está ganando fuerza de forma progresiva. Los líderes de mercado suelen mostrar esta dinámica antes de sus mayores etapas de apreciación.",
+          "value": "+6.8%",
           "status": "success"
         },
         {

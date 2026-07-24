@@ -1,17 +1,8 @@
 {
   "status": "success",
-  "timestamp": 1784815238.597225,
+  "timestamp": 1784901768.4664905,
   "optimization": {
     "weights": [
-      {
-        "ticker": "AVGO",
-        "name": "AVGO",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.25,
-        "weight_pct": 25.0,
-        "ars_return_est": 52.4
-      },
       {
         "ticker": "XOM",
         "name": "XOM",
@@ -19,44 +10,44 @@
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 48.5
+        "ars_return_est": 47.0
       },
       {
-        "ticker": "V",
-        "name": "V",
+        "ticker": "AAPL",
+        "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
         "weight": 0.25,
         "weight_pct": 25.0,
-        "ars_return_est": 31.8
+        "ars_return_est": 67.7
       },
       {
         "ticker": "MA",
         "name": "MA",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1443,
-        "weight_pct": 14.4,
-        "ars_return_est": 19.2
+        "weight": 0.25,
+        "weight_pct": 25.0,
+        "ars_return_est": 24.3
       },
       {
-        "ticker": "NVDA",
-        "name": "NVDA",
+        "ticker": "BRK-B",
+        "name": "BRK-B",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.1057,
-        "weight_pct": 10.6,
-        "ars_return_est": 40.4
+        "weight": 0.25,
+        "weight_pct": 25.0,
+        "ars_return_est": 25.1
       }
     ],
-    "expected_return": 40.21,
-    "expected_volatility": 29.56,
-    "sharpe_ratio": 0.99,
+    "expected_return": 41.03,
+    "expected_volatility": 20.4,
+    "sharpe_ratio": 1.47,
     "profile": "agresivo",
     "horizon": "short",
     "risk_free_rate": 11.0,
     "inflation_reference": 11.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 29.2
+    "spread_vs_inflation": 30.0
   }
 }

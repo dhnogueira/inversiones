@@ -7,23 +7,23 @@
     "sector": "E-Commerce & Nube",
     "ipo": 1997,
     "category": "sp500",
-    "price": 235.72000122070312,
+    "price": 232.6649932861328,
     "currency": "USD",
-    "score": 56.4,
+    "score": 57.9,
     "profile": "agresivo",
     "horizon": "short",
     "technical": [
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 40.1, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "40.1",
+        "content": "El RSI de 14 períodos se encuentra en 37.9, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "37.9",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (235.72) cotiza por debajo de la EMA de 200 días (235.84), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
+        "content": "El precio (232.66) cotiza por debajo de la EMA de 200 días (235.81), lo que sugiere que la tendencia de largo plazo es **bajista** o está en transición.",
         "value": "Bajista",
         "status": "warning"
       },
@@ -37,9 +37,9 @@
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El rendimiento mensual es de **+0.6%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-7.6%) ofrece una perspectiva más amplia de la dirección reciente.",
-        "value": "+0.6% (1M)",
-        "status": "neutral"
+        "content": "El rendimiento mensual es de **+2.5%**, indicando un momentum **ligeramente positivo**. El retorno trimestral (-11.9%) ofrece una perspectiva más amplia de la dirección reciente.",
+        "value": "+2.5% (1M)",
+        "status": "success"
       },
       {
         "title": "Estructura de Precios (Soporte/Resistencia/Volumen)",
@@ -53,22 +53,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.02** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
-        "value": "-0.02",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **-0.12** (negativo): el retorno del activo **no alcanza ni la tasa libre de riesgo**. En términos prácticos, el inversor destruye valor ajustado por riesgo: asumir esta volatilidad no está siendo recompensado.",
+        "value": "-0.12",
         "status": "danger"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **+0.6%** y a 12 meses es **+3.3%**. Los retornos son **positivos pero moderados**, alineados con un contexto de crecimiento gradual.",
-        "value": "+0.6% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-2.7%** y a 12 meses es **+0.2%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-2.7% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **21.9%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+10.9%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 21.9%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **17.1%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+6.1%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 17.1%",
         "status": "success"
       }
     ],
@@ -179,19 +179,19 @@
       "action": "CAUTELA",
       "icon": "fa-triangle-exclamation",
       "color": "warning",
-      "summary": "El score de **56.4/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
-      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (32.9%), un ratio de Sharpe ineficiente (-0.02), o una tendencia técnica desfavorable (Bajista) que aumenta el riesgo de entrada en este momento.",
-      "take_profit": 319.43,
-      "stop_loss": 193.86,
-      "tp_pct": 35.5,
+      "summary": "El score de **57.9/100** indica que este activo no es ideal para el perfil **agresivo**. La tendencia técnica es adversa, lo que incrementa el riesgo de pérdida en el corto plazo. El ratio de Sharpe negativo sugiere que el retorno no justifica la volatilidad.",
+      "why": "**Por qué esta estrategia:** Existen desalineaciones claras entre las características del activo y el perfil **agresivo**. Esto puede deberse a una volatilidad excesiva (32.9%), un ratio de Sharpe ineficiente (-0.12), o una tendencia técnica desfavorable (Bajista) que aumenta el riesgo de entrada en este momento.",
+      "take_profit": 315.4,
+      "stop_loss": 191.3,
+      "tp_pct": 35.6,
       "sl_pct": 17.8
     },
     "support": 210.11,
     "resistance": 269.1,
     "volume_cluster": 248.51,
-    "take_profit": 319.43,
-    "stop_loss": 193.86,
-    "tp_pct": 35.5,
+    "take_profit": 315.4,
+    "stop_loss": 191.3,
+    "tp_pct": 35.6,
     "sl_pct": 17.8
   }
 }

@@ -7,7 +7,7 @@
     "sector": "Tecnología & Publicidad",
     "ipo": 2004,
     "category": "sp500",
-    "price": 321.4200134277344,
+    "price": 322.5050048828125,
     "currency": "USD",
     "score": 0.0,
     "profile": "conservador",
@@ -16,29 +16,29 @@
       {
         "title": "RSI (Índice de Fuerza Relativa)",
         "icon": "fa-gauge-high",
-        "content": "El RSI de 14 períodos se encuentra en 32.2, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
-        "value": "32.2",
+        "content": "El RSI de 14 períodos se encuentra en 34.3, en una zona **neutral**. No hay señales claras de sobrecompra ni sobreventa. El activo está en equilibrio entre oferta y demanda.",
+        "value": "34.3",
         "status": "neutral"
       },
       {
         "title": "Cruce de Medias Móviles (EMA 50/200)",
         "icon": "fa-chart-line",
-        "content": "El precio (321.42) se mantiene por encima de la EMA de 200 días (319.14), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (356.06) aún no confirma un cruce definitivo.",
+        "content": "El precio (322.51) se mantiene por encima de la EMA de 200 días (319.13), lo que indica que la tendencia de largo plazo sigue siendo **alcista**. Sin embargo, la EMA de 50 días (354.60) aún no confirma un cruce definitivo.",
         "value": "Alcista",
         "status": "neutral"
       },
       {
         "title": "Volatilidad Anualizada",
         "icon": "fa-wave-square",
-        "content": "La volatilidad anualizada es **alta** (31.3%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
-        "value": "31.3%",
+        "content": "La volatilidad anualizada es **alta** (31.4%). Esto implica oscilaciones significativas en el precio. Adecuado para perfiles agresivos que toleran drawdowns temporales en búsqueda de rendimientos superiores.",
+        "value": "31.4%",
         "status": "warning"
       },
       {
         "title": "Momentum de Corto Plazo",
         "icon": "fa-bolt",
-        "content": "El activo cayó un **-6.9%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
-        "value": "-6.9% (1M)",
+        "content": "El activo cayó un **-6.2%** en el último mes, señalando un **momentum bajista** significativo. Debería confirmarse si se trata de una corrección temporal o un cambio de tendencia estructural.",
+        "value": "-6.2% (1M)",
         "status": "danger"
       },
       {
@@ -53,22 +53,22 @@
       {
         "title": "Ratio de Sharpe (Riesgo/Retorno)",
         "icon": "fa-scale-balanced",
-        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.09** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
-        "value": "2.09",
+        "content": "**¿Qué mide?** El Ratio de Sharpe responde a la pregunta: _¿cuánto rendimiento extra obtengo por cada unidad de riesgo que asumo?_ Compara el retorno del activo contra la **tasa libre de riesgo** (lo que ganarías sin arriesgar nada). Un valor positivo indica que el activo rinde más de lo mínimo esperado; un valor negativo indica que **no conviene asumir ese riesgo**, porque rendirías menos que dejando el dinero en un instrumento seguro.\n\nEl Ratio de Sharpe de este activo es **2.05** (excelente, > 1.0): por cada punto de volatilidad asumida, el activo genera un retorno significativamente superior a la tasa libre de riesgo. Esto lo posiciona como una inversión **muy eficiente** en relación al riesgo tomado.",
+        "value": "2.05",
         "status": "success"
       },
       {
         "title": "Rendimiento Acumulado (Mediano Plazo)",
         "icon": "fa-arrow-trend-up",
-        "content": "El rendimiento acumulado a 6 meses es **-2.6%** y a 12 meses es **+69.4%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
-        "value": "-2.6% (6M)",
+        "content": "El rendimiento acumulado a 6 meses es **-1.5%** y a 12 meses es **+68.3%**. La corrección reciente es **contenida**. Podría tratarse de una consolidación antes de una nueva fase alcista.",
+        "value": "-1.5% (6M)",
         "status": "neutral"
       },
       {
         "title": "Comparativa de Inflación Argentina",
         "icon": "fa-fire-flame-curved",
-        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **18.5%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+7.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
-        "value": "Retorno Est.: 18.5%",
+        "content": "El retorno estimado en pesos para este activo en un horizonte de **corto plazo (hasta 6 meses)** es del **19.5%**, superando la inflación proyectada del período del **11.0%** con un spread real positivo de **+8.5%**. Cumple con el objetivo de preservar y acrecentar el poder adquisitivo.",
+        "value": "Retorno Est.: 19.5%",
         "status": "success"
       }
     ],
@@ -83,19 +83,36 @@
     "balances": {
       "snapshots": [
         {
+          "period": "Jun 2026",
+          "revenue_b": 119.8,
+          "net_income_b": 112.19,
+          "net_margin_pct": 93.6,
+          "eps": null,
+          "fcf_b": -5.86,
+          "debt_equity": 0.18,
+          "favorable": [
+            "Margen neto sólido del 93.6%",
+            "Deuda/Equity baja: 0.18"
+          ],
+          "critical": [
+            "FCF negativo: $-5.9B (quema de caja)"
+          ]
+        },
+        {
           "period": "Mar 2026",
           "revenue_b": 109.9,
           "net_income_b": 62.58,
           "net_margin_pct": 56.9,
           "eps": null,
           "fcf_b": 10.12,
-          "debt_equity": 0.19,
+          "debt_equity": null,
           "favorable": [
             "Margen neto sólido del 56.9%",
-            "FCF positivo: $10.1B",
-            "Deuda/Equity baja: 0.19"
+            "FCF positivo: $10.1B"
           ],
-          "critical": []
+          "critical": [
+            "Ingresos en baja vs trimestre anterior: -8.3%"
+          ]
         },
         {
           "period": "Dec 2025",
@@ -104,11 +121,10 @@
           "net_margin_pct": 30.3,
           "eps": null,
           "fcf_b": 24.55,
-          "debt_equity": 0.14,
+          "debt_equity": null,
           "favorable": [
             "Margen neto sólido del 30.3%",
-            "FCF positivo: $24.6B",
-            "Deuda/Equity baja: 0.14"
+            "FCF positivo: $24.6B"
           ],
           "critical": []
         },
@@ -119,11 +135,10 @@
           "net_margin_pct": 34.2,
           "eps": null,
           "fcf_b": 24.46,
-          "debt_equity": 0.09,
+          "debt_equity": null,
           "favorable": [
             "Margen neto sólido del 34.2%",
-            "FCF positivo: $24.5B",
-            "Deuda/Equity baja: 0.09"
+            "FCF positivo: $24.5B"
           ],
           "critical": [
             "Ingresos en baja vs trimestre anterior: -10.1%"
@@ -136,46 +151,28 @@
           "net_margin_pct": 29.2,
           "eps": null,
           "fcf_b": 5.3,
-          "debt_equity": 0.1,
+          "debt_equity": null,
           "favorable": [
             "Margen neto sólido del 29.2%",
-            "FCF positivo: $5.3B",
-            "Deuda/Equity baja: 0.10"
+            "FCF positivo: $5.3B"
           ],
           "critical": [
             "Ingresos en baja vs trimestre anterior: -5.8%"
-          ]
-        },
-        {
-          "period": "Mar 2025",
-          "revenue_b": 90.23,
-          "net_income_b": 34.54,
-          "net_margin_pct": 38.3,
-          "eps": null,
-          "fcf_b": 18.95,
-          "debt_equity": 0.07,
-          "favorable": [
-            "Margen neto sólido del 38.3%",
-            "FCF positivo: $18.9B",
-            "Deuda/Equity baja: 0.07"
-          ],
-          "critical": [
-            "Ingresos en baja vs trimestre anterior: -6.4%"
           ]
         }
       ],
       "summary": {
         "periods_analyzed": 5,
-        "avg_revenue_b": 102.55,
-        "avg_net_margin_pct": 37.8,
+        "avg_revenue_b": 108.46,
+        "avg_net_margin_pct": 48.8,
         "avg_eps": null,
         "revenue_trend": "creciente",
         "margin_trend": "en expansión",
-        "total_favorable_signals": 15,
-        "total_critical_signals": 3,
+        "total_favorable_signals": 10,
+        "total_critical_signals": 4,
         "conclusion": "ESTABLE",
         "conclusion_color": "neutral",
-        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 37.8%. Hay 3 señales de atención y 15 puntos positivos. Perfil de riesgo moderado."
+        "conclusion_detail": "Los últimos 5 balances presentan estabilidad general con ingresos crecientes y margen promedio del 48.8%. Hay 4 señales de atención y 10 puntos positivos. Perfil de riesgo moderado."
       }
     },
     "verdict": {
@@ -184,17 +181,17 @@
       "color": "danger",
       "summary": "Con un score de solo **0.0/100**, este activo no es recomendable para el perfil **conservador**. La tendencia técnica es favorable y acompaña la recomendación. El ratio de Sharpe indica una excelente compensación por el riesgo asumido. La volatilidad es demasiado alta para un perfil conservador orientado a la preservación de capital. El RSI en zona de sobreventa podría representar una oportunidad contrarian si los fundamentos sostienen el precio.",
       "why": "**Por qué esta estrategia:** El activo es descartado debido a que no cumple con los requisitos mínimos de idoneidad para el perfil **conservador**. Presenta un retorno histórico/esperado deficiente frente a la devaluación/inflación proyectada, una volatilidad desmedida, o una tendencia bajista pronunciada (Alcista).",
-      "take_profit": 369.68,
-      "stop_loss": 297.29,
-      "tp_pct": 15.0,
+      "take_profit": 371.13,
+      "stop_loss": 298.19,
+      "tp_pct": 15.1,
       "sl_pct": 7.5
     },
     "support": 300.72,
     "resistance": 388.65,
     "volume_cluster": 357.21,
-    "take_profit": 369.68,
-    "stop_loss": 297.29,
-    "tp_pct": 15.0,
+    "take_profit": 371.13,
+    "stop_loss": 298.19,
+    "tp_pct": 15.1,
     "sl_pct": 7.5
   }
 }

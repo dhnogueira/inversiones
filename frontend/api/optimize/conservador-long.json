@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784815238.597225,
+  "timestamp": 1784901768.4664905,
   "optimization": {
     "weights": [
       {
@@ -8,18 +8,18 @@
         "name": "GOOGL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3919,
-        "weight_pct": 39.2,
-        "ars_return_est": 403.5
+        "weight": 0.327,
+        "weight_pct": 32.7,
+        "ars_return_est": 397.3
       },
       {
         "ticker": "MRK",
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.2081,
-        "weight_pct": 20.8,
-        "ars_return_est": 349.0
+        "weight": 0.273,
+        "weight_pct": 27.3,
+        "ars_return_est": 356.6
       },
       {
         "ticker": "AAPL.BA",
@@ -28,7 +28,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 200.0
+        "ars_return_est": 198.8
       },
       {
         "ticker": "GOOGL.BA",
@@ -46,7 +46,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 161.8
+        "ars_return_est": 174.9
       },
       {
         "ticker": "VALE.BA",
@@ -55,16 +55,7 @@
         "currency": "ARS",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 194.2
-      },
-      {
-        "ticker": "XOM",
-        "name": "XOM",
-        "category": "sp500",
-        "currency": "USD",
-        "weight": 0.05,
-        "weight_pct": 5.0,
-        "ars_return_est": 289.8
+        "ars_return_est": 180.2
       },
       {
         "ticker": "AAPL",
@@ -73,16 +64,16 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 303.7
+        "ars_return_est": 321.2
       },
       {
-        "ticker": "KO.BA",
-        "name": "KO",
-        "category": "cedears",
-        "currency": "ARS",
+        "ticker": "XOM",
+        "name": "XOM",
+        "category": "sp500",
+        "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 84.1
+        "ars_return_est": 285.5
       },
       {
         "ticker": "ABBV",
@@ -91,17 +82,26 @@
         "currency": "USD",
         "weight": 0.05,
         "weight_pct": 5.0,
-        "ars_return_est": 248.2
+        "ars_return_est": 256.9
+      },
+      {
+        "ticker": "KO.BA",
+        "name": "KO",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.05,
+        "weight_pct": 5.0,
+        "ars_return_est": 82.9
       }
     ],
-    "expected_return": 314.84,
-    "expected_volatility": 24.62,
+    "expected_return": 312.27,
+    "expected_volatility": 24.39,
     "sharpe_ratio": 10.88,
     "profile": "conservador",
     "horizon": "long",
     "risk_free_rate": 47.0,
     "inflation_reference": 47.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 267.8
+    "spread_vs_inflation": 265.3
   }
 }

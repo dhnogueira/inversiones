@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "timestamp": 1784815238.597225,
+  "timestamp": 1784901768.4664905,
   "optimization": {
     "weights": [
       {
@@ -8,55 +8,73 @@
         "name": "MRK",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3091,
-        "weight_pct": 30.9,
-        "ars_return_est": 109.2
-      },
-      {
-        "ticker": "GOOGL.BA",
-        "name": "GOOGL",
-        "category": "cedears",
-        "currency": "ARS",
-        "weight": 0.3091,
-        "weight_pct": 30.9,
-        "ars_return_est": 101.0
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 110.9
       },
       {
         "ticker": "AAPL",
         "name": "AAPL",
         "category": "sp500",
         "currency": "USD",
-        "weight": 0.3091,
-        "weight_pct": 30.9,
-        "ars_return_est": 98.9
+        "weight": 0.3,
+        "weight_pct": 30.0,
+        "ars_return_est": 102.9
+      },
+      {
+        "ticker": "GOOGL.BA",
+        "name": "GOOGL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.2262,
+        "weight_pct": 22.6,
+        "ars_return_est": 85.9
+      },
+      {
+        "ticker": "UNH",
+        "name": "UNH",
+        "category": "sp500",
+        "currency": "USD",
+        "weight": 0.0686,
+        "weight_pct": 6.9,
+        "ars_return_est": 105.6
       },
       {
         "ticker": "VALO.BA",
         "name": "VALO",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0515,
-        "weight_pct": 5.2,
-        "ars_return_est": 75.0
+        "weight": 0.0476,
+        "weight_pct": 4.8,
+        "ars_return_est": 76.0
       },
       {
         "ticker": "YPFD.BA",
         "name": "YPFD",
         "category": "merval",
         "currency": "ARS",
-        "weight": 0.0211,
-        "weight_pct": 2.1,
-        "ars_return_est": 85.3
+        "weight": 0.031,
+        "weight_pct": 3.1,
+        "ars_return_est": 87.5
+      },
+      {
+        "ticker": "AAPL.BA",
+        "name": "AAPL",
+        "category": "cedears",
+        "currency": "ARS",
+        "weight": 0.0267,
+        "weight_pct": 2.7,
+        "ars_return_est": 69.3
       }
     ],
-    "expected_return": 101.23,
-    "expected_volatility": 25.27,
-    "sharpe_ratio": 3.14,
+    "expected_return": 99.0,
+    "expected_volatility": 25.56,
+    "sharpe_ratio": 3.01,
     "profile": "conservador",
     "horizon": "medium",
     "risk_free_rate": 22.0,
     "inflation_reference": 22.0,
     "beats_inflation": true,
-    "spread_vs_inflation": 79.2
+    "spread_vs_inflation": 77.0
   }
 }
